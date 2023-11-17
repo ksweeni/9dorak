@@ -14,3 +14,5 @@ int getMax(int arr[], int len)
     }
     return max; // 결과 반환
 }
+
+찬기바보
