@@ -1,18 +1,18 @@
-// getMax 함수를 int 배열에서 사용할 수 있도록 정의
-// int 형 배열 arr과 배열의 크기를 나타내는 정수 매개변수 len
-// 이름이 getMax인 int 함수
+// getMax �븿�닔瑜� int 諛곗뿴�뿉�꽌 �궗�슜�븷 �닔 �엳�룄濡� �젙�쓽
+// int �삎 諛곗뿴 arr怨� 諛곗뿴�쓽 �겕湲곕�� �굹���궡�뒗 �젙�닔 留ㅺ컻蹂��닔 len
+// �씠由꾩씠 getMax�씤 int �븿�닔
 int getMax(int arr[], int len)
 {
-    int max = INT_MIN; // int 형의 최솟값으로 max로 가정
+    int max = INT_MIN; // int �삎�쓽 理쒖넖媛믪쑝濡� max濡� 媛��젙
 
-    // int i가 0부터 len 미만일때까지 1씩 값을 증가해 for문 반복
+    // int i媛� 0遺��꽣 len 誘몃쭔�씪�븣源뚯� 1�뵫 媛믪쓣 利앷��빐 for臾� 諛섎났
     for (int i = 0; i < len; i++) {
-        // i번째 배열보다 max가 작으면, i번째 배열 값으로 max에 저장
+        // i踰덉㎏ 諛곗뿴蹂대떎 max媛� �옉�쑝硫�, i踰덉㎏ 諛곗뿴 媛믪쑝濡� max�뿉 ���옣
         if (max < arr[i]) {
             max = arr[i];
         }
     }
-    return max; // 결과 반환
+    return max; // 寃곌낵 諛섑솚
 }
-
-찬기바보
+asdasdasdas
+李ш린諛붾낫
