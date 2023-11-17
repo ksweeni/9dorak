@@ -1,0 +1,16 @@
+// getMax 함수를 int 배열에서 사용할 수 있도록 정의
+// int 형 배열 arr과 배열의 크기를 나타내는 정수 매개변수 len
+// 이름이 getMax인 int 함수
+int getMax(int arr[], int len)
+{
+    int max = INT_MIN; // int 형의 최솟값으로 max로 가정
+
+    // int i가 0부터 len 미만일때까지 1씩 값을 증가해 for문 반복
+    for (int i = 0; i < len; i++) {
+        // i번째 배열보다 max가 작으면, i번째 배열 값으로 max에 저장
+        if (max < arr[i]) {
+            max = arr[i];
+        }
+    }
+    return max; // 결과 반환
+}
