@@ -12,6 +12,6 @@
 <P>  The time on the server is ${serverTime}. </P>
 
 
-수정ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴ
+
 </body>
 </html>
