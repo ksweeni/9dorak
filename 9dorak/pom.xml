@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.shinhan</groupId>
 	<artifactId>myapp</artifactId>
-	<name>project3_springMVC</name>
+	<name>9dorak</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -24,7 +24,12 @@
 	</repositories>
 
 	<dependencies>
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>5.3.11</version> <!-- 실제 사용하는 버전으로 변경해야 합니다. -->
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
