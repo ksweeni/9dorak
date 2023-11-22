@@ -9,7 +9,7 @@
 	Hello world!  
 </h1>
 
-<P>  Sweeni !@!@!@!@!@The time on the server is ${serverTime}. 
+<P> !@!@!@!@!@The time on the server is ${serverTime}. 
 zczcxxxxzzxzc</P>
 </body>
 </html>
