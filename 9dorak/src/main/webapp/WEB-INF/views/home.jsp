@@ -8,6 +8,7 @@
 <h1>
 	Hello world!  
 </h1>
+<p>Changi</p>
 
 <p>Menu</p>
 
