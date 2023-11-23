@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -8,23 +8,23 @@
 		select * from pro
 	</select>
 
-	<!-- Select a record from the 'pro' table by ID -->
+	Select a record from the 'pro' table by ID
 	<select id="selectById" parameterType="int" resultType="provo">
 		select * from pro where pro_no = #{aa}
 	</select>
 
-	<!-- Update the 'viewcnt' column in the 'pro' table by incrementing it -->
+	Update the 'viewcnt' column in the 'pro' table by incrementing it
 	<update id="viewcntIncrement" parameterType="int">
 		update pro set pro_view = pro_view + 1 where pro_no = #{aa}
 	</update>
 
-	<!-- Delete a record from the 'pro' table by ID -->
+	Delete a record from the 'pro' table by ID
 	<delete id="delete" parameterType="int">
 		delete from pro where pro_no = #{aa}
 	</delete>
 
-	<!-- Update a record in the 'pro' table by modifying title, content, and 
-		updatedate -->
+	Update a record in the 'pro' table by modifying title, content, and 
+		updatedate
 	<update id="update" parameterType="provo">
 		update pro set pro_name = #{pro_name}, pro_price = #{pro_price}, pro_like =
 		#{pro_like}, pro_nut = #{pro_nut}, pro_sub = #{pro_sub}, pro_ed =
@@ -35,7 +35,7 @@
 		#{pro_cal}, pro_weight = #{pro_weight} where pro_no = #{pro_no}
 	</update>
 
-	<!-- Insert a new record into the 'pro' table -->
+	Insert a new record into the 'pro' table
 	<insert id="insert" parameterType="provo">
 		insert into pro (pro_no, pro_name, pro_price, pro_like, pro_nut, pro_sub,
 		pro_ed, pro_sc, pro_view, pro_rd, pro_delete, pro_aller, pro_prot,
@@ -46,4 +46,4 @@
 		#{pro_nat}, #{pro_sugar}, #{pro_cal}, #{pro_weight})
 	</insert>
 
-</mapper>
+</mapper> -->

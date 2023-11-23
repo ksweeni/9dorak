@@ -33,4 +33,4 @@
 		#{doran_image}, 0, #{mem_id})
 	</insert>
 
-</mapper>
+</mapper> 
