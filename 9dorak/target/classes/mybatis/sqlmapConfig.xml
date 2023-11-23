@@ -12,6 +12,10 @@
 		<typeAlias type="com.shinhan.dto.EmpVO" alias="empvo" />
 		<typeAlias type="com.shinhan.dto.JobVO" alias="jobvo" />
 		<typeAlias type="com.shinhan.dto.BoardVO" alias="boardvo" />
+		<typeAlias type="com.shinhan.dto.DoranVO" alias="doranvo"/>
+		<typeAlias type="com.shinhan.dto.DoranlikeVO" alias="doranlikevo"/>
+		<typeAlias type="com.shinhan.dto.ProVO" alias="provo"/>
+		<typeAlias type="com.shinhan.dto.ProimageVO" alias="proimagevo"/>
 	</typeAliases>
 </configuration>
 
