@@ -15,8 +15,7 @@
 			style="position: absolute; left: 97px; top: 60px; font-size: 64px; font-weight: 600; text-align: left;">
 			<span
 				style="font-size: 64px; font-weight: 600; text-align: left; color: #000;">아이를
-				위한 9일의 약속</span><br />
-			<span
+				위한 9일의 약속</span><br /> <span
 				style="font-size: 64px; font-weight: 600; text-align: left; color: #f48e28;">구도락</span>
 		</p>
 		<div style="width: 319.02px; height: 606px;">
