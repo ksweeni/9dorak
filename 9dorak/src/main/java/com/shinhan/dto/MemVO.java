@@ -1,5 +1,17 @@
 package com.shinhan.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+import lombok.Setter;
+import lombok.ToString;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class MemVO {
 	String mem_id; //회원아이디
 	String mem_name; //회원이름

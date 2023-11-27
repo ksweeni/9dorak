@@ -28,4 +28,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>9dorak/pom.xml</name>
+			<type>1</type>
+			<location>C:/Users/User/Downloads/제목 없음.xml</location>
+		</link>
+	</linkedResources>
 </projectDescription>

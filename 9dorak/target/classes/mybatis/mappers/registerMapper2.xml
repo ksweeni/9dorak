@@ -1,0 +1,36 @@
+<!-- <?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.firstzone.register">
+
+	<select id="selectAll" resultType="memvo">
+		select * from mem
+	</select>
+
+	<select id="selectById" parameterType="int" resultType="doranvo">
+		select * from doran where "doran_no" = #{aa}
+	</select>
+
+	<update id="viewcntIncrement" parameterType="int">
+		update doran set
+		"doran_view" = "doran_view" + 1 where "doran_no" = #{aa}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from doran where "doran_no" = #{aa}
+	</delete>
+
+	<update id="update" parameterType="doranvo">
+		update doran set "doran_title"=#{doran_title}, "doran_cont"=#{doran_cont},
+		"doran_date"=SYSDATE where "doran_no" = #{doran_no}
+	</update>
+
+	<insert id="insert" parameterType="doranvo">
+		insert into doran ("doran_no", "doran_title", "doran_cont", "doran_date",
+		"doran_image", "doran_view", "mem_id")
+		values (seq_board.nextval, #{doran_title}, #{doran_cont}, SYSDATE,
+		#{doran_image}, 0, #{mem_id})
+	</insert>
+
+</mapper>  -->
