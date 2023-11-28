@@ -681,6 +681,7 @@
   top: 0;
   left: 0;
   background-color: #f48e28;
+  border-radius: 0px 30px 30px 30px;
 }
 
 .screen .frame-wrapper {
@@ -785,11 +786,11 @@
   position: absolute;
   width: 126px;
   top: 39px;
-  left: 106px;
+  left: 89px;
   font-family: "Inter-SemiBold", Helvetica;
   font-weight: 600;
   color: #ffffff;
-  font-size: 32px;
+  font-size: 31px;
   letter-spacing: 0;
   line-height: normal;
 }
@@ -895,7 +896,7 @@
   font-family: "Barlow-ExtraBold", Helvetica;
   font-weight: 800;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0;
   line-height: normal;
 }
@@ -1064,4 +1065,10 @@
   letter-spacing: var(--p2-letter-spacing);
   line-height: var(--p2-line-height);
   font-style: var(--p2-font-style);
+}
+
+.screen .doran-content{
+	border-radius: 10px;
+	background: #F9F9F9;
+	box-shadow: 0.3px 0.3px 7px 0px rgba(223, 223, 223, 0.10) inset, -0.3px -0.3px 10px 0px rgba(223, 223, 223, 0.05) inset;
 }

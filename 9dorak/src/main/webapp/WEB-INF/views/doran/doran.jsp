@@ -130,6 +130,9 @@
 						<div class="group-wrapper">
 							<div class="group-12">
 								<div class="overlap-group-3">
+									<div class="doran-upload">
+										<textarea class="doran-content">내용을 자유롭게 입력하세요!</textarea>
+									</div>
 									<div class="text-wrapper-17">업로드</div>
 									<img class="carbon-send-alt"
 										src="img/carbon-send-alt-filled.svg" />
