@@ -12,6 +12,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<script>
+	var message = "${dlist}";
+	if (message != "")
+		alert(message);
+</script>
 <body>
 	<div class="screen">
 		<div class="div">
@@ -77,94 +82,50 @@
 				</footer>
 				<div class="text-wrapper-9">Paylaş</div>
 				<div class="group-4">
-					<div class="div-wrapper">
-						<div class="overlap-group-2">
-							<img class="unsplash" src="img/unsplash-blihvfxbi9s-3.svg" />
-							<p class="p">엄마가 사준 디저트 매우 맛있다 학교 앞에도 있었으면 좋겠다!!!
-								#반모#중2#슬릭백장인</p>
-							<div class="group-5">
-								<img class="image" src="img/image.svg" />
-								<div class="text-wrapper-10">23.5K</div>
-								<div class="text-wrapper-11">3.5</div>
-								<div class="text-wrapper-12">2K</div>
-								<img class="majesticons-comment"
-									src="img/majesticons-comment-text-3.svg" /> <img
-									class="emojione-star" src="img/emojione-star.svg" />
-							</div>
-							<div class="group-6">
-								<img class="unsplash-ykc-qhmjk"
-									src="img/unsplash-y3kc-7qhmjk-2.svg" />
-								<div class="frame">
-									<div class="frame-2">
-										<div class="text-wrapper-13">ksween</div>
-										<div class="text-wrapper-14">낑깡</div>
-									</div>
-									<div class="group-7">
-										<div class="text-wrapper-15">8분전</div>
+					<!--<c:forEach items="${dlist}" var="doran">
+						<tr>
+							<td>${doran.mem_id}</td>
+							<td>${doran.doran_view}</td>
+							<td>${doran.doran_title}</td>
+							<td>${doran.doran_cont}</td>
+							<td>${doran.doran_date}</td>
+							<br />
+						</tr>
+					</c:forEach> -->
+
+					<c:forEach items="${dlist}" var="doran">
+						<div class="div-wrapper">
+							<div class="overlap-group-2">
+								<img class="unsplash" src="img/unsplash-blihvfxbi9s-3.svg" />
+								<p class="p">${doran.doran_cont}</p>
+								<div class="group-5">
+									<img class="image" src="img/image.svg" />
+									<div class="text-wrapper-10">23.5K</div>
+									<div class="text-wrapper-11">3.5</div>
+									<div class="text-wrapper-12">${doran.doran_view}K</div>
+									<img class="majesticons-comment"
+										src="img/majesticons-comment-text-3.svg" /> <img
+										class="emojione-star" src="img/emojione-star.svg" />
+								</div>
+								<div class="group-6">
+									<img class="unsplash-ykc-qhmjk"
+										src="img/unsplash-y3kc-7qhmjk-2.svg" />
+									<div class="frame">
+										<div class="frame-2">
+											<div class="text-wrapper-13">${doran.mem_id}</div>
+											<div class="text-wrapper-14">낑깡</div>
+										</div>
+										<div class="group-7">
+											<div class="text-wrapper-15">8분전</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="overlap-wrapper">
-						<div class="overlap-group-2">
-							<img class="unsplash-blihvfxbis"
-								src="img/unsplash-blihvfxbi9s.svg" />
-							<p class="text-wrapper-16">엄마가 사준 디저트 매우 맛있다 학교 앞에도 있었으면
-								좋겠다!!! #반모#중2#슬릭백장인</p>
-							<div class="group-8">
-								<img class="image" src="img/image-2.svg" />
-								<div class="text-wrapper-10">23.5K</div>
-								<div class="text-wrapper-11">3.5</div>
-								<div class="text-wrapper-12">2K</div>
-								<img class="majesticons-comment"
-									src="img/majesticons-comment-text-2.svg" /> <img
-									class="emojione-star" src="img/emojione-star-2.svg" />
-							</div>
-							<div class="group-9">
-								<img class="unsplash-ykc-qhmjk"
-									src="img/unsplash-y3kc-7qhmjk.svg" />
-								<div class="frame">
-									<div class="frame-2">
-										<div class="text-wrapper-13">ksween</div>
-										<div class="text-wrapper-14">낑깡</div>
-									</div>
-									<div class="group-7">
-										<div class="text-wrapper-15">8분전</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="group-10">
-						<div class="overlap-group-2">
-							<img class="unsplash" src="img/unsplash-blihvfxbi9s-2.svg" />
-							<p class="p">엄마가 사준 디저트 매우 맛있다 학교 앞에도 있었으면 좋겠다!!!
-								#반모#중2#슬릭백장인</p>
-							<div class="group-5">
-								<img class="image" src="img/image-3.svg" />
-								<div class="text-wrapper-10">23.5K</div>
-								<div class="text-wrapper-11">3.5</div>
-								<div class="text-wrapper-12">2K</div>
-								<img class="majesticons-comment"
-									src="img/majesticons-comment-text.svg" /> <img
-									class="emojione-star" src="img/emojione-star-3.svg" />
-							</div>
-							<div class="group-6">
-								<img class="unsplash-ykc-qhmjk"
-									src="img/unsplash-y3kc-7qhmjk-3.svg" />
-								<div class="frame">
-									<div class="frame-2">
-										<div class="text-wrapper-13">ksween</div>
-										<div class="text-wrapper-14">낑깡</div>
-									</div>
-									<div class="group-7">
-										<div class="text-wrapper-15">8분전</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					</c:forEach>
+
+				
+
 					<div class="group-11">
 						<div class="group-wrapper">
 							<div class="group-12">
