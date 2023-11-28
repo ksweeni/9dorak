@@ -24,5 +24,7 @@
     <P>The time on the server is ${serverTime}.</P>
     
     <a href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+    <a href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+    <a href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
 </body>
 </html>

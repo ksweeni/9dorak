@@ -9,6 +9,8 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="com.shinhan.dto.MemVO" alias="memvo" />
+		<typeAlias type="com.shinhan.dto.DoranVO" alias="doranvo" />
+		<typeAlias type="com.shinhan.dto.ProVO" alias="provo" />
 	</typeAliases>
 </configuration>
 

@@ -2,6 +2,16 @@ package com.shinhan.dto;
 
 import java.sql.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class DoranVO {
 	int doran_no; // 도란도란 고유 번호
 	String doran_title; // 커뮤니티 제목
