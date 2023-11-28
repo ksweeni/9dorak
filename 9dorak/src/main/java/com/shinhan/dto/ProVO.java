@@ -2,6 +2,17 @@ package com.shinhan.dto;
 
 import java.sql.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class ProVO {
 	int pro_no; //상품 고유 번호
 	String pro_name; //상품 이름

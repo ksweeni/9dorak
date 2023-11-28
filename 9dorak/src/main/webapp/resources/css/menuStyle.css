@@ -1,5 +1,60 @@
 @charset "UTF-8";
 
+/*.check-div {
+  display: inline-block; /* Adjust display property as needed 
+}
+
+.allergy-check {
+  width: 130px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 1px solid #F48E28;
+  background: #FFF;
+  color: #F48E28;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 5px; /* Add margin for spacing between checkboxes
+  appearance: unset;
+}
+
+.allergy-check:checked {
+  background: #F48E28;
+  color: #FFF;
+}*/
+
+.check-div {
+  display: inline-block;
+}
+
+.allergy-check {
+  display: none; /* Hide the actual checkbox */
+}
+
+.allergy-check + label {
+  position: relative;
+  width: 130px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 1px solid #F48E28;
+  background: #FFF;
+  color: #F48E28;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 5px; /* Add margin for spacing between checkboxes */
+  transition: background-color 0.3s; /* Add transition for smooth color change */
+}
+
+.allergy-check:checked + label {
+  background: #F48E28;
+  color: #FFF;
+}
+
 .screen {
 	background-color: #ffffff;
 	display: flex;
@@ -641,6 +696,7 @@
 }
 
 .screen .allergy-bar {
+	 font-weight: 600;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -680,7 +736,6 @@
 	height: 68px;
 	top: 692px;
 	left: 450px;
-	box-shadow: 0px 4px 4px #00000040;
 }
 
 .screen .overlap {
