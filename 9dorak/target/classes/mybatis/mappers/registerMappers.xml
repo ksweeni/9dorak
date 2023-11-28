@@ -24,7 +24,7 @@
 		mem_id, mem_name,mem_gender, mem_bd, mem_email,
 		mem_phone, mem_pw, mem_code, mem_addr
 		) VALUES (
-		#{mem_id}, #{mem_name}, 'Male' , #{mem_bd}, #{mem_email},
+		#{mem_id}, #{mem_name}, '남자' , #{mem_bd}, #{mem_email},
 		#{mem_phone}, #{mem_pw}, #{mem_code}, #{mem_addr}
 		)
 	</insert>
