@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.firstzone.menu">
+
+	<select id="selectAll" resultType="provo">
+		select * from pro
+	</select>
+
+
+	<!-- <insert id="insertDoran" parameterType="doranvo">
+		INSERT INTO DORAN (
+		doran_no,
+		doran_title, doran_cont, doran_date, doran_image, doran_view, mem_id
+		)
+		VALUES (
+		#{doranNo}, #{doranTitle}, #{doranCont}, #{doranDate},
+		#{doranImage}, #{doranView}, #{memId}
+		)
+	</insert> -->
+
+
+	<!-- <update id="empUpdate" parameterType="empvo"> update employees set 
+		first_name= #{first_name}, last_name=#{last_name}, email=#{email}, phone_number=#{phone_number}, 
+		hire_date=#{hire_date}, job_id=#{job_id}, salary=#{salary}, commission_pct=#{commission_pct}, 
+		manager_id=#{manager_id}, department_id=#{department_id} where employee_id=#{employee_id} 
+		</update> <delete id="empDelete" parameterType="int"> delete from employees 
+		where employee_id = #{employee_id} </delete> <insert id="empInsert" parameterType="empvo"> 
+		insert into employees (first_name, last_name, email, phone_number, hire_date, 
+		job_id, salary, commission_pct, pic, manager_id, department_id, employee_id) 
+		values (#{first_name}, #{last_name}, #{email}, #{phone_number}, #{hire_date}, 
+		#{job_id}, #{salary}, #{commission_pct},#{pic}, <if test="manager_id==0"> 
+		null, </if> <if test="manager_id!=0"> #{manager_id}, </if> <if test="department_id==0"> 
+		null, </if> <if test="department_id!=0"> #{department_id}, </if> #{employee_id}) 
+		</insert> -->
+</mapper>
