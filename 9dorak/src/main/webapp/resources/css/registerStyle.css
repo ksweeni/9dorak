@@ -446,7 +446,7 @@
 
 .register .overlap-2 {
 	position: relative;
-	width: 200px;
+	width: 230px;
 	height: 63px;
 	background-color: #f48e28;
 	border-radius: 35px;
@@ -455,7 +455,7 @@
 
 .register .text-wrapper-8 {
 	position: absolute;
-	width: 76px;
+	width: 100px;
 	height: 30px;
 	top: 18px;
 	left: 62px;
@@ -470,7 +470,7 @@
 
 .register .p {
 	position: absolute;
-	width: 239px;
+	width: 280px;
 	top: 1320px;
 	left: 183px;
 	text-shadow: 0px 4px 4px #00000040;
@@ -501,20 +501,20 @@
 .register .overlap-group-wrapper {
 	position: absolute;
 	width: 716px;
-	height: 222px;
+/* 	height: 100px; */
 	top: 681px;
 	left: 0;
 }
 
 .register .overlap-3 {
 	position: relative;
-	height: 222px;
+/* 	height: 100px; */
 }
 
 .register .group-5 {
 	position: absolute;
 	width: 523px;
-	height: 222px;
+/* 	height: 100px; */
 	top: 0;
 	left: 0;
 }
