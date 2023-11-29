@@ -1,5 +1,27 @@
 @charset "UTF-8";
 
+/* "자세히 볼게요" 버튼 스타일 */
+.screen .frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F48E28;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.screen .frame:hover {
+  background-color: #FFA94D; /* 호버 시 frame의 배경색 변경 */
+}
+
+.screen .view-details-btn {
+  border: none;
+  background-color: transparent;
+  color: #FFF;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 .check-div {
   display: inline-block;
 }
@@ -32,14 +54,17 @@
 
 .screen {
 	background-color: #ffffff;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-content: center;
+    align-items: center;
 }
 
 .screen .div {
 	background-color: var(- -white);
+	top:180px;
 	overflow: hidden;
 	width: 1440px;
 	height: 4889px;
@@ -193,14 +218,10 @@
 	width: 155px;
 	top: 349px;
 	left: 35px;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
 	color: #000000;
-	font-size: var(- -h4-font-size);
 	text-align: center;
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
+	font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .screen .frame {
@@ -285,13 +306,9 @@
 	width: 301px;
 	top: 349px;
 	left: 26px;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
 	color: #000000;
-	font-size: var(- -h4-font-size);
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
+	font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .screen .img {
@@ -327,16 +344,12 @@
 
 .screen .text-wrapper-7 {
 	position: absolute;
+	font-weight: 600;
 	width: 246px;
 	top: 349px;
 	left: 26px;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
 	color: #000000;
-	font-size: var(- -h4-font-size);
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
+	font-size: 1.2rem;
 }
 
 .screen .text-wrapper-8 {
@@ -355,7 +368,7 @@
 }
 
 .screen .footer {
-	position: absolute;
+	position: sticky;
 	width: 1440px;
 	height: 429px;
 	top: 4460px;
@@ -970,7 +983,7 @@
 	align-items: flex-start;
 	gap: 92px;
 	position: absolute;
-	top: 909px;
+	top: 930px;
 	left: 1025px;
 }
 
@@ -986,14 +999,9 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
+	font-size:1.2rem;
 	color: #ffb673;
-	font-size: var(- -h4-font-size);
 	text-align: justify;
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
 }
 
 .screen .icons-options {
@@ -1011,21 +1019,15 @@
 }
 
 .screen .text-wrapper-20 {
+	font-size:1.2rem;
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
 	color: #ff6b00;
-	font-size: var(- -h4-font-size);
 	text-align: justify;
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
 }
 
 .screen .header {
-	position: absolute;
 	width: 1116px;
 	height: 56px;
 	top: 35px;
