@@ -9,7 +9,7 @@
 	</select>
 	
 	<!-- 좋아요 수 카운트 -->
-	<select id="selectLike" parameterType="doranvo" resultType="dlikevo">
+	<select id="selectLike" resultType="int">
 		select count(*) as dlikes from doranlike where doran_no in (select doran_no from doran)
 		group by(doran_no)
 	</select>

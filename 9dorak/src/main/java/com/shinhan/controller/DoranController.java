@@ -34,7 +34,7 @@ public class DoranController {
 		List<DoranVO> dlist = dService.selectAll();
 		List<DlikeVO> dlike=dService.selectLike();
 		model.addAttribute("dlist", dlist);
-//		System.out.println(dlike);
+		System.out.println(dlike);
 //		logger.info(dlike.toString());
 		return "doran/doran";
 	}

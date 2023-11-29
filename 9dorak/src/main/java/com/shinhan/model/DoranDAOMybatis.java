@@ -35,7 +35,7 @@ public class DoranDAOMybatis {
 	}
 
 	public List<DlikeVO> selectLike() {
-		logger.info("selectLike :  {}");
+//		logger.info("selectLike :  {}");
 		return sqlSession.selectList(NAMESPACE + "selectLike");
 	}
 
