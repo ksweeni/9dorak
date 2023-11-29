@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?e"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -372,7 +372,7 @@
 			<div class="menu-top-bar">
 				<div class="allergy-bar">
 
-				
+
 
 					<div class="check-div">
 						<input type="checkbox" class="allergy-check" id="cerealsCheckbox">
@@ -404,99 +404,101 @@
 						<label for="glutenCheckbox">🍤 해산물</label>
 					</div>
 				</div>
+
 				<div class="search">
 					<div class="overlap">
 						<div class="div-wrapper">
-							<div class="overlap-group-3">
-								<div class="text-wrapper-16">키워드를 검색하세요</div>
-							</div>
+						
+							<input class="overlap-group-3" type="text"
+								placeholder="  키워드를 검색하세요">
 						</div>
 						<div class="overlap-wrapper">
-							<div class="overlap-2">
-								<div class="text-wrapper-17">search</div>
-							</div>
+							<button class="overlap-2">search</button>
 						</div>
 					</div>
 				</div>
-				<div class="top-categories">
-					<div class="frame-2">
-						<div class="frame-3">
-							<img class="ellipse" src="img/ellipse-1-2.svg" />
-							<div class="text-wrapper-18">환경친화</div>
-						</div>
-						<div class="frame-4">
-							<img class="ellipse-2" src="img/ellipse-1-7.png" />
-							<div class="text-wrapper-18">저염</div>
-						</div>
-						<div class="frame-5">
-							<img class="ellipse-2" src="img/ellipse-1-4.png" />
-							<div class="text-wrapper-18">저당</div>
-						</div>
-						<div class="frame-6">
-							<img class="ellipse-2" src="img/ellipse-1-5.png" />
-							<div class="text-wrapper-18">소</div>
-						</div>
-					</div>
-					<div class="group-4">
-						<div class="overlap-group-4">
-							<div class="frame-7">
-								<img class="ellipse" src="img/ellipse-1.svg" />
-								<div class="text-wrapper-18">돼지</div>
-							</div>
-							<div class="frame-8">
-								<img class="ellipse-2" src="img/ellipse-1-6.png" />
-								<div class="text-wrapper-18">닭</div>
-							</div>
-							<div class="frame-9">
-								<img class="ellipse-2" src="img/ellipse-1-2.png" />
-								<div class="text-wrapper-18">생선</div>
-							</div>
-							<div class="frame-10">
-								<img class="ellipse-2" src="img/ellipse-1.png" />
-								<div class="text-wrapper-18">샐러드</div>
-							</div>
-							<div class="frame-11">
-								<img class="ellipse-2" src="img/ellipse-1-3.png" />
-								<div class="text-wrapper-18">과일</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<img class="line" src="img/line-5.svg" />
+
+
 			</div>
-			<div class="filter">
-				<div class="frame-12">
-					<div class="text-wrapper-19">신상품 순</div>
-					<img class="icons-options" src="img/options.svg" />
+			<div class="top-categories">
+				<div class="frame-2">
+					<div class="frame-3">
+						<img class="ellipse" src="img/ellipse-1-2.svg" />
+						<div class="text-wrapper-18">환경친화</div>
+					</div>
+					<div class="frame-4">
+						<img class="ellipse-2" src="img/ellipse-1-7.png" />
+						<div class="text-wrapper-18">저염</div>
+					</div>
+					<div class="frame-5">
+						<img class="ellipse-2" src="img/ellipse-1-4.png" />
+						<div class="text-wrapper-18">저당</div>
+					</div>
+					<div class="frame-6">
+						<img class="ellipse-2" src="img/ellipse-1-5.png" />
+						<div class="text-wrapper-18">소</div>
+					</div>
 				</div>
-				<div class="frame-13">
-					<div class="text-wrapper-20">인기순</div>
-					<img class="icons-options" src="img/options-2.svg" />
+				<div class="group-4">
+					<div class="overlap-group-4">
+						<div class="frame-7">
+							<img class="ellipse" src="img/ellipse-1.svg" />
+							<div class="text-wrapper-18">돼지</div>
+						</div>
+						<div class="frame-8">
+							<img class="ellipse-2" src="img/ellipse-1-6.png" />
+							<div class="text-wrapper-18">닭</div>
+						</div>
+						<div class="frame-9">
+							<img class="ellipse-2" src="img/ellipse-1-2.png" />
+							<div class="text-wrapper-18">생선</div>
+						</div>
+						<div class="frame-10">
+							<img class="ellipse-2" src="img/ellipse-1.png" />
+							<div class="text-wrapper-18">샐러드</div>
+						</div>
+						<div class="frame-11">
+							<img class="ellipse-2" src="img/ellipse-1-3.png" />
+							<div class="text-wrapper-18">과일</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<header class="header">
-				<div class="top-nav">
-					<div class="navbar">
-						<div class="text-wrapper-21">이벤트</div>
-						<div class="text-wrapper-22">메뉴보기</div>
-						<div class="text-wrapper-23">구독하기</div>
-						<div class="text-wrapper-24">요모조모</div>
-						<div class="text-wrapper-25">도란도란</div>
-					</div>
-					<img class="untitled-2" src="img/untitled-1-1.png" />
-					<div class="div-2">
-						<div class="text-wrapper-26">로그인 | 회원가입</div>
-						<div class="group-5">
-							<div class="overlap-group-5">
-								<img class="group-6" src="img/group-1.svg" />
-								<div class="ellipse-3"></div>
-								<div class="text-wrapper-27">2</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
+			<img class="line" src="img/line-5.svg" />
 		</div>
+		<div class="filter">
+			<div class="frame-12">
+				<div class="text-wrapper-19">신상품 순</div>
+				<img class="icons-options" src="img/options.svg" />
+			</div>
+			<div class="frame-13">
+				<div class="text-wrapper-20">인기순</div>
+				<img class="icons-options" src="img/options-2.svg" />
+			</div>
+		</div>
+		<header class="header">
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-wrapper-21">이벤트</div>
+					<div class="text-wrapper-22">메뉴보기</div>
+					<div class="text-wrapper-23">구독하기</div>
+					<div class="text-wrapper-24">요모조모</div>
+					<div class="text-wrapper-25">도란도란</div>
+				</div>
+				<img class="untitled-2" src="img/untitled-1-1.png" />
+				<div class="div-2">
+					<div class="text-wrapper-26">로그인 | 회원가입</div>
+					<div class="group-5">
+						<div class="overlap-group-5">
+							<img class="group-6" src="img/group-1.svg" />
+							<div class="ellipse-3"></div>
+							<div class="text-wrapper-27">2</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
 	</div>
 </body>
 </html>
