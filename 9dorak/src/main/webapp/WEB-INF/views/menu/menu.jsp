@@ -90,13 +90,13 @@
 									<img class="mask-group"
 										src="${cpath}/resources/images/food.png" />
 								</div>
-								<img class="vector" src="img/vector-9.png" />
+								
 								<div class="text-wrapper-4">$12.00</div>
 							</div>
 						</div>
 						<div class="enchilade">
 							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
+								<div class="text-wrapper-5">라자냐 오일 파스타 테스트 중</div>
 								<div class="frame">
 									<button class="view-details-btn">자세히 볼게요</button>
 								</div>
@@ -104,8 +104,8 @@
 									<img class="mask-group"
 										src="${cpath}/resources/images/food.png" />
 								</div>
-								<img class="img" src="img/vector-8.png" />
-								<div class="text-wrapper-6">$25.50</div>
+								
+								<div class="text-wrapper-6">$9000</div>
 							</div>
 						</div>
 						<div class="gyro-sandwhic">
@@ -134,7 +134,7 @@
 								<div class="mask-group-wrapper">
 									<img class="mask-group" src="img/mask-group-18.png" />
 								</div>
-								<img class="vector" src="img/vector-5.png" />
+							
 								<div class="text-wrapper-4">$12.00</div>
 							</div>
 						</div>
@@ -147,7 +147,7 @@
 								<div class="mask-group-wrapper">
 									<img class="mask-group" src="img/mask-group-20.png" />
 								</div>
-								<img class="img" src="img/vector-12.png" />
+								
 								<div class="text-wrapper-6">$25.50</div>
 							</div>
 						</div>
