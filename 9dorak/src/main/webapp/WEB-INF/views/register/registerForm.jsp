@@ -14,8 +14,8 @@ String contextPath = request.getContextPath();
 	rel="stylesheet" />
 <link rel="stylesheet" href="${cpath}/resources/css/registerStyle.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
-	type="text/css" />
+ <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
+	type="text/css" /> 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -27,7 +27,7 @@ String contextPath = request.getContextPath();
 		<span class="v39_195">이미 계정이 있나요? </span>
 	<!-- 	<span class="v39_196">로그인하기</span> -->
 	<!--지현이누나 로그인 페이지로   -->
-		<a class="v39_196" href="#">로그인하기</a>
+		<a class="v39_196" href="${cpath }/login/login.do">로그인하기</a>
 		<span
 			class="v32_437">아이를 위한 9일의 약속 <span style="color: orange;">구도락</span></span><span
 			class="v39_12">회원가입</span><span class="v39_13">구도락에 가입하고 다양한
@@ -85,7 +85,7 @@ String contextPath = request.getContextPath();
 			</div>
 			<div class="v39_87">
 				<!-- 				<div class="v39_90"></div> -->
-				<input class="v39_90" type="text" value="01096681635" id="mem_phone" name="mem_phone"> 
+				<input class="v39_90" type="text"  id="mem_phone" name="mem_phone" placeholder="01096681635"> 
 				<span class="v39_91">휴대폰</span>
 			</div>
 			<div class="v39_189">
@@ -95,23 +95,23 @@ String contextPath = request.getContextPath();
 			</div>
 			<div class="v39_186">
 			<!-- 	<div class="v39_187"></div> -->
-			<input class="v39_187" type="text" value="hcghcg17@naver.com" name="mem_email" id = "mem_email" >
+			<input class="v39_187" type="text"  name="mem_email" id = "mem_email" placeholder="hcghcg17@naver.com">
 				<span class="v39_188">이메일</span>
 			</div>
 			<div class="v39_183">
 				<!-- <div class="v39_184"></div> -->
-				<input class="v39_184" type="text"  id="mem_name" name="mem_name">
+				<input class="v39_184" type="text"  id="mem_name" name="mem_name" placeholder="홍찬기">
 				<span class="v39_185">이름</span>
 			</div>
 			<div class="v39_180">
 				<!-- <div class="v39_181"></div> -->
-				<input class="v39_181" type="text" value="abc111!" id= "mem_pw" name="mem_pw" >
+				<input class="v39_181" type="text" id= "mem_pw" name="mem_pw" placeholder="1234">
 				<span class="v39_182">비밀번호</span>
 			</div>
 			<div class="v39_177">
  			 	<div class="v39_178"></div> 
 				<span class="v39_179">아이디</span>
-				<input class="v39_178" type="text" value="aaaa" id="mem_id" name="mem_id">
+				<input class="v39_178" type="text"  id="mem_id" name="mem_id" placeholder="hcghcg17">
 			</div>
 		</div>
 		<input type="hidden" value="idUncheck" id="idCheckValue" />
