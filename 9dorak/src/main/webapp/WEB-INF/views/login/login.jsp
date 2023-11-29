@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,10 @@
 	<div class="login">
 		<div class="overlap-wrapper">
 			<div class="overlap">
-				<img class="element" src="img/9.png" />
+				<p class="element">
+					<span class="span">아이를 위한 9일의 약속<br /></span> <span
+						class="text-wrapper-8">구도락</span>
+				</p>
 				<div class="group">
 					<div class="div">
 						<div class="group-wrapper">
@@ -32,41 +35,40 @@
 								<div class="id">
 									<div class="text-wrapper-3">아이디</div>
 									<div class="overlap-group-wrapper">
-										<div class="overlap-group">
-											<div class="payments">abc</div>
-										</div>
-									</div>
-								</div>
-								<div class="password">
-									<div class="text-wrapper-4">비밀번호</div>
-									<div class="overlap-group-wrapper">
-										<div class="overlap-group">
-											<div class="payments-2">**********</div>
-										</div>
+										<input type="text" class="overlap-group" placeholder="9dorak">
 									</div>
 								</div>
 							</div>
-							<div class="login-button">
-								<div class="div-wrapper">
-									<div class="text-wrapper-5">로그인 하기</div>
+							<div class="password">
+								<div class="text-wrapper-4">비밀번호</div>
+								<div class="overlap-group-wrapper">
+									<input type="text" class="overlap-group"
+										placeholder="**********">
 								</div>
-							</div>
-							<div class="frame">
-								<p class="p">
-									<span class="span">아이디가 없으신가요 ?&nbsp;&nbsp;</span> <span
-										class="text-wrapper-6">&nbsp;&nbsp;</span> <span
-										class="text-wrapper-7">회원가입 하기</span>
-								</p>
-								<p class="div-2">
-									<span class="span">기억이 나지 않나요 ?&nbsp;&nbsp;</span> <span
-										class="text-wrapper-7">아이디 /비밀번호 찾기</span>
-								</p>
 							</div>
 						</div>
+					</div>
+					<div class="login-button">
+						<div class="div-wrapper">
+							<div class="text-wrapper-5">로그인 하기</div>
+						</div>
+					</div>
+					<div class="frame">
+						<p class="p">
+							<span class="span">아이디가 없으신가요 ?&nbsp;&nbsp;</span> <span
+								class="text-wrapper-6">&nbsp;&nbsp;</span> <span
+								class="text-wrapper-7">회원가입 하기</span>
+						</p>
+						<p class="div-2">
+							<span class="span">기억이 나지 않나요 ?&nbsp;&nbsp;</span> <span
+								class="text-wrapper-7">아이디 /비밀번호 찾기</span>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	</div>
 	</div>
 </body>
 </html>
