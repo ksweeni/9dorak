@@ -49,27 +49,28 @@
 						</div>
 					</div>
 					<form method="get">
-					<div class="login-button">
-						<button class="div-wrapper" type="submit">
-							<div class="text-wrapper-5">로그인 하기</div>
-						</button>
+						<div class="login-button">
+							<button class="div-wrapper" type="submit">
+								<div class="text-wrapper-5">로그인 하기</div>
+							</button>
 						</div>
-					</form>	
-					</div>
-					<div class="frame">
-						<p class="p">
-							<span class="span">아이디가 없으신가요 ?&nbsp;&nbsp;</span> <span
-								class="text-wrapper-6">&nbsp;&nbsp;</span> <span
-								class="text-wrapper-7">회원가입 하기</span>
-						</p>
-						<p class="div-2">
-							<span class="span">기억이 나지 않나요 ?&nbsp;&nbsp;</span> <span
-								class="text-wrapper-7">아이디 /비밀번호 찾기</span>
-						</p>
-					</div>
+					</form>
+				</div>
+				<div class="frame">
+					<p class="p">
+						<span class="span">아이디가 없으신가요 ?&nbsp;&nbsp;</span> <span
+							class="text-wrapper-6">&nbsp;&nbsp;</span>
+						<button onclick="location.href='../register/registerType.do'" type="submit" class="text-wrapper-7">회원가입 하기</button>
+					</p>
+					<p class="div-2">
+						<span class="span">기억이 나지 않나요 ?&nbsp;&nbsp;</span>
+						<button type="submit" class="text-wrapper-9">아이디</button>
+						<button type="submit" class="text-wrapper-10">/ 비밀번호 찾기</button>
+					</p>
 				</div>
 			</div>
 		</div>
+	</div>
 </body>
 </html>
 
