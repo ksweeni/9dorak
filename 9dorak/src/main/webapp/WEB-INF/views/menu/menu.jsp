@@ -11,6 +11,11 @@
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+	var message = "${mlist}";
+	if (message != "")
+		alert(message);
+</script>
 </head>
 <body>
 	<div class="screen">
@@ -20,10 +25,11 @@
 					<div class="page">
 						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
 							viewBox="0 0 30 30" fill="none">
-						<path d="M18.95 9.2625L13.225 15L18.95 20.7375L17.1875 22.5L9.68745 15L17.1875 7.5L18.95 9.2625Z"
+						<path
+								d="M18.95 9.2625L13.225 15L18.95 20.7375L17.1875 22.5L9.68745 15L17.1875 7.5L18.95 9.2625Z"
 								fill="#C4CDD5" />
 						</svg>
-						
+
 					</div>
 					<div class="page-active-wrapper">
 						<div class="page-active">
@@ -362,13 +368,41 @@
 					</div>
 				</div>
 			</footer>
+			<!-- allergy bar -->
 			<div class="menu-top-bar">
 				<div class="allergy-bar">
-					<img class="image" src="img/image-2.png" /> <img class="image-2"
-						src="img/image.png" /> <img class="image-2" src="img/image-6.png" />
-					<img class="image-2" src="img/image-5.png" /> <img class="image-2"
-						src="img/image-3.png" /> <img class="image-3"
-						src="img/image-4.png" />
+
+				
+
+					<div class="check-div">
+						<input type="checkbox" class="allergy-check" id="cerealsCheckbox">
+						<label for="cerealsCheckbox">🌾 곡류</label>
+					</div>
+
+					<div class="check-div">
+						<input type="checkbox" class="allergy-check" id="nutsCheckbox">
+						<label for="nutsCheckbox">🥚 난류</label>
+					</div>
+
+					<div class="check-div">
+						<input type="checkbox" class="allergy-check" id="dairyCheckbox">
+						<label for="dairyCheckbox">🍼 우유</label>
+					</div>
+
+					<div class="check-div">
+						<input type="checkbox" class="allergy-check" id="seafoodCheckbox">
+						<label for="seafoodCheckbox">🍎 과일</label>
+					</div>
+
+					<div class="check-div">
+						<input type="checkbox" class="allergy-check" id="soyCheckbox">
+						<label for="soyCheckbox">🥜 견과류</label>
+					</div>
+
+					<div class="check-div">
+						<input type="checkbox" class="allergy-check" id="glutenCheckbox">
+						<label for="glutenCheckbox">🍤 해산물</label>
+					</div>
 				</div>
 				<div class="search">
 					<div class="overlap">
