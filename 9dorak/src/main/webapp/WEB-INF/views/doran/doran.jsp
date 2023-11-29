@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/doranStyle.css"
 	type="text/css" />
@@ -85,16 +85,18 @@
 			<div class="overlap-3">
 				<div class="group-6">
 					<div class="group-wrapper">
-							<textarea class="doran-context">내용을 자유롭게 입력하세요!</textarea>
-						<div class="group-7">
-							<button type="submit" class="button-upload">
-								<div class="text-wrapper-16">업로드</div>
-								<img class="carbon-send-alt"
-										src="img/carbon-send-alt-filled.svg" />
-							</button>
+						<div class="doran-context">
+							<textarea placeholder="내용을 자유롭게 입력하세요!"></textarea>
 						</div>
-					</div>
-				</div>
+						<div class="upload-button-wrap">
+							<div class="doran-upload-media">
+								<button class="doran-button-upload-photo">사진</button>
+								<button class="doran-button-upload-video">비디오</button>
+							</div>
+							<button type="submit" class="doran-button-upload">업로드</button>
+						</div>
+					</div><!-- group-wrapper -->
+				</div> <!-- //group-6 -->
 			</div>
 			
 			<div class="viewsort">
@@ -176,7 +178,10 @@
 				<div class="group-16">
 					<div class="group-17">
 						<div class="div-2">
-							<img class="profile" src="img/profile.png" />
+							<div class="doran-profile">
+								<div class="doran-profile-photo"></div>
+								<button class="doran-button-frofile-setting"><span>프로필 설정하기</span></button>
+							</div>
 						</div>
 					</div>
 				</div>
