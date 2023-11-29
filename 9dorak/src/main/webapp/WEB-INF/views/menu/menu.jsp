@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css"
 	type="text/css" />
