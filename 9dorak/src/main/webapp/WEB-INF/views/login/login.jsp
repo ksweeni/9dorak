@@ -48,10 +48,13 @@
 							</div>
 						</div>
 					</div>
+					<form method="get">
 					<div class="login-button">
-						<div class="div-wrapper">
+						<button class="div-wrapper" type="submit">
 							<div class="text-wrapper-5">로그인 하기</div>
+						</button>
 						</div>
+					</form>	
 					</div>
 					<div class="frame">
 						<p class="p">
@@ -67,9 +70,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	</div>
-	</div>
 </body>
 </html>
 

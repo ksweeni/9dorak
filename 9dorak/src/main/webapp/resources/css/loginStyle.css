@@ -11,13 +11,13 @@
 .login .overlap-wrapper {
   background-color: #ffffff;
   width: 1440px;
-  height: 2000px;
+  height: 1018px;
 }
 
 .login .overlap {
   position: relative;
   width: 1434px;
-  height: 2000px;
+  height: 1018px;
   left: 6px;
   background-image: url(./img/rectangle-1.svg);
   background-size: 100% 100%;
@@ -64,6 +64,7 @@
   height: 3px;
   top: 134px;
   left: 10px;
+  background: #000;
 }
 
 .login .text-wrapper {
@@ -209,24 +210,26 @@
   width: 245px;
   height: 63px;
   top: 430px;
-  left: 32px;
+  left: 40px;
+  border: none;
 }
 
 .login .div-wrapper {
   position: absolute;
-  width: 243px;
+  width: 190px;
   height: 63px;
   background-color: #f48e28;
   border-radius: 35px;
   box-shadow: 0px 10px 30px #c4501182;
-  left: 13px;
+  left: 30px;
+  border: none;
 }
 
 .login .text-wrapper-5 {
   position: absolute;
   width: 124px;
   top: 17px;
-  left: 69px;
+  left: 35px;
   font-family: "Poppins-SemiBold", Helvetica;
   font-weight: 600;
   color: #ffffff;
@@ -241,8 +244,8 @@
   align-items: center;
   gap: 3px;
   position: absolute;
-  top: 530px;
-  left: 0;
+  top: 770px;
+  left: 530px;
 }
 
 .login .p {
@@ -286,9 +289,10 @@
   letter-spacing: 0.48px;
   line-height: normal;
 }
+
 .login .element {
 	position: absolute;
-	top: 100px;
+ 	top: 20px;
 	left: 91px;
 	font-family: "Poppins-SemiBold", Helvetica;
 	font-weight: 600;
@@ -296,7 +300,9 @@
 	font-size: 64px;
 	letter-spacing: 1.28px;
 	line-height: normal;
+	width: 700px;
 }
+
 .login .text-wrapper-8 {
 	color: #f48e28;
 }
