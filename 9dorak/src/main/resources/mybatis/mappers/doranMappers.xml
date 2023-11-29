@@ -7,7 +7,12 @@
 	<select id="selectAll" resultType="doranvo">
 		select * from doran
 	</select>
-
+	
+	<!-- 좋아요 수 카운트 -->
+	<select id="selectLike" resultType="int">
+		select count(*) as dlikes from doranlike where doran_no in (select doran_no from doran)
+		group by(doran_no)
+	</select>
 
 	<insert id="insertDoran" parameterType="doranvo">
 		INSERT INTO DORAN (

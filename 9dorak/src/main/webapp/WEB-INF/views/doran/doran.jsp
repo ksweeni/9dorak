@@ -16,6 +16,7 @@
 	var message = "${dlist}";
 	if (message != "")
 		alert(message);
+	console.log(message);
 </script>
 <body>
 	<div class="screen">
