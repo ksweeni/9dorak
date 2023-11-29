@@ -14,6 +14,7 @@
 		<typeAlias type="com.shinhan.dto.CommentVO" alias="commentvo" />
 		<typeAlias type="com.shinhan.dto.DoranlikeVO" alias="doranlikevo" />
 		<typeAlias type="com.shinhan.dto.DlikeVO" alias="dlikevo" />
+		<typeAlias type="com.shinhan.dto.EventVO" alias="eventvo" />
 	</typeAliases>
 </configuration>
 
