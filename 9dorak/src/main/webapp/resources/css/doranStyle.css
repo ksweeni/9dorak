@@ -372,8 +372,8 @@
   position: absolute;
   width: 224px;
   height: 29px;
-  top: 465px;
-  left: 12px;
+  top: 500px;
+  left: 370px;
 }
 
 .screen .image {
@@ -545,10 +545,14 @@
 .screen .group-wrapper {
   position: relative;
   width: 712px;
-  height: 301px;
+  height: 250px;
   left: -3px;
   background-image: url(./img/group-13.png);
   background-size: 100% 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #FFC670C3;
+  border-radius: 10px 10px 0px 0px;
+  background: #FFF;
 }
 
 .screen .group-7 {
@@ -559,23 +563,25 @@
   left: 564px;
 }
 
-.screen .overlap-group-2 {
-  position: relative;
+.screen .button-upload {
+  position: absolute;
+  top: -130px;
+  left: 0px;
   width: 114px;
   height: 36px;
   background-color: #ff8c23c3;
   border-radius: 10px;
+  border: none;
 }
 
 .screen .text-wrapper-16 {
   position: absolute;
-  width: 59px;
-  top: 7px;
+  top: 6px;
   left: 48px;
   font-family: "Barlow-ExtraBold", Helvetica;
   font-weight: 800;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 1.1rem;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -673,6 +679,7 @@
   top: 0;
   left: 0;
   background-color: #f48e28;
+  border-radius: 0px 30px 30px 30px;
 }
 
 .screen .frame-wrapper {
@@ -732,11 +739,10 @@
 .screen .text-wrapper-18 {
   position: relative;
   width: fit-content;
-  text-shadow: 0px 4px 4px #00000040;
-  font-family: "Inter-SemiBold", Helvetica;
-  font-weight: 600;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
   color: #ffffffe6;
-  font-size: 20px;
+  font-size: 1.2rem;
   letter-spacing: 0.6px;
   line-height: normal;
   white-space: nowrap;
@@ -767,7 +773,7 @@
   font-family: "Inter-Medium", Helvetica;
   font-weight: 500;
   color: #ffffffe6;
-  font-size: 20px;
+  font-size: 1.2rem;
   letter-spacing: 0.6px;
   line-height: normal;
   white-space: nowrap;
@@ -777,11 +783,11 @@
   position: absolute;
   width: 126px;
   top: 39px;
-  left: 106px;
+  left: 89px;
   font-family: "Inter-SemiBold", Helvetica;
   font-weight: 600;
   color: #ffffff;
-  font-size: 32px;
+  font-size: 1.7rem;
   letter-spacing: 0;
   line-height: normal;
 }
@@ -861,6 +867,7 @@
   left: 0;
   background-color: #ff8c23c3;
   border-radius: 10px;
+  border: none;
 }
 
 .screen .group-19 {
@@ -882,12 +889,12 @@
 .screen .text-wrapper-22 {
   position: absolute;
   width: 96px;
-  top: 8px;
+  top: 0px;
   left: 0;
   font-family: "Barlow-ExtraBold", Helvetica;
   font-weight: 800;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 1.1rem;
   letter-spacing: 0;
   line-height: normal;
 }
@@ -1056,4 +1063,14 @@
   letter-spacing: var(--p2-letter-spacing);
   line-height: var(--p2-line-height);
   font-style: var(--p2-font-style);
+}
+
+.doran-context{
+	width: 600px;
+	height: 126px;
+	flex-shrink: 0;
+	border-radius: 10px;
+	background: #F9F9F9;
+	margin-top: 10px;
+	margin-left: 80px;
 }
