@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.shinhan.dto.DlikeVO;
 import com.shinhan.dto.DoranVO;
 
 
@@ -25,11 +26,17 @@ public class DoranDAOMybatis {
 		logger.info("selectAll :  {}", dlist.size());
 		return dlist;
 	}
+	
 
 	public int insertDoran(DoranVO doran) {
 		System.out.println("inserting :"+doran);
 		return sqlSession.insert(NAMESPACE + "insertDoran", doran);
 		
+	}
+
+	public List<DlikeVO> selectLike() {
+		logger.info("selectLike :  {}");
+		return sqlSession.selectList(NAMESPACE + "selectLike");
 	}
 
 //	public BoardVO selectById(int bno) {
