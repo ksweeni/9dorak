@@ -15,9 +15,11 @@
 <script>
 	var message = "${dlist}";
 	var dlike = "${dlike}";
+	var dcomment = "${dcomment}";
 	
 	console.log(message);
-	console.log(dlike);
+	console.log("dlike ", dlike);
+	console.log("dcomment", dcomment);
 </script>
 <body>
 	<div class="screen">

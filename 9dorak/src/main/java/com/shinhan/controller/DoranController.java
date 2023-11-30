@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DlikeVO;
 import com.shinhan.dto.DoranVO;
 
@@ -32,11 +33,14 @@ public class DoranController {
 	@GetMapping("doran.do")
 	public String doran(Model model) {
 		List<DoranVO> dlist = dService.selectAll();
-		List<DlikeVO> dlike=dService.selectLike();
+		List<DlikeVO> dlike = dService.selectLike();
+		List<DCommentVO> dcomment = dService.selectComment();
 		model.addAttribute("dlist", dlist);
 		model.addAttribute("dlike", dlike);
-		System.out.println(dlike);
-//		logger.info(dlike.toString());
+		model.addAttribute("dcomment", dcomment);
+		System.out.println("좋아요 : "+dlike);
+		System.out.println("댓글 수 : "+dcomment);
+
 		return "doran/doran";
 	}
 }

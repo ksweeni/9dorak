@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DlikeVO;
 import com.shinhan.dto.DoranVO;
 
@@ -26,7 +27,10 @@ public class DoranService {
 
 	public List<DlikeVO> selectLike() {
 		return dao.selectLike();
-		
+	}
+	
+	public List<DCommentVO> selectComment(){
+		return dao.selectComment();
 	}
 
 	
