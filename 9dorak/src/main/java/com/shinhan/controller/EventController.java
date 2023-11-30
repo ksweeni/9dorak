@@ -21,10 +21,31 @@ public class EventController {
 
 	private static final Logger logger = LoggerFactory.getLogger(EventController.class);
 
-	@GetMapping("event.do")
-	public String event(Model model) {
+	@GetMapping("freelunchbox.do")
+	public String event1(Model model) {
 		List<EventVO> elist = eService.selectAll();
 		model.addAttribute("elist", elist);
-		return "event/event";
+		return "event/freelunchbox";
+	}
+	
+	@GetMapping("makelunchbox.do")
+	public String event2(Model model) {
+		List<EventVO> elist = eService.selectAll();
+		model.addAttribute("elist", elist);
+		return "event/makelunchbox";
+	}
+	
+	@GetMapping("friendreco.do")
+	public String event3(Model model) {
+		List<EventVO> elist = eService.selectAll();
+		model.addAttribute("elist", elist);
+		return "event/friendreco";
+	}
+	
+	@GetMapping("friendadd.do")
+	public String event4(Model model) {
+		List<EventVO> elist = eService.selectAll();
+		model.addAttribute("elist", elist);
+		return "event/friendadd";
 	}
 }

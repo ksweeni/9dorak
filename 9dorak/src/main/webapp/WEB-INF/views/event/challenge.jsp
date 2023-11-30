@@ -863,10 +863,10 @@
 				<div class="date-juM" id="21:63"></div>
 				<div class="frame-375386-fo1" id="21:64">
 					<p class="aug-cCT" id="21:65">챌린지 ZONE</p>
-					<p class="aug-9CP" id="21:66">도시락 무료 체험</p>
-					<p class="sep-V1M" id="21:67">도시락 만들9</p>
-					<p class="sep-CRZ" id="21:68">친구 추천</p>
-					<p class="sep-jgP" id="21:69">친구 추가</p>
+					<a class="aug-9CP" id="21:66" href="${pageContext.request.contextPath}/event/freelunchbox.do">도시락 무료 체험</a>
+					<a class="sep-V1M" id="21:67" href="${pageContext.request.contextPath}/event/makelunchbox.do">도시락 만들9</a>
+					<a class="sep-CRZ" id="21:68" href="${pageContext.request.contextPath}/event/friendreco.do">친구 추천</a>
+					<a class="sep-jgP" id="21:69" href="${pageContext.request.contextPath}/event/friendadd.do">친구 추가</a>
 				</div>
 			</div>
 			<div class="group-408-GwD" id="21:70">
