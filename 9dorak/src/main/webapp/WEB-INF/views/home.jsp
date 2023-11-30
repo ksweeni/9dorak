@@ -27,6 +27,6 @@
     <a href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
     <a href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
     <a href="${pageContext.request.contextPath}/login/login.do">로그인</a>
-    <a href="${pageContext.request.contextPath}/challenge/challenge.do">챌린지</a>
+    <a href="${pageContext.request.contextPath}/challenge/challenge.do">이벤트</a>
 </body>
 </html>
