@@ -16,7 +16,7 @@
 	var message = "${dlist}";
 	var dlike = "${dlike}";
 	var dcomment = "${dcomment}";
-	
+
 	console.log(message);
 	console.log("dlike ", dlike);
 	console.log("dcomment", dcomment);
@@ -84,7 +84,7 @@
 						</div>
 					</div>
 				</footer>
-				
+
 			</div>
 			<div class="overlap-3">
 				<div class="group-6">
@@ -99,57 +99,57 @@
 							</div>
 							<button type="submit" class="doran-button-upload">업로드</button>
 						</div>
-					</div><!-- group-wrapper -->
-				</div> <!-- //group-6 -->
+					</div>
+					<!-- group-wrapper -->
+				</div>
+				<!-- //group-6 -->
 			</div>
-			
-			<div class="viewsort">
-				
-			</div>
-			
+
+			<div class="viewsort"></div>
+
 			<div class="group-4">
-                    <!--<c:forEach items="${dlist}" var="doran">
-                        <tr>
-                            <td>${doran.mem_id}</td>
-                            <td>${doran.doran_view}</td>
-                            <td>${doran.doran_title}</td>
-                            <td>${doran.doran_cont}</td>
-                            <td>${doran.doran_date}</td>
-                            <br />
-                        </tr>
-                    </c:forEach> -->
-                    <c:forEach items="${dlist}" var="doran">
-                        <div class="div-wrapper">
-                            <div class="overlap-group-2">
-                                <img class="unsplash" src="img/unsplash-blihvfxbi9s-3.svg" />
-                                <p class="p">${doran.doran_cont}</p>
-                                <div class="group-5">
-                                    <img class="image" src="img/image.svg" />
-                                    <div class="text-wrapper-10">23.5K</div>
-                                    <div class="text-wrapper-11">3.5</div>
-                                    <div class="text-wrapper-12">${doran.doran_view}K</div>
-                                    <img class="majesticons-comment"
-                                        src="img/majesticons-comment-text-3.svg" /> <img
-                                        class="emojione-star" src="img/emojione-star.svg" />
-                                </div>
-                                <div class="group-6">
-                                    <img class="unsplash-ykc-qhmjk"
-                                        src="img/unsplash-y3kc-7qhmjk-2.svg" />
-                                    <div class="frame">
-                                        <div class="frame-2">
-                                            <div class="text-wrapper-13">${doran.mem_id}</div>
-                                            <div class="text-wrapper-14">낑깡</div>
-                                        </div>
-                                        <div class="group-7">
-                                            <div class="text-wrapper-15">8분전</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-            </div>
-			
+				<c:forEach items="${dlist}" var="doran" varStatus="loop">
+					<tr>
+						<td>${doran.mem_id}</td>
+						<td>${doran.doran_title}</td>
+						<td>${doran.doran_cont}</td>
+						<td>${doran.doran_date}</td>
+					</tr>
+					<h3>좋아요 ${dlike[loop.index]}개 댓글수 ${dcomment[loop.index]}개 조회수 ${doran.doran_view}개</td></h3>
+				</c:forEach>
+				
+				<c:forEach items="${dlist}" var="doran">
+					<div class="div-wrapper">
+						<div class="overlap-group-2">
+							<img class="unsplash" src="img/unsplash-blihvfxbi9s-3.svg" />
+							<p class="p">${doran.doran_cont}</p>
+							<div class="group-5">
+								<img class="image" src="img/image.svg" />
+								<div class="text-wrapper-10">23.5K</div>
+								<div class="text-wrapper-11">3.5</div>
+								<div class="text-wrapper-12">${doran.doran_view}K</div>
+								<img class="majesticons-comment"
+									src="img/majesticons-comment-text-3.svg" /> <img
+									class="emojione-star" src="img/emojione-star.svg" />
+							</div>
+							<div class="group-6">
+								<img class="unsplash-ykc-qhmjk"
+									src="img/unsplash-y3kc-7qhmjk-2.svg" />
+								<div class="frame">
+									<div class="frame-2">
+										<div class="text-wrapper-13">${doran.mem_id}</div>
+										<div class="text-wrapper-14">낑깡</div>
+									</div>
+									<div class="group-7">
+										<div class="text-wrapper-15">8분전</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+
 			<div class="group-12">
 				<div class="group-13">
 					<div class="div-2">
@@ -184,7 +184,9 @@
 						<div class="div-2">
 							<div class="doran-profile">
 								<div class="doran-profile-photo"></div>
-								<button class="doran-button-frofile-setting"><span>프로필 설정하기</span></button>
+								<button class="doran-button-frofile-setting">
+									<span>프로필 설정하기</span>
+								</button>
 							</div>
 						</div>
 					</div>
