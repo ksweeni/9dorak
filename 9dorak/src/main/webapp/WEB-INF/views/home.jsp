@@ -28,5 +28,6 @@
     <a href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
     <a href="${pageContext.request.contextPath}/login/login.do">로그인</a>
     <a href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+    <a href="${pageContext.request.contextPath}/my/myPage.do">마이페이지</a>
 </body>
 </html>

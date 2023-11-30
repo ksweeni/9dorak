@@ -15,6 +15,7 @@
 		<typeAlias type="com.shinhan.dto.DoranlikeVO" alias="doranlikevo" />
 		<typeAlias type="com.shinhan.dto.DlikeVO" alias="dlikevo" />
 		<typeAlias type="com.shinhan.dto.ChallengeVO" alias="challengevo" />
+		<typeAlias type="com.shinhan.dto.EventVO" alias="eventvo" />
 	</typeAliases>
 </configuration>
 
