@@ -14,9 +14,10 @@
 </head>
 <script>
 	var message = "${dlist}";
-	if (message != "")
-		alert(message);
+	var dlike = "${dlike}";
+	
 	console.log(message);
+	console.log(dlike);
 </script>
 <body>
 	<div class="screen">

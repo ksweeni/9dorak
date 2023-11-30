@@ -1,8 +1,5 @@
 package com.shinhan.dto;
 
-import java.sql.Date;
-import java.util.ArrayList;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
