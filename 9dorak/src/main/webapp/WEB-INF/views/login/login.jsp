@@ -12,16 +12,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script>
-        function showLoginError() {
-            var errorMessage = "${loginErrorMessage}";
+<script>
+	function showLoginError() {
+		var errorMessage = "${loginErrorMessage}";
 
-            if (errorMessage !== "") {
-                alert(errorMessage);
-            }
-        }
-        window.onload = showLoginError;
-    </script>
+		if (errorMessage !== "") {
+			alert(errorMessage);
+		}
+	}
+	window.onload = showLoginError;
+</script>
 
 </head>
 <body>
@@ -77,8 +77,9 @@
 						</p>
 						<p class="div-2">
 							<span class="span">기억이 나지 않나요 ?&nbsp;&nbsp;</span>
-							<button type="submit" class="text-wrapper-9">아이디</button>
-							<button type="submit" class="text-wrapper-10">/ 비밀번호 찾기</button>
+							<button
+								onclick="location.href='${pageContext.request.contextPath}/login/findIdForm.do'"
+								type="submit" class="text-wrapper-9">아이디 / 비밀번호 찾기</button>
 						</p>
 					</div>
 				</div>

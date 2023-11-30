@@ -33,7 +33,7 @@ public class LoginController {
 
 	@PostMapping("login.do")
 	public String login(@RequestParam String mem_id, @RequestParam String mem_pw, HttpSession session, Model model) {
-		
+
 		MemVO loginmem = lservice.login(mem_id, mem_pw);
 
 		if (loginmem != null) {
@@ -45,4 +45,20 @@ public class LoginController {
 			return "login/login"; // 다시 로그인 페이지로
 		}
 	}
+
+	@GetMapping("findIdForm.do")
+	public String findIdForm() {
+		return "login/findID";
+	}
+
+	/*
+	 * @PostMapping("findId.do") public String findId(@RequestParam String email,
+	 * Model model) { 
+	 * foundId = lservice.findIdByEmail(email);
+	 * 
+	 * if (foundId != null) { model.addAttribute("foundId", foundId); } else {
+	 * model.addAttribute("findIdErrorMessage", "해당하는 아이디가 없습니다."); }
+	 * 
+	 * return "login/findIdResult"; // 결과를 보여줄 페이지로 이동 }
+	 */
 }
