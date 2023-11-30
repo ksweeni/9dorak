@@ -19,6 +19,7 @@ String contextPath = request.getContextPath();
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <title>registerForm</title>
 </head>
 <body>
@@ -43,7 +44,7 @@ String contextPath = request.getContextPath();
 							<div class="ei39_16_642_215"></div>
 							<div class="ei39_16_642_216"></div>
 							<div class="ei39_16_642_218"></div>
-							<span class="ei39_16_642_220">3</span>
+<!-- 							<span class="ei39_16_642_220">3</span> -->
 						</div>
 					</div>
 					<div class="e39_17"></div>
@@ -116,7 +117,9 @@ String contextPath = request.getContextPath();
 		</div>
 		<input type="hidden" value="idUncheck" id="idCheckValue" />
 		</form>
+
 	</div>
+
 </body>
 <script type="text/javascript">
 	$("#idCheck").on("click", function(e) {

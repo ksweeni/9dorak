@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,11 +72,12 @@ public class RegisterController {
 	}
 
 	@PostMapping("register.do")
-	public String register(Model model , MemVO mem) {
+	public String register(Model model , MemVO mem , HttpSession session) {
 //		System.out.println("register.do");
 		int result = rService.insertMember(mem);
 		// 데이터까지 들어갔고 세션에 저장해서 main 페이지에 보내주자  그럼 회원가입은 끝 (이메일 알림 생각해야함)
-		return "";
+		session.setAttribute("login_id", mem.getMem_id());
+		return "home";
 	}
 
 }

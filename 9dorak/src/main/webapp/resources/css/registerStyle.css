@@ -59,10 +59,10 @@ body {
 
 .v32_437 {
 	width: 555px;
-	color: url("../images/v32_437.png");
+/* 	color: url("../images/v32_437.png"); */
 	position: absolute;
 	top: 183px;
-	left: 356px;
+	left: 250px;
 	font-family: Poppins;
 	font-weight: SemiBold;
 	font-size: 53px;
