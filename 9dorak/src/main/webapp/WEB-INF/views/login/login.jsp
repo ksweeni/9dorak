@@ -56,7 +56,7 @@
 								<div class="password">
 									<div class="text-wrapper-4">비밀번호</div>
 									<div class="overlap-group-wrapper">
-										<input type="text" name="mem_pw" class="overlap-group"
+										<input type="password" name="mem_pw" class="overlap-group"
 											placeholder="**********">
 									</div>
 								</div>
