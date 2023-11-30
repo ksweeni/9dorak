@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
@@ -14,7 +13,6 @@
 		<org.aspectj-version>1.9.6</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
-
 	<!-- 원격 저장소를 추가 -->
 	<repositories>
 		<repository>
@@ -22,12 +20,12 @@
 			<url>com.oracle/ojdbc6/12.1.0.1-atlassian-hosted</url>
 		</repository>
 	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>5.3.11</version> <!-- 실제 사용하는 버전으로 변경해야 합니다. -->
+			<version>5.3.11</version>
+			<!-- 실제 사용하는 버전으로 변경해야 합니다. -->
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -35,7 +33,6 @@
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
@@ -105,27 +102,24 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId><!-- Runtime 시 weaving되면서 메서드 시간을 
-				trace해준다. -->
+			<artifactId>aspectjweaver</artifactId>
+			<!-- Runtime 시 weaving되면서 메서드 시간을 trace해준다. -->
 			<version>${org.aspectj-version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjtools</artifactId><!-- Aspectj 컴파일 -->
+			<artifactId>aspectjtools</artifactId>
+			<!-- Aspectj 컴파일 -->
 			<version>${org.aspectj-version}</version>
 		</dependency>
-
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -168,14 +162,12 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
-
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -194,7 +186,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -237,6 +228,7 @@
 					<showDeprecation>true</showDeprecation>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
