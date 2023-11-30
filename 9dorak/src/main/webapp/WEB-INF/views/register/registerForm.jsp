@@ -1,39 +1,122 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
 <%
-request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8");
+String contextPath = request.getContextPath();
 %>
-
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet" href="${cpath}/resources/css/registerStyle.css"
+	type="text/css" />
+ <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
+	type="text/css" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<title>registerForm</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath }/register/register.do" method="post">
-		아이디 : <input type="text" value="aaaa" id="mem_id" name ="mem_id"/><button id="idCheck">중복확인</button><br />
-		이름 : <input type="text" value="홍찬기" id="mem_name" name ="mem_name"/> <br />
-		 
-		비밀번호 : <input type="text" value="abc111!"  name ="mem_pw"/><br /> 
-		
-		이메일 : <input type="text" value="hcghcg17@naver.com" name ="mem_email"/> <br />
-		 
-		생년월일 : <input type="date" value="1997-05-05" name ="mem_bd"/> <br /> 
-		
-		전화번호 : <input type="text" value="01096681635" name ="mem_phone" > <br /><br />
-		<h>추천인 입력</h> <br />
-		추천인 코드 :<input type="text" placeholder="추천인 코드" name = "mem_code" id="mem_code" value="test111"/> <br /> 
+	<div class="v38_189">
+		<div class="v36_462"></div>
+		<span class="v39_195">이미 계정이 있나요? </span>
+	<!-- 	<span class="v39_196">로그인하기</span> -->
+	<!--지현이누나 로그인 페이지로   -->
+		<a class="v39_196" href="${cpath }/login/login.do">로그인하기</a>
+		<span
+			class="v32_437">아이를 위한 9일의 약속 <span style="color: orange;">구도락</span></span><span
+			class="v39_12">회원가입</span><span class="v39_13">구도락에 가입하고 다양한
+			도시락을 체험해보세요!</span>
+		<div class="v39_14">
+			<!-- 동그라미 부분 -->
+			<div class=e39_14>
+				<div class=e39_15>
+					<div class=e39_16>
+						<div class=ei39_16_642_212>
+							<div class="ei39_16_642_213"></div>
+							<div class="ei39_16_642_214"></div>
+							<div class="ei39_16_642_215"></div>
+							<div class="ei39_16_642_216"></div>
+							<div class="ei39_16_642_218"></div>
+							<span class="ei39_16_642_220">3</span>
+						</div>
+					</div>
+					<div class="e39_17"></div>
+				</div>
+			</div>
+		</div>
+		<form action="${pageContext.request.contextPath }/register/register.do" method="post">
+		<div class="v39_68">
+			<div class="v39_197">
+			<!-- 	<div class="v39_198"></div>
+				<span class="v39_199">회원가입</span> -->
+				<button class="v39_198" id="register">
+					<div class="v39_199">회원가입</div>
+				</button>
+			</div>
+			<div class="v39_105">
+				<!-- <div class="v39_106"></div>
+				<span class="v39_107">이메일인증</span> -->
+					<button class="v39_106" id="emailCheck">
+						<div class="v39_107">이메일인증</div>
+					</button>
+			</div>
+			<!--중복확인 -->
+			<div class="v39_203">
+				<div class=e39_203>
+					<!-- <div class="e39_204"></div>
+					<span class="e39_205">중복확인</span> -->
+					<button class="e39_204" id="idCheck">
+						<div class="e39_205">중복확인</div>
+					</button>
+				</div>
+			</div>
+			<div class="v39_192">
+				<!-- <div class="v39_193"></div> -->
+				<input class="v39_193" type="text" placeholder="추천인 코드 입력" name="mem_code" id="mem_code">
+				<span class="v39_194">추천인 입력 <span style="color: orange;">(선택)</span>
+					<br />고객님과 추천인 모두에게 구도락 포인트를 드려요!
+				</span>
+			</div>
+			<div class="v39_87">
+				<!-- 				<div class="v39_90"></div> -->
+				<input class="v39_90" type="text"  id="mem_phone" name="mem_phone" placeholder="01096681635"> 
+				<span class="v39_91">휴대폰</span>
+			</div>
+			<div class="v39_189">
+			<!-- 	<div class="v39_190"></div> -->
+			<input class="v39_190" type="date" name="mem_bd"  id ="mem_bd" style="font-size: 15px">
+				<span class="v39_191">생년월일</span>
+			</div>
+			<div class="v39_186">
+			<!-- 	<div class="v39_187"></div> -->
+			<input class="v39_187" type="text"  name="mem_email" id = "mem_email" placeholder="hcghcg17@naver.com">
+				<span class="v39_188">이메일</span>
+			</div>
+			<div class="v39_183">
+				<!-- <div class="v39_184"></div> -->
+				<input class="v39_184" type="text"  id="mem_name" name="mem_name" placeholder="홍찬기">
+				<span class="v39_185">이름</span>
+			</div>
+			<div class="v39_180">
+				<!-- <div class="v39_181"></div> -->
+				<input class="v39_181" type="text" id= "mem_pw" name="mem_pw" placeholder="1234">
+				<span class="v39_182">비밀번호</span>
+			</div>
+			<div class="v39_177">
+ 			 	<div class="v39_178"></div> 
+				<span class="v39_179">아이디</span>
+				<input class="v39_178" type="text"  id="mem_id" name="mem_id" placeholder="hcghcg17">
+			</div>
+		</div>
 		<input type="hidden" value="idUncheck" id="idCheckValue" />
-		<button id = "register">회원가입</button>
-	</form>
-
+		</form>
+	</div>
 </body>
 <script type="text/javascript">
 	$("#idCheck").on("click", function(e) {
@@ -62,16 +145,43 @@ request.setCharacterEncoding("UTF-8");
 
 	}); // idcheck
 	
-
 	$("#register").on("click", function(e) {
-	    // e.preventDefault(); // 이 부분을 주석 처리 또는 삭제
+	    // e.preventDefault(); 
 	    if ($("#idCheckValue").val() == "idUncheck") {
 	        alert("아이디 중복 체크하세요 ");
 	        e.preventDefault();
 	        return;
 	    }
 
-	    e.preventDefault();
+	   e.preventDefault();
+	   
+	   if ($("#mem_id").val().length == 0) {
+		    alert("아이디를 입력해주세요");
+		    $("#mem_id").focus();
+		    return;
+		} else if ($("#mem_name").val().length == 0) {
+		    alert("이름을 입력해주세요");
+		 	$("#mem_name").focus();
+		    return;
+		} else if ($("#mem_pw").val().length == 0) {
+		    alert("비밀번호를 입력해주세요");
+		 	$("#mem_pw").focus();
+		    return;
+		} else if ($("#mem_email").val().length == 0) {
+		    alert("이메일을 입력해주세요");
+		    $("#mem_email").focus();
+		    return;
+		} else if ($("#mem_bd").val().length == 0) {
+		    alert("생년월일을 입력해주세요");
+		    $("#mem_bd").focus();
+		    return;
+		} else if ($("#mem_phone").val().length == 0) {
+		    alert("휴대폰 번호를 입력해주세요");
+		    $("#mem_phone").focus();
+		    return;
+		}
+
+
 	    if ($("#mem_code").val().length != 0) {
 	    
 	        $.ajax({
@@ -91,10 +201,6 @@ request.setCharacterEncoding("UTF-8");
 	    } else{
 	    	$("form").submit();	
 	    } // 추천인 코드 체크 + 회원가입
-	    
-
-	
 	});
-
 </script>
 </html>

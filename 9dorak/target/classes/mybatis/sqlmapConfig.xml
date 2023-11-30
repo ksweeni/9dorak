@@ -9,6 +9,12 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="com.shinhan.dto.MemVO" alias="memvo" />
+		<typeAlias type="com.shinhan.dto.DoranVO" alias="doranvo" />
+		<typeAlias type="com.shinhan.dto.ProVO" alias="provo" />
+		<typeAlias type="com.shinhan.dto.CommentVO" alias="commentvo" />
+		<typeAlias type="com.shinhan.dto.DoranlikeVO" alias="doranlikevo" />
+		<typeAlias type="com.shinhan.dto.DlikeVO" alias="dlikevo" />
+		<typeAlias type="com.shinhan.dto.EventVO" alias="eventvo" />
 	</typeAliases>
 </configuration>
 
