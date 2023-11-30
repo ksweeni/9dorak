@@ -105,7 +105,7 @@
   width: 298px;
   height: 196px;
   top: 0;
-  left: 12px;
+  left: 0px;
 }
 
 .login .id {
@@ -174,7 +174,7 @@
   width: 300px;
   height: 83px;
   top: 113px;
-  left: 12px;
+  left: 0px;
 }
 
 .login .text-wrapper-4 {
@@ -209,7 +209,7 @@
   position: absolute;
   width: 245px;
   height: 63px;
-  top: 430px;
+  top: 445px;
   left: 40px;
   border: none;
 }
@@ -221,7 +221,7 @@
   background-color: #f48e28;
   border-radius: 35px;
   box-shadow: 0px 10px 30px #c4501182;
-  left: 30px;
+  left: 40px;
   border: none;
 }
 
@@ -244,8 +244,8 @@
   align-items: center;
   gap: 3px;
   position: absolute;
-  top: 770px;
-  left: 530px;
+  top: 550px;
+  left: 20px;
 }
 
 .login .p {

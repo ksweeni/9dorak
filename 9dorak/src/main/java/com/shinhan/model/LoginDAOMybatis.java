@@ -18,20 +18,12 @@ public class LoginDAOMybatis {
 	SqlSession sqlSession;
 	Logger logger = LoggerFactory.getLogger(LoginDAOMybatis.class);
 	String NAMESPACE = "net.firstzone.login.";
-	
-	public MemVO login(String mem_id, String mem_pw) {			
-		Map<String, String> paramMap = new HashMap<>();
-        paramMap.put("mem_id", mem_id);
-        paramMap.put("mem_pw", mem_pw);
-  
-        MemVO memvo = sqlSession.selectOne(NAMESPACE + "login", paramMap);
 
-        if (memvo != null) {
-            logger.info("로그인 성공: " + mem_id);
-        } else {
-            logger.info("로그인 실패: " + mem_id);
-        }
-        return memvo;	
+	public MemVO login(String mem_id, String mem_pw) {
+		Map<String, String> memlogin = new HashMap<>();
+		memlogin.put("mem_id", mem_id);
+		memlogin.put("mem_pw", mem_pw);
+
+		return sqlSession.selectOne(NAMESPACE + "login", memlogin);
 	}
-	  
 }
