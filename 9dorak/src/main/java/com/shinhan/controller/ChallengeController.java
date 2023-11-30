@@ -10,21 +10,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.shinhan.dto.EventVO;
-import com.shinhan.model.EventService;
+import com.shinhan.dto.ChallengeVO;
+import com.shinhan.model.ChallengeService;
 
 @Controller
-@RequestMapping("event")
-public class EventController {
+@RequestMapping("challenge")
+public class ChallengeController {
 	@Autowired
-	EventService eService;
+	ChallengeService chService;
 
-	private static final Logger logger = LoggerFactory.getLogger(EventController.class);
+	private static final Logger logger = LoggerFactory.getLogger(ChallengeController.class);
 
-	@GetMapping("event.do")
+	@GetMapping("challenge.do")
 	public String event(Model model) {
-		List<EventVO> elist = eService.selectAll();
-		model.addAttribute("elist", elist);
-		return "event/event";
+		List<ChallengeVO> chlist = chService.selectAll();
+		model.addAttribute("chlist", chlist);
+		return "challenge/challenge";
 	}
 }
