@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.shinhan.dto.MemVO" alias="memvo" />
+		<typeAlias type="com.shinhan.dto.DoranVO" alias="doranvo" />
+		<typeAlias type="com.shinhan.dto.ProVO" alias="provo" />
+		<typeAlias type="com.shinhan.dto.CommentVO" alias="commentvo" />
+		<typeAlias type="com.shinhan.dto.DoranlikeVO" alias="doranlikevo" />
+		<typeAlias type="com.shinhan.dto.DlikeVO" alias="dlikevo" />
+		<typeAlias type="com.shinhan.dto.EventVO" alias="eventvo" />
+	</typeAliases>
+</configuration>
+
