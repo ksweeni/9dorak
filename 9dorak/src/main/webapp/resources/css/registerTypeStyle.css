@@ -347,3 +347,16 @@ body {
 	font-size:14px;
 	letter-spacing:0;
 }
+.v49_2130 {
+  width: 488px;
+/*   color: url("../images/v49_2130.png"); */
+  position: absolute;
+  top: 321px;
+  left: 570px;
+  font-family: Poppins;
+  font-weight: SemiBold;
+  font-size: 40px;
+  opacity: 1;
+  text-align: center;
+}
+

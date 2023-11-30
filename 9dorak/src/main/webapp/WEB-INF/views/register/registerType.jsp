@@ -34,6 +34,7 @@ String contextPath = request.getContextPath();
 	left: 20px;
 	overflow: hidden;
 }
+
 </style>
 </head>
 <body>
@@ -60,6 +61,8 @@ String contextPath = request.getContextPath();
 				</div>
 			</div>
 		</div>
+		
+		<span  class="e612_238">반갑습니다, 구도락입니다 !</span>
 		<span class="v49_2133">아이를 위한 9일의 약속 <span style="color: orange;">구도락</span></span>
 		<div class="v49_2134">
 			<div class="v49_2135">
@@ -70,13 +73,14 @@ String contextPath = request.getContextPath();
 				</a>
 			</div>
 			<div class="v49_2140">
-				<<a href="${cpath }/register/registerForm.do" class="v49_2141"> <span class="v49_2142">아이에게
+				<a href="${cpath }/register/registerForm.do" class="v49_2141"> <span class="v49_2142">아이에게
 						선물할 부모님</span>
 					<div class="v49_2143"></div>
 					<div class="name"></div>
 				</a>
 			</div>
 		</div>
+		<span class="v49_2130"><span style="color: orange;">가입 유형</span>을 선택해주세요!</span>
 	</div>
 </body>
 </html>
