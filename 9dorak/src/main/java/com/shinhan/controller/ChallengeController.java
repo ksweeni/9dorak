@@ -14,7 +14,7 @@ import com.shinhan.dto.ChallengeVO;
 import com.shinhan.model.ChallengeService;
 
 @Controller
-@RequestMapping("challenge")
+@RequestMapping("event")
 public class ChallengeController {
 	@Autowired
 	ChallengeService chService;
@@ -22,9 +22,9 @@ public class ChallengeController {
 	private static final Logger logger = LoggerFactory.getLogger(ChallengeController.class);
 
 	@GetMapping("challenge.do")
-	public String event(Model model) {
+	public String challenge(Model model) {
 		List<ChallengeVO> chlist = chService.selectAll();
 		model.addAttribute("chlist", chlist);
-		return "challenge/challenge";
+		return "event/challenge";
 	}
 }
