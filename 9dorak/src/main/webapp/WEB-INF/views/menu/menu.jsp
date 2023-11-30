@@ -295,26 +295,10 @@
 				if(data.length == 0){
 					alert("검색 결과가 없습니다.");
 				}else{
-					var temp ="";
 					
 					//temp += "<div>검색 결과가 "+data.length+"건 입니다.</div>"
 					
-					for(var i=0; i<data.length ; i++) {
-						temp += "<div class=green-beans>"+						
-						        "<div class=overlap-group>"+
-								"<div class=text-wrapper-2>"+data[i].pro_name+"</div>"+
-								"<div class=frame>"+
-								"<button class=view-details-btn>자세히 볼게요</button>"+
-								"</div>"+
-								"<div class=mask-group-wrapper>"+
-								"<img class=mask-group src=img/mask-group-8.png />"+
-								"</div>"+
-								"<img class=vector src=img/vector-11.png />"+
-								"<div class=text-wrapper-4>"+data[i].pro_price+"</div>"+
-								"</div>"+
-								"</div>";						
-					}
-					$('.foods').html(temp);
+					$('.foods').html(data);
 				}
 				
 	        },
@@ -326,9 +310,7 @@
 		
 	}
 
-	  
 	</script>
-	
 	
 </body>
 </html>

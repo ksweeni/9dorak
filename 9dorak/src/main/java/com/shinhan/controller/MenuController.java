@@ -42,15 +42,15 @@ public class MenuController {
 	}
 	
 	@GetMapping("searchPro.do")
-	@ResponseBody
-	public List<ProVO> searchPro(Model model,@RequestParam Map<String, Object> map) {
+	//@ResponseBody
+	public String searchPro(Model model,@RequestParam Map<String, Object> map) {
 		
-		//System.out.println((String)map.get("pro_name"));
+		System.out.println((String)map.get("pro_name"));
 		List<ProVO> slist = mService.selectSearchPro((String)map.get("pro_name"));
+		model.addAttribute("slist", slist);
+		System.out.println(slist.toString());
 		
-		//System.out.println(slist.toString());
-		
-		return slist;
+		return "menu/menu_ajax";
 	}
 	
 	
