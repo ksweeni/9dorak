@@ -7,17 +7,33 @@
 	<select id="selectAll" resultType="doranvo">
 		select * from doran
 	</select>
-	
+
 	<!-- 좋아요 수 카운트 -->
 	<select id="selectLike" resultType="int">
-		select count(*) as dlikes from doranlike where doran_no in (select doran_no from doran)
-		group by(doran_no)
+		select count(*) as dlikes
+		from doranlike where doran_no in (select doran_no from doran)
+		group by
+		doran_no
+	</select>
+
+	<!-- 댓글 수 카운트 -->
+	<select id="selectComment" resultType="int">
+		select count(*) from
+		comments where doran_no in (select doran_no from doran)
+		group by
+		doran_no
+	</select>
+
+	<!-- 특정 게시글에 대한 댓글 정보 All -->
+	<select id="selectAllCommentAbout" parameterType="int" resultType="commentvo">
+		select * from comments where doran_no = #{doran_no}
 	</select>
 
 	<insert id="insertDoran" parameterType="doranvo">
 		INSERT INTO DORAN (
 		doran_no,
-		doran_title, doran_cont, doran_date, doran_image, doran_view, mem_id
+		doran_title, doran_cont, doran_date, doran_image, doran_view,
+		mem_id
 		)
 		VALUES (
 		#{doranNo}, #{doranTitle}, #{doranCont}, #{doranDate},

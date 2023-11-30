@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shinhan.dto.CommentVO;
+import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DlikeVO;
 import com.shinhan.dto.DoranVO;
 
@@ -32,10 +34,23 @@ public class DoranController {
 	@GetMapping("doran.do")
 	public String doran(Model model) {
 		List<DoranVO> dlist = dService.selectAll();
-		List<DlikeVO> dlike=dService.selectLike();
+		List<DlikeVO> dlike = dService.selectLike();
+		List<DCommentVO> dcomment = dService.selectComment();
 		model.addAttribute("dlist", dlist);
-		System.out.println(dlike);
-//		logger.info(dlike.toString());
+		model.addAttribute("dlike", dlike);
+		model.addAttribute("dcomment", dcomment);
+		System.out.println("좋아요 : "+dlike);
+		System.out.println("댓글 수 : "+dcomment);
+
 		return "doran/doran";
+	}
+	
+	@GetMapping("doranFeedDetail.do")
+	public String doranFeedDetail(Model model) {
+		// 현재 1번 게시글에 대한 댓글 정보 가져오기 test
+		List<CommentVO> comments = dService.selectAllCommentAbout(1);
+		model.addAttribute("comments",comments);
+		logger.info(comments.toString());
+		return "doran/doranFeedDetail";
 	}
 }

@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.shinhan.dto.CommentVO;
+import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DlikeVO;
 import com.shinhan.dto.DoranVO;
 
@@ -27,17 +29,26 @@ public class DoranDAOMybatis {
 		return dlist;
 	}
 	
-
 	public int insertDoran(DoranVO doran) {
 		System.out.println("inserting :"+doran);
 		return sqlSession.insert(NAMESPACE + "insertDoran", doran);
-		
 	}
 
 	public List<DlikeVO> selectLike() {
-//		logger.info("selectLike :  {}");
+		logger.info("selectLike :  {}");
 		return sqlSession.selectList(NAMESPACE + "selectLike");
 	}
+	// 댓글 수 카운트
+	public List<DCommentVO> selectComment(){
+		logger.info("selectComment :  {}");
+		return sqlSession.selectList(NAMESPACE+"selectComment");
+	}
+	
+	// 특정 게시물에 대한 모든 댓글 정보
+    public List<CommentVO> selectAllCommentAbout(int doranNo) {
+        return sqlSession.selectList(NAMESPACE + "selectAllCommentAbout", doranNo);
+    }
+	
 
 //	public BoardVO selectById(int bno) {
 //		BoardVO board = sqlSession.selectOne(NAMESPACE + "selectById", bno);

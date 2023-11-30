@@ -1,11 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<script>
+	var c = "${comments}";
+	console.log(c);
+</script>
 <body>
 	<div
 		style="width: 1920px; height: 2688px; position: relative; overflow: hidden; background: #fff;">
@@ -240,11 +248,24 @@
 			</div>
 			<div
 				style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; position: absolute; left: 475px; top: 1035px; gap: 40px;">
+
+				<c:forEach items="${comments}" var="comment">
+					<tr>
+						<td>${comment.comment_no}</td>
+						<td>${comment.comment_cont}</td>
+						<td>${comment.comment_date}</td>
+						<td>${comment.doran_no}</td>
+					</tr>
+				</c:forEach>
+
+
 				<p
 					style="flex-grow: 0; flex-shrink: 0; font-size: 30px; font-weight: 600; text-align: left; color: #000;">
 					COMMENTS ☁️</p>
+
 				<div
 					style="flex-grow: 0; flex-shrink: 0; width: 752px; height: 865px;">
+
 					<div
 						style="width: 752px; height: 865px; position: absolute; left: 0px; top: 76px;">
 						<div

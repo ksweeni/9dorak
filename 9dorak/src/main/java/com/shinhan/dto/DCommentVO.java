@@ -10,6 +10,6 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class DlikeVO {
+public class DCommentVO {
 	int cnt;
 }
