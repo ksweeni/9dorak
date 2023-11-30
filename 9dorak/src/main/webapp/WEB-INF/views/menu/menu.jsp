@@ -79,267 +79,23 @@
 			</div>
 			<div class="menu-cards">
 				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group"
-										src="${cpath}/resources/images/food.png" />
-								</div>
-								
-								<div class="text-wrapper-4">$12.00</div>
-							</div>
-						</div>
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 테스트 중</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group"
-										src="${cpath}/resources/images/food.png" />
-								</div>
-								
-								<div class="text-wrapper-6">$9000</div>
-							</div>
-						</div>
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group"
-										src="${cpath}/resources/images/food.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-18.png" />
-								</div>
-							
-								<div class="text-wrapper-4">$12.00</div>
-							</div>
-						</div>
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-20.png" />
-								</div>
-								
-								<div class="text-wrapper-6">$25.50</div>
-							</div>
-						</div>
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-12.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
+						<c:forEach items="${mlist}" var="pro" varStatus="loop">
+							<div class="green-beans">
+								<div class="overlap-group">
+									<div class="text-wrapper-2">${pro.pro_name}</div>
+									<div class="frame">
 									<button class="view-details-btn">자세히 볼게요</button>
 								</div>
 								<div class="mask-group-wrapper">
 									<img class="mask-group" src="img/mask-group-8.png" />
 								</div>
 								<img class="vector" src="img/vector-11.png" />
-								<div class="text-wrapper-4">$12.00</div>
+								<div class="text-wrapper-4">${pro.pro_price}</div>
 							</div>
-						</div>
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-10.png" />
-								</div>
-								<img class="img" src="img/vector-7.png" />
-								<div class="text-wrapper-6">$25.50</div>
 							</div>
-						</div>
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-9.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-6.png" />
-								</div>
-								<img class="vector" src="img/vector-4.png" />
-								<div class="text-wrapper-4">$12.00</div>
-							</div>
-						</div>
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-15.png" />
-								</div>
-								<img class="img" src="img/vector-6.png" />
-								<div class="text-wrapper-6">$25.50</div>
-							</div>
-						</div>
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-21.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-3.png" />
-								</div>
-								<img class="vector" src="img/vector-2.png" />
-								<div class="text-wrapper-4">$12.00</div>
-							</div>
-						</div>
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-11.png" />
-								</div>
-								<img class="img" src="img/vector.png" />
-								<div class="text-wrapper-6">$25.50</div>
-							</div>
-						</div>
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-14.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-7.png" />
-								</div>
-								<img class="vector" src="img/vector-10.png" />
-								<div class="text-wrapper-4">$12.00</div>
-							</div>
-						</div>
-						
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-2.png" />
-								</div>
-								<img class="img" src="img/vector-3.png" />
-								<div class="text-wrapper-6">$25.50</div>
-							</div>
-						</div>
-						
-						
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-19.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-						
-						
-					</div>
-				</div>
-			</div>
-
+						</c:forEach>
+				</div><!-- foods end -->
+			</div><!-- menu-cards -->
 			<!-- allergy bar -->
 			<div class="menu-top-bar">
 				<div class="allergy-bar">
@@ -378,11 +134,11 @@
 					<div class="overlap">
 						<div class="div-wrapper">
 
-							<input class="overlap-group-3" type="text"
+							<input class="overlap-group-3" id="searchTxt" type="text"
 								placeholder="  키워드를 검색하세요">
 						</div>
 						<div class="overlap-wrapper">
-							<button class="overlap-2">search</button>
+							<button class="overlap-2" id="searchBtn" onclick="searchBtnClick()">search</button>
 						</div>
 					</div>
 				</div>
@@ -521,5 +277,58 @@
 			</div>
 		</footer>
 	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+	//검색하기
+	function searchBtnClick() {
+		
+	    $.ajax({
+	        url:"${cpath}/menu/searchPro.do",
+	        type:'GET',
+	        data:{
+	        	pro_name: $('#searchTxt').val()
+            } ,
+	        success:function(data){
+	        	//debugger;
+	            alert("완료!");
+				if(data.length == 0){
+					alert("검색 결과가 없습니다.");
+				}else{
+					var temp ="";
+					
+					//temp += "<div>검색 결과가 "+data.length+"건 입니다.</div>"
+					
+					for(var i=0; i<data.length ; i++) {
+						temp += "<div class=green-beans>"+						
+						        "<div class=overlap-group>"+
+								"<div class=text-wrapper-2>"+data[i].pro_name+"</div>"+
+								"<div class=frame>"+
+								"<button class=view-details-btn>자세히 볼게요</button>"+
+								"</div>"+
+								"<div class=mask-group-wrapper>"+
+								"<img class=mask-group src=img/mask-group-8.png />"+
+								"</div>"+
+								"<img class=vector src=img/vector-11.png />"+
+								"<div class=text-wrapper-4>"+data[i].pro_price+"</div>"+
+								"</div>"+
+								"</div>";						
+					}
+					$('.foods').html(temp);
+				}
+				
+	        },
+	        error:function(jqXHR, textStatus, errorThrown){
+	            alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
+	            self.close();
+	        }
+	    });
+		
+	}
+
+	  
+	</script>
+	
+	
 </body>
 </html>
