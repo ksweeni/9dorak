@@ -70,7 +70,7 @@ String contextPath = request.getContextPath();
 				</a>
 			</div>
 			<div class="v49_2140">
-				<a href="#" class="v49_2141"> <span class="v49_2142">아이에게
+				<<a href="${cpath }/register/registerForm.do" class="v49_2141"> <span class="v49_2142">아이에게
 						선물할 부모님</span>
 					<div class="v49_2143"></div>
 					<div class="name"></div>
