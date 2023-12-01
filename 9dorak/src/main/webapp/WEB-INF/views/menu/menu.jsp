@@ -147,42 +147,42 @@
 			<div class="top-categories">
 				<div class="frame-2">
 					<div class="frame-3">
-						<img class="ellipse" src="img/ellipse-1-2.svg" />
+						<img class="ellipse" src="${cpath}/resources/images/menu/LeafyGreen.png" />
 						<div class="text-wrapper-18">환경친화</div>
 					</div>
 					<div class="frame-4">
-						<img class="ellipse-2" src="img/ellipse-1-7.png" />
+						<img class="ellipse-2" src="${cpath}/resources/images/menu/LowSalt.png" />
 						<div class="text-wrapper-18">저염</div>
 					</div>
 					<div class="frame-5">
-						<img class="ellipse-2" src="img/ellipse-1-4.png" />
+						<img class="ellipse-2" src="${cpath}/resources/images/menu/LowSweet.png" />
 						<div class="text-wrapper-18">저당</div>
 					</div>
 					<div class="frame-6">
-						<img class="ellipse-2" src="img/ellipse-1-5.png" />
+						<img class="ellipse-2" src="${cpath}/resources/images/menu/Cow.png" />
 						<div class="text-wrapper-18">소</div>
 					</div>
 				</div>
 				<div class="group-4">
 					<div class="overlap-group-4">
 						<div class="frame-7">
-							<img class="ellipse" src="img/ellipse-1.svg" />
+							<img class="ellipse" src="${cpath}/resources/images/menu/Pig.png" />
 							<div class="text-wrapper-18">돼지</div>
 						</div>
 						<div class="frame-8">
-							<img class="ellipse-2" src="img/ellipse-1-6.png" />
+							<img class="ellipse-2" src="${cpath}/resources/images/menu/Chicken.png" />
 							<div class="text-wrapper-18">닭</div>
 						</div>
 						<div class="frame-9">
-							<img class="ellipse-2" src="img/ellipse-1-2.png" />
+							<img class="ellipse-2" src="${cpath}/resources/images/menu/Fish.png" />
 							<div class="text-wrapper-18">생선</div>
 						</div>
 						<div class="frame-10">
-							<img class="ellipse-2" src="img/ellipse-1.png" />
+							<img class="ellipse-2" src="${cpath}/resources/images/menu/Salad.png" />
 							<div class="text-wrapper-18">샐러드</div>
 						</div>
 						<div class="frame-11">
-							<img class="ellipse-2" src="img/ellipse-1-3.png" />
+							<img class="ellipse-2" src="${cpath}/resources/images/menu/Fruit.png" />
 							<div class="text-wrapper-18">과일</div>
 						</div>
 					</div>
