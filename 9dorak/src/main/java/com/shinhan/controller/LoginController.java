@@ -51,4 +51,21 @@ public class LoginController {
 		return "login/findID";
 	}
 
+	@PostMapping("findId.do")
+	public String findId(@RequestParam String mem_name, @RequestParam String mem_phone, @RequestParam String mem_bd,
+			Model model) {
+
+		MemVO foundid = lservice.findId(mem_name, mem_phone, mem_bd);
+
+		if (foundid != null) {
+			// 사용자를 찾았을 경우 처리 해당 아이디를 모델에 추가
+			model.addAttribute("foundId", foundid);
+			return "login/foundID"; // 아이디를 찾았을 때의 페이지로 이동
+		} else {
+			// 사용자를 찾지 못했을 경우 처리
+			model.addAttribute("findUserErrorMessage", "입력한 정보와 일치하는 사용자를 찾을 수 없습니다.");
+			return "login/findID"; // 다시 아이디 찾기 페이지로
+		}
+	}
+
 }

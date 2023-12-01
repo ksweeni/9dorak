@@ -48,7 +48,8 @@
 							type="submit" class="text-wrapper-5">회원가입 하기</button>
 					</p>
 					<div class="text-wrapper-6">계정을 잊으셨나요?</div>
-					<form action="">
+					<form action="${pageContext.request.contextPath }/login/findId.do"
+						method="post">
 						<div class="frame-2">
 							<div class="div-2">
 								<div class="text-wrapper-7">이름</div>
@@ -68,12 +69,14 @@
 								<input type="date" name="mem_bd" class="payments-wrapper">
 							</div>
 						</div>
+
+						<div class="login-button">
+							<button class="div-wrapper" type="submit">
+								<div class="text-wrapper-9">아이디 찾기</div>
+							</button>
+						</div>
+					</form>
 				</div>
-			</div>
-			<div class="login-button">
-				<button class="div-wrapper" type="submit">
-					<div class="text-wrapper-9">아이디 찾기</div>
-				</button>
 			</div>
 		</div>
 	</div>

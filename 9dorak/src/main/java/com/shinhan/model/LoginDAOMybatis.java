@@ -26,4 +26,12 @@ public class LoginDAOMybatis {
 
 		return sqlSession.selectOne(NAMESPACE + "login", memlogin);
 	}
+	public MemVO findId(String mem_name, String mem_phone, String mem_bd) {
+	    Map<String, String> findIdParams = new HashMap<>();
+	    findIdParams.put("mem_name", mem_name);
+	    findIdParams.put("mem_phone", mem_phone);
+	    findIdParams.put("mem_bd", mem_bd);
+
+	    return sqlSession.selectOne(NAMESPACE + "findId", findIdParams);
+	}	
 }

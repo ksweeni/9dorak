@@ -14,4 +14,9 @@ public class LoginService {
 	public MemVO login(String mem_id, String mem_pw) {
 		return dao.login(mem_id, mem_pw);
 	}
+	
+	public MemVO findId(String mem_name, String mem_phone, String mem_bd) {
+		return dao.findId(mem_name, mem_phone, mem_bd);
+	}
+	 
 }
