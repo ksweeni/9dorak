@@ -51,14 +51,4 @@ public class LoginController {
 		return "login/findID";
 	}
 
-	/*
-	 * @PostMapping("findId.do") public String findId(@RequestParam String email,
-	 * Model model) { 
-	 * foundId = lservice.findIdByEmail(email);
-	 * 
-	 * if (foundId != null) { model.addAttribute("foundId", foundId); } else {
-	 * model.addAttribute("findIdErrorMessage", "해당하는 아이디가 없습니다."); }
-	 * 
-	 * return "login/findIdResult"; // 결과를 보여줄 페이지로 이동 }
-	 */
 }

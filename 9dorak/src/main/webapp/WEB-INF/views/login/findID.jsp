@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/findID.css"
+<link rel="stylesheet" href="${cpath}/resources/css/findIDStyle.css"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,20 +43,22 @@
 					</div>
 					<p class="p">
 						<span class="span">아이디가 없으신가요 ?&nbsp;&nbsp;</span> <span
-							class="text-wrapper-4">&nbsp;&nbsp;</span> <span
-							class="text-wrapper-5">회원가입 하기</span>
+							class="text-wrapper-4">&nbsp;&nbsp;</span>
+						<button onclick="location.href='../register/registerType.do'"
+							type="submit" class="text-wrapper-5">회원가입 하기</button>
 					</p>
 					<div class="text-wrapper-6">계정을 잊으셨나요?</div>
-					<div class="frame-2">
-						<div class="div-2">
-							<div class="text-wrapper-7">이름</div>
-							<input type="text" name="mem_name" class="group-2">
-						</div>
-						<div class="div-2">
-							<div class="text-wrapper-8">전화번호</div>
-							<div class="overlap-group-wrapper-1">
-								<input type="text" name="mem_phone" class="overlap-group"
-									placeholder="010-0000-0000">
+					<form action="">
+						<div class="frame-2">
+							<div class="div-2">
+								<div class="text-wrapper-7">이름</div>
+								<input type="text" name="mem_name" class="group-2">
+							</div>
+							<div class="div-2">
+								<div class="text-wrapper-8">전화번호</div>
+								<div class="overlap-group-wrapper-1">
+									<input type="text" name="mem_phone" class="overlap-group"
+										placeholder="010-0000-0000">
 								</div>
 							</div>
 						</div>
@@ -64,19 +66,17 @@
 							<div class="text-wrapper-11">생년월일</div>
 							<div class="overlap-group-wrapper-2">
 								<input type="date" name="mem_bd" class="payments-wrapper">
-								</div>
 							</div>
 						</div>
-					</div>
-					<div class="login-button">
-						<div class="div-wrapper">
-							<div class="text-wrapper-9">아이디 찾기</div>
-						</div>
-					</div>
 				</div>
-				<div class="text-wrapper-10">생년월일을 다시 입력해주세요</div>
+			</div>
+			<div class="login-button">
+				<button class="div-wrapper" type="submit">
+					<div class="text-wrapper-9">아이디 찾기</div>
+				</button>
 			</div>
 		</div>
 	</div>
+	<div class="text-wrapper-10">생년월일을 다시 입력해주세요</div>
 </body>
 </html>
