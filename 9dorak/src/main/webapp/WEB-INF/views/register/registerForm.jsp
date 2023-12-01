@@ -65,7 +65,7 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 				<div class="v39_180">
-					<input class="v39_181" type="text" id="mem_pw" name="mem_pw"
+					<input class="v39_181" type="password" id="mem_pw" name="mem_pw"
 						placeholder="1234"> <span class="v39_182">비밀번호</span>
 				</div>
 				<div class="v39_183">
@@ -74,7 +74,7 @@ String contextPath = request.getContextPath();
 						placeholder="홍찬기"> <span class="v39_185">이름</span>
 				</div>
 				<div class="v39_186">
-					<input class="v39_187" type="text" name="mem_email" id="mem_email"
+					<input class="v39_187" type="email" name="mem_email" id="mem_email"
 						placeholder="hcghcg17@naver.com"> <span class="v39_188">이메일</span>
 				</div>
 				<div class="v39_105">

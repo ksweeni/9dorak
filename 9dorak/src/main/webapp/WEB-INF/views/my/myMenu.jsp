@@ -1069,9 +1069,9 @@ String contextPath = request.getContextPath();
 			<div class=e81_147>
 				<div class="e81_148"></div>
 			</div>
-			<span class="e81_149">메뉴보기</span><span class="e81_150">구독하기</span><span
-				class="e81_151">요모조모</span><span class="e81_152">도란도란</span><span
-				class="e81_153">이벤트</span><span class="e81_154">로그아웃</span>
+			<a href="${cpath }/menu/menu.do" class="e81_149">메뉴보기</a><span class="e81_150">구독하기</span><span
+				class="e81_151">요모조모</span><a href="${cpath }/doran/doran.do" class="e81_152">도란도란</a><a
+				a href="${cpath }/event/challenge.do" class="e81_153">이벤트</a><a  href="${cpath }/my/logout.do" class="e81_154">로그아웃</a>
 			<div class="e81_155"></div>
 			<div class="e81_156"></div>
 		</div>
@@ -1115,45 +1115,46 @@ String contextPath = request.getContextPath();
 					<span class="e79_430">Remove</span>
 				</div>
 				<form action="#">
-				<div class=e79_410>
-					<span class="e79_244">아이디</span>
-					<!--  	<div class="e79_409"></div> -->
-					<input id="mem_id" type="text" class="e79_409"
-						value="${mem.mem_id }" readonly="readonly"></input>
+					<div class=e79_410>
+						<span class="e79_244">아이디</span>
+						<!--  	<div class="e79_409"></div> -->
+						<input id="mem_id" type="text" class="e79_409"
+							value="${mem.mem_id }" readonly="readonly"></input>
 
-				</div>
-				<div class=e79_411>
-					<span class="e79_412">비밀번호</span>
-					<!-- 	<div class="e79_413"></div> -->
-					<input id="mem_pw" type="text" class="e79_413"
-						value="${mem.mem_pw }"></input>
-				</div>
-				<div class=e79_415>
-					<span class="e79_416">이름</span>
-					<!-- <div class="e79_417"></div> -->
-					<input id="mem_name" type="text" class="e79_417"
-						value="${mem.mem_name }"></input>
-				</div>
-				<div class=e79_418>
-					<span class="e79_419">생년월일</span>
-					<!-- 				<div class="e79_420"></div> -->
-					<input id="mem_bd" type="date" class="e79_420"
-						value="${mem.mem_bd }"></input>
-				</div>
-				<div class=e79_421>
-					<span class="e79_422">추천인 코드</span>
-					<!-- 			<div class="e79_423"></div> -->
-					<input class="e79_423" value="${mem.mem_code }" readonly="readonly"></input>
-				</div>
-				<div class=e79_168>
-					<span class="e79_169">Save Changes</span>
-				</div>
-				<div class=e79_166>
-					<span class="e79_167">Cancel</span>
-				</div>
-				<div class=e79_164>
-					<span class="e79_165">회원탈퇴</span>
-				</div>
+					</div>
+					<div class=e79_411>
+						<span class="e79_412">비밀번호</span>
+						<!-- 	<div class="e79_413"></div> -->
+						<input id="mem_pw" type="password" class="e79_413"
+							value="${mem.mem_pw }"></input>
+					</div>
+					<div class=e79_415>
+						<span class="e79_416">이름</span>
+						<!-- <div class="e79_417"></div> -->
+						<input id="mem_name" type="text" class="e79_417"
+							value="${mem.mem_name }"></input>
+					</div>
+					<div class=e79_418>
+						<span class="e79_419">생년월일</span>
+						<!-- 				<div class="e79_420"></div> -->
+						<input id="mem_bd" type="date" class="e79_420"
+							value="${mem.mem_bd }"></input>
+					</div>
+					<div class=e79_421>
+						<span class="e79_422">추천인 코드</span>
+						<!-- 			<div class="e79_423"></div> -->
+						<input class="e79_423" value="${mem.mem_code }"
+							readonly="readonly"></input>
+					</div>
+					<div class=e79_168>
+						<span class="e79_169">Save Changes</span>
+					</div>
+					<div class=e79_166>
+						<span class="e79_167">Cancel</span>
+					</div>
+					<div class=e79_164>
+						<span class="e79_165">회원탈퇴</span>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -1217,15 +1218,18 @@ String contextPath = request.getContextPath();
 
 		})
 	}) // 아이디 변경 되는지 확인하자
-	
-	$(".e79_166").on("click",function(){
+
+	$(".e79_166").on("click", function() {
 		$("form")[0].reset();
 	})
-	
-	$(".e79_164").on("click",function(){
-	    if (confirm("정말 탈퇴하시겠습니까?")) {
-			location.href = "${cpath}/my/deleteMember.do?mem_id="+$("#mem_id").val();		      
-	    }
-	})
+
+	$(".e79_164").on(
+			"click",
+			function() {
+				if (confirm("정말 탈퇴하시겠습니까?")) {
+					location.href = "${cpath}/my/deleteMember.do?mem_id="
+							+ $("#mem_id").val();
+				}
+			})
 </script>
 </html>
