@@ -7,7 +7,11 @@
 	<select id="selectAll" resultType="provo">
 		select * from pro
 	</select>
-
+	
+	<select id="selectSearchPro" resultType="provo" parameterType="String">
+		select * from pro
+		where pro_name like '%'||#{pro_name}||'%'
+	</select>
 
 	<!-- <insert id="insertDoran" parameterType="doranvo">
 		INSERT INTO DORAN (

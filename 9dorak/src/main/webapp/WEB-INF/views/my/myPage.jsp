@@ -274,7 +274,7 @@ String contextPath = request.getContextPath();
 		</div>
 		<div class=e69_291>
 			<div class=e69_292>
-				<div class="e69_299"></div>
+				<a  href ="${cpath }" class="e69_299"></a>
 			</div>
 		</div>
 		<div class="e69_169"></div>
@@ -286,7 +286,7 @@ String contextPath = request.getContextPath();
 			href="${cpath }/doran/doran.do" class="e69_298">도란도란</a><span
 			class="e69_294">이벤트</span>
 		<!-- 로그아웃 -->
-		<a href="${cpath }/login/login.do" class="e69_319">로그아웃 </a> <span
+		<a href="${cpath }/login/logout.do" class="e69_319">로그아웃 </a> <span
 			class="e69_290">마이페이지</span><span class="e69_320">회원등급</span>
 		<div class=e69_172>
 			<div class=e69_173>
