@@ -40,9 +40,16 @@ public class MyPageController {
 	
 	@GetMapping("logout.do")
 	public String logut(Model model ,HttpSession session) {
-		
+		session.invalidate();
 		return "home";
 	}
 	
+	@GetMapping("myMenu.do")
+	public String myMenu(Model model , HttpSession session) {
+		MemVO loginmem =(MemVO) session.getAttribute("loginmem");
+		MemVO mem = mService.getMember(loginmem.getMem_id());
+		model.addAttribute("mem",mem);
+		return "my/myMenu";
+	}
 
 }
