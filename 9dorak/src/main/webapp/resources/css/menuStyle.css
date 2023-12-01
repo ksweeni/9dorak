@@ -971,13 +971,39 @@
 	flex: 0 0 auto;
 }
 
+
+.filter .frame-12 .text-wrapper-19,
+.filter .frame-13 .text-wrapper-20 {
+    border: none;
+    background: white;
+    position: relative;
+    font-size: 1.2rem;
+    color: #FFB673;
+    text-align: justify;
+    cursor: pointer;
+    transition: color 0.3s, box-shadow 0.3s; /* 효과를 부드럽게 만들기 위해 트랜지션 추가 */
+}
+
+
+.filter .frame-12 .text-wrapper-19:hover,
+.filter .frame-12 .text-wrapper-19:active,
+.filter .frame-13 .text-wrapper-20:hover,
+.filter .frame-13 .text-wrapper-20:active {
+    color: coral;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
 .screen .text-wrapper-19 {
-	position: relative;
-	width: fit-content;
-	margin-top: -1px;
-	font-size:1.2rem;
-	color: #ffb673;
-	text-align: justify;
+    width: fit-content;
+    margin-top: -1px;
+}
+
+.screen .text-wrapper-19:hover,
+.screen .text-wrapper-19:selected {
+    color: coral;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
 }
 
 .screen .icons-options {

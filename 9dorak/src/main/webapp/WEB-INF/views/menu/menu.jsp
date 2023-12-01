@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?e"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -191,7 +191,7 @@
 
 			<div class="filter">
 				<div class="frame-12">
-					<div class="text-wrapper-19">신상품 순</div>
+					<button class="text-wrapper-19">신상품 순</button>
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20"
 						viewBox="0 0 14 20" fill="none">
 					<path
@@ -203,7 +203,7 @@
 				</svg>
 				</div>
 				<div class="frame-13">
-					<div class="text-wrapper-20">인기순</div>
+					<button class="text-wrapper-20">인기순</button>
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20"
 						viewBox="0 0 14 20" fill="none">
 					<path
