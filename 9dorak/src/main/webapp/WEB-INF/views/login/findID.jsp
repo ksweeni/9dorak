@@ -11,6 +11,18 @@
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+	function showLoginError() {
+		var errorMessage = "${findUserErrorMessage}";
+
+		if (errorMessage !== "") {
+			alert(errorMessage);
+		}
+	}
+	window.onload = showLoginError;
+</script>
+
 </head>
 <body>
 	<div class="screen">
@@ -26,7 +38,6 @@
 						<div class="text-wrapper-10">${birthdateErrorMessage}</div>
 					</c:when>
 				</c:choose>
-				<div class="text-wrapper">해당하는 아이디가 존재하지 않습니다!</div>
 				<p class="element">
 					<span class="span">아이를 위한 9일의 약속<br /></span> <span
 						class="text-wrapper-2">구도락</span>
@@ -59,7 +70,7 @@
 								<div class="text-wrapper-8">전화번호</div>
 								<div class="overlap-group-wrapper-1">
 									<input type="text" name="mem_phone" class="overlap-group"
-										placeholder="010-0000-0000">
+										placeholder="01012340000">
 								</div>
 							</div>
 						</div>
@@ -80,6 +91,5 @@
 			</div>
 		</div>
 	</div>
-	<div class="text-wrapper-10">생년월일을 다시 입력해주세요</div>
 </body>
 </html>
