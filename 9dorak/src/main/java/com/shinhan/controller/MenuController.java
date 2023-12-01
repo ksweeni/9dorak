@@ -53,5 +53,11 @@ public class MenuController {
 		return "menu/menu_ajax";
 	}
 	
+	// 페이지 styling 용으로 미리 선언
+	@GetMapping("menuSpecificReview.do")
+	public String menuSpecificReview(Model model) {
+		return "menu/menuSpecificReview";
+	}
+	
 	
 }
