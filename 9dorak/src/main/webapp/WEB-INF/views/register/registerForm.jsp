@@ -25,12 +25,8 @@ String contextPath = request.getContextPath();
 <body>
 	<div class="v38_189">
 		<div class="v36_462"></div>
-		<%-- 		<span class="v39_195">이미 계정이 있나요? </span>
-		<!-- 	<span class="v39_196">로그인하기</span> -->
-		<!--지현이누나 로그인 페이지로   -->
-		<a class="v39_196" href="${cpath }/login/login.do">로그인하기</a>  --%>
-		<span class="v32_437">아이를 위한 9일의 약속 <span
-			style="color: orange;">구도락</span></span><span class="v39_12">회원가입</span><span
+		<a href="${cpath }" class="v32_437">아이를 위한 9일의 약속 <span
+			style="color: orange;">구도락</span></a><span class="v39_12">회원가입</span><span
 			class="v39_13">구도락에 가입하고 다양한 도시락을 체험해보세요!</span>
 		<div class="v39_14">
 			<!-- 동그라미 부분 -->
@@ -57,42 +53,36 @@ String contextPath = request.getContextPath();
 				<div class="v39_177">
 					<div class="v39_178"></div>
 					<span class="v39_179">아이디</span> <input class="v39_178" type="text"
-						id="mem_id" name="mem_id" placeholder="hcghcg17">
+						id="mem_id" name="mem_id" placeholder="hcghcg17" />
 				</div>
 				<!--중복확인 -->
 				<div class="v39_203">
 					<div class=e39_203>
-						<!-- <div class="e39_204"></div>
-					<span class="e39_205">중복확인</span> -->
+
 						<button class="e39_204" id="idCheck">
 							<div class="e39_205">중복확인</div>
 						</button>
 					</div>
 				</div>
 				<div class="v39_180">
-					<!-- <div class="v39_181"></div> -->
 					<input class="v39_181" type="text" id="mem_pw" name="mem_pw"
 						placeholder="1234"> <span class="v39_182">비밀번호</span>
 				</div>
 				<div class="v39_183">
-					<!-- <div class="v39_184"></div> -->
+
 					<input class="v39_184" type="text" id="mem_name" name="mem_name"
 						placeholder="홍찬기"> <span class="v39_185">이름</span>
 				</div>
 				<div class="v39_186">
-					<!-- 	<div class="v39_187"></div> -->
 					<input class="v39_187" type="text" name="mem_email" id="mem_email"
 						placeholder="hcghcg17@naver.com"> <span class="v39_188">이메일</span>
 				</div>
 				<div class="v39_105">
-					<!-- <div class="v39_106"></div>
-				<span class="v39_107">이메일인증</span> -->
 					<button class="v39_106" id="emailCheck">
 						<div class="v39_107">이메일인증</div>
 					</button>
 				</div>
 				<div class="v39_189">
-					<!-- 	<div class="v39_190"></div> -->
 					<input class="v39_190" type="date" name="mem_bd" id="mem_bd"
 						style="font-size: 15px"> <span class="v39_191">생년월일</span>
 				</div>
@@ -103,15 +93,7 @@ String contextPath = request.getContextPath();
 					<input class="v39_90" type="text" id="mem_phone" name="mem_phone"
 						placeholder="01096681635"> <span class="v39_91">휴대폰</span>
 				</div>
-
-
-				<!-- 			<div class="v39_180">
-					<div class="v39_181"></div>
-					<input class="v39_181" type="text" id="mem_pw" name="mem_pw"
-						placeholder="1234"> <span class="v39_182">비밀번호</span>
-				</div> -->
 				<div class="v39_192">
-					<!-- <div class="v39_193"></div> -->
 					<input class="v39_193" type="text" placeholder="추천인 코드 입력"
 						name="mem_code" id="mem_code"> <span class="v39_194">추천인
 						입력 <span style="color: orange;">(선택)</span> <br />고객님과 추천인 모두에게
@@ -119,8 +101,6 @@ String contextPath = request.getContextPath();
 					</span>
 				</div>
 				<div class="v39_197">
-					<!-- 	<div class="v39_198"></div>
-				<span class="v39_199">회원가입</span> -->
 					<button class="v39_198" id="register">
 						<div class="v39_199">회원가입</div>
 					</button>
@@ -128,10 +108,8 @@ String contextPath = request.getContextPath();
 			</div>
 			<input type="hidden" value="idUncheck" id="idCheckValue" />
 		</form>
-		<span class="v39_195">이미 계정이 있나요? </span>
-		<!-- 	<span class="v39_196">로그인하기</span> -->
-		<!--지현이누나 로그인 페이지로   -->
-		<a class="v39_196" href="${cpath }/login/loginForm.do">로그인하기</a>
+		<span class="v39_195">이미 계정이 있나요? </span> <a class="v39_196"
+			href="${cpath }/login/loginForm.do">로그인하기</a>
 	</div>
 
 </body>
@@ -222,5 +200,9 @@ String contextPath = request.getContextPath();
 							$("form").submit();
 						} // 추천인 코드 체크 + 회원가입
 					});
+
+	$("#emailCheck").on("click", function(event) {
+		event.preventDefault();
+	});// 이메일 인증 나중에 하자
 </script>
 </html>

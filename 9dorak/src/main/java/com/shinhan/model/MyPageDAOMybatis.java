@@ -22,6 +22,15 @@ public class MyPageDAOMybatis {
 		MemVO mem = sqlSession.selectOne(NAMESPACE + "getMember", login_id);
 		return mem;
 	}
+	public int updateMember(MemVO mem) {
+		int result =  sqlSession.update(NAMESPACE + "updateMember", mem);
+		return result;
+	}
+	public int deleteMember(String mem_id) {
+		// TODO Auto-generated method stub
+		int result =  sqlSession.delete(NAMESPACE + "deleteMember", mem_id);
+		return result;
+	}
 
 //	public List<MemVO> selectAll() {
 //		List<MemVO> mlist = sqlSession.selectList(NAMESPACE + "selectAll");

@@ -62,8 +62,8 @@ String contextPath = request.getContextPath();
 			</div>
 		</div>
 		
-		<span  class="e612_238">반갑습니다, 구도락입니다 !</span>
-		<span class="v49_2133">아이를 위한 9일의 약속 <span style="color: orange;">구도락</span></span>
+<!-- 		<span  class="e612_238">반갑습니다, 구도락입니다 !</span> -->
+		<a href="${cpath }" class="v49_2133">아이를 위한 9일의 약속 <span style="color: orange;">구도락</span></a>
 		<div class="v49_2134">
 			<div class="v49_2135">
 				<a href="${cpath }/register/registerForm.do" class="v49_2136">

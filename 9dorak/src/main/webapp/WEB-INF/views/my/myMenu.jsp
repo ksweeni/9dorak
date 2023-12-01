@@ -693,7 +693,7 @@ String contextPath = request.getContextPath();
 }
 
 .e79_169 {
-	color: rgba(255, 255, 255, 1);
+	color: #795548;
 	width: 100px;
 	height: 22px;
 	position: absolute;
@@ -717,7 +717,8 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 277px;
 	top: 626px;
-	border: 1px solid gray; border-top-left-radius : 40px;
+	border: 1px solid gray;
+	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
 	border-bottom-left-radius: 40px;
 	border-bottom-right-radius: 40px;
@@ -1068,13 +1069,15 @@ String contextPath = request.getContextPath();
 			<div class=e81_147>
 				<div class="e81_148"></div>
 			</div>
-			<span class="e81_149" id = "test">메뉴보기</span><span class="e81_150">구독하기</span><span
+			<span class="e81_149">메뉴보기</span><span class="e81_150">구독하기</span><span
 				class="e81_151">요모조모</span><span class="e81_152">도란도란</span><span
 				class="e81_153">이벤트</span><span class="e81_154">로그아웃</span>
 			<div class="e81_155"></div>
 			<div class="e81_156"></div>
 		</div>
-		<div id="here">
+		<!-- 		<div id="here"> -->
+		<!-- ajax 처리할 부분 -->
+
 		<div class=e81_183>
 			<span class="e79_330">내 정보 수정</span><span class="e79_405">내 정보
 				수정</span>
@@ -1083,7 +1086,7 @@ String contextPath = request.getContextPath();
 		</div>
 		<div class=e79_253>
 			<div class=e79_254>
-				<span class="e79_256">김수인</span><span class="e79_257">LV.낑깡</span>
+				<span class="e79_256">${mem.mem_name }</span><span class="e79_257">LV.${mem.mem_grade }</span>
 				<div class="e79_424"></div>
 			</div>
 			<div class=e79_258>
@@ -1111,26 +1114,31 @@ String contextPath = request.getContextPath();
 					<div class="e82_185"></div>
 					<span class="e79_430">Remove</span>
 				</div>
+				<form action="#">
 				<div class=e79_410>
 					<span class="e79_244">아이디</span>
 					<!--  	<div class="e79_409"></div> -->
-					<input class="e79_409" value="${mem.mem_id }"></input>
+					<input id="mem_id" type="text" class="e79_409"
+						value="${mem.mem_id }" readonly="readonly"></input>
 
 				</div>
 				<div class=e79_411>
 					<span class="e79_412">비밀번호</span>
 					<!-- 	<div class="e79_413"></div> -->
-					<input class="e79_413" value="${mem.mem_pw }"></input>
+					<input id="mem_pw" type="text" class="e79_413"
+						value="${mem.mem_pw }"></input>
 				</div>
 				<div class=e79_415>
 					<span class="e79_416">이름</span>
 					<!-- <div class="e79_417"></div> -->
-					<input class="e79_417" value="${mem.mem_name }"></input>
+					<input id="mem_name" type="text" class="e79_417"
+						value="${mem.mem_name }"></input>
 				</div>
 				<div class=e79_418>
 					<span class="e79_419">생년월일</span>
 					<!-- 				<div class="e79_420"></div> -->
-					<input class="e79_420" value="${mem.mem_bd }" ></input>
+					<input id="mem_bd" type="date" class="e79_420"
+						value="${mem.mem_bd }"></input>
 				</div>
 				<div class=e79_421>
 					<span class="e79_422">추천인 코드</span>
@@ -1146,54 +1154,78 @@ String contextPath = request.getContextPath();
 				<div class=e79_164>
 					<span class="e79_165">회원탈퇴</span>
 				</div>
+				</form>
 			</div>
 		</div>
-		
+
 		<!-- here 부분 -->
+	</div>
+	<div class=e81_157>
+		<div class="e81_158"></div>
+		<div class=e81_159>
+			<div class=e81_160>
+				<span class="e81_161">Lorem ipsum dolor sit amet, consectetur
+					adipiscing elit. Commodo libero viverra dapibus odio sit malesuada
+					in quis. Arcu tristique elementum viverra integer id.</span>
+				<div class="e81_162"></div>
+			</div>
 		</div>
-		<div class=e81_157>
-			<div class="e81_158"></div>
-			<div class=e81_159>
-				<div class=e81_160>
-					<span class="e81_161">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Commodo libero viverra dapibus odio
-						sit malesuada in quis. Arcu tristique elementum viverra integer
-						id.</span>
-					<div class="e81_162"></div>
-				</div>
+		<div class=e81_163>
+			<span class="e81_164">Contact Us</span>
+			<div class=e81_165>
+				<span class="e81_166">1234 Country Club Ave</span><span
+					class="e81_167">NC 123456, London, UK</span><span class="e81_168">+0123
+					456 7891</span>
 			</div>
-			<div class=e81_163>
-				<span class="e81_164">Contact Us</span>
-				<div class=e81_165>
-					<span class="e81_166">1234 Country Club Ave</span><span
-						class="e81_167">NC 123456, London, UK</span><span class="e81_168">+0123
-						456 7891</span>
-				</div>
+		</div>
+		<div class=e81_169>
+			<span class="e81_170">User Link</span>
+			<div class=e81_171>
+				<span class="e81_172">About Us</span><span class="e81_173">Contact
+					Us</span><span class="e81_174">Order Delivery</span><span class="e81_175">Payment
+					& Tex</span><span class="e81_176">Terms of Services</span>
 			</div>
-			<div class=e81_169>
-				<span class="e81_170">User Link</span>
-				<div class=e81_171>
-					<span class="e81_172">About Us</span><span class="e81_173">Contact
-						Us</span><span class="e81_174">Order Delivery</span><span class="e81_175">Payment
-						& Tex</span><span class="e81_176">Terms of Services</span>
-				</div>
-			</div>
-			<div class=e81_177>
-				<span class="e81_178">Opening Restaurant</span>
-				<div class=e81_179>
-					<span class="e81_180">Sat-Wet: 09:00am-10:00PM</span><span
-						class="e81_181">Thursdayt: 09:00am-11:00PM</span><span
-						class="e81_182">Friday: 09:00am-8:00PM</span>
-				</div>
+		</div>
+		<div class=e81_177>
+			<span class="e81_178">Opening Restaurant</span>
+			<div class=e81_179>
+				<span class="e81_180">Sat-Wet: 09:00am-10:00PM</span><span
+					class="e81_181">Thursdayt: 09:00am-11:00PM</span><span
+					class="e81_182">Friday: 09:00am-8:00PM</span>
 			</div>
 		</div>
 	</div>
+	<!-- </div> -->
 </body>
 <script type="text/javascript">
+	$(".e79_168").on("click", function() {
+		var param = {
+			mem_id : $("#mem_id").val(),
+			mem_pw : $("#mem_pw").val(),
+			mem_name : $("#mem_name").val(),
+			mem_bd : $("#mem_bd").val()
+		}
 
-  	$("#test").on("click",function(){
-  		$("#here").html("");
-  	})
+		$.ajax({
 
+			url : "${cpath}/my/updateMember.do",
+			data : param,
+			success : function(res) {
+				alert(res);
+				location.reload();
+			}
+
+		})
+	}) // 아이디 변경 되는지 확인하자
+	
+	$(".e79_166").on("click",function(){
+		$("form")[0].reset();
+	})
+	
+	$(".e79_164").on("click",function(){
+	    if (confirm("정말 탈퇴하시겠습니까?")) {
+			location.href = "${cpath}/my/deleteMember.do?mem_id="+$("#mem_id").val();		      
+	    }
+	})
 </script>
 </html>
