@@ -32,13 +32,16 @@ public class MyPageController {
 	
 	@GetMapping("myPage.do")
 	public String myPage(Model model ,HttpSession session) {
-		// 지현이누나가 세션에 담는 이름으로 바꿔야함
-//		MemVO mem = mService.getMember(session.getAttribute("login_id"));
-		MemVO mem = mService.getMember("aaa");
-//		System.out.println(mem);
+		MemVO loginmem =(MemVO) session.getAttribute("loginmem");
+		MemVO mem = mService.getMember(loginmem.getMem_id());
 		model.addAttribute("mem",mem);
-		
 		return "my/myPage";
+	}
+	
+	@GetMapping("logout.do")
+	public String logut(Model model ,HttpSession session) {
+		
+		return "home";
 	}
 	
 
