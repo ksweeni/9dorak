@@ -66,7 +66,7 @@
 						<div class="div-3">
 							<div class="text-wrapper-11">생년월일</div>
 							<div class="overlap-group-wrapper-2">
-								<input type="date" name="mem_bd" class="payments-wrapper">
+								<input type="text" name="mem_bd" class="payments-wrapper">
 							</div>
 						</div>
 
