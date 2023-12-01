@@ -59,7 +59,7 @@ public class LoginController {
 
 		if (foundid != null) {
 			// 사용자를 찾았을 경우 처리 해당 아이디를 모델에 추가
-			model.addAttribute("foundId", foundid);
+			model.addAttribute("foundId", foundid.getMem_id());
 			return "login/foundID"; // 아이디를 찾았을 때의 페이지로 이동
 		} else {
 			// 사용자를 찾지 못했을 경우 처리

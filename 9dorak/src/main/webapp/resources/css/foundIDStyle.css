@@ -72,7 +72,7 @@
   line-height: normal;
 }
 
-.screen .ksween {
+.screen .found {
   position: relative;
   width: fit-content;
   font-family: "Poppins-SemiBold", Helvetica;
@@ -97,7 +97,7 @@
   gap: 32px;
   position: absolute;
   top: 102px;
-  left: 92px;
+  left: 140px;
 }
 
 .screen .frame-2 {
@@ -142,7 +142,7 @@
 .screen .text-wrapper-4 {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 45px;
   font-family: "Poppins-Bold", Helvetica;
   font-weight: 700;
   color: #000000;
@@ -167,6 +167,8 @@
   background-color: #f48e28;
   border-radius: 35px;
   box-shadow: 0px 10px 30px #c4501182;
+  top: 30px;
+  left: 45px;
 }
 
 .screen .text-wrapper-5 {

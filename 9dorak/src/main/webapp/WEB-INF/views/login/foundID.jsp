@@ -22,30 +22,30 @@
 				</p>
 				<div class="frame">
 					<div class="div">회원님의 아이디는</div>
-					<p class="ksween">
-						<span class="span">ksween</span> <span class="text-wrapper">
-							입니다</span>
+					<p class="found">
+						<span class="span">${foundId}</span> <span
+							class="text-wrapper">입니다</span>
 					</p>
 				</div>
-				<div class="group">
-					<div class="top-bar">
-						<div class="frame-2">
-							<div class="text-wrapper-2">아이디 찾기</div>
-							<img class="line" src="img/line-1.svg" />
-						</div>
-						<div class="frame-2">
-							<div class="text-wrapper-3">비밀번호 찾기</div>
+			</div>
+			<div class="group">
+				<div class="top-bar">
+					<div class="frame-2">
+						<div class="text-wrapper-2">아이디 찾기</div>
+						<img class="line" src="img/line-1.svg" />
+					</div>
+					<div class="frame-2">
+						<div class="text-wrapper-3">비밀번호 찾기</div>
+					</div>
+				</div>
+				<div class="text-wrapper-4">계정을 잊으셨나요?</div>
+				<a href="../login/loginForm.do" role="button">
+					<div class="login-button">
+						<div class="overlap-group">
+							<div class="text-wrapper-5">로그인 하기</div>
 						</div>
 					</div>
-					<div class="text-wrapper-4">계정을 잊으셨나요?</div>
-					<a href="../login/loginForm.do">
-						<div class="login-button">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">로그인 하기</div>
-							</div>
-						</div>
-					</a>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>
