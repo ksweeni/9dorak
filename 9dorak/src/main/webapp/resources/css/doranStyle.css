@@ -1176,3 +1176,61 @@
     font-size: 1.1rem; 
 }
 
+.screen .doran-feed{
+	width: 700px;
+	height: 500px;
+	border: none;
+}
+
+.doran-uploadContent-image{
+	width: 650px;
+	height: 300px;
+	border-radius: 10px;
+	background-color: #E2E2E2;
+	margin-bottom: 13px;
+	position: relative;
+    top: -60px;
+    left: 25px;
+}
+
+.doran-uploadContent-content{
+	width: 650px;
+	position: relative;
+    top: -60px;
+}
+
+.doran-uploadInfo-profile{
+	width: 55px;
+	height: 55px;
+	border-radius: 55px;
+}
+
+.doran-uploadInfo-memid{
+	font-size: 24px;
+	font-weight: 500;
+	position: relative;
+	top: -60px;
+    left: 70px;
+}
+
+.doran-uploadInfo-time{
+	color: #8A8A8A;
+	font-size: 14px;
+	position: relative;
+	top: -60px;
+    left: 70px;
+}
+
+.doran-uploadInfo-memgrade{
+	color: #FF9A23;
+	font-size: 16px;
+	position: relative;
+	top: -100px;
+    left: 120px;
+}
+
+.doran-review{
+	position: relative;
+    display: flex;
+    top: -40px;
+}
