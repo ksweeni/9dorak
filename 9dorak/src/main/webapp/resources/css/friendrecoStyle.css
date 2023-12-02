@@ -232,10 +232,11 @@ li{
 }
 
 hr {
+    width: 80%;
     background: #a0a0a0;
-    margin: 7px 100px;
-    height:1px;
-    border:0;
+    margin: 0 auto;
+    height: 1px;
+    border: 0;
 }
 
 
