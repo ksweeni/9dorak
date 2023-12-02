@@ -193,6 +193,14 @@ a {
 	color: #404040;
 }
 
+hr {
+    width: 80%;
+    background: #a0a0a0;
+    margin: 0 auto;
+    height: 1px;
+    border: 0;
+}
+
 li {
 	list-style: none;
 }
@@ -323,11 +331,13 @@ h5 {
 .47_426 { 
 	overflow:hidden;
 }
-.e47_426 { 
-	background-color:rgba(255, 255, 255, 1);
-	width:1440px;
-	height:1894px;
-	position:absolute;
+.e47_426 {
+    background-color: rgba(255, 255, 255, 1);
+    width: 1440px;
+    height: 1894px;
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
 }
 .e47_454 { 
 	width:1440px;
