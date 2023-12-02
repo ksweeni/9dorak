@@ -108,7 +108,27 @@
 			<div class="viewsort"></div>
 
 			<div class="group-4">
-			
+
+				<form id="orderByForm" action="${cpath}/doran/doran.do" method="get">
+					<button type="submit" onclick="submitForm('latest')">최신순</button>
+					<button type="submit" onclick="submitForm('views')">조회순</button>
+					<button type="submit" onclick="submitForm('likes')">가장 많은
+						좋아요</button>
+				</form>
+
+				<script>
+					var cpath = "${cpath}";
+					console.log(cpath); // Ensure that cpath is correctly printed in the console
+
+					function submitForm(orderBy, event) {
+						alert("Button Clicked! Order By: " + orderBy);
+						var form = document.getElementById('orderByForm');
+						form.action = cpath + "/doran/doran.do?orderBy="
+								+ orderBy;
+						form.submit();
+					}
+				</script>
+
 				<c:forEach items="${dlist}" var="doran" varStatus="loop">
 					<tr>
 						<td>${doran.mem_id}</td>
@@ -116,33 +136,40 @@
 						<td>${doran.doran_cont}</td>
 						<td>${doran.doran_date}</td>
 					</tr>
-					<h3>좋아요 ${dlike[loop.index]}개 댓글수 ${dcomment[loop.index]}개 조회수 ${doran.doran_view}개</td></h3>
+					<h3>
+						좋아요 ${dlike[loop.index]}개 댓글수 ${dcomment[loop.index]}개 조회수
+						${doran.doran_view}개
+						</td>
+					</h3>
 				</c:forEach>
-				
+
 				<div class="doran-card">
-					
-						<c:forEach items="${dlist}" var="doran" varStatus="loop">
-							<div class="doran-feed">
-								<div class="doran-uploadInfo">
-									<div><img class="doran-uploadInfo-profile" src="${cpath }/resources/images/test.png"/></div>
-									<div class="doran-uploadInfo-memid">${doran.mem_id }</div>
-									<div class="doran-uploadInfo-time">8분전</div>
-			                        <div class="doran-uploadInfo-memgrade">낑깡</div>
+
+					<c:forEach items="${dlist}" var="doran" varStatus="loop">
+						<div class="doran-feed">
+							<div class="doran-uploadInfo">
+								<div>
+									<img class="doran-uploadInfo-profile"
+										src="${cpath }/resources/images/test.png" />
 								</div>
-								<div class="doran-uploadContent">
-									<div class="doran-uploadContent-image">이미지or비디오</div>
-									<div class="doran-uploadContent-content">${doran.doran_cont}</div>
-								</div>
-								<div class="doran-review">
-									<div class="doran-review-like">${dlike[loop.index]}</div>
-									<div class="doran-review-dcomment">${dcomment[loop.index]}</div>
-									<div class="doran-review-reviewCnt">${doran.doran_view}</div>
-								</div>
+								<div class="doran-uploadInfo-memid">${doran.mem_id }</div>
+								<div class="doran-uploadInfo-time">8분전</div>
+								<div class="doran-uploadInfo-memgrade">낑깡</div>
 							</div>
-						</c:forEach>
-		
+							<div class="doran-uploadContent">
+								<div class="doran-uploadContent-image">이미지or비디오</div>
+								<div class="doran-uploadContent-content">${doran.doran_cont}</div>
+							</div>
+							<div class="doran-review">
+								<div class="doran-review-like">${dlike[loop.index]}</div>
+								<div class="doran-review-dcomment">${dcomment[loop.index]}</div>
+								<div class="doran-review-reviewCnt">${doran.doran_view}</div>
+							</div>
+						</div>
+					</c:forEach>
+
 				</div>
-				
+
 			</div>
 
 			<div class="group-12">
@@ -178,7 +205,9 @@
 					<div class="group-17">
 						<div class="div-2">
 							<div class="doran-profile">
-								<div class="doran-profile-photo"><img src="${cpath }/resources/images/test.png"/></div>
+								<div class="doran-profile-photo">
+									<img src="${cpath }/resources/images/test.png" />
+								</div>
 								<button class="doran-button-frofile-setting">
 									<span>프로필 설정하기</span>
 								</button>
