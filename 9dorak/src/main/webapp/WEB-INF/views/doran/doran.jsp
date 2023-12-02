@@ -215,12 +215,19 @@
 						</div>
 					</div>
 				</div>
-				<button type="submit" class="group-18">
-					<div class="group-19">
-						<img class="create" src="img/create.svg" />
-						<div class="text-wrapper-22">글 작성하기</div>
-					</div>
-				</button>
+
+				<form
+					action="${pageContext.request.contextPath}/doran/doranUpload.do"
+					method="get">
+					<button type="submit" class="group-18">
+						<div class="group-19">
+							<img class="create" src="img/create.svg" />
+							<div class="text-wrapper-22">글 작성하기</div>
+						</div>
+					</button>
+				</form>
+
+
 			</div>
 			<header class="header">
 				<div class="top-nav">

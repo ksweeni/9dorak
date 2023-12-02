@@ -30,33 +30,17 @@ public class DoranController {
 
 	private static final Logger logger = LoggerFactory.getLogger(DoranController.class);
 
-	/*@GetMapping("doran.do")
-	public String doran(Model model) {
-		List<DoranVO> dlist = dService.selectAll();
-		List<DlikeVO> dlike = dService.selectLike();
-		List<DCommentVO> dcomment = dService.selectComment();
-		model.addAttribute("dlist", dlist);
-		model.addAttribute("dlike", dlike);
-		model.addAttribute("dcomment", dcomment);
-		System.out.println("좋아요 : " + dlike);
-		System.out.println("댓글 수 : " + dcomment);
-
-		return "doran/doran";
-	}*/
-
 	@GetMapping("doran.do")
 	public String doran(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model) {
 		List<DoranVO> dlist;
 		System.out.println(orderBy);
 
-		// Choose the appropriate method based on the orderBy parameter
 		if ("latest".equals(orderBy)) {
 			dlist = dService.selectAll();
 		} else if ("views".equals(orderBy)) {
 			dlist = dService.selectAllByView();
 		} else {
-			// Add additional cases for other sorting options if needed
-			dlist = dService.selectAll(); // Default to selectAll for unknown orderBy values
+			dlist = dService.selectAll(); 
 		}
 
 		List<DlikeVO> dlike = dService.selectLike();
@@ -70,6 +54,13 @@ public class DoranController {
 	
 		return "doran/doran";
 	}
+	
+	@GetMapping("doranUpload.do")
+	public String doranUpload(Model model) {
+		System.out.println("업로드 페이지로 이동");
+	    return "doran/doranUpload";
+	}
+
 
 	@GetMapping("doranFeedDetail.do")
 	public String doranFeedDetail(Model model) {
