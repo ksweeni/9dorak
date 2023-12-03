@@ -107,13 +107,12 @@ div-wrapper {
 
 .div-wrapper .title {
 	position: absolute;
-	width: 512px;
+	width: 100%;
 	top: 0;
 	left: 0;
-	font-family: "Open Sans-Bold", Helvetica;
 	font-weight: 700;
 	color: #172135;
-	font-size: 35px;
+	font-size: 2.3rem;
 	letter-spacing: 0;
 	line-height: 40px;
 }
@@ -123,7 +122,7 @@ div-wrapper {
 	width: 40px;
 	height: 40px;
 	top: 0;
-	left: 355px;
+	left: 32rem;
 }
 
 .div-wrapper .text-wrapper {
@@ -150,7 +149,7 @@ div-wrapper {
 
 .div-wrapper .frame-wrapper {
 	position: absolute;
-	width: 567px;
+	width: 35rem;
 	height: 100px;
 	top: 0;
 	left: 0;
@@ -161,10 +160,10 @@ div-wrapper {
 .div-wrapper .frame {
 	display: inline-flex;
 	align-items: center;
-	gap: 204px;
+	gap: 10rem;
 	position: relative;
-	top: 31px;
-	left: 17px;
+	top: 2rem;
+	left: 2rem;
 }
 
 .div-wrapper .button-product-add {
@@ -178,7 +177,6 @@ div-wrapper {
 	width: 10px;
 	top: 8px;
 	left: 74px;
-	font-family: "Montserrat-Medium", Helvetica;
 	font-weight: 500;
 	color: #777777;
 	font-size: 20px;
@@ -189,7 +187,9 @@ div-wrapper {
 
 .div-wrapper .entypo-plus-wrapper {
 	position: absolute;
+	cursor: pointer;
 	width: 51px;
+	border: none;
 	height: 40px;
 	top: 0;
 	left: 107px;
@@ -198,15 +198,16 @@ div-wrapper {
 }
 
 .div-wrapper .img {
-	position: absolute;
-	width: 25px;
+	width: 25.48px;
 	height: 20px;
-	top: 10px;
-	left: 13px;
+	top: 10px ;
+	left: 119.77px;
 }
 
 .div-wrapper .entypo-minus-wrapper {
 	position: absolute;
+	border: none;
+	cursor: pointer;
 	width: 51px;
 	height: 40px;
 	top: 0;
@@ -218,14 +219,13 @@ div-wrapper {
 .div-wrapper .text-wrapper-3 {
 	position: relative;
 	width: fit-content;
-	font-family: "Montserrat-Bold", Helvetica;
 	font-weight: 700;
 	color: #000000;
 	text-align: center;
 	white-space: nowrap;
-	font-size: 20px;
-	letter-spacing: 0;
+	font-size: 1.2rem; letter-spacing : 0;
 	line-height: normal;
+	letter-spacing: 0;
 }
 
 .div-wrapper .overlap-3 {
@@ -237,33 +237,36 @@ div-wrapper {
 }
 
 .div-wrapper .button-medium-text {
-	position: absolute;
-	width: 134px;
-	height: 50px;
-	top: 0;
-	left: 358px;
+	background: white;
+	cursor:pointer;
+    position: relative;
+    left: 23rem;
+    width: 179px;
+    height: 50px;
+    border-radius: 20px;
+    border: 1px solid;
+    border-color: #d9dadb;
 }
 
 .div-wrapper .overlap-group-2 {
 	position: relative;
-	width: 88px;
-	height: 21px;
-	top: 14px;
-	left: 49px;
+    width: 6rem;
+    height: 21px;
+    top: 0.1rem;
+    left: 2.5rem;
 }
 
 .div-wrapper .label {
 	position: absolute;
-	height: 20px;
-	top: 0;
-	left: 9px;
-	font-family: "Lato-SemiBold", Helvetica;
-	font-weight: 600;
-	color: #262c33;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: 20px;
-	white-space: nowrap;
+    height: 20px;
+    top: 0;
+    left: 1rem;
+    font-weight: 600;
+    color: #262c33;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
 }
 
 .div-wrapper .icon-cart {
@@ -277,7 +280,7 @@ div-wrapper {
 .div-wrapper .frame-2 {
 	display: inline-flex;
 	align-items: flex-start;
-	gap: 50px;
+	gap:3rem;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -289,21 +292,26 @@ div-wrapper {
 	height: 50px;
 	background-color: #131416;
 	border-radius: 20px;
+	cursor:pointer;
+}
+
+.div-wrapper .label-wrapper:hover{
+	background: orange;
+    border: none;
 }
 
 .div-wrapper .label-2 {
 	position: absolute;
-	width: 90px;
-	height: 20px;
-	top: 14px;
-	left: 109px;
-	font-family: "Lato-SemiBold", Helvetica;
-	font-weight: 600;
-	color: #ffffff;
-	font-size: 14px;
-	text-align: center;
-	letter-spacing: 0;
-	line-height: 20px;
+    width: 5rem;
+    height: 20px;
+    top: 1rem;
+    left: 7rem;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 20px;
 }
 
 .div-wrapper .background {
@@ -334,15 +342,15 @@ div-wrapper {
 .div-wrapper .frame-4 {
 	display: inline-flex;
 	align-items: center;
-	gap: 15px;
+	gap: 1rem;
 	position: absolute;
-	top: 33px;
+	top: 2rem;
 	left: 0;
 }
 
 .div-wrapper .group-2 {
 	position: relative;
-	width: 509px;
+	width: 32rem;
 	height: 20px;
 }
 
@@ -373,15 +381,12 @@ div-wrapper {
 
 .div-wrapper .text-wrapper-4 {
 	position: relative;
-	width: 43px;
+	width: 3rem;
 	height: 25px;
-	margin-top: -1px;
-	font-family: "Rubik-Regular", Helvetica;
 	font-weight: 400;
 	color: #95a1bb;
-	font-size: 20px;
+	font-size: 1.2rem;
 	letter-spacing: 0;
-	line-height: 22px;
 	white-space: nowrap;
 }
 
@@ -398,7 +403,6 @@ div-wrapper {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Rubik-Bold", Helvetica;
 	font-weight: 700;
 	color: #000000;
 	font-size: 20px;
@@ -411,7 +415,6 @@ div-wrapper {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Rubik-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #ff7f00;
 	font-size: 20px;
@@ -464,16 +467,15 @@ div-wrapper {
 
 .div-wrapper .timestamp {
 	position: absolute;
-	width: 567px;
-	top: 151px;
+	width: 35rem;
+	top: 9rem;
 	left: 0;
-	font-family: "Open Sans-Regular", Helvetica;
 	font-weight: 400;
 	color: #626264;
-	font-size: 15px;
+	font-size: 1rem;
 	text-align: right;
 	letter-spacing: 0;
-	line-height: 16px;
+	line-height: 1rem;
 }
 
 .div-wrapper .message-2 {
@@ -486,8 +488,8 @@ div-wrapper {
 
 .div-wrapper .overlap-group-4 {
 	position: relative;
-	width: 567px;
-	height: 131px;
+	width: 35rem;
+	height: 8rem;
 	background-color: #161514;
 	border-radius: 12px 12px 0px 12px;
 }
@@ -497,7 +499,6 @@ div-wrapper {
 	width: 518px;
 	top: 26px;
 	left: 24px;
-	font-family: "Open Sans-Regular", Helvetica;
 	font-weight: 400;
 	color: #f7fafc;
 	font-size: 17px;
@@ -506,7 +507,6 @@ div-wrapper {
 }
 
 .div-wrapper .span {
-	font-family: "Open Sans-Regular", Helvetica;
 	font-weight: 400;
 	color: #f7fafc;
 	font-size: 17px;
@@ -515,7 +515,6 @@ div-wrapper {
 }
 
 .div-wrapper .text-wrapper-7 {
-	font-family: "Open Sans-SemiBold", Helvetica;
 	font-weight: 600;
 	font-size: 25px;
 }
@@ -537,27 +536,26 @@ div-wrapper {
 }
 
 .menu-selection-wrapper .common-button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s, border-bottom 0.3s; 
+	border: none;
+	background: none;
+	cursor: pointer;
+	position: relative;
+	transition: color 0.3s, border-bottom 0.3s;
 }
 
-.menu-selection-wrapper .common-button:hover,
-.menu-selection-wrapper .common-button:active,
-.menu-selection-wrapper .common-button.selected {
-    color: #ffb58b; /* 호버 및 선택 상태에서의 글자 색상 변경 */
+.menu-selection-wrapper .common-button:hover, .menu-selection-wrapper .common-button:active,
+	.menu-selection-wrapper .common-button.selected {
+	color: #ffb58b; /* 호버 및 선택 상태에서의 글자 색상 변경 */
 }
 
 /* rectangle-4 초기 숨김 상태 */
 .menu-selection-wrapper .rectangle-4 {
-    display: none;
+	display: none;
 }
 
 /* 선택된 상태에서 rectangle-4 표시 및 색상 변경 */
 .menu-selection-wrapper .common-button.selected .rectangle-4 {
-    display: block;
+	display: block;
 }
 
 .div-wrapper .group-4 {
@@ -626,21 +624,14 @@ div-wrapper {
 .div-wrapper .text-wrapper-10 {
 	position: relative;
 	align-self: stretch;
-	font-family: var(- -body-large-font-family);
-	font-weight: var(- -body-large-font-weight);
 	color: #939393;
-	font-size: var(- -body-large-font-size);
 	text-align: center;
-	letter-spacing: var(- -body-large-letter-spacing);
-	line-height: var(- -body-large-line-height);
-	font-style: var(- -body-large-font-style);
 }
 
 .div-wrapper .text-wrapper-11 {
 	position: relative;
 	align-self: stretch;
 	margin-top: -1px;
-	font-family: "DM Sans-Bold", Helvetica;
 	font-weight: 700;
 	color: var(- -tangerine);
 	font-size: 50px;
@@ -688,7 +679,6 @@ div-wrapper {
 	height: 135px;
 	top: 315px;
 	left: 29px;
-	font-family: "Open Sans-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #ffffff;
 	font-size: 20px;
@@ -759,7 +749,6 @@ div-wrapper {
 	height: 135px;
 	top: 315px;
 	left: 0;
-	font-family: "Open Sans-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #ffffff;
 	font-size: 20px;
@@ -781,7 +770,6 @@ div-wrapper {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Open Sans-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #000000;
 	font-size: 25px;
@@ -905,7 +893,6 @@ div-wrapper {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #000000;
 	font-size: 20px;
@@ -917,7 +904,6 @@ div-wrapper {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #7d7d7d;
 	font-size: 20px;
@@ -964,7 +950,6 @@ div-wrapper {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-Thin", Helvetica;
 	font-weight: 100;
 	color: #000000;
 	font-size: 20px;
@@ -983,7 +968,6 @@ div-wrapper {
 .div-wrapper .text-wrapper-17 {
 	position: relative;
 	width: 472px;
-	font-family: "Poppins-Medium", Helvetica;
 	font-weight: 500;
 	color: #000000;
 	font-size: 20px;
@@ -1008,7 +992,6 @@ div-wrapper {
 .div-wrapper .text-wrapper-18 {
 	position: relative;
 	width: fit-content;
-	font-family: "Poppins-Medium", Helvetica;
 	font-weight: 500;
 	color: #ff7f00;
 	font-size: 20px;
@@ -1065,7 +1048,6 @@ div-wrapper {
 	width: 24px;
 	top: 4px;
 	left: 4px;
-	font-family: "Open Sans-Bold", Helvetica;
 	font-weight: 700;
 	color: #f38820;
 	font-size: 14px;
@@ -1090,7 +1072,6 @@ div-wrapper {
 	width: 24px;
 	top: 4px;
 	left: 4px;
-	font-family: "Inter-Bold", Helvetica;
 	font-weight: 700;
 	color: var(- -dark-grey-400);
 	font-size: 14px;
@@ -1141,13 +1122,6 @@ div-wrapper {
 	width: 375px;
 	top: 138px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .untitled {
@@ -1242,14 +1216,8 @@ div-wrapper {
 .div-wrapper .text-wrapper-20 {
 	top: 0;
 	left: 10px;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
 	color: #000000;
-	font-size: var(- -h4-font-size);
 	position: absolute;
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
 }
 
 .div-wrapper .group-10 {
@@ -1264,39 +1232,18 @@ div-wrapper {
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .text-wrapper-22 {
 	position: absolute;
 	top: 34px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .text-wrapper-23 {
 	position: absolute;
 	top: 68px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .group-11 {
@@ -1339,13 +1286,6 @@ div-wrapper {
 	width: 177px;
 	top: 21px;
 	left: 21px;
-	font-family: var(- -p2-font-family);
-	font-weight: var(- -p2-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p2-font-size);
-	letter-spacing: var(- -p2-letter-spacing);
-	line-height: var(- -p2-line-height);
-	font-style: var(- -p2-font-style);
 }
 
 .div-wrapper .user-link {
@@ -1360,13 +1300,7 @@ div-wrapper {
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
 	color: #000000;
-	font-size: var(- -h4-font-size);
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
 }
 
 .div-wrapper .group-12 {
@@ -1381,26 +1315,12 @@ div-wrapper {
 	position: absolute;
 	top: 102px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .text-wrapper-26 {
 	position: absolute;
 	top: 136px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .opening-restaurant {
@@ -1446,26 +1366,14 @@ div-wrapper {
 	left: 359px;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
-	font-weight: var(- -h5-font-weight);
 	color: #000000;
-	font-size: var(- -h5-font-size);
-	letter-spacing: var(- -h5-letter-spacing);
-	line-height: var(- -h5-line-height);
-	font-style: var(- -h5-font-style);
 }
 
 .div-wrapper .text-wrapper-28 {
 	left: 0;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
-	font-weight: var(- -h5-font-weight);
 	color: #000000;
-	font-size: var(- -h5-font-size);
-	letter-spacing: var(- -h5-letter-spacing);
-	line-height: var(- -h5-line-height);
-	font-style: var(- -h5-font-style);
 }
 
 .div-wrapper .text-wrapper-29 {

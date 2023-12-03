@@ -44,7 +44,7 @@ String contextPath = request.getContextPath();
 		
 		
 		$.ajax({
-			url : "${pageContext.request.contextPath}/doran/doranUpload.do",
+			url : "${cpath}/doran/doranUpload.do",
 			type : 'POST',
 			data : formData,
 			processData : false,
