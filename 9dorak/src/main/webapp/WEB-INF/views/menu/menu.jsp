@@ -279,24 +279,30 @@
 	<script type="text/javascript">
 	
 	var chkCtgr = null;
-	var allerCheckList = []; 
 	
 	//검색하기
-	function searchBtnClick() {
-		console.log (allerCheckList);		
+	function searchBtnClick(allerCheckList) {
+	
+		var allerListJson;
+		var allerArrList =[];
+		if(allerCheckList != null){
+			allerListJson = JSON.stringify(allerCheckList);
+		}else{
+			allerListJson = JSON.stringify(allerArrList);
+		}
+		
 	    $.ajax({
 	        url:"${cpath}/menu/searchPro.do",
 	        type:'GET',
 	        data:{
 	        	pro_name: $('#searchTxt').val() //검색내용
 	          , ingre_no:  chkCtgr //카테고리선택
-	          , allerCheckList: allerCheckList 
+	          , allerCheckList: allerListJson
             } ,
 	        success:function(data){
-	        	//debugger;
-	            alert("완료!");
+	            //alert("완료!");
 				if(data.length == 0){
-					alert("검색 결과가 없습니다.");
+					//alert("검색 결과가 없습니다.");
 				}else{
 					
 					//temp += "<div>검색 결과가 "+data.length+"건 입니다.</div>"
@@ -324,7 +330,7 @@
 	}
 	
 	//알러지
-	function allerCheck(e){  
+	function allerCheck(e){
 		
 		const cerealsCheckbox = document.querySelector('#cerealsCheckbox');
 		const nutsCheckbox = document.querySelector('#nutsCheckbox');
@@ -339,7 +345,8 @@
 		const checked4 = seafoodCheckbox.checked;  // 선택 상태 확인
 		const checked5 = soyCheckbox.checked;  // 선택 상태 확인
 		const checked6 = glutenCheckbox.checked;  // 선택 상태 확인
-
+		
+		const allerCheckList = []; 
 	
 		if(checked1){
 			allerCheckList.push("곡류");	
@@ -351,24 +358,23 @@
 		
 		if(checked3){
 			allerCheckList.push("우유");	
-			}
+		}
 		
 		if(checked4){
 			allerCheckList.push("과일");	
-			}
+		}
 		
 		if(checked5){
 			allerCheckList.push("견과류");	
-			}
+		}
 		
 		if(checked6){
 			allerCheckList.push("해산물");	
-			}
+		}
 		
-		//var idx = list.indexOf("곡류");
-		//console.log (idx);
+		console.log (allerCheckList);		
 	
-		//searchBtnClick();
+		searchBtnClick(allerCheckList);
 		
 		}
 
