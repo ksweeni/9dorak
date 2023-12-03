@@ -12,6 +12,9 @@
 	href="${cpath}/resources/css/doranUploadStyle.css" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+alert("${sessionScope.loginmem}");
+</script>
 </head>
 
 <body>
@@ -119,7 +122,7 @@
 										const currentDate = new Date();
 										const doranDate = currentDate
 												.toISOString().split('T')[0];
-										const memId = '${sessionScope.loginmem.memId}';
+										const memId = '${sessionScope.loginmem.mem_id}';
 
 										const selectedFile = document
 												.getElementById('fileInput').files[0];
@@ -144,7 +147,6 @@
 
 										console.log("formData:", formData);
 
-										// Add your code to send formData to the server or perform other actions
 									}
 								</script>
 
