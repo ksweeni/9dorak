@@ -68,4 +68,27 @@ public class LoginController {
 		}
 	}
 
+	@GetMapping("findPwdForm.do")
+	public String findPwdForm() {
+		return "login/findPwd";
+	}
+
+	@PostMapping("findPwd.do")
+	public String findPwd(@RequestParam String mem_id, @RequestParam String mem_name, @RequestParam String mem_phone,
+			Model model) {
+
+		MemVO foundPwd = lservice.findPwd(mem_id, mem_name, mem_phone);
+
+		if (foundPwd != null) {
+			// 비밀번호를 찾았을 경우 처리
+			// 새로운 비밀번호를 모델에 추가하고 새로운 비밀번호 설정 페이지로 이동
+			model.addAttribute("foundPwd", foundPwd);
+			return "login/createNewPwd"; // 새로운 비밀번호 설정 페이지로 이동
+		} else {
+			// 사용자를 찾지 못했을 경우 처리
+			model.addAttribute("findUserErrorMessage", "입력한 정보와 일치하는 사용자를 찾을 수 없습니다.");
+			return "login/findPwd"; // 다시 비밀번호 찾기 페이지로
+		}
+	}
+
 }

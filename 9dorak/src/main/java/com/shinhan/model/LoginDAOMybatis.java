@@ -33,5 +33,13 @@ public class LoginDAOMybatis {
 	    findIdParams.put("mem_bd", mem_bd);
 
 	    return sqlSession.selectOne(NAMESPACE + "findId", findIdParams);
-	}	
+	}
+	public MemVO findPwd(String mem_id, String mem_name, String mem_phone) {
+        Map<String, String> findPwdParams = new HashMap<>();
+        findPwdParams.put("mem_id", mem_id);
+        findPwdParams.put("mem_name", mem_name);
+        findPwdParams.put("mem_phone", mem_phone);
+
+        return sqlSession.selectOne(NAMESPACE + "findPwd", findPwdParams);
+    }
 }

@@ -96,10 +96,12 @@
 	margin-top: -1px;
 	font-family: "Poppins-Bold", Helvetica;
 	font-weight: 700;
-	color: #000000;
+	color: #f48e28;
 	font-size: 16px;
 	letter-spacing: 0.48px;
 	line-height: normal;
+	border: none;
+    cursor: pointer;
 }
 
 .screen .p {

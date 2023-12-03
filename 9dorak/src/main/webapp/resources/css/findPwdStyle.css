@@ -123,6 +123,7 @@
   font-size: 48px;
   letter-spacing: 0;
   line-height: normal;
+  width: 500px;
 }
 
 .screen .frame-2 {
@@ -240,15 +241,3 @@
   line-height: normal;
 }
 
-.screen .text-wrapper-7 {
-  position: absolute;
-  top: 718px;
-  left: 633px;
-  text-shadow: 0px 4px 4px #00000040;
-  font-family: "Poppins-Regular", Helvetica;
-  font-weight: 400;
-  color: #ff0b0b;
-  font-size: 13px;
-  letter-spacing: 0.39px;
-  line-height: normal;
-}

@@ -49,7 +49,8 @@
 							<img class="line" src="img/line-1.svg" />
 						</div>
 						<div class="frame">
-							<div class="text-wrapper-3">비밀번호 찾기</div>
+							<button onclick="location.href='../login/findPwdForm.do'"
+							type="submit" class="text-wrapper-3">비밀번호 찾기</button>
 						</div>
 					</div>
 					<p class="p">
