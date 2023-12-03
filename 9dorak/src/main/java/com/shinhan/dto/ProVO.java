@@ -33,6 +33,9 @@ public class ProVO {
 	int pro_sugar; //당류
 	int pro_cal; //칼로리
 	int pro_weight; // 중랴량
+	String ingre_no;// 카테고리 번호
+	String allerCheckList[];
+	
 	public int getPro_no() {
 		return pro_no;
 	}

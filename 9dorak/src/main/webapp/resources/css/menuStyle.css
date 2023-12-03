@@ -66,8 +66,8 @@
 	background-color: var(- -white);
 	top:180px;
 	overflow: hidden;
-	width: 1440px;
-	height: 4600px;
+	width: 1450px;
+	height: 4000px;
 	position: relative;
 }
 
@@ -183,7 +183,9 @@
 
 .screen .foods {
 	display: flex;
-	justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 1440px;
 }
 
 .screen .product {

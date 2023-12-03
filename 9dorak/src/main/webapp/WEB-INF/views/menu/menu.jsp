@@ -11,12 +11,8 @@
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
-<script>
-	var message = "${mlist}";
-	if (message != "")
-		alert(message);
-</script>
+<title>구도락-메뉴보기</title>
+
 </head>
 <body>
 	<div class="screen">
@@ -101,32 +97,32 @@
 			<div class="menu-top-bar">
 				<div class="allergy-bar">
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="cerealsCheckbox">
+						<input type="checkbox" class="allergy-check" id="cerealsCheckbox" onClick="allerCheck()">
 						<label for="cerealsCheckbox">🌾 곡류</label>
 					</div>
 
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="nutsCheckbox">
+						<input type="checkbox" class="allergy-check" id="nutsCheckbox" onClick="allerCheck()">
 						<label for="nutsCheckbox">🥚 난류</label>
 					</div>
 
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="dairyCheckbox">
+						<input type="checkbox" class="allergy-check" id="dairyCheckbox" onClick="allerCheck()">
 						<label for="dairyCheckbox">🍼 우유</label>
 					</div>
 
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="seafoodCheckbox">
+						<input type="checkbox" class="allergy-check" id="seafoodCheckbox" onClick="allerCheck()">
 						<label for="seafoodCheckbox">🍎 과일</label>
 					</div>
 
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="soyCheckbox">
+						<input type="checkbox" class="allergy-check" id="soyCheckbox" onClick="allerCheck()">
 						<label for="soyCheckbox">🥜 견과류</label>
 					</div>
 
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="glutenCheckbox">
+						<input type="checkbox" class="allergy-check" id="glutenCheckbox" onClick="allerCheck()">
 						<label for="glutenCheckbox">🍤 해산물</label>
 					</div>
 				</div>
@@ -147,42 +143,42 @@
 
 			<div class="top-categories">
 				<div class="frame-2">
-					<div class="frame-3">
+					<div class="frame-3" onclick="categoryChk(this)" id="ctgr1">
 						<img class="ellipse" src="${cpath}/resources/images/menu/LeafyGreen.png" />
 						<div class="text-wrapper-18">환경친화</div>
 					</div>
-					<div class="frame-4">
+					<div class="frame-4" onclick="categoryChk(this)" id="ctgr2">
 						<img class="ellipse-2" src="${cpath}/resources/images/menu/LowSalt.png" />
 						<div class="text-wrapper-18">저염</div>
 					</div>
-					<div class="frame-5">
+					<div class="frame-5" onclick="categoryChk(this)" id="ctgr3">
 						<img class="ellipse-2" src="${cpath}/resources/images/menu/LowSweet.png" />
 						<div class="text-wrapper-18">저당</div>
 					</div>
-					<div class="frame-6">
+					<div class="frame-6" onclick="categoryChk(this)" id="ctgr4">
 						<img class="ellipse-2" src="${cpath}/resources/images/menu/Cow.png" />
 						<div class="text-wrapper-18">소</div>
 					</div>
 				</div>
 				<div class="group-4">
 					<div class="overlap-group-4">
-						<div class="frame-7">
+						<div class="frame-7" onclick="categoryChk(this)" id="ctgr5">
 							<img class="ellipse" src="${cpath}/resources/images/menu/Pig.png" />
 							<div class="text-wrapper-18">돼지</div>
 						</div>
-						<div class="frame-8">
+						<div class="frame-8" onclick="categoryChk(this)" id="ctgr6">
 							<img class="ellipse-2" src="${cpath}/resources/images/menu/Chicken.png" />
 							<div class="text-wrapper-18">닭</div>
 						</div>
-						<div class="frame-9">
+						<div class="frame-9" onclick="categoryChk(this)" id="ctgr7">
 							<img class="ellipse-2" src="${cpath}/resources/images/menu/Fish.png" />
 							<div class="text-wrapper-18">생선</div>
 						</div>
-						<div class="frame-10">
+						<div class="frame-10" onclick="categoryChk(this)" id="ctgr8">
 							<img class="ellipse-2" src="${cpath}/resources/images/menu/Salad.png" />
 							<div class="text-wrapper-18">샐러드</div>
 						</div>
-						<div class="frame-11">
+						<div class="frame-11" onclick="categoryChk(this)" id="ctgr9">
 							<img class="ellipse-2" src="${cpath}/resources/images/menu/Fruit.png" />
 							<div class="text-wrapper-18">과일</div>
 						</div>
@@ -281,14 +277,19 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script type="text/javascript">
 	
+	var chkCtgr = null;
+	var allerCheckList = []; 
+	
 	//검색하기
 	function searchBtnClick() {
-		
+		console.log (allerCheckList);		
 	    $.ajax({
 	        url:"${cpath}/menu/searchPro.do",
 	        type:'GET',
 	        data:{
-	        	pro_name: $('#searchTxt').val()
+	        	pro_name: $('#searchTxt').val() //검색내용
+	          , ingre_no:  chkCtgr //카테고리선택
+	          , allerCheckList: allerCheckList 
             } ,
 	        success:function(data){
 	        	//debugger;
@@ -310,6 +311,65 @@
 	    });
 		
 	}
+	
+	//카테고리
+	function categoryChk(e){
+		
+		chkCtgr = $(e).attr('id').substr(-1);
+	
+		//alert(chkCtgr);
+		searchBtnClick();
+		
+	}
+	
+	//알러지
+	function allerCheck(e){  
+		
+		const cerealsCheckbox = document.querySelector('#cerealsCheckbox');
+		const nutsCheckbox = document.querySelector('#nutsCheckbox');
+		const dairyCheckbox = document.querySelector('#dairyCheckbox');
+		const seafoodCheckbox = document.querySelector('#seafoodCheckbox');
+		const soyCheckbox = document.querySelector('#soyCheckbox');
+		const glutenCheckbox = document.querySelector('#glutenCheckbox');
+		
+		const checked1 = cerealsCheckbox.checked;  // 선택 상태 확인
+		const checked2 = nutsCheckbox.checked;  // 선택 상태 확인
+		const checked3 = dairyCheckbox.checked;  // 선택 상태 확인
+		const checked4 = seafoodCheckbox.checked;  // 선택 상태 확인
+		const checked5 = soyCheckbox.checked;  // 선택 상태 확인
+		const checked6 = glutenCheckbox.checked;  // 선택 상태 확인
+
+	
+		if(checked1){
+			allerCheckList.push("곡류");	
+		}
+		
+		if(checked2){
+			allerCheckList.push("난류");	
+		}
+		
+		if(checked3){
+			allerCheckList.push("우유");	
+			}
+		
+		if(checked4){
+			allerCheckList.push("과일");	
+			}
+		
+		if(checked5){
+			allerCheckList.push("견과류");	
+			}
+		
+		if(checked6){
+			allerCheckList.push("해산물");	
+			}
+		
+		//var idx = list.indexOf("곡류");
+		//console.log (idx);
+	
+		//searchBtnClick();
+		
+		}
 
 	</script>
 	
