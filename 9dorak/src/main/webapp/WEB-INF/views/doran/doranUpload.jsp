@@ -22,9 +22,13 @@
 					<div class="overlap">
 						<div class="overlap-group-wrapper">
 							<div class="overlap-group">
-							<div>
-							<textarea placeholder="자유롭게 입력해보세요"></textarea>
-							</div>
+								<!-- 게시 내용 입력 -->
+								<div>
+									<textarea id="doranTitle" placeholder="자유롭게 제목을 입력해보세요"></textarea>
+								</div>
+								<div>
+									<textarea id="doranCont" placeholder="자유롭게 입력해보세요"></textarea>
+								</div>
 								<div class="upload-field">
 									<div class="type-n">
 										<img class="feather-upload-cloud"
@@ -36,22 +40,114 @@
 												<p class="p">JPG, PNG or PDF, file size no more than
 													10MB</p>
 											</div>
-											<button class="button">
+
+											<!-- 버튼 클릭 시 파일첨부 테스트 -->
+											<input type="file" id="fileInput" style="display: none;">
+											<button class="button" onclick="selectFile()">
 												<div class="select-file">SELECT FILE</div>
 											</button>
+											<!-- 첨부된 파일 정보 -->
+											<div id="selectedFileName"></div>
+
+											<script>
+												function selectFile() {
+													document.getElementById(
+															'fileInput')
+															.click();
+												}
+
+												document
+														.getElementById(
+																'fileInput')
+														.addEventListener(
+																'change',
+																handleFileSelect);
+
+												function handleFileSelect(event) {
+													const selectedFile = event.target.files[0];
+
+													if (selectedFile) {
+														console
+																.log(
+																		'Selected File:',
+																		selectedFile.name);
+														console
+																.log(
+																		'File Size:',
+																		selectedFile.size,
+																		'bytes');
+														console
+																.log(
+																		'File Type:',
+																		selectedFile.type);
+
+														document
+																.getElementById('selectedFileName').innerText = 'Selected File: '
+																+ selectedFile.name;
+
+														const doranImage = '${cpath}/resources/images/doran/'
+																+ selectedFile.name;
+														console.log(
+																'Upload Path:',
+																doranImage);
+
+													}
+												}
+											</script>
+
 										</div>
 									</div>
 								</div>
+
+								<!-- 업로드 testing -->
 								<div class="button-group-wrapper">
 									<div class="button-group">
 										<button class="cancel-wrapper">
 											<div class="cancel">취소하기</div>
 										</button>
-										<button class="upload-wrapper">
+										<button class="upload-wrapper" onclick="uploadData()">
 											<div class="upload">업로드</div>
 										</button>
 									</div>
 								</div>
+								<script>
+									function uploadData() {
+										const doranTitle = document
+												.getElementById('doranTitle').value;
+										const doranCont = document
+												.getElementById('doranCont').value;
+										const currentDate = new Date();
+										const doranDate = currentDate
+												.toISOString().split('T')[0];
+										const memId = '${sessionScope.loginmem.memId}';
+
+										const selectedFile = document
+												.getElementById('fileInput').files[0];
+										const doranImage = selectedFile ? '${cpath}/resources/images/doran/'
+												+ selectedFile.name
+												: '';
+
+										console.log("Uploading data...");
+										console.log("doranTitle:", doranTitle);
+										console.log("doranCont:", doranCont);
+										console.log("doranDate:", doranDate);
+										console.log("doranImage:", doranImage);
+										console.log("memId:", memId);
+
+										const formData = new FormData();
+										formData.append('doranTitle', doranTitle);
+										formData.append('doranCont', doranCont);
+										formData.append('doranView', 0);
+										formData.append('memId', memId);
+										formData.append('doranDate', doranDate);
+										formData.append('doranImage', doranImage);
+
+										console.log("formData:", formData);
+
+										// Add your code to send formData to the server or perform other actions
+									}
+								</script>
+
 							</div>
 						</div>
 						<div class="frame-wrapper">
