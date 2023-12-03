@@ -80,9 +80,9 @@ public class LoginController {
 		MemVO foundPwd = lservice.findPwd(mem_id, mem_name, mem_phone);
 
 		if (foundPwd != null) {
-			// 비밀번호를 찾았을 경우 처리
 			// 새로운 비밀번호를 모델에 추가하고 새로운 비밀번호 설정 페이지로 이동
 			model.addAttribute("foundPwd", foundPwd);
+			model.addAttribute("successMessage", "새로운 비밀번호를 설정하세요.");
 			return "login/createNewPwd"; // 새로운 비밀번호 설정 페이지로 이동
 		} else {
 			// 사용자를 찾지 못했을 경우 처리

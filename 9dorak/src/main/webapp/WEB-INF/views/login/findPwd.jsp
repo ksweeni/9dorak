@@ -13,14 +13,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
-	function showLoginError() {
-		var errorMessage = "${findUserErrorMessage}";
+    function showAlert(message) {
+        if (message.trim() !== "") {
+            alert(message);
+        }
+    }
 
-		if (errorMessage !== "") {
-			alert(errorMessage);
-		}
-	}
-	window.onload = showLoginError;
+    function showLoginMessages() {
+        var errorMessage = "${findUserErrorMessage}";
+        var successMessage = "${successMessage}";
+
+        showAlert(errorMessage);
+        showAlert(successMessage);
+    }
+
+    window.onload = showLoginMessages;
 </script>
 
 </head>
