@@ -46,7 +46,16 @@ public class MenuController {
 	public String searchPro(Model model,@RequestParam Map<String, Object> map) {
 		
 		System.out.println((String)map.get("pro_name"));
-		List<ProVO> slist = mService.selectSearchPro((String)map.get("pro_name"));
+		System.out.println((String)map.get("ingre_no"));
+		System.out.println((String[])map.get("allerCheckList"));
+		
+		ProVO pro = new ProVO();
+		
+		pro.setPro_name((String)map.get("pro_name"));
+		pro.setIngre_no((String)map.get("ingre_no"));
+		pro.setAllerCheckList((String[]) map.get("allerCheckList"));		
+		
+		List<ProVO> slist = mService.selectSearchPro(pro);
 		model.addAttribute("slist", slist);
 		System.out.println(slist.toString());
 		

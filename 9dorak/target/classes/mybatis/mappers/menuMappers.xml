@@ -8,9 +8,20 @@
 		select * from pro
 	</select>
 	
-	<select id="selectSearchPro" resultType="provo" parameterType="String">
-		select * from pro
-		where pro_name like '%'||#{pro_name}||'%'
+	<select id="selectSearchPro" resultType="provo" parameterType="provo">
+		select *
+		  from pro t1,
+			   category t2
+		 where t1.pro_no=t2.pro_no
+		<if test = "!(ingre_no==null)" >
+			and t2.ingre_no = #{ingre_no}
+		</if>
+		<if test = "!(pro_name==null)" >
+			and pro_name like '%'||#{pro_name}||'%'
+		</if>
+		<!--<if test = "!(allerCheckList==null)" >
+			and pro_aller not in(#{allerCheckList})
+		</if> -->
 	</select>
 
 	<!-- <insert id="insertDoran" parameterType="doranvo">
