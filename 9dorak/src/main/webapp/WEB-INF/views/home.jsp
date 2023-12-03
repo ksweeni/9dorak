@@ -30,7 +30,7 @@ request.setCharacterEncoding("UTF-8");
 		상세 test page</a>
 	<a href="${pageContext.request.contextPath}/menu/menuSpecificReview.do">특정 제품 리뷰
 		test page</a>
-
+	<a href="${pageContext.request.contextPath}/main.do">메인 테스트</a>
 
 
 <!-- 로그인 하면 로그아웃 버튼 로그인 안하면 로그아웃 버튼도 이거 수정해서 하면 될거에요  -->

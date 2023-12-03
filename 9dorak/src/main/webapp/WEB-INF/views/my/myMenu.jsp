@@ -1069,133 +1069,137 @@ String contextPath = request.getContextPath();
 			<div class=e81_147>
 				<div class="e81_148"></div>
 			</div>
-			<span class="e81_149">메뉴보기</span><span class="e81_150">구독하기</span><span
-				class="e81_151">요모조모</span><span class="e81_152">도란도란</span><span
-				class="e81_153">이벤트</span><span class="e81_154">로그아웃</span>
+			<a href="${cpath }/menu/menu.do" class="e81_149">메뉴보기</a><span
+				class="e81_150">구독하기</span><span class="e81_151">요모조모</span><a
+				href="${cpath }/doran/doran.do" class="e81_152">도란도란</a><a a
+				href="${cpath }/event/challenge.do" class="e81_153">이벤트</a><a
+				href="${cpath }/my/logout.do" class="e81_154">로그아웃</a>
 			<div class="e81_155"></div>
 			<div class="e81_156"></div>
 		</div>
-		<!-- 		<div id="here"> -->
-		<!-- ajax 처리할 부분 -->
+		<div id="here">
+			<!-- ajax 처리할 부분 -->
 
-		<div class=e81_183>
-			<span class="e79_330">내 정보 수정</span><span class="e79_405">내 정보
-				수정</span>
-			<div class="e79_385"></div>
-			<span class="e79_325">내 정보</span>
-		</div>
-		<div class=e79_253>
-			<div class=e79_254>
-				<span class="e79_256">${mem.mem_name }</span><span class="e79_257">LV.${mem.mem_grade }</span>
-				<div class="e79_424"></div>
+			<div class=e81_183>
+				<span class="e79_330">내 정보 수정</span><span class="e79_405">내
+					정보 수정</span>
+				<div class="e79_385"></div>
+				<span class="e79_325">내 정보</span>
 			</div>
-			<div class=e79_258>
-				<div class=e79_259>
-					<span class="e79_260">내 정보 수정</span>
+			<div class=e79_253>
+				<div class=e79_254>
+					<span class="e79_256">${mem.mem_name }</span><span class="e79_257">LV.${mem.mem_grade }</span>
+					<div class="e79_424"></div>
 				</div>
-				<div class=e79_261>
-					<span class="e79_262">환불 계좌 관리</span>
-				</div>
-				<div class=e79_263>
-					<span class="e79_264">배송지 관리</span>
-				</div>
-				<div class=e79_265>
-					<span class="e79_266">알림 수신 관리</span>
+				<div class=e79_258>
+					<div class=e79_259>
+						<span class="e79_260">내 정보 수정</span>
+					</div>
+					<div class=e79_261>
+						<span class="e79_262">환불 계좌 관리</span>
+					</div>
+					<div class=e79_263>
+						<span class="e79_264">배송지 관리</span>
+					</div>
+					<div class=e79_265>
+						<span class="e79_266">알림 수신 관리</span>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class=e79_161>
-			<div class=e79_162>
-				<div class="e79_388"></div>
-				<div class=e79_425>
-					<span class="e79_426">Update</span>
-				</div>
-				<div class=e79_427>
-					<div class="e82_185"></div>
-					<span class="e79_430">Remove</span>
-				</div>
-				<form action="#">
-				<div class=e79_410>
-					<span class="e79_244">아이디</span>
-					<!--  	<div class="e79_409"></div> -->
-					<input id="mem_id" type="text" class="e79_409"
-						value="${mem.mem_id }" readonly="readonly"></input>
+			<div class=e79_161>
+				<div class=e79_162>
+					<div class="e79_388"></div>
+					<div class=e79_425>
+						<span class="e79_426">Update</span>
+					</div>
+					<div class=e79_427>
+						<div class="e82_185"></div>
+						<span class="e79_430">Remove</span>
+					</div>
+					<form action="#">
+						<div class=e79_410>
+							<span class="e79_244">아이디</span>
+							<!--  	<div class="e79_409"></div> -->
+							<input id="mem_id" type="text" class="e79_409"
+								value="${mem.mem_id }" readonly="readonly"></input>
 
+						</div>
+						<div class=e79_411>
+							<span class="e79_412">비밀번호</span>
+							<!-- 	<div class="e79_413"></div> -->
+							<input id="mem_pw" type="password" class="e79_413"
+								value="${mem.mem_pw }"></input>
+						</div>
+						<div class=e79_415>
+							<span class="e79_416">이름</span>
+							<!-- <div class="e79_417"></div> -->
+							<input id="mem_name" type="text" class="e79_417"
+								value="${mem.mem_name }"></input>
+						</div>
+						<div class=e79_418>
+							<span class="e79_419">생년월일</span>
+							<!-- 				<div class="e79_420"></div> -->
+							<input id="mem_bd" type="date" class="e79_420"
+								value="${mem.mem_bd }"></input>
+						</div>
+						<div class=e79_421>
+							<span class="e79_422">추천인 코드</span>
+							<!-- 			<div class="e79_423"></div> -->
+							<input class="e79_423" value="${mem.mem_code }"
+								readonly="readonly"></input>
+						</div>
+						<div class=e79_168>
+							<span class="e79_169">Save Changes</span>
+						</div>
+						<div class=e79_166>
+							<span class="e79_167">Cancel</span>
+						</div>
+						<div class=e79_164>
+							<span class="e79_165">회원탈퇴</span>
+						</div>
+					</form>
 				</div>
-				<div class=e79_411>
-					<span class="e79_412">비밀번호</span>
-					<!-- 	<div class="e79_413"></div> -->
-					<input id="mem_pw" type="text" class="e79_413"
-						value="${mem.mem_pw }"></input>
+			</div>
+		</div>
+			<!-- here 부분 -->
+		</div>
+		<div class=e81_157>
+			<div class="e81_158"></div>
+			<div class=e81_159>
+				<div class=e81_160>
+					<span class="e81_161">Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Commodo libero viverra dapibus odio
+						sit malesuada in quis. Arcu tristique elementum viverra integer
+						id.</span>
+					<div class="e81_162"></div>
 				</div>
-				<div class=e79_415>
-					<span class="e79_416">이름</span>
-					<!-- <div class="e79_417"></div> -->
-					<input id="mem_name" type="text" class="e79_417"
-						value="${mem.mem_name }"></input>
+			</div>
+			<div class=e81_163>
+				<span class="e81_164">Contact Us</span>
+				<div class=e81_165>
+					<span class="e81_166">1234 Country Club Ave</span><span
+						class="e81_167">NC 123456, London, UK</span><span class="e81_168">+0123
+						456 7891</span>
 				</div>
-				<div class=e79_418>
-					<span class="e79_419">생년월일</span>
-					<!-- 				<div class="e79_420"></div> -->
-					<input id="mem_bd" type="date" class="e79_420"
-						value="${mem.mem_bd }"></input>
+			</div>
+			<div class=e81_169>
+				<span class="e81_170">User Link</span>
+				<div class=e81_171>
+					<span class="e81_172">About Us</span><span class="e81_173">Contact
+						Us</span><span class="e81_174">Order Delivery</span><span class="e81_175">Payment
+						& Tex</span><span class="e81_176">Terms of Services</span>
 				</div>
-				<div class=e79_421>
-					<span class="e79_422">추천인 코드</span>
-					<!-- 			<div class="e79_423"></div> -->
-					<input class="e79_423" value="${mem.mem_code }" readonly="readonly"></input>
+			</div>
+			<div class=e81_177>
+				<span class="e81_178">Opening Restaurant</span>
+				<div class=e81_179>
+					<span class="e81_180">Sat-Wet: 09:00am-10:00PM</span><span
+						class="e81_181">Thursdayt: 09:00am-11:00PM</span><span
+						class="e81_182">Friday: 09:00am-8:00PM</span>
 				</div>
-				<div class=e79_168>
-					<span class="e79_169">Save Changes</span>
-				</div>
-				<div class=e79_166>
-					<span class="e79_167">Cancel</span>
-				</div>
-				<div class=e79_164>
-					<span class="e79_165">회원탈퇴</span>
-				</div>
-				</form>
 			</div>
 		</div>
 
-		<!-- here 부분 -->
-	</div>
-	<div class=e81_157>
-		<div class="e81_158"></div>
-		<div class=e81_159>
-			<div class=e81_160>
-				<span class="e81_161">Lorem ipsum dolor sit amet, consectetur
-					adipiscing elit. Commodo libero viverra dapibus odio sit malesuada
-					in quis. Arcu tristique elementum viverra integer id.</span>
-				<div class="e81_162"></div>
-			</div>
-		</div>
-		<div class=e81_163>
-			<span class="e81_164">Contact Us</span>
-			<div class=e81_165>
-				<span class="e81_166">1234 Country Club Ave</span><span
-					class="e81_167">NC 123456, London, UK</span><span class="e81_168">+0123
-					456 7891</span>
-			</div>
-		</div>
-		<div class=e81_169>
-			<span class="e81_170">User Link</span>
-			<div class=e81_171>
-				<span class="e81_172">About Us</span><span class="e81_173">Contact
-					Us</span><span class="e81_174">Order Delivery</span><span class="e81_175">Payment
-					& Tex</span><span class="e81_176">Terms of Services</span>
-			</div>
-		</div>
-		<div class=e81_177>
-			<span class="e81_178">Opening Restaurant</span>
-			<div class=e81_179>
-				<span class="e81_180">Sat-Wet: 09:00am-10:00PM</span><span
-					class="e81_181">Thursdayt: 09:00am-11:00PM</span><span
-					class="e81_182">Friday: 09:00am-8:00PM</span>
-			</div>
-		</div>
-	</div>
-	<!-- </div> -->
 </body>
 <script type="text/javascript">
 	$(".e79_168").on("click", function() {
@@ -1217,15 +1221,22 @@ String contextPath = request.getContextPath();
 
 		})
 	}) // 아이디 변경 되는지 확인하자
-	
-	$(".e79_166").on("click",function(){
+
+	$(".e79_166").on("click", function() {
 		$("form")[0].reset();
 	})
-	
-	$(".e79_164").on("click",function(){
-	    if (confirm("정말 탈퇴하시겠습니까?")) {
-			location.href = "${cpath}/my/deleteMember.do?mem_id="+$("#mem_id").val();		      
-	    }
+
+	$(".e79_164").on(
+			"click",
+			function() {
+				if (confirm("정말 탈퇴하시겠습니까?")) {
+					location.href = "${cpath}/my/deleteMember.do?mem_id="
+							+ $("#mem_id").val();
+				}
+			})
+			
+	$(".e79_261").on("click",function(){
+		
 	})
 </script>
 </html>
