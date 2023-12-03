@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+request.setCharacterEncoding("UTF-8");
+String contextPath = request.getContextPath();
+%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -12,8 +16,49 @@
 	href="${cpath}/resources/css/doranUploadStyle.css" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-alert("${sessionScope.loginmem}");
+	alert("${sessionScope.loginmem}");
+</script>
+<script>
+	var doranImage; // 전역 변수로 선언
+	function uploadData() {
+		const doranTitle = $("#doranTitle").val();
+		const doranCont = $("#doranCont").val();
+		const currentDate = new Date();
+		const doranDate = currentDate.toISOString().split('T')[0];
+		const memId = '${sessionScope.loginmem.mem_id}';
+
+		const formData = new FormData();
+		formData.append('doranTitle', doranTitle);
+		formData.append('doranCont', doranCont);
+		formData.append('doranView', 0);
+		formData.append('memId', memId);
+		formData.append('doranDate', doranDate);
+		formData.append('doranImage', doranImage);
+		
+		console.log("FormData contents:");
+		formData.forEach((value, key) => {
+		  console.log(key, value);
+		});
+		
+		
+		$.ajax({
+			url : "${pageContext.request.contextPath}/doran/doranUpload.do",
+			type : 'POST',
+			data : formData,
+			processData : false,
+			contentType : false,
+			success : function(res) {
+				console.log('Success:', res);
+			},
+			error : function(xhr, status, error) {
+				console.error('Error:', error);
+				console.error('Status:', status);
+				console.error('Response:', xhr.responseText);
+			}
+		});
+	}
 </script>
 </head>
 
@@ -88,8 +133,7 @@ alert("${sessionScope.loginmem}");
 																.getElementById('selectedFileName').innerText = 'Selected File: '
 																+ selectedFile.name;
 
-														const doranImage = '${cpath}/resources/images/doran/'
-																+ selectedFile.name;
+														doranImage = '${cpath}/resources/images/doran/'+ selectedFile.name;
 														console.log(
 																'Upload Path:',
 																doranImage);
@@ -113,42 +157,6 @@ alert("${sessionScope.loginmem}");
 										</button>
 									</div>
 								</div>
-								<script>
-									function uploadData() {
-										const doranTitle = document
-												.getElementById('doranTitle').value;
-										const doranCont = document
-												.getElementById('doranCont').value;
-										const currentDate = new Date();
-										const doranDate = currentDate
-												.toISOString().split('T')[0];
-										const memId = '${sessionScope.loginmem.mem_id}';
-
-										const selectedFile = document
-												.getElementById('fileInput').files[0];
-										const doranImage = selectedFile ? '${cpath}/resources/images/doran/'
-												+ selectedFile.name
-												: '';
-
-										console.log("Uploading data...");
-										console.log("doranTitle:", doranTitle);
-										console.log("doranCont:", doranCont);
-										console.log("doranDate:", doranDate);
-										console.log("doranImage:", doranImage);
-										console.log("memId:", memId);
-
-										const formData = new FormData();
-										formData.append('doranTitle', doranTitle);
-										formData.append('doranCont', doranCont);
-										formData.append('doranView', 0);
-										formData.append('memId', memId);
-										formData.append('doranDate', doranDate);
-										formData.append('doranImage', doranImage);
-
-										console.log("formData:", formData);
-
-									}
-								</script>
 
 							</div>
 						</div>
@@ -283,4 +291,5 @@ alert("${sessionScope.loginmem}");
 		</div>
 	</div>
 </body>
+
 </html>

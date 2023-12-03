@@ -26,7 +26,7 @@ public class DoranService {
 		return dao.selectAllByView();
 	}
 	
-	public int insertMember(DoranVO doran) {
+	public int insertDoran(DoranVO doran) {
 		return dao.insertDoran(doran);
 	}
 
