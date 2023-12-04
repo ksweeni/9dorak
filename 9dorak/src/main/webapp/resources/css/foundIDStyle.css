@@ -30,7 +30,6 @@
 	position: absolute;
 	top: 59px;
 	left: 91px;
-	font-family: "Poppins-SemiBold", Helvetica;
 	font-weight: 600;
 	color: transparent;
 	font-size: 64px;
@@ -51,7 +50,7 @@
 	justify-content: center;
 	position: absolute;
 	top: 416px;
-	left: 630px;
+	left: 650px;
 	display: inline-flex;
 	flex-direction: column;
 }
@@ -60,7 +59,6 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #000000;
 	font-size: 50px;
@@ -71,7 +69,6 @@
 .screen .found {
 	position: relative;
 	width: fit-content;
-	font-family: "Poppins-SemiBold", Helvetica;
 	font-weight: 600;
 	color: transparent;
 	font-size: 50px;
@@ -109,7 +106,6 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-Bold", Helvetica;
 	font-weight: 700;
 	color: #f48e28;
 	font-size: 16px;
@@ -128,7 +124,6 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-Bold", Helvetica;
 	font-weight: 700;
 	color: #000000;
 	font-size: 16px;
@@ -143,7 +138,6 @@
 	position: absolute;
 	top: 0;
 	left: 45px;
-	font-family: "Poppins-Bold", Helvetica;
 	font-weight: 700;
 	color: #000000;
 	font-size: 48px;
@@ -176,7 +170,6 @@
 	width: 110px;
 	top: 18px;
 	left: 49px;
-	font-family: "Poppins-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #ffffff;
 	font-size: 20px;

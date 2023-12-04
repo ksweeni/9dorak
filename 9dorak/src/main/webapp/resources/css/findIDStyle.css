@@ -30,7 +30,6 @@
 	position: absolute;
 	top: 59px;
 	left: 91px;
-	font-family: "Poppins-SemiBold", Helvetica;
 	font-weight: 600;
 	color: transparent;
 	font-size: 64px;
@@ -76,7 +75,6 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-Bold", Helvetica;
 	font-weight: 700;
 	color: #f48e28;
 	font-size: 16px;
@@ -98,7 +96,6 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-Bold", Helvetica;
 	font-weight: 700;
 	color: #000000;
 	font-size: 16px;
@@ -114,7 +111,6 @@
 	top: 641px;
 	left: 60px;
 	text-shadow: 0px 4px 4px #00000040;
-	font-family: "Poppins-Regular", Helvetica;
 	font-weight: 400;
 	color: transparent;
 	font-size: 16px;
@@ -123,13 +119,11 @@
 }
 
 .screen .text-wrapper-4 {
-	font-family: "Poppins-Light", Helvetica;
 	font-weight: 300;
 	color: #000000;
 }
 
 .screen .text-wrapper-5 {
-	font-family: "Poppins-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #f48e28;
 	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -145,7 +139,6 @@
 	width: 500px;
 	top: 0;
 	left: 0;
-	font-family: "Poppins-Bold", Helvetica;
 	font-weight: 700;
 	color: #000000;
 	font-size: 48px;
@@ -182,7 +175,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: "Poppins-Regular", Helvetica;
 	font-weight: 400;
 	color: #000000;
 	font-size: 14px;
@@ -208,7 +200,6 @@
 	width: 56px;
 	top: 0;
 	left: 0;
-	font-family: "Poppins-Regular", Helvetica;
 	font-weight: 400;
 	color: #000000;
 	font-size: 14px;
@@ -221,7 +212,6 @@
 	width: 56px;
 	top: 400px;
 	left: 70px;
-	font-family: "Poppins-Regular", Helvetica;
 	font-weight: 400;
 	color: #000000;
 	font-size: 14px;
@@ -261,7 +251,6 @@
 	top: 12px;
 	left: 13px;
 	opacity: 0.4;
-	font-family: "Poppins-Regular", Helvetica;
 	font-weight: 400;
 	color: #000000;
 	font-size: 14px;
@@ -298,7 +287,6 @@
 	width: 120px;
 	top: 18px;
 	left: 40px;
-	font-family: "Poppins-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #ffffff;
 	font-size: 20px;
