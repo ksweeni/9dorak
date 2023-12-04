@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/menuSpecificReviewStyle.css?d"
+	href="${cpath}/resources/css/menuSpecificReviewStyle.css?e"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,14 +79,13 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<div class="overlap-group-3">
-										<div class="rectangle"></div>
-										<div class="rectangle-2"></div>
-									</div>
+								<progress class="overlap-group-3" id="progress" value="60" min="0" max="324"></progress>
+									
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
 							<div class="frame-5">
+							
 								<div class="text-wrapper-5">탄수화물</div>
 								<div class="text-wrapper-6">60/324g</div>
 							</div>
@@ -94,10 +93,8 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<div class="overlap-group-3">
-										<div class="rectangle"></div>
-										<div class="rectangle-2"></div>
-									</div>
+								<progress class="overlap-group-3" id="progress" value="100" min="0" max="324"></progress>
+									
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
@@ -109,10 +106,7 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<div class="overlap-group-3">
-										<div class="rectangle"></div>
-										<div class="rectangle-2"></div>
-									</div>
+								<progress class="overlap-group-3" id="progress" value="60" min="0" max="324"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
@@ -124,10 +118,7 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<div class="overlap-group-3">
-										<div class="rectangle"></div>
-										<div class="rectangle-2"></div>
-									</div>
+								<progress  class="overlap-group-3" id="progress" value="60" min="0" max="324"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
@@ -139,10 +130,7 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-3">
-									<div class="overlap-group-3">
-										<div class="rectangle"></div>
-										<div class="rectangle-3"></div>
-									</div>
+								<progress class="overlap-group-3" id="progress" value="200" min="0" max="324"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
