@@ -50,7 +50,7 @@
 	position: absolute;
 	width: 394px;
 	height: 665px;
-	top: 221px;
+	top: 226px;
 	left: 650px;
 }
 
@@ -192,7 +192,7 @@
 
 .screen .group-2 {
 	position: absolute;
-	width: 226px;
+	width: 245px;
 	height: 48px;
 	top: 35px;
 	left: 0;
@@ -247,7 +247,7 @@
 
 .screen .overlap-group {
 	position: relative;
-	width: 226px;
+	width: 245px;
 	height: 48px;
 	background-color: #f9fcff;
 	border-radius: 10px;
@@ -272,7 +272,7 @@
 
 .screen .payments-wrapper {
 	position: relative;
-	width: 248px;
+	width: 270px;
 	height: 48px;
 	background-color: #f9fcff;
 	border-radius: 10px;
