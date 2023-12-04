@@ -139,7 +139,7 @@
 					}
 				</script>
 				<div id="here">
-					<c:forEach items="${dlist}" var="doran" varStatus="loop">
+					<!--<c:forEach items="${dlist}" var="doran" varStatus="loop">
 						<tr>
 							<td>${doran.mem_id}</td>
 							<td>${doran.doran_title}</td>
@@ -152,7 +152,7 @@
 							${doran.doran_view}개
 							</td>
 						</h3>
-					</c:forEach>
+					</c:forEach> -->
 				</div>
 
 				<div class="doran-card">
