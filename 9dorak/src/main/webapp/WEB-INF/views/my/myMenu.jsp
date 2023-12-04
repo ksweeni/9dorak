@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -27,8 +27,8 @@ String contextPath = request.getContextPath();
 
 .e79_160 {
 	background-color: rgba(255, 255, 255, 1);
-	width: 100%;
-	height: 1581px;
+	width: 1440px;
+	height: 1788px;
 	position: absolute;
 }
 
@@ -160,20 +160,28 @@ String contextPath = request.getContextPath();
 	top: 10px;
 }
 
+.e122_194 {
+	width: 1337px;
+	height: 906px;
+	position: absolute;
+	left: 78px;
+	top: 200px;
+}
+
 .e81_183 {
-	width: 197.1374969482422px;
+	width: 300px;
 	height: 69.015625px;
 	position: absolute;
-	left: 370px;
-	top: 142px;
+	left: 307px;
+	top: 0px;
 }
 
 .e79_330 {
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 100px;
+	width: 152.17800903320312px;
 	height: 18px;
 	position: absolute;
-	left: 83px;
+	left: 126.29237365722656px;
 	top: 0px;
 	font-family: Roboto;
 	text-align: left;
@@ -184,7 +192,7 @@ String contextPath = request.getContextPath();
 
 .e79_405 {
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 197.1374969482422px;
+	width: 300px;
 	height: 41px;
 	position: absolute;
 	left: 0px;
@@ -197,10 +205,10 @@ String contextPath = request.getContextPath();
 }
 
 .e79_385 {
-	width: 10px;
+	width: 15.217805862426758px;
 	height: 11.37930965423584px;
 	position: absolute;
-	left: 61px;
+	left: 92.8423080444336px;
 	top: 3px;
 	background-image: url(${cpath}/resources/images/my/image_8.png);
 	background-repeat: no-repeat;
@@ -209,10 +217,10 @@ String contextPath = request.getContextPath();
 
 .e79_325 {
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 51px;
+	width: 77.61075592041016px;
 	height: 18px;
 	position: absolute;
-	left: 2px;
+	left: 3.050457000732422px;
 	top: 0px;
 	font-family: Roboto;
 	text-align: left;
@@ -226,9 +234,9 @@ String contextPath = request.getContextPath();
 	width: 250px;
 	height: 324px;
 	position: absolute;
-	left: 70px;
-	top: 260px;
-	border: 1px solid gray;
+	left: 0px;
+	top: 146px;
+	border : 1px solid gray;
 	border-top-left-radius: 16px;
 	border-top-right-radius: 16px;
 	border-bottom-left-radius: 16px;
@@ -328,6 +336,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 52px;
+	
 }
 
 .e79_262 {
@@ -392,20 +401,12 @@ String contextPath = request.getContextPath();
 	line-height: px;
 }
 
-.e79_161 {
-	width: 700px;
-	height: 713px;
-	position: absolute;
-	left: 378px;
-	top: 266px;
-}
-
 .e79_162 {
-	width: 700px;
-	height: 892px;
+	width: 950.1522827148438px;
+	height: 742px;
 	position: absolute;
-	left: 0px;
-	top: 0px;
+	left: 386.84771728515625px;
+	top: 164px;
 }
 
 .e79_388 {
@@ -430,7 +431,6 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 252px;
 	top: 32px;
-	border: 1px solid gray;
 	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
 	border-bottom-left-radius: 40px;
@@ -455,12 +455,12 @@ String contextPath = request.getContextPath();
 	width: 91px;
 	height: 32px;
 	position: absolute;
-	left: 361.5px;
-	top: 32px;
+	left: 375.15234375px;
+	top: 33px;
 }
 
 .e82_185 {
-	width: 33px;
+	width: 23px;
 	height: 32px;
 	position: absolute;
 	left: 0px;
@@ -693,7 +693,7 @@ String contextPath = request.getContextPath();
 }
 
 .e79_169 {
-	color: #795548;
+	color: rgba(255, 255, 255, 1);
 	width: 100px;
 	height: 22px;
 	position: absolute;
@@ -712,35 +712,29 @@ String contextPath = request.getContextPath();
 }
 
 .e79_166 {
-	width: 135.578125px;
+	width: 103.53125px;
 	height: 44px;
 	position: absolute;
 	left: 277px;
 	top: 626px;
-	border: 1px solid gray;
 	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
 	border-bottom-left-radius: 40px;
 	border-bottom-right-radius: 40px;
-	border-top-left-radius: 40px;
 }
 
 .e79_167 {
 	color: rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-	width: 135.578125px;
+	width: 70px;
+	height: 20px;
 	position: absolute;
+	left: 17px;
+	top: 12px;
 	font-family: Inter;
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
 	line-height: px;
-	/* 	border: 1px solid gray;
-	border-top-left-radius: 40px;
-	border-top-right-radius: 40px;
-	border-bottom-left-radius: 40px;
-	border-bottom-right-radius: 40px; */
-	height: 44px;
-	top: 11px;
 }
 
 .e79_164 {
@@ -748,7 +742,7 @@ String contextPath = request.getContextPath();
 	width: 105.671875px;
 	height: 44px;
 	position: absolute;
-	left: 427px;
+	left: 406.15234375px;
 	top: 626px;
 	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
@@ -775,24 +769,24 @@ String contextPath = request.getContextPath();
 	line-height: px;
 }
 
-.e81_157 {
-	width: 100%;
+.e122_197 {
+	width: 1440px;
 	height: 429px;
 	position: absolute;
 	left: 0px;
-	top: 1152px;
+	top: 1359px;
 }
 
-.e81_158 {
+.e122_198 {
 	background-color: rgba(249.6875050663948, 249.900004863739, 255, 1);
-	width: 100%;
+	width: 1440px;
 	height: 429px;
 	position: absolute;
 	left: 0px;
 	top: 0px;
 }
 
-.e81_159 {
+.e122_199 {
 	width: 393px;
 	height: 227px;
 	position: absolute;
@@ -800,7 +794,7 @@ String contextPath = request.getContextPath();
 	top: 76px;
 }
 
-.e81_160 {
+.e122_200 {
 	width: 393px;
 	height: 227px;
 	position: absolute;
@@ -808,7 +802,7 @@ String contextPath = request.getContextPath();
 	top: 0px;
 }
 
-.e81_161 {
+.e122_201 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 393px;
 	height: 89px;
@@ -821,7 +815,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_162 {
+.e122_202 {
 	width: 189.68800354003906px;
 	height: 108px;
 	position: absolute;
@@ -832,7 +826,7 @@ String contextPath = request.getContextPath();
 	background-size: cover;
 }
 
-.e81_163 {
+.e122_203 {
 	width: 234px;
 	height: 190px;
 	position: absolute;
@@ -840,7 +834,7 @@ String contextPath = request.getContextPath();
 	top: 107px;
 }
 
-.e81_164 {
+.e122_204 {
 	color: rgba(0, 0, 0, 1);
 	width: 167.9425811767578px;
 	height: 32px;
@@ -853,7 +847,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_165 {
+.e122_205 {
 	width: 234px;
 	height: 90px;
 	position: absolute;
@@ -861,7 +855,7 @@ String contextPath = request.getContextPath();
 	top: 100px;
 }
 
-.e81_166 {
+.e122_206 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 228.40191650390625px;
 	height: 22px;
@@ -874,7 +868,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_167 {
+.e122_207 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 234px;
 	height: 22px;
@@ -887,7 +881,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_168 {
+.e122_208 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 148.90908813476562px;
 	height: 22px;
@@ -900,7 +894,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_169 {
+.e122_209 {
 	width: 194px;
 	height: 258px;
 	position: absolute;
@@ -908,7 +902,7 @@ String contextPath = request.getContextPath();
 	top: 107px;
 }
 
-.e81_170 {
+.e122_210 {
 	color: rgba(0, 0, 0, 1);
 	width: 156.1761016845703px;
 	height: 32px;
@@ -921,7 +915,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_171 {
+.e122_211 {
 	width: 194px;
 	height: 158px;
 	position: absolute;
@@ -929,7 +923,7 @@ String contextPath = request.getContextPath();
 	top: 100px;
 }
 
-.e81_172 {
+.e122_212 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 103.710693359375px;
 	height: 22px;
@@ -942,7 +936,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_173 {
+.e122_213 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 123.23270416259766px;
 	height: 22px;
@@ -955,7 +949,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_174 {
+.e122_214 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 162.2767333984375px;
 	height: 22px;
@@ -968,7 +962,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_175 {
+.e122_215 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 165.93710327148438px;
 	height: 22px;
@@ -981,7 +975,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_176 {
+.e122_216 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 194px;
 	height: 22px;
@@ -994,7 +988,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_177 {
+.e122_217 {
 	width: 295px;
 	height: 190px;
 	position: absolute;
@@ -1002,7 +996,7 @@ String contextPath = request.getContextPath();
 	top: 107px;
 }
 
-.e81_178 {
+.e122_218 {
 	color: rgba(0, 0, 0, 1);
 	width: 295px;
 	height: 32px;
@@ -1015,7 +1009,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_179 {
+.e122_219 {
 	width: 277.8985595703125px;
 	height: 90px;
 	position: absolute;
@@ -1023,7 +1017,7 @@ String contextPath = request.getContextPath();
 	top: 100px;
 }
 
-.e81_180 {
+.e122_220 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 264.0036315917969px;
 	height: 22px;
@@ -1036,7 +1030,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_181 {
+.e122_221 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 277.8985595703125px;
 	height: 22px;
@@ -1049,7 +1043,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e81_182 {
+.e122_222 {
 	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
 	width: 239.4202880859375px;
 	height: 22px;
@@ -1060,6 +1054,28 @@ String contextPath = request.getContextPath();
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
+}
+
+.e122_223 {
+	width: 147px;
+	height: 47px;
+	position: absolute;
+	left: 118px;
+	top: 313px;
+	background-image: url(${cpath}/resources/images/my/snsicon.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.e122_224 {
+	width: 223px;
+	height: 67px;
+	position: absolute;
+	left: 1091px;
+	top: 320px;
+	background-image: url(${cpath}/resources/images/my/image_7.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 </style>
 </head>
@@ -1077,9 +1093,9 @@ String contextPath = request.getContextPath();
 			<div class="e81_155"></div>
 			<div class="e81_156"></div>
 		</div>
-		<div id="here">
-			<!-- ajax 처리할 부분 -->
 
+		<!-- ajax 처리할 부분 -->
+		<div class=e122_194>
 			<div class=e81_183>
 				<span class="e79_330">내 정보 수정</span><span class="e79_405">내
 					정보 수정</span>
@@ -1161,44 +1177,47 @@ String contextPath = request.getContextPath();
 				</div>
 			</div>
 		</div>
-			<!-- here 부분 -->
-		</div>
-		<div class=e81_157>
-			<div class="e81_158"></div>
-			<div class=e81_159>
-				<div class=e81_160>
-					<span class="e81_161">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Commodo libero viverra dapibus odio
-						sit malesuada in quis. Arcu tristique elementum viverra integer
-						id.</span>
-					<div class="e81_162"></div>
-				</div>
-			</div>
-			<div class=e81_163>
-				<span class="e81_164">Contact Us</span>
-				<div class=e81_165>
-					<span class="e81_166">1234 Country Club Ave</span><span
-						class="e81_167">NC 123456, London, UK</span><span class="e81_168">+0123
-						456 7891</span>
-				</div>
-			</div>
-			<div class=e81_169>
-				<span class="e81_170">User Link</span>
-				<div class=e81_171>
-					<span class="e81_172">About Us</span><span class="e81_173">Contact
-						Us</span><span class="e81_174">Order Delivery</span><span class="e81_175">Payment
-						& Tex</span><span class="e81_176">Terms of Services</span>
-				</div>
-			</div>
-			<div class=e81_177>
-				<span class="e81_178">Opening Restaurant</span>
-				<div class=e81_179>
-					<span class="e81_180">Sat-Wet: 09:00am-10:00PM</span><span
-						class="e81_181">Thursdayt: 09:00am-11:00PM</span><span
-						class="e81_182">Friday: 09:00am-8:00PM</span>
-				</div>
+
+	</div>
+	<div class=e122_197>
+		<div class="e122_198"></div>
+		<div class=e122_199>
+			<div class=e122_200>
+				<span class="e122_201">Lorem ipsum dolor sit amet,
+					consectetur adipiscing elit. Commodo libero viverra dapibus odio
+					sit malesuada in quis. Arcu tristique elementum viverra integer id.</span>
+				<div class="e122_202"></div>
 			</div>
 		</div>
+		<div class=e122_203>
+			<span class="e122_204">Contact Us</span>
+			<div class=e122_205>
+				<span class="e122_206">1234 Country Club Ave</span><span
+					class="e122_207">NC 123456, London, UK</span><span class="e122_208">+0123
+					456 7891</span>
+			</div>
+		</div>
+		<div class=e122_209>
+			<span class="e122_210">User Link</span>
+			<div class=e122_211>
+				<span class="e122_212">About Us</span><span class="e122_213">Contact
+					Us</span><span class="e122_214">Order Delivery</span><span
+					class="e122_215">Payment & Tex</span><span class="e122_216">Terms
+					of Services</span>
+			</div>
+		</div>
+		<div class=e122_217>
+			<span class="e122_218">Opening Restaurant</span>
+			<div class=e122_219>
+				<span class="e122_220">Sat-Wet: 09:00am-10:00PM</span><span
+					class="e122_221">Thursdayt: 09:00am-11:00PM</span><span
+					class="e122_222">Friday: 09:00am-8:00PM</span>
+			</div>
+		</div>
+		<div class="e122_223"></div>
+		<div class="e122_224"></div>
+	</div>
+	</div>
 
 </body>
 <script type="text/javascript">
@@ -1233,10 +1252,18 @@ String contextPath = request.getContextPath();
 					location.href = "${cpath}/my/deleteMember.do?mem_id="
 							+ $("#mem_id").val();
 				}
-			})
-			
-	$(".e79_261").on("click",function(){
-		
+			});
+
+	$(".e79_263").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/my/myDelivery.do",
+			type:"get",
+			success : function(res) {
+				$("body").html(res);				
+			}
+
+		})
 	})
 </script>
 </html>

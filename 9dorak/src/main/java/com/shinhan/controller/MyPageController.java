@@ -80,4 +80,11 @@ public class MyPageController {
 		}
 		return "home";
 	}
+	@GetMapping("myDelivery.do")
+	public String myDelivery(Model model, HttpSession session ) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		MemVO mem = mService.getMember(loginmem.getMem_id());
+		model.addAttribute("mem", mem);
+		return "my/myDelivery_ajax";
+	}
 }
