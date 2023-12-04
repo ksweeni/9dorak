@@ -32,21 +32,24 @@
 						</div>
 					</div>
 					<div class="text-wrapper-3">계정을 잊으셨나요?</div>
+					<form action="${pageContext.request.contextPath }/login/updatePwd.do"
+						method="post">
 					<div class="frame-2">
 						<div class="div-2">
 							<div class="text-wrapper-4">새 비밀번호</div>
-							<div class="group-2"></div>
+							<input type="password" name="newPwd" class="group-2">
 						</div>
 						<div class="div-2">
 							<div class="text-wrapper-4">비밀번호 확인</div>
-							<div class="group-2"></div>
+							<input type="password" name="confirm_pw" class="group-2">
 						</div>
 					</div>
 					<div class="login-button">
-						<div class="overlap-group">
+						<button class="overlap-group" type="submit">
 							<div class="text-wrapper-5">비밀번호 설정</div>
-						</div>
+						</button>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>

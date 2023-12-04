@@ -1,5 +1,8 @@
 package com.shinhan.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -75,14 +78,18 @@ public class LoginController {
 
 	@PostMapping("findPwd.do")
 	public String findPwd(@RequestParam String mem_id, @RequestParam String mem_name, @RequestParam String mem_phone,
-			Model model) {
+			Model model, HttpSession session) {
 
 		MemVO foundPwd = lservice.findPwd(mem_id, mem_name, mem_phone);
 
 		if (foundPwd != null) {
-			// 새로운 비밀번호를 모델에 추가하고 새로운 비밀번호 설정 페이지로 이동
 			model.addAttribute("foundPwd", foundPwd);
 			model.addAttribute("successMessage", "새로운 비밀번호를 설정하세요.");
+
+			// 세션에 정보 저장
+			session.setAttribute("updatePwdInfo",
+					Map.of("mem_id", mem_id, "mem_name", mem_name, "mem_phone", mem_phone));
+
 			return "login/createNewPwd"; // 새로운 비밀번호 설정 페이지로 이동
 		} else {
 			// 사용자를 찾지 못했을 경우 처리
@@ -91,4 +98,33 @@ public class LoginController {
 		}
 	}
 
+	@PostMapping("updatePwd.do")
+	public String updatePwd(HttpSession session, @RequestParam String newPwd, @RequestParam String confirm_pw, Model model) {
+		Map<String, String> updatePwdInfo = (Map<String, String>) session.getAttribute("updatePwdInfo");
+
+		if (updatePwdInfo != null) {
+			String mem_id = updatePwdInfo.get("mem_id");
+			String mem_name = updatePwdInfo.get("mem_name");
+			String mem_phone = updatePwdInfo.get("mem_phone");
+
+			// 새 비밀번호와 비밀번호 확인이 일치하는지 확인
+			if (newPwd.equals(confirm_pw)) {
+				// 비밀번호 변경 로직
+				int rowsUpdated = lservice.updatePwd(mem_id, mem_name, mem_phone, newPwd);
+
+				if (rowsUpdated > 0) {
+					model.addAttribute("successMessage", "비밀번호가 성공적으로 변경되었습니다.");
+					return "login/login"; // 변경 성공 시 로그인 페이지로 이동
+				} else {
+					model.addAttribute("errorMessage", "비밀번호 변경에 실패했습니다. 입력 정보를 확인하세요.");
+					return "login/createNewPwd"; // 변경 실패 시 새로운 비밀번호 설정 페이지로
+				}
+			} else {
+				// 새 비밀번호와 비밀번호 확인이 일치하지 않을 경우 처리
+				model.addAttribute("errorMessage", "새로운 비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+				return "login/createNewPwd"; // 변경 실패 시 새로운 비밀번호 설정 페이지로
+			}
+		}
+		return "login/createNewPwd"; // 변경 실패 시 새로운 비밀번호 설정 페이지로
+	}
 }

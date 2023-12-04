@@ -22,5 +22,8 @@ public class LoginService {
 	public MemVO findPwd(String mem_id, String mem_name, String mem_phone) {
 		return dao.findPwd(mem_id, mem_name, mem_phone);
 	}
+    public int updatePwd(String mem_id, String mem_name, String mem_phone, String newPwd) {
+        return 1;
+    }
 	 
 }
