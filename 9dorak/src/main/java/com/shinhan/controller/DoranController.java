@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,7 +26,7 @@ import com.shinhan.dto.DoranVO;
 import com.shinhan.model.DoranService;
 
 @Controller
-@RequestMapping("doran")
+@RequestMapping("/doran")
 public class DoranController {
 //asdad
 	@Autowired
@@ -34,14 +35,14 @@ public class DoranController {
 	private static final Logger logger = LoggerFactory.getLogger(DoranController.class);
 
 	@GetMapping("doran.do")
-	public String doran(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model) {
+	public String doran(@RequestParam(name = "orderBy", defaultValue = "views") String orderBy, Model model) {
 		List<DoranVO> dlist;
 		System.out.println(orderBy);
 
-		if ("latest".equals(orderBy)) {
+		if ("views".equals(orderBy)) {
+			dlist =  dService.selectAllByView();
+		} else if ("latest".equals(orderBy)) {
 			dlist = dService.selectAll();
-		} else if ("views".equals(orderBy)) {
-			dlist = dService.selectAllByView();
 		} else {
 			dlist = dService.selectAll();
 		}
@@ -57,6 +58,35 @@ public class DoranController {
 
 		return "doran/doran";
 	}
+	
+////
+	
+	
+	@GetMapping("/doran2.do")
+	public String doran2(@RequestParam(name = "orderBy", defaultValue = "views") String orderBy, Model model) {
+		List<DoranVO> dlist;
+		System.out.println(orderBy);
+
+		if ("views".equals(orderBy)) {
+			dlist =  dService.selectAllByView();
+		} else if ("latest".equals(orderBy)) {
+			dlist = dService.selectAll();
+		} else {
+			dlist = dService.selectAll();
+		}
+
+		List<DlikeVO> dlike = dService.selectLike();
+		List<DCommentVO> dcomment = dService.selectComment();
+		model.addAttribute("dlist", dlist);
+		model.addAttribute("dlike", dlike);
+		model.addAttribute("dcomment", dcomment);
+		System.out.println("좋아요: " + dlike);
+		System.out.println("댓글 수: " + dcomment);
+		System.out.println("orderBy : " + orderBy);
+
+		return "doran/doran_ajax";
+	}
+	
 
 	@GetMapping("doranUpload.do")
 	public String doranUpload(Model model) {
@@ -64,37 +94,43 @@ public class DoranController {
 		return "doran/doranUpload";
 	}
 
+	
 	@PostMapping("doranUpload.do")
 	@ResponseBody
-	public String handleDoranUpload(@RequestParam("doranTitle") String doranTitle,
-			@RequestParam("doranCont") String doranCont, @RequestParam("doranView") int doranView,
-			@RequestParam("memId") String memId, @RequestParam("doranDate") String doranDateString,																// to String
-			@RequestParam("doranImage") String doranImage) {
+	public String handleDoranUpload(
+	        @RequestPart(value = "doranTitle") String doranTitle,
+	        @RequestPart("doranCont") String doranCont,
+	        @RequestPart("doranView") int doranView,
+	        @RequestPart("memId") String memId,
+	        @RequestPart("doranDate") String doranDateString,
+	        @RequestPart("doranImage") String doranImage) {
 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Date doranDate = null;
-		try {
-			doranDate = (Date) dateFormat.parse(doranDateString);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    Date doranDate = null;
+	    try {
+	        doranDate = (Date) dateFormat.parse(doranDateString);
+	    } catch (ParseException e) {
+	        e.printStackTrace();
+	    }
 
-		int dsize = dService.selectAll().size();
+	    int dsize = dService.selectAll().size();
 
-		DoranVO doran = new DoranVO();
-		doran.setDoran_no(dsize + 1);
-		doran.setDoran_title(doranTitle);
-		doran.setDoran_cont(doranCont);
-		doran.setDoran_view(doranView);
-		doran.setMem_id(memId);
-		doran.setDoran_date(doranDate);
-		doran.setDoran_image(doranImage);
-		System.out.println("작성한 글:" + doran.toString());
-		dService.insertDoran(doran);
+	    DoranVO doran = new DoranVO();
+	    doran.setDoran_no(dsize + 1);
+	    doran.setDoran_title(doranTitle);
+	    doran.setDoran_cont(doranCont);
+	    doran.setDoran_view(doranView);
+	    doran.setMem_id(memId);
+	    doran.setDoran_date(doranDate);
+	    doran.setDoran_image(doranImage); // Assuming doran_image is a String in DoranVO
 
-		return "Upload successful!";
+	    System.out.println("작성한 글:" + doran.toString());
+	    dService.insertDoran(doran);
+
+	    return "Upload successful!";
 	}
 
+	
 	@GetMapping("doranFeedDetail.do")
 	public String doranFeedDetail(Model model) {
 		// 현재 1번 게시글에 대한 댓글 정보 가져오기 test
