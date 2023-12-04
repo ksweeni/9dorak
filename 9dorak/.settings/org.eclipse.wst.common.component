@@ -1,80 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-<<<<<<< HEAD
-                	
-=======
-                    	
+                        	
     
->>>>>>> main
+    
     
     
     
     <wb-module deploy-name="myapp-1.0.0-BUILD-SNAPSHOT">
-<<<<<<< HEAD
-                                		
-=======
-                                        		
+                                                		
         
->>>>>>> main
+        
         
         
         
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-<<<<<<< HEAD
-                                		
-=======
-                                        		
+                                                		
         
->>>>>>> main
+        
         
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-<<<<<<< HEAD
-                                		
-=======
-                                        		
+                                                		
         
->>>>>>> main
+        
         
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-<<<<<<< HEAD
-                                		
-=======
-                                        		
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+                                                		
         
->>>>>>> main
+        
         
         
         
         <property name="java-output-path" value="target/classes"/>
-<<<<<<< HEAD
-                                        
-=======
-                                                
+                                                        
         
->>>>>>> main
+        
         
         
         
         <property name="context-root" value="myapp"/>
-<<<<<<< HEAD
-                                	
-=======
-                                        	
+                                                	
     
->>>>>>> main
+    
     
     
     
     </wb-module>
-<<<<<<< HEAD
-                
-=======
-                    
+                        
 
->>>>>>> main
+
 
 
 

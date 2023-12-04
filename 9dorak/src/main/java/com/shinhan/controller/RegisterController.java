@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shinhan.dto.MemVO;
+import com.shinhan.model.MyPageService;
 import com.shinhan.model.RegisterService;
 
 import oracle.jdbc.proxy.annotation.Post;
@@ -32,7 +33,7 @@ public class RegisterController {
 //	
 	@Autowired
 	RegisterService rService;
-
+	MyPageService mService;
 	private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
 
 	@GetMapping("registerType.do")
@@ -72,11 +73,10 @@ public class RegisterController {
 	}
 
 	@PostMapping("register.do")
-	public String register(Model model , MemVO mem , HttpSession session) {
-//		System.out.println("register.do");
+	public String register(Model model, MemVO mem, HttpSession session) {
 		int result = rService.insertMember(mem);
-		// 데이터까지 들어갔고 세션에 저장해서 main 페이지에 보내주자  그럼 회원가입은 끝 (이메일 알림 생각해야함)
-		session.setAttribute("login_id", mem.getMem_id());
+		MemVO loginmem = mService.getMember(mem.getMem_id());
+		session.setAttribute("loginmem", loginmem);
 		return "home";
 	}
 

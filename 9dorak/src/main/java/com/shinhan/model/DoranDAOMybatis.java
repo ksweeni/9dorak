@@ -29,6 +29,12 @@ public class DoranDAOMybatis {
 		return dlist;
 	}
 	
+	public List<DoranVO> selectAllByView(){
+		List<DoranVO> dlist = sqlSession.selectList(NAMESPACE+"selectAllByView");
+		System.out.println("selectAllByView"+dlist);
+		return dlist;
+	}
+	
 	public int insertDoran(DoranVO doran) {
 		System.out.println("inserting :"+doran);
 		return sqlSession.insert(NAMESPACE + "insertDoran", doran);

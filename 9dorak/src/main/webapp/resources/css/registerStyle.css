@@ -99,7 +99,7 @@ body {
 .v39_14 {
 	width: 436px;
 	height: 84px;
-	background: url("../images/v39_14.png");
+/* 	background: url("../images/v39_14.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -113,7 +113,7 @@ body {
 .v39_15 {
 	width: 436px;
 	height: 84px;
-	background: url("../images/v39_15.png");
+/* 	background: url("../images/v39_15.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -131,7 +131,7 @@ body {
 .v39_17 {
 	width: 20px;
 	height: 19px;
-	background: url("../images/v39_17.png");
+/* 	background: url("../images/v39_17.png"); */
 	opacity: 1;
 	position: absolute;
 	top: 33px;
@@ -142,7 +142,7 @@ body {
 .v39_68 {
 	width: 533px;
 	height: 953px;
-	background: url("../images/v39_68.png");
+/* 	background: url("../images/v39_68.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -156,7 +156,7 @@ body {
 .v39_197 {
 	width: 265px;
 	height: 61px;
-	background: url("../images/v39_197.png");
+/* 	background: url("../images/v39_197.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -201,7 +201,7 @@ body {
 .v39_105 {
 	width: 163px;
 	height: 48px;
-	background: url("../images/v39_105.png");
+/* 	background: url("../images/v39_105.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -246,7 +246,7 @@ body {
 .v39_203 {
 	width: 163px;
 	height: 48px;
-	background: url("../images/v39_203.png");
+/* 	background: url("../images/v39_203.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -291,7 +291,7 @@ body {
 .v39_192 {
 	width: 406px;
 	height: 127px;
-	background: url("../images/v39_192.png");
+/* 	background: url("../images/v39_192.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -334,7 +334,7 @@ body {
 .v39_87 {
 	width: 405px;
 	height: 91px;
-	background: url("../images/v39_87.png");
+/* 	background: url("../images/v39_87.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -378,7 +378,7 @@ body {
 .v39_189 {
 	width: 405px;
 	height: 91px;
-	background: url("../images/v39_189.png");
+/* 	background: url("../images/v39_189.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -422,7 +422,7 @@ body {
 .v39_186 {
 	width: 405px;
 	height: 91px;
-	background: url("../images/v39_186.png");
+/* 	background: url("../images/v39_186.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -466,7 +466,7 @@ body {
 .v39_183 {
 	width: 405px;
 	height: 91px;
-	background: url("../images/v39_183.png");
+/* 	background: url("../images/v39_183.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -510,7 +510,7 @@ body {
 .v39_180 {
 	width: 405px;
 	height: 87px;
-	background: url("../images/v39_180.png");
+/* 	background: url("../images/v39_180.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -554,7 +554,7 @@ body {
 .v39_177 {
 	width: 405px;
 	height: 91px;
-	background: url("../images/v39_177.png");
+/* 	background: url("../images/v39_177.png"); */
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -754,4 +754,9 @@ body {
 	text-align: center;
 	font-size: 16px;
 	letter-spacing: 3;
+}
+
+a{
+	text-decoration: none;
+	
 }

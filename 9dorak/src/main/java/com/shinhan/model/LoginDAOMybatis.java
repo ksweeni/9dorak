@@ -18,20 +18,28 @@ public class LoginDAOMybatis {
 	SqlSession sqlSession;
 	Logger logger = LoggerFactory.getLogger(LoginDAOMybatis.class);
 	String NAMESPACE = "net.firstzone.login.";
-	
-	public MemVO login(String mem_id, String mem_pw) {			
-		Map<String, String> paramMap = new HashMap<>();
-        paramMap.put("mem_id", mem_id);
-        paramMap.put("mem_pw", mem_pw);
-  
-        MemVO memvo = sqlSession.selectOne(NAMESPACE + "login", paramMap);
 
-        if (memvo != null) {
-            logger.info("로그인 성공: " + mem_id);
-        } else {
-            logger.info("로그인 실패: " + mem_id);
-        }
-        return memvo;	
+	public MemVO login(String mem_id, String mem_pw) {
+		Map<String, String> memlogin = new HashMap<>();
+		memlogin.put("mem_id", mem_id);
+		memlogin.put("mem_pw", mem_pw);
+
+		return sqlSession.selectOne(NAMESPACE + "login", memlogin);
 	}
-	  
+	public MemVO findId(String mem_name, String mem_phone, String mem_bd) {
+	    Map<String, String> findIdParams = new HashMap<>();
+	    findIdParams.put("mem_name", mem_name);
+	    findIdParams.put("mem_phone", mem_phone);
+	    findIdParams.put("mem_bd", mem_bd);
+
+	    return sqlSession.selectOne(NAMESPACE + "findId", findIdParams);
+	}
+	public MemVO findPwd(String mem_id, String mem_name, String mem_phone) {
+        Map<String, String> findPwdParams = new HashMap<>();
+        findPwdParams.put("mem_id", mem_id);
+        findPwdParams.put("mem_name", mem_name);
+        findPwdParams.put("mem_phone", mem_phone);
+
+        return sqlSession.selectOne(NAMESPACE + "findPwd", findPwdParams);
+    }
 }

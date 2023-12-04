@@ -12,8 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shinhan.dto.MemVO;
 import com.shinhan.model.MyPageService;
@@ -24,22 +26,58 @@ import com.shinhan.model.MyPageService;
 @Controller
 @RequestMapping("my")
 public class MyPageController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(MyPageController.class);
-	
+
 	@Autowired
 	MyPageService mService;
-	
+
 	@GetMapping("myPage.do")
-	public String myPage(Model model ,HttpSession session) {
-		// 지현이누나가 세션에 담는 이름으로 바꿔야함
-//		MemVO mem = mService.getMember(session.getAttribute("login_id"));
-		MemVO mem = mService.getMember("aaa");
-//		System.out.println(mem);
-		model.addAttribute("mem",mem);
-		
+	public String myPage(Model model, HttpSession session) {
+
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		MemVO mem = mService.getMember(loginmem.getMem_id());
+		model.addAttribute("mem", mem);
 		return "my/myPage";
 	}
-	
 
+	@GetMapping("logout.do")
+	public String logut(Model model, HttpSession session) {
+		session.invalidate();
+		return "home";
+	}
+
+	@GetMapping("myMenu.do")
+	public String myMenu(Model model, HttpSession session) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		MemVO mem = mService.getMember(loginmem.getMem_id());
+		model.addAttribute("mem", mem);
+		return "my/myMenu";
+	}
+
+	@RequestMapping(value = "updateMember.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String updateMember(Model model, HttpSession session, MemVO mem) {
+
+		int result = mService.updateMember(mem);
+		if (result > 0) {
+			MemVO loginmem = mService.getMember(mem.getMem_id());
+			session.setAttribute("loginmem", loginmem);
+			model.addAttribute("mem", loginmem);
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+
+		}
+
+	}
+
+	@GetMapping("deleteMember.do")
+	public String deleteMember(Model model, HttpSession session , MemVO mem) {
+		int result = mService.deleteMember(mem.getMem_id());
+		if( result > 0 ) {
+			session.invalidate();			
+		}
+		return "home";
+	}
 }

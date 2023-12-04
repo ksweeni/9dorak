@@ -17,6 +17,10 @@ public class MenuService {
 	public List<ProVO> selectAll() {
 		return dao.selectAll();
 	}
+	
+	public List<ProVO> selectSearchPro(ProVO pro) {
+		return dao.selectSearchPro(pro);
+	}
 
 //	public int insertMember(DoranVO doran) {
 //		return dao.insertDoran(doran);

@@ -22,9 +22,15 @@ public class MenuDAOMybatis {
 
 	public List<ProVO> selectAll() {
 		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectAll");
-		System.out.println(plist);
+		//System.out.println(plist);
 		logger.info("selectAll :  {}", plist.size());
 		return plist;
+	}
+	
+	public List<ProVO> selectSearchPro(ProVO pro) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectSearchPro",pro);
+		logger.info(plist.toString());
+		return plist;	
 	}
 
 //	public int insertDoran(DoranVO doran) {

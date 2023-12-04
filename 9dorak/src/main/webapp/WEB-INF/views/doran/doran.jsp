@@ -11,6 +11,7 @@
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <script>
 	var message = "${dlist}";
@@ -108,46 +109,79 @@
 			<div class="viewsort"></div>
 
 			<div class="group-4">
-				<c:forEach items="${dlist}" var="doran" varStatus="loop">
-					<tr>
-						<td>${doran.mem_id}</td>
-						<td>${doran.doran_title}</td>
-						<td>${doran.doran_cont}</td>
-						<td>${doran.doran_date}</td>
-					</tr>
-					<h3>좋아요 ${dlike[loop.index]}개 댓글수 ${dcomment[loop.index]}개 조회수 ${doran.doran_view}개</td></h3>
-				</c:forEach>
-				
-				<c:forEach items="${dlist}" var="doran">
-					<div class="div-wrapper">
-						<div class="overlap-group-2">
-							<img class="unsplash" src="img/unsplash-blihvfxbi9s-3.svg" />
-							<p class="p">${doran.doran_cont}</p>
-							<div class="group-5">
-								<img class="image" src="img/image.svg" />
-								<div class="text-wrapper-10">23.5K</div>
-								<div class="text-wrapper-11">3.5</div>
-								<div class="text-wrapper-12">${doran.doran_view}K</div>
-								<img class="majesticons-comment"
-									src="img/majesticons-comment-text-3.svg" /> <img
-									class="emojione-star" src="img/emojione-star.svg" />
-							</div>
-							<div class="group-6">
-								<img class="unsplash-ykc-qhmjk"
-									src="img/unsplash-y3kc-7qhmjk-2.svg" />
-								<div class="frame">
-									<div class="frame-2">
-										<div class="text-wrapper-13">${doran.mem_id}</div>
-										<div class="text-wrapper-14">낑깡</div>
-									</div>
-									<div class="group-7">
-										<div class="text-wrapper-15">8분전</div>
-									</div>
+
+				<form id="orderByForm">
+					<input type="button" onclick="submitForm('latest')" value="최신순">
+					<input type="button" onclick="submitForm('views')" value="조회순">
+					<input type="button" onclick="submitForm('likes')" value="가장 많은">
+
+				</form>
+
+				<script>
+					var cpath = "${cpath}";
+					console.log(cpath); // Ensure that cpath is correctly printed in the console
+
+					function submitForm(orderBy) {
+
+						alert("Button Clicked! Order By: " + orderBy);
+						var form = document.getElementById('orderByForm');
+						//form.action = cpath + "/doran/doran.do?orderBy="
+						//		+ orderBy;
+						//form.submit();
+						$.ajax({
+									url : cpath + "/doran/doran2.do",
+									data : {"orderBy":orderBy},
+									success : function(responseData) {
+										alert(responseData);
+										$("#here").html(responseData);
+									}
+								});
+					}
+				</script>
+				<div id="here">
+					<c:forEach items="${dlist}" var="doran" varStatus="loop">
+						<tr>
+							<td>${doran.mem_id}</td>
+							<td>${doran.doran_title}</td>
+							<td>${doran.doran_cont}</td>
+							<td>${doran.doran_date}</td>
+						</tr>
+
+						<h3>
+							좋아요 ${dlike[loop.index]}개 댓글수 ${dcomment[loop.index]}개 조회수
+							${doran.doran_view}개
+							</td>
+						</h3>
+					</c:forEach>
+				</div>
+
+				<div class="doran-card">
+
+					<c:forEach items="${dlist}" var="doran" varStatus="loop">
+						<div class="doran-feed">
+							<div class="doran-uploadInfo">
+								<div>
+									<img class="doran-uploadInfo-profile"
+										src="${cpath }/resources/images/test.png" />
 								</div>
+								<div class="doran-uploadInfo-memid">${doran.mem_id }</div>
+								<div class="doran-uploadInfo-time">8분전</div>
+								<div class="doran-uploadInfo-memgrade">낑깡</div>
+							</div>
+							<div class="doran-uploadContent">
+								<div class="doran-uploadContent-image">이미지or비디오</div>
+								<div class="doran-uploadContent-content">${doran.doran_cont}</div>
+							</div>
+							<div class="doran-review">
+								<div class="doran-review-like">${dlike[loop.index]}</div>
+								<div class="doran-review-dcomment">${dcomment[loop.index]}</div>
+								<div class="doran-review-reviewCnt">${doran.doran_view}</div>
 							</div>
 						</div>
-					</div>
-				</c:forEach>
+					</c:forEach>
+
+				</div>
+
 			</div>
 
 			<div class="group-12">
@@ -183,7 +217,9 @@
 					<div class="group-17">
 						<div class="div-2">
 							<div class="doran-profile">
-								<div class="doran-profile-photo"></div>
+								<div class="doran-profile-photo">
+									<img src="${cpath }/resources/images/test.png" />
+								</div>
 								<button class="doran-button-frofile-setting">
 									<span>프로필 설정하기</span>
 								</button>
@@ -191,12 +227,19 @@
 						</div>
 					</div>
 				</div>
-				<button type="submit" class="group-18">
-					<div class="group-19">
-						<img class="create" src="img/create.svg" />
-						<div class="text-wrapper-22">글 작성하기</div>
-					</div>
-				</button>
+
+				<form
+					action="${pageContext.request.contextPath}/doran/doranUpload.do"
+					method="get">
+					<button type="submit" class="group-18">
+						<div class="group-19">
+							<img class="create" src="img/create.svg" />
+							<div class="text-wrapper-22">글 작성하기</div>
+						</div>
+					</button>
+				</form>
+
+
 			</div>
 			<header class="header">
 				<div class="top-nav">

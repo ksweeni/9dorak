@@ -21,8 +21,12 @@ public class DoranService {
 	public List<DoranVO> selectAll() {
 		return dao.selectAll();
 	}
-
-	public int insertMember(DoranVO doran) {
+	
+	public List<DoranVO> selectAllByView(){
+		return dao.selectAllByView();
+	}
+	
+	public int insertDoran(DoranVO doran) {
 		return dao.insertDoran(doran);
 	}
 

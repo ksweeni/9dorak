@@ -7,15 +7,12 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?e"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-	var message = "${mlist}";
-	if (message != "")
-		alert(message);
-</script>
+<title>구도락-메뉴보기</title>
+
 </head>
 <body>
 	<div class="screen">
@@ -79,297 +76,53 @@
 			</div>
 			<div class="menu-cards">
 				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group"
-										src="${cpath}/resources/images/food.png" />
-								</div>
-								
-								<div class="text-wrapper-4">$12.00</div>
-							</div>
-						</div>
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 테스트 중</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group"
-										src="${cpath}/resources/images/food.png" />
-								</div>
-								
-								<div class="text-wrapper-6">$9000</div>
-							</div>
-						</div>
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group"
-										src="${cpath}/resources/images/food.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-18.png" />
-								</div>
-							
-								<div class="text-wrapper-4">$12.00</div>
-							</div>
-						</div>
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-20.png" />
-								</div>
-								
-								<div class="text-wrapper-6">$25.50</div>
-							</div>
-						</div>
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-12.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
+						<c:forEach items="${mlist}" var="pro" varStatus="loop">
+							<div class="green-beans">
+								<div class="overlap-group">
+									<div class="text-wrapper-2">${pro.pro_name}</div>
+									<div class="frame">
 									<button class="view-details-btn">자세히 볼게요</button>
 								</div>
 								<div class="mask-group-wrapper">
 									<img class="mask-group" src="img/mask-group-8.png" />
 								</div>
 								<img class="vector" src="img/vector-11.png" />
-								<div class="text-wrapper-4">$12.00</div>
+								<div class="text-wrapper-4">${pro.pro_price}</div>
 							</div>
-						</div>
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-10.png" />
-								</div>
-								<img class="img" src="img/vector-7.png" />
-								<div class="text-wrapper-6">$25.50</div>
 							</div>
-						</div>
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-9.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-6.png" />
-								</div>
-								<img class="vector" src="img/vector-4.png" />
-								<div class="text-wrapper-4">$12.00</div>
-							</div>
-						</div>
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-15.png" />
-								</div>
-								<img class="img" src="img/vector-6.png" />
-								<div class="text-wrapper-6">$25.50</div>
-							</div>
-						</div>
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-21.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-3.png" />
-								</div>
-								<img class="vector" src="img/vector-2.png" />
-								<div class="text-wrapper-4">$12.00</div>
-							</div>
-						</div>
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-11.png" />
-								</div>
-								<img class="img" src="img/vector.png" />
-								<div class="text-wrapper-6">$25.50</div>
-							</div>
-						</div>
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-14.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="foods">
-					<div class="product">
-						<div class="green-beans">
-							<div class="overlap-group">
-								<div class="text-wrapper-2">검정콩 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-7.png" />
-								</div>
-								<img class="vector" src="img/vector-10.png" />
-								<div class="text-wrapper-4">$12.00</div>
-							</div>
-						</div>
-						
-						<div class="enchilade">
-							<div class="overlap-group">
-								<div class="text-wrapper-5">라자냐 오일 파스타 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-2.png" />
-								</div>
-								<img class="img" src="img/vector-3.png" />
-								<div class="text-wrapper-6">$25.50</div>
-							</div>
-						</div>
-						
-						
-						<div class="gyro-sandwhic">
-							<div class="overlap-group">
-								<div class="text-wrapper-7">샌드위치 김밥 도시락</div>
-								<div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
-								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-19.png" />
-								</div>
-								<div class="text-wrapper-8">$8000</div>
-							</div>
-						</div>
-						
-						
-					</div>
-				</div>
-			</div>
-
+						</c:forEach>
+				</div><!-- foods end -->
+			</div><!-- menu-cards -->
 			<!-- allergy bar -->
 			<div class="menu-top-bar">
 				<div class="allergy-bar">
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="cerealsCheckbox">
+						<input type="checkbox" class="allergy-check" id="cerealsCheckbox" onClick="allerCheck()">
 						<label for="cerealsCheckbox">🌾 곡류</label>
 					</div>
 
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="nutsCheckbox">
+						<input type="checkbox" class="allergy-check" id="nutsCheckbox" onClick="allerCheck()">
 						<label for="nutsCheckbox">🥚 난류</label>
 					</div>
 
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="dairyCheckbox">
+						<input type="checkbox" class="allergy-check" id="dairyCheckbox" onClick="allerCheck()">
 						<label for="dairyCheckbox">🍼 우유</label>
 					</div>
 
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="seafoodCheckbox">
+						<input type="checkbox" class="allergy-check" id="seafoodCheckbox" onClick="allerCheck()">
 						<label for="seafoodCheckbox">🍎 과일</label>
 					</div>
 
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="soyCheckbox">
+						<input type="checkbox" class="allergy-check" id="soyCheckbox" onClick="allerCheck()">
 						<label for="soyCheckbox">🥜 견과류</label>
 					</div>
 
 					<div class="check-div">
-						<input type="checkbox" class="allergy-check" id="glutenCheckbox">
+						<input type="checkbox" class="allergy-check" id="glutenCheckbox" onClick="allerCheck()">
 						<label for="glutenCheckbox">🍤 해산물</label>
 					</div>
 				</div>
@@ -378,11 +131,11 @@
 					<div class="overlap">
 						<div class="div-wrapper">
 
-							<input class="overlap-group-3" type="text"
+							<input class="overlap-group-3" id="searchTxt" type="text"
 								placeholder="  키워드를 검색하세요">
 						</div>
 						<div class="overlap-wrapper">
-							<button class="overlap-2">search</button>
+							<button class="overlap-2" id="searchBtn" onclick="searchBtnClick()">search</button>
 						</div>
 					</div>
 				</div>
@@ -390,43 +143,43 @@
 
 			<div class="top-categories">
 				<div class="frame-2">
-					<div class="frame-3">
-						<img class="ellipse" src="img/ellipse-1-2.svg" />
+					<div class="frame-3" onclick="categoryChk(this)" id="ctgr1">
+						<img class="ellipse" src="${cpath}/resources/images/menu/LeafyGreen.png" />
 						<div class="text-wrapper-18">환경친화</div>
 					</div>
-					<div class="frame-4">
-						<img class="ellipse-2" src="img/ellipse-1-7.png" />
+					<div class="frame-4" onclick="categoryChk(this)" id="ctgr2">
+						<img class="ellipse-2" src="${cpath}/resources/images/menu/LowSalt.png" />
 						<div class="text-wrapper-18">저염</div>
 					</div>
-					<div class="frame-5">
-						<img class="ellipse-2" src="img/ellipse-1-4.png" />
+					<div class="frame-5" onclick="categoryChk(this)" id="ctgr3">
+						<img class="ellipse-2" src="${cpath}/resources/images/menu/LowSweet.png" />
 						<div class="text-wrapper-18">저당</div>
 					</div>
-					<div class="frame-6">
-						<img class="ellipse-2" src="img/ellipse-1-5.png" />
+					<div class="frame-6" onclick="categoryChk(this)" id="ctgr4">
+						<img class="ellipse-2" src="${cpath}/resources/images/menu/Cow.png" />
 						<div class="text-wrapper-18">소</div>
 					</div>
 				</div>
 				<div class="group-4">
 					<div class="overlap-group-4">
-						<div class="frame-7">
-							<img class="ellipse" src="img/ellipse-1.svg" />
+						<div class="frame-7" onclick="categoryChk(this)" id="ctgr5">
+							<img class="ellipse" src="${cpath}/resources/images/menu/Pig.png" />
 							<div class="text-wrapper-18">돼지</div>
 						</div>
-						<div class="frame-8">
-							<img class="ellipse-2" src="img/ellipse-1-6.png" />
+						<div class="frame-8" onclick="categoryChk(this)" id="ctgr6">
+							<img class="ellipse-2" src="${cpath}/resources/images/menu/Chicken.png" />
 							<div class="text-wrapper-18">닭</div>
 						</div>
-						<div class="frame-9">
-							<img class="ellipse-2" src="img/ellipse-1-2.png" />
+						<div class="frame-9" onclick="categoryChk(this)" id="ctgr7">
+							<img class="ellipse-2" src="${cpath}/resources/images/menu/Fish.png" />
 							<div class="text-wrapper-18">생선</div>
 						</div>
-						<div class="frame-10">
-							<img class="ellipse-2" src="img/ellipse-1.png" />
+						<div class="frame-10" onclick="categoryChk(this)" id="ctgr8">
+							<img class="ellipse-2" src="${cpath}/resources/images/menu/Salad.png" />
 							<div class="text-wrapper-18">샐러드</div>
 						</div>
-						<div class="frame-11">
-							<img class="ellipse-2" src="img/ellipse-1-3.png" />
+						<div class="frame-11" onclick="categoryChk(this)" id="ctgr9">
+							<img class="ellipse-2" src="${cpath}/resources/images/menu/Fruit.png" />
 							<div class="text-wrapper-18">과일</div>
 						</div>
 					</div>
@@ -435,7 +188,7 @@
 
 			<div class="filter">
 				<div class="frame-12">
-					<div class="text-wrapper-19">신상품 순</div>
+					<button class="text-wrapper-19">신상품 순</button>
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20"
 						viewBox="0 0 14 20" fill="none">
 					<path
@@ -447,7 +200,7 @@
 				</svg>
 				</div>
 				<div class="frame-13">
-					<div class="text-wrapper-20">인기순</div>
+					<button class="text-wrapper-20">인기순</button>
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20"
 						viewBox="0 0 14 20" fill="none">
 					<path
@@ -462,6 +215,7 @@
 
 
 		</div>
+		
 		<footer class="footer">
 			<div class="company-loco">
 				<div class="company">
@@ -521,5 +275,110 @@
 			</div>
 		</footer>
 	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+	var chkCtgr = null;
+	
+	//검색하기
+	function searchBtnClick(allerCheckList) {
+	
+		var allerListJson;
+		var allerArrList =[];
+		if(allerCheckList != null){
+			allerListJson = JSON.stringify(allerCheckList);
+		}else{
+			allerListJson = JSON.stringify(allerArrList);
+		}
+		
+	    $.ajax({
+	        url:"${cpath}/menu/searchPro.do",
+	        type:'GET',
+	        data:{
+	        	pro_name: $('#searchTxt').val() //검색내용
+	          , ingre_no:  chkCtgr //카테고리선택
+	          , allerCheckList: allerListJson
+            } ,
+	        success:function(data){
+	            //alert("완료!");
+				if(data.length == 0){
+					//alert("검색 결과가 없습니다.");
+				}else{
+					
+					//temp += "<div>검색 결과가 "+data.length+"건 입니다.</div>"
+					
+					$('.foods').html(data);
+				}
+				
+	        },
+	        error:function(jqXHR, textStatus, errorThrown){
+	            alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
+	            self.close();
+	        }
+	    });
+		
+	}
+	
+	//카테고리
+	function categoryChk(e){
+		
+		chkCtgr = $(e).attr('id').substr(-1);
+	
+		//alert(chkCtgr);
+		searchBtnClick();
+		
+	}
+	
+	//알러지
+	function allerCheck(e){
+		
+		const cerealsCheckbox = document.querySelector('#cerealsCheckbox');
+		const nutsCheckbox = document.querySelector('#nutsCheckbox');
+		const dairyCheckbox = document.querySelector('#dairyCheckbox');
+		const seafoodCheckbox = document.querySelector('#seafoodCheckbox');
+		const soyCheckbox = document.querySelector('#soyCheckbox');
+		const glutenCheckbox = document.querySelector('#glutenCheckbox');
+		
+		const checked1 = cerealsCheckbox.checked;  // 선택 상태 확인
+		const checked2 = nutsCheckbox.checked;  // 선택 상태 확인
+		const checked3 = dairyCheckbox.checked;  // 선택 상태 확인
+		const checked4 = seafoodCheckbox.checked;  // 선택 상태 확인
+		const checked5 = soyCheckbox.checked;  // 선택 상태 확인
+		const checked6 = glutenCheckbox.checked;  // 선택 상태 확인
+		
+		const allerCheckList = []; 
+	
+		if(checked1){
+			allerCheckList.push("곡류");	
+		}
+		
+		if(checked2){
+			allerCheckList.push("난류");	
+		}
+		
+		if(checked3){
+			allerCheckList.push("우유");	
+		}
+		
+		if(checked4){
+			allerCheckList.push("과일");	
+		}
+		
+		if(checked5){
+			allerCheckList.push("견과류");	
+		}
+		
+		if(checked6){
+			allerCheckList.push("해산물");	
+		}
+		
+		console.log (allerCheckList);		
+	
+		searchBtnClick(allerCheckList);
+		
+		}
+
+	</script>
+	
 </body>
 </html>

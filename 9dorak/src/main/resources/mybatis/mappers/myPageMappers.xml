@@ -5,38 +5,28 @@
 <mapper namespace="net.firstzone.myPage">
 
 
-	<select id="getMember" parameterType="String" resultType="memvo" >
-	SELECT * FROM MEM WHERE mem_id = #{login_id}
-	</select>
-
-	<!-- <select id="selectAll" resultType="memvo">
-		select * from mem
-	</select>
-
-	<select id="idCheck" parameterType="String" resultType="int">
+	<select id="getMember" parameterType="String" resultType="memvo">
 		SELECT
-		COUNT(*) FROM mem WHERE mem_id = #{mem_id}
+		* FROM MEM WHERE mem_id = #{login_id}
 	</select>
 
+	<update id="updateMember" parameterType="memvo">
+		update mem
+		set
+		mem_pw =
+		#{mem_pw},
+		mem_name = #{mem_name},
+		mem_bd=#{mem_bd}
+		where
+		mem_id=#{mem_id}
 
-	<select id="codeCheck" parameterType="String" resultType="int">
-		SELECT
-		COUNT(*) FROM mem WHERE mem_code = #{mem_code}
-	</select>
-	<insert id="insertMember" parameterType="memvo">
-		<selectKey keyProperty="mem_code" resultType="String"
-			order="BEFORE">
-			SELECT 'ABISE' || code_seq.nextval AS mem_code FROM dual
-		</selectKey>
-		INSERT INTO mem (
-		mem_id, mem_name, mem_gender, mem_bd, mem_email,
-		mem_phone, mem_pw, mem_code, mem_addr
-		) VALUES (
-		#{mem_id}, #{mem_name},
-		'남자' , #{mem_bd}, #{mem_email},
-		#{mem_phone}, #{mem_pw}, #{mem_code},
-		#{mem_addr}
-		)
-	</insert> -->
+	</update>
+
+
+	<delete id="deleteMember" parameterType="String">
+		delete from mem
+		where
+		mem_id = #{mem_id}
+	</delete>
 
 </mapper>
