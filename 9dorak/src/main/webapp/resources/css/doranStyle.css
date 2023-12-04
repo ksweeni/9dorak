@@ -52,7 +52,6 @@
   width: 375px;
   top: 138px;
   left: 0;
-  font-family: var(--p1-font-family);
   font-weight: var(--p1-font-weight);
   color: var(--gray);
   font-size: var(--p1-font-size);
@@ -153,7 +152,6 @@
 .screen .text-wrapper-2 {
   top: 0;
   left: 10px;
-  font-family: var(--h4-font-family);
   font-weight: var(--h4-font-weight);
   color: #000000;
   font-size: var(--h4-font-size);
@@ -175,7 +173,6 @@
   top: 0;
   position: absolute;
   left: 0;
-  font-family: var(--p1-font-family);
   font-weight: var(--p1-font-weight);
   color: var(--gray);
   font-size: var(--p1-font-size);
@@ -188,7 +185,6 @@
   top: 34px;
   position: absolute;
   left: 0;
-  font-family: var(--p1-font-family);
   font-weight: var(--p1-font-weight);
   color: var(--gray);
   font-size: var(--p1-font-size);
@@ -201,7 +197,6 @@
   position: absolute;
   top: 68px;
   left: 0;
-  font-family: var(--p1-font-family);
   font-weight: var(--p1-font-weight);
   color: var(--gray);
   font-size: var(--p1-font-size);
@@ -250,7 +245,6 @@
   width: 177px;
   top: 21px;
   left: 21px;
-  font-family: var(--p2-font-family);
   font-weight: var(--p2-font-weight);
   color: var(--gray);
   font-size: var(--p2-font-size);
@@ -271,7 +265,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-family: var(--h4-font-family);
   font-weight: var(--h4-font-weight);
   color: #000000;
   font-size: var(--h4-font-size);
@@ -292,7 +285,6 @@
   position: absolute;
   top: 102px;
   left: 0;
-  font-family: var(--p1-font-family);
   font-weight: var(--p1-font-weight);
   color: var(--gray);
   font-size: var(--p1-font-size);
@@ -305,7 +297,6 @@
   position: absolute;
   top: 136px;
   left: 0;
-  font-family: var(--p1-font-family);
   font-weight: var(--p1-font-weight);
   color: var(--gray);
   font-size: var(--p1-font-size);
@@ -360,7 +351,6 @@
   height: 43px;
   top: 412px;
   left: 11px;
-  font-family: "Barlow-Medium", Helvetica;
   font-weight: 500;
   color: #7c7c7c;
   font-size: 17px;
@@ -388,7 +378,6 @@
   position: absolute;
   top: 3px;
   left: 35px;
-  font-family: "Barlow-Medium", Helvetica;
   font-weight: 500;
   color: #b3b3b3;
   font-size: 18px;
@@ -400,7 +389,6 @@
   position: absolute;
   top: 3px;
   left: 124px;
-  font-family: "Barlow-Medium", Helvetica;
   font-weight: 500;
   color: #b3b3b3;
   font-size: 18px;
@@ -412,7 +400,6 @@
   position: absolute;
   top: 1px;
   left: 197px;
-  font-family: "Barlow-Medium", Helvetica;
   font-weight: 500;
   color: #b3b3b3;
   font-size: 18px;
@@ -474,7 +461,6 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Montserrat-Medium", Helvetica;
   font-weight: 500;
   color: #000000;
   font-size: 24px;
@@ -485,7 +471,6 @@
 .screen .text-wrapper-13 {
   position: relative;
   width: fit-content;
-  font-family: "Montserrat-Medium", Helvetica;
   font-weight: 500;
   color: #ff9923;
   font-size: 16px;
@@ -504,7 +489,6 @@
   width: 45px;
   top: 0;
   left: 0;
-  font-family: "Montserrat-Medium", Helvetica;
   font-weight: 500;
   color: #8a8a8a;
   font-size: 14px;
@@ -525,7 +509,6 @@
   width: 59px;
   top: 167px;
   left: 565px;
-  font-family: "Barlow-ExtraBold", Helvetica;
   font-weight: 800;
   color: #ffffff;
   font-size: 20px;
@@ -565,7 +548,6 @@
   position: absolute;
   top: 6px;
   left: 52px;
-  font-family: "Barlow-ExtraBold", Helvetica;
   font-weight: 800;
   color: #ffffff;
   font-size: 1rem;
@@ -612,7 +594,6 @@
   height: 43px;
   top: 423px;
   left: 11px;
-  font-family: "Barlow-Medium", Helvetica;
   font-weight: 500;
   color: #7c7c7c;
   font-size: 17px;
@@ -692,7 +673,6 @@
   height: 24px;
   top: 9px;
   left: 12px;
-  font-family: "Inter-Regular", Helvetica;
   font-weight: 400;
   color: #ffffff;
   font-size: 20px;
@@ -726,7 +706,6 @@
 .screen .text-wrapper-18 {
   position: relative;
   width: fit-content;
-  font-family: "Inter-Medium", Helvetica;
   font-weight: 500;
   color: #ffffffe6;
   font-size: 1.2rem;
@@ -757,7 +736,6 @@
 .screen .text-wrapper-19 {
   position: relative;
   width: fit-content;
-  font-family: "Inter-Medium", Helvetica;
   font-weight: 500;
   color: #ffffffe6;
   font-size: 1.2rem;
@@ -771,7 +749,6 @@
   width: 126px;
   top: 39px;
   left: 89px;
-  font-family: "Inter-SemiBold", Helvetica;
   font-weight: 600;
   color: #ffffff;
   font-size: 1.7rem;
@@ -809,7 +786,6 @@
   height: 16px;
   top: 22px;
   left: 58px;
-  font-family: "Roboto-Regular", Helvetica;
   font-weight: 400;
   color: var(--tangerine);
   font-size: 14px;
@@ -878,7 +854,6 @@
   width: 96px;
   top: 0px;
   left: 0;
-  font-family: "Barlow-ExtraBold", Helvetica;
   font-weight: 800;
   color: #ffffff;
   font-size: 1.1rem;
@@ -914,7 +889,6 @@
   color: #000000;
   position: absolute;
   top: 0;
-  font-family: var(--h5-font-family);
   font-weight: var(--h5-font-weight);
   font-size: var(--h5-font-size);
   letter-spacing: var(--h5-letter-spacing);
@@ -927,7 +901,6 @@
   color: #000000;
   position: absolute;
   top: 0;
-  font-family: var(--h5-font-family);
   font-weight: var(--h5-font-weight);
   font-size: var(--h5-font-size);
   letter-spacing: var(--h5-letter-spacing);
@@ -940,7 +913,6 @@
   color: #000000;
   position: absolute;
   top: 0;
-  font-family: var(--h5-font-family);
   font-weight: var(--h5-font-weight);
   font-size: var(--h5-font-size);
   letter-spacing: var(--h5-letter-spacing);
@@ -953,7 +925,6 @@
   color: #000000;
   position: absolute;
   top: 0;
-  font-family: var(--h5-font-family);
   font-weight: var(--h5-font-weight);
   font-size: var(--h5-font-size);
   letter-spacing: var(--h5-letter-spacing);
@@ -966,7 +937,6 @@
   color: #f38820;
   position: absolute;
   top: 0;
-  font-family: var(--h5-font-family);
   font-weight: var(--h5-font-weight);
   font-size: var(--h5-font-size);
   letter-spacing: var(--h5-letter-spacing);
@@ -996,7 +966,6 @@
   position: absolute;
   top: 9px;
   left: 0;
-  font-family: var(--h5-font-family);
   font-weight: var(--h5-font-weight);
   color: #000000;
   font-size: var(--h5-font-size);
@@ -1029,42 +998,41 @@
 }
 
 .screen .ellipse {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  top: 1px;
-  left: 14px;
-  background-color: var(--tangerine);
-  border-radius: 7.5px;
-  box-shadow: 0px 0px 22px #cc0000cc;
+  	position: absolute;
+  	width: 15px;
+  	height: 15px;
+  	top: 1px;
+  	left: 14px;
+  	background-color: var(--tangerine);
+  	border-radius: 7.5px;
+  	box-shadow: 0px 0px 22px #cc0000cc;
 }
 
 .screen .text-wrapper-29 {
-  position: absolute;
-  top: 0;
-  left: 18px;
-  font-family: var(--p2-font-family);
-  font-weight: var(--p2-font-weight);
-  color: var(--white);
-  font-size: var(--p2-font-size);
-  letter-spacing: var(--p2-letter-spacing);
-  line-height: var(--p2-line-height);
-  font-style: var(--p2-font-style);
+	  position: absolute;
+	  top: 0;
+	  left: 18px;
+	  font-weight: var(--p2-font-weight);
+	  color: var(--white);
+	  font-size: var(--p2-font-size);
+	  letter-spacing: var(--p2-letter-spacing);
+	  line-height: var(--p2-line-height);
+	  font-style: var(--p2-font-style);
 }
 
 .screen .doran-button-upload {
-  width: 114px;
-  height: 36px;
-  background-color: #ff8c23c3;
-  border-radius: 10px;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 800;
-  padding: 0 7px 0 48px;
-  background-image: url(../images/icon_upload.png);
-  background-repeat: no-repeat;
-  background-size: 34px 25px;
+  	width: 114px;
+  	height: 36px;
+  	background-color: #ff8c23c3;
+  	border-radius: 10px;
+  	border: none;
+  	color: #fff;
+  	font-size: 20px;
+  	font-weight: 800;
+  	padding: 0 7px 0 48px;
+  	background-image: url(../images/icon_upload.png);
+  	background-repeat: no-repeat;
+  	background-size: 34px 25px;
     background-position: 7px center;
 }
 
@@ -1093,23 +1061,23 @@
 }
 
 .screen .doran-upload-media button:last-child {
-	margin-right: 0;
+		margin-right: 0;
 }
 
 .screen .doran-upload-media .doran-button-upload-photo {
-  background-image: url(../images/icon_picture.png);
-  background-repeat: no-repeat;
-  background-size: 27px 21px;
+  	background-image: url(../images/icon_picture.png);
+  	background-repeat: no-repeat;
+  	background-size: 27px 21px;
     background-position: 7px center;
-  padding: 0 7px 0 37px;
+  	padding: 0 7px 0 37px;
 }
 
 .screen .doran-upload-media .doran-button-upload-video {
-  background-image: url(../images/icon_video.png);
-  background-repeat: no-repeat;
-  background-size: 32px 22px;
+  	background-image: url(../images/icon_video.png);
+  	background-repeat: no-repeat;
+  	background-size: 32px 22px;
     background-position: 7px center;
-  padding: 0 7px 0 44px;
+  	padding: 0 7px 0 44px;
 }
 
 .doran-context {
@@ -1132,6 +1100,7 @@
 	color: #797979;
 	font-size: 17px;
 	font-weight: 500;
+	border-radius: 10px;
 }
 
 .doran-profile{
@@ -1151,7 +1120,6 @@
 .doran-profile-photo{
 	width: 100px;
 	height: 100px;
-	border: 0.3px solid #ABABAB;
 	margin-top: 13px;
 	margin-left: 0px;
 	margin-bottom: 20px;
