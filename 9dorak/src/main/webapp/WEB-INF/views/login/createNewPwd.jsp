@@ -11,6 +11,22 @@
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+var succesMessage = "${updatePwdSuccessMessage}";
+alert(succesMessage);
+
+	function showAlert() {
+		var succesMessage = "${updatePwdSuccessMessage}";
+		console.log(succesMessage);
+
+		if (succesMessage != "") {
+			alert(succesMessage);
+		}
+	}
+	window.onload = showAlert;
+</script>
+
 </head>
 <body>
 	<div class="div-wrapper">
