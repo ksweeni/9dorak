@@ -45,8 +45,8 @@
 		mem_id
 		)
 		VALUES (
-		#{doranNo}, #{doranTitle}, #{doranCont}, #{doranDate},
-		#{doranImage}, #{doranView}, #{memId}
+		#{doran_no}, #{doran_title}, #{doran_cont}, #{doran_date},
+		#{doran_image}, #{doran_view}, #{mem_id}
 		)
 	</insert>
 
