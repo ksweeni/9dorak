@@ -11,6 +11,7 @@
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <script>
 	var message = "${dlist}";
@@ -109,39 +110,50 @@
 
 			<div class="group-4">
 
-				<form id="orderByForm" action="${cpath}/doran/doran.do" method="get">
-					<button type="submit" onclick="submitForm('latest')">최신순</button>
-					<button type="submit" onclick="submitForm('views')">조회순</button>
-					<button type="submit" onclick="submitForm('likes')">가장 많은
-						좋아요</button>
+				<form id="orderByForm">
+					<input type="button" onclick="submitForm('latest')" value="최신순">
+					<input type="button" onclick="submitForm('views')" value="조회순">
+					<input type="button" onclick="submitForm('likes')" value="가장 많은">
+
 				</form>
 
 				<script>
 					var cpath = "${cpath}";
 					console.log(cpath); // Ensure that cpath is correctly printed in the console
 
-					function submitForm(orderBy, event) {
+					function submitForm(orderBy) {
+
 						alert("Button Clicked! Order By: " + orderBy);
 						var form = document.getElementById('orderByForm');
-						form.action = cpath + "/doran/doran.do?orderBy="
-								+ orderBy;
-						form.submit();
+						//form.action = cpath + "/doran/doran.do?orderBy="
+						//		+ orderBy;
+						//form.submit();
+						$.ajax({
+									url : cpath + "/doran/doran2.do",
+									data : {"orderBy":orderBy},
+									success : function(responseData) {
+										alert(responseData);
+										$("#here").html(responseData);
+									}
+								});
 					}
 				</script>
+				<div id="here">
+					<c:forEach items="${dlist}" var="doran" varStatus="loop">
+						<tr>
+							<td>${doran.mem_id}</td>
+							<td>${doran.doran_title}</td>
+							<td>${doran.doran_cont}</td>
+							<td>${doran.doran_date}</td>
+						</tr>
 
-				<c:forEach items="${dlist}" var="doran" varStatus="loop">
-					<tr>
-						<td>${doran.mem_id}</td>
-						<td>${doran.doran_title}</td>
-						<td>${doran.doran_cont}</td>
-						<td>${doran.doran_date}</td>
-					</tr>
-					<h3>
-						좋아요 ${dlike[loop.index]}개 댓글수 ${dcomment[loop.index]}개 조회수
-						${doran.doran_view}개
-						</td>
-					</h3>
-				</c:forEach>
+						<h3>
+							좋아요 ${dlike[loop.index]}개 댓글수 ${dcomment[loop.index]}개 조회수
+							${doran.doran_view}개
+							</td>
+						</h3>
+					</c:forEach>
+				</div>
 
 				<div class="doran-card">
 
