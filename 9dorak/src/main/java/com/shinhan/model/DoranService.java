@@ -26,6 +26,10 @@ public class DoranService {
 		return dao.selectAllByView();
 	}
 	
+	public List<DoranVO> selectAllByDlike(){
+		return dao.selectAllByDlike();
+	}
+	
 	public int insertDoran(DoranVO doran) {
 		return dao.insertDoran(doran);
 	}
