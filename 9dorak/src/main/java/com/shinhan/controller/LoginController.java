@@ -1,5 +1,8 @@
 package com.shinhan.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -75,14 +78,18 @@ public class LoginController {
 
 	@PostMapping("findPwd.do")
 	public String findPwd(@RequestParam String mem_id, @RequestParam String mem_name, @RequestParam String mem_phone,
-			Model model) {
+			Model model, HttpSession session) {
 
 		MemVO foundPwd = lservice.findPwd(mem_id, mem_name, mem_phone);
 
 		if (foundPwd != null) {
-			// 새로운 비밀번호를 모델에 추가하고 새로운 비밀번호 설정 페이지로 이동
 			model.addAttribute("foundPwd", foundPwd);
 			model.addAttribute("successMessage", "새로운 비밀번호를 설정하세요.");
+
+			// 세션에 정보 저장
+			session.setAttribute("updatePwdInfo",
+					Map.of("mem_id", mem_id, "mem_name", mem_name, "mem_phone", mem_phone));
+
 			return "login/createNewPwd"; // 새로운 비밀번호 설정 페이지로 이동
 		} else {
 			// 사용자를 찾지 못했을 경우 처리
@@ -91,4 +98,22 @@ public class LoginController {
 		}
 	}
 
+	@PostMapping("updatePwd.do")
+	public String updatePwd(@RequestParam String new_pw, HttpSession session, RedirectAttributes redirectAttributes) {
+		// 세션에서 정보 가져오기
+		Map<String, String> updatePwdInfo = (Map<String, String>) session.getAttribute("updatePwdInfo");
+		if (updatePwdInfo != null) {
+			// 비밀번호 업데이트 수행
+			lservice.updatePwd(updatePwdInfo.get("mem_id"), new_pw);
+
+			// 세션에서 정보 제거
+			session.removeAttribute("updatePwdInfo");
+
+			redirectAttributes.addFlashAttribute("updatePwdSuccessMessage", "비밀번호가 성공적으로 변경되었습니다. 다시 로그인해주세요.");
+			return "redirect:/login/loginForm.do"; // 비밀번호 변경 후 로그인 페이지로 리다이렉트
+		} else {
+			// 세션에 필요한 정보가 없을 경우 처리
+			return "redirect:/"; // 세션에 필요한 정보가 없으면 메인 페이지로 리다이렉트
+		}
+	}
 }
