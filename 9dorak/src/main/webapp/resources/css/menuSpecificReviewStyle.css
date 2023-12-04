@@ -1,6 +1,18 @@
 @charset "UTF-8";
 
+progress {
+  -webkit-appearance: none;
+}
 
+::-webkit-progress-bar {
+  background-color: rgba(215, 215, 215, 0.46);
+  border-radius:2rem;
+}
+
+::-webkit-progress-value {
+  background-color:  #ffcbae;
+  border-radius:2rem;
+}
 
 div-wrapper {
 	background-color: #ffffff;
@@ -360,6 +372,7 @@ div-wrapper {
 .div-wrapper .overlap-group-3 {
 	position: relative;
 	height: 20px;
+	width:510px;
 }
 
 .div-wrapper .rectangle {

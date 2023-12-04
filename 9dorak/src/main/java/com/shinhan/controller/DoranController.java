@@ -28,7 +28,7 @@ import com.shinhan.model.DoranService;
 @Controller
 @RequestMapping("doran")
 public class DoranController {
-//asdad
+
 	@Autowired
 	DoranService dService;
 
@@ -38,25 +38,40 @@ public class DoranController {
 	public String doran(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model) {
 		List<DoranVO> dlist;
 		System.out.println(orderBy);
+		dlist = dService.selectAll();
 
-		if ("latest".equals(orderBy)) {
-			dlist = dService.selectAll();
-		} else if ("views".equals(orderBy)) {
-			dlist = dService.selectAllByView();
-		} else {
-			dlist = dService.selectAll();
-		}
-
-		List<DlikeVO> dlike = dService.selectLike();
+		// List<DlikeVO> dlike = dService.selectLike();
 		List<DCommentVO> dcomment = dService.selectComment();
 		model.addAttribute("dlist", dlist);
-		model.addAttribute("dlike", dlike);
+		// model.addAttribute("dlike", dlike);
 		model.addAttribute("dcomment", dcomment);
-		System.out.println("좋아요: " + dlike);
+		// System.out.println("좋아요: " + dlike);
 		System.out.println("댓글 수: " + dcomment);
 		System.out.println("orderBy : " + orderBy);
 
 		return "doran/doran";
+	}
+
+	@GetMapping("/doran2.do")
+	public String doran2(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model) {
+		List<DoranVO> dlist;
+		System.out.println(orderBy);
+		if ("views".equals(orderBy)) {
+			dlist = dService.selectAllByView();
+		} else if ("latest".equals(orderBy)) {
+			dlist = dService.selectAll();
+		} else {
+			dlist = dService.selectAllByDlike();
+		}
+		//List<DlikeVO> dlike = dService.selectLike();
+		List<DCommentVO> dcomment = dService.selectComment();
+		model.addAttribute("dlist", dlist);
+		//model.addAttribute("dlike", dlike);
+		model.addAttribute("dcomment", dcomment);
+		//System.out.println("좋아요: " + dlike);
+		System.out.println("댓글 수: " + dcomment);
+		System.out.println("orderBy : " + orderBy);
+		return "doran/doran_ajax";
 	}
 
 	@GetMapping("doranUpload.do")

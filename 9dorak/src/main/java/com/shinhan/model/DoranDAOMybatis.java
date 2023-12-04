@@ -35,6 +35,12 @@ public class DoranDAOMybatis {
 		return dlist;
 	}
 	
+	public List<DoranVO> selectAllByDlike(){
+		List<DoranVO> dlist = sqlSession.selectList(NAMESPACE+"selectAllByDlike");
+		System.out.println("selectAllByDlike"+dlist);
+		return dlist;
+	}
+	
 	public int insertDoran(DoranVO doran) {
 		System.out.println("inserting :"+doran);
 		return sqlSession.insert(NAMESPACE + "insertDoran", doran);

@@ -42,7 +42,8 @@
 				<div class="group">
 					<div class="top-bar">
 						<div class="frame">
-							<div class="div">아이디 찾기</div>
+							<button onclick="location.href='../login/findIdForm.do'"
+							type="submit" class="div">아이디 찾기</button>
 							<img class="line" src="img/line-1.svg" />
 						</div>
 						<div class="frame">

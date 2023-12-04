@@ -23,15 +23,11 @@
 				<div class="group">
 					<div class="top-bar">
 						<div class="frame">
-							<div class="div">아이디 찾기</div>
-							<img class="line" src="img/line-1.svg" />
-						</div>
-						<div class="frame">
-							<div class="text-wrapper-2">비밀번호 찾기</div>
-							<img class="img" src="img/image.svg" />
+							<div class="text-wrapper-2">비밀번호 변경</div>
+							<img class="img"/>
 						</div>
 					</div>
-					<div class="text-wrapper-3">계정을 잊으셨나요?</div>
+					<div class="text-wrapper-3">비밀번호를 변경해주세요</div>
 					<form action="${pageContext.request.contextPath }/login/updatePwd.do"
 						method="post">
 					<div class="frame-2">
@@ -46,7 +42,7 @@
 					</div>
 					<div class="login-button">
 						<button class="overlap-group" type="submit">
-							<div class="text-wrapper-5">비밀번호 설정</div>
+							<div class="text-wrapper-5">비밀번호 변경</div>
 						</button>
 					</div>
 					</form>

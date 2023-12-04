@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/foundIDStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/foundIDStyle.css?s"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,10 +32,11 @@
 				<div class="top-bar">
 					<div class="frame-2">
 						<div class="text-wrapper-2">아이디 찾기</div>
-						<img class="line" src="img/line-1.svg" />
+						<img class="line" />
 					</div>
 					<div class="frame-2">
-						<div class="text-wrapper-3">비밀번호 찾기</div>
+					<button onclick="location.href='../login/findPwdForm.do'"
+							type="submit" class="text-wrapper-3">비밀번호 찾기</button>
 					</div>
 				</div>
 				<div class="text-wrapper-4">계정을 잊으셨나요?</div>
