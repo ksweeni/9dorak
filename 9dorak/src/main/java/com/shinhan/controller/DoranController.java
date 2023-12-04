@@ -65,8 +65,8 @@ public class DoranController {
 		return "doran/doranUpload";
 	}
 
-	   @PostMapping(value = "doranUpload.do", produces = MediaType.APPLICATION_JSON_VALUE)
-	    @ResponseBody
+	@PostMapping(value = "doranUpload.do", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
 	public String handleDoranUpload(DoranVO doran) {
 //		public String handleDoranUpload(@RequestParam("doranTitle") String doranTitle,
 //				@RequestParam("doranCont") String doranCont, @RequestParam("doranView") int doranView,
@@ -97,6 +97,29 @@ public class DoranController {
 		dService.insertDoran(doran);
 		System.out.println("여기다여기다여기다여기다여기다여기다여기다여기다여기다여기다");
 		return "Upload successful!";
+	}
+
+	@GetMapping("/doran2.do")
+	public String doran2(@RequestParam(name = "orderBy", defaultValue = "views") String orderBy, Model model) {
+		List<DoranVO> dlist;
+		System.out.println(orderBy);
+		if ("views".equals(orderBy)) {
+			dlist = dService.selectAllByView();
+			dlist = dService.selectAllByView();
+		} else if ("latest".equals(orderBy)) {
+			dlist = dService.selectAll();
+		} else {
+			dlist = dService.selectAll();
+		}
+		List<DlikeVO> dlike = dService.selectLike();
+		List<DCommentVO> dcomment = dService.selectComment();
+		model.addAttribute("dlist", dlist);
+		model.addAttribute("dlike", dlike);
+		model.addAttribute("dcomment", dcomment);
+		System.out.println("좋아요: " + dlike);
+		System.out.println("댓글 수: " + dcomment);
+		System.out.println("orderBy : " + orderBy);
+		return "doran/doran_ajax";
 	}
 
 	@GetMapping("doranFeedDetail.do")
