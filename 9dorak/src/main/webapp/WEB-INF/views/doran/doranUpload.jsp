@@ -97,10 +97,10 @@ String contextPath = request.getContextPath();
 						<div class="overlap-group-wrapper">
 							<div class="overlap-group">
 								<!-- 게시 내용 입력 -->
-								<div>
+								<div class="doranTitleBox">
 									<textarea id="doranTitle" placeholder="자유롭게 제목을 입력해보세요"></textarea>
 								</div>
-								<div>
+								<div class="doranContBox">
 									<textarea id="doranCont" placeholder="자유롭게 입력해보세요"></textarea>
 								</div>
 								<div class="upload-field">
@@ -298,14 +298,16 @@ String contextPath = request.getContextPath();
 						<div class="text-wrapper-19">도란도란</div>
 					</div>
 				</div>
-				<div class="overlap-wrapper">
-					<div class="overlap-2">
-						<img class="vector-2" src="img/vector.svg" />
-						<div class="text-wrapper-20">검색어를 입력하세요</div>
-					</div>
-				</div>
 			</div>
-			<div class="group-wrapper">
+			<div class="doran-profile">
+				<div class="doran-profile-photo">
+					<img src="${cpath }/resources/images/test.png" />
+				</div>
+				<button class="doran-button-frofile-setting">
+					<span>프로필 설정하기</span>
+				</button>
+			</div>
+			<!-- <div class="group-wrapper">
 				<div class="group-11">
 					<div class="group-12">
 						<div class="profile-wrapper">
@@ -313,7 +315,7 @@ String contextPath = request.getContextPath();
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </body>

@@ -4,27 +4,29 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.firstzone.menu">
 
+	<!-- 메뉴 전체보기 -->
 	<select id="selectAll" resultType="provo">
 		select * from pro
 	</select>
 	
+	<!-- 메뉴 검색 -->
 	<select id="selectSearchPro" resultType="provo" parameterType="provo">
 		select *
 		  from pro t1,
 			   category t2
-		 where t1.pro_no=t2.pro_no
-		<if test='@org.springframework.util.StringUtils@hasText(ingre_no)' >
+		  where t1.pro_no=t2.pro_no
+		<if test="ingre_no != null and ingre_no != ''" >
 			and t2.ingre_no = #{ingre_no}
 		</if>
-		<if test='@org.springframework.util.StringUtils@hasText(pro_name)' >
+		<if test="pro_name != null and pro_name != ''" >
 			and t1.pro_name like '%'||#{pro_name}||'%'
 		</if>
-		<if test = "!@org.springframework.util.CollectionUtils@isEmpty(allerCheckList)" >
+		<!-- <if test = "allerCheckList != null and !allerCheckList.isEmpty()" >
 			and t1.pro_aller not in
 		<foreach collection="allerCheckList" item="item" separator="," open="(" close=")">
        		 #{item}
       	</foreach>
-		</if> 
+		</if> -->
 	</select>
 
 	<!-- <insert id="insertDoran" parameterType="doranvo">
@@ -37,7 +39,6 @@
 		#{doranImage}, #{doranView}, #{memId}
 		)
 	</insert> -->
-
 
 	<!-- <update id="empUpdate" parameterType="empvo"> update employees set 
 		first_name= #{first_name}, last_name=#{last_name}, email=#{email}, phone_number=#{phone_number}, 
@@ -52,4 +53,5 @@
 		null, </if> <if test="manager_id!=0"> #{manager_id}, </if> <if test="department_id==0"> 
 		null, </if> <if test="department_id!=0"> #{department_id}, </if> #{employee_id}) 
 		</insert> -->
+		
 </mapper>
