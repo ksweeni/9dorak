@@ -27,7 +27,7 @@ import com.shinhan.model.DoranService;
 @Controller
 @RequestMapping("doran")
 public class DoranController {
-
+//asdad
 	@Autowired
 	DoranService dService;
 
