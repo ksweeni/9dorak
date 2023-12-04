@@ -905,9 +905,9 @@ String contextPath = request.getContextPath();
 <body>
 	<div class=e128_186>
 		<div class=e128_187>
-			<div class=e128_188>
+			<a href="${cpath }" class=e128_188>
 				<div class="e128_189"></div>
-			</div>
+			</a>
 			<a href="${cpath }/menu/menu.do" class="e128_190">메뉴보기</a> <span
 				class="e128_191">구독하기</span><span class="e128_192">요모조모</span> <a
 				href="${cpath }/doran/doran.do" class="e128_193">도란도란</a> <a

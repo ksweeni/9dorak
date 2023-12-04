@@ -1082,12 +1082,12 @@ String contextPath = request.getContextPath();
 <body style="width: 100%">
 	<div class=e79_160>
 		<div class=e81_146>
-			<div class=e81_147>
+			<a href = "${cpath }" class=e81_147>
 				<div class="e81_148"></div>
-			</div>
+			</a>
 			<a href="${cpath }/menu/menu.do" class="e81_149">메뉴보기</a><span
 				class="e81_150">구독하기</span><span class="e81_151">요모조모</span><a
-				href="${cpath }/doran/doran.do" class="e81_152">도란도란</a><a a
+				href="${cpath }/doran/doran.do" class="e81_152">도란도란</a><a 
 				href="${cpath }/event/challenge.do" class="e81_153">이벤트</a><a
 				href="${cpath }/my/logout.do" class="e81_154">로그아웃</a>
 			<div class="e81_155"></div>
@@ -1217,7 +1217,7 @@ String contextPath = request.getContextPath();
 		<div class="e122_223"></div>
 		<div class="e122_224"></div>
 	</div>
-	</div>
+
 
 </body>
 <script type="text/javascript">
