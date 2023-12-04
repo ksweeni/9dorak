@@ -9,6 +9,7 @@
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?t"
 	type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>구도락-메뉴보기</title>
@@ -188,7 +189,7 @@
 
 			<div class="filter">
 				<div class="frame-12">
-					<button class="text-wrapper-19">신상품 순</button>
+					<button class="text-wrapper-19"  id="orderbyNew">신상품 순</button>
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20"
 						viewBox="0 0 14 20" fill="none">
 					<path
@@ -200,7 +201,7 @@
 				</svg>
 				</div>
 				<div class="frame-13">
-					<button class="text-wrapper-20">인기순</button>
+					<button class="text-wrapper-20"  id="orderbyLike">인기순</button>
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20"
 						viewBox="0 0 14 20" fill="none">
 					<path
@@ -275,7 +276,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 	<script type="text/javascript">
 	
 	var chkCtgr = null;
@@ -296,24 +297,20 @@
 	        type:'GET',
 	        data:{
 	        	pro_name: $('#searchTxt').val(), //검색내용
-	            ingre_no:  chkCtgr, //카테고리선택
-	            allerCheckList: allerListJson
-            } ,
+	            ingre_no: chkCtgr, //카테고리선택
+	            allerCheckList: allerListJson //알러지
+            },
 	        success:function(data){
 	            //alert("완료!");
 				if(data.length == 0){
 					//alert("검색 결과가 없습니다.");
 				}else{
-					
 					//temp += "<div>검색 결과가 "+data.length+"건 입니다.</div>"
-					
 					$('.foods').html(data);
 				}
-				
 	        },
-	        error:function(jqXHR, textStatus, errorThrown){
-	            alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
-	            self.close();
+	        error:function(){
+	            alert("에러");
 	        }
 	    });
 		
@@ -377,6 +374,24 @@
 		searchBtnClick(allerCheckList);
 		
 		} */
+		
+	//정렬
+	$(".filter button").on("click",function(){
+
+		 $.ajax({
+	        url:"${cpath}/menu/searchOrderby.do",
+	        type:'GET',
+	        data:{
+	        	order_type: $(this).text() //필터타입 검색
+            },
+	        success:function(data){
+	        	$('.foods').html(data);
+	        },
+	        error:function(){
+	            alert("에러");
+	        }
+	    }); 
+	})
 
 	</script>
 	
