@@ -221,7 +221,6 @@ String contextPath = request.getContextPath();
         formData.append('memId', memId);
         formData.append('doranDate', doranDate);
 
-        // Check if doranImage is not undefined before appending it to formData
         if (doranImage) {
             formData.append('doranImage', doranImage, doranImage.name);
         }
