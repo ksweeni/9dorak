@@ -8,28 +8,12 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/menuSpecificReviewStyle.css?e"
+	href="${cpath}/resources/css/menuSpecificReviewStyle.css?d"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
-<script>
-function selectButton(button) {
-    const buttons = document.querySelectorAll('.menu-selection-wrapper .common-button');
-    buttons.forEach((btn) => {
-        btn.classList.remove('selected');
-        Array.from(btn.children).forEach(child => {
-            child.style.color = 'black';
-        });
-    });
 
-    // 선택된 버튼에 'selected' 클래스 추가
-    button.classList.add('selected');
-    Array.from(button.children).forEach(child => {
-        child.style.color = '#ffb58b';
-    });
-}
-</script>
 </head>
 <body>
 	<div class="div-wrapper">
@@ -68,7 +52,8 @@ function selectButton(button) {
 										<img class="img" src="${cpath}/resources/images/menu/plus.png" />
 									</button>
 									<button class="entypo-minus-wrapper">
-										<img class="img" src="${cpath}/resources/images/menu/minus.png" />
+										<img class="img"
+											src="${cpath}/resources/images/menu/minus.png" />
 									</button>
 								</div>
 								<div class="text-wrapper-3">총 금액 8,000원</div>
@@ -78,14 +63,15 @@ function selectButton(button) {
 							<button class="button-medium-text">
 								<div class="overlap-group-2">
 									<div class="label">&nbsp;&nbsp; 구도락 담기</div>
-									<img class="icon-cart" src="${cpath}/resources/images/menu/Cart.png" />
+									<img class="icon-cart"
+										src="${cpath}/resources/images/menu/Cart.png" />
 								</div>
 							</button>
 							<div class="frame-2">
 								<button class="label-wrapper">
 									<div class="label-2">결제하기</div>
 								</button>
-								
+
 							</div>
 						</div>
 					</div>
@@ -215,22 +201,29 @@ function selectButton(button) {
 				<div class="group-5">
 					<div class="group-6">
 						<div class="overlap-group-5">
+							<img class="rectangle-5"
+								src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
 					<div class="overlap-wrapper">
 						<div class="overlap-4">
+							<img class="rectangle-5"
+								src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
 					<div class="group-7">
 						<div class="overlap-5">
+							<img class="rectangle-5"
+								src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
 					<div class="group-8">
 						<div class="overlap-6">
-							<img class="rectangle-5" src="img/rectangle-614.png" />
+							<img class="rectangle-5"
+								src="${cpath}/resources/images/menu/cake.png" />
 							<p class="text-wrapper-12">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또
 								먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
@@ -240,7 +233,8 @@ function selectButton(button) {
 					<div class="text-wrapper-13">사진 및 동영상 후기</div>
 					<div class="view-2">
 						<div class="text-wrapper-13">모아보기</div>
-						<img class="img-2" src="${cpath}/resources/images/menu/right-forward.svg" />
+						<img class="img-2"
+							src="${cpath}/resources/images/menu/right-forward.svg" />
 					</div>
 				</div>
 			</div>
@@ -250,11 +244,13 @@ function selectButton(button) {
 					<div class="frame-10">
 						<div class="frame-11">
 							<div class="text-wrapper-13">최근등록순</div>
-							<img class="img-2" src="${cpath}/resources/images/menu/filter.svg" />
+							<img class="img-2"
+								src="${cpath}/resources/images/menu/filter.svg" />
 						</div>
 						<div class="frame-12">
 							<div class="text-wrapper-13">추천순</div>
-							<img class="img-2" src="${cpath}/resources/images/menu/filter.svg" />
+							<img class="img-2"
+								src="${cpath}/resources/images/menu/filter.svg" />
 						</div>
 					</div>
 				</div>
@@ -288,7 +284,8 @@ function selectButton(button) {
 								<p class="text-wrapper-17">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !!
 									데브옵스가 끝나고 허겁지겁 먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
 								<div class="frame-19">
-									<img class="happy" src="${cpath}/resources/images/menu/happy-unfill.svg" />
+									<img class="happy"
+										src="${cpath}/resources/images/menu/happy-unfill.svg" />
 									<div class="text-wrapper-18">유용해요</div>
 									<div class="text-wrapper-18">0</div>
 								</div>
@@ -324,7 +321,8 @@ function selectButton(button) {
 								<p class="text-wrapper-17">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !!
 									데브옵스가 끝나고 허겁지겁 먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
 								<div class="frame-19">
-									<img class="happy" src="${cpath}/resources/images/menu/happy-fill.svg" />
+									<img class="happy"
+										src="${cpath}/resources/images/menu/happy-fill.svg" />
 									<div class="text-wrapper-18">유용해요</div>
 									<div class="text-wrapper-18">5</div>
 								</div>
@@ -360,7 +358,8 @@ function selectButton(button) {
 								<p class="text-wrapper-17">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !!
 									데브옵스가 끝나고 허겁지겁 먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
 								<div class="frame-19">
-									<img class="happy" src="${cpath}/resources/images/menu/happy-unfill.svg" />
+									<img class="happy"
+										src="${cpath}/resources/images/menu/happy-unfill.svg" />
 									<div class="text-wrapper-18">유용해요</div>
 									<div class="text-wrapper-18">5</div>
 								</div>
@@ -396,7 +395,8 @@ function selectButton(button) {
 								<p class="text-wrapper-17">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !!
 									데브옵스가 끝나고 허겁지겁 먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
 								<div class="frame-19">
-									<img class="happy" src="${cpath}/resources/images/menu/happy-unfill.svg" />
+									<img class="happy"
+										src="${cpath}/resources/images/menu/happy-unfill.svg" />
 									<div class="text-wrapper-18">유용해요</div>
 									<div class="text-wrapper-18">5</div>
 								</div>
@@ -432,7 +432,8 @@ function selectButton(button) {
 								<p class="text-wrapper-17">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !!
 									데브옵스가 끝나고 허겁지겁 먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
 								<div class="frame-19">
-									<img class="happy" src="${cpath}/resources/images/menu/happy-unfill.svg" />
+									<img class="happy"
+										src="${cpath}/resources/images/menu/happy-unfill.svg" />
 									<div class="text-wrapper-18">유용해요</div>
 									<div class="text-wrapper-18">5</div>
 								</div>
@@ -440,14 +441,20 @@ function selectButton(button) {
 						</div>
 					</div>
 				</div>
+
+				<!-- pagination -->
 				<div class="pagination">
-					<div class="page">
-						<img class="carat" src="img/carat-2.svg" />
+					<div class="page" id="prevPage">
+						<svg class="carat" xmlns="http://www.w3.org/2000/svg" width="31"
+							height="30" viewBox="0 0 31 30" fill="none">
+<path
+								d="M19.7576 9.2625L14.0326 15L19.7576 20.7375L17.9951 22.5L10.4951 15L17.9951 7.5L19.7576 9.2625Z"
+								fill="#C4CDD5" />
+</svg>
+
 					</div>
-					<div class="page-active-wrapper">
-						<div class="page-active">
-							<div class="num">1</div>
-						</div>
+					<div class="num-wrapper">
+						<div class="num-2">1</div>
 					</div>
 					<div class="num-wrapper">
 						<div class="num-2">2</div>
@@ -461,10 +468,18 @@ function selectButton(button) {
 					<div class="num-wrapper">
 						<div class="num-2">5</div>
 					</div>
-					<div class="carat-wrapper">
-						<img class="carat" src="img/carat.svg" />
+					<div class="carat-wrapper" id="nextPage">
+						<svg class="carat" xmlns="http://www.w3.org/2000/svg" width="31"
+							height="30" viewBox="0 0 31 30" fill="none">
+<path
+								d="M11.8577 9.2625L17.5827 15L11.8577 20.7375L13.6202 22.5L21.1202 15L13.6202 7.5L11.8577 9.2625Z"
+								fill="#C4CDD5" />
+</svg>
+
 					</div>
 				</div>
+
+
 			</div>
 		</div>
 
@@ -552,7 +567,82 @@ function selectButton(button) {
 			</div>
 		</header>
 	</div>
+	<script>
+function selectButton(button) {
+    const buttons = document.querySelectorAll('.menu-selection-wrapper .common-button');
+    buttons.forEach((btn) => {
+        btn.classList.remove('selected');
+        Array.from(btn.children).forEach(child => {
+            child.style.color = 'black';
+        });
+    });
 
+    // 선택된 버튼에 'selected' 클래스 추가
+    button.classList.add('selected');
+    Array.from(button.children).forEach(child => {
+        child.style.color = '#ffb58b';
+    });
+}
+
+
+	// 제품 이미지
+    var cpathValue = '${cpath}'; 
+    var imageUrl = cpathValue + '/resources/images/menu/food.png';
+
+    console.log(imageUrl);
+    var groupDiv = document.querySelector('.div-wrapper .group');
+    console.log(groupDiv);
+
+    groupDiv.style.backgroundImage = 'url(' + imageUrl + ')';
+    
+    // pagination
+const itemsPerPage = 5;
+let currentPage = 1;
+
+function showItemsForPage(pageNumber) {
+    console.log('showItemsForPage called with pageNumber:', pageNumber);
+    const numElements = document.querySelectorAll('.num-2');
+
+    // Remove active class from all num elements
+    numElements.forEach(numElement => {
+        numElement.classList.remove('page-active');
+    });
+
+    // Add active class to the current page
+    numElements[pageNumber - 1].classList.add('page-active');
+
+    // Logic to show/hide prevPage and nextPage based on current page
+    document.getElementById('prevPage').style.display = (pageNumber === 1) ? 'none' : 'block';
+    document.getElementById('nextPage').style.display = (pageNumber === numElements.length) ? 'none' : 'block';
+}
+
+// Initial display for the first page
+showItemsForPage(currentPage);
+
+// Next Page Button
+document.getElementById('nextPage').addEventListener('click', () => {
+    if (currentPage < 5) {  // Assuming there are 5 pages, update this based on your actual number of pages
+        currentPage++;
+        showItemsForPage(currentPage);
+    }
+});
+
+// Previous Page Button
+document.getElementById('prevPage').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showItemsForPage(currentPage);
+    }
+});
+
+// Click handler for individual pages
+document.querySelectorAll('.num-2').forEach((numElement, index) => {
+    numElement.addEventListener('click', () => {
+        currentPage = index + 1;
+        showItemsForPage(currentPage);
+    });
+});
+</script>
 
 
 </body>

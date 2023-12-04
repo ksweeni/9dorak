@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?e"
+<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?t"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -295,9 +295,9 @@
 	        url:"${cpath}/menu/searchPro.do",
 	        type:'GET',
 	        data:{
-	        	pro_name: $('#searchTxt').val() //검색내용
-	          , ingre_no:  chkCtgr //카테고리선택
-	          , allerCheckList: allerListJson
+	        	pro_name: $('#searchTxt').val(), //검색내용
+	            ingre_no:  chkCtgr, //카테고리선택
+	            allerCheckList: allerListJson
             } ,
 	        success:function(data){
 	            //alert("완료!");
@@ -330,7 +330,7 @@
 	}
 	
 	//알러지
-	function allerCheck(e){
+	/* function allerCheck(e){
 		
 		const cerealsCheckbox = document.querySelector('#cerealsCheckbox');
 		const nutsCheckbox = document.querySelector('#nutsCheckbox');
@@ -376,7 +376,7 @@
 	
 		searchBtnClick(allerCheckList);
 		
-		}
+		} */
 
 	</script>
 	
