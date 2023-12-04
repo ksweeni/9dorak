@@ -114,28 +114,6 @@ public class DoranController {
 		return "Upload successful!";
 	}
 
-	@GetMapping("/doran2.do")
-	public String doran2(@RequestParam(name = "orderBy", defaultValue = "views") String orderBy, Model model) {
-		List<DoranVO> dlist;
-		System.out.println(orderBy);
-		if ("views".equals(orderBy)) {
-			dlist = dService.selectAllByView();
-			dlist = dService.selectAllByView();
-		} else if ("latest".equals(orderBy)) {
-			dlist = dService.selectAll();
-		} else {
-			dlist = dService.selectAll();
-		}
-		List<DlikeVO> dlike = dService.selectLike();
-		List<DCommentVO> dcomment = dService.selectComment();
-		model.addAttribute("dlist", dlist);
-		model.addAttribute("dlike", dlike);
-		model.addAttribute("dcomment", dcomment);
-		System.out.println("좋아요: " + dlike);
-		System.out.println("댓글 수: " + dcomment);
-		System.out.println("orderBy : " + orderBy);
-		return "doran/doran_ajax";
-	}
 
 	@GetMapping("doranFeedDetail.do")
 	public String doranFeedDetail(Model model) {
