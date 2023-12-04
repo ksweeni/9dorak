@@ -22,6 +22,14 @@ public class MenuService {
 		return dao.selectSearchPro(pro);
 	}
 
+	public List<ProVO> selectOrderbyNew() {
+		return dao.selectOrderbyNew();
+	}
+
+	public List<ProVO> selectOrderbyLike() {
+		return dao.selectOrderbyLike();
+	}
+
 //	public int insertMember(DoranVO doran) {
 //		return dao.insertDoran(doran);
 //	}

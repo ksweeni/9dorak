@@ -28,6 +28,16 @@
       	</foreach>
 		</if> -->
 	</select>
+	
+	<!-- 신상품순 정렬 -->
+	<select id="selectOrderbyNew" resultType="provo">
+		select * from pro order by pro_rd desc
+	</select>
+	
+	<!-- 인기순 정렬 -->
+	<select id="selectOrderbyLike" resultType="provo">
+		select * from pro order by pro_like desc
+	</select>
 
 	<!-- <insert id="insertDoran" parameterType="doranvo">
 		INSERT INTO DORAN (

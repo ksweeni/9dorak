@@ -71,5 +71,19 @@ public class MenuController {
 		return "menu/menuSpecificReview";
 	}
 	
-	
+	//정렬
+	@GetMapping("searchOrderby.do")
+	public String searchOrderby(Model model, @RequestParam("order_type") String order_type) {
+		//System.out.println(order_type);
+		if(order_type.equals("신상품 순")) {
+			List<ProVO> slist = mService.selectOrderbyNew();
+			//System.out.println(slist);
+			model.addAttribute("slist", slist);
+		}else if(order_type.equals("인기순")) {
+			List<ProVO> slist = mService.selectOrderbyLike();
+			model.addAttribute("slist", slist);
+		}
+		
+		return "menu/menu_ajax";
+	}
 }
