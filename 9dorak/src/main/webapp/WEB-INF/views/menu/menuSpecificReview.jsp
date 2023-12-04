@@ -13,23 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
-<script>
-function selectButton(button) {
-    const buttons = document.querySelectorAll('.menu-selection-wrapper .common-button');
-    buttons.forEach((btn) => {
-        btn.classList.remove('selected');
-        Array.from(btn.children).forEach(child => {
-            child.style.color = 'black';
-        });
-    });
 
-    // 선택된 버튼에 'selected' 클래스 추가
-    button.classList.add('selected');
-    Array.from(button.children).forEach(child => {
-        child.style.color = '#ffb58b';
-    });
-}
-</script>
 </head>
 <body>
 	<div class="div-wrapper">
@@ -215,22 +199,25 @@ function selectButton(button) {
 				<div class="group-5">
 					<div class="group-6">
 						<div class="overlap-group-5">
+						<img class="rectangle-5" src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
 					<div class="overlap-wrapper">
 						<div class="overlap-4">
+						<img class="rectangle-5" src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
 					<div class="group-7">
 						<div class="overlap-5">
+						<img class="rectangle-5" src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
 					<div class="group-8">
 						<div class="overlap-6">
-							<img class="rectangle-5" src="img/rectangle-614.png" />
+							<img class="rectangle-5" src="${cpath}/resources/images/menu/cake.png" />
 							<p class="text-wrapper-12">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또
 								먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
@@ -552,7 +539,40 @@ function selectButton(button) {
 			</div>
 		</header>
 	</div>
+<script>
+function selectButton(button) {
+    const buttons = document.querySelectorAll('.menu-selection-wrapper .common-button');
+    buttons.forEach((btn) => {
+        btn.classList.remove('selected');
+        Array.from(btn.children).forEach(child => {
+            child.style.color = 'black';
+        });
+    });
 
+    // 선택된 버튼에 'selected' 클래스 추가
+    button.classList.add('selected');
+    Array.from(button.children).forEach(child => {
+        child.style.color = '#ffb58b';
+    });
+}
+
+
+// 제품 이미지
+
+    var cpathValue = '${cpath}'; // Get the cpath value from JSP
+    var imageUrl = cpathValue + '/resources/images/menu/food.png';
+
+    console.log(imageUrl);
+    // Get the reference to the div element
+    var groupDiv = document.querySelector('.div-wrapper .group');
+    console.log(groupDiv);
+
+    // Set the background image of the div
+    groupDiv.style.backgroundImage = 'url(' + imageUrl + ')';
+
+
+
+</script>
 
 
 </body>
