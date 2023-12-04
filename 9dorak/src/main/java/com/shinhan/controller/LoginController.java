@@ -99,7 +99,7 @@ public class LoginController {
 	}
 
 	@PostMapping("updatePwd.do")
-	public String updatePwd(@RequestParam String new_pw, HttpSession session, RedirectAttributes redirectAttributes) {
+	public String updatePwd(@RequestParam String new_pw, HttpSession session, Model model) {
 		// 세션에서 정보 가져오기
 		Map<String, String> updatePwdInfo = (Map<String, String>) session.getAttribute("updatePwdInfo");
 		if (updatePwdInfo != null) {
@@ -108,12 +108,14 @@ public class LoginController {
 
 			// 세션에서 정보 제거
 			session.removeAttribute("updatePwdInfo");
+			//System.out.println("비밀번호가 변경되었습니다. 다시 로그인해주세요.");
 
-			redirectAttributes.addFlashAttribute("updatePwdSuccessMessage", "비밀번호가 성공적으로 변경되었습니다. 다시 로그인해주세요.");
-			return "redirect:/login/loginForm.do"; // 비밀번호 변경 후 로그인 페이지로 리다이렉트
+			model.addAttribute("updatePwdSuccessMessage", "비밀번호가 변경되었습니다. 다시 로그인해주세요.");
+			
+			return "login/login"; // 비밀번호 변경 후 로그인 페이지로 리다이렉트
 		} else {
 			// 세션에 필요한 정보가 없을 경우 처리
-			return "redirect:/"; // 세션에 필요한 정보가 없으면 메인 페이지로 리다이렉트
+			return "login/createNewPwd"; // 세션에 필요한 정보가 없으면 메인 페이지로 리다이렉트
 		}
 	}
 }
