@@ -27,12 +27,11 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 	
-	public List<ProVO> selectSearchPro(String proName) {
-		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectSearchPro",proName);
+	public List<ProVO> selectSearchPro(ProVO pro) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectSearchPro",pro);
 		logger.info(plist.toString());
 		return plist;	
 	}
-	
 
 //	public int insertDoran(DoranVO doran) {
 //		System.out.println("inserting :"+doran);

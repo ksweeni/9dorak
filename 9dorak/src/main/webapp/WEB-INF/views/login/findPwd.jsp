@@ -1,103 +1,84 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
+	type="text/css" />
+<link rel="stylesheet" href="${cpath}/resources/css/findPwdStyle.css"
+	type="text/css" />
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+    function showAlert(message) {
+        if (message.trim() !== "") {
+            alert(message);
+        }
+    }
+
+    function showLoginMessages() {
+        var errorMessage = "${findUserErrorMessage}";
+        var successMessage = "${successMessage}";
+
+        showAlert(errorMessage);
+        showAlert(successMessage);
+    }
+
+    window.onload = showLoginMessages;
+</script>
+
 </head>
 <body>
-	<div
-		style="width: 1920px; height: 1018px; position: relative; overflow: hidden; background: #fff;">
-		<div
-			style="width: 1920px; height: 1018px; position: absolute; left: 5px; top: -1px; background: linear-gradient(224.28deg, #ffd4b4 -1.17%, rgba(218, 221, 223, 0.23) 21.82%, rgba(218, 220, 221, 0.16) 26.47%, rgba(217, 219, 220, 0.11) 34.13%, rgba(255, 255, 255, 0.07) 49.66%, rgba(217, 217, 217, 0) 100.76%);"></div>
-		<p
-			style="position: absolute; left: 97px; top: 60px; font-size: 64px; font-weight: 600; text-align: left;">
-			<span
-				style="font-size: 64px; font-weight: 600; text-align: left; color: #000;">아이를
-				위한 9일의 약속</span><br />
-			<span
-				style="font-size: 64px; font-weight: 600; text-align: left; color: #f48e28;">구도락</span>
-		</p>
-		<div style="width: 390px; height: 612px;">
-			<div
-				style="display: flex; justify-content: flex-start; align-items: flex-start; position: absolute; left: 857px; top: 328px; gap: 32px;">
-				<div
-					style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; flex-grow: 0; flex-shrink: 0; position: relative; gap: 13px;">
-					<p
-						style="flex-grow: 0; flex-shrink: 0; font-size: 16px; font-weight: 700; text-align: left; color: #000;">
-						아이디 찾기</p>
-					<svg width="80" height="3" viewBox="0 0 80 3" fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-						style="flex-grow: 0; flex-shrink: 0;" preserveAspectRatio="none">
-          <line y1="1.5" x2="80" y2="1.5" stroke="black"
-							stroke-width="3"></line>
-        </svg>
-				</div>
-				<div
-					style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; flex-grow: 0; flex-shrink: 0; position: relative; gap: 13px;">
-					<p
-						style="flex-grow: 0; flex-shrink: 0; font-size: 16px; font-weight: 700; text-align: left; color: #f48e28;">
-						비밀번호 찾기</p>
-					<svg width="95" height="3" viewBox="0 0 95 3" fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-						style="align-self: stretch; flex-grow: 0; flex-shrink: 0;"
-						preserveAspectRatio="none">
-          <line y1="1.5" x2="95" y2="1.5" stroke="#F48E28"
-							stroke-width="3"></line>
-        </svg>
-				</div>
-			</div>
-			<p
-				style="position: absolute; left: 765px; top: 226px; font-size: 48px; font-weight: 700; text-align: left; color: #000;">
-				계정을 잊으셨나요?</p>
-			<div
-				style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; position: absolute; left: 838px; top: 404px; gap: 30px;">
-				<div
-					style="flex-grow: 0; flex-shrink: 0; width: 245px; height: 83px;">
-					<p
-						style="position: absolute; left: 0px; top: 0px; font-size: 14px; text-align: left; color: #000;">
-						아이디</p>
-					<div style="width: 245px; height: 48px;">
-						<div
-							style="width: 245px; height: 48px; position: absolute; left: -0.5px; top: 34.5px; border-radius: 10px; background: #fafdff; border-width: 1px; border-color: #e8e8e8;"></div>
+	<div class="screen">
+		<div class="overlap-wrapper">
+			<div class="overlap">
+				<p class="element">
+					<span class="text-wrapper">아이를 위한 9일의 약속<br /></span> <span
+						class="span">구도락</span>
+				</p>
+				<div class="group">
+					<div class="top-bar">
+						<div class="frame">
+							<div class="div">아이디 찾기</div>
+							<img class="line" src="img/line-1.svg" />
+						</div>
+						<div class="frame">
+							<div class="text-wrapper-2">비밀번호 찾기</div>
+							<img class="img" src="img/image.svg" />
+						</div>
 					</div>
+					<div class="text-wrapper-3">계정을 잊으셨나요?</div>
+					<form action="${pageContext.request.contextPath }/login/findPwd.do"
+						method="post">
+						<div class="frame-2">
+							<div class="div-2">
+								<div class="text-wrapper-4">아이디</div>
+								<input type="text" name="mem_id" class="group-2">
+							</div>
+							<div class="div-2">
+								<div class="text-wrapper-5">이름</div>
+								<input type="text" name="mem_name" class="group-2">
+							</div>
+							<div class="div-2">
+								<div class="text-wrapper-5">전화번호</div>
+								<div class="overlap-group-wrapper">
+									<input type="text" name="mem_phone" class="overlap-group"
+										placeholder="01012340000">
+								</div>
+							</div>
+						</div>
+						<div class="login-button">
+							<button class="div-wrapper" type="submit">
+								<div class="text-wrapper-6">비밀번호 찾기</div>
+							</button>
+						</div>
+					</form>
 				</div>
-				<div
-					style="flex-grow: 0; flex-shrink: 0; width: 245px; height: 83px;">
-					<p
-						style="width: 56px; position: absolute; left: 0px; top: 113px; font-size: 14px; text-align: left; color: #000;">
-						이름</p>
-					<div style="width: 245px; height: 48px;">
-						<div
-							style="width: 245px; height: 48px; position: absolute; left: -0.5px; top: 147.5px; border-radius: 10px; background: #fafdff; border-width: 1px; border-color: #e8e8e8;"></div>
-					</div>
-				</div>
-				<div
-					style="flex-grow: 0; flex-shrink: 0; width: 245px; height: 83px;">
-					<p
-						style="width: 56px; position: absolute; left: 0px; top: 226px; font-size: 14px; text-align: left; color: #000;">
-						전화번호</p>
-					<div style="width: 245px; height: 48px;">
-						<div
-							style="width: 245px; height: 48px; position: absolute; left: -0.5px; top: 260.5px; border-radius: 10px; background: #fafdff; border-width: 1px; border-color: #f32929;"></div>
-						<p
-							style="position: absolute; left: 14px; top: 274px; opacity: 0.4; font-size: 14px; text-align: left; color: #000;">
-							010-0000-0000</p>
-					</div>
-				</div>
-			</div>
-			<div style="width: 200px; height: 63px;">
-				<div
-					style="width: 200px; height: 63px; position: absolute; left: 859.5px; top: 774.5px; border-radius: 35px; background: #f48e28; box-shadow: 0px 10px 30px 0 rgba(196, 80, 17, 0.51);"></div>
-				<p
-					style="position: absolute; left: 901px; top: 793px; font-size: 20px; font-weight: 600; text-align: left; color: #fff;">
-					비밀번호 찾기</p>
 			</div>
 		</div>
-		<p
-			style="position: absolute; left: 839px; top: 719px; font-size: 13px; text-align: left; color: #ff0c0c;">
-			전화번호를 다시 입력해주세요</p>
 	</div>
 </body>
 </html>

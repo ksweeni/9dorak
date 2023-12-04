@@ -18,10 +18,9 @@ public class MenuService {
 		return dao.selectAll();
 	}
 	
-	public List<ProVO> selectSearchPro(String proName) {
-		return dao.selectSearchPro(proName);
+	public List<ProVO> selectSearchPro(ProVO pro) {
+		return dao.selectSearchPro(pro);
 	}
-	
 
 //	public int insertMember(DoranVO doran) {
 //		return dao.insertDoran(doran);
