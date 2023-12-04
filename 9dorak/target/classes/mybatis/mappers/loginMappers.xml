@@ -36,11 +36,9 @@
 
 	<!-- 비밀번호 변경 -->
 	<update id="updatePwd">
-		UPDATE mem
-		SET mem_pw = #{newPwd}
-		WHERE mem_id = #{mem_id} 
-		AND mem_name = #{mem_name} 
-		AND mem_phone = #{mem_phone}
+		update mem
+		set mem_pw = #{new_pw}
+		where mem_id = #{mem_id}
 	</update>
 
 </mapper>

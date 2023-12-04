@@ -37,7 +37,7 @@
 					<div class="frame-2">
 						<div class="div-2">
 							<div class="text-wrapper-4">새 비밀번호</div>
-							<input type="password" name="newPwd" class="group-2">
+							<input type="password" name="new_pw" class="group-2">
 						</div>
 						<div class="div-2">
 							<div class="text-wrapper-4">비밀번호 확인</div>

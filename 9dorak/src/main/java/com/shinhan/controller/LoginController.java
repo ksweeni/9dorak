@@ -99,32 +99,21 @@ public class LoginController {
 	}
 
 	@PostMapping("updatePwd.do")
-	public String updatePwd(HttpSession session, @RequestParam String newPwd, @RequestParam String confirm_pw, Model model) {
+	public String updatePwd(@RequestParam String new_pw, HttpSession session, RedirectAttributes redirectAttributes) {
+		// 세션에서 정보 가져오기
 		Map<String, String> updatePwdInfo = (Map<String, String>) session.getAttribute("updatePwdInfo");
-
 		if (updatePwdInfo != null) {
-			String mem_id = updatePwdInfo.get("mem_id");
-			String mem_name = updatePwdInfo.get("mem_name");
-			String mem_phone = updatePwdInfo.get("mem_phone");
+			// 비밀번호 업데이트 수행
+			lservice.updatePwd(updatePwdInfo.get("mem_id"), new_pw);
 
-			// 새 비밀번호와 비밀번호 확인이 일치하는지 확인
-			if (newPwd.equals(confirm_pw)) {
-				// 비밀번호 변경 로직
-				int rowsUpdated = lservice.updatePwd(mem_id, mem_name, mem_phone, newPwd);
+			// 세션에서 정보 제거
+			session.removeAttribute("updatePwdInfo");
 
-				if (rowsUpdated > 0) {
-					model.addAttribute("successMessage", "비밀번호가 성공적으로 변경되었습니다.");
-					return "login/login"; // 변경 성공 시 로그인 페이지로 이동
-				} else {
-					model.addAttribute("errorMessage", "비밀번호 변경에 실패했습니다. 입력 정보를 확인하세요.");
-					return "login/createNewPwd"; // 변경 실패 시 새로운 비밀번호 설정 페이지로
-				}
-			} else {
-				// 새 비밀번호와 비밀번호 확인이 일치하지 않을 경우 처리
-				model.addAttribute("errorMessage", "새로운 비밀번호와 비밀번호 확인이 일치하지 않습니다.");
-				return "login/createNewPwd"; // 변경 실패 시 새로운 비밀번호 설정 페이지로
-			}
+			redirectAttributes.addFlashAttribute("updatePwdSuccessMessage", "비밀번호가 성공적으로 변경되었습니다. 다시 로그인해주세요.");
+			return "redirect:/login/loginForm.do"; // 비밀번호 변경 후 로그인 페이지로 리다이렉트
+		} else {
+			// 세션에 필요한 정보가 없을 경우 처리
+			return "redirect:/"; // 세션에 필요한 정보가 없으면 메인 페이지로 리다이렉트
 		}
-		return "login/createNewPwd"; // 변경 실패 시 새로운 비밀번호 설정 페이지로
 	}
 }

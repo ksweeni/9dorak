@@ -44,9 +44,11 @@ public class LoginDAOMybatis {
 
 		return sqlSession.selectOne(NAMESPACE + "findPwd", findPwdParams);
 	}
+	public void updatePwd(String mem_id, String new_pw) {
+        Map<String, String> updatePwdParams = new HashMap<>();
+        updatePwdParams.put("mem_id", mem_id);
+        updatePwdParams.put("new_pw", new_pw);
 
-    public int updatePwd(String mem_id, String mem_name, String mem_phone, String newPwd) {
-    	return sqlSession.update(NAMESPACE + "updatePwd", 
-                          Map.of("mem_id", mem_id, "mem_name", mem_name, "mem_phone", mem_phone, "newPwd", newPwd));
+        sqlSession.update(NAMESPACE + "updatePwd", updatePwdParams);
     }
 }
