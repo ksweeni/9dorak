@@ -9,7 +9,6 @@ String contextPath = request.getContextPath();
 <!DOCTYPE html>
 <html>
 <head>
-<head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
@@ -20,48 +19,8 @@ String contextPath = request.getContextPath();
 <script>
 	alert("${sessionScope.loginmem}");
 </script>
-<script>
-	var doranImage; // 전역 변수로 선언
-	function uploadData() {
-		const doranTitle = $("#doranTitle").val();
-		const doranCont = $("#doranCont").val();
-		const currentDate = new Date();
-		const doranDate = currentDate.toISOString().split('T')[0];
-		const memId = '${sessionScope.loginmem.mem_id}';
 
-		const formData = new FormData();
-		formData.append('doranTitle', doranTitle);
-		formData.append('doranCont', doranCont);
-		formData.append('doranView', 0);
-		formData.append('memId', memId);
-		formData.append('doranDate', doranDate);
-		formData.append('doranImage', doranImage);
-		
-		console.log("FormData contents:");
-		formData.forEach((value, key) => {
-		  console.log(key, value);
-		});
-		
-		
-		$.ajax({
-			url : "${cpath}/doran/doranUpload.do",
-			type : 'POST',
-			data : formData,
-			processData : false,
-			contentType : false,
-			success : function(res) {
-				console.log('Success:', res);
-			},
-			error : function(xhr, status, error) {
-				console.error('Error:', error);
-				console.error('Status:', status);
-				console.error('Response:', xhr.responseText);
-			}
-		});
-	}
-</script>
 </head>
-
 <body>
 	<div class="div-wrapper">
 		<div class="div">
@@ -96,52 +55,6 @@ String contextPath = request.getContextPath();
 											</button>
 											<!-- 첨부된 파일 정보 -->
 											<div id="selectedFileName"></div>
-
-											<script>
-												function selectFile() {
-													document.getElementById(
-															'fileInput')
-															.click();
-												}
-
-												document
-														.getElementById(
-																'fileInput')
-														.addEventListener(
-																'change',
-																handleFileSelect);
-
-												function handleFileSelect(event) {
-													const selectedFile = event.target.files[0];
-
-													if (selectedFile) {
-														console
-																.log(
-																		'Selected File:',
-																		selectedFile.name);
-														console
-																.log(
-																		'File Size:',
-																		selectedFile.size,
-																		'bytes');
-														console
-																.log(
-																		'File Type:',
-																		selectedFile.type);
-
-														document
-																.getElementById('selectedFileName').innerText = 'Selected File: '
-																+ selectedFile.name;
-
-														doranImage = '${cpath}/resources/images/doran/'+ selectedFile.name;
-														console.log(
-																'Upload Path:',
-																doranImage);
-
-													}
-												}
-											</script>
-
 										</div>
 									</div>
 								</div>
@@ -290,6 +203,76 @@ String contextPath = request.getContextPath();
 			</div>
 		</div>
 	</div>
+
+	<script>
+    var doranImage; // 전역 변수로 선언
+    const formData = new FormData(); // FormData를 전역으로 선언
+
+    function uploadData() {
+        const doranTitle = $("#doranTitle").val();
+        const doranCont = $("#doranCont").val();
+        const currentDate = new Date();
+        const doranDate = currentDate.toISOString().split('T')[0];
+        const memId = '${sessionScope.loginmem.mem_id}';
+
+        formData.append('doranTitle', doranTitle);
+        formData.append('doranCont', doranCont);
+        formData.append('doranView', 0);
+        formData.append('memId', memId);
+        formData.append('doranDate', doranDate);
+
+        // Check if doranImage is not undefined before appending it to formData
+        if (doranImage) {
+            formData.append('doranImage', doranImage, doranImage.name);
+        }
+
+        console.log("FormData contents before sending:");
+        formData.forEach((value, key) => {
+            console.log(key, value);
+        });
+
+        $.ajax({
+            url: "${cpath}/doran/doranUpload.do",
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (res) {
+                console.log('Success:', res);
+            },
+            error: function (xhr, status, error) {
+                console.error('Error:', error);
+                console.error('Status:', status);
+                console.error('Response:', xhr.responseText);
+                console.error('XHR Object:', xhr); // Log the entire XHR object for detailed information
+            }
+        });
+
+    }
+
+    function selectFile() {
+        document.getElementById('fileInput').click();
+    }
+
+    document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+
+    function handleFileSelect(event) {
+        const selectedFile = event.target.files[0];
+
+        if (selectedFile) {
+            console.log('Selected File:', selectedFile.name);
+            console.log('File Size:', selectedFile.size, 'bytes');
+            console.log('File Type:', selectedFile.type);
+
+            document.getElementById('selectedFileName').innerText = 'Selected File: ' + selectedFile.name;
+
+            doranImage = selectedFile; // Set doranImage to the selected file
+        }
+    }
+
+</script>
+
+
 </body>
 
 </html>
