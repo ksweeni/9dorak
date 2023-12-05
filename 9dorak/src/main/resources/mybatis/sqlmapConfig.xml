@@ -17,7 +17,7 @@
 		<typeAlias type="com.shinhan.dto.ChallengeVO" alias="challengevo" />
 		<typeAlias type="com.shinhan.dto.EventVO" alias="eventvo" />
 		<typeAlias type="com.shinhan.dto.SubVO" alias="subvo" />
-		<typeAlias type="com.shinhan.dto.SubDetailVO" alias="subdetailvo" />
+		<typeAlias type="com.shinhan.dto.SubdetailVO" alias="subdetailvo" />
 	</typeAliases>
 </configuration>
 
