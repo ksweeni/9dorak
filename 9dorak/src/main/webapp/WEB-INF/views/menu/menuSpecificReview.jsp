@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/menuSpecificReviewStyle.css?e"
+	href="${cpath}/resources/css/menuSpecificReviewStyle.css?d"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -192,32 +192,32 @@
 			</div>
 			<div class="picture-reviews">
 				<div class="group-5">
-					<div class="group-6">
-						<div class="overlap-group-5">
-							<img class="rectangle-5"
-								src="${cpath}/resources/images/menu/cake.png" />
-							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
-						</div>
-					</div>
-					<div class="overlap-wrapper">
-						<div class="overlap-4">
+					<div class="group-7">
+						<div class="overlap-6">
 							<img class="rectangle-5"
 								src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
 					<div class="group-7">
-						<div class="overlap-5">
+						<div class="overlap-6">
 							<img class="rectangle-5"
 								src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
-					<div class="group-8">
+					<div class="group-7">
 						<div class="overlap-6">
 							<img class="rectangle-5"
 								src="${cpath}/resources/images/menu/cake.png" />
-							<p class="text-wrapper-12">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또
+							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
+						</div>
+					</div>
+					<div class="group-7">
+						<div class="overlap-6">
+							<img class="rectangle-5"
+								src="${cpath}/resources/images/menu/cake.png" />
+							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또
 								먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
