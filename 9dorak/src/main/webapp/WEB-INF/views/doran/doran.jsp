@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/doranStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/doranStyle.css?e"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,14 +18,17 @@
 	var dlike = "${dlike}";
 	var dcomment = "${dcomment}";
 
-	console.log(message);
-	console.log("dlike ", dlike);
-	console.log("dcomment", dcomment);
+	const memId = '${sessionScope.loginmem.mem_id}';
+	console.log("회원아이디 : ", memId);
+
+	//console.log(message);
+	//console.log("dlike ", dlike);
+	//console.log("dcomment", dcomment);
 </script>
 <body>
 	<div class="screen">
 		<div class="div">
-		
+
 			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
@@ -48,7 +51,7 @@
 					</div>
 				</div>
 			</header>
-			
+
 			<div class="overlap-3">
 				<div class="group-6">
 					<div class="group-wrapper">
@@ -63,56 +66,25 @@
 							</div>
 							<button type="submit" class="doran-button-upload">업로드</button>
 						</div>
-					</div><!-- group-wrapper -->
-				</div><!-- //group-6 -->
+					</div>
+					<!-- group-wrapper -->
+				</div>
+				<!-- //group-6 -->
 			</div>
 
 			<div class="group-4">
 				<div class="orderbyBtn">
 					<form id="orderByForm">
-						<input class="orderby_latest" type="button" onclick="submitForm('latest')" value="최신순">
-						<input class="orderby_views" type="button" onclick="submitForm('views')" value="조회순">
-						<input class="orderby_likes" type="button" onclick="submitForm('likes')" value="가장 많은">
+						<input class="orderby_latest" type="button"
+							onclick="submitForm('latest')" value="최신순"> <input
+							class="orderby_views" type="button" onclick="submitForm('views')"
+							value="조회순"> <input class="orderby_likes" type="button"
+							onclick="submitForm('likes')" value="가장 많은">
 					</form>
 				</div>
-				
-				<script>
-					var cpath = "${cpath}";
-					console.log(cpath); // Ensure that cpath is correctly printed in the console
 
-					function submitForm(orderBy) {
-
-						alert("Button Clicked! Order By: " + orderBy);
-						var form = document.getElementById('orderByForm');
-						//form.action = cpath + "/doran/doran.do?orderBy="
-						//		+ orderBy;
-						//form.submit();
-						$.ajax({
-									url : cpath + "/doran/doran2.do",
-									data : {"orderBy":orderBy},
-									success : function(responseData) {
-										alert(responseData);
-										$("#here").html(responseData);
-									}
-								});
-					}
-				</script>
-				
 				<div id="here">
-					<!--<c:forEach items="${dlist}" var="doran" varStatus="loop">
-						<tr>
-							<td>${doran.mem_id}</td>
-							<td>${doran.doran_title}</td>
-							<td>${doran.doran_cont}</td>
-							<td>${doran.doran_date}</td>
-						</tr>
-
-						<h3>
-							좋아요 ${dlike[loop.index]}개 댓글수 ${dcomment[loop.index]}개 조회수
-							${doran.doran_view}개
-							</td>
-						</h3>
-					</c:forEach> -->
+					<!--data forEach -->
 				</div>
 
 				<div class="doran-card">
@@ -129,20 +101,23 @@
 									<div class="doran-uploadInfo-memgrade">낑깡</div>
 								</div>
 							</div>
-								<div class="doran-uploadContent">
-									<img class="doran-uploadContent-image" src="${cpath }/resources/images/menu/cake.png"/>
-									<div class="doran-uploadContent-content">${doran.doran_cont}</div>
-								</div>
-								<div class="doran-review">
-									<div class="doran-uploadInfo-time">8분전</div>
-									<div class="doran-review-like">${dlike[loop.index]}</div>
-									<div class="doran-review-dcomment">${dcomment[loop.index]}</div>
-									<div class="doran-review-reviewCnt">${doran.doran_view}</div>
-								</div>
+							<div class="doran-uploadContent">
+								<img class="doran-uploadContent-image"
+									src="${cpath }/resources/images/menu/cake.png" />
+								<div class="doran-uploadContent-content">${doran.doran_cont}</div>
+							</div>
+							<div class="doran-review">
+								<div class="doran-uploadInfo-time">8분전</div>
+								<div class="doran-review-like">${dlike[loop.index]}</div>
+								<div class="doran-review-dcomment">${dcomment[loop.index]}</div>
+								<div class="doran-review-reviewCnt">${doran.doran_view}</div>
+							</div>
 						</div>
 					</c:forEach>
-				</div><!-- doran-card -->
-			</div><!-- group-4 -->
+				</div>
+				<!-- doran-card -->
+			</div>
+			<!-- group-4 -->
 
 			<div class="group-12">
 				<div class="group-13">
@@ -154,11 +129,14 @@
 								</div>
 							</div>
 							<div class="tab">
-								<button class="text-wrapper-18">도란도란</button>
+								<button id="doran" class="text-wrapper-18"
+									onclick="getData('doran')">도란도란</button>
 							</div>
 							<div class="tab-2">
-								<button class="text-wrapper-19">내가 쓴 글</button>
+								<button id="myDoran" class="text-wrapper-19"
+									onclick="getData('myDoran')">내가 쓴 글</button>
 							</div>
+
 						</div>
 						<div class="text-wrapper-20">도란도란</div>
 					</div>
@@ -169,8 +147,9 @@
 						<div class="text-wrapper-21">검색어를 입력하세요</div>
 					</div>
 				</div>
-			</div><!-- group-12 -->
-			
+			</div>
+			<!-- group-12 -->
+
 			<div class="group-15">
 				<div class="group-16">
 					<div class="group-17">
@@ -198,7 +177,7 @@
 					</button>
 				</form>
 			</div>
-			
+
 			<div class="overlap">
 				<footer class="footer">
 					<div class="company-loco">
@@ -260,8 +239,96 @@
 					</div>
 				</footer>
 			</div>
-			
-		</div><!-- div -->
-	</div><!-- screen -->
+
+		</div>
+
+
+		<script>
+			var cpath = "${cpath}";
+			var dataForRadioButton; // Declare it outside the functions
+
+			function getData(dataFor) {
+				alert("Button Clicked! dataFor: " + dataFor);
+
+				var activeButton = $(".tab button.active, .tab-2 button.active");
+
+				if (activeButton.length > 0) {
+					var activeButtonId = activeButton.attr("id");
+					console.log("Active Button ID:", activeButtonId);
+					dataForRadioButton=activeButtonId;
+				} else {
+					console.log("No active button found.");
+				}
+
+				// Add the 'active' class to the clicked button only if it's not already active
+				if (!activeButton.is("#" + dataFor)) {
+					$(".tab button").removeClass("active");
+					$("#" + dataFor).addClass("active");
+				}
+
+				$.ajax({
+					url : cpath + "/doran/doranFor.do",
+					data : {
+						"dataFor" : dataFor
+					},
+					success : function(responseData) {
+						alert(responseData);
+						$("#here").html(responseData);
+					}
+				});
+			}
+
+			function submitForm(orderBy) {
+				alert("Button Clicked! Order By: " + orderBy);
+
+				// Add the 'active' class to the clicked sorting button
+				$(".group-4 input[type='button']").removeClass("active");
+				$("input[value='" + orderBy + "']").addClass("active");
+
+				// Check if "내가 쓴 글" is selected
+				console.log("dataForRadioButton:", dataForRadioButton);
+
+				// Check if "내가 쓴 글" is selected
+				if (dataForRadioButton) {
+					var activeWrapperId = $(dataForRadioButton).closest(
+							'.text-wrapper-18, .text-wrapper-19').attr('id');
+					console.log("Active Wrapper ID:", activeWrapperId);
+
+					var dataFor = dataForRadioButton.value;
+					var url;
+
+					console.log("dataFor:", dataFor);
+
+					if (dataFor === 'myDoran') {
+						url = cpath + "/doran/doranFilterForMe.do";
+					} else {
+						url = cpath + "/doran/doranFilter.do";
+					}
+
+					$.ajax({
+						url : url,
+						data : {
+							"orderBy" : orderBy
+						},
+						success : function(responseData) {
+							alert(responseData);
+							$("#here").html(responseData);
+						}
+					});
+				} else {
+					console
+							.error("No radio button with name 'dataFor' is checked.");
+				}
+
+				// Prevent the form from submitting
+				return false;
+			}
+		</script>
+
+		<!-- div -->
+	</div>
+
+
+	<!-- screen -->
 </body>
 </html>

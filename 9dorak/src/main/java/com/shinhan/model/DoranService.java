@@ -46,6 +46,21 @@ public class DoranService {
         return dao.selectAllCommentAbout(doranNo);
     }
 
+
+	public List<DoranVO> selectAllForMe(String memId) {
+		return dao.selectAllForMe(memId);
+	}
+
+	public List<DoranVO> selectAllByViewForMe(String memId) {
+		return dao.selectAllByViewForMe(memId);
+	}
+
+	public List<DoranVO> selectAllByDlikeForMe(String memId) {
+		return dao.selectAllByDlikeForMe(memId);
+	}
+
+
+
 	
 //
 //	@Transactional // ��� �����ϰų� ��� �����ϰų�
