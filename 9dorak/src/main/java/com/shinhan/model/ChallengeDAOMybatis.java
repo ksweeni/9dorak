@@ -20,8 +20,17 @@ public class ChallengeDAOMybatis {
 	
 	public List<ChallengeVO> selectAll() {
 		List<ChallengeVO> chlist = sqlSession.selectList(NAMESPACE + "selectAll");
-		System.out.println(chlist);
 		logger.info("selectAll :  {}", chlist.size());
 		return chlist;
+	}
+
+	public ChallengeVO selectByno(int challenge_no) {
+		ChallengeVO chall = sqlSession.selectOne(NAMESPACE + "selectByno", challenge_no);
+		return chall;
+	}
+
+	public int updateChall(ChallengeVO challenge) {
+		int result = sqlSession.update(NAMESPACE + "updateChall", challenge);
+		return result;		
 	}
 }

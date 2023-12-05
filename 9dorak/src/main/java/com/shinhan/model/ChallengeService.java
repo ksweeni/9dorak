@@ -15,5 +15,13 @@ public class ChallengeService {
 
 	public List<ChallengeVO> selectAll() {
 		return dao.selectAll();
+	}
+
+	public ChallengeVO selectByno(int challenge_no) {
+		return dao.selectByno(challenge_no);
+	}
+
+	public int updateChall(ChallengeVO challenge) {
+		return dao.updateChall(challenge);
 	}	
 }
