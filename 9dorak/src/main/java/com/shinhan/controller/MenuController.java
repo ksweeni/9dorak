@@ -37,21 +37,13 @@ public class MenuController {
 		return "menu/menu";
 	}
 	
+	//카테고리+검색
 	@GetMapping("searchPro.do")
 	//@ResponseBody
 	public String searchPro(Model model,@RequestParam Map<String, Object> map) throws JsonMappingException, JsonProcessingException {
 		
 		ObjectMapper mapper = new ObjectMapper();
 		ProVO pro = new ProVO();
-
-//		String allerJson =  map.get("allerCheckList").toString();
-//		String[] allerList =  mapper.readValue(allerJson, new TypeReference<String[]>(){});
-//		for(int i=0;i<allerList.length;i++) {
-//			System.out.println("알레르기["+i+"] :"+ allerList[i]);	
-//		}
-//		if(allerList.length >0) {
-//			pro.setAllerCheckList(allerList);	
-//		}
 		
 		//System.out.println("검색어 :"+(String)map.get("pro_name"));
 		//System.out.println("카테고리 :"+(String)map.get("ingre_no"));
@@ -86,4 +78,14 @@ public class MenuController {
 		
 		return "menu/menu_ajax";
 	}
+	
+	@GetMapping("searchAllergyCheck.do")
+	public String searchAllergyCheck(Model model, @RequestParam("aller_type") String aller_type) {
+		//System.out.println(aller_type);
+		List<ProVO> slist = mService.searchAllergyCheck(aller_type);
+		model.addAttribute("slist", slist);
+		
+		return "menu/menu_ajax";
+	}
+	
 }

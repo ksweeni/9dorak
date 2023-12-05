@@ -10,16 +10,15 @@
 
 .login .overlap-wrapper {
   background-color: #ffffff;
-  width: 1440px;
+  width: 100%;
   height: 1018px;
 }
 
 .login .overlap {
   position: relative;
-  width: 1434px;
+  width: 100%;
   height: 1018px;
   left: 6px;
-  background-image: url(./img/rectangle-1.svg);
   background-size: 100% 100%;
 }
 
@@ -217,6 +216,7 @@
   box-shadow: 0px 10px 30px #c4501182;
   left: 40px;
   border: none;
+  cursor: pointer;
 }
 
 .login .text-wrapper-5 {
@@ -237,7 +237,7 @@
   align-items: center;
   gap: 3px;
   position: absolute;
-  top: 550px;
+  top: 620px;
   left: 20px;
 }
 
@@ -322,3 +322,15 @@
 .login .text-wrapper-8 {
 	color: #f48e28;
 }
+
+ .kakao-login-wrapper {
+    height: 50px;
+    width: 200px;
+} 
+
+.kakao-login-wrapper a {
+    max-width: 100%; 
+    display: block;
+    width: 200px;
+    height: 50px;
+} */

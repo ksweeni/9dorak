@@ -7,10 +7,12 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/loginStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/loginStyle.css?d"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src = "https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <script>
 	function showLoginError() {
@@ -36,7 +38,7 @@
 					<div class="div">
 						<div class="group-wrapper">
 							<div class="group-2">
-								<img class="line" src="img/line-1.svg" />
+								<img class="line" />
 								<div class="text-wrapper">구도락에 또 오셨군요 !</div>
 								<div class="text-wrapper-2">로그인</div>
 							</div>
@@ -86,6 +88,12 @@
 			</div>
 		</div>
 	</div>
+	<%-- <div class="kakao-login-wrapper">
+		<a href="<c:url value="/kakao_login" />"> <img
+			src="${cpath}/resources/images/kakao_login_medium_narrow.png">
+		</a>
+		</div> --%>
+		
 </body>
 </html>
 

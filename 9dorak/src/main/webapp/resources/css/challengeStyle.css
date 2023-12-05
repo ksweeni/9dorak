@@ -194,6 +194,7 @@ a {
 }
 
 hr {
+    top: -10px;
     width: 80%;
     background: #a0a0a0;
     margin: 0 auto;
@@ -210,22 +211,22 @@ li {
 }
 
 #event_menu ul {
-	width: 800px;
+	width: 686px;
 	margin: 0 auto;
 	overflow: hidden;
 }
 
 #event_menu ul li {
 	float: left;
-	width: 20%;
-	height: 50px;
+	/* width: 20%; */
+	height: 73px;
 	line-height: 50px;
 	text-align: center;
 }
 
 #event_menu ul li a {
 	display: block;
-	padding: 10px; /* 상하좌우에 동일한 padding 값 적용 */
+	padding: 27px; /* 상하좌우에 동일한 padding 값 적용 */
 	text-decoration: none; /* 링크에 밑줄 제거 */
 	color: black; /* 기본 텍스트 색상 지정 */
 	transition: color 0.3s; /* hover 효과 부드럽게 적용 */
@@ -240,7 +241,7 @@ li {
 }
 
 #main {
-	margin: 100px 0;
+	margin: 0 0;
 	margin-bottom: 30px;
 }
 
