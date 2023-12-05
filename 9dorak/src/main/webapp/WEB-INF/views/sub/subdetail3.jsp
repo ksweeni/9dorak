@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/subdetailStyle2.css"
+<link rel="stylesheet" href="${cpath}/resources/css/subdetailStyle3.css"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -144,8 +144,8 @@
 		<div class=e1537_3167>
 			<span class="e1537_3168"><b>이번달 배터지9 메뉴</b></span>
 		</div>
-		<span class="e1543_3047">A 메뉴</span>
-		<span class="e1543_3294"><a href="${pageContext.request.contextPath}/sub/subdetail3.do">B 메뉴</a></span>
+		<span class="e1543_3047"><a href="${pageContext.request.contextPath}/sub/subdetail2.do">A 메뉴</a></span>
+		<span class="e1543_3294">B 메뉴</span>
 		<span class="e1543_3414">|</span>
 		<div class="e1543_3351"><hr></div>
 		<div class=e1543_3353>

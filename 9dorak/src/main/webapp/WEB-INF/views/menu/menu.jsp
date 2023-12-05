@@ -101,33 +101,33 @@
 			<div class="menu-top-bar">
 				<div class="allergy-bar">
 					<div class="check-div">
-						<button class="allergy-button" id="cerealsButton"
+						<button class="allergy-button" id="cerealsButton" value="곡류"
 							onClick="allerButtonClick('cereals')">🌾 곡류</button>
 					</div>
 
 					<div class="check-div">
-						<button class="allergy-button" id="nutsButton"
-							onClick="allerButtonClick('nuts')">🥚 난류</button>
+						<button class="allergy-button" id="eggsButton" value="난류"
+							onClick="allerButtonClick('eggs')">🥚 난류</button>
 					</div>
 
 					<div class="check-div">
-						<button class="allergy-button" id="dairyButton"
-							onClick="allerButtonClick('dairy')">🍼 우유</button>
+						<button class="allergy-button" id="milkButton" value="우유"
+							onClick="allerButtonClick('milk')">🍼 우유</button>
 					</div>
 
 					<div class="check-div">
-						<button class="allergy-button" id="seafoodButton"
-							onClick="allerButtonClick('seafood')">🍎 과일</button>
+						<button class="allergy-button" id="fruitButton" value="과일"
+							onClick="allerButtonClick('fruit')">🍎 과일</button>
 					</div>
 
 					<div class="check-div">
-						<button class="allergy-button" id="soyButton"
-							onClick="allerButtonClick('soy')">🥜 견과류</button>
+						<button class="allergy-button" id="nutsButton" value="견과류"
+							onClick="allerButtonClick('nuts')">🥜 견과류</button>
 					</div>
 
 					<div class="check-div">
-						<button class="allergy-button" id="glutenButton"
-							onClick="allerButtonClick('gluten')">🍤 해산물</button>
+						<button class="allergy-button" id="seafoodButton" value="해산물"
+							onClick="allerButtonClick('seafood')">🍤 해산물</button>
 					</div>
 				</div>
 
@@ -341,65 +341,16 @@
 			//alert(chkCtgr);
 			searchBtnClick();
 		}
-
+		
 		//알러지
-		/* function allerCheck(e){
-			
-			const cerealsCheckbox = document.querySelector('#cerealsCheckbox');
-			const nutsCheckbox = document.querySelector('#nutsCheckbox');
-			const dairyCheckbox = document.querySelector('#dairyCheckbox');
-			const seafoodCheckbox = document.querySelector('#seafoodCheckbox');
-			const soyCheckbox = document.querySelector('#soyCheckbox');
-			const glutenCheckbox = document.querySelector('#glutenCheckbox');
-			
-			const checked1 = cerealsCheckbox.checked;  // 선택 상태 확인
-			const checked2 = nutsCheckbox.checked;  // 선택 상태 확인
-			const checked3 = dairyCheckbox.checked;  // 선택 상태 확인
-			const checked4 = seafoodCheckbox.checked;  // 선택 상태 확인
-			const checked5 = soyCheckbox.checked;  // 선택 상태 확인
-			const checked6 = glutenCheckbox.checked;  // 선택 상태 확인
-			
-			const allerCheckList = []; 
-		
-			if(checked1){
-				allerCheckList.push("곡류");	
-			}
-			
-			if(checked2){
-				allerCheckList.push("난류");	
-			}
-			
-			if(checked3){
-				allerCheckList.push("우유");	
-			}
-			
-			if(checked4){
-				allerCheckList.push("과일");	
-			}
-			
-			if(checked5){
-				allerCheckList.push("견과류");	
-			}
-			
-			if(checked6){
-				allerCheckList.push("해산물");	
-			}
-			
-			console.log (allerCheckList);		
-		
-			searchBtnClick(allerCheckList);
-			
-			} */
-
-		//정렬
-		$(".filter button").on("click", function() {
-
+		$(".allergy-bar button").on("click", function(){
+			//alert($(this).val());
 			$.ajax({
-				url : "${cpath}/menu/searchOrderby.do",
+				url : "${cpath}/menu/searchAllergyCheck.do",
 				type : 'GET',
 				data : {
-					order_type : $(this).text()
-				//필터타입 검색
+					//알러지타입 검색
+					aller_type : $(this).val()
 				},
 				success : function(data) {
 					$('.foods').html(data);
@@ -410,7 +361,26 @@
 			});
 		})
 
-		let selectedButton = null;
+		//정렬
+		$(".filter button").on("click", function() {
+
+			$.ajax({
+				url : "${cpath}/menu/searchOrderby.do",
+				type : 'GET',
+				data : {
+					//필터타입 검색
+					order_type : $(this).text()
+				},
+				success : function(data) {
+					$('.foods').html(data);
+				},
+				error : function() {
+					alert("에러");
+				}
+			});
+		})
+
+ 		let selectedButton = null;
 
 		function allerButtonClick(allergy) {
 			const button = document.getElementById(allergy + 'Button');

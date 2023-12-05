@@ -21,12 +21,6 @@
 		<if test="pro_name != null and pro_name != ''" >
 			and t1.pro_name like '%'||#{pro_name}||'%'
 		</if>
-		<!-- <if test = "allerCheckList != null and !allerCheckList.isEmpty()" >
-			and t1.pro_aller not in
-		<foreach collection="allerCheckList" item="item" separator="," open="(" close=")">
-       		 #{item}
-      	</foreach>
-		</if> -->
 	</select>
 	
 	<!-- 신상품순 정렬 -->
@@ -37,6 +31,14 @@
 	<!-- 인기순 정렬 -->
 	<select id="selectOrderbyLike" resultType="provo">
 		select * from pro order by pro_like desc
+	</select>
+	
+	<!-- 알러지 -->
+	<select id="searchAllergyCheck" resultType="provo" parameterType="String">
+		select *
+		from pro
+		where pro_aller not in #{aller_type}
+		or pro_aller is null
 	</select>
 
 	<!-- <insert id="insertDoran" parameterType="doranvo">
