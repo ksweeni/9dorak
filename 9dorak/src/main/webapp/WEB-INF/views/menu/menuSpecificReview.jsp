@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/menuSpecificReviewStyle.css?d"
+	href="${cpath}/resources/css/menuSpecificReviewStyle.css?e"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -660,6 +660,24 @@
             });
         });
     });
+    
+    // 최신 등록순, 추천 순 클릭 시 변화
+   document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.frame-11, .frame-12').forEach(function (option) {
+        option.addEventListener('click', function () {
+            // Remove 'selected-option' class from all options
+            document.querySelectorAll('.frame-11, .frame-12').forEach(function (otherOption) {
+                otherOption.classList.remove('selected-option');
+            });
+
+            // Add 'selected-option' class to the clicked option
+            this.classList.add('selected-option');
+        });
+    });
+});
+
+
+
 </script>
 </body>
 </html>
