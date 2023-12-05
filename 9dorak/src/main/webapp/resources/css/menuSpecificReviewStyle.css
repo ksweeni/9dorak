@@ -34,7 +34,7 @@ div-wrapper {
 	width: 100%;
 	height: 1008px;
 	top: 10rem;
-	left: 15rem;
+	left: 10%;
 }
 
 .div-wrapper .group {
@@ -540,7 +540,7 @@ div-wrapper {
 	width: 386px;
 	height: 69px;
 	top: 1294px;
-	left: 15rem;
+	left: 10%;
 }
 
 .div-wrapper .menu-selection {
@@ -611,7 +611,7 @@ div-wrapper {
 	gap: 24px;
 	position: absolute;
 	top: 1429px;
-	left: 10rem;
+	left: 10%;
 }
 
 .div-wrapper .auto-layout-vertical {
