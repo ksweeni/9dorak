@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?e"
+<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?d"
 	type="text/css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -350,12 +350,17 @@
 
 		//카테고리
 		function categoryChk(e) {
-
-			chkCtgr = $(e).attr('id').substr(-1);
-
+			var categoryElements = document
+					.querySelectorAll('.frame-3, .frame-4, .frame-5, .frame-6, .frame-7, .frame-8, .frame-9, .frame-10, .frame-11');
+			categoryElements.forEach(function(el) {
+				el.classList.remove('clicked-category');
+			});
+			
+			e.classList.add('clicked-category');
+			
+			chkCtgr = e.id.substr(-1);
 			//alert(chkCtgr);
 			searchBtnClick();
-
 		}
 
 		//알러지

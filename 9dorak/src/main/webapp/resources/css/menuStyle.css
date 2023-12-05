@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+/* top 메뉴 클릭 시 스타일 */
+.clicked-category {
+	transform: scale(1.1); /* Increase the size */
+	text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
 /* "자세히 볼게요" 버튼 스타일 */
 .screen .frame {
 	display: flex;
@@ -29,20 +35,20 @@
 
 .allergy-button {
 	width: 130px;
-	font-size: 15px; 
-	font-weight : 600;
+	font-size: 15px;
+	font-weight: 600;
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 30px;
 	border: 1px solid #F48E28;
-	background: #F48E28; color: #FFF;
+	background: #F48E28;
+	color: #FFF;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	margin: 5px; 
+	margin: 5px;
 	transition: background-color 0.3s;
-	
 }
 
 .allergy-button.selected {
