@@ -5,6 +5,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shinhan.dto.CommentVO;
 import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DlikeVO;
 import com.shinhan.dto.DoranVO;
-
+import com.shinhan.dto.MemVO;
 import com.shinhan.model.DoranService;
 
 @Controller
@@ -52,7 +55,7 @@ public class DoranController {
 		return "doran/doran";
 	}
 
-	@GetMapping("/doran2.do")
+	@GetMapping("/doranFilter.do")
 	public String doran2(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model) {
 		List<DoranVO> dlist;
 		System.out.println(orderBy);
@@ -63,14 +66,45 @@ public class DoranController {
 		} else {
 			dlist = dService.selectAllByDlike();
 		}
-		//List<DlikeVO> dlike = dService.selectLike();
+		// List<DlikeVO> dlike = dService.selectLike();
 		List<DCommentVO> dcomment = dService.selectComment();
 		model.addAttribute("dlist", dlist);
-		//model.addAttribute("dlike", dlike);
+		// model.addAttribute("dlike", dlike);
 		model.addAttribute("dcomment", dcomment);
-		//System.out.println("좋아요: " + dlike);
+		// System.out.println("좋아요: " + dlike);
 		System.out.println("댓글 수: " + dcomment);
 		System.out.println("orderBy : " + orderBy);
+		return "doran/doran_ajax";
+	}
+
+	// 도란도란을 위한 데이터인지, 내가 쓴 글인지 확인
+	@GetMapping("/doranFor.do")
+	public String doranFor(@RequestParam(name = "dataFor", defaultValue = "doran") String dataFor, 
+			Model model,
+			HttpSession session, RedirectAttributes redirectAttributes) {
+		List<DoranVO> dlist;
+
+		System.out.println("DateFor:" + dataFor);
+		if ("doran".equals(dataFor)) {
+			dlist = dService.selectAll();
+		} else {
+			MemVO memVO = (MemVO) session.getAttribute("loginmem");
+			if (memVO == null || memVO.getMem_id() == null) {
+				System.out.println("현재 아이디가 없다");
+				
+				return "redirelogin/login";
+			}
+			String memId = memVO.getMem_id();
+			System.out.println("현재 아이디 :" + memId);
+			dlist = dService.selectAllForMe(memId);
+			System.out.println(dlist);
+		}
+
+		if (dlist.size() == 0) {
+			System.out.println("해당하는 데이터가 없습니다 ~ 글을 써 이 사람아");
+		}
+		model.addAttribute("dlist", dlist);
+		System.out.println(dlist);
 		return "doran/doran_ajax";
 	}
 
@@ -78,6 +112,29 @@ public class DoranController {
 	public String doranUpload(Model model) {
 		System.out.println("업로드 페이지로 이동");
 		return "doran/doranUpload";
+	}
+
+	// 내가 쓴 글일 때, 조회 메소드
+	@GetMapping("/doranFilterForMe.do")
+	public String doranFilterForMe(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model,
+			HttpSession session) {
+		List<DoranVO> dlist;
+
+		MemVO memVO = (MemVO) session.getAttribute("loginmem");
+		String memId = memVO.getMem_id();
+		System.out.println(memId + "가 쓴 글을 필터링 한다 : " + orderBy);
+
+		if ("views".equals(orderBy)) {
+			dlist = dService.selectAllByViewForMe(memId);
+		} else if ("latest".equals(orderBy)) {
+			dlist = dService.selectAllForMe(memId);
+		} else {
+			dlist = dService.selectAllByDlikeForMe(memId);
+		}
+
+		model.addAttribute("dlist", dlist);
+
+		return "doran/doran_ajax";
 	}
 
 	@PostMapping(value = "doranUpload.do", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -113,7 +170,6 @@ public class DoranController {
 		System.out.println("여기다여기다여기다여기다여기다여기다여기다여기다여기다여기다");
 		return "Upload successful!";
 	}
-
 
 	@GetMapping("doranFeedDetail.do")
 	public String doranFeedDetail(Model model) {

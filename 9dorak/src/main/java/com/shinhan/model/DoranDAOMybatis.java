@@ -60,7 +60,24 @@ public class DoranDAOMybatis {
     public List<CommentVO> selectAllCommentAbout(int doranNo) {
         return sqlSession.selectList(NAMESPACE + "selectAllCommentAbout", doranNo);
     }
+
+
+	// 내가 쓴 글
+	public List<DoranVO> selectAllForMe(String memId) {
+		return sqlSession.selectList(NAMESPACE + "selectAllForMe", memId);
+	}
+
+	// 내가 쓴 글 조회수 순 조회
+	public List<DoranVO> selectAllByViewForMe(String memId) {
+		return sqlSession.selectList(NAMESPACE + "selectAllByViewForMe", memId);
+	}
 	
+	// 내가 쓴 글 좋아요 순 조회
+	public List<DoranVO> selectAllByDlikeForMe(String memId) {
+		return sqlSession.selectList(NAMESPACE + "selectAllByDlikeForMe", memId);
+	}
+
+
 
 //	public BoardVO selectById(int bno) {
 //		BoardVO board = sqlSession.selectOne(NAMESPACE + "selectById", bno);
