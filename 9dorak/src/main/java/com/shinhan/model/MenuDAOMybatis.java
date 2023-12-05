@@ -43,6 +43,11 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 
+	public List<ProVO> searchAllergyCheck(String aller_type) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck", aller_type);
+		return plist;
+	}
+
 //	public int insertDoran(DoranVO doran) {
 //		System.out.println("inserting :"+doran);
 //		return sqlSession.insert(NAMESPACE + "insertDoran", doran);

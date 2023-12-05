@@ -30,11 +30,14 @@ public class MenuService {
 		return dao.selectOrderbyLike();
 	}
 
+	public List<ProVO> searchAllergyCheck(String aller_type) {
+		return dao.searchAllergyCheck(aller_type);
+	}
+
 //	public int insertMember(DoranVO doran) {
 //		return dao.insertDoran(doran);
 //	}
 
-	
 //
 //	@Transactional // ��� �����ϰų� ��� �����ϰų�
 //	public MemVO updateTransViewCount(int bno) {
@@ -55,8 +58,5 @@ public class MenuService {
 //	public int delete(int bno) {
 //		return dao.delete(bno);
 //	}
-
-
-
 
 }
