@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.shinhan.dto.DoranVO;
+import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 
 @Repository 
@@ -30,6 +32,10 @@ public class MyPageDAOMybatis {
 		// TODO Auto-generated method stub
 		int result =  sqlSession.delete(NAMESPACE + "deleteMember", mem_id);
 		return result;
+	}
+	public List<MemDeliveryVO> getDelivery(String mem_id) {
+		List<MemDeliveryVO> dlist = sqlSession.selectList(NAMESPACE+"getDelivery" , mem_id);
+		return dlist;
 	}
 
 //	public List<MemVO> selectAll() {

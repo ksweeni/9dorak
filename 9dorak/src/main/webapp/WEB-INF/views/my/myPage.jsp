@@ -256,7 +256,7 @@ String contextPath = request.getContextPath();
 	</div>
 	<div class="e69_169"></div>
 	<div class=e69_168>
-		<span class="e69_170">${mem.mem_name }</span>
+		<span class="e69_170">${mem.mem_id }</span>
 	</div>
 	<a href="${cpath }/menu/menu.do" class="e69_295">메뉴보기</a>
 	<span class="e69_296">구독하기</span>

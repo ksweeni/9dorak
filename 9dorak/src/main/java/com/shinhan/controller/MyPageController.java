@@ -2,6 +2,7 @@ package com.shinhan.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shinhan.dto.MemDeliveryVO;
+import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.model.MyPageService;
 
@@ -84,7 +87,26 @@ public class MyPageController {
 	public String myDelivery(Model model, HttpSession session ) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		MemVO mem = mService.getMember(loginmem.getMem_id());
+		List<MemDeliveryVO> dlist = mService.getDelivery(loginmem.getMem_id());
 		model.addAttribute("mem", mem);
+		model.addAttribute("dlist", dlist);
+		
 		return "my/myDelivery_ajax";
+	}
+	
+	
+	// 팝업으로 띄우기
+	@GetMapping("selectDelivery.do")
+	public String selectDelivery(Model model, HttpSession session ) {
+	
+		
+		return "my/selectDelivery";
+	}
+	@PostMapping("deleteDelivery.do")
+	
+	public String deleteDelivery(Model model, HttpSession session ) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+//		int result =  mService.deleteDelivery(loginmem.getMem_id(),);
+		return "my/deleteDelivery";
 	}
 }
