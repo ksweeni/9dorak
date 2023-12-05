@@ -33,4 +33,11 @@ public class SubDetailController {
 		model.addAttribute("subdetaillist", subdetaillist);
 		return "sub/subdetail2";
 	}
+	
+	@GetMapping("subdetail3.do")
+	public String subdetail3(Model model) {
+		List<SubdetailVO> subdetaillist = subdetailService.selectAll();
+		model.addAttribute("subdetaillist", subdetaillist);
+		return "sub/subdetail3";
+	}
 }
