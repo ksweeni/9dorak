@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+#shop{
+	background:black;
+	color:white;
+}
+
+#shop-label {
+	color:white;
+}
+
 .selected-option {
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -27,7 +36,8 @@ div-wrapper {
 }
 
 .div-wrapper .div {
-	background-color: var(- -white);
+	display: flex;
+    flex-direction: column;
 	width: 1440px;
 	height: 4889px;
 	position: relative;
@@ -42,7 +52,7 @@ div-wrapper {
 }
 
 .div-wrapper .group {
-	position: absolute;
+	position: relative;
 	border-radius: 20px;
 	width: 45rem; /*740px */
 	height: 45rem;
@@ -54,11 +64,11 @@ div-wrapper {
 
 .div-wrapper .sub-image {
 	display: inline-flex;
-	align-items: flex-start;
-	gap: 70px;
-	position: absolute;
-	top: 808px;
-	left: 0;
+    align-items: flex-start;
+    gap: 70px;
+    position: relative;
+    top: 4rem;
+    left: 0;
 }
 
 .div-wrapper .overlap-group-wrapper {
@@ -108,19 +118,18 @@ div-wrapper {
 }
 
 .div-wrapper .specific {
-	position: absolute;
-	width: 571px;
-	height: 1008px;
-	top: 0;
-	left: 790px;
+	position: relative;
+    width: 100%;
+    height: 100%;
+    top: -57rem;
+    left: 50rem;
 }
 
 .div-wrapper .overlap-2 {
-	position: absolute;
-	width: 512px;
-	height: 40px;
-	top: 0;
-	left: 2px;
+	position: relative;
+    width: 100%;
+    height: 40px;
+    top: 0;
 }
 
 .div-wrapper .title {
@@ -144,29 +153,23 @@ div-wrapper {
 }
 
 .div-wrapper .text-wrapper {
-	position: absolute;
-	width: 149px;
-	top: 78px;
-	left: 5px;
-	font-family: var(- -headline-4-font-family);
-	font-weight: var(- -headline-4-font-weight);
-	color: #172135;
-	font-size: var(- -headline-4-font-size);
-	letter-spacing: var(- -headline-4-letter-spacing);
-	line-height: var(- -headline-4-line-height);
-	font-style: var(- -headline-4-font-style);
+	font-weight: 600;
+    font-size: 1.2rem;
+    position: relative;
+    width: 149px;
+    top: 3rem;
+    left: 5px;
 }
 
 .div-wrapper .price-and-button {
-	position: absolute;
-	width: 567px;
-	height: 176px;
-	top: 832px;
-	left: 0;
+	position: relative;
+    width: 100%;
+    height: 176px;
+    top: 47rem;
 }
 
 .div-wrapper .frame-wrapper {
-	position: absolute;
+	position: relative;
 	width: 35rem;
 	height: 100px;
 	top: 0;
@@ -191,7 +194,7 @@ div-wrapper {
 }
 
 .div-wrapper .text-wrapper-2 {
-	position: absolute;
+	position: relative;
 	width: 10px;
 	top: 8px;
 	left: 74px;
@@ -248,44 +251,53 @@ div-wrapper {
 }
 
 .div-wrapper .overlap-3 {
-	position: absolute;
-	width: 537px;
-	height: 50px;
-	top: 126px;
-	left: 0;
+	column-gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 550px;
+    height: 50px;
+    top: 1rem;
 }
 
+
 .div-wrapper .button-medium-text {
-	background: white;
-	cursor: pointer;
-	position: relative;
-	left: 23rem;
-	width: 179px;
-	height: 50px;
-	border-radius: 20px;
-	border: 1px solid;
-	border-color: #d9dadb;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-radius: 2rem;
+    border: 1px solid;
+    border-color: #d9dadb;
+    transition: background-color 0.3s ease; 
 }
+
+#shop:hover {
+    background-color: #F48E28;
+}
+
+
 
 .div-wrapper .overlap-group-2 {
 	position: relative;
-	width: 6rem;
-	height: 21px;
-	top: 0.1rem;
-	left: 2.5rem;
+    width: 6rem;
+    height: 21px;
+    left: 4rem;
 }
 
 .div-wrapper .label {
-	position: absolute;
-	height: 20px;
-	top: 0;
-	left: 1rem;
-	font-weight: 600;
-	color: #262c33;
-	font-size: 0.9rem;
-	letter-spacing: 0;
-	line-height: 20px;
-	white-space: nowrap;
+	position: relative;
+    height: 20px;
+    top: 0;
+    left: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
 }
 
 .div-wrapper .icon-cart {
@@ -297,12 +309,13 @@ div-wrapper {
 }
 
 .div-wrapper .frame-2 {
-	display: inline-flex;
-	align-items: flex-start;
-	gap: 3rem;
-	position: absolute;
-	top: 0;
-	left: 0;
+	order: -1;
+    border-radius: 2rem;
+    display: inline-flex;
+    align-items: flex-start;
+    height: 50px;
+    position: relative;
+	
 }
 
 .div-wrapper .label-wrapper {
@@ -481,7 +494,7 @@ div-wrapper {
 	position: absolute;
 	width: 569px;
 	height: 177px;
-	top: 646px;
+	top: 630px;
 	left: 0;
 }
 
@@ -794,18 +807,23 @@ div-wrapper {
 	position: relative;
 	width: 100%;
 	height: 2017px;
-	top: 50rem;
+	top: 27rem;
 	left: 10%;
+	display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .div-wrapper .frame-9 {
 	display: flex;
-	width: 1357px;
-	align-items: flex-start;
-	gap: 890px;
-	position: absolute;
-	top: 0;
-	left: 23px;
+    width: 100%;
+    align-items: flex-start;
+    gap: 890px;
+    position: relative;
+    left: 3rem;
 }
 
 .div-wrapper .frame-10 {
@@ -834,19 +852,20 @@ div-wrapper {
 
 .div-wrapper .reviews-texts {
 	display: flex;
-	flex-direction: column;
-	width: 1357px;
-	align-items: flex-start;
-	gap: 55px;
-	position: absolute;
-	top: 77px;
-	left: 0;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    top: 3rem;
+    left: 0;
+    justify-content: center;
 }
 
 .div-wrapper .review {
 	position: relative;
-	width: 1357px;
-	height: 323px;
+    width: 100%;
+    height: 100%;
 }
 
 .div-wrapper .view-3 {
@@ -862,28 +881,28 @@ div-wrapper {
 
 .div-wrapper .frame-13 {
 	display: inline-flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 10px;
-	position: absolute;
-	top: 39px;
-	left: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    top: 2.5rem;
+    left: 3rem;
 }
 
 .div-wrapper .rectangle-6 {
 	position: relative;
-	width: 491px;
-	height: 245px;
-	background-color: #f2f2f2;
-	border-radius: 47.65px;
+    width: 30rem;
+    height: 15rem;
+    background-color: #f2f2f2;
+    border-radius: 47.65px;
 }
 
 .div-wrapper .group-9 {
-	position: absolute;
-	width: 392px;
-	height: 103px;
-	top: 71px;
-	left: 49px;
+	position: relative;
+    width: 380px;
+    height: 110px;
+    top: -12rem;
+    left: 3rem;
 }
 
 .div-wrapper .text-wrapper-14 {
@@ -910,21 +929,21 @@ div-wrapper {
 
 .div-wrapper .frame-14 {
 	display: inline-flex;
-	align-items: flex-start;
-	gap: 50px;
-	position: absolute;
-	top: 73px;
-	left: 0;
+    align-items: flex-start;
+    gap: 50px;
+    position: relative;
+    top: 3.5rem;
+    left: 0;
 }
 
 .div-wrapper .frame-15 {
 	display: inline-flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 29px;
-	position: absolute;
-	top: 52px;
-	left: 604px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    position: relative;
+    top: -11rem;
+    left: 10rem;
 }
 
 .div-wrapper .frame-16 {
@@ -999,13 +1018,12 @@ div-wrapper {
 
 .div-wrapper .pagination {
 	display: flex;
-	width: 282px;
-	height: 40px;
-	align-items: center;
-	gap: 8px;
-	position: absolute;
-	top: 1977px;
-	left: 540px;
+    width: 282px;
+    height: 40px;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    top: 10rem;
 }
 
 .div-wrapper .page {

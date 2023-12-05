@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/menuSpecificReviewStyle.css?d"
+	href="${cpath}/resources/css/menuSpecificReviewStyle.css?e"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,6 +60,12 @@
 							</div>
 						</div>
 						<div class="overlap-3">
+							<button class="button-medium-text" id="shop">
+								<div class="overlap-group-2">
+									<div class="label" id="shop-label">&nbsp;&nbsp;결제하기</div>
+								
+								</div>
+							</button>
 							<button class="button-medium-text">
 								<div class="overlap-group-2">
 									<div class="label">&nbsp;&nbsp; 구도락 담기</div>
@@ -67,12 +73,13 @@
 										src="${cpath}/resources/images/menu/Cart.png" />
 								</div>
 							</button>
-							<div class="frame-2">
+							
+							<!-- <div class="frame-2">
 								<button class="label-wrapper">
 									<div class="label-2">결제하기</div>
 								</button>
 
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<div class="frame-3">
