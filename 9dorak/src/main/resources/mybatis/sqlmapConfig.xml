@@ -16,7 +16,12 @@
 		<typeAlias type="com.shinhan.dto.DlikeVO" alias="dlikevo" />
 		<typeAlias type="com.shinhan.dto.ChallengeVO" alias="challengevo" />
 		<typeAlias type="com.shinhan.dto.EventVO" alias="eventvo" />
+<<<<<<< HEAD
 		<typeAlias type="com.shinhan.dto.MemDeliveryVO" alias="MemDeliveryvo" />
+=======
+		<typeAlias type="com.shinhan.dto.SubVO" alias="subvo" />
+		<typeAlias type="com.shinhan.dto.SubdetailVO" alias="subdetailvo" />
+>>>>>>> main
 	</typeAliases>
 </configuration>
 
