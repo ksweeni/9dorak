@@ -13,7 +13,7 @@ String contextPath = request.getContextPath();
 <title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .128_186 {
@@ -924,35 +924,36 @@ String contextPath = request.getContextPath();
 			<div class="e128_196"></div>
 			<div class="e128_197"></div>
 		</div>
-		<div class=e128_198>
-
+		<div class="e128_198">
 			<div class="e128_218">
-				<c:forEach var="item" items="${dlist}" >
+				<c:if test="${empty dlist}">
+					<p>등록된 배송지가 없습니다.</p>
+				</c:if>
+				<c:forEach var="item" items="${dlist}">
 					<div class="e126_328">
 						<div class="e126_327">
 							<div class="e126_320">
 								<span class="e126_321">배송지 주소</span> <span class="e126_322">${item.mem_delname}</span>
 								<span class="e126_325">${mem_addr}</span> <span class="e126_324">배송지명</span>
 							</div>
-							<div class="e128_274" onclick="deleteItem(${item.mem_delname});">
+							<div class="e128_274"
+								onclick="deleteItem('${item.mem_delname}');">
 								<span class="e128_275">삭제</span>
 							</div>
 							<div class="e128_276">
-								<!-- 								<span class="e128_277">수정</span> -->
+								<!-- <span class="e128_277">수정</span> -->
 								<a class="e128_277" href="#none"
 									onclick="window.open('${cpath}/my/selectDelivery.do','new','scrollbars=yes,resizable=no width=500 height=200, left=0,top=0');return false">수정</a>
-
 							</div>
 						</div>
 					</div>
 				</c:forEach>
 				<div class="e128_278">
-					<!-- 					<span class="e128_279">배송지 추가</span> -->
+					<!-- <span class="e128_279">배송지 추가</span> -->
 					<a class="e128_279" href="#none"
 						onclick="window.open('${cpath}/my/selectDelivery.do','new','scrollbars=yes,resizable=no width=500 height=200, left=0,top=0');return false">배송지추가</a>
 				</div>
 			</div>
-
 		</div>
 		<div class=e128_246>
 			<div class="e128_247"></div>
@@ -1033,9 +1034,23 @@ String contextPath = request.getContextPath();
 
 		})
 	}) // 내정보 수정 ajax
-
 	function deleteItem(delname) {
-		alert(delname);
+		//alert(delname);
+		var param = {
+
+			"mem_delname" : delname
+		};
+		$.ajax({
+
+			url : "${cpath}/my/deleteDelivery.do",
+			type : "post",
+			data : param,
+			success : function(res) {
+				alert("삭제되었습니다");
+				$("body").html(res);
+			}
+
+		})
 	}
 	/* $(".e128_274").on("click",function(){
 	alert($)

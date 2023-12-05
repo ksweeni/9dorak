@@ -104,9 +104,14 @@ public class MyPageController {
 	}
 	@PostMapping("deleteDelivery.do")
 	
-	public String deleteDelivery(Model model, HttpSession session ) {
+	public String deleteDelivery(Model model, HttpSession session, MemDeliveryVO memdel ) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
-//		int result =  mService.deleteDelivery(loginmem.getMem_id(),);
+		memdel.setMem_id(loginmem.getMem_id());
+		int result =  mService.deleteDelivery(memdel);
+		MemVO mem = mService.getMember(loginmem.getMem_id());
+		List<MemDeliveryVO> dlist = mService.getDelivery(loginmem.getMem_id());
+		model.addAttribute("mem", mem);
+		model.addAttribute("dlist", dlist);
 		return "my/myDelivery_ajax";
 	}
 }

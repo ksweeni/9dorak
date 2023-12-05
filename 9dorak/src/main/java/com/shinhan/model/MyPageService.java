@@ -37,6 +37,14 @@ public class MyPageService {
 		return dao.getDelivery(mem_id);
 	}
 
+	public int deleteDelivery(MemDeliveryVO memdel) {
+		// TODO Auto-generated method stub
+	
+		return dao.deleteDelivery(memdel);
+	}
+
+
+
 
 	
 
