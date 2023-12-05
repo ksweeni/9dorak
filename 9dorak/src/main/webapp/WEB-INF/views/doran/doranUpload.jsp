@@ -91,6 +91,29 @@ String contextPath = request.getContextPath();
 <body>
 	<div class="div-wrapper">
 		<div class="div">
+		
+			<header class="header">
+					<div class="top-nav">
+						<div class="navbar">
+							<div class="text-wrapper-11">메뉴보기</div>
+							<div class="text-wrapper-12">구독하기</div>
+							<div class="text-wrapper-13">요모조모</div>
+							<div class="text-wrapper-14">도란도란</div>
+						</div>
+						<img class="untitled-2" src="img/untitled-1-1.png" />
+						<div class="group-6">
+							<div class="text-wrapper-15">로그인 | 회원가입</div>
+							<div class="group-7">
+								<div class="overlap-group-3">
+									<img class="group-8" src="img/group-1.svg" />
+									<div class="ellipse"></div>
+									<div class="text-wrapper-16">2</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+				
 			<div class="frame">
 				<div class="group">
 					<div class="overlap">
@@ -190,13 +213,51 @@ String contextPath = request.getContextPath();
 							<div class="frame-2">
 								<div class="frame-3">
 									<div class="text-wrapper-2">글 작성하기</div>
-									<img class="line" src="img/line-5.svg" />
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			
+			<div class="group-9">
+				<div class="group-10">
+					<div class="overlap-group-4">
+						<div class="card">
+							<div class="frame-4">
+								<div class="ellipsis-wrapper">
+									<div class="ellipsis">􀍠</div>
+								</div>
+							</div>
+							<div class="tab">
+								<button class="text-wrapper-17">도란도란</button>
+							</div>
+							<div class="tab-2">
+								<button class="text-wrapper-18">내가 쓴 글</button>
+							</div>
+						</div>
+						<div class="text-wrapper-19">도란도란</div>
+					</div>
+				</div>
+			</div>
+			<div class="doran-profile">
+				<div class="doran-profile-photo">
+					<img src="${cpath }/resources/images/test.png" />
+				</div>
+				<button class="doran-button-frofile-setting">
+					<span>프로필 설정하기</span>
+				</button>
+			</div>
+			<!-- <div class="group-wrapper">
+				<div class="group-11">
+					<div class="group-12">
+						<div class="profile-wrapper">
+							<img class="profile" src="img/profile.png" />
+						</div>
+					</div>
+				</div>
+			</div> -->
+			
 			<footer class="footer">
 				<div class="company-loco">
 					<div class="company">
@@ -256,68 +317,9 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</footer>
-			<header class="header">
-				<div class="top-nav">
-					<div class="navbar">
-						<div class="text-wrapper-11">메뉴보기</div>
-						<div class="text-wrapper-12">구독하기</div>
-						<div class="text-wrapper-13">요모조모</div>
-						<div class="text-wrapper-14">도란도란</div>
-					</div>
-					<img class="untitled-2" src="img/untitled-1-1.png" />
-					<div class="group-6">
-						<div class="text-wrapper-15">로그인 | 회원가입</div>
-						<div class="group-7">
-							<div class="overlap-group-3">
-								<img class="group-8" src="img/group-1.svg" />
-								<div class="ellipse"></div>
-								<div class="text-wrapper-16">2</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
-			<div class="group-9">
-				<div class="group-10">
-					<div class="overlap-group-4">
-						<div class="card">
-							<div class="frame-4">
-								<div class="ellipsis-wrapper">
-									<div class="ellipsis">􀍠</div>
-								</div>
-							</div>
-							<div class="tab">
-								<img class="icon" src="img/icon.svg" />
-								<div class="text-wrapper-17">도란도란</div>
-							</div>
-							<div class="tab-2">
-								<img class="icon-2" src="img/image.svg" />
-								<div class="text-wrapper-18">내가 쓴 글</div>
-							</div>
-						</div>
-						<div class="text-wrapper-19">도란도란</div>
-					</div>
-				</div>
-			</div>
-			<div class="doran-profile">
-				<div class="doran-profile-photo">
-					<img src="${cpath }/resources/images/test.png" />
-				</div>
-				<button class="doran-button-frofile-setting">
-					<span>프로필 설정하기</span>
-				</button>
-			</div>
-			<!-- <div class="group-wrapper">
-				<div class="group-11">
-					<div class="group-12">
-						<div class="profile-wrapper">
-							<img class="profile" src="img/profile.png" />
-						</div>
-					</div>
-				</div>
-			</div> -->
-		</div>
-	</div>
+			
+		</div><!-- div -->
+	</div><!-- div-wrapper -->
 </body>
 
 </html>
