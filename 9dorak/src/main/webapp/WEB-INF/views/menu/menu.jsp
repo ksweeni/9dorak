@@ -131,30 +131,9 @@
 					</div>
 				</div>
 
-				<script>
-					let selectedButton = null;
-
-					function allerButtonClick(allergy) {
-						const button = document.getElementById(allergy
-								+ 'Button');
-						if (selectedButton === button) {
-							button.classList.remove('selected');
-							selectedButton = null;
-						} else {
-							if (selectedButton) {
-								selectedButton.classList.remove('selected');
-							}
-							button.classList.add('selected');
-							selectedButton = button;
-						}
-						allerCheck();
-					}
-				</script>
-
 				<div class="search">
 					<div class="overlap">
 						<div class="div-wrapper">
-
 							<input class="overlap-group-3" id="searchTxt" type="text"
 								placeholder="  키워드를 검색하세요">
 						</div>
@@ -238,10 +217,10 @@
 						viewBox="0 0 14 20" fill="none">
 					<path
 							d="M2.21875 12.5L7 17.1395L11.7812 12.5L13.25 13.9353L7 20L0.75 13.9353L2.21875 12.5Z"
-							fill="#FF6B00" />
+							fill="#FFB673" />
 					<path
 							d="M11.7813 7.5L7 2.86051L2.21875 7.5L0.75 6.06469L7 0L13.25 6.06469L11.7813 7.5Z"
-							fill="#FF6B00" />
+							fill="#FFB673" />
 				</svg>
 				</div>
 			</div>
@@ -355,9 +334,9 @@
 			categoryElements.forEach(function(el) {
 				el.classList.remove('clicked-category');
 			});
-			
+
 			e.classList.add('clicked-category');
-			
+
 			chkCtgr = e.id.substr(-1);
 			//alert(chkCtgr);
 			searchBtnClick();
@@ -430,6 +409,23 @@
 				}
 			});
 		})
+
+		let selectedButton = null;
+
+		function allerButtonClick(allergy) {
+			const button = document.getElementById(allergy + 'Button');
+			if (selectedButton === button) {
+				button.classList.remove('selected');
+				selectedButton = null;
+			} else {
+				if (selectedButton) {
+					selectedButton.classList.remove('selected');
+				}
+				button.classList.add('selected');
+				selectedButton = button;
+			}
+			allerCheck();
+		}
 	</script>
 
 </body>
