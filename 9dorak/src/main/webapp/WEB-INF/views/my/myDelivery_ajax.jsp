@@ -165,7 +165,7 @@ String contextPath = request.getContextPath();
 .e128_218 {
 	width: 950.1522827148438px;
 	height: 742px;
-	position: absolute;
+	/* 	position: absolute; */
 	left: 0px;
 	top: 0px;
 }
@@ -173,7 +173,7 @@ String contextPath = request.getContextPath();
 .e126_328 {
 	width: 784.029541015625px;
 	height: 94px;
-	position: absolute;
+	/* 	position: absolute; */
 	left: 0.15234375px;
 	top: 0px;
 }
@@ -185,7 +185,7 @@ String contextPath = request.getContextPath();
 .e126_327 {
 	width: 784.029541015625px;
 	height: 94px;
-	position: absolute;
+	/* 	position: absolute; */
 	left: 0px;
 	top: 0px;
 	border: 1px solid gray;
@@ -199,7 +199,7 @@ String contextPath = request.getContextPath();
 .e126_320 {
 	width: 611px;
 	height: 94px;
-	position: absolute;
+	/* 	position: absolute; */
 	left: 31px;
 	top: 0px;
 }
@@ -208,12 +208,13 @@ String contextPath = request.getContextPath();
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
 	width: 109px;
 	height: 27.9761905670166px;
-	position: absolute;
-	left: 313px;
-	top: 3.357142925262451px;
+	/* position: absolute; */
+	position: relative;
+	left: 93px;
+	top: 10px;
 	font-family: Roboto;
 	text-align: left;
-	font-size: 14px;
+	font-size: 20px;
 	letter-spacing: 0;
 	line-height: px;
 }
@@ -222,12 +223,13 @@ String contextPath = request.getContextPath();
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
 	width: 157px;
 	height: 62.66666793823242px;
-	position: absolute;
+	/* position: absolute; */
+	position: relative;
 	left: 0px;
-	top: 31.33333396911621px;
+	top: 40px;
 	font-family: Roboto;
 	text-align: left;
-	font-size: 32px;
+	font-size: 17px;
 	letter-spacing: 0;
 	line-height: px;
 }
@@ -236,12 +238,13 @@ String contextPath = request.getContextPath();
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
 	width: 345px;
 	height: 62.66666793823242px;
-	position: absolute;
-	left: 266px;
-	top: 31.33333396911621px;
+	/* position: absolute; */
+	position: relative;
+	left: 196px;
+	top: 40px;
 	font-family: Roboto;
 	text-align: left;
-	font-size: 32px;
+	font-size: 17px;
 	letter-spacing: 0;
 	line-height: px;
 }
@@ -250,12 +253,13 @@ String contextPath = request.getContextPath();
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
 	width: 75px;
 	height: 27.9761905670166px;
-	position: absolute;
-	left: 13px;
-	top: 0px;
+	/* position: absolute; */
+	position: relative;
+	left: 100px;
+	top: 10px;
 	font-family: Roboto;
 	text-align: left;
-	font-size: 14px;
+	font-size: 20px;
 	letter-spacing: 0;
 	line-height: px;
 }
@@ -268,9 +272,10 @@ String contextPath = request.getContextPath();
 .e128_274 {
 	width: 103.53125px;
 	height: 44px;
-	position: absolute;
+	position: relative;
+	/* 	position: absolute; */
 	left: 660px;
-	top: 47px;
+	top: -48px;
 	border: 1px solid gray;
 	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
@@ -301,9 +306,10 @@ String contextPath = request.getContextPath();
 .e128_276 {
 	width: 103.53125px;
 	height: 44px;
-	position: absolute;
+	/* 	position: absolute; */
+	position: relative;
 	left: 660px;
-	top: 0px;
+	top: -138px;
 	border: 1px solid gray;
 	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
@@ -334,9 +340,10 @@ String contextPath = request.getContextPath();
 .e128_278 {
 	width: 130.53125px;
 	height: 44px;
-	position: absolute;
+	position: relative;
+	/* 	position: absolute; */
 	left: 647.15234375px;
-	top: 128px;
+	top: 34px;
 	border: 1px solid gray;
 	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
@@ -907,8 +914,7 @@ String contextPath = request.getContextPath();
 		<div class=e128_187>
 			<a href="${cpath }" class=e128_188>
 				<div class="e128_189"></div>
-			</a>
-			<a href="${cpath }/menu/menu.do" class="e128_190">메뉴보기</a> <span
+			</a> <a href="${cpath }/menu/menu.do" class="e128_190">메뉴보기</a> <span
 				class="e128_191">구독하기</span><span class="e128_192">요모조모</span> <a
 				href="${cpath }/doran/doran.do" class="e128_193">도란도란</a> <a
 				href="${cpath }/event/challenge.do" class="e128_194">이벤트</a> <a
@@ -918,25 +924,35 @@ String contextPath = request.getContextPath();
 			<div class="e128_197"></div>
 		</div>
 		<div class=e128_198>
-			<div class=e128_218>
-				<div class=e126_328>
-					<div class=e126_327>
-						<div class=e126_320>
-							<span class="e126_321">배송지 주소</span><span class="e126_322">홍찬기</span><span
-								class="e126_325">비산롯데캐슬</span><span class="e126_324">배송지명</span>
-						</div>
-						<div class=e128_274>
-							<span class="e128_275">삭제</span>
-						</div>
-						<div class=e128_276>
-							<span class="e128_277">수정</span>
+
+			<div class="e128_218">
+				<c:forEach var="item" items="${dlist}">
+					<div class="e126_328">
+						<div class="e126_327">
+							<div class="e126_320">
+								<span class="e126_321">배송지 주소</span> <span class="e126_322">${item.mem_delname}</span>
+								<span class="e126_325">${item.mem_addr}</span> <span
+									class="e126_324">배송지명</span>
+							</div>
+							<div class="e128_274">
+								<span class="e128_275">삭제</span>
+							</div>
+							<div class="e128_276">
+								<!-- 								<span class="e128_277">수정</span> -->
+								<a class="e128_277" href="#none"
+									onclick="window.open('${cpath}/my/selectDelivery.do','new','scrollbars=yes,resizable=no width=500 height=200, left=0,top=0');return false">수정</a>
+
+							</div>	
 						</div>
 					</div>
-				</div>
-				<div class=e128_278>
-					<span class="e128_279">배송지 추가</span>
+				</c:forEach>
+				<div class="e128_278">
+					<!-- 					<span class="e128_279">배송지 추가</span> -->
+					<a class="e128_279" href="#none"
+						onclick="window.open('${cpath}/my/selectDelivery.do','new','scrollbars=yes,resizable=no width=500 height=200, left=0,top=0');return false">배송지추가</a>
 				</div>
 			</div>
+
 		</div>
 		<div class=e128_246>
 			<div class="e128_247"></div>
@@ -1013,6 +1029,18 @@ String contextPath = request.getContextPath();
 			type : "get",
 			success : function(res) {
 				$("body").html(res);
+			}
+
+		})
+	}) // 내정보 수정 ajax
+	
+	$(".e128_274").on("click",function(){
+		$.ajax({
+
+			url : "${cpath}/my/deleteDelivery.do",
+			type : "post",
+			success : function(res) {
+			 	alert("삭제되었습니다");
 			}
 
 		})

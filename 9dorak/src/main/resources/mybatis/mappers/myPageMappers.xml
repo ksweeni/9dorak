@@ -29,4 +29,8 @@
 		mem_id = #{mem_id}
 	</delete>
 
+	<select id="getDelivery" resultType="memdeliveryvo" parameterType="String">
+		SELECT * FROM MEMDELIVERY where mem_id = #{mem_id}
+	</select>
+
 </mapper>
