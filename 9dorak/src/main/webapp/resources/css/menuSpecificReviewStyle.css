@@ -1,17 +1,30 @@
 @charset "UTF-8";
 
+#shop{
+	background:black;
+	color:white;
+}
+
+#shop-label {
+	color:white;
+}
+
+.selected-option {
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
 progress {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 ::-webkit-progress-bar {
-  background-color: rgba(215, 215, 215, 0.46);
-  border-radius:2rem;
+	background-color: rgba(215, 215, 215, 0.46);
+	border-radius: 2rem;
 }
 
 ::-webkit-progress-value {
-  background-color:  #ffcbae;
-  border-radius:2rem;
+	background-color: #ffcbae;
+	border-radius: 2rem;
 }
 
 div-wrapper {
@@ -23,7 +36,8 @@ div-wrapper {
 }
 
 .div-wrapper .div {
-	background-color: var(- -white);
+	display: flex;
+    flex-direction: column;
 	width: 1440px;
 	height: 4889px;
 	position: relative;
@@ -34,11 +48,11 @@ div-wrapper {
 	width: 100%;
 	height: 1008px;
 	top: 10rem;
-	left: 15rem;
+	left: 10%;
 }
 
 .div-wrapper .group {
-	position: absolute;
+	position: relative;
 	border-radius: 20px;
 	width: 45rem; /*740px */
 	height: 45rem;
@@ -50,11 +64,11 @@ div-wrapper {
 
 .div-wrapper .sub-image {
 	display: inline-flex;
-	align-items: flex-start;
-	gap: 70px;
-	position: absolute;
-	top: 808px;
-	left: 0;
+    align-items: flex-start;
+    gap: 70px;
+    position: relative;
+    top: 4rem;
+    left: 0;
 }
 
 .div-wrapper .overlap-group-wrapper {
@@ -104,19 +118,18 @@ div-wrapper {
 }
 
 .div-wrapper .specific {
-	position: absolute;
-	width: 571px;
-	height: 1008px;
-	top: 0;
-	left: 790px;
+	position: relative;
+    width: 100%;
+    height: 100%;
+    top: -57rem;
+    left: 50rem;
 }
 
 .div-wrapper .overlap-2 {
-	position: absolute;
-	width: 512px;
-	height: 40px;
-	top: 0;
-	left: 2px;
+	position: relative;
+    width: 100%;
+    height: 40px;
+    top: 0;
 }
 
 .div-wrapper .title {
@@ -140,29 +153,23 @@ div-wrapper {
 }
 
 .div-wrapper .text-wrapper {
-	position: absolute;
-	width: 149px;
-	top: 78px;
-	left: 5px;
-	font-family: var(- -headline-4-font-family);
-	font-weight: var(- -headline-4-font-weight);
-	color: #172135;
-	font-size: var(- -headline-4-font-size);
-	letter-spacing: var(- -headline-4-letter-spacing);
-	line-height: var(- -headline-4-line-height);
-	font-style: var(- -headline-4-font-style);
+	font-weight: 600;
+    font-size: 1.2rem;
+    position: relative;
+    width: 149px;
+    top: 3rem;
+    left: 5px;
 }
 
 .div-wrapper .price-and-button {
-	position: absolute;
-	width: 567px;
-	height: 176px;
-	top: 832px;
-	left: 0;
+	position: relative;
+    width: 100%;
+    height: 176px;
+    top: 47rem;
 }
 
 .div-wrapper .frame-wrapper {
-	position: absolute;
+	position: relative;
 	width: 35rem;
 	height: 100px;
 	top: 0;
@@ -187,7 +194,7 @@ div-wrapper {
 }
 
 .div-wrapper .text-wrapper-2 {
-	position: absolute;
+	position: relative;
 	width: 10px;
 	top: 8px;
 	left: 74px;
@@ -244,44 +251,53 @@ div-wrapper {
 }
 
 .div-wrapper .overlap-3 {
-	position: absolute;
-	width: 537px;
-	height: 50px;
-	top: 126px;
-	left: 0;
+	column-gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 550px;
+    height: 50px;
+    top: 1rem;
 }
 
+
 .div-wrapper .button-medium-text {
-	background: white;
-	cursor: pointer;
-	position: relative;
-	left: 23rem;
-	width: 179px;
-	height: 50px;
-	border-radius: 20px;
-	border: 1px solid;
-	border-color: #d9dadb;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-radius: 2rem;
+    border: 1px solid;
+    border-color: #d9dadb;
+    transition: background-color 0.3s ease; 
 }
+
+#shop:hover {
+    background-color: #F48E28;
+}
+
+
 
 .div-wrapper .overlap-group-2 {
 	position: relative;
-	width: 6rem;
-	height: 21px;
-	top: 0.1rem;
-	left: 2.5rem;
+    width: 6rem;
+    height: 21px;
+    left: 4rem;
 }
 
 .div-wrapper .label {
-	position: absolute;
-	height: 20px;
-	top: 0;
-	left: 1rem;
-	font-weight: 600;
-	color: #262c33;
-	font-size: 0.9rem;
-	letter-spacing: 0;
-	line-height: 20px;
-	white-space: nowrap;
+	position: relative;
+    height: 20px;
+    top: 0;
+    left: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
 }
 
 .div-wrapper .icon-cart {
@@ -293,12 +309,13 @@ div-wrapper {
 }
 
 .div-wrapper .frame-2 {
-	display: inline-flex;
-	align-items: flex-start;
-	gap: 3rem;
-	position: absolute;
-	top: 0;
-	left: 0;
+	order: -1;
+    border-radius: 2rem;
+    display: inline-flex;
+    align-items: flex-start;
+    height: 50px;
+    position: relative;
+	
 }
 
 .div-wrapper .label-wrapper {
@@ -372,7 +389,7 @@ div-wrapper {
 .div-wrapper .overlap-group-3 {
 	position: relative;
 	height: 20px;
-	width:510px;
+	width: 510px;
 }
 
 .div-wrapper .rectangle {
@@ -477,7 +494,7 @@ div-wrapper {
 	position: absolute;
 	width: 569px;
 	height: 177px;
-	top: 646px;
+	top: 630px;
 	left: 0;
 }
 
@@ -536,11 +553,11 @@ div-wrapper {
 }
 
 .div-wrapper .menu-selection-wrapper {
-	position: absolute;
+	position: relative;
 	width: 386px;
 	height: 69px;
-	top: 1294px;
-	left: 15rem;
+	top: 15rem;
+	left: 10%;
 }
 
 .div-wrapper .menu-selection {
@@ -609,9 +626,9 @@ div-wrapper {
 	width: 100%;
 	align-items: flex-start;
 	gap: 24px;
-	position: absolute;
-	top: 1429px;
-	left: 10rem;
+	position: relative;
+	top: 18rem;
+	left: 10%;
 }
 
 .div-wrapper .auto-layout-vertical {
@@ -657,27 +674,35 @@ div-wrapper {
 }
 
 .div-wrapper .picture-reviews {
+	row-gap: 1rem;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 	position: relative;
-	width: 100%;
-	height: 568px;
-	top: 43rem;
-	left: 10%;
+    width: 100%;
+    height: 568px;
+    top: 23rem;
+    left: 10%;
 }
 
 .div-wrapper .group-5 {
-	position: absolute;
-	width: 1357px;
-	height: 500px;
-	top: 68px;
-	left: 0;
+	
+	position: relative;
+	column-gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    left: 0;
 }
 
 .div-wrapper .group-6 {
-	position: absolute;
+	position: relative;
 	width: 324px;
 	height: 500px;
 	top: 0;
-	left: 0;
 }
 
 .div-wrapper .overlap-group-5 {
@@ -690,58 +715,38 @@ div-wrapper {
 }
 
 .div-wrapper .p {
-	position: absolute;
-	width: 247px;
-	height: 135px;
-	top: 315px;
-	left: 29px;
-	font-weight: 600;
-	color: #ffffff;
-	font-size: 20px;
-	letter-spacing: 0;
-	line-height: normal;
+	position: relative;
+    width: 247px;
+    height: 7rem;
+    top: -10rem;
+    left: 3rem;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1.3rem;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
 .div-wrapper .overlap-wrapper {
-	position: absolute;
+	position: relative;
 	width: 324px;
 	height: 500px;
 	top: 0;
-	left: 342px;
 }
 
-.div-wrapper .overlap-4 {
-	position: relative;
-	width: 322px;
-	height: 500px;
-	background-image: url(./img/image.png);
-	background-size: cover;
-	background-position: 50% 50%;
-}
 
 .div-wrapper .group-7 {
-	position: absolute;
+	position: relative;
 	width: 324px;
 	height: 500px;
 	top: 0;
-	left: 683px;
-}
-
-.div-wrapper .overlap-5 {
-	position: relative;
-	width: 322px;
-	height: 500px;
-	background-image: url(./img/rectangle-614-3.png);
-	background-size: cover;
-	background-position: 50% 50%;
 }
 
 .div-wrapper .group-8 {
-	position: absolute;
+	position: relative;
 	width: 334px;
 	height: 500px;
 	top: 0;
-	left: 1025px;
 }
 
 .div-wrapper .overlap-6 {
@@ -755,32 +760,20 @@ div-wrapper {
 	width: 20rem;
 	height: 30rem;
 	top: 0;
-	left: 1rem;
 	border-radius: 3rem;
 	object-fit: cover;
 }
 
-.div-wrapper .text-wrapper-12 {
-	position: absolute;
-	width: 247px;
-	height: 135px;
-	top: 315px;
-	left: 3rem;
-	font-weight: 600;
-	color: #ffffff;
-	font-size: 20px;
-	letter-spacing: 0;
-	line-height: normal;
-}
 
 .div-wrapper .frame-8 {
+	order: -1;
 	display: flex;
 	width: 1311px;
 	align-items: flex-start;
 	gap: 1000px;
-	position: absolute;
+	position: relative;
 	top: 0;
-	left: 22px;
+	
 }
 
 .div-wrapper .text-wrapper-13 {
@@ -814,18 +807,23 @@ div-wrapper {
 	position: relative;
 	width: 100%;
 	height: 2017px;
-	top: 50rem;
+	top: 27rem;
 	left: 10%;
+	display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .div-wrapper .frame-9 {
 	display: flex;
-	width: 1357px;
-	align-items: flex-start;
-	gap: 890px;
-	position: absolute;
-	top: 0;
-	left: 23px;
+    width: 100%;
+    align-items: flex-start;
+    gap: 890px;
+    position: relative;
+    left: 3rem;
 }
 
 .div-wrapper .frame-10 {
@@ -854,19 +852,20 @@ div-wrapper {
 
 .div-wrapper .reviews-texts {
 	display: flex;
-	flex-direction: column;
-	width: 1357px;
-	align-items: flex-start;
-	gap: 55px;
-	position: absolute;
-	top: 77px;
-	left: 0;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    top: 3rem;
+    left: 0;
+    justify-content: center;
 }
 
 .div-wrapper .review {
 	position: relative;
-	width: 1357px;
-	height: 323px;
+    width: 100%;
+    height: 100%;
 }
 
 .div-wrapper .view-3 {
@@ -882,28 +881,28 @@ div-wrapper {
 
 .div-wrapper .frame-13 {
 	display: inline-flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 10px;
-	position: absolute;
-	top: 39px;
-	left: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    top: 2.5rem;
+    left: 3rem;
 }
 
 .div-wrapper .rectangle-6 {
 	position: relative;
-	width: 491px;
-	height: 245px;
-	background-color: #f2f2f2;
-	border-radius: 47.65px;
+    width: 30rem;
+    height: 15rem;
+    background-color: #f2f2f2;
+    border-radius: 47.65px;
 }
 
 .div-wrapper .group-9 {
-	position: absolute;
-	width: 392px;
-	height: 103px;
-	top: 71px;
-	left: 49px;
+	position: relative;
+    width: 380px;
+    height: 110px;
+    top: -12rem;
+    left: 3rem;
 }
 
 .div-wrapper .text-wrapper-14 {
@@ -930,21 +929,21 @@ div-wrapper {
 
 .div-wrapper .frame-14 {
 	display: inline-flex;
-	align-items: flex-start;
-	gap: 50px;
-	position: absolute;
-	top: 73px;
-	left: 0;
+    align-items: flex-start;
+    gap: 50px;
+    position: relative;
+    top: 3.5rem;
+    left: 0;
 }
 
 .div-wrapper .frame-15 {
 	display: inline-flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 29px;
-	position: absolute;
-	top: 52px;
-	left: 604px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    position: relative;
+    top: -11rem;
+    left: 10rem;
 }
 
 .div-wrapper .frame-16 {
@@ -1019,13 +1018,12 @@ div-wrapper {
 
 .div-wrapper .pagination {
 	display: flex;
-	width: 282px;
-	height: 40px;
-	align-items: center;
-	gap: 8px;
-	position: absolute;
-	top: 1977px;
-	left: 540px;
+    width: 282px;
+    height: 40px;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    top: 10rem;
 }
 
 .div-wrapper .page {
@@ -1088,15 +1086,15 @@ div-wrapper {
 .div-wrapper .num-2 {
 	position: absolute;
 	top: 4px;
-    position: absolute;
-    width: 32px;
-    top: 0px;
-    font-weight: 700;
-    font-size: 14px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: 30px;
-    white-space: nowrap;
+	position: absolute;
+	width: 32px;
+	top: 0px;
+	font-weight: 700;
+	font-size: 14px;
+	text-align: center;
+	letter-spacing: 0;
+	line-height: 30px;
+	white-space: nowrap;
 }
 
 .div-wrapper .carat-wrapper {
@@ -1272,14 +1270,6 @@ div-wrapper {
 	left: 0;
 }
 
-.div-wrapper .overlap-group-6 {
-	position: relative;
-	width: 259px;
-	height: 58px;
-	background-color: var(- -white);
-	border-radius: 32.5px;
-	box-shadow: 0px 0px 15px #0000000d;
-}
 
 .div-wrapper .img-wrapper {
 	position: absolute;

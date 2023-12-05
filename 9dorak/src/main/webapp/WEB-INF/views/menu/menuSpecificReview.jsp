@@ -60,6 +60,12 @@
 							</div>
 						</div>
 						<div class="overlap-3">
+							<button class="button-medium-text" id="shop">
+								<div class="overlap-group-2">
+									<div class="label" id="shop-label">&nbsp;&nbsp;결제하기</div>
+								
+								</div>
+							</button>
 							<button class="button-medium-text">
 								<div class="overlap-group-2">
 									<div class="label">&nbsp;&nbsp; 구도락 담기</div>
@@ -67,25 +73,27 @@
 										src="${cpath}/resources/images/menu/Cart.png" />
 								</div>
 							</button>
-							<div class="frame-2">
+							
+							<!-- <div class="frame-2">
 								<button class="label-wrapper">
 									<div class="label-2">결제하기</div>
 								</button>
 
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<div class="frame-3">
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-								<progress class="overlap-group-3" id="progress" value="60" min="0" max="324"></progress>
-									
+									<progress class="overlap-group-3" id="progress" value="60"
+										min="0" max="324"></progress>
+
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
 							<div class="frame-5">
-							
+
 								<div class="text-wrapper-5">탄수화물</div>
 								<div class="text-wrapper-6">60/324g</div>
 							</div>
@@ -93,8 +101,9 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-								<progress class="overlap-group-3" id="progress" value="100" min="0" max="324"></progress>
-									
+									<progress class="overlap-group-3" id="progress" value="100"
+										min="0" max="324"></progress>
+
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
@@ -106,7 +115,8 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-								<progress class="overlap-group-3" id="progress" value="60" min="0" max="324"></progress>
+									<progress class="overlap-group-3" id="progress" value="60"
+										min="0" max="324"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
@@ -118,7 +128,8 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-								<progress  class="overlap-group-3" id="progress" value="60" min="0" max="324"></progress>
+									<progress class="overlap-group-3" id="progress" value="60"
+										min="0" max="324"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
@@ -130,7 +141,8 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-3">
-								<progress class="overlap-group-3" id="progress" value="200" min="0" max="324"></progress>
+									<progress class="overlap-group-3" id="progress" value="200"
+										min="0" max="324"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
@@ -187,32 +199,32 @@
 			</div>
 			<div class="picture-reviews">
 				<div class="group-5">
-					<div class="group-6">
-						<div class="overlap-group-5">
-							<img class="rectangle-5"
-								src="${cpath}/resources/images/menu/cake.png" />
-							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
-						</div>
-					</div>
-					<div class="overlap-wrapper">
-						<div class="overlap-4">
+					<div class="group-7">
+						<div class="overlap-6">
 							<img class="rectangle-5"
 								src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
 					<div class="group-7">
-						<div class="overlap-5">
+						<div class="overlap-6">
 							<img class="rectangle-5"
 								src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
-					<div class="group-8">
+					<div class="group-7">
 						<div class="overlap-6">
 							<img class="rectangle-5"
 								src="${cpath}/resources/images/menu/cake.png" />
-							<p class="text-wrapper-12">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또
+							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
+						</div>
+					</div>
+					<div class="group-7">
+						<div class="overlap-6">
+							<img class="rectangle-5"
+								src="${cpath}/resources/images/menu/cake.png" />
+							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또
 								먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
@@ -556,25 +568,24 @@
 		</header>
 	</div>
 	<script>
-function selectButton(button) {
-    const buttons = document.querySelectorAll('.menu-selection-wrapper .common-button');
-    buttons.forEach((btn) => {
-        btn.classList.remove('selected');
-        Array.from(btn.children).forEach(child => {
-            child.style.color = 'black';
+    function selectButton(button) {
+        const buttons = document.querySelectorAll('.menu-selection-wrapper .common-button');
+        buttons.forEach((btn) => {
+            btn.classList.remove('selected');
+            Array.from(btn.children).forEach(child => {
+                child.style.color = 'black';
+            });
         });
-    });
 
-    // 선택된 버튼에 'selected' 클래스 추가
-    button.classList.add('selected');
-    Array.from(button.children).forEach(child => {
-        child.style.color = '#ffb58b';
-    });
-}
+        // 선택된 버튼에 'selected' 클래스 추가
+        button.classList.add('selected');
+        Array.from(button.children).forEach(child => {
+            child.style.color = '#ffb58b';
+        });
+    }
 
-
-	// 제품 이미지
-    var cpathValue = '${cpath}'; 
+    // 제품 이미지
+    var cpathValue = '${cpath}';
     var imageUrl = cpathValue + '/resources/images/menu/food.png';
 
     console.log(imageUrl);
@@ -582,56 +593,98 @@ function selectButton(button) {
     console.log(groupDiv);
 
     groupDiv.style.backgroundImage = 'url(' + imageUrl + ')';
-    
+
     // pagination
-const itemsPerPage = 5;
-let currentPage = 1;
+    const itemsPerPage = 5;
+    let currentPage = 1;
 
-function showItemsForPage(pageNumber) {
-    console.log('showItemsForPage called with pageNumber:', pageNumber);
-    const numElements = document.querySelectorAll('.num-2');
+    function showItemsForPage(pageNumber) {
+        console.log('showItemsForPage called with pageNumber:', pageNumber);
+        const numElements = document.querySelectorAll('.num-2');
 
-    // Remove active class from all num elements
-    numElements.forEach(numElement => {
-        numElement.classList.remove('page-active');
+        
+        numElements.forEach(numElement => {
+            numElement.classList.remove('page-active');
+        });
+
+       
+        numElements[pageNumber - 1].classList.add('page-active');
+
+       // 페이지가 맨 처음이거나 맨 뒤면 이동 버튼 없애기
+        document.getElementById('prevPage').style.display = (pageNumber === 1) ? 'none' : 'block';
+        document.getElementById('nextPage').style.display = (pageNumber === numElements.length) ? 'none' : 'block';
+    }
+
+ 
+    showItemsForPage(currentPage);
+
+    // Next Page Button
+    document.getElementById('nextPage').addEventListener('click', () => {
+        if (currentPage < 5) {  
+            currentPage++;
+            showItemsForPage(currentPage);
+        }
     });
 
-    // Add active class to the current page
-    numElements[pageNumber - 1].classList.add('page-active');
+    // Previous Page Button
+    document.getElementById('prevPage').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showItemsForPage(currentPage);
+        }
+    });
 
-    // Logic to show/hide prevPage and nextPage based on current page
-    document.getElementById('prevPage').style.display = (pageNumber === 1) ? 'none' : 'block';
-    document.getElementById('nextPage').style.display = (pageNumber === numElements.length) ? 'none' : 'block';
-}
+    
+    document.querySelectorAll('.num-2').forEach((numElement, index) => {
+        numElement.addEventListener('click', () => {
+            currentPage = index + 1;
+            showItemsForPage(currentPage);
+        });
+    });
 
-// Initial display for the first page
-showItemsForPage(currentPage);
+    // 유용해요 클릭 및 유용 수 증가 
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.happy').forEach(function (element) {
+            element.addEventListener('click', function () {
+                console.log("clicked");
+                this.classList.toggle('happy-unfill');
+                this.classList.toggle('happy-fill');
 
-// Next Page Button
-document.getElementById('nextPage').addEventListener('click', () => {
-    if (currentPage < 5) {  // Assuming there are 5 pages, update this based on your actual number of pages
-        currentPage++;
-        showItemsForPage(currentPage);
-    }
-});
+                // 이미지 변경
+                const imageSrc = this.classList.contains('happy-fill')
+                    ? `${cpath}/resources/images/menu/happy-fill.svg`
+                    : `${cpath}/resources/images/menu/happy-unfill.svg`;
+                this.src = imageSrc;
 
-// Previous Page Button
-document.getElementById('prevPage').addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        showItemsForPage(currentPage);
-    }
-});
+                // 유용해요 옆의 숫자 count up
+                const countElement = this.nextElementSibling.nextElementSibling;
+                let count = parseInt(countElement.textContent);
 
-// Click handler for individual pages
-document.querySelectorAll('.num-2').forEach((numElement, index) => {
-    numElement.addEventListener('click', () => {
-        currentPage = index + 1;
-        showItemsForPage(currentPage);
+                // Check if count is a valid number before updating
+                if (!isNaN(count)) {
+                    countElement.textContent = this.classList.contains('happy-fill') ? count + 1 : count - 1;
+                }
+            });
+        });
+    });
+    
+    // 최신 등록순, 추천 순 클릭 시 변화
+   document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.frame-11, .frame-12').forEach(function (option) {
+        option.addEventListener('click', function () {
+            // Remove 'selected-option' class from all options
+            document.querySelectorAll('.frame-11, .frame-12').forEach(function (otherOption) {
+                otherOption.classList.remove('selected-option');
+            });
+
+            // Add 'selected-option' class to the clicked option
+            this.classList.add('selected-option');
+        });
     });
 });
+
+
+
 </script>
-
-
 </body>
 </html>
