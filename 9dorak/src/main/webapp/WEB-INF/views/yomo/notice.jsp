@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/noticeStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/noticeStyle.css?d"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +42,7 @@
 			<div class=e815_1066>
 				<div class="ei815_1066_6_1"></div>
 			</div>
-			<span class="e815_1067">검색어를 입력하세요</span>
+			<input type="text" class="e815_1067" placeholder="검색어를 입력하세요">
 		</div>
 		<div class=e825_521>
 			<div class="e825_513"></div>
@@ -83,6 +83,13 @@
 					<div class="e825_515"></div>
 					<span class="e825_519">작성일</span><span class="e825_518">제목</span><span
 						class="e825_517">번호</span>
+				</div>
+				<%-- 공지사항 목록 출력 부분 --%>
+				<c:forEach var="anno" items="${annoList}">
+					<span class="e844_613">${anno.anno_date}</span>
+					<span class="e844_612">${anno.anno_title}</span>
+					<span class="e844_611">${anno.anno_no}</span>
+				</c:forEach>
 				</div>
 			</div>
 		</div>
