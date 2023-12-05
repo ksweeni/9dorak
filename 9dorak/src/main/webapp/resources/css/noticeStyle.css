@@ -5,7 +5,7 @@
 }
 .e815_534 { 
 	background-color:rgba(255, 255, 255, 1);
-	width:1440px;
+	width:100%;
 	height:2500px;
 	position:absolute;
 }
@@ -32,60 +32,55 @@
 }
 .e1140_2930 { 
 	color:rgba(0, 0, 0, 1);
-	width:50px;
+	width:80px;
 	height:22px;
 	position:absolute;
 	left:359px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
 }
 .e1140_2931 { 
 	color:rgba(0, 0, 0, 1);
-	width:67px;
+	width:80px;
 	height:22px;
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
 }
 .e1140_2932 { 
 	color:rgba(0, 0, 0, 1);
-	width:67px;
+	width:80px;
 	height:22px;
 	position:absolute;
 	left:84px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
 }
 .e1140_2933 { 
 	color:rgba(0, 0, 0, 1);
-	width:67px;
+	width:80px;
 	height:22px;
 	position:absolute;
 	left:167px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
 }
 .e1140_2934 { 
 	color:rgba(0, 0, 0, 1);
-	width:67px;
+	width:80px;
 	height:22px;
 	position:absolute;
 	left:259px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -112,7 +107,6 @@
 	position:absolute;
 	left:0px;
 	top:9px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -178,7 +172,6 @@
 	position:absolute;
 	left:17px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:13px;
 	letter-spacing:0;
@@ -229,7 +222,6 @@
 	position:absolute;
 	left:47px;
 	top:16px;
-	font-family:Roboto;
 	text-align:left;
 	font-size:14px;
 	letter-spacing:0;
@@ -282,7 +274,6 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Inter;
 	text-align:left;
 	font-size:12px;
 	letter-spacing:5;
@@ -383,7 +374,6 @@
 	position:absolute;
 	left:190px;
 	top:1px;
-	font-family:Inter;
 	text-align:left;
 	font-size:12px;
 	letter-spacing:5;
@@ -402,7 +392,6 @@
 	position:absolute;
 	left:867.3515625px;
 	top:144px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -414,7 +403,6 @@
 	position:absolute;
 	left:867.3515625px;
 	top:210px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -426,7 +414,6 @@
 	position:absolute;
 	left:867.3515625px;
 	top:273px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -438,7 +425,6 @@
 	position:absolute;
 	left:152.3515625px;
 	top:273px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -450,7 +436,6 @@
 	position:absolute;
 	left:38.3515625px;
 	top:273px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -462,7 +447,6 @@
 	position:absolute;
 	left:152.07904052734375px;
 	top:144px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -474,7 +458,6 @@
 	position:absolute;
 	left:152.07904052734375px;
 	top:80px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -486,7 +469,6 @@
 	position:absolute;
 	left:38.3515625px;
 	top:210px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -498,18 +480,9 @@
 	position:absolute;
 	left:38.3515625px;
 	top:144px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
-}
-.e854_979 { 
-	background-color:rgba(217.0000022649765, 213.00000250339508, 236.00000113248825, 1);
-	width:714.59375px;
-	height:0.5281178951263428px;
-	position:absolute;
-	left:9.094947017729282e-13px;
-	top:45.697265625px;
 }
 .e831_674 { 
 	background-color:rgba(217.0000022649765, 213.00000250339508, 236.00000113248825, 1);
@@ -518,14 +491,6 @@
 	position:absolute;
 	left:9.094947017729282e-13px;
 	top:250px;
-}
-.e854_974 { 
-	background-color:rgba(217.0000022649765, 213.00000250339508, 236.00000113248825, 1);
-	width:714.59375px;
-	height:0.5281178951263428px;
-	position:absolute;
-	left:9.094947017729282e-13px;
-	top:11.9619140625px;
 }
 .e854_975 { 
 	background-color:rgba(217.0000022649765, 213.00000250339508, 236.00000113248825, 1);
@@ -550,7 +515,6 @@
 	position:absolute;
 	left:867.3515625px;
 	top:80px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -562,7 +526,6 @@
 	position:absolute;
 	left:152.07904052734375px;
 	top:210px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -574,7 +537,6 @@
 	position:absolute;
 	left:38.3515625px;
 	top:80px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -626,7 +588,6 @@
 	position:absolute;
 	left:899.24072265625px;
 	top:20px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -638,7 +599,6 @@
 	position:absolute;
 	left:311.8512878417969px;
 	top:18.841064453125px;
-	font-family:Inter;
 	text-align:left;
 	font-size:16px;
 	letter-spacing:5;
@@ -650,7 +610,6 @@
 	position:absolute;
 	left:36.24072265625px;
 	top:20px;
-	font-family:Inter;
 	text-align:left;
 	font-size:15px;
 	letter-spacing:5;
@@ -677,7 +636,6 @@
 	position:absolute;
 	left:10px;
 	top:10px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:48px;
 	letter-spacing:0;
@@ -710,7 +668,6 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:justified;
 	font-size:17px;
 	letter-spacing:0;
@@ -767,7 +724,6 @@
 	position:absolute;
 	left:0px;
 	top:5.5px;
-	font-family:Montserrat;
 	text-align:justified;
 	font-size:17px;
 	letter-spacing:0;
@@ -848,7 +804,6 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Roboto;
 	text-align:left;
 	font-size:14px;
 	letter-spacing:0;
@@ -861,7 +816,6 @@
 	position:absolute;
 	left:0px;
 	top:29.015625px;
-	font-family:Roboto;
 	text-align:left;
 	font-size:32px;
 	letter-spacing:0;
@@ -878,6 +832,8 @@
 	border-top-right-radius:16px;
 	border-bottom-left-radius:16px;
 	border-bottom-right-radius:16px;
+	border:1px solid;
+	border-color: #E8E8E8;
 }
 .1081_4455 { 
 	border:2px solid rgba(231.62500709295273, 231.62500709295273, 231.62500709295273, 1);
@@ -910,7 +866,6 @@
 	position:absolute;
 	left:50px;
 	top:0px;
-	font-family:Inter;
 	text-align:left;
 	font-size:21px;
 	letter-spacing:0;
@@ -923,7 +878,6 @@
 	position:absolute;
 	left:50px;
 	top:27px;
-	font-family:Inter;
 	text-align:left;
 	font-size:13px;
 	letter-spacing:0.800000011920929;
@@ -949,14 +903,12 @@
 	border-bottom-right-radius:16px;
 }
 .e1081_4462 { 
-	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
 	color:rgba(255, 255, 255, 1);
 	width:52px;
 	height:20px;
 	position:absolute;
 	left:20px;
 	top:15px;
-	font-family:Inter;
 	text-align:left;
 	font-size:14px;
 	letter-spacing:0;
@@ -976,7 +928,6 @@
 	position:absolute;
 	left:20px;
 	top:15px;
-	font-family:Inter;
 	text-align:left;
 	font-size:14px;
 	letter-spacing:0;
@@ -996,7 +947,6 @@
 	position:absolute;
 	left:20px;
 	top:15px;
-	font-family:Inter;
 	text-align:left;
 	font-size:14px;
 	letter-spacing:0;
@@ -1020,14 +970,13 @@
 	position:absolute;
 	left:20px;
 	top:15px;
-	font-family:Inter;
 	text-align:left;
 	font-size:14px;
 	letter-spacing:0;
 	line-height:px;
 }
 .e1081_4206 { 
-	width:1440px;
+	width:100%;
 	height:429px;
 	position:absolute;
 	left:0px;
@@ -1035,7 +984,7 @@
 }
 .e1081_4207 { 
 	background-color:rgba(249.6875050663948, 249.900004863739, 255, 1);
-	width:1440px;
+	width:100%;
 	height:429px;
 	position:absolute;
 	left:0px;
@@ -1062,7 +1011,6 @@
 	position:absolute;
 	left:0px;
 	top:138px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1290,7 +1238,6 @@
 	position:absolute;
 	left:10px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:26px;
 	letter-spacing:0;
@@ -1309,7 +1256,6 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1321,7 +1267,6 @@
 	position:absolute;
 	left:0px;
 	top:34px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1333,7 +1278,6 @@
 	position:absolute;
 	left:0px;
 	top:68px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1407,7 +1351,6 @@
 	position:absolute;
 	left:21px;
 	top:21px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:13px;
 	letter-spacing:0;
@@ -1426,7 +1369,6 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:26px;
 	letter-spacing:0;
@@ -1445,7 +1387,6 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1457,7 +1398,6 @@
 	position:absolute;
 	left:0px;
 	top:34px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1469,7 +1409,6 @@
 	position:absolute;
 	left:0px;
 	top:68px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1481,7 +1420,6 @@
 	position:absolute;
 	left:0px;
 	top:102px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1493,7 +1431,6 @@
 	position:absolute;
 	left:0px;
 	top:136px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1512,7 +1449,6 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:26px;
 	letter-spacing:0;
@@ -1531,7 +1467,6 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1543,7 +1478,6 @@
 	position:absolute;
 	left:0px;
 	top:34px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;
@@ -1555,7 +1489,6 @@
 	position:absolute;
 	left:0px;
 	top:68px;
-	font-family:Montserrat;
 	text-align:left;
 	font-size:18px;
 	letter-spacing:0;

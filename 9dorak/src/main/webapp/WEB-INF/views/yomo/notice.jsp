@@ -71,9 +71,7 @@
 					class="e844_610">[공지] 등급혜택 및 기준 변경 안내</span><span class="e844_609">[구도락
 					챌린지 1기] 결과 발표</span><span class="e844_608">002</span><span
 					class="e844_607">003</span>
-				<div class="e854_979"></div>
 				<div class="e831_674"></div>
-				<div class="e854_974"></div>
 				<div class="e854_975"></div>
 				<div class="e831_673"></div>
 				<span class="e831_672">2023/10/30</span><span class="e831_671">[공지]
