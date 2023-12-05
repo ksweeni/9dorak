@@ -32,8 +32,8 @@ public class ProVO {
 	int pro_nat; //나트륨
 	int pro_sugar; //당류
 	int pro_cal; //칼로리
-	int pro_weight; // 중량
-	String ingre_no;// 카테고리 번호
-	String allerCheckList[]; //알러지체크리스트
+	int pro_weight; //중량
+	String ingre_no; //카테고리 번호
+	String order_type; //정렬 
 	
 }

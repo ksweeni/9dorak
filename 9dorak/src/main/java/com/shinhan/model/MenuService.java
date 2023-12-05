@@ -30,8 +30,12 @@ public class MenuService {
 		return dao.selectOrderbyLike();
 	}
 
-	public List<ProVO> searchAllergyCheck(String aller_type) {
-		return dao.searchAllergyCheck(aller_type);
+	public List<ProVO> searchAllergyCheck(String pro_aller) {
+		return dao.searchAllergyCheck(pro_aller);
+	}
+
+	public List<ProVO> selectAllOrder(ProVO pro) {
+		return dao.selectAllOrder(pro);
 	}
 
 //	public int insertMember(DoranVO doran) {

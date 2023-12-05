@@ -43,8 +43,13 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 
-	public List<ProVO> searchAllergyCheck(String aller_type) {
-		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck", aller_type);
+	public List<ProVO> searchAllergyCheck(String pro_aller) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck", pro_aller);
+		return plist;
+	}
+
+	public List<ProVO> selectAllOrder(ProVO pro) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectAllOrder", pro);
 		return plist;
 	}
 

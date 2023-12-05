@@ -307,9 +307,7 @@
 				type : 'GET',
 				data : {
 					pro_name : $('#searchTxt').val(), //검색내용
-					ingre_no : chkCtgr, //카테고리선택
-					allerCheckList : allerListJson
-				//알러지
+					ingre_no : chkCtgr //카테고리선택
 				},
 				success : function(data) {
 					//alert("완료!");
@@ -350,7 +348,7 @@
 				type : 'GET',
 				data : {
 					//알러지타입 검색
-					aller_type : $(this).val()
+					pro_aller : $(this).val()
 				},
 				success : function(data) {
 					$('.foods').html(data);
@@ -363,13 +361,17 @@
 
 		//정렬
 		$(".filter button").on("click", function() {
-
+			
+			var a = $("button.selected");
+			
+			//alert(a.val());
 			$.ajax({
 				url : "${cpath}/menu/searchOrderby.do",
 				type : 'GET',
 				data : {
 					//필터타입 검색
-					order_type : $(this).text()
+					order_type : $(this).text(),
+					pro_aller : a.val()
 				},
 				success : function(data) {
 					$('.foods').html(data);
