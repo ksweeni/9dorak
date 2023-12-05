@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.shinhan.dto.SubdetailVO;
 import com.shinhan.model.SubDetailService;
 
@@ -26,5 +25,12 @@ public class SubDetailController {
 		List<SubdetailVO> subdetaillist = subdetailService.selectAll();
 		model.addAttribute("subdetaillist", subdetaillist);
 		return "sub/subdetail";
+	}
+	
+	@GetMapping("subdetail2.do")
+	public String subdetail2(Model model) {
+		List<SubdetailVO> subdetaillist = subdetailService.selectAll();
+		model.addAttribute("subdetaillist", subdetaillist);
+		return "sub/subdetail2";
 	}
 }
