@@ -712,6 +712,12 @@
   letter-spacing: 0.6px;
   line-height: normal;
   white-space: nowrap;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(../images/icon_dorandoran.png);
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  padding: 0 7px 0 50px;
 }
 
 .screen .tab-2 {
@@ -742,6 +748,12 @@
   letter-spacing: 0.6px;
   line-height: normal;
   white-space: nowrap;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(../images/icon_mytext.png);
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  padding: 0 7px 0 50px;
 }
 
 .screen .text-wrapper-20 {
@@ -1201,4 +1213,73 @@
 	position: relative;
     display: flex;
     top: -40px;
+}
+
+.text-wrapper-18:active,
+.text-wrapper-18:focus,
+.text-wrapper-19:active,
+.text-wrapper-19:focus{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.orderbyBtn{
+	margin-bottom: 20px;
+}
+
+.orderby_latest,
+.orderby_views,
+.orderby_likes{
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+	color: #808080;
+	font-size: 1.2rem
+}
+
+.orderby_latest:active,
+.orderby_latest:focus,
+.orderby_latest:active,
+.orderby_latest:focus,
+.orderby_views:active,
+.orderby_views:focus,
+.orderby_views:active,
+.orderby_views:focus,
+.orderby_likes:active,
+.orderby_likes:focus,
+.orderby_likes:active,
+.orderby_likes:focus{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #FFC670;
+}
+
+.doran-context-title{
+	width: 99%;
+	height: 20%;
+	border-radius: 10px;
+	background-color: #F9F9F9;
+	margin-bottom: 2%;
+}
+
+.doran-card {
+	overflow-x: hidden;
+    overflow-y: auto; /* 내용이 넘칠 때 스크롤이 나타남 */
+    max-height: 100vh; /* 최대 높이를 지정하여 스크롤이 나타날 수 있도록 함 */
+    width: 705px;
+}
+
+.doran-card::-webkit-scrollbar {
+    width: 10px; /* 스크롤 바의 너비 */
+}
+
+.doran-card::-webkit-scrollbar-thumb {
+    background-color: #808080; /* 스크롤 바의 색상 */
+    border-radius: 10px; /* 스크롤 바의 모서리 둥글기 */
+}
+
+.doran-card::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* 스크롤 바 트랙의 색상 */
 }

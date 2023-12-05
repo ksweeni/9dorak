@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 
 @Service
@@ -29,6 +30,11 @@ public class MyPageService {
 		// TODO Auto-generated method stub
 		return dao.deleteMember(mem_id);
 		
+	}
+
+	public List<MemDeliveryVO> getDelivery(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.getDelivery(mem_id);
 	}
 
 
