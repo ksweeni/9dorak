@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.shinhan.dto.SubDetailVO;
+import com.shinhan.dto.SubdetailVO;
 
 @Repository
 public class SubDetailDAOMybatis {
@@ -18,8 +18,8 @@ public class SubDetailDAOMybatis {
 	Logger logger = LoggerFactory.getLogger(SubDetailDAOMybatis.class);
 	String NAMESPACE = "net.firstzone.subdetail.";
 	
-	public List<SubDetailVO> selectAll() {
-		List<SubDetailVO> subdetaillist = sqlSession.selectList(NAMESPACE + "selectAll");
+	public List<SubdetailVO> selectAll() {
+		List<SubdetailVO> subdetaillist = sqlSession.selectList(NAMESPACE + "selectAll");
 		System.out.println(subdetaillist);
 		logger.info("selectAll :  {}", subdetaillist.size());
 		return subdetaillist;

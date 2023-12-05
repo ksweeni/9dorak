@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.shinhan.dto.SubDetailVO;
+import com.shinhan.dto.SubdetailVO;
 import com.shinhan.model.SubDetailService;
 
 @Controller
@@ -23,7 +23,7 @@ public class SubDetailController {
 
 	@GetMapping("subdetail.do")
 	public String subdetail(Model model) {
-		List<SubDetailVO> subdetaillist = subdetailService.selectAll();
+		List<SubdetailVO> subdetaillist = subdetailService.selectAll();
 		model.addAttribute("subdetaillist", subdetaillist);
 		return "sub/subdetail";
 	}
