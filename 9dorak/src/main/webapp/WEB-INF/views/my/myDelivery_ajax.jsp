@@ -13,6 +13,7 @@ String contextPath = request.getContextPath();
 <title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .128_186 {
@@ -926,15 +927,14 @@ String contextPath = request.getContextPath();
 		<div class=e128_198>
 
 			<div class="e128_218">
-				<c:forEach var="item" items="${dlist}">
+				<c:forEach var="item" items="${dlist}" >
 					<div class="e126_328">
 						<div class="e126_327">
 							<div class="e126_320">
 								<span class="e126_321">배송지 주소</span> <span class="e126_322">${item.mem_delname}</span>
-								<span class="e126_325">${item.mem_addr}</span> <span
-									class="e126_324">배송지명</span>
+								<span class="e126_325">${mem_addr}</span> <span class="e126_324">배송지명</span>
 							</div>
-							<div class="e128_274">
+							<div class="e128_274" onclick="deleteItem(${item.mem_delname});">
 								<span class="e128_275">삭제</span>
 							</div>
 							<div class="e128_276">
@@ -942,7 +942,7 @@ String contextPath = request.getContextPath();
 								<a class="e128_277" href="#none"
 									onclick="window.open('${cpath}/my/selectDelivery.do','new','scrollbars=yes,resizable=no width=500 height=200, left=0,top=0');return false">수정</a>
 
-							</div>	
+							</div>
 						</div>
 					</div>
 				</c:forEach>
@@ -1033,8 +1033,12 @@ String contextPath = request.getContextPath();
 
 		})
 	}) // 내정보 수정 ajax
-	
-	$(".e128_274").on("click",function(){
+
+	function deleteItem(delname) {
+		alert(delname);
+	}
+	/* $(".e128_274").on("click",function(){
+	alert($)
 		$.ajax({
 
 			url : "${cpath}/my/deleteDelivery.do",
@@ -1044,6 +1048,7 @@ String contextPath = request.getContextPath();
 			}
 
 		})
-	})
+	}) */
 </script>
+
 </html>

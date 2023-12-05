@@ -107,6 +107,6 @@ public class MyPageController {
 	public String deleteDelivery(Model model, HttpSession session ) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 //		int result =  mService.deleteDelivery(loginmem.getMem_id(),);
-		return "my/deleteDelivery";
+		return "my/myDelivery_ajax";
 	}
 }
