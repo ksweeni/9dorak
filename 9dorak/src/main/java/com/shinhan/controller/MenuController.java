@@ -65,13 +65,21 @@ public class MenuController {
 	
 	//정렬
 	@GetMapping("searchOrderby.do")
-	public String searchOrderby(Model model, @RequestParam("order_type") String order_type) {
-		//System.out.println(order_type);
-		if(order_type.equals("신상품 순")) {
-			List<ProVO> slist = mService.selectOrderbyNew();
-			//System.out.println(slist);
+	public String searchOrderby(Model model, ProVO pro) {
+		//System.out.println(pro.getOrder_type());
+		//System.out.println(pro.getPro_aller());
+		//@RequestParam("order_type") String order_type
+		if(pro.getPro_aller() != null && pro.getOrder_type() != null) {
+			List<ProVO> slist = mService.selectAllOrder(pro);
 			model.addAttribute("slist", slist);
-		}else if(order_type.equals("인기순")) {
+			//System.out.println(slist);
+			return "menu/menu_ajax";
+		}
+		if(pro.getOrder_type().equals("신상품 순")) {
+			List<ProVO> slist = mService.selectOrderbyNew();
+			model.addAttribute("slist", slist);
+			//System.out.println(slist);
+		}else if(pro.getOrder_type().equals("인기순")) {
 			List<ProVO> slist = mService.selectOrderbyLike();
 			model.addAttribute("slist", slist);
 		}
@@ -80,9 +88,10 @@ public class MenuController {
 	}
 	
 	@GetMapping("searchAllergyCheck.do")
-	public String searchAllergyCheck(Model model, @RequestParam("aller_type") String aller_type) {
-		//System.out.println(aller_type);
-		List<ProVO> slist = mService.searchAllergyCheck(aller_type);
+	public String searchAllergyCheck(Model model, ProVO pro) {
+		//System.out.println(pro_aller);
+		//@RequestParam("pro_aller") String pro_aller
+		List<ProVO> slist = mService.searchAllergyCheck(pro.getPro_aller());
 		model.addAttribute("slist", slist);
 		
 		return "menu/menu_ajax";
