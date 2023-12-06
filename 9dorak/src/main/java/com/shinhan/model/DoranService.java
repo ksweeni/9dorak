@@ -26,6 +26,10 @@ public class DoranService {
 		return dao.selectAllByView();
 	}
 	
+	public List<DoranVO> selectAllByDlike(){
+		return dao.selectAllByDlike();
+	}
+	
 	public int insertDoran(DoranVO doran) {
 		return dao.insertDoran(doran);
 	}
@@ -41,6 +45,21 @@ public class DoranService {
 	public List<CommentVO> selectAllCommentAbout(int doranNo) {
         return dao.selectAllCommentAbout(doranNo);
     }
+
+
+	public List<DoranVO> selectAllForMe(String memId) {
+		return dao.selectAllForMe(memId);
+	}
+
+	public List<DoranVO> selectAllByViewForMe(String memId) {
+		return dao.selectAllByViewForMe(memId);
+	}
+
+	public List<DoranVO> selectAllByDlikeForMe(String memId) {
+		return dao.selectAllByDlikeForMe(memId);
+	}
+
+
 
 	
 //

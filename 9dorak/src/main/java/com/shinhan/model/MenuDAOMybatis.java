@@ -23,16 +23,35 @@ public class MenuDAOMybatis {
 	public List<ProVO> selectAll() {
 		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectAll");
 		//System.out.println(plist);
-		logger.info("selectAll :  {}", plist.size());
+		//logger.info("selectAll :  {}", plist.size());
 		return plist;
 	}
 	
-	public List<ProVO> selectSearchPro(String proName) {
-		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectSearchPro",proName);
-		logger.info(plist.toString());
+	public List<ProVO> selectSearchPro(ProVO pro) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectSearchPro",pro);
+		//logger.info(plist.toString());
 		return plist;	
 	}
-	
+
+	public List<ProVO> selectOrderbyNew() {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectOrderbyNew");
+		return plist;
+	}
+
+	public List<ProVO> selectOrderbyLike() {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectOrderbyLike");
+		return plist;
+	}
+
+	public List<ProVO> searchAllergyCheck(String pro_aller) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck", pro_aller);
+		return plist;
+	}
+
+	public List<ProVO> selectAllOrder(ProVO pro) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectAllOrder", pro);
+		return plist;
+	}
 
 //	public int insertDoran(DoranVO doran) {
 //		System.out.println("inserting :"+doran);

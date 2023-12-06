@@ -8,27 +8,59 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.shinhan.dto.DoranVO;
+import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 
-@Repository 
+@Repository
 public class MyPageDAOMybatis {
 
 	@Autowired
-	SqlSession sqlSession; 
+	SqlSession sqlSession;
 	Logger logger = LoggerFactory.getLogger(MyPageDAOMybatis.class);
 	String NAMESPACE = "net.firstzone.myPage.";
+
 	public MemVO getMember(String login_id) {
 		// TODO Auto-generated method stub
 		MemVO mem = sqlSession.selectOne(NAMESPACE + "getMember", login_id);
 		return mem;
 	}
+
 	public int updateMember(MemVO mem) {
-		int result =  sqlSession.update(NAMESPACE + "updateMember", mem);
+		int result = sqlSession.update(NAMESPACE + "updateMember", mem);
 		return result;
 	}
+
 	public int deleteMember(String mem_id) {
 		// TODO Auto-generated method stub
-		int result =  sqlSession.delete(NAMESPACE + "deleteMember", mem_id);
+		int result = sqlSession.delete(NAMESPACE + "deleteMember", mem_id);
+		return result;
+	}
+
+	public List<MemDeliveryVO> getDelivery(String mem_id) {
+		List<MemDeliveryVO> dlist = sqlSession.selectList(NAMESPACE + "getDelivery", mem_id);
+		return dlist;
+	}
+
+	public int deleteDelivery(MemDeliveryVO memdel) {
+		int result = sqlSession.delete(NAMESPACE + "deleteDelivery", memdel);
+		return result;
+	}
+
+	public int insertDelivery(MemDeliveryVO memDel) {
+		// TODO Auto-generated method stub
+		int result = sqlSession.insert(NAMESPACE + "insertDelivery", memDel);
+		return result;
+	}
+
+	public int selectDelivery(MemDeliveryVO memDel) {
+		int result = sqlSession.selectOne(NAMESPACE + "selectDelivery", memDel);
+		return result;
+	}
+
+	public int updateDelivery(MemDeliveryVO memDel) {
+		System.out.println(memDel);
+		int result = sqlSession.update(NAMESPACE + "updateDelivery", memDel);
 		return result;
 	}
 

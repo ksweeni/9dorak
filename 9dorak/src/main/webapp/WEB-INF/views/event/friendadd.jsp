@@ -2,15 +2,17 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/friendaddStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/friendaddStyle.css?e" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 	<div class="screen">
@@ -146,18 +148,42 @@
 				</div>
 			</div>
 		</div>
+
+
 		<div class=e62_466>
+
 			<div class=e62_325>
 				<div class=e62_326>
 					<p class="e62_327">친구 추가로 혜택을 함께 누려보세요</p>
 					<p class="e62_328">지인이나 가족 목록에 사람을 추가해보세요! 회원 코드를 복사하고 등록하면</p>
 				</div>
 			</div>
-			<span class="e62_465">두 분 모두에게 900P 를 드려요 !</span>
+			<span class="e62_465">두 분 모두에게 <span class="pointer">900P</span>
+				를 드려요 !
+			</span>
 		</div>
 		<div class=e63_173>
-			<span class="e62_373">추가한 친구</span><span class="e62_374">추가된 친구</span>
+			<span class="e62_373">추가한 친구</span><span class="e62_374">추가된
+				친구</span>
 		</div>
 	</div>
+	<script>
+		$(document).ready(function() {
+			function fadeInSequentially(elements, interval) {
+				var index = 0;
+				var intervalId = setInterval(function() {
+					elements.eq(index).addClass("active");
+					index++;
+
+					if (index === elements.length) {
+						clearInterval(intervalId);
+					}
+				}, interval);
+			}
+
+			var elements = $(".e62_326, .e63_173, .e62_465");
+			fadeInSequentially(elements, 500); // 각 요소가 1초 간격으로 나타납니다.
+		});
+	</script>
 </body>
 </html>

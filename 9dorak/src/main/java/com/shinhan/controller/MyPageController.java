@@ -2,6 +2,7 @@ package com.shinhan.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -15,8 +16,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shinhan.dto.MemDeliveryVO;
+import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.model.MyPageService;
 
@@ -45,7 +49,7 @@ public class MyPageController {
 	public String logut(Model model, HttpSession session) {
 		session.invalidate();
 		return "home";
-	}
+	}	
 
 	@GetMapping("myMenu.do")
 	public String myMenu(Model model, HttpSession session) {
@@ -79,5 +83,67 @@ public class MyPageController {
 			session.invalidate();			
 		}
 		return "home";
+	}
+	@GetMapping("myDelivery.do")
+	public String myDelivery(Model model, HttpSession session ) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		MemVO mem = mService.getMember(loginmem.getMem_id());
+		List<MemDeliveryVO> dlist = mService.getDelivery(loginmem.getMem_id());
+		model.addAttribute("mem", mem);
+		model.addAttribute("dlist", dlist);
+		
+		return "my/myDelivery_ajax";
+	}
+	
+	
+	// 팝업으로 띄우기
+	@GetMapping("selectDelivery.do")
+	public String selectDelivery(Model model, HttpSession session , MemDeliveryVO memDel) {
+		
+//		System.out.println(memDel.getMem_delname());
+		
+		model.addAttribute("memDel", memDel);
+		
+		////// 여기서 아무값이나 넘겨주자 넘겨서 c:if 로 나누자
+		
+		return "my/selectDelivery";
+	}
+	
+	@PostMapping("deleteDelivery.do")
+	public String deleteDelivery(Model model, HttpSession session, MemDeliveryVO memdel ) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		memdel.setMem_id(loginmem.getMem_id());
+		int result =  mService.deleteDelivery(memdel);
+		MemVO mem = mService.getMember(loginmem.getMem_id());
+		List<MemDeliveryVO> dlist = mService.getDelivery(loginmem.getMem_id());
+		model.addAttribute("mem", mem);
+		model.addAttribute("dlist", dlist);
+		return "my/myDelivery_ajax";
+	}
+	
+	@RequestMapping(value = "insertDelivery.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String insertDelivery(Model model, HttpSession session, MemDeliveryVO memDel) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		memDel.setMem_id(loginmem.getMem_id());
+		int count = mService.selectDelivery(memDel);
+		if( count > 0) {
+			return "이미 등록된 배송지명입니다.";
+		}
+		int result = mService.insertDelivery(memDel);
+//		System.out.println(result);
+		return "my/myDelivery_ajax";
+	}
+	@RequestMapping(value = "updateDelivery.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String updateDelivery(Model model, HttpSession session, MemDeliveryVO memDel) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		memDel.setMem_id(loginmem.getMem_id());
+		int result = mService.updateDelivery(memDel);
+		if( result > 0) {
+			return "수정완료";
+		}
+
+		return "my/myDelivery_ajax";
 	}
 }

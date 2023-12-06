@@ -1,7 +1,6 @@
 package com.shinhan.controller;
 
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,17 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.shinhan.dto.DoranVO;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shinhan.dto.ProVO;
-import com.shinhan.model.DoranService;
 import com.shinhan.model.MenuService;
 
 
@@ -41,14 +37,28 @@ public class MenuController {
 		return "menu/menu";
 	}
 	
+	// 리뷰 사진 및 동영상 모아보기
+	@GetMapping("menuMediaReview.do")
+	public String menuMediaReview(Model model) {
+		return "menu/menuMediaReviews";
+	}
+	
+	//카테고리+검색
 	@GetMapping("searchPro.do")
 	//@ResponseBody
-	public String searchPro(Model model,@RequestParam Map<String, Object> map) {
+	public String searchPro(Model model,@RequestParam Map<String, Object> map) throws JsonMappingException, JsonProcessingException {
 		
-		System.out.println((String)map.get("pro_name"));
-		List<ProVO> slist = mService.selectSearchPro((String)map.get("pro_name"));
+		ObjectMapper mapper = new ObjectMapper();
+		ProVO pro = new ProVO();
+		
+		//System.out.println("검색어 :"+(String)map.get("pro_name"));
+		//System.out.println("카테고리 :"+(String)map.get("ingre_no"));
+		pro.setPro_name((String)map.get("pro_name"));
+		pro.setIngre_no((String)map.get("ingre_no"));
+		
+		List<ProVO> slist = mService.selectSearchPro(pro);
 		model.addAttribute("slist", slist);
-		System.out.println(slist.toString());
+		//System.out.println("최종 조회리스트 :"+slist.toString());
 		
 		return "menu/menu_ajax";
 	}
@@ -59,5 +69,38 @@ public class MenuController {
 		return "menu/menuSpecificReview";
 	}
 	
+	//정렬
+	@GetMapping("searchOrderby.do")
+	public String searchOrderby(Model model, ProVO pro) {
+		//System.out.println(pro.getOrder_type());
+		//System.out.println(pro.getPro_aller());
+		//@RequestParam("order_type") String order_type
+		if(pro.getPro_aller() != null && pro.getOrder_type() != null) {
+			List<ProVO> slist = mService.selectAllOrder(pro);
+			model.addAttribute("slist", slist);
+			//System.out.println(slist);
+			return "menu/menu_ajax";
+		}
+		if(pro.getOrder_type().equals("신상품 순")) {
+			List<ProVO> slist = mService.selectOrderbyNew();
+			model.addAttribute("slist", slist);
+			//System.out.println(slist);
+		}else if(pro.getOrder_type().equals("인기순")) {
+			List<ProVO> slist = mService.selectOrderbyLike();
+			model.addAttribute("slist", slist);
+		}
+		
+		return "menu/menu_ajax";
+	}
+	
+	@GetMapping("searchAllergyCheck.do")
+	public String searchAllergyCheck(Model model, ProVO pro) {
+		//System.out.println(pro_aller);
+		//@RequestParam("pro_aller") String pro_aller
+		List<ProVO> slist = mService.searchAllergyCheck(pro.getPro_aller());
+		model.addAttribute("slist", slist);
+		
+		return "menu/menu_ajax";
+	}
 	
 }

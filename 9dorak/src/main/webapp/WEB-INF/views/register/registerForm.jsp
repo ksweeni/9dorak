@@ -30,12 +30,14 @@ String contextPath = request.getContextPath();
 	width:100%;
 	height:2373px;
 	position:absolute;
+	
 }
 .e106_320 { 
 	width:1079px;
 	height:56px;
 	position:absolute;
-	left:230px;
+	left:50%;
+	transform: translateX(-50%);
 	top:85px;
 }
 .e106_321 { 
@@ -169,8 +171,9 @@ String contextPath = request.getContextPath();
 	width:607px;
 	height:360px;
 	position:absolute;
-	left:432px;
-	top:440px;
+	left:50%;
+	transform: translateX(-50%);
+	top:313px;
 }
 .e106_291 { 
 	width:607px;
@@ -220,8 +223,9 @@ String contextPath = request.getContextPath();
 	width:617px;
 	height:928.960205078125px;
 	position:absolute;
-	left:473px;
-	top:865px;
+	left:50%;
+	transform: translateX(-50%);
+	top:700px;
 }
 .e106_421 { 
 	width:580px;
@@ -495,7 +499,8 @@ String contextPath = request.getContextPath();
 	width:616px;
 	height:198px;
 	position:absolute;
-	left:1px;
+	left:50%;
+	transform: translateX(-50%);
 	top:633px;
 }
 .e106_386 { 
@@ -560,8 +565,9 @@ String contextPath = request.getContextPath();
 	width:300px;
 	height:77.960205078125px;
 	position:absolute;
-	left:122px;
-	top:851px;
+	left:50%;
+	transform: translateX(-50%);
+	top:880px;
 }
 .e106_395 { 
 	box-shadow:0px 10px 30px rgba(196.00000351667404, 80.00000283122063, 17.00000088661909, 0.5099999904632568);
@@ -589,11 +595,12 @@ String contextPath = request.getContextPath();
 	letter-spacing:3;
 }
 .e108_189 { 
-	width:393px;
+	width:300px;
 	height:30px;
 	position:absolute;
-	left:595px;
-	top:1845px;
+	left:50%;
+	transform: translateX(-50%);
+	top:1700px;
 }
 .e108_188 { 
 	color:rgba(0, 0, 0, 1);
@@ -622,7 +629,8 @@ String contextPath = request.getContextPath();
 	width:100%;
 	height:429px;
 	position:absolute;
-	left:0px;
+	left:50%;
+	transform: translateX(-50%);
 	top:1944px;
 }
 .e106_462 { 
@@ -630,7 +638,8 @@ String contextPath = request.getContextPath();
 	width:100%;
 	height:429px;
 	position:absolute;
-	left:0px;
+	left:50%;
+	transform: translateX(-50%);
 	top:0px;
 }
 .e106_463 { 
@@ -934,9 +943,11 @@ a{
 					href="${cpath}/register/registerType.do" class="e106_494">회원가입</a>
 			</div>
 		</div>
-		<div class=e106_334>
+	
+		
+		<!-- <div class=e106_334>
 			<span class="e106_335">아이를 위한 9일의 약속 <span style="color: orange;">구도락</span></span>
-		</div>
+		</div> -->
 		<div class=e106_348>
 			<div class="e106_291"></div>
 			<span class="e106_193">회원가입</span>
@@ -1006,8 +1017,10 @@ a{
 			<a  href="${cpath }/login/loginForm.do" class="e108_188">로그인하기</a><span class="e108_187">이미
 				계정이 있나요? </span>
 		</div>
+
 		<div class=e106_461>
 			<div class="e106_462"></div>
+
 			<div class=e106_463>
 				<div class=e106_464>
 					<span class="e106_465">Lorem ipsum dolor sit amet,

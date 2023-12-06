@@ -18,16 +18,30 @@ public class MenuService {
 		return dao.selectAll();
 	}
 	
-	public List<ProVO> selectSearchPro(String proName) {
-		return dao.selectSearchPro(proName);
+	public List<ProVO> selectSearchPro(ProVO pro) {
+		return dao.selectSearchPro(pro);
 	}
-	
+
+	public List<ProVO> selectOrderbyNew() {
+		return dao.selectOrderbyNew();
+	}
+
+	public List<ProVO> selectOrderbyLike() {
+		return dao.selectOrderbyLike();
+	}
+
+	public List<ProVO> searchAllergyCheck(String pro_aller) {
+		return dao.searchAllergyCheck(pro_aller);
+	}
+
+	public List<ProVO> selectAllOrder(ProVO pro) {
+		return dao.selectAllOrder(pro);
+	}
 
 //	public int insertMember(DoranVO doran) {
 //		return dao.insertDoran(doran);
 //	}
 
-	
 //
 //	@Transactional // ��� �����ϰų� ��� �����ϰų�
 //	public MemVO updateTransViewCount(int bno) {
@@ -48,8 +62,5 @@ public class MenuService {
 //	public int delete(int bno) {
 //		return dao.delete(bno);
 //	}
-
-
-
 
 }

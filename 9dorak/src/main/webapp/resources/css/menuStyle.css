@@ -1,74 +1,82 @@
 @charset "UTF-8";
 
+/* top 메뉴 클릭 시 스타일 */
+.clicked-category {
+	transform: scale(1.1); /* Increase the size */
+	text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
 /* "자세히 볼게요" 버튼 스타일 */
 .screen .frame {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #F48E28;
-  border-radius: 8px;
-  transition: background-color 0.3s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #F48E28;
+	border-radius: 8px;
+	transition: background-color 0.3s;
 }
 
 .screen .frame:hover {
-  background-color: #FFA94D; /* 호버 시 frame의 배경색 변경 */
+	background-color: #FFA94D; /* 호버 시 frame의 배경색 변경 */
 }
 
 .screen .view-details-btn {
-  border: none;
-  background-color: transparent;
-  color: #FFF;
-  font-size: 1rem;
-  cursor: pointer;
+	text-decoration: none;
+	border: none;
+	background-color: transparent;
+	color: #FFF;
+	font-size: 1rem;
+	cursor: pointer;
 }
 
 .check-div {
-  display: inline-block;
+	display: inline-block;
 }
 
-.allergy-check {
-  display: none; /* Hide the actual checkbox */
+.allergy-button {
+	width: 130px;
+	font-size: 15px;
+	font-weight: 600;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 30px;
+	border: 1px solid #F48E28;
+	background: #F48E28;
+	color: #FFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	margin: 5px;
+	transition: background-color 0.3s;
 }
 
-.allergy-check + label {
-  position: relative;
-  width: 130px;
-  height: 56px;
-  flex-shrink: 0;
-  border-radius: 30px;
-  border: 1px solid #F48E28;
-  background: #FFF;
-  color: #F48E28;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  margin: 5px; /* Add margin for spacing between checkboxes */
-  transition: background-color 0.3s; /* Add transition for smooth color change */
-}
-
-.allergy-check:checked + label {
-  background: #F48E28;
-  color: #FFF;
+.allergy-button.selected {
+	background: #FFF;
+	color: #F48E28;
 }
 
 .screen {
 	background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    align-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	align-content: center;
+	align-items: center;
 }
 
 .screen .div {
-	background-color: var(- -white);
-	top:180px;
+	top: 180px;
 	overflow: hidden;
-	width: 1440px;
-	height: 4600px;
+	width: 1450px;
+	height: 4000px;
 	position: relative;
+	right: 4%;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
 }
 
 .screen .menu-and-pagenation {
@@ -183,7 +191,9 @@
 
 .screen .foods {
 	display: flex;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 1440px;
 }
 
 .screen .product {
@@ -213,7 +223,7 @@
 	color: #000000;
 	text-align: center;
 	font-size: 1.2rem;
-    font-weight: 600;
+	font-weight: 600;
 }
 
 .screen .frame {
@@ -277,7 +287,7 @@
 	height: 22px;
 	color: #000000;
 	top: 410px;
-    font-weight: 500;
+	font-weight: 500;
 }
 
 .screen .enchilade {
@@ -295,7 +305,7 @@
 	left: 26px;
 	color: #000000;
 	font-size: 1.2rem;
-    font-weight: 600;
+	font-weight: 600;
 }
 
 .screen .img {
@@ -313,7 +323,7 @@
 	height: 22px;
 	color: #000000;
 	top: 410px;
-    font-weight: 500;
+	font-weight: 500;
 }
 
 .screen .gyro-sandwhic {
@@ -341,7 +351,7 @@
 	height: 22px;
 	color: #000000;
 	top: 410px;
-    font-weight: 500;
+	font-weight: 500;
 }
 
 .screen .footer {
@@ -654,14 +664,14 @@
 
 .screen .menu-top-bar {
 	position: absolute;
-    width: 1500px;
-    height: 760px;
-    top: 13px;
+	width: 1500px;
+	height: 760px;
+	top: 13px;
 }
 
 .screen .allergy-bar {
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	 font-weight: 600;
+	font-weight: 600;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -712,9 +722,9 @@
 
 .screen .div-wrapper {
 	display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	position: absolute;
 	width: 602px;
 	height: 68px;
@@ -747,8 +757,8 @@
 
 .screen .overlap-wrapper {
 	display: flex;
-    align-items: center;
-	margin-left:510px;
+	align-items: center;
+	margin-left: 510px;
 	position: absolute;
 	width: 57px;
 	height: 55px;
@@ -763,7 +773,7 @@
 	background-color: #f48e28;
 	border-radius: 27.5px;
 	color: white;
-    border-color: #F48E28;
+	border-color: #F48E28;
 }
 
 .screen .text-wrapper-17 {
@@ -819,8 +829,7 @@
 	height: 36px;
 	font-weight: 500;
 	color: #000000;
-	font-size: 1.1rem
-	text-align: center;
+	font-size: 1.1rem text-align: center;
 	letter-spacing: 0;
 	line-height: normal;
 }
@@ -971,39 +980,33 @@
 	flex: 0 0 auto;
 }
 
-
-.filter .frame-12 .text-wrapper-19,
-.filter .frame-13 .text-wrapper-20 {
-    border: none;
-    background: white;
-    position: relative;
-    font-size: 1.2rem;
-    color: #FFB673;
-    text-align: justify;
-    cursor: pointer;
-    transition: color 0.3s, box-shadow 0.3s; /* 효과를 부드럽게 만들기 위해 트랜지션 추가 */
+.filter .frame-12 .text-wrapper-19, .filter .frame-13 .text-wrapper-20 {
+	border: none;
+	background: white;
+	position: relative;
+	font-size: 1.2rem;
+	color: #FFB673;
+	text-align: justify;
+	cursor: pointer;
+	transition: color 0.3s, box-shadow 0.3s; /* 효과를 부드럽게 만들기 위해 트랜지션 추가 */
 }
 
-
-.filter .frame-12 .text-wrapper-19:hover,
-.filter .frame-12 .text-wrapper-19:active,
-.filter .frame-13 .text-wrapper-20:hover,
-.filter .frame-13 .text-wrapper-20:active {
-    color: coral;
-    font-weight: 600;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+.filter .frame-12 .text-wrapper-19:hover, .filter .frame-12 .text-wrapper-19:active,
+	.filter .frame-13 .text-wrapper-20:hover, .filter .frame-13 .text-wrapper-20:active
+	{
+	color: coral;
+	font-weight: 600;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
-
 
 .screen .text-wrapper-19 {
-    width: fit-content;
-    margin-top: -1px;
+	width: fit-content;
+	margin-top: -1px;
 }
 
-.screen .text-wrapper-19:hover,
-.screen .text-wrapper-19:selected {
-    color: coral;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
+.screen .text-wrapper-19:hover, .screen .text-wrapper-19:selected {
+	color: coral;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
 }
 
 .screen .icons-options {
@@ -1021,7 +1024,7 @@
 }
 
 .screen .text-wrapper-20 {
-	font-size:1.2rem;
+	font-size: 1.2rem;
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;

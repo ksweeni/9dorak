@@ -60,8 +60,8 @@
 	gap: 20px;
 	padding: 20px;
 	position: absolute;
-	top: 738px;
-	left: 40px;
+	top: 60%;
+	left: 10px;
 	border-radius: 5px;
 	overflow: hidden;
 }
@@ -75,7 +75,7 @@
 	padding: 16px 24px 16px 32px;
 	position: relative;
 	flex: 0 0 auto;
-	margin-top: -1px;
+	margin-top: -20px;
 	margin-bottom: -1px;
 	margin-left: -1px;
 	margin-right: -1px;
@@ -124,7 +124,6 @@
 .div-wrapper .p {
 	position: relative;
 	align-self: stretch;
-	font-family: "Inter-Regular", Helvetica;
 	font-weight: 400;
 	color: #00000066;
 	font-size: 12px;
@@ -150,7 +149,6 @@
 .div-wrapper .select-file {
 	position: relative;
 	width: fit-content;
-	font-family: "Inter-Regular", Helvetica;
 	font-weight: 400;
 	color: #0f91d1;
 	font-size: 10px;
@@ -163,7 +161,7 @@
 	position: absolute;
 	width: 700px;
 	height: 80px;
-	top: 1200px;
+	top: 1100px;
 	left: 1px;
 	background-color: #fbfcfd;
 	border-radius: 0px 0px 10px 10px;
@@ -200,7 +198,6 @@
 .div-wrapper .cancel {
 	position: relative;
 	width: fit-content;
-	font-family: "Inter-Regular", Helvetica;
 	font-weight: 400;
 	color: #000000;
 	font-size: 14px;
@@ -231,7 +228,6 @@
 .div-wrapper .upload {
 	position: relative;
 	width: fit-content;
-	font-family: "Inter-Regular", Helvetica;
 	font-weight: 400;
 	color: #0f91d1;
 	font-size: 14px;
@@ -240,13 +236,8 @@
 }
 
 .div-wrapper .frame-wrapper {
-	display: flex;
-	width: 479px;
-	align-items: flex-start;
-	gap: 580px;
-	position: absolute;
-	top: 30px;
-	left: 59px;
+	width: 700px;
+	height: 1280px;
 	box-shadow: 5px 4px 10px #00000040;
 }
 
@@ -265,25 +256,22 @@
 	gap: 10px;
 	position: relative;
 	flex: 0 0 auto;
+	border-bottom: 4px solid #FFC588;
+	margin-top: 10%;
+    margin-left: 10%;
 }
 
 .div-wrapper .text-wrapper-2 {
 	position: relative;
 	width: fit-content;
-	margin-top: -1px;
-	font-family: "Montserrat-SemiBold", Helvetica;
+	margin-top: 13%;
 	font-weight: 600;
 	color: #000000;
-	font-size: 30px;
+	font-size: 2rem;
 	letter-spacing: 0;
 	line-height: normal;
-}
-
-.div-wrapper .line {
-	position: relative;
-	align-self: stretch;
-	width: 100%;
-	height: 4px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	padding-bottom: 5%;
 }
 
 .div-wrapper .footer {
@@ -316,7 +304,6 @@
 	width: 375px;
 	top: 138px;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -417,7 +404,6 @@
 .div-wrapper .text-wrapper-4 {
 	top: 0;
 	left: 10px;
-	font-family: var(- -h4-font-family);
 	font-weight: var(- -h4-font-weight);
 	color: #000000;
 	font-size: var(- -h4-font-size);
@@ -439,7 +425,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -452,7 +437,6 @@
 	position: absolute;
 	top: 34px;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -465,7 +449,6 @@
 	position: absolute;
 	top: 68px;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -514,7 +497,6 @@
 	width: 177px;
 	top: 21px;
 	left: 21px;
-	font-family: var(- -p2-font-family);
 	font-weight: var(- -p2-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p2-font-size);
@@ -535,7 +517,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: var(- -h4-font-family);
 	font-weight: var(- -h4-font-weight);
 	color: #000000;
 	font-size: var(- -h4-font-size);
@@ -556,7 +537,6 @@
 	position: absolute;
 	top: 102px;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -569,7 +549,6 @@
 	position: absolute;
 	top: 136px;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -621,7 +600,6 @@
 	left: 0;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -634,7 +612,6 @@
 	left: 84px;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -647,7 +624,6 @@
 	left: 167px;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -660,7 +636,6 @@
 	left: 259px;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -691,7 +666,6 @@
 	position: absolute;
 	top: 9px;
 	left: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -738,7 +712,6 @@
 	position: absolute;
 	top: 0;
 	left: 18px;
-	font-family: var(- -p2-font-family);
 	font-weight: var(- -p2-font-weight);
 	color: var(- -white);
 	font-size: var(- -p2-font-size);
@@ -777,6 +750,7 @@
 	top: 0;
 	left: 0;
 	background-color: #f48e28;
+	border-radius: 0px 30px 30px 30px;
 }
 
 .div-wrapper .frame-4 {
@@ -802,7 +776,6 @@
 	height: 24px;
 	top: 9px;
 	left: 12px;
-	font-family: "Inter-Regular", Helvetica;
 	font-weight: 400;
 	color: #ffffff;
 	font-size: 20px;
@@ -835,15 +808,19 @@
 
 .div-wrapper .text-wrapper-17 {
 	position: relative;
-	width: fit-content;
-	text-shadow: 0px 4px 4px #00000040;
-	font-family: "Inter-SemiBold", Helvetica;
-	font-weight: 600;
-	color: #ffffffe6;
-	font-size: 20px;
-	letter-spacing: 0.6px;
-	line-height: normal;
-	white-space: nowrap;
+  	width: fit-content;
+  	font-weight: 500;
+  	color: #ffffffe6;
+  	font-size: 1.2rem;
+  	letter-spacing: 0.6px;
+  	line-height: normal;
+  	white-space: nowrap;
+  	border: none;
+  	background-color: rgba(0, 0, 0, 0);
+  	background-image: url(../images/icon_dorandoran.png);
+  	background-repeat: no-repeat;
+  	background-size: 32px 32px;
+  	padding: 0 7px 0 50px;
 }
 
 .div-wrapper .tab-2 {
@@ -868,13 +845,18 @@
 .div-wrapper .text-wrapper-18 {
 	position: relative;
 	width: fit-content;
-	font-family: "Inter-Medium", Helvetica;
 	font-weight: 500;
 	color: #ffffffe6;
-	font-size: 20px;
+	font-size: 1.2rem;
 	letter-spacing: 0.6px;
 	line-height: normal;
 	white-space: nowrap;
+	border: none;
+  	background-color: rgba(0, 0, 0, 0);
+  	background-image: url(../images/icon_mytext.png);
+  	background-repeat: no-repeat;
+  	background-size: 32px 32px;
+  	padding: 0 7px 0 50px;
 }
 
 .div-wrapper .text-wrapper-19 {
@@ -882,10 +864,9 @@
 	width: 126px;
 	top: 39px;
 	left: 106px;
-	font-family: "Inter-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #ffffff;
-	font-size: 32px;
+	font-size: 1.7rem;
 	letter-spacing: 0;
 	line-height: normal;
 }
@@ -920,7 +901,6 @@
 	height: 16px;
 	top: 22px;
 	left: 58px;
-	font-family: "Roboto-Regular", Helvetica;
 	font-weight: 400;
 	color: var(- -tangerine);
 	font-size: 14px;
@@ -957,4 +937,91 @@
 	height: 308px;
 	top: 0;
 	left: -4px;
+}
+
+.doran-profile{
+	position: relative;
+	width: 250px;
+	height: 300px;
+	flex-shrink: 0;
+	border-radius: 20px;
+	border: 0.3px solid #ABABAB;
+	background: #FFF;
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 8.5%;
+    left: 77%;
+}
+
+.doran-profile-photo{
+	width: 100px;
+	height: 100px;
+	margin-top: 13px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+  	overflow: hidden;
+}
+
+.doran-button-frofile-setting{
+	width: 229.594px;
+	height: 43.32px;
+	flex-shrink: 0;
+	border-radius: 10px;
+	background: #F38820;
+	margin-top: 100px;
+	margin-left: 75px;
+	margin-right: 75px;
+	color: white;
+	border: none;
+	font-size: 1.1rem;
+}
+
+.doranTitleBox{
+	width: 640px;
+	height: 50px;
+    box-sizing: border-box;
+    margin-top: 15%;
+    margin-left: 4%;
+}
+
+.doranTitleBox textarea{
+	width: 100%;
+    height: 100%;
+    resize: none;
+    background: #F9F9F9;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.doranContBox{
+	width: 640px;
+	height: 640px;
+    box-sizing: border-box;
+    margin-top: 3%;
+    margin-left: 4%;
+}
+
+.doranContBox textarea{
+	width: 100%;
+    height: 100%;
+    resize: none;
+    background: #F9F9F9;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.text-wrapper-18:active,
+.text-wrapper-18:focus,
+.text-wrapper-17:active,
+.text-wrapper-17:focus{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

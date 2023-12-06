@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-	function pagination() {
+/* 	function pagination() {
 		var req_num_row = 5;
 		var $tr = jQuery('tbody tr');
 		var total_num_row = $tr.length;
@@ -84,7 +84,11 @@
 
 		jQuery('.pagination li:first-child').addClass("disabled");
 
-	});
+	}); */
+function redirectToChallenge(challenge_no) {
+		location.href = '${pageContext.request.contextPath}/event/challenge2.do?challenge_no=' + challenge_no;
+		alert('Redirect to challenge number ' + challenge_no);
+}
 </script>
 </head>
 <body>
@@ -152,46 +156,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>[구도락 챌린지] 우리 아이 성장 챌린지</td>
-						<td>2023/11/01</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>[구도락 챌린지] 우리 아이 성장 챌린지</td>
-						<td>2023/11/01</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>[구도락 챌린지] 우리 아이 성장 챌린지</td>
-						<td>2023/11/01</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>[구도락 챌린지] 우리 아이 성장 챌린지</td>
-						<td>2023/11/01</td>
-					</tr>
-					<tr>
-						<td>5</td>
-						<td>[구도락 챌린지] 우리 아이 성장 챌린지</td>
-						<td>2023/11/01</td>
-					</tr>
-					<tr>
-						<td>6</td>
-						<td>[구도락 챌린지] 우리 아이 성장 챌린지</td>
-						<td>2023/11/01</td>
-					</tr>
-					<tr>
-						<td>7</td>
-						<td>[구도락 챌린지] 우리 아이 성장 챌린지</td>
-						<td>2023/11/01</td>
-					</tr>
-					<tr>
-						<td>8</td>
-						<td>[구도락 챌린지] 우리 아이 성장 챌린지</td>
-						<td>2023/11/01</td>
-					</tr>
+					<c:forEach var="ch" items="${chlist}" varStatus="rowStatus">
+						<tr onclick="redirectToChallenge(${ch.challenge_no})">
+							<td>${ch.challenge_no}</td>
+							<td>${ch.challenge_name}</td>
+							<td>${ch.challenge_date}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 			<ul class="pagination">
