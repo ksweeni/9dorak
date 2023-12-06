@@ -1,5 +1,27 @@
 @charset "UTF-8";
 
+progress {
+	-webkit-appearance: none;
+	margin-top:5px;
+}
+
+::-webkit-progress-bar {
+	background-color: rgba(215, 215, 215, 0.46);
+	border-radius: 2rem;
+	height: 15px;
+}
+
+::-webkit-progress-value {
+	background-color: #ffcbae;
+	border-radius: 2rem;
+}
+
+.screen .info-point {
+	column-gap: 6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .tab button.active, .tab-2 button.active{
 	font-weight:700;
 }
@@ -1003,7 +1025,7 @@
 
 .screen .overlap-group-3 {
 	position: relative;
-	width: 29px;
+	width: 12.5rem;
 	height: 31px;
 	left: -1px;
 }
@@ -1334,7 +1356,9 @@
 .doran-profile-point{
 	position: relative;
     display: flex;
-    gap: 70px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .doran-profile-info{

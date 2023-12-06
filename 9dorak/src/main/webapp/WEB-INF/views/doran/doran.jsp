@@ -17,6 +17,9 @@
 	var message = "${dlist}";
 	var dlike = "${dlike}";
 	var dcomment = "${dcomment}";
+	const memPoint = "${memPoint}";
+
+	console.log(memPoint);
 
 	const memId = '${sessionScope.loginmem.mem_id}';
 	console.log("회원아이디 : ", memId);
@@ -188,8 +191,18 @@
 									</div>
 								</div>
 								<div class="doran-profile-point">
-									<div>보유한포인트</div>
-									<div>70점</div>
+									<div class="info-point">
+										<div>보유한포인트</div>
+										<div>${memPoint}</div>
+										
+									</div>
+
+									<div class="progress-div">
+										<progress id="progress" class="overlap-group-3" id="progress"
+											value="50" min="0" max="324"></progress>
+									</div>
+
+
 								</div>
 								<div>
 									<div></div>
@@ -288,24 +301,24 @@
 				getData('latest');
 				applyStylesToButton(".orderby_latest");
 			});
-			
+
 			// 클릭된 정렬 버튼에 style 추가
 			function applyStylesToButton(buttonClass) {
-			    $(".orderby_latest, .orderby_views, .orderby_likes").css({
-			        "font-size": "",
-			        "font-weight": "",
-			        "color": "",
-			        "text-shadow": "",
-			        "border-bottom": ""
-			    });
+				$(".orderby_latest, .orderby_views, .orderby_likes").css({
+					"font-size" : "",
+					"font-weight" : "",
+					"color" : "",
+					"text-shadow" : "",
+					"border-bottom" : ""
+				});
 
-			    $(buttonClass).css({
-			        "font-size": "1.2rem",
-			        "font-weight": "bold",
-			        "color": "black",
-			        "text-shadow": "2px 2px 4px rgba(0, 0, 0, 0.5)",
-			        "border-bottom": "3px solid #FFC670"
-			    });
+				$(buttonClass).css({
+					"font-size" : "1.2rem",
+					"font-weight" : "bold",
+					"color" : "black",
+					"text-shadow" : "2px 2px 4px rgba(0, 0, 0, 0.5)",
+					"border-bottom" : "3px solid #FFC670"
+				});
 			}
 
 			function getData(dataFor) {
@@ -314,15 +327,12 @@
 				// Check if the button is already active
 				if ($("#" + dataFor).hasClass("active")) {
 					console.log("Button already active. ID:", dataFor);
-					return; 
+					return;
 				}
 
-				
 				$(".tab button, .tab-2 button").removeClass("active");
 				$("#" + dataFor).addClass("active");
 				console.log("Button set to active. ID:", dataFor);
-				
-				
 
 				// Check if "내가 쓴 글" is selected, login
 				if (dataFor == "myDoran") {
@@ -330,11 +340,10 @@
 					if (!memId || memId.trim() === "") {
 						alert("로그인이 필요한 서비스입니다 !");
 						window.location.href = "${cpath}/login/loginForm.do";
-						return; 
+						return;
 					}
 				}
 
-				
 				dataForRadioButton = $("#" + dataFor);
 
 				$.ajax({
@@ -356,7 +365,7 @@
 					var activeWrapperId = dataForRadioButton.closest(
 							'.text-wrapper-18, .text-wrapper-19').attr('id');
 					console.log("Active Wrapper ID:", activeWrapperId);
-					
+
 					applyStylesToButton(".orderby_" + orderBy);
 
 					var url;
