@@ -76,9 +76,9 @@ public class MenuController {
 		if(pro.getIngre_no() != "" && pro.getOrder_type() != "") {
 			List<ProVO> slist = mService.selectCtgrOrder(pro);
 			model.addAttribute("slist", slist);
-			System.out.println(slist);
-			System.out.println(pro.getIngre_no());
-			System.out.println(pro.getOrder_type());
+			//System.out.println(slist);
+			//System.out.println(pro.getIngre_no());
+			//System.out.println(pro.getOrder_type());
 			return "menu/menu_ajax";
 		}
 		
