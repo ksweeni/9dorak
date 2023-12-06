@@ -3717,6 +3717,11 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
+.12345 {
+	left: -50&;
+	transform: translateX(-50%);
+}
+
 </style>
 </head>
 <body>
@@ -3990,8 +3995,8 @@ String contextPath = request.getContextPath();
 				<div class="e1433_2694"></div>
 			</div>
 			<div class=e1433_2695>
-				<span class="e1433_2696">7000원</span><span class="e1433_2697">샌드위치
-					김밥 도시락</span>
+				<span class="e1433_2696">${likelist[0].pro_price}원</span>
+				<span class="e1433_2697">${likelist[0].pro_name}</span>
 				<div class=e1433_2698>
 					<span class="e1433_2699">자세히보기</span>
 				</div>
@@ -4003,8 +4008,8 @@ String contextPath = request.getContextPath();
 				<div class="e1433_2704"></div>
 			</div>
 			<div class=e1433_2705>
-				<span class="e1433_2706">7000원</span><span class="e1433_2707">샌드위치
-					김밥 도시락</span>
+				<span class="e1433_2706">${likelist[1].pro_price}원</span>
+				<span class="e1433_2707">${likelist[1].pro_name}</span>
 				<div class=e1433_2708>
 					<span class="e1433_2709">자세히보기</span>
 				</div>
@@ -4016,8 +4021,8 @@ String contextPath = request.getContextPath();
 				<div class="e1433_2714"></div>
 			</div>
 			<div class=e1433_2715>
-				<span class="e1433_2716">7000원</span><span class="e1433_2717">샌드위치
-					김밥 도시락</span>
+				<span class="e1433_2716">${likelist[2].pro_price}원</span>
+				<span class="e1433_2717">${likelist[2].pro_name}</span>
 				<div class=e1433_2718>
 					<span class="e1433_2719">자세히보기</span>
 				</div>
@@ -4031,8 +4036,8 @@ String contextPath = request.getContextPath();
 				<div class="e1433_2725"></div>
 			</div>
 			<div class=e1433_2726>
-				<span class="e1433_2727">7000원</span><span class="e1433_2728">샌드위치
-					김밥 도시락</span>
+				<span class="e1433_2727">${likelist[3].pro_price}원</span>
+				<span class="e1433_2728">${likelist[3].pro_name}</span>
 				<div class=e1433_2729>
 					<span class="e1433_2730">자세히보기</span>
 				</div>
@@ -4044,8 +4049,8 @@ String contextPath = request.getContextPath();
 				<div class="e1433_2735"></div>
 			</div>
 			<div class=e1433_2736>
-				<span class="e1433_2737">7000원</span><span class="e1433_2738">샌드위치
-					김밥 도시락</span>
+				<span class="e1433_2737">${likelist[4].pro_price}원</span>
+				<span class="e1433_2738">${likelist[4].pro_name}</span>
 				<div class=e1433_2739>
 					<span class="e1433_2740">자세히보기</span>
 				</div>
@@ -4057,8 +4062,8 @@ String contextPath = request.getContextPath();
 				<div class="e1433_2745"></div>
 			</div>
 			<div class=e1433_2746>
-				<span class="e1433_2747">7000원</span><span class="e1433_2748">샌드위치
-					김밥 도시락</span>
+				<span class="e1433_2747">${likelist[5].pro_price}원</span>
+				<span class="e1433_2748">${likelist[5].pro_name}</span>
 				<div class=e1433_2749>
 					<span class="e1433_2750">자세히보기</span>
 				</div>
@@ -4155,7 +4160,6 @@ String contextPath = request.getContextPath();
 
 	<span class="e1433_2813">아이와 함께 즐겨요 👨‍👩‍👧‍👦 </span>
 	<span class="e1433_2814">아이와 함께 즐기는 이벤트와 챌린지</span>
-	
 	<script type="text/javascript">
 	
 	//카테고리

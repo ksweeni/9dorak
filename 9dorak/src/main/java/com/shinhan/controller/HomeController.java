@@ -41,7 +41,9 @@ public class HomeController {
 	@GetMapping("/main.do")
 	public String allergy_menu(Model model) {
 		List<ProVO> prolist = menuService.selectAll();
+		List<ProVO> likelist = menuService.selectOrderbyLike();
 		model.addAttribute("prolist", prolist);
+		model.addAttribute("likelist", likelist);
 		return "main";
 	}
 	
