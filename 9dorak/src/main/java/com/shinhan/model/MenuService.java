@@ -38,8 +38,12 @@ public class MenuService {
 		return dao.selectAllOrder(pro);
 	}
 
-	public List<ProVO> searchCategoryCheck(String ingre_no) {
-		return dao.searchCategoryCheck(ingre_no);
+	public List<ProVO> selectCtgrOrder(ProVO pro) {
+		return dao.selectCtgrOrder(pro);
+	}
+
+	public ProVO selectByNo(int pro_no) {
+		return dao.selectByNo(pro_no);
 	}
 
 //	public int insertMember(DoranVO doran) {

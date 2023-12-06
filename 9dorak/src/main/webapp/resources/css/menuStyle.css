@@ -1196,3 +1196,7 @@
 	line-height: var(- -p2-line-height);
 	font-style: var(- -p2-font-style);
 }
+
+a{
+	text-decoration: none;
+}
