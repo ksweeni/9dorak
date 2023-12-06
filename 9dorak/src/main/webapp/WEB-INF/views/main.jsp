@@ -383,17 +383,14 @@ String contextPath = request.getContextPath();
 	top: 2456px;
 }
 
+
 .e1433_2560 {
-	background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 120px;
-	height: 56px;
-	position: absolute;
-	left: 53px;
-	top: 22px;
-	border-top-left-radius: 999px;
-	border-top-right-radius: 999px;
-	border-bottom-left-radius: 999px;
-	border-bottom-right-radius: 999px;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    width: 150px;
+    height: 56px;
+    position: absolute;
+    left: 25px;
+    top: 23px;
 }
 
 .1433_2560 {
@@ -420,15 +417,17 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2562 {
-	width: 120px;
-	height: 56px;
-	position: absolute;
-	left: 191px;
-	top: 22px;
-	border-top-left-radius: 999px;
-	border-top-right-radius: 999px;
-	border-bottom-left-radius: 999px;
-	border-bottom-right-radius: 999px;
+    /* border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1); */
+    width: 120px;
+    height: 56px;
+    position: absolute;
+    left: 157px;
+    top: 22px;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
 }
 
 .e1433_2563 {
@@ -450,15 +449,17 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2564 {
-	width: 120px;
-	height: 56px;
-	position: absolute;
-	left: 329px;
-	top: 22px;
-	border-top-left-radius: 999px;
-	border-top-right-radius: 999px;
-	border-bottom-left-radius: 999px;
-	border-bottom-right-radius: 999px;
+    /* border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1); */
+    width: 120px;
+    height: 56px;
+    position: absolute;
+    left: 304px;
+    top: 22px;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
 }
 
 .e1433_2565 {
@@ -480,17 +481,17 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2566 {
-	border: 2px solid
-		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 120px;
-	height: 56px;
-	position: absolute;
-	left: 467px;
-	top: 22px;
-	border-top-left-radius: 999px;
-	border-top-right-radius: 999px;
-	border-bottom-left-radius: 999px;
-	border-bottom-right-radius: 999px;
+    /* border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1); */
+    width: 120px;
+    height: 56px;
+    position: absolute;
+    left: 444px;
+    top: 22px;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
 }
 
 .e1433_2567 {
@@ -512,17 +513,17 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2568 {
-	border: 2px solid
-		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 120px;
-	height: 56px;
-	position: absolute;
-	left: 605px;
-	top: 22px;
-	border-top-left-radius: 999px;
-	border-top-right-radius: 999px;
-	border-bottom-left-radius: 999px;
-	border-bottom-right-radius: 999px;
+    /* border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1); */
+    width: 120px;
+    height: 56px;
+    position: absolute;
+    left: 589px;
+    top: 22px;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
 }
 
 .e1433_2569 {
@@ -544,17 +545,17 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2570 {
-	border: 2px solid
-		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 120px;
-	height: 56px;
-	position: absolute;
-	left: 743px;
-	top: 22px;
-	border-top-left-radius: 999px;
-	border-top-right-radius: 999px;
-	border-bottom-left-radius: 999px;
-	border-bottom-right-radius: 999px;
+    /* border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1); */
+    width: 120px;
+    height: 56px;
+    position: absolute;
+    left: 734px;
+    top: 22px;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
 }
 
 .e1433_2571 {
@@ -576,17 +577,17 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2572 {
-	border: 2px solid
-		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 120px;
-	height: 56px;
-	position: absolute;
-	left: 881px;
-	top: 22px;
-	border-top-left-radius: 999px;
-	border-top-right-radius: 999px;
-	border-bottom-left-radius: 999px;
-	border-bottom-right-radius: 999px;
+    /* border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1); */
+    width: 120px;
+    height: 56px;
+    position: absolute;
+    left: 875px;
+    top: 22px;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
 }
 
 .e1433_2573 {
@@ -608,17 +609,17 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2574 {
-	border: 2px solid
-		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 120px;
-	height: 56px;
-	position: absolute;
-	left: 1019px;
-	top: 22px;
-	border-top-left-radius: 999px;
-	border-top-right-radius: 999px;
-	border-bottom-left-radius: 999px;
-	border-bottom-right-radius: 999px;
+    /* border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1); */
+    width: 120px;
+    height: 56px;
+    position: absolute;
+    left: 1014px;
+    top: 22px;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
 }
 
 .e1433_2575 {
@@ -640,17 +641,17 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2576 {
-	border: 2px solid
-		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 90px;
-	height: 56px;
-	position: absolute;
-	left: 1157px;
-	top: 22px;
-	border-top-left-radius: 999px;
-	border-top-right-radius: 999px;
-	border-bottom-left-radius: 999px;
-	border-bottom-right-radius: 999px;
+    /* border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1); */
+    width: 90px;
+    height: 56px;
+    position: absolute;
+    left: 1153px;
+    top: 22px;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
 }
 
 .e1433_2577 {
@@ -988,7 +989,7 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.e1433_2609 {
+.allergy-bar {
 	width: 1200px;
 	height: 102px;
 	position: absolute;
@@ -1021,6 +1022,179 @@ String contextPath = request.getContextPath();
 	cursor: pointer;
 	margin: 5px;
 	transition: background-color 0.3s;
+	text-align: center;
+}
+
+.allergy-button.selected {
+    background: #FFF;
+    color: #F48E28;
+}
+
+.category-button {
+    width: 109px;
+    font-size: 15px;
+    font-weight: 600;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #F48E28;
+    background: #F48E28;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-button2 {
+    width: 109px;
+    font-size: 15px;
+    font-weight: 600;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #F48E28;
+    background: #F48E28;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-button3 {
+    width: 109px;
+    font-size: 15px;
+    font-weight: 600;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #F48E28;
+    background: #F48E28;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-button4 {
+    width: 109px;
+    font-size: 15px;
+    font-weight: 600;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #F48E28;
+    background: #F48E28;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-button5 {
+    width: 109px;
+    font-size: 15px;
+    font-weight: 600;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #F48E28;
+    background: #F48E28;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-button6 {
+    width: 109px;
+    font-size: 15px;
+    font-weight: 600;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #F48E28;
+    background: #F48E28;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-button7 {
+    width: 109px;
+    font-size: 15px;
+    font-weight: 600;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #F48E28;
+    background: #F48E28;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-button8 {
+    width: 109px;
+    font-size: 15px;
+    font-weight: 600;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #F48E28;
+    background: #F48E28;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-button9 {
+    width: 109px;
+    font-size: 15px;
+    font-weight: 600;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #F48E28;
+    background: #F48E28;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-button.selected {
+    background: #FFF;
+    color: #F48E28;
 }
 
 .1433_2611 {
@@ -1546,12 +1720,12 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2562 {
-	border: 2px solid
-		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+	/* border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1); */
 	width: 120px;
 	height: 56px;
 	position: absolute;
-	left: 191px;
+	left: 162px;
 	top: 22px;
 	border-top-left-radius: 999px;
 	border-top-right-radius: 999px;
@@ -1600,12 +1774,12 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2564 {
-	border: 2px solid
-		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+/* 	border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1); */
 	width: 120px;
 	height: 56px;
 	position: absolute;
-	left: 329px;
+	left: 302px;
 	top: 22px;
 	border-top-left-radius: 999px;
 	border-top-right-radius: 999px;
@@ -3543,11 +3717,6 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 }
 
-.allergy-button.selected {
-	background: #FFF;
-	color: #F48E28;
-}
-
 </style>
 </head>
 <body>
@@ -3604,35 +3773,57 @@ String contextPath = request.getContextPath();
 	<div class=e1433_2557>
 		<span class="e1433_2558">전체 메뉴 보기</span>
 	</div>
+	
+	<!-- 추천 상품 마무리-->
 	<div class=e1433_2559>
 		<div class=e1433_2560>
-			<span class="e1433_2561">추천상품</span>
+			<!-- <span class="e1433_2561">추천상품</span> -->
+			<button class="category-button" id="enviButton" value="1"
+			onClick="categoryButtonClick('envi')">🌏환경친화</button>
 		</div>
 		<div class=e1433_2562>
-			<span class="e1433_2563">환경친화</span>
+			<!-- <span class="e1433_2563">환경친화</span>-->
+			<button class="category-button" id="saltButton" value="2"
+			onClick="categoryButtonClick('salt')">🧂저염</button>
 		</div>
 		<div class=e1433_2564>
-			<span class="e1433_2565">저염</span>
+			<!-- <span class="e1433_2565">저염</span> -->
+			<button class="category-button" id="sugarButton" value="3"
+			onClick="categoryButtonClick('sugar')">🧂저당</button>
 		</div>
 		<div class=e1433_2566>
-			<span class="e1433_2567">저당</span>
+			<!-- <span class="e1433_2567">저당</span> -->
+			<button class="category-button" id="cowButton" value="4"
+			onClick="categoryButtonClick('cow')">🐮소</button>
 		</div>
 		<div class=e1433_2568>
-			<span class="e1433_2569">돼지</span>
+			<!-- <span class="e1433_2569">돼지</span> -->
+			<button class="category-button" id="pigButton" value="5"
+			onClick="categoryButtonClick('pig')">🐷돼지</button>
 		</div>
 		<div class=e1433_2570>
-			<span class="e1433_2571">닭</span>
+			<!-- <span class="e1433_2571">닭</span> -->
+			<button class="category-button" id="chickenButton" value="6"
+			onClick="categoryButtonClick('chicken')">🐔닭</button>
 		</div>
 		<div class=e1433_2572>
-			<span class="e1433_2573">생선</span>
+			<!-- <span class="e1433_2573">생선</span> -->
+			<button class="category-button" id="fishButton" value="7"
+			onClick="categoryButtonClick('fish')">🐟생선</button>
 		</div>
 		<div class=e1433_2574>
-			<span class="e1433_2575">샐러드</span>
+			<!-- <span class="e1433_2575">샐러드</span> -->
+			<button class="category-button" id="saladButton" value="8"
+			onClick="categoryButtonClick('salad')">🥗샐러드</button>
 		</div>
 		<div class=e1433_2576>
-			<span class="e1433_2577">과일</span>
+			<!-- <span class="e1433_2577">과일</span> -->
+			<button class="category-button" id="fruitsButton" value="9"
+			onClick="categoryButtonClick('fruits')">🍎과일</button>
 		</div>
 	</div>
+	<!-- 추천 상품 끝-->
+	
 	<div class=e1433_2578>
 		<div class="e1433_2579"></div>
 		<div class=e1433_2580>
@@ -3675,7 +3866,7 @@ String contextPath = request.getContextPath();
 		<div class=e1433_2607>
 			<span class="e1433_2608">못 먹는 음식은 제외하고, 세심하게 메뉴를 골라보세요</span>
 		</div>
-		<div class=e1433_2609>
+		<div class=allergy-bar>
 			<div class=e1433_2610>
 			<button class="allergy-button" id="cerealsButton" value="곡류"
 			onClick="allerButtonClick('cereals')">🌾 곡류</button>
@@ -3874,6 +4065,8 @@ String contextPath = request.getContextPath();
 			</div>
 		</div>
 	</div>
+	
+	<!-- category start -->
 	<div class=e1433_2751>
 		<div class=e1433_2752>
 			<div class=e1433_2753>
@@ -3881,8 +4074,8 @@ String contextPath = request.getContextPath();
 				<div class="e1433_2756"></div>
 			</div>
 			<div class=e1433_2757>
-				<span class="e1433_2758">7000원</span><span class="e1433_2759">샌드위치
-					김밥 도시락</span>
+				<span class="e1433_2758">${prolist[0].pro_price}원</span>
+				<span class="e1433_2759">${prolist[0].pro_name}</span>
 				<div class=e1433_2760>
 					<span class="e1433_2761">자세히보기</span>
 				</div>
@@ -3894,8 +4087,8 @@ String contextPath = request.getContextPath();
 				<div class="e1433_2766"></div>
 			</div>
 			<div class=e1433_2767>
-				<span class="e1433_2768">7000원</span><span class="e1433_2769">샌드위치
-					김밥 도시락</span>
+				<span class="e1433_2768">${prolist[1].pro_price}원</span>
+				<span class="e1433_2769">${prolist[1].pro_name}</span>
 				<div class=e1433_2770>
 					<span class="e1433_2771">자세히보기</span>
 				</div>
@@ -3907,8 +4100,8 @@ String contextPath = request.getContextPath();
 				<div class="e1433_2776"></div>
 			</div>
 			<div class=e1433_2777>
-				<span class="e1433_2778">7000원</span><span class="e1433_2779">샌드위치
-					김밥 도시락</span>
+				<span class="e1433_2778">${prolist[2].pro_price}원</span>
+				<span class="e1433_2779">${prolist[2].pro_name}</span>
 				<div class=e1433_2780>
 					<span class="e1433_2781">자세히보기</span>
 				</div>
@@ -3965,11 +4158,46 @@ String contextPath = request.getContextPath();
 	
 	<script type="text/javascript">
 	
+	//카테고리
+	$(".e1433_2559 button").on("click", function(){
+		$.ajax({
+			url : "${cpath}/searchCategoryCheck.do",
+			type : 'GET',
+			data : {
+				//카테고리 검색
+				ingre_no : $(this).val()
+			},
+			success : function(data) {
+				$('.e1433_2751').html(data);
+			},
+			error : function() {
+				alert("에러");
+			}
+		});
+	})
+	
+	let selectedButton2 = null;
+	
+	function categoryButtonClick(category) {
+		alert(category);
+		const button = document.getElementById(category + 'Button');
+		if (selectedButton2 === button) {
+			button.classList.remove('selected');
+			selectedButton2 = null; 
+		} else {
+			if (selectedButton2) {
+				selectedButton2.classList.remove('selected');
+			}
+			button.classList.add('selected');
+			selectedButton2 = button;
+		}
+		/* allerCheck(); */
+	}
+	
 	//알러지
 	$(".allergy-bar button").on("click", function(){
-		//alert($(this).val());
 		$.ajax({
-			url : "${cpath}/menu/searchAllergyCheck.do",
+			url : "${cpath}/searchAllergyCheck.do",
 			type : 'GET',
 			data : {
 				//알러지타입 검색
@@ -3987,10 +4215,12 @@ String contextPath = request.getContextPath();
 	let selectedButton = null;
 	
 	function allerButtonClick(allergy) {
+		/* alert($(this).val()); */
+		alert(allergy);
 		const button = document.getElementById(allergy + 'Button');
 		if (selectedButton === button) {
 			button.classList.remove('selected');
-			selectedButton = null;
+			selectedButton = null; 
 		} else {
 			if (selectedButton) {
 				selectedButton.classList.remove('selected');
@@ -3998,7 +4228,7 @@ String contextPath = request.getContextPath();
 			button.classList.add('selected');
 			selectedButton = button;
 		}
-		allerCheck();
+		/* allerCheck(); */
 	}
 	</script>
 	

@@ -53,6 +53,11 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 
+	public List<ProVO> searchCategoryCheck(String ingre_no) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchCategoryCheck", ingre_no);
+		return plist;
+	}
+
 //	public int insertDoran(DoranVO doran) {
 //		System.out.println("inserting :"+doran);
 //		return sqlSession.insert(NAMESPACE + "insertDoran", doran);
