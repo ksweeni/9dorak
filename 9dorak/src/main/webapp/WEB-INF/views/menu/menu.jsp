@@ -82,9 +82,12 @@
 						<div class="green-beans">
 							<div class="overlap-group">
 								<div class="text-wrapper-2">${pro.pro_name}</div>
-								<div class="frame">
+								<!-- <div class="frame">
 									<button class="view-details-btn">자세히 볼게요</button>
-								</div>
+								</div> -->
+								<a class="frame" href="${cpath }/menu/menuSpecificReview.do?pro_no=${pro.pro_no}">
+									<button class="view-details-btn">자세히 볼게요</button>
+								</a>
 								<div class="mask-group-wrapper">
 									<img class="mask-group" src="img/mask-group-8.png" />
 								</div>
@@ -203,28 +206,27 @@
 					<button class="text-wrapper-19" id="orderbyNew">신상품 순</button>
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20"
 						viewBox="0 0 14 20" fill="none">
-					<path
-							d="M2.21875 12.5L7 17.1395L11.7812 12.5L13.25 13.9353L7 20L0.75 13.9353L2.21875 12.5Z"
-							fill="#FFB673" />
-					<path
-							d="M11.7813 7.5L7 2.86051L2.21875 7.5L0.75 6.06469L7 0L13.25 6.06469L11.7813 7.5Z"
-							fill="#FFB673" />
-				</svg>
+						<path
+								d="M2.21875 12.5L7 17.1395L11.7812 12.5L13.25 13.9353L7 20L0.75 13.9353L2.21875 12.5Z"
+								fill="#FFB673" />
+						<path
+								d="M11.7813 7.5L7 2.86051L2.21875 7.5L0.75 6.06469L7 0L13.25 6.06469L11.7813 7.5Z"
+								fill="#FFB673" />
+					</svg>
 				</div>
 				<div class="frame-13">
 					<button class="text-wrapper-20" id="orderbyLike">인기순</button>
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20"
 						viewBox="0 0 14 20" fill="none">
-					<path
-							d="M2.21875 12.5L7 17.1395L11.7812 12.5L13.25 13.9353L7 20L0.75 13.9353L2.21875 12.5Z"
-							fill="#FFB673" />
-					<path
-							d="M11.7813 7.5L7 2.86051L2.21875 7.5L0.75 6.06469L7 0L13.25 6.06469L11.7813 7.5Z"
-							fill="#FFB673" />
-				</svg>
+						<path
+								d="M2.21875 12.5L7 17.1395L11.7812 12.5L13.25 13.9353L7 20L0.75 13.9353L2.21875 12.5Z"
+								fill="#FFB673" />
+						<path
+								d="M11.7813 7.5L7 2.86051L2.21875 7.5L0.75 6.06469L7 0L13.25 6.06469L11.7813 7.5Z"
+								fill="#FFB673" />
+					</svg>
 				</div>
 			</div>
-
 
 		</div>
 
@@ -397,7 +399,7 @@
 				button.classList.add('selected');
 				selectedButton = button;
 			}
-			allerCheck();
+			//allerCheck();
 		}
 	</script>
 

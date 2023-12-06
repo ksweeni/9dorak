@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.shinhan.dto.DoranVO;
 import com.shinhan.dto.ProVO;
 
 
@@ -56,6 +55,11 @@ public class MenuDAOMybatis {
 	public List<ProVO> selectCtgrOrder(ProVO pro) {
 		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectCtgrOrder", pro);
 		return plist;
+	}
+
+	public ProVO selectByNo(int pro_no) {
+		ProVO pro = sqlSession.selectOne(NAMESPACE + "selectByNo", pro_no);
+		return pro;
 	}
 
 //	public int insertDoran(DoranVO doran) {

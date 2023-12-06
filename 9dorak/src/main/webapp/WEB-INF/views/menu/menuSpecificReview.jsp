@@ -39,10 +39,10 @@
 				</div>
 				<div class="specific">
 					<div class="overlap-2">
-						<div class="title">[배부르9] 한종범 불고기 도시락</div>
+						<div class="title">${menudetail.pro_name }</div>
 						<img class="heart" src="${cpath}/resources/images/menu/heart.svg" />
 					</div>
-					<div class="text-wrapper">8,000원</div>
+					<div class="text-wrapper">${menudetail.pro_price } 원</div>
 					<div class="price-and-button">
 						<div class="frame-wrapper">
 							<div class="frame">
@@ -86,69 +86,69 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<progress class="overlap-group-3" id="progress" value="60"
-										min="0" max="324"></progress>
+									<progress class="overlap-group-3" id="progress" value="${menudetail.pro_carb }"
+										min="0" max="${menudetail.pro_weight }"></progress>
 
 								</div>
-								<div class="text-wrapper-4">75%</div>
+								<div class="text-wrapper-4">${menudetail.pro_carb }%</div>
 							</div>
 							<div class="frame-5">
 
 								<div class="text-wrapper-5">탄수화물</div>
-								<div class="text-wrapper-6">60/324g</div>
+								<div class="text-wrapper-6">${menudetail.pro_carb }/${menudetail.pro_weight }g</div>
 							</div>
 						</div>
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<progress class="overlap-group-3" id="progress" value="100"
-										min="0" max="324"></progress>
+									<progress class="overlap-group-3" id="progress" value="${menudetail.pro_prot }"
+										min="0" max="${menudetail.pro_weight }"></progress>
 
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
 							<div class="frame-6">
 								<div class="text-wrapper-5">단백질</div>
-								<div class="text-wrapper-6">60/324g</div>
+								<div class="text-wrapper-6">${menudetail.pro_prot }/${menudetail.pro_weight }g</div>
 							</div>
 						</div>
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<progress class="overlap-group-3" id="progress" value="60"
-										min="0" max="324"></progress>
+									<progress class="overlap-group-3" id="progress" value="${menudetail.pro_prov }"
+										min="0" max="${menudetail.pro_weight }"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
 							<div class="frame-7">
 								<div class="text-wrapper-5">지방</div>
-								<div class="text-wrapper-6">60/324g</div>
+								<div class="text-wrapper-6">${menudetail.pro_prov }/${menudetail.pro_weight }g</div>
 							</div>
 						</div>
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<progress class="overlap-group-3" id="progress" value="60"
-										min="0" max="324"></progress>
+									<progress class="overlap-group-3" id="progress" value="${menudetail.pro_nat }"
+										min="0" max="${menudetail.pro_weight }"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
 							<div class="frame-6">
 								<div class="text-wrapper-5">나트륨</div>
-								<div class="text-wrapper-6">60/324g</div>
+								<div class="text-wrapper-6">${menudetail.pro_nat }/${menudetail.pro_weight }g</div>
 							</div>
 						</div>
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-3">
-									<progress class="overlap-group-3" id="progress" value="200"
-										min="0" max="324"></progress>
+									<progress class="overlap-group-3" id="progress" value="${menudetail.pro_sugar }"
+										min="0" max="${menudetail.pro_weight }"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
 							<div class="frame-7">
 								<div class="text-wrapper-5">당류</div>
-								<div class="text-wrapper-6">60/324g</div>
+								<div class="text-wrapper-6">${menudetail.pro_sugar }/${menudetail.pro_weight }g</div>
 							</div>
 						</div>
 					</div>
@@ -158,7 +158,7 @@
 							<div class="overlap-group-4">
 								<p class="text">
 									<span class="span">1일 섭취 기준인 2,000kcal 중 </span> <span
-										class="text-wrapper-7">574 kcal</span> <span class="span">를
+										class="text-wrapper-7">${menudetail.pro_cal } kcal</span> <span class="span">를
 										섭취할 수 있어요 👨‍🍳</span>
 								</p>
 							</div>

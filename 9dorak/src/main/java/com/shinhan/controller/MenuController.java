@@ -112,7 +112,10 @@ public class MenuController {
 	
 	// 페이지 styling 용으로 미리 선언
 		@GetMapping("menuSpecificReview.do")
-		public String menuSpecificReview(Model model) {
+		public String menuSpecificReview(Model model, ProVO pro) {
+			System.out.println(mService.selectByNo(pro.getPro_no()));
+			model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
+					
 			return "menu/menuSpecificReview";
 	}
 	

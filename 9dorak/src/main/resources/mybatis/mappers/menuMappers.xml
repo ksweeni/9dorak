@@ -54,6 +54,7 @@
 			</if>
 	</select>
 	
+	<!-- 카테고리 + 정렬 -->
 	<select id="selectCtgrOrder" resultType="provo" parameterType="provo">
 		select *
 		  from pro t1,
@@ -66,6 +67,12 @@
 			<if test="order_type eq '신상품 순'">
 				order by pro_rd desc
 			</if>
+	</select>
+	
+	<select id="selectByNo" resultType="provo" parameterType="provo">
+		select *
+		from pro
+		where pro_no = #{pro_no}
 	</select>
 
 	<!-- <insert id="insertDoran" parameterType="doranvo">
