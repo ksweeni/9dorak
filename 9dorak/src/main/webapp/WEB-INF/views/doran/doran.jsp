@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/doranStyle.css?e"
+<link rel="stylesheet" href="${cpath}/resources/css/doranStyle.css?d"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +20,6 @@
 
 	const memId = '${sessionScope.loginmem.mem_id}';
 	console.log("회원아이디 : ", memId);
-
-	//console.log(message);
-	//console.log("dlike ", dlike);
-	//console.log("dcomment", dcomment);
 </script>
 <body>
 	<div class="screen">
@@ -75,11 +71,12 @@
 			<div class="group-4">
 				<div class="orderbyBtn">
 					<form id="orderByForm">
-						<input class="orderby_latest" type="button"
-							onclick="submitForm('latest')" value="최신순"> <input
-							class="orderby_views" type="button" onclick="submitForm('views')"
-							value="조회순"> <input class="orderby_likes" type="button"
-							onclick="submitForm('likes')" value="좋아요순">
+						<input id="orderby_latest_button" class="orderby_latest"
+							type="button" onclick="submitForm('latest')" value="최신순">
+						<input class="orderby_views" type="button"
+							onclick="submitForm('views')" value="조회순"> <input
+							class="orderby_likes" type="button" onclick="submitForm('likes')"
+							value="좋아요순">
 					</form>
 				</div>
 
@@ -110,25 +107,25 @@
 								<div class="doran-review">
 									<div class="doran-review-like">
 										<img class="doran-review-likeicon"
-										src="${cpath }/resources/images/icon_doranemptylike.png" />
+											src="${cpath }/resources/images/icon_doranemptylike.png" />
 										<div class="doran-review-like2">${doran.dlike}</div>
 									</div>
 									<div class="doran-review-reviewCnt">
 										<img class="doran-review-reviewCnticon"
-										src="${cpath }/resources/images/icon_doranviewcnt.png" />
+											src="${cpath }/resources/images/icon_doranviewcnt.png" />
 										<div class="doran-review-reviewCnt2">${doran.doran_view}</div>
 									</div>
 									<div class="doran-review-dcomment">
 										<img class="doran-review-dcommenticon"
-										src="${cpath }/resources/images/icon_dorancomment.png" />
+											src="${cpath }/resources/images/icon_dorancomment.png" />
 										<div class="doran-review-dcomment2">${doran.dcomment}</div>
 									</div>
 								</div>
-									<div class="doran-uploadInfo-time">${doran.doran_date }</div>
+								<div class="doran-uploadInfo-time">${doran.doran_date }</div>
 							</div>
 						</div>
 					</c:forEach>
-					
+
 				</div>
 				<!-- doran-card -->
 			</div>
@@ -159,11 +156,15 @@
 				<div class="group-14">
 					<div class="overlap-4">
 						<input class=text-wrapper-21 id="searchTxt" type="text"
-								placeholder="검색어를 입력하세요">
+							placeholder="검색어를 입력하세요">
 					</div>
 					<div class="doran-search">
-						<button class="doran-search-button"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-								<path d="M10.581 9.26619L14.4699 13.1551C14.833 13.5182 14.833 14.1068 14.4699 14.4699C14.1068 14.833 13.5182 14.833 13.1551 14.4699L9.26619 10.581C8.30427 11.2771 7.12193 11.6875 5.84375 11.6875C2.61634 11.6875 0 9.07116 0 5.84375C0 2.61634 2.61634 0 5.84375 0C9.07116 0 11.6875 2.61634 11.6875 5.84375C11.6875 7.12193 11.2771 8.30427 10.581 9.26619ZM5.84375 9.82812C8.04426 9.82812 9.82812 8.04426 9.82812 5.84375C9.82812 3.64324 8.04426 1.85938 5.84375 1.85938C3.64324 1.85938 1.85938 3.64324 1.85938 5.84375C1.85938 8.04426 3.64324 9.82812 5.84375 9.82812Z" fill="#F48E28"/>
+						<button class="doran-search-button">
+							<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+								viewBox="0 0 15 15" fill="none">
+								<path
+									d="M10.581 9.26619L14.4699 13.1551C14.833 13.5182 14.833 14.1068 14.4699 14.4699C14.1068 14.833 13.5182 14.833 13.1551 14.4699L9.26619 10.581C8.30427 11.2771 7.12193 11.6875 5.84375 11.6875C2.61634 11.6875 0 9.07116 0 5.84375C0 2.61634 2.61634 0 5.84375 0C9.07116 0 11.6875 2.61634 11.6875 5.84375C11.6875 7.12193 11.2771 8.30427 10.581 9.26619ZM5.84375 9.82812C8.04426 9.82812 9.82812 8.04426 9.82812 5.84375C9.82812 3.64324 8.04426 1.85938 5.84375 1.85938C3.64324 1.85938 1.85938 3.64324 1.85938 5.84375C1.85938 8.04426 3.64324 9.82812 5.84375 9.82812Z"
+									fill="#F48E28" />
 								</svg>
 						</button>
 					</div>
@@ -182,8 +183,8 @@
 								<div class="doran-profile-info">
 									<div class="doran-profile-info-memname">외국잼민이</div>
 									<div class="doran-profile-info-grade">
-									<div class="doran-profile-info-lv">LV.</div>
-									<div class="doran-profile-info-memgrade">낑깡</div>
+										<div class="doran-profile-info-lv">LV.</div>
+										<div class="doran-profile-info-memgrade">낑깡</div>
 									</div>
 								</div>
 								<div class="doran-profile-point">
@@ -280,26 +281,61 @@
 
 		<script>
 			var cpath = "${cpath}";
-			var dataForRadioButton; // Declare it outside the functions
+			var dataForRadioButton = null; // Initialize with null
+
+			// 시작할 때 default
+			$(document).ready(function() {
+				getData('latest');
+				applyStylesToButton(".orderby_latest");
+			});
+			
+			// 클릭된 정렬 버튼에 style 추가
+			function applyStylesToButton(buttonClass) {
+			    $(".orderby_latest, .orderby_views, .orderby_likes").css({
+			        "font-size": "",
+			        "font-weight": "",
+			        "color": "",
+			        "text-shadow": "",
+			        "border-bottom": ""
+			    });
+
+			    $(buttonClass).css({
+			        "font-size": "1.2rem",
+			        "font-weight": "bold",
+			        "color": "black",
+			        "text-shadow": "2px 2px 4px rgba(0, 0, 0, 0.5)",
+			        "border-bottom": "3px solid #FFC670"
+			    });
+			}
 
 			function getData(dataFor) {
 				alert("Button Clicked! dataFor: " + dataFor);
 
-				var activeButton = $(".tab button.active, .tab-2 button.active");
-
-				if (activeButton.length > 0) {
-					var activeButtonId = activeButton.attr("id");
-					console.log("Active Button ID:", activeButtonId);
-					dataForRadioButton=activeButtonId;
-				} else {
-					console.log("No active button found.");
+				// Check if the button is already active
+				if ($("#" + dataFor).hasClass("active")) {
+					console.log("Button already active. ID:", dataFor);
+					return; 
 				}
 
-				// Add the 'active' class to the clicked button only if it's not already active
-				if (!activeButton.is("#" + dataFor)) {
-					$(".tab button").removeClass("active");
-					$("#" + dataFor).addClass("active");
+				
+				$(".tab button, .tab-2 button").removeClass("active");
+				$("#" + dataFor).addClass("active");
+				console.log("Button set to active. ID:", dataFor);
+				
+				
+
+				// Check if "내가 쓴 글" is selected, login
+				if (dataFor == "myDoran") {
+					var memId = "${sessionScope.loginmem.mem_id}";
+					if (!memId || memId.trim() === "") {
+						alert("로그인이 필요한 서비스입니다 !");
+						window.location.href = "${cpath}/login/loginForm.do";
+						return; 
+					}
 				}
+
+				
+				dataForRadioButton = $("#" + dataFor);
 
 				$.ajax({
 					url : cpath + "/doran/doranFor.do",
@@ -316,25 +352,15 @@
 			function submitForm(orderBy) {
 				alert("Button Clicked! Order By: " + orderBy);
 
-				// Add the 'active' class to the clicked sorting button
-				$(".group-4 input[type='button']").removeClass("active");
-				$("input[value='" + orderBy + "']").addClass("active");
-
-				// Check if "내가 쓴 글" is selected
-				console.log("dataForRadioButton:", dataForRadioButton);
-
-				// Check if "내가 쓴 글" is selected
 				if (dataForRadioButton) {
-					var activeWrapperId = $(dataForRadioButton).closest(
+					var activeWrapperId = dataForRadioButton.closest(
 							'.text-wrapper-18, .text-wrapper-19').attr('id');
 					console.log("Active Wrapper ID:", activeWrapperId);
+					
+					applyStylesToButton(".orderby_" + orderBy);
 
-					var dataFor = dataForRadioButton.value;
 					var url;
-
-					console.log("dataFor:", dataFor);
-
-					if (dataFor === 'myDoran') {
+					if (activeWrapperId === 'myDoran') {
 						url = cpath + "/doran/doranFilterForMe.do";
 					} else {
 						url = cpath + "/doran/doranFilter.do";
@@ -355,15 +381,11 @@
 							.error("No radio button with name 'dataFor' is checked.");
 				}
 
-				// Prevent the form from submitting
 				return false;
 			}
 		</script>
-
 		<!-- div -->
 	</div>
-
-
 	<!-- screen -->
 </body>
 </html>

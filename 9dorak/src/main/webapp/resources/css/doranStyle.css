@@ -1230,16 +1230,7 @@
 	font-size: 1.2rem
 }
 
-.orderby_latest:active, .orderby_latest:focus, .orderby_latest:active,
-	.orderby_latest:focus, .orderby_views:active, .orderby_views:focus,
-	.orderby_views:active, .orderby_views:focus, .orderby_likes:active,
-	.orderby_likes:focus, .orderby_likes:active, .orderby_likes:focus {
-	font-size: 1.2rem;
-	font-weight: bold;
-	color: black;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-	border-bottom: 3px solid #FFC670;
-}
+
 
 .doran-context-title {
 	width: 99%;
