@@ -79,7 +79,7 @@
 							onclick="submitForm('latest')" value="최신순"> <input
 							class="orderby_views" type="button" onclick="submitForm('views')"
 							value="조회순"> <input class="orderby_likes" type="button"
-							onclick="submitForm('likes')" value="가장 많은">
+							onclick="submitForm('likes')" value="좋아요순">
 					</form>
 				</div>
 
@@ -91,14 +91,14 @@
 
 					<c:forEach items="${dlist}" var="doran" varStatus="loop">
 						<div class="doran-feed">
-							<div class="doran-uploadInfo">
+							<div class="doran-topInfo">
 								<div>
 									<img class="doran-uploadInfo-profile"
 										src="${cpath }/resources/images/test.png" />
 								</div>
-								<div class="doran-topInfo">
+								<div class="doran-uploadInfo">
 									<div class="doran-uploadInfo-memid">${doran.mem_id }</div>
-									<div class="doran-uploadInfo-memgrade">낑깡</div>
+									<div class="doran-uploadInfo-title">${doran.doran_title }</div>
 								</div>
 							</div>
 							<div class="doran-uploadContent">
@@ -106,14 +106,29 @@
 									src="${cpath }/resources/images/menu/cake.png" />
 								<div class="doran-uploadContent-content">${doran.doran_cont}</div>
 							</div>
-							<div class="doran-review">
-								<div class="doran-uploadInfo-time">8분전</div>
-								<div class="doran-review-like">${dlike[loop.index]}</div>
-								<div class="doran-review-dcomment">${dcomment[loop.index]}</div>
-								<div class="doran-review-reviewCnt">${doran.doran_view}</div>
+							<div class="doran-underInfo">
+								<div class="doran-review">
+									<div class="doran-review-like">
+										<img class="doran-review-likeicon"
+										src="${cpath }/resources/images/icon_doranemptylike.png" />
+										<div class="doran-review-like2">${doran.dlike}</div>
+									</div>
+									<div class="doran-review-reviewCnt">
+										<img class="doran-review-reviewCnticon"
+										src="${cpath }/resources/images/icon_doranviewcnt.png" />
+										<div class="doran-review-reviewCnt2">${doran.doran_view}</div>
+									</div>
+									<div class="doran-review-dcomment">
+										<img class="doran-review-dcommenticon"
+										src="${cpath }/resources/images/icon_dorancomment.png" />
+										<div class="doran-review-dcomment2">${doran.dcomment}</div>
+									</div>
+								</div>
+									<div class="doran-uploadInfo-time">${doran.doran_date }</div>
 							</div>
 						</div>
 					</c:forEach>
+					
 				</div>
 				<!-- doran-card -->
 			</div>
@@ -143,8 +158,14 @@
 				</div>
 				<div class="group-14">
 					<div class="overlap-4">
-						<img class="vector-2" src="img/vector-2.svg" />
-						<div class="text-wrapper-21">검색어를 입력하세요</div>
+						<input class=text-wrapper-21 id="searchTxt" type="text"
+								placeholder="검색어를 입력하세요">
+					</div>
+					<div class="doran-search">
+						<button class="doran-search-button"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+								<path d="M10.581 9.26619L14.4699 13.1551C14.833 13.5182 14.833 14.1068 14.4699 14.4699C14.1068 14.833 13.5182 14.833 13.1551 14.4699L9.26619 10.581C8.30427 11.2771 7.12193 11.6875 5.84375 11.6875C2.61634 11.6875 0 9.07116 0 5.84375C0 2.61634 2.61634 0 5.84375 0C9.07116 0 11.6875 2.61634 11.6875 5.84375C11.6875 7.12193 11.2771 8.30427 10.581 9.26619ZM5.84375 9.82812C8.04426 9.82812 9.82812 8.04426 9.82812 5.84375C9.82812 3.64324 8.04426 1.85938 5.84375 1.85938C3.64324 1.85938 1.85938 3.64324 1.85938 5.84375C1.85938 8.04426 3.64324 9.82812 5.84375 9.82812Z" fill="#F48E28"/>
+								</svg>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -157,6 +178,20 @@
 							<div class="doran-profile">
 								<div class="doran-profile-photo">
 									<img src="${cpath }/resources/images/test.png" />
+								</div>
+								<div class="doran-profile-info">
+									<div class="doran-profile-info-memname">외국잼민이</div>
+									<div class="doran-profile-info-grade">
+									<div class="doran-profile-info-lv">LV.</div>
+									<div class="doran-profile-info-memgrade">낑깡</div>
+									</div>
+								</div>
+								<div class="doran-profile-point">
+									<div>보유한포인트</div>
+									<div>70점</div>
+								</div>
+								<div>
+									<div></div>
 								</div>
 								<button class="doran-button-frofile-setting">
 									<span>프로필 설정하기</span>
