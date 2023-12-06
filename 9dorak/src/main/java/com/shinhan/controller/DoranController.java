@@ -38,20 +38,24 @@ public class DoranController {
 	private static final Logger logger = LoggerFactory.getLogger(DoranController.class);
 
 	@GetMapping("doran.do")
-	public String doran(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model) {
+	public String doran(@RequestParam(name = "orderBy", defaultValue = "latest") 
+	String orderBy, Model model,  HttpSession session) {
 		List<DoranVO> dlist;
 		System.out.println(orderBy);
 		dlist = dService.selectAll();
-
-		// List<DlikeVO> dlike = dService.selectLike();
-		List<DCommentVO> dcomment = dService.selectComment();
 		model.addAttribute("dlist", dlist);
-		// model.addAttribute("dlike", dlike);
-		model.addAttribute("dcomment", dcomment);
-		// System.out.println("좋아요: " + dlike);
-		System.out.println("댓글 수: " + dcomment);
-		System.out.println("orderBy : " + orderBy);
-
+		
+		MemVO memId = (MemVO) session.getAttribute("loginmem");
+		
+		if(memId==null) {
+			System.out.println("아이디가 없습니다");
+			model.addAttribute("memPoint", "로그인하고 포인트를 얻으세요");
+		} else {
+			System.out.println(memId);
+			System.out.println("백에서 받은 아이디:"+memId.getMem_id());
+			System.out.println("백에서 받은 포인트:"+memId.getMem_point());
+			model.addAttribute("memPoint", memId.getMem_point());
+		}
 		return "doran/doran";
 	}
 
@@ -79,30 +83,23 @@ public class DoranController {
 
 	// 도란도란을 위한 데이터인지, 내가 쓴 글인지 확인
 	@GetMapping("/doranFor.do")
-	public String doranFor(@RequestParam(name = "dataFor", defaultValue = "doran") String dataFor, 
-			Model model,
+	public String doranFor(@RequestParam(name = "dataFor", defaultValue = "doran") String dataFor, Model model,
 			HttpSession session, RedirectAttributes redirectAttributes) {
 		List<DoranVO> dlist;
 
 		System.out.println("DateFor:" + dataFor);
-		if ("doran".equals(dataFor)) {
-			dlist = dService.selectAll();
+		if(dataFor.equals("myDoran")) {
+			MemVO memId = (MemVO) session.getAttribute("loginmem");
+			System.out.println(memId.getMem_id()+"나의 도란 데이터를 보여주마");
+			dlist=dService.selectAllForMe(memId.getMem_id());
 		} else {
-			MemVO memVO = (MemVO) session.getAttribute("loginmem");
-			if (memVO == null || memVO.getMem_id() == null) {
-				System.out.println("현재 아이디가 없다");
-				
-				return "redirelogin/login";
-			}
-			String memId = memVO.getMem_id();
-			System.out.println("현재 아이디 :" + memId);
-			dlist = dService.selectAllForMe(memId);
-			System.out.println(dlist);
+			dlist = dService.selectAll();
 		}
-
+	
 		if (dlist.size() == 0) {
 			System.out.println("해당하는 데이터가 없습니다 ~ 글을 써 이 사람아");
 		}
+		
 		model.addAttribute("dlist", dlist);
 		System.out.println(dlist);
 		return "doran/doran_ajax";
