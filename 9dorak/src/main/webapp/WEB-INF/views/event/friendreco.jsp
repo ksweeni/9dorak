@@ -9,7 +9,7 @@
 	type="text/css" />
 <link rel="stylesheet"
 	href="${cpath}/resources/css/friendrecoStyle.css?d" type="text/css" />
-	
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -151,15 +151,17 @@
 			<div class=e62_325>
 				<div class=e62_326>
 					<p class="e62_327">친구 추천으로 혜택을 함께 누려보세요</p>
-					<p class="e62_328">친구에게 회원코드를 공유하고, 해당 친구가 회원 가입 시 추천인 코드를
-						입력하면</p>
+					<p class="e62_328">친구에게 회원코드를 공유하고, 해당 친구가 회원 가입 시 추천인 코드를 입력하면</p>
 				</div>
 			</div>
-			<span class="e62_465">두 분 모두에게 900P 를 드려요 !</span>
+			<span class="e62_465">두 분 모두에게 <span class="pointer">900P</span>를
+				드려요 !
+			</span>
 		</div>
 		<div class=e63_173>
-		<span class="e62_373">가입한 친구</span><span class="e62_374">본인</span>
+			<span class="e62_373">가입한 친구</span><span class="e62_374">본인</span>
 		</div>
 	</div>
+	
 </body>
 </html>
