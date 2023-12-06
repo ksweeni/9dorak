@@ -29,8 +29,42 @@
 		mem_id = #{mem_id}
 	</delete>
 
-	<select id="getDelivery" resultType="memdeliveryvo" parameterType="String">
+	<select id="getDelivery" resultType="memdeliveryvo"
+		parameterType="String">
 		SELECT * FROM MEMDELIVERY where mem_id = #{mem_id}
 	</select>
 
+	<delete id="deleteDelivery" parameterType="memdeliveryvo">
+		delete FROM
+		MEMDELIVERY where mem_id = #{mem_id} and mem_delname = #{mem_delname}
+	</delete>
+
+
+	<insert id="insertDelivery" parameterType="memdeliveryvo">
+		INSERT INTO
+		MEMDELIVERY (mem_id, mem_delname, mem_zipcode, mem_road,
+		mem_addr,
+		mem_detail, mem_refer)
+		VALUES (#{mem_id}, #{mem_delname},
+		#{mem_zipcode},#{mem_road}, #{mem_addr},
+		#{mem_detail}, #{mem_refer})
+	</insert>
+
+	<select id="selectDelivery" resultType="int"
+		parameterType="memdeliveryvo">
+		SELECT COUNT(*) FROM MEMDELIVERY
+		WHERE mem_id = #{mem_id} AND mem_delname = #{mem_delname}
+	</select>
+	<update id="updateDelivery" parameterType="memdeliveryvo">
+		update MEMDELIVERY
+		set
+		mem_delname=#{mem_delname},
+		mem_zipcode=#{mem_zipcode},
+		mem_road=#{mem_road},
+		mem_addr=#{mem_addr},
+		mem_detail=#{mem_detail},
+		mem_refer=#{mem_refer}
+		where
+		mem_id=#{mem_id}
+	</update>
 </mapper>
