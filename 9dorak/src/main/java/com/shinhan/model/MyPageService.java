@@ -43,6 +43,21 @@ public class MyPageService {
 		return dao.deleteDelivery(memdel);
 	}
 
+	public int insertDelivery(MemDeliveryVO memDel) {
+		// TODO Auto-generated method stub
+		return dao.insertDelivery(memDel);
+	}
+
+	public int selectDelivery(MemDeliveryVO memDel) {
+		// TODO Auto-generated method stub
+		return dao.selectDelivery(memDel);
+	}
+
+	public int updateDelivery(MemDeliveryVO memDel) {
+		// TODO Auto-generated method stub
+		return dao.updateDelivery(memDel);
+	}
+
 
 
 

@@ -934,24 +934,33 @@ String contextPath = request.getContextPath();
 						<div class="e126_327">
 							<div class="e126_320">
 								<span class="e126_321">배송지 주소</span> <span class="e126_322">${item.mem_delname}</span>
-								<span class="e126_325">${mem_addr}</span> <span class="e126_324">배송지명</span>
+								<span class="e126_325">${item.mem_addr}</span> <span
+									class="e126_324">배송지명</span>
 							</div>
 							<div class="e128_274"
 								onclick="deleteItem('${item.mem_delname}');">
 								<span class="e128_275">삭제</span>
 							</div>
+
 							<div class="e128_276">
 								<!-- <span class="e128_277">수정</span> -->
+
 								<a class="e128_277" href="#none"
-									onclick="window.open('${cpath}/my/selectDelivery.do','new','scrollbars=yes,resizable=no width=500 height=200, left=0,top=0');return false">수정</a>
+									onclick="window.open('${cpath}/my/selectDelivery.do?mem_delname=${item.mem_delname }','new','scrollbars=yes,resizable=no width=700 height=200, left=0,top=0');return false">수정</a>
 							</div>
 						</div>
 					</div>
 				</c:forEach>
 				<div class="e128_278">
 					<!-- <span class="e128_279">배송지 추가</span> -->
-					<a class="e128_279" href="#none"
-						onclick="window.open('${cpath}/my/selectDelivery.do','new','scrollbars=yes,resizable=no width=500 height=200, left=0,top=0');return false">배송지추가</a>
+					<c:if test="${dlist.size() == 3}">
+						<a class="e128_279" id="fulldlist">배송지 추가</a>
+					</c:if>
+					<c:if test="${dlist.size() != 3}">
+						<a class="e128_279" href="#none"
+							onclick="window.open('${cpath}/my/selectDelivery.do?mem_delname=${item.mem_delname }','new','scrollbars=yes,resizable=no width=700 height=200, left=0,top=0');return false">배송지추가</a>
+					</c:if>
+
 				</div>
 			</div>
 		</div>
@@ -1052,18 +1061,12 @@ String contextPath = request.getContextPath();
 
 		})
 	}
-	/* $(".e128_274").on("click",function(){
-	alert($)
-		$.ajax({
-
-			url : "${cpath}/my/deleteDelivery.do",
-			type : "post",
-			success : function(res) {
-			 	alert("삭제되었습니다");
-			}
-
-		})
-	}) */
+	
+	
+	$("#fulldlist").on("click",function(){
+		alert("3개까지 등록 가능합니다.");
+		
+	})	
 </script>
 
 </html>

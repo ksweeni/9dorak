@@ -47,6 +47,23 @@ public class MyPageDAOMybatis {
 		return result;
 	}
 
+	public int insertDelivery(MemDeliveryVO memDel) {
+		// TODO Auto-generated method stub
+		int result = sqlSession.insert(NAMESPACE + "insertDelivery", memDel);
+		return result;
+	}
+
+	public int selectDelivery(MemDeliveryVO memDel) {
+		int result = sqlSession.selectOne(NAMESPACE + "selectDelivery", memDel);
+		return result;
+	}
+
+	public int updateDelivery(MemDeliveryVO memDel) {
+		System.out.println(memDel);
+		int result = sqlSession.update(NAMESPACE + "updateDelivery", memDel);
+		return result;
+	}
+
 //	public List<MemVO> selectAll() {
 //		List<MemVO> mlist = sqlSession.selectList(NAMESPACE + "selectAll");
 ////		System.out.println(mlist);
