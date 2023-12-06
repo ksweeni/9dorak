@@ -32,6 +32,7 @@ request.setCharacterEncoding("UTF-8");
 		test page</a>
 	<a href="${pageContext.request.contextPath}/main.do">메인 테스트</a>
 	<a href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+	<a href="${pageContext.request.contextPath}/menu/menuMediaReview.do">사진 및 동영상 모아보기 test</a>
 
 
 <!-- 로그인 하면 로그아웃 버튼 로그인 안하면 로그아웃 버튼도 이거 수정해서 하면 될거에요  -->

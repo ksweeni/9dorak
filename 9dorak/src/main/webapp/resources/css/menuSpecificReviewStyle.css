@@ -1,12 +1,22 @@
 @charset "UTF-8";
 
-#shop{
-	background:black;
-	color:white;
+
+.div-wrapper .frame-review {
+	gap: 40rem;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	left: 8%;
+}
+
+#shop {
+	background: black;
+	color: white;
 }
 
 #shop-label {
-	color:white;
+	color: white;
 }
 
 .selected-option {
@@ -37,8 +47,8 @@ div-wrapper {
 
 .div-wrapper .div {
 	display: flex;
-    flex-direction: column;
-	width: 1440px;
+	flex-direction: column;
+	width: 1140px;
 	height: 4889px;
 	position: relative;
 }
@@ -48,7 +58,7 @@ div-wrapper {
 	width: 100%;
 	height: 1008px;
 	top: 10rem;
-	left: 10%;
+	left: 20%;
 }
 
 .div-wrapper .group {
@@ -64,11 +74,11 @@ div-wrapper {
 
 .div-wrapper .sub-image {
 	display: inline-flex;
-    align-items: flex-start;
-    gap: 70px;
-    position: relative;
-    top: 4rem;
-    left: 0;
+	align-items: flex-start;
+	gap: 70px;
+	position: relative;
+	top: 4rem;
+	left: 0;
 }
 
 .div-wrapper .overlap-group-wrapper {
@@ -119,17 +129,17 @@ div-wrapper {
 
 .div-wrapper .specific {
 	position: relative;
-    width: 100%;
-    height: 100%;
-    top: -57rem;
-    left: 50rem;
+	width: 50%;
+	height: 100%;
+	top: -57rem;
+	left: 50rem;
 }
 
 .div-wrapper .overlap-2 {
 	position: relative;
-    width: 100%;
-    height: 40px;
-    top: 0;
+	width: 100%;
+	height: 40px;
+	top: 0;
 }
 
 .div-wrapper .title {
@@ -154,18 +164,18 @@ div-wrapper {
 
 .div-wrapper .text-wrapper {
 	font-weight: 600;
-    font-size: 1.2rem;
-    position: relative;
-    width: 149px;
-    top: 3rem;
-    left: 5px;
+	font-size: 1.2rem;
+	position: relative;
+	width: 149px;
+	top: 3rem;
+	left: 5px;
 }
 
 .div-wrapper .price-and-button {
 	position: relative;
-    width: 100%;
-    height: 176px;
-    top: 47rem;
+	width: 100%;
+	height: 176px;
+	top: 47rem;
 }
 
 .div-wrapper .frame-wrapper {
@@ -252,52 +262,49 @@ div-wrapper {
 
 .div-wrapper .overlap-3 {
 	column-gap: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 550px;
-    height: 50px;
-    top: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 550px;
+	height: 50px;
+	top: 1rem;
 }
 
-
 .div-wrapper .button-medium-text {
-    background: white;
-    cursor: pointer;
-    position: relative;
-    width: 100%;
-    height: 50px;
-    border-radius: 2rem;
-    border: 1px solid;
-    border-color: #d9dadb;
-    transition: background-color 0.3s ease; 
+	background: white;
+	cursor: pointer;
+	position: relative;
+	width: 100%;
+	height: 50px;
+	border-radius: 2rem;
+	border: 1px solid;
+	border-color: #d9dadb;
+	transition: background-color 0.3s ease;
 }
 
 #shop:hover {
-    background-color: #F48E28;
+	background-color: #F48E28;
 }
-
-
 
 .div-wrapper .overlap-group-2 {
 	position: relative;
-    width: 6rem;
-    height: 21px;
-    left: 4rem;
+	width: 6rem;
+	height: 21px;
+	left: 4rem;
 }
 
 .div-wrapper .label {
 	position: relative;
-    height: 20px;
-    top: 0;
-    left: 1rem;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 0;
-    line-height: 20px;
-    white-space: nowrap;
+	height: 20px;
+	top: 0;
+	left: 1rem;
+	font-weight: 600;
+	font-size: 0.9rem;
+	letter-spacing: 0;
+	line-height: 20px;
+	white-space: nowrap;
 }
 
 .div-wrapper .icon-cart {
@@ -309,13 +316,13 @@ div-wrapper {
 }
 
 .div-wrapper .frame-2 {
+	column-gap: 1rem;
 	order: -1;
-    border-radius: 2rem;
-    display: inline-flex;
-    align-items: flex-start;
-    height: 50px;
-    position: relative;
-	
+	border-radius: 2rem;
+	display: inline-flex;
+	align-items: flex-start;
+	height: 50px;
+	position: relative;
 }
 
 .div-wrapper .label-wrapper {
@@ -557,28 +564,31 @@ div-wrapper {
 	width: 386px;
 	height: 69px;
 	top: 15rem;
-	left: 10%;
+	left: 20%;
 }
 
 .div-wrapper .menu-selection {
 	position: relative;
-	width: 394px;
+	width: 386px;
 	height: 66px;
 	top: -1px;
-	left: -15px;
 }
 
+
+
 .menu-selection-wrapper .common-button {
-	border: none;
-	background: none;
 	cursor: pointer;
 	position: relative;
 	transition: color 0.3s, border-bottom 0.3s;
+	border: none;
+    background: transparent;
 }
 
 .menu-selection-wrapper .common-button:hover, .menu-selection-wrapper .common-button:active,
 	.menu-selection-wrapper .common-button.selected {
-	color: #ffb58b; /* 호버 및 선택 상태에서의 글자 색상 변경 */
+	background: none;
+    border: none;
+    color: #ffb58b;
 }
 
 /* rectangle-4 초기 숨김 상태 */
@@ -628,7 +638,7 @@ div-wrapper {
 	gap: 24px;
 	position: relative;
 	top: 18rem;
-	left: 10%;
+	left: 30%;
 }
 
 .div-wrapper .auto-layout-vertical {
@@ -676,26 +686,26 @@ div-wrapper {
 .div-wrapper .picture-reviews {
 	row-gap: 1rem;
 	display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	position: relative;
-    width: 100%;
-    height: 568px;
-    top: 23rem;
-    left: 10%;
+	width: 100%;
+	height: 568px;
+	top: 23rem;
+	left: 30%;
 }
 
 .div-wrapper .group-5 {
-	
+	top: 1rem;
 	position: relative;
 	column-gap: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    left: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 500px;
+	left: 0;
 }
 
 .div-wrapper .group-6 {
@@ -716,15 +726,15 @@ div-wrapper {
 
 .div-wrapper .p {
 	position: relative;
-    width: 247px;
-    height: 7rem;
-    top: -10rem;
-    left: 3rem;
-    font-weight: 600;
-    color: #ffffff;
-    font-size: 1.3rem;
-    letter-spacing: 0;
-    line-height: normal;
+	width: 247px;
+	height: 7rem;
+	top: -10rem;
+	left: 3rem;
+	font-weight: 600;
+	color: #ffffff;
+	font-size: 1.3rem;
+	letter-spacing: 0;
+	line-height: normal;
 }
 
 .div-wrapper .overlap-wrapper {
@@ -733,7 +743,6 @@ div-wrapper {
 	height: 500px;
 	top: 0;
 }
-
 
 .div-wrapper .group-7 {
 	position: relative;
@@ -764,7 +773,6 @@ div-wrapper {
 	object-fit: cover;
 }
 
-
 .div-wrapper .frame-8 {
 	order: -1;
 	display: flex;
@@ -773,14 +781,13 @@ div-wrapper {
 	gap: 1000px;
 	position: relative;
 	top: 0;
-	
 }
 
 .div-wrapper .text-wrapper-13 {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-weight: 600;
+	font-weight: 700;
 	color: #000000;
 	font-size: 25px;
 	text-align: center;
@@ -808,22 +815,22 @@ div-wrapper {
 	width: 100%;
 	height: 2017px;
 	top: 27rem;
-	left: 10%;
+	left: 25%;
 	display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .div-wrapper .frame-9 {
 	display: flex;
-    width: 100%;
-    align-items: flex-start;
-    gap: 890px;
-    position: relative;
-    left: 3rem;
+	width: 100%;
+	align-items: flex-start;
+	gap: 890px;
+	position: relative;
+	left: 3rem;
 }
 
 .div-wrapper .frame-10 {
@@ -852,20 +859,20 @@ div-wrapper {
 
 .div-wrapper .reviews-texts {
 	display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 2rem;
-    position: relative;
-    top: 3rem;
-    left: 0;
-    justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	gap: 2rem;
+	position: relative;
+	top: 3rem;
+	left: 5%;
+	justify-content: center;
 }
 
 .div-wrapper .review {
 	position: relative;
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .div-wrapper .view-3 {
@@ -881,28 +888,28 @@ div-wrapper {
 
 .div-wrapper .frame-13 {
 	display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    position: relative;
-    top: 2.5rem;
-    left: 3rem;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1rem;
+	position: relative;
+	top: 2.5rem;
+	left: 3rem;
 }
 
 .div-wrapper .rectangle-6 {
 	position: relative;
-    width: 30rem;
-    height: 15rem;
-    background-color: #f2f2f2;
-    border-radius: 47.65px;
+	width: 30rem;
+	height: 15rem;
+	background-color: #f2f2f2;
+	border-radius: 47.65px;
 }
 
 .div-wrapper .group-9 {
 	position: relative;
-    width: 380px;
-    height: 110px;
-    top: -12rem;
-    left: 3rem;
+	width: 380px;
+	height: 110px;
+	top: -12rem;
+	left: 3rem;
 }
 
 .div-wrapper .text-wrapper-14 {
@@ -928,22 +935,22 @@ div-wrapper {
 }
 
 .div-wrapper .frame-14 {
+	column-gap: 1rem;
 	display: inline-flex;
-    align-items: flex-start;
-    gap: 50px;
-    position: relative;
-    top: 3.5rem;
-    left: 0;
+	align-items: flex-start;
+	position: relative;
+	top: 3.5rem;
+	left: 0;
 }
 
 .div-wrapper .frame-15 {
 	display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    position: relative;
-    top: -11rem;
-    left: 10rem;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.5rem;
+	position: relative;
+	top: -11rem;
+	left: 7rem;
 }
 
 .div-wrapper .frame-16 {
@@ -1018,12 +1025,12 @@ div-wrapper {
 
 .div-wrapper .pagination {
 	display: flex;
-    width: 282px;
-    height: 40px;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    top: 10rem;
+	width: 282px;
+	height: 40px;
+	align-items: center;
+	gap: 8px;
+	position: relative;
+	top: 10rem;
 }
 
 .div-wrapper .page {
@@ -1269,7 +1276,6 @@ div-wrapper {
 	top: 219px;
 	left: 0;
 }
-
 
 .div-wrapper .img-wrapper {
 	position: absolute;

@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/menuStyle.css?e"
 	type="text/css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

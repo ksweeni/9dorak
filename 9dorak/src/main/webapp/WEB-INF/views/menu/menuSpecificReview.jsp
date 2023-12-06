@@ -239,7 +239,7 @@
 				</div>
 			</div>
 			<div class="text-reviews-and">
-				<div class="frame-9">
+				<div class="frame-review">
 					<div class="text-wrapper-13">텍스트 리뷰</div>
 					<div class="frame-10">
 						<div class="frame-11">
