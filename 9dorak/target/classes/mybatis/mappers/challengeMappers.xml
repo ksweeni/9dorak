@@ -8,4 +8,37 @@
 		select * from challenge
 	</select>
 
+	<select id="selectByno" resultType="challengevo"
+		parameterType="int">
+		select * from challenge where challenge_no =
+		#{challenge_no}
+	</select>
+
+	<update id="updateChall" parameterType="challengevo">
+			update challenge
+			set
+			challenge_name=#{challenge_name},
+			challenge_cont=#{challenge_cont},
+			challenge_date=sysdate
+			where
+			challenge_no=#{challenge_no}
+	</update>
+
+<!-- 		<update id="empUpdate" parameterType="empvo">
+			update employees
+			set
+			first_name=#{first_name},
+			last_name=#{last_name},
+			email=#{email},
+			phone_number=#{phone_number},
+			hire_date=#{hire_date},
+			job_id=#{job_id},
+			salary=#{salary},
+			commission_pct=#{commission_pct},
+			manager_id=#{manager_id},
+			department_id=#{department_id}
+			where
+			employee_id=#{employee_id}
+		</update> -->
+
 </mapper>
