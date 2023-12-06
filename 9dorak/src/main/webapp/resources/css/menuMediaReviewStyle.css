@@ -1,11 +1,27 @@
 @charset "UTF-8";
 
+.div-wrapper .doran-card {
+	overflow-x: hidden;
+	overflow-y: auto; /* 내용이 넘칠 때 스크롤이 나타남 */
+	max-height: 1164px;
+	width: 705px;
+}
+
 .div-wrapper {
 	background-color: #ffffff;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	width: 100%;
+}
+
+.div-wrapper  .frame-pic {
+	column-gap: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
 }
 
 .div-wrapper .div {
@@ -57,18 +73,17 @@
 
 .div-wrapper .frame-3 {
 	display: inline-flex;
-    align-items: flex-start;
-    gap: 2rem;
-    position: relative;
-    top: 0;
-    left: 0;
+	align-items: flex-start;
+	gap: 2rem;
+	position: relative;
+	top: 0;
+	left: 0;
 }
 
 .div-wrapper .text-wrapper {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	
 	font-weight: 600;
 	color: #000000;
 	font-size: 20px;
@@ -80,7 +95,6 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	
 	font-weight: 600;
 	color: #7d7d7d;
 	font-size: 20px;
@@ -105,11 +119,11 @@
 
 .div-wrapper .frame-6 {
 	display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
-    flex: 0 0 auto;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	position: relative;
+	flex: 0 0 auto;
 }
 
 .div-wrapper .menu {
@@ -140,18 +154,17 @@
 
 .div-wrapper .frame-7 {
 	display: inline-flex;
-    align-items: center;
-    gap: 2rem;
-    position: relative;
-    flex: 0 0 auto;
-    flex-direction: row;
+	align-items: center;
+	gap: 2rem;
+	position: relative;
+	flex: 0 0 auto;
+	flex-direction: row;
 }
 
 .div-wrapper .text-wrapper-3 {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-
 	font-weight: 100;
 	color: #000000;
 	font-size: 20px;
@@ -172,7 +185,6 @@
 	width: 649px;
 	height: 107px;
 	margin-right: -45px;
-
 	font-weight: 500;
 	color: #000000;
 	font-size: 20px;
@@ -200,7 +212,6 @@
 .div-wrapper .text-wrapper-4 {
 	position: relative;
 	width: fit-content;
-
 	font-weight: 500;
 	color: #ff7f00;
 	font-size: 20px;
@@ -210,47 +221,26 @@
 
 .div-wrapper .frame-10 {
 	display: flex;
-	flex-wrap: wrap;
-	width: 615px;
-	align-items: flex-start;
-	gap: 15px 21px;
-	position: relative;
+    flex-wrap: wrap;
+    width: 615px;
+    align-items: center;
+    gap: 1rem 1rem;
+    position: relative;
+    flex-direction: column;
+    align-content: center;
 }
 
 .div-wrapper .menu-2 {
 	position: relative;
 	width: 300px;
 	height: 400px;
-	background-image: url(./img/rectangle-607-3.png);
+	border-radius: 2rem;
 	background-size: cover;
 	background-position: 50% 50%;
 }
 
-.div-wrapper .menu-3 {
-	position: relative;
-	width: 300px;
-	height: 400px;
-	background-image: url(./img/rectangle-607-2.png);
-	background-size: cover;
-	background-position: 50% 50%;
-}
-
-.div-wrapper .menu-4 {
-	position: relative;
-	width: 300px;
-	height: 400px;
-	background-image: url(./img/rectangle-607-4.png);
-	background-size: cover;
-	background-position: 50% 50%;
-}
-
-.div-wrapper .menu-5 {
-	position: relative;
-	width: 300px;
-	height: 400px;
-	background-image: url(./img/rectangle-607.png);
-	background-size: cover;
-	background-position: 50% 50%;
+.div-wrapper .menu-2:hover {
+	box-shadow: 2px 2px 5px 0px gray;
 }
 
 .div-wrapper .scroll-bar-vertical {
@@ -577,25 +567,20 @@
 .div-wrapper .text-wrapper-15 {
 	left: 84px;
 	position: absolute;
-
 	color: #000000;
-
 }
 
 .div-wrapper .text-wrapper-16 {
 	left: 167px;
 	position: absolute;
 	top: 0;
-
 	color: #000000;
-
 }
 
 .div-wrapper .text-wrapper-17 {
 	left: 259px;
 	position: absolute;
 	top: 0;
-
 }
 
 .div-wrapper .untitled-2 {
@@ -620,7 +605,6 @@
 	position: absolute;
 	top: 9px;
 	left: 0;
-
 }
 
 .div-wrapper .group-6 {
