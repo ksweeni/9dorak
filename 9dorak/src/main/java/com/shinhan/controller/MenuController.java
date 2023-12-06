@@ -73,10 +73,12 @@ public class MenuController {
 		//@RequestParam("order_type") String order_type
 		
 		//카테고리 + 정렬
-		if(pro.getIngre_no() != null && pro.getOrder_type() != null) {
+		if(pro.getIngre_no() != "" && pro.getOrder_type() != "") {
 			List<ProVO> slist = mService.selectCtgrOrder(pro);
 			model.addAttribute("slist", slist);
 			System.out.println(slist);
+			System.out.println(pro.getIngre_no());
+			System.out.println(pro.getOrder_type());
 			return "menu/menu_ajax";
 		}
 		
