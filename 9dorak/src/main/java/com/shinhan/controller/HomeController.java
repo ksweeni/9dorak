@@ -13,10 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.ProVO;
-import com.shinhan.model.ChallengeService;
 import com.shinhan.model.MenuService;
 
 /**
@@ -44,9 +41,26 @@ public class HomeController {
 	@GetMapping("/main.do")
 	public String allergy_menu(Model model) {
 		List<ProVO> prolist = menuService.selectAll();
-		System.out.println(prolist);
 		model.addAttribute("prolist", prolist);
 		return "main";
+	}
+	
+	@GetMapping("searchAllergyCheck.do")
+	public String searchAllergyCheck(Model model, ProVO pro) {
+		//@RequestParam("pro_aller") String pro_aller
+		List<ProVO> slist = menuService.searchAllergyCheck(pro.getPro_aller());
+		/* System.out.println("searchAllergyCheck.do"); */
+		model.addAttribute("slist", slist);
+		return "main/main_allergy";
+	}
+	
+	@GetMapping("searchCategoryCheck.do")
+	public String searchCategoryCheck(Model model, ProVO pro) {
+		//@RequestParam("pro_aller") String pro_aller
+		List<ProVO> clist = menuService.searchCategoryCheck(pro.getIngre_no());
+		System.out.println(clist);
+		model.addAttribute("clist", clist);
+		return "main/main_category";
 	}
 	
 }

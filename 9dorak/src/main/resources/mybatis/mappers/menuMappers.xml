@@ -8,69 +8,77 @@
 	<select id="selectAll" resultType="provo">
 		select * from pro
 	</select>
-	
+
 	<!-- 메뉴 검색 -->
-	<select id="selectSearchPro" resultType="provo" parameterType="provo">
+	<select id="selectSearchPro" resultType="provo"
+		parameterType="provo">
 		select *
-		  from pro t1,
-			   category t2
-		  where t1.pro_no=t2.pro_no
-		<if test="ingre_no != null and ingre_no != ''" >
-			and t2.ingre_no = #{ingre_no}
+		from pro t1,
+		category t2
+		where t1.pro_no=t2.pro_no
+		<if test="ingre_no != null and ingre_no != ''">
+			and t2.ingre_no =
+			#{ingre_no}
 		</if>
-		<if test="pro_name != null and pro_name != ''" >
-			and t1.pro_name like '%'||#{pro_name}||'%'
+		<if test="pro_name != null and pro_name != ''">
+			and t1.pro_name like
+			'%'||#{pro_name}||'%'
 		</if>
-	</select>
-	
-	<!-- 신상품순 정렬 -->
-	<select id="selectOrderbyNew" resultType="provo">
-		select * from pro order by pro_rd desc
-	</select>
-	
-	<!-- 인기순 정렬 -->
-	<select id="selectOrderbyLike" resultType="provo">
-		select * from pro order by pro_like desc
-	</select>
-	
-	<!-- 알러지 -->
-	<select id="searchAllergyCheck" resultType="provo" parameterType="String">
-		select *
-		from pro
-		where pro_aller not in #{pro_aller}
-		or pro_aller is null
-	</select>
-	
-	<!-- 알러지 + 정렬 -->
-	<!-- <select id="selectAllOrder" resultType="provo" parameterType="provo">
-		select *
-		from pro
-		where pro_aller not in #{pro_aller}
-		or pro_aller is null
-		order by pro_like desc
-	</select> -->
-	<select id="selectAllOrder" resultType="provo" parameterType="provo">
-		select *
-		from pro
-		where pro_aller not in #{pro_aller} or pro_aller is null
-			<if test="order_type eq '인기순'">
-				order by pro_like desc
-			</if>
-			<if test="order_type eq '신상품 순'">
-				order by pro_rd desc
-			</if>
 	</select>
 
-	<!-- <insert id="insertDoran" parameterType="doranvo">
-		INSERT INTO DORAN (
-		doran_no,
-		doran_title, doran_cont, doran_date, doran_image, doran_view, mem_id
-		)
-		VALUES (
-		#{doranNo}, #{doranTitle}, #{doranCont}, #{doranDate},
-		#{doranImage}, #{doranView}, #{memId}
-		)
-	</insert> -->
+	<!-- 신상품순 정렬 -->
+	<select id="selectOrderbyNew" resultType="provo">
+		select * from pro order
+		by pro_rd desc
+	</select>
+
+	<!-- 인기순 정렬 -->
+	<select id="selectOrderbyLike" resultType="provo">
+		select * from pro
+		order by pro_like desc
+	</select>
+
+	<!-- 알러지 -->
+	<select id="searchAllergyCheck" resultType="provo"
+		parameterType="String">
+		select *
+		from pro
+		where pro_aller not in #{pro_aller}
+		or
+		pro_aller is null
+	</select>
+
+	<!-- 카테고리 -->
+	<select id="searchCategoryCheck" resultType="provo"
+		parameterType="String">
+		SELECT *
+		FROM pro
+		INNER JOIN category ON pro.pro_no = category.pro_no
+		where ingre_no = #{ingre_no} 
+	</select>
+
+	<!-- 알러지 + 정렬 -->
+	<!-- <select id="selectAllOrder" resultType="provo" parameterType="provo"> 
+		select * from pro where pro_aller not in #{pro_aller} or pro_aller is null 
+		order by pro_like desc </select> -->
+	<select id="selectAllOrder" resultType="provo"
+		parameterType="provo">
+		select *
+		from pro
+		where pro_aller not in #{pro_aller} or pro_aller is
+		null
+		<if test="order_type eq '인기순'">
+			order by pro_like desc
+		</if>
+		<if test="order_type eq '신상품 순'">
+			order by pro_rd desc
+		</if>
+	</select>
+
+	<!-- <insert id="insertDoran" parameterType="doranvo"> INSERT INTO DORAN 
+		( doran_no, doran_title, doran_cont, doran_date, doran_image, doran_view, 
+		mem_id ) VALUES ( #{doranNo}, #{doranTitle}, #{doranCont}, #{doranDate}, 
+		#{doranImage}, #{doranView}, #{memId} ) </insert> -->
 
 	<!-- <update id="empUpdate" parameterType="empvo"> update employees set 
 		first_name= #{first_name}, last_name=#{last_name}, email=#{email}, phone_number=#{phone_number}, 
@@ -85,5 +93,5 @@
 		null, </if> <if test="manager_id!=0"> #{manager_id}, </if> <if test="department_id==0"> 
 		null, </if> <if test="department_id!=0"> #{department_id}, </if> #{employee_id}) 
 		</insert> -->
-		
+
 </mapper>
