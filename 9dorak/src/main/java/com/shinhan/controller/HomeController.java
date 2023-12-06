@@ -56,13 +56,13 @@ public class HomeController {
 		return "main/main_allergy";
 	}
 	
-	@GetMapping("searchCategoryCheck.do")
-	public String searchCategoryCheck(Model model, ProVO pro) {
-		//@RequestParam("pro_aller") String pro_aller
-		List<ProVO> clist = menuService.searchCategoryCheck(pro.getIngre_no());
-		System.out.println(clist);
-		model.addAttribute("clist", clist);
-		return "main/main_category";
-	}
+//	@GetMapping("searchCategoryCheck.do")
+//	public String searchCategoryCheck(Model model, ProVO pro) {
+//		//@RequestParam("pro_aller") String pro_aller
+//		List<ProVO> clist = menuService.searchCategoryCheck(pro.getIngre_no());
+//		System.out.println(clist);
+//		model.addAttribute("clist", clist);
+//		return "main/main_category";
+//	}
 	
 }
