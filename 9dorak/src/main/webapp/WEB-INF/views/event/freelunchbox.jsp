@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/freelunchboxStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/freelunchboxStyle.css?e" type="text/css" />
 <meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
@@ -61,8 +61,8 @@
 	<div class=e50_17>
 		<div class=e50_18>
 			<div class=e50_19>
-				<span class="e50_20">구도락 무료 체험팩 선택</span><span class="e50_21">구독하기
-					전 무료 체험을 통해 먼저 경험해보세요!</span>
+				<span class="e50_20">구도락 무료 체험팩 선택</span>
+				<span class="e50_21">구독하기 전 무료 체험을 통해 먼저 경험해보세요!</span>
 			</div>
 			<div class=e50_22>
 				<div class=e50_23>
@@ -234,5 +234,6 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
 </html>

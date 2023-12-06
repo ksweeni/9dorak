@@ -321,13 +321,16 @@
 				<p class="e55_914">11월의 후보</p>
 				<p class="e55_915">당월 말까지 투표가 진행됩니다 !</p>
 			</div>
-			<span class="e55_2229">추천합니다 </span><span class="e55_2226">요리사
-				ksween</span><span class="e55_2230">레시피 연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는
-				도시락</span><span class="e55_2234">추천합니다 </span><span class="e55_2235">요리사
-				ksween</span><span class="e55_2236">레시피 연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는
-				도시락</span><span class="e55_2231">추천합니다 </span><span class="e55_2232">요리사
-				ksween</span><span class="e55_2233">레시피 연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는
-				도시락</span>
+			<span class="e55_2229">추천합니다 </span> 
+			<span class="e55_2226">요리사</span>
+			<span class="cooker">ksween</span> 
+			<span class="e55_2230">레시피
+				연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락</span> 
+				<span class="e55_2234">추천합니다
+			</span><span class="e55_2235">요리사 ksween</span><span class="e55_2236">레시피
+				연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락</span><span class="e55_2231">추천합니다 </span><span
+				class="e55_2232">요리사 ksween</span><span class="e55_2233">레시피
+				연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락</span>
 		</div>
 		<div class=e55_887>
 			<h3 class="e55_888">내가 만든 구도락, 신메뉴로 탄생</h3>
