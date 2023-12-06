@@ -177,6 +177,7 @@ String contextPath = request.getContextPath();
 	/* 	position: absolute; */
 	left: 0.15234375px;
 	top: 0px;
+	margin-bottom: 50px;
 }
 
 .126_327 {
@@ -211,7 +212,7 @@ String contextPath = request.getContextPath();
 	height: 27.9761905670166px;
 	/* position: absolute; */
 	position: relative;
-	left: 93px;
+	left: 305px;
 	top: 10px;
 	font-family: Roboto;
 	text-align: left;
@@ -241,7 +242,7 @@ String contextPath = request.getContextPath();
 	height: 62.66666793823242px;
 	/* position: absolute; */
 	position: relative;
-	left: 196px;
+	left: 48px;
 	top: 40px;
 	font-family: Roboto;
 	text-align: left;
@@ -256,7 +257,7 @@ String contextPath = request.getContextPath();
 	height: 27.9761905670166px;
 	/* position: absolute; */
 	position: relative;
-	left: 100px;
+	left: -64px;
 	top: 10px;
 	font-family: Roboto;
 	text-align: left;
@@ -276,7 +277,7 @@ String contextPath = request.getContextPath();
 	position: relative;
 	/* 	position: absolute; */
 	left: 660px;
-	top: -48px;
+	top: -72px;
 	border: 1px solid gray;
 	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
@@ -933,20 +934,14 @@ String contextPath = request.getContextPath();
 					<div class="e126_328">
 						<div class="e126_327">
 							<div class="e126_320">
-								<span class="e126_321">배송지 주소</span> <span class="e126_322">${item.mem_delname}</span>
-								<span class="e126_325">${item.mem_addr}</span> <span
-									class="e126_324">배송지명</span>
+								<span class="e126_321">배송지</span> <span class="e126_322">${item.mem_delname}</span>
+								<span
+									class="e126_324">주소	</span>
+								<span class="e126_325">${item.mem_addr}</span> 
 							</div>
 							<div class="e128_274"
 								onclick="deleteItem('${item.mem_delname}');">
 								<span class="e128_275">삭제</span>
-							</div>
-
-							<div class="e128_276">
-								<!-- <span class="e128_277">수정</span> -->
-
-								<a class="e128_277" href="#none"
-									onclick="window.open('${cpath}/my/selectDelivery.do?mem_delname=${item.mem_delname }','new','scrollbars=yes,resizable=no width=700 height=200, left=0,top=0');return false">수정</a>
 							</div>
 						</div>
 					</div>
@@ -958,7 +953,7 @@ String contextPath = request.getContextPath();
 					</c:if>
 					<c:if test="${dlist.size() != 3}">
 						<a class="e128_279" href="#none"
-							onclick="window.open('${cpath}/my/selectDelivery.do?mem_delname=${item.mem_delname }','new','scrollbars=yes,resizable=no width=700 height=200, left=0,top=0');return false">배송지추가</a>
+							onclick="window.open('${cpath}/my/selectDelivery.do','new','scrollbars=yes,resizable=no width=700 height=200, left=0,top=0');return false">배송지추가</a>
 					</c:if>
 
 				</div>
@@ -1005,7 +1000,7 @@ String contextPath = request.getContextPath();
 		</div>
 		<div class=e125_209>
 			<div class=e125_210>
-				<span class="e125_211">${mem.mem_name }</span><span class="e125_212">LV.${mem.mem_grade }</span>
+				<span class="e125_211">${mem.mem_id }</span><span class="e125_212">LV.${mem.mem_grade }</span>
 				<div class="e125_213"></div>
 			</div>
 			<div class=e125_214>
@@ -1061,12 +1056,11 @@ String contextPath = request.getContextPath();
 
 		})
 	}
-	
-	
-	$("#fulldlist").on("click",function(){
+
+	$("#fulldlist").on("click", function() {
 		alert("3개까지 등록 가능합니다.");
-		
-	})	
+
+	})
 </script>
 
 </html>

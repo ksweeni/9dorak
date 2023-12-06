@@ -146,10 +146,12 @@
 		<br></br>
 		<p>${chall}</p>
 
-		<input type="text" value="${chall.challenge_name}" id="challenge_name"></input><br>
-		<input type="text" value="${chall.challenge_cont}" id="challenge_cont"></input><br>
-		<input type="text" value="${chall.challenge_date}" id="challenge_date"></input><br>
-		<input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input><br>		
+		챌린지명 : <input type="text" value="${chall.challenge_name}" id="challenge_name"></input><br>
+		챌린지내용 :<input type="text" value="${chall.challenge_cont}" id="challenge_cont"></input><br>
+		챌린지 등록날짜 : <input type="text" value="${chall.challenge_date}" id="challenge_date"></input><br>
+		좋아요 :<input type="text" value="${likeCnt}" readonly="readonly" id="likeCnt"></input><br>
+		 <input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input><br>
+				
 		<button id="update_aa">수정</button>
 		
 </body>
