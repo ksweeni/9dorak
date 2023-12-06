@@ -786,7 +786,7 @@
 	width: 250px;
 	height: 55px;
 	border-radius: 14px;
-	border: 1px solid;
+	border: 2px solid rgba(244, 140, 40, 1);
 	border-color: var(- -tangerine);
 }
 
@@ -799,16 +799,18 @@
 }
 
 .screen .text-wrapper-21 {
-	position: absolute;
-	height: 16px;
-	top: 22px;
-	left: 58px;
+	width: 50%;
+	height: 70%;
+	top: 7px;
+	left: 57px;
 	font-weight: 400;
-	color: var(- -tangerine);
 	font-size: 14px;
 	letter-spacing: 0;
 	line-height: 16px;
 	white-space: nowrap;
+	outline: none;
+    border: none;
+    position: relative;
 }
 
 .screen .group-15 {
@@ -1138,10 +1140,8 @@
 	width: 100px;
 	height: 100px;
 	margin-top: 13px;
-	margin-left: 0px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border-radius: 50%;
-	overflow: hidden;
 }
 
 .doran-button-frofile-setting {
@@ -1155,6 +1155,7 @@
 	margin-right: 75px;
 	color: white;
 	border: none;
+	margin-top: 5%;
 }
 
 .doran-button-frofile-setting span {
@@ -1175,13 +1176,13 @@
 	margin-bottom: 13px;
 	position: relative;
 	top: -60px;
-	left: 25px;
 }
 
 .doran-uploadContent-content {
 	width: 650px;
 	position: relative;
 	top: -60px;
+	font-size: 1.1rem;
 }
 
 .doran-uploadInfo-profile {
@@ -1198,14 +1199,6 @@
 	left: 70px;
 }
 
-.doran-uploadInfo-time {
-	color: #8A8A8A;
-	font-size: 14px;
-	position: relative;
-	top: -60px;
-	left: 70px;
-}
-
 .doran-uploadInfo-memgrade {
 	color: #FF9A23;
 	font-size: 16px;
@@ -1217,7 +1210,6 @@
 .doran-review {
 	position: relative;
 	display: flex;
-	top: -40px;
 }
 
 .text-wrapper-18:active, .text-wrapper-18:focus, .text-wrapper-19:active,
@@ -1260,7 +1252,7 @@
 .doran-card {
 	overflow-x: hidden;
 	overflow-y: auto; /* 내용이 넘칠 때 스크롤이 나타남 */
-	max-height: 100vh; /* 최대 높이를 지정하여 스크롤이 나타날 수 있도록 함 */
+	max-height: 150vh; /* 최대 높이를 지정하여 스크롤이 나타날 수 있도록 함 */
 	width: 705px;
 }
 
@@ -1275,4 +1267,102 @@
 
 .doran-card::-webkit-scrollbar-track {
 	background-color: #f0f0f0; /* 스크롤 바 트랙의 색상 */
+}
+
+.doran-uploadInfo{
+	margin-bottom: 3%;
+}
+
+.doran-review {
+    position: relative;
+    display: flex;
+    gap: 5%;
+}
+
+.doran-review-likeicon,
+.doran-review-reviewCnticon,
+.doran-review-dcommenticon{
+	width: 20px;
+	height: 20px;
+}
+
+.doran-review-like,
+.doran-review-reviewCnt,
+.doran-review-dcomment{
+	display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.doran-uploadContent{
+	position: relative;
+    left: 3%;
+}
+
+.doran-uploadInfo-time{
+	color: #8A8A8A;
+}
+
+.doran-underInfo{
+	position: relative;
+    top: -10%;
+}
+
+.doran-uploadInfo-title{
+	position: relative;
+    top: -60px;
+    left: 10%;
+}
+
+.group-14 {
+     display: flex;
+     align-items: center;
+}
+
+.overlap-4 {
+     position: relative;
+}
+
+.text-wrapper-21 {
+     padding-right: 30px; /* 버튼의 너비만큼 우측에 여백 추가 */
+}
+
+.doran-search  {
+	position: absolute;
+	top: 50%;
+	right: 10%;
+	transform: translateY(-50%);
+}
+
+.doran-search-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.doran-profile-point{
+	position: relative;
+    display: flex;
+    gap: 70px;
+}
+
+.doran-profile-info{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10%;
+}
+
+.doran-profile-info-memname{
+	font-size: 24px;
+    font-weight: 500;
+}
+
+.doran-profile-info-grade{
+	position: relative;
+    display: flex;
+    gap: 3px;
+    color: rgba(182, 182, 182, 1);
 }
