@@ -53,6 +53,11 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 
+	public List<ProVO> selectCtgrOrder(ProVO pro) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectCtgrOrder", pro);
+		return plist;
+	}
+
 //	public int insertDoran(DoranVO doran) {
 //		System.out.println("inserting :"+doran);
 //		return sqlSession.insert(NAMESPACE + "insertDoran", doran);

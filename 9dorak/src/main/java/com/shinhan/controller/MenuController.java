@@ -30,6 +30,7 @@ public class MenuController {
 
 	private static final Logger logger = LoggerFactory.getLogger(MenuController.class);
 
+	//메뉴보기
 	@GetMapping("menu.do")
 	public String menu(Model model) {
 		List<ProVO> plist = mService.selectAll();
@@ -63,24 +64,30 @@ public class MenuController {
 		return "menu/menu_ajax";
 	}
 	
-	// 페이지 styling 용으로 미리 선언
-	@GetMapping("menuSpecificReview.do")
-	public String menuSpecificReview(Model model) {
-		return "menu/menuSpecificReview";
-	}
-	
 	//정렬
 	@GetMapping("searchOrderby.do")
 	public String searchOrderby(Model model, ProVO pro) {
-		//System.out.println(pro.getOrder_type());
+		System.out.println(pro.getOrder_type());
 		//System.out.println(pro.getPro_aller());
+		System.out.println(pro.getIngre_no());
 		//@RequestParam("order_type") String order_type
+		
+		//카테고리 + 정렬
+		if(pro.getIngre_no() != null && pro.getOrder_type() != null) {
+			List<ProVO> slist = mService.selectCtgrOrder(pro);
+			model.addAttribute("slist", slist);
+			System.out.println(slist);
+			return "menu/menu_ajax";
+		}
+		
+		//알러지 + 정렬
 		if(pro.getPro_aller() != null && pro.getOrder_type() != null) {
 			List<ProVO> slist = mService.selectAllOrder(pro);
 			model.addAttribute("slist", slist);
 			//System.out.println(slist);
 			return "menu/menu_ajax";
 		}
+		
 		if(pro.getOrder_type().equals("신상품 순")) {
 			List<ProVO> slist = mService.selectOrderbyNew();
 			model.addAttribute("slist", slist);
@@ -101,6 +108,12 @@ public class MenuController {
 		model.addAttribute("slist", slist);
 		
 		return "menu/menu_ajax";
+	}
+	
+	// 페이지 styling 용으로 미리 선언
+		@GetMapping("menuSpecificReview.do")
+		public String menuSpecificReview(Model model) {
+			return "menu/menuSpecificReview";
 	}
 	
 }

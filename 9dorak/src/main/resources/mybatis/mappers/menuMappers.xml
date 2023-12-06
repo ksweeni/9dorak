@@ -42,17 +42,24 @@
 	</select>
 	
 	<!-- 알러지 + 정렬 -->
-	<!-- <select id="selectAllOrder" resultType="provo" parameterType="provo">
-		select *
-		from pro
-		where pro_aller not in #{pro_aller}
-		or pro_aller is null
-		order by pro_like desc
-	</select> -->
 	<select id="selectAllOrder" resultType="provo" parameterType="provo">
 		select *
 		from pro
 		where pro_aller not in #{pro_aller} or pro_aller is null
+			<if test="order_type eq '인기순'">
+				order by pro_like desc
+			</if>
+			<if test="order_type eq '신상품 순'">
+				order by pro_rd desc
+			</if>
+	</select>
+	
+	<select id="selectCtgrOrder" resultType="provo" parameterType="provo">
+		select *
+		  from pro t1,
+			   category t2
+		  where t1.pro_no = t2.pro_no
+          and ingre_no = #{ingre_no}
 			<if test="order_type eq '인기순'">
 				order by pro_like desc
 			</if>

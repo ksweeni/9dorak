@@ -38,6 +38,10 @@ public class MenuService {
 		return dao.selectAllOrder(pro);
 	}
 
+	public List<ProVO> selectCtgrOrder(ProVO pro) {
+		return dao.selectCtgrOrder(pro);
+	}
+
 //	public int insertMember(DoranVO doran) {
 //		return dao.insertDoran(doran);
 //	}

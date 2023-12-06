@@ -324,6 +324,30 @@
 			});
 
 		}
+		
+		//정렬
+		$(".filter button").on("click", function() {
+			
+			var a = $("button.selected");
+			
+			//alert(a.val());
+			$.ajax({
+				url : "${cpath}/menu/searchOrderby.do",
+				type : 'GET',
+				data : {
+					//필터타입 검색
+					order_type : $(this).text(),
+					pro_aller : a.val(),
+					ingre_no : chkCtgr
+				},
+				success : function(data) {
+					$('.foods').html(data);
+				},
+				error : function() {
+					alert("에러");
+				}
+			});
+		})
 
 		//카테고리
 		function categoryChk(e) {
@@ -349,29 +373,6 @@
 				data : {
 					//알러지타입 검색
 					pro_aller : $(this).val()
-				},
-				success : function(data) {
-					$('.foods').html(data);
-				},
-				error : function() {
-					alert("에러");
-				}
-			});
-		})
-
-		//정렬
-		$(".filter button").on("click", function() {
-			
-			var a = $("button.selected");
-			
-			//alert(a.val());
-			$.ajax({
-				url : "${cpath}/menu/searchOrderby.do",
-				type : 'GET',
-				data : {
-					//필터타입 검색
-					order_type : $(this).text(),
-					pro_aller : a.val()
 				},
 				success : function(data) {
 					$('.foods').html(data);
