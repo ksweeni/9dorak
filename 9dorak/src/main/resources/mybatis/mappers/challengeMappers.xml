@@ -15,30 +15,49 @@
 	</select>
 
 	<update id="updateChall" parameterType="challengevo">
-			update challenge
-			set
-			challenge_name=#{challenge_name},
-			challenge_cont=#{challenge_cont},
-			challenge_date=sysdate
-			where
-			challenge_no=#{challenge_no}
+		update challenge
+		set
+		challenge_name=#{challenge_name},
+		challenge_cont=#{challenge_cont},
+		challenge_date=sysdate
+		where
+		challenge_no=#{challenge_no}
 	</update>
 
-<!-- 		<update id="empUpdate" parameterType="empvo">
-			update employees
-			set
-			first_name=#{first_name},
-			last_name=#{last_name},
-			email=#{email},
-			phone_number=#{phone_number},
-			hire_date=#{hire_date},
-			job_id=#{job_id},
-			salary=#{salary},
-			commission_pct=#{commission_pct},
-			manager_id=#{manager_id},
-			department_id=#{department_id}
-			where
-			employee_id=#{employee_id}
+	<!-- <update id="empUpdate" parameterType="empvo"> update employees set 
+		first_name=#{first_name}, last_name=#{last_name}, email=#{email}, phone_number=#{phone_number}, 
+		hire_date=#{hire_date}, job_id=#{job_id}, salary=#{salary}, commission_pct=#{commission_pct}, 
+		manager_id=#{manager_id}, department_id=#{department_id} where employee_id=#{employee_id} 
 		</update> -->
+
+
+	<insert id="insertChal" parameterType="challengevo">
+		INSERT INTO challenge (
+		challenge_no,
+		challenge_name,
+		challenge_cont,
+		challenge_image,
+		challenge_date,
+		challenge_start,
+		challenge_end,
+		mem_id
+		) VALUES (
+		challenge_seq.NEXTVAL,
+		#{challenge_name},
+		#{challenge_cont},
+		'image.jpg',
+		sysdate,
+		#{challenge_start},
+		#{challenge_end},
+		#{mem_id}
+		)
+	</insert>
+	<select id="getLike" resultType="int" parameterType="int">
+		SELECT
+		COUNT(*)
+		FROM CHALLLIKE
+		WHERE challenge_no = #{challenge_no}
+	</select>
+
 
 </mapper>

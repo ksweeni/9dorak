@@ -53,10 +53,7 @@ public class MyPageService {
 		return dao.selectDelivery(memDel);
 	}
 
-	public int updateDelivery(MemDeliveryVO memDel) {
-		// TODO Auto-generated method stub
-		return dao.updateDelivery(memDel);
-	}
+
 
 
 

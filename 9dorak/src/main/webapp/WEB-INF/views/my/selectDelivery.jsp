@@ -21,24 +21,23 @@ input {
 </style>
 </head>
 <body>
-	<input type="text" id="mem_delname" placeholder="배송지명" value="${memDel.mem_delname }" readonly="readonly">
+	<input type="text" id="mem_delname" placeholder="배송지명"
+		value="${memDel.mem_delname }">
 	<br>
-	<input type="text" id="sample4_postcode" placeholder="우편번호" readonly="readonly"/>
+	<input type="text" id="sample4_postcode" placeholder="우편번호" />
 	<input type="button" onclick="sample4_execDaumPostcode()"
 		value="우편번호 찾기">
 	<br>
-	<input type="text" id="sample4_roadAddress" placeholder="도로명주소" readonly="readonly" />
-	<input type="text" id="sample4_jibunAddress" placeholder="지번주소" readonly="readonly"/>
+	<input type="text" id="sample4_roadAddress" placeholder="도로명주소" />
+	<input type="text" id="sample4_jibunAddress" placeholder="지번주소" />
 	<span id="guide" style="color: #999; display: none"></span>
-	<input type="text" id="sample4_detailAddress" placeholder="상세주소" readonly="readonly">
-	<input type="text" id="sample4_extraAddress" placeholder="참고항목" readonly="readonly"/>
+	<input type="text" id="sample4_detailAddress" placeholder="상세주소">
+	<input type="text" id="sample4_extraAddress" placeholder="참고항목" />
 	<br />
-	<c:if test="${not empty memDel.mem_delname}">
-		<button id="update">수정</button>
-	</c:if>
-	<c:if test="${empty memDel.mem_delname}">
-		<button id="success">완료</button>
-	</c:if>
+
+
+	<button id="success">완료</button>
+
 
 
 
@@ -147,53 +146,20 @@ input {
 					url : "${cpath}/my/insertDelivery.do",
 					data : param,
 					success : function(res) {
-						//alert(res);
-						window.opener.location.reload();
-						window.close();
+						alert(res);
+						if (res == "false") {
+							alert("이미 등록된 배송지명입니다.")
+							return;
+						} else {
+
+							window.opener.location.reload();
+							window.close();
+						}
 					}
 				})// ajx 
 
 			}) //// 배송지 입력
-	$("#update").on(
-			"click",
-			function() {
-				
-		
 
-				var mem_addr;
-
-				if ($("#sample4_jibunAddress").val() == "") {
-					mem_addr = $("#guide").text().substring(12,
-							$("#guide").text().length - 1);
-				} else {
-					mem_addr = $("#sample4_jibunAddress").val();
-				}
-
-				var mem_zipcode = $("#sample4_postcode").val();
-				var mem_road = $("#sample4_roadAddress").val();
-				var mem_detail = $("#sample4_detailAddress").val();
-				var mem_refer = $("#sample4_extraAddress").val();
-				var mem_delname = $("#mem_delname").val();
-
-				var param = {
-					"mem_addr" : mem_addr,
-					"mem_zipcode" : mem_zipcode,
-					"mem_road" : mem_road,
-					"mem_detail" : mem_detail,
-					"mem_refer" : mem_refer,
-					"mem_delname" : mem_delname
-				}
-				$.ajax({
-					url : "${cpath}/my/updateDelivery.do",
-					data : param,
-					success : function(res) {
-						//alert(res);
-						window.opener.location.reload();
-						window.close();
-					}
-				})// ajx  
-
-			}) /// 배송지 수정
 </script>
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

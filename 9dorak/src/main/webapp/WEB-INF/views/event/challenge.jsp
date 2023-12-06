@@ -170,7 +170,9 @@ function redirectToChallenge(challenge_no) {
 		</div>
 	</div>
 	<div id="button" style="text-align: right;">
+
 		<button type="button" class="right-aligned-button">챌린지 글쓰기</button>
+
 	</div>
 	<div class=e47_426>
 		<div class=e47_454>
@@ -265,4 +267,12 @@ function redirectToChallenge(challenge_no) {
 		</div>
 	</div>
 </body>
+
+<script type="text/javascript">
+
+ 	$(".right-aligned-button").on("click",function(){
+		location.href = "${cpath}/event/insertChal.do";
+	}) 
+
+</script>
 </html>

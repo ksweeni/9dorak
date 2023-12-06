@@ -58,11 +58,7 @@ public class MyPageDAOMybatis {
 		return result;
 	}
 
-	public int updateDelivery(MemDeliveryVO memDel) {
-		System.out.println(memDel);
-		int result = sqlSession.update(NAMESPACE + "updateDelivery", memDel);
-		return result;
-	}
+
 
 //	public List<MemVO> selectAll() {
 //		List<MemVO> mlist = sqlSession.selectList(NAMESPACE + "selectAll");

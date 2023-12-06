@@ -14,10 +14,10 @@ import com.shinhan.dto.ChallengeVO;
 public class ChallengeDAOMybatis {
 
 	@Autowired
-	SqlSession sqlSession; 
+	SqlSession sqlSession;
 	Logger logger = LoggerFactory.getLogger(ChallengeDAOMybatis.class);
 	String NAMESPACE = "net.firstzone.challenge.";
-	
+
 	public List<ChallengeVO> selectAll() {
 		List<ChallengeVO> chlist = sqlSession.selectList(NAMESPACE + "selectAll");
 		logger.info("selectAll :  {}", chlist.size());
@@ -31,6 +31,16 @@ public class ChallengeDAOMybatis {
 
 	public int updateChall(ChallengeVO challenge) {
 		int result = sqlSession.update(NAMESPACE + "updateChall", challenge);
-		return result;		
+		return result;
+	}
+
+	public int insertChal(ChallengeVO challenge) {
+		int result = sqlSession.insert(NAMESPACE + "insertChal", challenge);
+		return result;
+	}
+
+	public int getLike(int challenge_no) {
+		int result = sqlSession.selectOne(NAMESPACE + "getLike", challenge_no);
+		return result;
 	}
 }

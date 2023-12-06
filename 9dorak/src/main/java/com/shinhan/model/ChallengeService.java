@@ -23,5 +23,15 @@ public class ChallengeService {
 
 	public int updateChall(ChallengeVO challenge) {
 		return dao.updateChall(challenge);
+	}
+
+	public int insertChal(ChallengeVO challenge) {
+		// TODO Auto-generated method stub
+		return dao.insertChal(challenge);
+	}
+
+	public int getLike(int challenge_no) {
+		// TODO Auto-generated method stub
+		return dao.getLike(challenge_no);
 	}	
 }

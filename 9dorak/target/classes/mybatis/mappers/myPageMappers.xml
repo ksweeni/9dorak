@@ -55,16 +55,5 @@
 		SELECT COUNT(*) FROM MEMDELIVERY
 		WHERE mem_id = #{mem_id} AND mem_delname = #{mem_delname}
 	</select>
-	<update id="updateDelivery" parameterType="memdeliveryvo">
-		update MEMDELIVERY
-		set
-		mem_delname=#{mem_delname},
-		mem_zipcode=#{mem_zipcode},
-		mem_road=#{mem_road},
-		mem_addr=#{mem_addr},
-		mem_detail=#{mem_detail},
-		mem_refer=#{mem_refer}
-		where
-		mem_id=#{mem_id}
-	</update>
+
 </mapper>

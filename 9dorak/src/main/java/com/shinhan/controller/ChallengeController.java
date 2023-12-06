@@ -26,32 +26,54 @@ public class ChallengeController {
 	@GetMapping("challenge.do")
 	public String challenge(Model model) {
 		List<ChallengeVO> chlist = chService.selectAll();
-		System.out.println(chlist);
+//		System.out.println(chlist);
 		model.addAttribute("chlist", chlist);
 		return "event/challenge";
 	}
-	
+
 	@GetMapping("challenge2.do")
 	public String challenge2(Model model, ChallengeVO challenge) {
 //		System.out.println("challenge2.do");
 //		System.out.println(challenge.getChallenge_no());
-		ChallengeVO chall=chService.selectByno(challenge.getChallenge_no());
-		System.out.println(chall);
+		ChallengeVO chall = chService.selectByno(challenge.getChallenge_no());
+		int likeCnt = chService.getLike(challenge.getChallenge_no());
+
+//		System.out.println(likeCnt);
+//		System.out.println(chall);
 		model.addAttribute("chall", chall);
+		model.addAttribute("likeCnt", likeCnt);
 		return "event/challenge2";
 	}
-	
+
 	@RequestMapping(value = "challengeupdate.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String challengeupdate(Model model, ChallengeVO challenge) {
-		System.out.println(challenge);
+//		System.out.println(challenge);
 		int result = chService.updateChall(challenge);
 //		System.out.println("challengeupdate.do");
-		if(result > 0) {
+		if (result > 0) {
 			return "수정 성공";
-		}
-		else {
+		} else {
 			return "수정 실패";
 		}
+	}
+
+	@GetMapping("insertChal.do")
+	public String insertChalPage(Model model) {
+//		System.out.println("insertChalPage");
+
+		return "event/challengeInsert";
+	}
+
+	@PostMapping("insertChal.do")
+	public String insertChal(Model model, ChallengeVO challenge) {
+//		System.out.println("insertChalpost");
+		String mem_id = "aaa";
+		// 나중에 이거 세션에 값 가져와서 넣자
+		challenge.setMem_id(mem_id);
+		int result = chService.insertChal(challenge);
+		List<ChallengeVO> chlist = chService.selectAll();
+		model.addAttribute("chlist", chlist);
+		return "event/challenge";
 	}
 }
