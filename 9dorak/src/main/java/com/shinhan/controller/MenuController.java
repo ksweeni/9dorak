@@ -37,6 +37,12 @@ public class MenuController {
 		return "menu/menu";
 	}
 	
+	// 리뷰 사진 및 동영상 모아보기
+	@GetMapping("menuMediaReview.do")
+	public String menuMediaReview(Model model) {
+		return "menu/menuMediaReviews";
+	}
+	
 	//카테고리+검색
 	@GetMapping("searchPro.do")
 	//@ResponseBody

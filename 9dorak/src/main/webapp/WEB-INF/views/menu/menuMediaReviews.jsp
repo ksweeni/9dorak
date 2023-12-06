@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/menuMediaReviewStyle.css" type="text/css" />
+	href="${cpath}/resources/css/menuMediaReviewStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -31,7 +31,7 @@
 							</div>
 							<div class="frame-5">
 								<div class="frame-6">
-									<div class="menu"></div>
+									<div class="menu" style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
 									<div class="view">
 										<div class="frame-7">
 											<div class="frame-5">
@@ -44,9 +44,10 @@
 											</div>
 										</div>
 										<p class="p">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !! 데브옵스가 끝나고 허겁지겁
-											먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
+											먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 흐르르루룳 또 머고시퍼요 다이어ㅡ 실패 ~</p>
 										<div class="frame-9">
-											<img class="happy" src="img/happy.svg" />
+											<img class="happy"
+										src="${cpath}/resources/images/menu/happy-unfill.svg" />
 											<div class="text-wrapper-4">유용해요</div>
 											<div class="text-wrapper-4">0</div>
 										</div>
@@ -71,6 +72,36 @@
 					</div>
 				</div>
 			</div>
+			
+			<script>
+			// 유용해요 클릭 및 유용 수 증가 
+		    document.addEventListener('DOMContentLoaded', function () {
+		        document.querySelectorAll('.happy').forEach(function (element) {
+		            element.addEventListener('click', function () {
+		                console.log("clicked");
+		                this.classList.toggle('happy-unfill');
+		                this.classList.toggle('happy-fill');
+
+		                // 이미지 변경
+		                const imageSrc = this.classList.contains('happy-fill')
+		                    ? `${cpath}/resources/images/menu/happy-fill.svg`
+		                    : `${cpath}/resources/images/menu/happy-unfill.svg`;
+		                this.src = imageSrc;
+
+		                // 유용해요 옆의 숫자 count up
+		                const countElement = this.nextElementSibling.nextElementSibling;
+		                let count = parseInt(countElement.textContent);
+
+		                // Check if count is a valid number before updating
+		                if (!isNaN(count)) {
+		                    countElement.textContent = this.classList.contains('happy-fill') ? count + 1 : count - 1;
+		                }
+		            });
+		        });
+		    });
+			</script>
+			
+			
 			<footer class="footer">
 				<div class="company-loco">
 					<div class="company">
@@ -152,6 +183,7 @@
 					</div>
 				</div>
 			</header>
+			
 		</div>
 	</div>
 </body>

@@ -49,6 +49,7 @@
 }
 
 .div-wrapper .group-2 {
+	left: 1rem;
 	position: relative;
 	width: 268px;
 	height: 70px;
@@ -56,18 +57,18 @@
 
 .div-wrapper .frame-3 {
 	display: inline-flex;
-	align-items: flex-start;
-	gap: 50px;
-	position: absolute;
-	top: 0;
-	left: 0;
+    align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 .div-wrapper .text-wrapper {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-SemiBold", Helvetica;
+	
 	font-weight: 600;
 	color: #000000;
 	font-size: 20px;
@@ -79,7 +80,7 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-SemiBold", Helvetica;
+	
 	font-weight: 600;
 	color: #7d7d7d;
 	font-size: 20px;
@@ -90,10 +91,8 @@
 .div-wrapper .frame-4 {
 	display: inline-flex;
 	align-items: flex-start;
-	gap: 50px;
-	position: absolute;
-	top: 40px;
-	left: 0;
+	position: relative;
+	top: 2rem;
 }
 
 .div-wrapper .frame-5 {
@@ -106,18 +105,18 @@
 
 .div-wrapper .frame-6 {
 	display: inline-flex;
-	flex-direction: column;
-	align-items: flex-end;
-	gap: 5px;
-	position: relative;
-	flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    flex: 0 0 auto;
 }
 
 .div-wrapper .menu {
+	border-radius: 20px;
 	position: relative;
-	width: 700px;
-	height: 700px;
-	background-image: url(./img/image.png);
+	width: 50rem;
+	height: 50rem;
 	background-size: cover;
 	background-position: 50% 50%;
 }
@@ -125,7 +124,7 @@
 .div-wrapper .view {
 	display: flex;
 	flex-direction: column;
-	width: 700px;
+	width: 45rem;
 	align-items: flex-start;
 	justify-content: center;
 	gap: 30px;
@@ -141,17 +140,18 @@
 
 .div-wrapper .frame-7 {
 	display: inline-flex;
-	align-items: flex-start;
-	gap: 50px;
-	position: relative;
-	flex: 0 0 auto;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    flex: 0 0 auto;
+    flex-direction: row;
 }
 
 .div-wrapper .text-wrapper-3 {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-Thin", Helvetica;
+
 	font-weight: 100;
 	color: #000000;
 	font-size: 20px;
@@ -172,7 +172,7 @@
 	width: 649px;
 	height: 107px;
 	margin-right: -45px;
-	font-family: "Poppins-Medium", Helvetica;
+
 	font-weight: 500;
 	color: #000000;
 	font-size: 20px;
@@ -191,6 +191,7 @@
 }
 
 .div-wrapper .happy {
+	cursor: pointer;
 	position: relative;
 	width: 40px;
 	height: 40px;
@@ -199,7 +200,7 @@
 .div-wrapper .text-wrapper-4 {
 	position: relative;
 	width: fit-content;
-	font-family: "Poppins-Medium", Helvetica;
+
 	font-weight: 500;
 	color: #ff7f00;
 	font-size: 20px;
@@ -321,13 +322,6 @@
 	width: 375px;
 	top: 138px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .untitled {
@@ -422,14 +416,8 @@
 .div-wrapper .text-wrapper-6 {
 	top: 0;
 	left: 10px;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
 	color: #000000;
-	font-size: var(- -h4-font-size);
 	position: absolute;
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
 }
 
 .div-wrapper .group-3 {
@@ -444,39 +432,18 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .text-wrapper-8 {
 	position: absolute;
 	top: 34px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .text-wrapper-9 {
 	position: absolute;
 	top: 68px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .overlap-group-wrapper {
@@ -519,13 +486,6 @@
 	width: 177px;
 	top: 21px;
 	left: 21px;
-	font-family: var(- -p2-font-family);
-	font-weight: var(- -p2-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p2-font-size);
-	letter-spacing: var(- -p2-letter-spacing);
-	line-height: var(- -p2-line-height);
-	font-style: var(- -p2-font-style);
 }
 
 .div-wrapper .user-link {
@@ -540,13 +500,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
 	color: #000000;
-	font-size: var(- -h4-font-size);
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
 }
 
 .div-wrapper .group-4 {
@@ -561,26 +515,12 @@
 	position: absolute;
 	top: 102px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .text-wrapper-12 {
 	position: absolute;
 	top: 136px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .div-wrapper .opening-restaurant {
@@ -626,65 +566,36 @@
 	left: 359px;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
-	font-weight: var(- -h5-font-weight);
-	color: #000000;
-	font-size: var(- -h5-font-size);
-	letter-spacing: var(- -h5-letter-spacing);
-	line-height: var(- -h5-line-height);
-	font-style: var(- -h5-font-style);
 }
 
 .div-wrapper .text-wrapper-14 {
 	left: 0;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
-	font-weight: var(- -h5-font-weight);
-	color: #000000;
-	font-size: var(- -h5-font-size);
-	letter-spacing: var(- -h5-letter-spacing);
-	line-height: var(- -h5-line-height);
-	font-style: var(- -h5-font-style);
 }
 
 .div-wrapper .text-wrapper-15 {
 	left: 84px;
 	position: absolute;
-	top: 0;
-	font-family: var(- -h5-font-family);
-	font-weight: var(- -h5-font-weight);
+
 	color: #000000;
-	font-size: var(- -h5-font-size);
-	letter-spacing: var(- -h5-letter-spacing);
-	line-height: var(- -h5-line-height);
-	font-style: var(- -h5-font-style);
+
 }
 
 .div-wrapper .text-wrapper-16 {
 	left: 167px;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
-	font-weight: var(- -h5-font-weight);
+
 	color: #000000;
-	font-size: var(- -h5-font-size);
-	letter-spacing: var(- -h5-letter-spacing);
-	line-height: var(- -h5-line-height);
-	font-style: var(- -h5-font-style);
+
 }
 
 .div-wrapper .text-wrapper-17 {
 	left: 259px;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
-	font-weight: var(- -h5-font-weight);
-	color: #000000;
-	font-size: var(- -h5-font-size);
-	letter-spacing: var(- -h5-letter-spacing);
-	line-height: var(- -h5-line-height);
-	font-style: var(- -h5-font-style);
+
 }
 
 .div-wrapper .untitled-2 {
@@ -709,13 +620,7 @@
 	position: absolute;
 	top: 9px;
 	left: 0;
-	font-family: var(- -h5-font-family);
-	font-weight: var(- -h5-font-weight);
-	color: #000000;
-	font-size: var(- -h5-font-size);
-	letter-spacing: var(- -h5-letter-spacing);
-	line-height: var(- -h5-line-height);
-	font-style: var(- -h5-font-style);
+
 }
 
 .div-wrapper .group-6 {
@@ -756,11 +661,4 @@
 	position: absolute;
 	top: 0;
 	left: 18px;
-	font-family: var(- -p2-font-family);
-	font-weight: var(- -p2-font-weight);
-	color: var(- -white);
-	font-size: var(- -p2-font-size);
-	letter-spacing: var(- -p2-letter-spacing);
-	line-height: var(- -p2-line-height);
-	font-style: var(- -p2-font-style);
 }
