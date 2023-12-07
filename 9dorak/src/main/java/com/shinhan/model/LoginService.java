@@ -1,5 +1,7 @@
 package com.shinhan.model;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +28,6 @@ public class LoginService {
 	public void updatePwd(String mem_id, String new_pw) {
 		dao.updatePwd(mem_id, new_pw);
 	}
+
 }
+

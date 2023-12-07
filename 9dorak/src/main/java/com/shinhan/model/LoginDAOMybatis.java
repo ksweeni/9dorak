@@ -51,4 +51,5 @@ public class LoginDAOMybatis {
 
         sqlSession.update(NAMESPACE + "updatePwd", updatePwdParams);
     }
+
 }

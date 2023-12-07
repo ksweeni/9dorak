@@ -1,14 +1,10 @@
 package com.shinhan.controller;
 
-import java.io.File;
-import java.io.IOException;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.UUID;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -58,7 +54,8 @@ public class DoranController {
 			System.out.println(memId);
 			System.out.println("백에서 받은 아이디:"+memId.getMem_id());
 			System.out.println("백에서 받은 포인트:"+memId.getMem_point());
-			model.addAttribute("memPoint", memId.getMem_point());
+			System.out.println("그 사람의 레벨 : " + memId.getMem_grade());
+
 		}
 		return "doran/doran";
 	}
@@ -138,63 +135,42 @@ public class DoranController {
 		return "doran/doran_ajax";
 	}
 
-	@PostMapping("doranUpload.do")
-	public String handleDoranUpload(DoranVO doran,@RequestParam MultipartFile singleFile,
-			HttpServletRequest request,	HttpSession session) {
+	@PostMapping(value = "doranUpload.do", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public String handleDoranUpload(DoranVO doran, HttpSession session, Model model) {
+//		public String handleDoranUpload(@RequestParam("doranTitle") String doranTitle,
+//				@RequestParam("doranCont") String doranCont, @RequestParam("doranView") int doranView,
+//				@RequestParam("memId") String memId, @RequestParam("doranDate") String doranDateString,																// to String
+//				@RequestParam("doranImage") String doranImage) {
 
+		System.out.println("체크체크체크체크체크체크체크체크체크체크체크");
+		System.out.println(doran);
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//		Date doranDate = null;
+//		try {
+//			doranDate = (Date) dateFormat.parse(doranDateString);
+//		} catch (ParseException e) {
+//			e.printStackTrace();
+//		}
 
-
+		MemVO memId = (MemVO) session.getAttribute("loginmem");
+		
+		
+		
 		int dsize = dService.selectAll().size();
-		////////////////////////////////
-		
-		String path = request.getSession().getServletContext().getRealPath("resources");
-		System.out.println("path : " + path);
-//		String root = path + "\\uploadFiles" ;
-		String root = path + "\\upload";
 
-		File file = new File(root);
-
-		// 만약 uploadFiles 폴더가 없으면 생성해라 라는뜻
-		if (!file.exists())
-			file.mkdirs();
-
-		// 업로드할 폴더 설정
-		String originFileName = singleFile.getOriginalFilename();
-//		String ext = originFileName.substring(originFileName.lastIndexOf("."));
-		String ext = "";
-		int lastIndex = originFileName.lastIndexOf(".");
-		if (lastIndex != -1) {
-		    ext = originFileName.substring(lastIndex);
-		}
-
-		// ext를 이용한 나머지 로직 수행
-
-		String ranFileName = UUID.randomUUID().toString() + ext;
-
-		File changeFile = new File(root + "\\" + ranFileName);
-
-		
-		// 파일업로드
-		try {
-			singleFile.transferTo(changeFile);
-			System.out.println("파일 업로드 성공");
-		} catch (IllegalStateException | IOException e) {
-			System.out.println("파일 업로드 실패");
-			e.printStackTrace();
-		}
-		
-		MemVO memVO = (MemVO) session.getAttribute("loginmem");
-		String memId = memVO.getMem_id();
+//		DoranVO doran = new DoranVO();
 		doran.setDoran_no(dsize + 1);
 		doran.setDoran_title(doran.getDoran_title());
 		doran.setDoran_cont(doran.getDoran_cont());
 		doran.setDoran_view(0);
-		doran.setMem_id(memId);
-		doran.setDoran_image(ranFileName);
-		
+		doran.setMem_id("aaa");
+//		doran.setDoran_date("2023-05-05");
+//		doran.setDoran_image(doranImage);
+		System.out.println("작성한 글:" + doran.toString());
 		dService.insertDoran(doran);
-
-		return "redirect:/doran/doran.do";
+		System.out.println("여기다여기다여기다여기다여기다여기다여기다여기다여기다여기다");
+		return "Upload successful!";
 	}
 
 	@GetMapping("doranFeedDetail.do")

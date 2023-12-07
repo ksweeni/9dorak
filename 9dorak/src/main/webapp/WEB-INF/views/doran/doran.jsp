@@ -13,17 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
-<script>
-	var message = "${dlist}";
-	var dlike = "${dlike}";
-	var dcomment = "${dcomment}";
-	const memPoint = "${memPoint}";
 
-	console.log(memPoint);
-
-	const memId = '${sessionScope.loginmem.mem_id}';
-	console.log("회원아이디 : ", memId);
-</script>
 <body>
 	<div class="screen">
 		<div class="div">
@@ -54,16 +44,21 @@
 			<div class="overlap-3">
 				<div class="group-6">
 					<div class="group-wrapper">
-						<div class="doran-context">
-							<input class="doran-context-title" type="text" placeholder="제목">
-							<textarea placeholder="내용을 자유롭게 입력하세요!"></textarea>
+						<div class="doran-upload-profilPhoto">
+							<img class="doran-upload-profilPhotoImg"
+								src="${cpath }/resources/images/sandwich_lunchbox01.png" />
 						</div>
-						<div class="upload-button-wrap">
-							<div class="doran-upload-media">
-								<button class="doran-button-upload-photo">사진</button>
-								<button class="doran-button-upload-video">비디오</button>
+						<div class="doran-upload-contents">
+							<div class="doran-context">
+								<input class="doran-context-title" type="text" placeholder="제목">
+								<textarea placeholder="내용을 자유롭게 입력하세요!"></textarea>
 							</div>
-							<button type="submit" class="doran-button-upload">업로드</button>
+							<div class="upload-button-wrap">
+								<div class="doran-upload-media">
+									<button class="doran-button-upload-photo">사진</button>
+								</div>
+								<button type="submit" class="doran-button-upload">업로드</button>
+							</div>
 						</div>
 					</div>
 					<!-- group-wrapper -->
@@ -86,7 +81,8 @@
 				<div id="here">
 					<!--data forEach -->
 				</div>
-
+				
+				<!--  
 				<div class="doran-card">
 
 					<c:forEach items="${dlist}" var="doran" varStatus="loop">
@@ -94,7 +90,7 @@
 							<div class="doran-topInfo">
 								<div>
 									<img class="doran-uploadInfo-profile"
-										src="${cpath }/resources/images/test.png" />
+										src="${cpath }/resources/images/doran/test.png" />
 								</div>
 								<div class="doran-uploadInfo">
 									<div class="doran-uploadInfo-memid">${doran.mem_id }</div>
@@ -110,17 +106,17 @@
 								<div class="doran-review">
 									<div class="doran-review-like">
 										<img class="doran-review-likeicon"
-											src="${cpath }/resources/images/icon_doranemptylike.png" />
+											src="${cpath }/resources/images/doran/icon_doranunfilllike.png" />
 										<div class="doran-review-like2">${doran.dlike}</div>
 									</div>
 									<div class="doran-review-reviewCnt">
 										<img class="doran-review-reviewCnticon"
-											src="${cpath }/resources/images/icon_doranviewcnt.png" />
+											src="${cpath }/resources/images/doran/icon_doranviewcnt.png" />
 										<div class="doran-review-reviewCnt2">${doran.doran_view}</div>
 									</div>
 									<div class="doran-review-dcomment">
 										<img class="doran-review-dcommenticon"
-											src="${cpath }/resources/images/icon_dorancomment.png" />
+											src="${cpath }/resources/images/doran/icon_dorancomment.png" />
 										<div class="doran-review-dcomment2">${doran.dcomment}</div>
 									</div>
 								</div>
@@ -131,6 +127,7 @@
 
 				</div>
 				<!-- doran-card -->
+				
 			</div>
 			<!-- group-4 -->
 
@@ -179,38 +176,36 @@
 				<div class="group-16">
 					<div class="group-17">
 						<div class="div-2">
+
+							<!-- 로그인 안되어 있으면 프로필 설정 안보이게 하기  -->
 							<div class="doran-profile">
 								<div class="doran-profile-photo">
-									<img src="${cpath }/resources/images/test.png" />
+									<img class="doran-profile-photoImg"
+										src="${cpath }/resources/images/doran/test.png" />
 								</div>
 								<div class="doran-profile-info">
-									<div class="doran-profile-info-memname">외국잼민이</div>
+									<div class="doran-profile-info-memname">${sessionScope.loginmem.mem_id}</div>
 									<div class="doran-profile-info-grade">
 										<div class="doran-profile-info-lv">LV.</div>
-										<div class="doran-profile-info-memgrade">낑깡</div>
+										<div class="doran-profile-info-memgrade">${sessionScope.loginmem.mem_grade}</div>
 									</div>
 								</div>
 								<div class="doran-profile-point">
 									<div class="info-point">
 										<div>보유한포인트</div>
-										<div>${memPoint}</div>
-										
+										<div>${sessionScope.loginmem.mem_point}</div>
 									</div>
-
 									<div class="progress-div">
 										<progress id="progress" class="overlap-group-3" id="progress"
-											value="50" min="0" max="324"></progress>
+											value="${sessionScope.loginmem.mem_point}" min="0" max="324"></progress>
 									</div>
-
-
-								</div>
-								<div>
-									<div></div>
 								</div>
 								<button class="doran-button-frofile-setting">
 									<span>프로필 설정하기</span>
 								</button>
 							</div>
+
+
 						</div>
 					</div>
 				</div>
@@ -220,7 +215,8 @@
 					method="get">
 					<button type="submit" class="group-18">
 						<div class="group-19">
-							<img class="create" src="img/create.svg" />
+							<img class="create"
+								src="${cpath }/resources/images/doran/icon_darantext.png" />
 							<div class="text-wrapper-22">글 작성하기</div>
 						</div>
 					</button>
@@ -293,6 +289,22 @@
 
 
 		<script>
+			var message = "${dlist}";
+			var dlike = "${dlike}";
+			var dcomment = "${dcomment}";
+			const memPoint = "${memPoint}";
+
+			console.log(memPoint);
+			var doranProfile = document.querySelector('.doran-profile');
+			var doranWriting = document.querySelector('.group-18');
+
+			var memId = '${sessionScope.loginmem.mem_id}';
+			console.log("회원아이디 : ", memId);
+			if (memId == '') {
+				doranProfile.style.display = 'none';
+				doranWriting.style.display = 'none';
+			}
+
 			var cpath = "${cpath}";
 			var dataForRadioButton = null; // Initialize with null
 

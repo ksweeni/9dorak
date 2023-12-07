@@ -6,7 +6,7 @@
 
 	<!-- 로그인 -->
 	<select id="login" resultType="memvo">
-		select mem_id, mem_pw
+		select *
 		from mem
 		where mem_id = #{mem_id}
 		and mem_pw = #{mem_pw}
@@ -19,8 +19,7 @@
 		where
 		mem_name = #{mem_name}
 		and mem_phone = #{mem_phone}
-		and mem_bd =
-		#{mem_bd}
+		and mem_bd = #{mem_bd}
 	</select>
 
 	<!-- 비밀번호 찾기 -->
@@ -40,5 +39,5 @@
 		set mem_pw = #{new_pw}
 		where mem_id = #{mem_id}
 	</update>
-
+	
 </mapper>

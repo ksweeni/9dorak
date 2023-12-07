@@ -741,7 +741,7 @@ progress {
 	white-space: nowrap;
 	border: none;
 	background-color: rgba(0, 0, 0, 0);
-	background-image: url(../images/icon_dorandoran.png);
+	background-image: url(../images/doran/icon_dorandoran.png);
 	background-repeat: no-repeat;
 	background-size: 32px 32px;
 	padding: 0 7px 0 50px;
@@ -777,7 +777,7 @@ progress {
 	white-space: nowrap;
 	border: none;
 	background-color: rgba(0, 0, 0, 0);
-	background-image: url(../images/icon_mytext.png);
+	background-image: url(../images/doran/icon_mytext.png);
 	background-repeat: no-repeat;
 	background-size: 32px 32px;
 	padding: 0 7px 0 50px;
@@ -883,11 +883,11 @@ progress {
 }
 
 .screen .create {
-	position: absolute;
-	width: 40px;
-	height: 40px;
-	top: 0;
-	left: 182px;
+	position: relative;
+    width: 40px;
+    height: 40px;
+    top: -30%;
+    left: 35%;
 }
 
 .screen .text-wrapper-22 {
@@ -1026,7 +1026,6 @@ progress {
 .screen .overlap-group-3 {
 	position: relative;
 	width: 12.5rem;
-	height: 31px;
 	left: -1px;
 }
 
@@ -1063,7 +1062,7 @@ progress {
 
 .screen .doran-button-upload {
 	width: 114px;
-	height: 36px;
+	height: 35px;
 	background-color: #ff8c23c3;
 	border-radius: 10px;
 	border: none;
@@ -1071,7 +1070,7 @@ progress {
 	font-size: 20px;
 	font-weight: 800;
 	padding: 0 7px 0 48px;
-	background-image: url(../images/icon_upload.png);
+	background-image: url(../images/doran/icon_upload.png);
 	background-repeat: no-repeat;
 	background-size: 34px 25px;
 	background-position: 7px center;
@@ -1090,6 +1089,7 @@ progress {
 
 .screen .doran-upload-media {
 	display: flex;
+	margin-left: 14%;
 }
 
 .screen .doran-upload-media button {
@@ -1106,19 +1106,11 @@ progress {
 }
 
 .screen .doran-upload-media .doran-button-upload-photo {
-	background-image: url(../images/icon_picture.png);
+	background-image: url(../images/doran/icon_picture.png);
 	background-repeat: no-repeat;
 	background-size: 27px 21px;
 	background-position: 7px center;
 	padding: 0 7px 0 37px;
-}
-
-.screen .doran-upload-media .doran-button-upload-video {
-	background-image: url(../images/icon_video.png);
-	background-repeat: no-repeat;
-	background-size: 32px 22px;
-	background-position: 7px center;
-	padding: 0 7px 0 44px;
 }
 
 .doran-context {
@@ -1168,16 +1160,15 @@ progress {
 
 .doran-button-frofile-setting {
 	width: 229.594px;
-	height: 43.32px;
+	height: 40px;
 	flex-shrink: 0;
 	border-radius: 10px;
 	background: #F38820;
-	margin-top: 100px;
 	margin-left: 75px;
 	margin-right: 75px;
 	color: white;
 	border: none;
-	margin-top: 5%;
+	margin-top: 2%;
 }
 
 .doran-button-frofile-setting span {
@@ -1367,7 +1358,7 @@ progress {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10%;
+    margin-bottom: 9%;
 }
 
 .doran-profile-info-memname{
@@ -1380,4 +1371,24 @@ progress {
     display: flex;
     gap: 3px;
     color: rgba(182, 182, 182, 1);
+}
+
+.doran-upload-contents{
+	position: relative;
+    top: -45%;
+}
+
+.doran-upload-profilPhotoImg{
+	width: 100px;
+    height: 100px;
+    margin-top: 13px;
+    border-radius: 50%;
+    margin-left: 2%;
+}
+
+.doran-profile-photoImg{
+	width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 50%;
 }

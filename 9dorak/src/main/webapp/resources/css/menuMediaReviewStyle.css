@@ -75,6 +75,7 @@
 	gap: 29px;
 	position: relative;
 	flex: 0 0 auto;
+	right:6%;
 }
 
 .div-wrapper .group-2 {
@@ -542,59 +543,8 @@
 	left: 8px;
 }
 
-.div-wrapper .header {
-	position: absolute;
-	width: 1116px;
-	height: 56px;
-	top: 35px;
-	left: 162px;
-	background-color: transparent;
-}
 
-.div-wrapper .top-nav {
-	position: relative;
-	width: 1116px;
-	height: 56px;
-}
 
-.div-wrapper .navbar {
-	position: absolute;
-	width: 419px;
-	height: 22px;
-	top: 17px;
-	left: 382px;
-}
-
-.div-wrapper .text-wrapper-13 {
-	left: 359px;
-	position: absolute;
-	top: 0;
-}
-
-.div-wrapper .text-wrapper-14 {
-	left: 0;
-	position: absolute;
-	top: 0;
-}
-
-.div-wrapper .text-wrapper-15 {
-	left: 84px;
-	position: absolute;
-	color: #000000;
-}
-
-.div-wrapper .text-wrapper-16 {
-	left: 167px;
-	position: absolute;
-	top: 0;
-	color: #000000;
-}
-
-.div-wrapper .text-wrapper-17 {
-	left: 259px;
-	position: absolute;
-	top: 0;
-}
 
 .div-wrapper .untitled-2 {
 	width: 94px;
