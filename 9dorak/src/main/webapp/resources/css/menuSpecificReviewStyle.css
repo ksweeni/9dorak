@@ -205,15 +205,15 @@ div-wrapper {
 
 .div-wrapper .text-wrapper-2 {
 	position: relative;
-	width: 10px;
-	top: 8px;
-	left: 74px;
-	font-weight: 500;
-	color: #777777;
-	font-size: 20px;
-	text-align: center;
-	letter-spacing: 0;
-	line-height: normal;
+    width: 20px;
+    top: 8px;
+    left: 70px;
+    font-weight: 500;
+    color: #777777;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
 .div-wrapper .entypo-plus-wrapper {

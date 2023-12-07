@@ -47,16 +47,17 @@
 						<div class="frame-wrapper">
 							<div class="frame">
 								<div class="button-product-add">
-									<div class="text-wrapper-2">1</div>
-									<button class="entypo-plus-wrapper">
+									<div id="count-product" class="text-wrapper-2">1</div>
+									<button class="entypo-plus-wrapper" onclick="increaseValue()">
 										<img class="img" src="${cpath}/resources/images/menu/plus.png" />
 									</button>
-									<button class="entypo-minus-wrapper">
+									<button class="entypo-minus-wrapper" onclick="decreaseValue()">
 										<img class="img"
 											src="${cpath}/resources/images/menu/minus.png" />
 									</button>
 								</div>
-								<div class="text-wrapper-3">총 금액 8,000원</div>
+								<!--  <div id="total-amount" class="text-wrapper-3">총 금액 ${menudetail.pro_price} 원</div>-->
+								<div class="text-wrapper-3" id="total-amount">총 금액 <span id="total-amount-value">${menudetail.pro_price}</span> 원</div>
 							</div>
 						</div>
 						<div class="overlap-3">
@@ -642,6 +643,26 @@
         });
     });
     
+    // 상품 수량 변화
+    var counterValue = 1; // 최소값 설정
+    var proPrice = ${menudetail.pro_price}; // 상품 가격
+    
+    function increaseValue() {
+      counterValue++;
+      updateCounter();
+    }
+
+    function decreaseValue() {
+      counterValue = Math.max(1, counterValue - 1);
+      updateCounter();
+    }
+
+    function updateCounter() {
+    	var totalAmount = counterValue * proPrice;
+      document.getElementById('count-product').innerText = counterValue;     
+      document.getElementById('total-amount-value').innerText = totalAmount;
+    }
+    
     // 하트 클릭 시 이모지 변화
     function toggleHeart() {
       var heartImage = document.getElementById('heart');
@@ -682,12 +703,10 @@
    document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.frame-11, .frame-12').forEach(function (option) {
         option.addEventListener('click', function () {
-            // Remove 'selected-option' class from all options
             document.querySelectorAll('.frame-11, .frame-12').forEach(function (otherOption) {
                 otherOption.classList.remove('selected-option');
             });
 
-            // Add 'selected-option' class to the clicked option
             this.classList.add('selected-option');
         });
     });
