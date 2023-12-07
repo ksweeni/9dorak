@@ -120,42 +120,49 @@
 				</div>
 			</div>
 		</header>
-		</div>
-		<div id="event_menu">
-			<ul>
-				<li><a>챌린지 ZONE</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/event/freelunchbox.do">도시락
-						무료 체험</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/event/makelunchbox.do">도시락
-						만들9</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/event/friendreco.do">친구
-						추천</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/event/friendadd.do">친구
-						추가</a></li>
-			</ul>
-		</div>
-		<hr>
-		<br></br>
-		<br></br>
-		<br></br>
-		<br></br>
-		<br></br>
-		<p>${chall}</p>
-		챌린지명 : <input type="text" value="${chall.challenge_name}" id="challenge_name"></input><br>
-		챌린지내용 :<input type="text" value="${chall.challenge_cont}" id="challenge_cont"></input><br>
-		챌린지 등록날짜 : <input type="text" value="${chall.challenge_date}" id="challenge_date"></input><br>
-		좋아요 :<input type="text" value="${likeCnt}" readonly="readonly" id="likeCnt"></input><br>
-		 <input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input><br>
-				
-		<button id="update_aa">수정</button>
-		
+	</div>
+	<div id="event_menu">
+		<ul>
+			<li><a>챌린지 ZONE</a></li>
+			<li><a
+				href="${pageContext.request.contextPath}/event/freelunchbox.do">도시락
+					무료 체험</a></li>
+			<li><a
+				href="${pageContext.request.contextPath}/event/makelunchbox.do">도시락
+					만들9</a></li>
+			<li><a
+				href="${pageContext.request.contextPath}/event/friendreco.do">친구
+					추천</a></li>
+			<li><a
+				href="${pageContext.request.contextPath}/event/friendadd.do">친구
+					추가</a></li>
+		</ul>
+	</div>
+	<hr>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<p>${chall}</p>
+	챌린지명 :
+	<input type="text" value="${chall.challenge_name}" id="challenge_name"></input>
+	<br> 챌린지내용 :
+	<input type="text" value="${chall.challenge_cont}" id="challenge_cont"></input>
+	<br> 챌린지 등록날짜 :
+	<input type="text" value="${chall.challenge_date}" id="challenge_date"></input>
+	<br> 좋아요 :
+	<input type="text" value="${likeCnt}" readonly="readonly" id="likeCnt"></input>
+	<br>
+	<input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input>
+	<br>
+
+	<button id="update">수정</button>
+	<button id = "delete">삭제</button>
+
 </body>
 <script>
-$("#update_aa").on("click", function () {
+$("#update").on("click", function () {
 	/*  alert("알림입니다"); */
 	//alert($("#challenge_name").val())
  	var challenge_name = $("#challenge_name").val();
@@ -168,7 +175,7 @@ $("#update_aa").on("click", function () {
 			"challenge_no" : challenge_no	
 			}
 	$.ajax({
-		url:"${cpath}/event/challengeupdate.do",
+		url:"${cpath}/event/challengeUpdate.do",
 		type: "post",
 		data: param,
 		success: function(res){
@@ -176,6 +183,25 @@ $("#update_aa").on("click", function () {
 			location.href="${cpath}/event/challenge.do";
 		}		
 	})
-})
+}) // update
+
+
+$("#delete").on("click", function () {
+
+
+	var challenge_no = $("#challenge_no").val();
+	var param = {
+			"challenge_no" : challenge_no	
+			}
+	$.ajax({
+		url:"${cpath}/event/challengeDelete.do",
+		type: "post",
+		data: param,
+		success: function(res){
+			alert(res);
+			location.href="${cpath}/event/challenge.do";
+		}		
+	})
+}) // delete
 </script>
 </html>

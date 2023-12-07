@@ -23,4 +23,26 @@ public class ChallengeVO {
 	Date  challenge_end; //챌린지 종료 날짜
 	String  mem_id; //회원 아이디
 	
+
+
+	
+	private int currentPage;
+	public void setStartIndex(int startIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setCntPerPage(int displayRow) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public int getCurrentPage() {
+		return currentPage;
+	}
+
+
+	public void setCurrentPage(int currentPage) {
+		this.currentPage =(currentPage-1)*10;
+	}
+
 }

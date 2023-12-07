@@ -26,19 +26,11 @@ String contextPath = request.getContextPath();
 	<input type="date" name= "challenge_end" placeholder="챌린지 종료 날짜"/>
 	<button type ="submit">글쓰기</button>
 	</form>
-<!-- 		challenge_no NUMBER(10) NOT NULL,
-	challenge_name VARCHAR2(255) NOT NULL,
-	challenge_cont CLOB NOT NULL,
-	challenge_image VARCHAR2(255) NULL,
-	challenge_date TIMESTAMP NOT NULL,
-	challenge_start TIMESTAMP NULL,
-	challenge_end TIMESTAMP NULL,
-	mem_id VARCHAR2(255) NOT NULL -->
-	
 	
 	
 </body>
 <script>
 
+	
 </script>
 </html>

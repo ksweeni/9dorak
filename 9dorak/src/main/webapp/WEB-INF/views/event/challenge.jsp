@@ -86,7 +86,7 @@
 
 	}); */
 function redirectToChallenge(challenge_no) {
-		location.href = '${pageContext.request.contextPath}/event/challenge2.do?challenge_no=' + challenge_no;
+		location.href = '${pageContext.request.contextPath}/event/challengeDetail.do?challenge_no=' + challenge_no;
 		alert('Redirect to challenge number ' + challenge_no);
 }
 </script>
@@ -156,6 +156,7 @@ function redirectToChallenge(challenge_no) {
 					</tr>
 				</thead>
 				<tbody>
+
 					<c:forEach var="ch" items="${chlist}" varStatus="rowStatus">
 						<tr onclick="redirectToChallenge(${ch.challenge_no})">
 							<td>${ch.challenge_no}</td>
@@ -163,16 +164,54 @@ function redirectToChallenge(challenge_no) {
 							<td>${ch.challenge_date}</td>
 						</tr>
 					</c:forEach>
+<%-- 					<c:forEach var="ch" items="${chlist}" varStatus="rowStatus">
+						<tr onclick="redirectToChallenge(${ch.CHALLENGE_NO})">
+							<td>${ch.CHALLENGE_NO}</td>
+							<td>${ch.CHALLENGE_NAME}</td>
+							<td>${ch.CHALLENGE_DATE}</td>
+						</tr>
+					</c:forEach> --%>
 				</tbody>
 			</table>
+			<!-- 게시판 테스트 -->
+			<div>
+				<c:if test="${pagingVO.currentRange ne 1 }">
+					<a href="#" onclick="fn_paging(1)">[처음]</a>
+				</c:if>
+				<c:if test="${pagingVO.currentRange ne 1 }">
+					<a href="#" onclick="fn_paging('${pagingVO.prevPage}')">[이전]</a>
+				</c:if>
+				<c:forEach var="pageNum" begin="${pagingVO.beginPage }"
+					end="${pagingVO.endPage }">
+					<c:choose>
+						<c:when
+							test="${pageNum eq pagingVO.currentPage && search eq null}">
+							<span><a href="#" onclick="fn_paging('${pageNum}')">${pageNum }</a></span>
+						</c:when>
+						<c:when
+							test="${pageNum eq pagingVO.currentPage && search ne null}">
+							<span><a href="#" onclick="fn_paging('${pageNum}')">${pageNum }</a></span>
+						</c:when>
+						<c:otherwise>
+							<a href="#" onclick="fn_paging('${pageNum}')">${pageNum }</a>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+				<c:if
+					test="${pagingVO.currentPage ne pagingVO.totalPage && pagingVO.totalPage > 0 }">
+					<a href="#" onclick="fn_paging('${pagingVO.nextPage}')">[다음]</a>
+				</c:if>
+				<c:if
+					test="${pagingVO.currentRange ne pagingVO.totalRange && pagingVO.totalRange > 0 }">
+					<a href="#" onclick="fn_paging('${pagingVO.totalPage}')">[끝]</a>
+				</c:if>
+			</div>
 			<ul class="pagination">
 			</ul>
 		</div>
 	</div>
 	<div id="button" style="text-align: right;">
-
 		<button type="button" class="right-aligned-button">챌린지 글쓰기</button>
-
 	</div>
 	<div class=e47_426>
 		<div class=e47_454>
@@ -274,5 +313,10 @@ function redirectToChallenge(challenge_no) {
 		location.href = "${cpath}/event/insertChal.do";
 	}) 
 
+function fn_paging(currentPage) {
+
+
+	location.href = "${cpath}/event/challenge.do?currentPage=" + currentPage ;
+	}
 </script>
 </html>
