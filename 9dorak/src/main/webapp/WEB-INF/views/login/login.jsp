@@ -7,14 +7,39 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/loginStyle.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/loginStyle.css?s"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	
+    <a href="javascript:kakaoLogin()"><img src="${pageContext.request.contextPath}/resources/images/kakao_login_medium_narrow.png" style="width: 200px"></a>
+</div>
+
+<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script type="text/javascript">
+    Kakao.init('5441b1f53765881e55f0aca5e80b8b62');
+    function kakaoLogin() {
+        Kakao.Auth.login({
+            success: function (response) {
+                Kakao.API.request({
+                    url: '/v2/user/me',
+                    success: function (response) {
+                        alert(JSON.stringify(response))
+                    },
+                    fail: function (error) {
+                        alert(JSON.stringify(error))
+                    },
+                })
+            },
+            fail: function (error) {
+                alert(JSON.stringify(error))
+            },
+        })
+    }
+</script>
 
 <script>
 	function showLoginError() {
@@ -25,30 +50,6 @@
 		}
 	}
 	window.onload = showLoginError;
-</script>
-
-<script>
-	Kakao.init('5441b1f53765881e55f0aca5e80b8b62'); // 사용하려는 앱의 JavaScript 키 입력
-
-	// 카카오 로그인 버튼 클릭 시 호출되는 함수
-function kakaoLogin() {
-	Kakao.Auth.login({
-		success: function (response) {
-		Kakao.API.request({
-			url: '/v2/user/me',
-			success: function (response) {
-				kakaoLoginPro(response)
-			},
-			fail: function (error) {
-				console.log(error)
-			},
-		})
-	},
-		fail: function (error) {
-			console.log(error)
-		},
-	})
-}
 </script>
 
 </head>
@@ -114,15 +115,6 @@ function kakaoLogin() {
 			</div>
 		</div>
 	</div>
-
-	<div class="form-group row" id="kakaologin">
-		<div class="kakaobtn">
-			<a href="javascript:kakaoLogin();"> <img
-				src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg"
-				width="222" alt="카카오 로그인 버튼" /></a>
-		</div>
-	</div>
-
 </body>
 </html>
 
