@@ -152,7 +152,9 @@
       </div>
     </div>
   </div>
-  <div class=e1547_3778><span  class="e1547_3785">구독하기</span></div>
+  <div class=e1547_3778 style="cursor:pointer;">
+  	<span  class="e1547_3785">구독하기</span>
+  </div>
   <div class=e1547_3786><span  class="e1547_3719">A 메뉴</span>
     <div class="e1547_3722"><hr></div>
     <div class=e1547_3723>
@@ -182,7 +184,7 @@
         <div class=e1547_3748><span  class="e1547_3749">자세히보기</span></div>
       </div>
     </div>
-    <div class=e1547_3784><span  class="e1547_3785">구독하기</span></div>
+    <div class=e1547_3784 style="cursor:pointer;"><span class="e1547_3785">구독하기</span></div>
   </div>
 </div>
 

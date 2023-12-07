@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/menuSpecificReviewStyle.css?e"
+	href="${cpath}/resources/css/menuSpecificReviewStyle.css?d"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,51 +19,63 @@
 	<div class="div-wrapper">
 		<div class="div">
 			<div class="menu">
-				<div class="group"></div>
+				<div id="main-group" class="group"></div>
 				<div class="sub-image">
-					<div class="overlap-group-wrapper">
+					<div class="overlap-group-wrapper"
+						onclick="changeBackground(this, '${cpath}/resources/images/menu/subtest-1.png')">
 						<div class="overlap-group">
-							<img class="vector" src="img/vector-4.svg" />
+							<img class="vector"
+								src="${cpath}/resources/images/menu/subtest-1.png" />
 						</div>
 					</div>
-					<div class="overlap-group-wrapper">
+					<div class="overlap-group-wrapper"
+						onclick="changeBackground(this, '${cpath}/resources/images/menu/subtest-2.png')">
 						<div class="overlap">
-							<img class="vector" src="img/vector-3.svg" />
+							<img class="vector"
+								src="${cpath}/resources/images/menu/subtest-2.png" />
 						</div>
 					</div>
-					<div class="overlap-group-wrapper">
+					<div class="overlap-group-wrapper"
+						onclick="changeBackground(this, '${cpath}/resources/images/menu/subtest-3.png')">
 						<div class="vector-wrapper">
-							<img class="vector" src="img/vector-5.svg" />
+							<img class="vector"
+								src="${cpath}/resources/images/menu/subtest-3.png" />
 						</div>
 					</div>
 				</div>
 				<div class="specific">
 					<div class="overlap-2">
 						<div class="title">${menudetail.pro_name }</div>
-						<img class="heart" src="${cpath}/resources/images/menu/heart.svg" />
+						<img id="heart" class="heart"
+							src="${cpath}/resources/images/menu/menu-heart-unfill.png"
+							onclick="toggleHeart()" />
 					</div>
-					<div class="text-wrapper">${menudetail.pro_price } 원</div>
+					<div class="text-wrapper">${menudetail.pro_price }원</div>
 					<div class="price-and-button">
 						<div class="frame-wrapper">
 							<div class="frame">
 								<div class="button-product-add">
-									<div class="text-wrapper-2">1</div>
-									<button class="entypo-plus-wrapper">
+									<div id="count-product" class="text-wrapper-2">1</div>
+									<button class="entypo-plus-wrapper" onclick="increaseValue()">
 										<img class="img" src="${cpath}/resources/images/menu/plus.png" />
 									</button>
-									<button class="entypo-minus-wrapper">
+									<button class="entypo-minus-wrapper" onclick="decreaseValue()">
 										<img class="img"
 											src="${cpath}/resources/images/menu/minus.png" />
 									</button>
 								</div>
-								<div class="text-wrapper-3">총 금액 8,000원</div>
+								<!--  <div id="total-amount" class="text-wrapper-3">총 금액 ${menudetail.pro_price} 원</div>-->
+								<div class="text-wrapper-3" id="total-amount">
+									총 금액 <span id="total-amount-value">${menudetail.pro_price}</span>
+									원
+								</div>
 							</div>
 						</div>
 						<div class="overlap-3">
 							<button class="button-medium-text" id="shop">
 								<div class="overlap-group-2">
 									<div class="label" id="shop-label">&nbsp;&nbsp;결제하기</div>
-								
+
 								</div>
 							</button>
 							<button class="button-medium-text">
@@ -73,7 +85,7 @@
 										src="${cpath}/resources/images/menu/Cart.png" />
 								</div>
 							</button>
-							
+
 							<!-- <div class="frame-2">
 								<button class="label-wrapper">
 									<div class="label-2">결제하기</div>
@@ -86,8 +98,9 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<progress class="overlap-group-3" id="progress" value="${menudetail.pro_carb }"
-										min="0" max="${menudetail.pro_weight }"></progress>
+									<progress class="overlap-group-3" id="progress"
+										value="${menudetail.pro_carb }" min="0"
+										max="${menudetail.pro_weight }"></progress>
 
 								</div>
 								<div class="text-wrapper-4">${menudetail.pro_carb }%</div>
@@ -101,8 +114,9 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<progress class="overlap-group-3" id="progress" value="${menudetail.pro_prot }"
-										min="0" max="${menudetail.pro_weight }"></progress>
+									<progress class="overlap-group-3" id="progress"
+										value="${menudetail.pro_prot }" min="0"
+										max="${menudetail.pro_weight }"></progress>
 
 								</div>
 								<div class="text-wrapper-4">75%</div>
@@ -115,8 +129,9 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<progress class="overlap-group-3" id="progress" value="${menudetail.pro_prov }"
-										min="0" max="${menudetail.pro_weight }"></progress>
+									<progress class="overlap-group-3" id="progress"
+										value="${menudetail.pro_prov }" min="0"
+										max="${menudetail.pro_weight }"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
@@ -128,8 +143,9 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
-									<progress class="overlap-group-3" id="progress" value="${menudetail.pro_nat }"
-										min="0" max="${menudetail.pro_weight }"></progress>
+									<progress class="overlap-group-3" id="progress"
+										value="${menudetail.pro_nat }" min="0"
+										max="${menudetail.pro_weight }"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
@@ -141,8 +157,9 @@
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-3">
-									<progress class="overlap-group-3" id="progress" value="${menudetail.pro_sugar }"
-										min="0" max="${menudetail.pro_weight }"></progress>
+									<progress class="overlap-group-3" id="progress"
+										value="${menudetail.pro_sugar }" min="0"
+										max="${menudetail.pro_weight }"></progress>
 								</div>
 								<div class="text-wrapper-4">75%</div>
 							</div>
@@ -158,8 +175,8 @@
 							<div class="overlap-group-4">
 								<p class="text">
 									<span class="span">1일 섭취 기준인 2,000kcal 중 </span> <span
-										class="text-wrapper-7">${menudetail.pro_cal } kcal</span> <span class="span">를
-										섭취할 수 있어요 👨‍🍳</span>
+										class="text-wrapper-7">${menudetail.pro_cal } kcal</span> <span
+										class="span">를 섭취할 수 있어요 👨‍🍳</span>
 								</p>
 							</div>
 						</div>
@@ -224,8 +241,7 @@
 						<div class="overlap-6">
 							<img class="rectangle-5"
 								src="${cpath}/resources/images/menu/cake.png" />
-							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또
-								먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
+							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
 				</div>
@@ -585,14 +601,28 @@
     }
 
     // 제품 이미지
+   
     var cpathValue = '${cpath}';
-    var imageUrl = cpathValue + '/resources/images/menu/food.png';
-
-    console.log(imageUrl);
+    var imageUrl = cpathValue + '/resources/images/menu/subtest-1.png';
     var groupDiv = document.querySelector('.div-wrapper .group');
-    console.log(groupDiv);
-
+  
     groupDiv.style.backgroundImage = 'url(' + imageUrl + ')';
+   
+    // 클릭 시 제품 이미지 변경
+    function changeBackground(clickedElement, imagePath) {
+
+     // 메인 이미지 변경
+     groupDiv.style.backgroundImage = 'url(' + imagePath + ')';
+
+     // 클릭된 sub-image의 vector 이미지의 src 변경
+     var vectorImage = clickedElement.querySelector('.vector');
+
+     if (vectorImage) {
+       vectorImage.src = imagePath;
+     } else {
+       console.error('Vector image not found in clicked element.');
+     }
+   }
 
     // pagination
     const itemsPerPage = 5;
@@ -641,6 +671,37 @@
             showItemsForPage(currentPage);
         });
     });
+    
+    
+    // 상품 수량 변화
+    var counterValue = 1; // 최소값 설정
+    var proPrice = "${menudetail.pro_price}"; // 상품 가격
+    
+    function increaseValue() {
+      counterValue++;
+      updateCounter();
+    }
+
+    function decreaseValue() {
+      counterValue = Math.max(1, counterValue - 1);
+      updateCounter();
+    }
+
+    function updateCounter() {
+    	var totalAmount = counterValue * proPrice;
+      document.getElementById('count-product').innerText = counterValue;     
+      document.getElementById('total-amount-value').innerText = totalAmount;
+    }
+    
+    // 하트 클릭 시 이모지 변화
+    function toggleHeart() {
+      var heartImage = document.getElementById('heart');
+      if (heartImage.src.endsWith('unfill.png')) {
+        heartImage.src = '${cpath}/resources/images/menu/menu-heart-fill.png';
+      } else {
+        heartImage.src = '${cpath}/resources/images/menu/menu-heart-unfill.png';
+      }
+    }
 
     // 유용해요 클릭 및 유용 수 증가 
     document.addEventListener('DOMContentLoaded', function () {
@@ -672,12 +733,10 @@
    document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.frame-11, .frame-12').forEach(function (option) {
         option.addEventListener('click', function () {
-            // Remove 'selected-option' class from all options
             document.querySelectorAll('.frame-11, .frame-12').forEach(function (otherOption) {
                 otherOption.classList.remove('selected-option');
             });
 
-            // Add 'selected-option' class to the clicked option
             this.classList.add('selected-option');
         });
     });

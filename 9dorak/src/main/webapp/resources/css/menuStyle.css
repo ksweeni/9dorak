@@ -1,12 +1,19 @@
 @charset "UTF-8";
 
-/* top 메뉴 클릭 시 스타일 */
+.like-text {
+	position: absolute;
+    width: 4rem;
+    height: 2rem;
+    top: 22.69rem;
+    left: 20.3rem;
+    font-weight: 500;
+}
+
 .clicked-category {
 	transform: scale(1.1); /* Increase the size */
 	text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* "자세히 볼게요" 버튼 스타일 */
 .screen .frame {
 	display: flex;
 	align-items: center;
@@ -273,11 +280,11 @@
 }
 
 .screen .vector {
-	position: absolute;
-	width: 10px;
-	height: 11px;
-	top: 361px;
-	left: 339px;
+	position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 361px;
+    left: 18.5rem;
 }
 
 .screen .text-wrapper-4 {
@@ -733,6 +740,7 @@
 }
 
 .screen .overlap-group-3 {
+	padding-left: 20px;
 	font-size: 1.3rem;
 	position: relative;
 	width: 600px;
@@ -740,6 +748,11 @@
 	border-radius: 40px;
 	border: 3px solid;
 	border-color: #b5b5b5;
+}
+
+.screen .overlap-group-3:focus-visible {
+	outline: none;
+    box-shadow: 0px 0px 16px 0px lightgray;
 }
 
 .screen .text-wrapper-16 {

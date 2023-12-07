@@ -222,7 +222,7 @@
 				</div>
 			</div>
 		</div>
-		<div class=e1543_3415>
+		<div class=e1543_3415 style="cursor:pointer;">
 			<span class="e1543_3416">구독하기</span>
 		</div>
 	</div>
