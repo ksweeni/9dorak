@@ -8,7 +8,7 @@
 <meta charset="utf-8" />
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/paymentStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/payStyle.css"
 	type="text/css" />
 </head>
 <body>
