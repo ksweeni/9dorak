@@ -601,39 +601,28 @@
     }
 
     // 제품 이미지
+   
     var cpathValue = '${cpath}';
-    var imageUrl = cpathValue + '/resources/images/menu/food.png';
-
-    console.log(imageUrl);
+    var imageUrl = cpathValue + '/resources/images/menu/subtest-1.png';
     var groupDiv = document.querySelector('.div-wrapper .group');
-    console.log(groupDiv);
-
+  
     groupDiv.style.backgroundImage = 'url(' + imageUrl + ')';
-    
+   
     // 클릭 시 제품 이미지 변경
     function changeBackground(clickedElement, imagePath) {
-     console.log('Changing background to:', imagePath);
-     console.log(clickedElement);
-     
-     // 현재 메인 이미지를 클릭된 이미지로 이동
-     //clickedElement.style.backgroundImage = groupDiv.style.backgroundImage;
 
      // 메인 이미지 변경
      groupDiv.style.backgroundImage = 'url(' + imagePath + ')';
-     console.log(imageUrl);
 
      // 클릭된 sub-image의 vector 이미지의 src 변경
      var vectorImage = clickedElement.querySelector('.vector');
-     console.log(vectorImage.src);
-     console.log(imagePath);
+
      if (vectorImage) {
-       vectorImage.src = groupDiv.style.backgroundImage;
+       vectorImage.src = imagePath;
      } else {
        console.error('Vector image not found in clicked element.');
      }
    }
-     
-   
 
     // pagination
     const itemsPerPage = 5;
