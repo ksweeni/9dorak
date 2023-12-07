@@ -74,6 +74,12 @@
 		from pro
 		where pro_no = #{pro_no}
 	</select>
+	
+	<select id="searchCategoryCheck" resultType="provo" parameterType="String">
+		SELECT pro.*, category.ingre_no
+		FROM pro
+		LEFT JOIN category ON pro.pro_no = category.pro_no where ingre_no = #{ingre_no}
+	</select>
 
 	<!-- <insert id="insertDoran" parameterType="doranvo">
 		INSERT INTO DORAN (
