@@ -45,7 +45,7 @@
 		challenge_seq.NEXTVAL,
 		#{challenge_name},
 		#{challenge_cont},
-		'image.jpg',
+		#{challenge_image},
 		sysdate,
 		#{challenge_start},
 		#{challenge_end},

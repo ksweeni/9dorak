@@ -66,4 +66,5 @@
 	<session-config>
 		<session-timeout>50</session-timeout>
 	</session-config>
+
 </web-app>

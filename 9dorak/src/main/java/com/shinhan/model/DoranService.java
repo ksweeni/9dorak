@@ -59,6 +59,11 @@ public class DoranService {
 		return dao.selectAllByDlikeForMe(memId);
 	}
 
+	public DoranVO selectDoran_no(int doran_no) {
+		// TODO Auto-generated method stub
+		return dao.selectDoran_no(doran_no);
+	}
+
 
 
 	
