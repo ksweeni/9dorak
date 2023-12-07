@@ -22,36 +22,34 @@ String contextPath = request.getContextPath();
 	function uploadData() {
 		const currentDate = new Date();
 		const doranDate = currentDate.toISOString().split('T')[0];
-	
-/* 		const doranTitle = $("#doranTitle").val();
-		const doranCont = $("#doranCont").val();
-		const currentDate = new Date();
-		const doranDate = currentDate.toISOString().split('T')[0];
-		const memId = '${sessionScope.loginmem.mem_id}';
 
-		const formData = new FormData();
-		formData.append('doran_title', doranTitle);
-		formData.append('doran_cont', doranCont);
-		formData.append('doran_view', 0);
-		formData.append('mem_id', memId);
-		formData.append('doran_date', doranDate);
-		formData.append('doran_image', doranImage);
+		/* 		const doranTitle = $("#doranTitle").val();
+		 const doranCont = $("#doranCont").val();
+		 const currentDate = new Date();
+		 const doranDate = currentDate.toISOString().split('T')[0];
+		 const memId = '${sessionScope.loginmem.mem_id}';
+
+		 const formData = new FormData();
+		 formData.append('doran_title', doranTitle);
+		 formData.append('doran_cont', doranCont);
+		 formData.append('doran_view', 0);
+		 formData.append('mem_id', memId);
+		 formData.append('doran_date', doranDate);
+		 formData.append('doran_image', doranImage);
 		
-		console.log("FormData contents:");
-		formData.forEach((value, key) => {
-		  console.log(key, value);
-		});   */
-		
- 		var param = {
- 				"doran_title" : $("#doranTitle").val(),
-				"doran_cont" : $("#doranCont").val(),
-				"doran_image": doranImage,
-				"doran_date" : doranDate
-				
- 		};
- 		
- 		
-	
+		 console.log("FormData contents:");
+		 formData.forEach((value, key) => {
+		 console.log(key, value);
+		 });   */
+
+		var param = {
+			"doran_title" : $("#doranTitle").val(),
+			"doran_cont" : $("#doranCont").val(),
+			"doran_image" : doranImage,
+			"doran_date" : doranDate
+
+		};
+
 		//alert("체크체크체크체크체크체크체크체크")
 		$.ajax({
 			url : "${cpath}/doran/doranUpload.do",
@@ -66,21 +64,21 @@ String contextPath = request.getContextPath();
 				console.error('Response:', xhr.responseText);
 			}
 		});
-/* 		$.ajax({
-			url : "${cpath}/doran/doranUpload.do",
-			type : 'POST',
-			data : formData,
-			processData : false,
-			contentType : false,
-			success : function(res) {
-				console.log('Success:', res);
-			},
-			error : function(xhr, status, error) {
-				console.error('Error:', error);
-				console.error('Status:', status);
-				console.error('Response:', xhr.responseText);
-			}
-		}); */
+		/* 		$.ajax({
+		 url : "${cpath}/doran/doranUpload.do",
+		 type : 'POST',
+		 data : formData,
+		 processData : false,
+		 contentType : false,
+		 success : function(res) {
+		 console.log('Success:', res);
+		 },
+		 error : function(xhr, status, error) {
+		 console.error('Error:', error);
+		 console.error('Status:', status);
+		 console.error('Response:', xhr.responseText);
+		 }
+		 }); */
 	}
 </script>
 </head>
@@ -88,29 +86,30 @@ String contextPath = request.getContextPath();
 <body>
 	<div class="div-wrapper">
 		<div class="div">
-		
+
 			<header class="header">
-					<div class="top-nav">
-						<div class="navbar">
-							<div class="text-wrapper-11">메뉴보기</div>
-							<div class="text-wrapper-12">구독하기</div>
-							<div class="text-wrapper-13">요모조모</div>
-							<div class="text-wrapper-14">도란도란</div>
-						</div>
-						<img class="untitled-2" src="img/untitled-1-1.png" />
-						<div class="group-6">
-							<div class="text-wrapper-15">로그인 | 회원가입</div>
-							<div class="group-7">
-								<div class="overlap-group-3">
-									<img class="group-8" src="img/group-1.svg" />
-									<div class="ellipse"></div>
-									<div class="text-wrapper-16">2</div>
-								</div>
+				<div class="top-nav">
+					<div class="navbar">
+						<div class="text-event">이벤트</div>
+						<div class="text-menu">메뉴보기</div>
+						<div class="text-subscribe">구독하기</div>
+						<div class="text-yomo">요모조모</div>
+						<div class="text-doran">도란도란</div>
+					</div>
+					<img class="untitled-2" src="${cpath}/resources/images/main/header-logo.png" />
+					<div class="div-3">
+						<div class="text-wrapper-28">로그인 | 회원가입</div>
+						<div class="group-20">
+							<div class="overlap-group-3">
+								<img class="group-21" src="${cpath}/resources/images/main/header-cart.png" />
+								<div class="ellipse"></div>
+								<div class="text-wrapper-29">2</div>
 							</div>
 						</div>
 					</div>
-				</header>
-				
+				</div>
+			</header>
+
 			<div class="frame">
 				<div class="group">
 					<div class="overlap">
@@ -179,7 +178,8 @@ String contextPath = request.getContextPath();
 																.getElementById('selectedFileName').innerText = 'Selected File: '
 																+ selectedFile.name;
 
-														doranImage = '${cpath}/resources/images/doran/'+ selectedFile.name;
+														doranImage = '${cpath}/resources/images/doran/'
+																+ selectedFile.name;
 														console.log(
 																'Upload Path:',
 																doranImage);
@@ -191,21 +191,27 @@ String contextPath = request.getContextPath();
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="doran-fileUpload">
 									<div class="doran-fileUploadText">
 										<div class="doran-fileUploadText-file">File</div>
 										<div class="doran-fileUploadText-added">added</div>
 									</div>
 									<div class="doran-fileUploadBar">
-										<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+										<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+											viewBox="0 0 25 25" fill="none">
 											<g clip-path="url(#clip0_1666_337)">
-												<path d="M9.91406 10.6252C10.2095 10.6252 10.5021 10.567 10.7751 10.454C11.0481 10.3409 11.2961 10.1752 11.5051 9.96623C11.714 9.7573 11.8797 9.50926 11.9928 9.23628C12.1059 8.9633 12.1641 8.67072 12.1641 8.37524C12.1641 8.07977 12.1059 7.78719 11.9928 7.51421C11.8797 7.24122 11.714 6.99319 11.5051 6.78425C11.2961 6.57532 11.0481 6.40959 10.7751 6.29651C10.5021 6.18344 10.2095 6.12524 9.91406 6.12524C9.31733 6.12524 8.74503 6.3623 8.32307 6.78425C7.90112 7.20621 7.66406 7.77851 7.66406 8.37524C7.66406 8.97198 7.90112 9.54428 8.32307 9.96623C8.74503 10.3882 9.31733 10.6252 9.91406 10.6252Z" fill="#FF8000"/>
-											    <path d="M21.1602 21.1252C21.1602 21.9209 20.8441 22.684 20.2815 23.2466C19.7189 23.8092 18.9558 24.1252 18.1602 24.1252H6.16016C5.36451 24.1252 4.60144 23.8092 4.03884 23.2466C3.47623 22.684 3.16016 21.9209 3.16016 21.1252V3.12524C3.16016 2.32959 3.47623 1.56653 4.03884 1.00392C4.60144 0.441315 5.36451 0.125244 6.16016 0.125244L14.4102 0.125244L21.1602 6.87524V21.1252ZM6.16016 1.62524C5.76233 1.62524 5.3808 1.78328 5.0995 2.06458C4.81819 2.34589 4.66016 2.72742 4.66016 3.12524V18.1252L7.99616 14.7892C8.11438 14.6713 8.26858 14.5962 8.43433 14.5758C8.60008 14.5554 8.76788 14.591 8.91116 14.6767L12.1602 16.6252L15.3957 12.0952C15.459 12.0067 15.5408 11.933 15.6354 11.8793C15.7301 11.8255 15.8353 11.793 15.9438 11.784C16.0522 11.7751 16.1614 11.7898 16.2636 11.8272C16.3658 11.8646 16.4586 11.9238 16.5357 12.0007L19.6602 15.1252V6.87524H16.6602C16.0634 6.87524 15.4911 6.63819 15.0692 6.21623C14.6472 5.79428 14.4102 5.22198 14.4102 4.62524V1.62524H6.16016Z" fill="#FF8000"/>
+												<path
+												d="M9.91406 10.6252C10.2095 10.6252 10.5021 10.567 10.7751 10.454C11.0481 10.3409 11.2961 10.1752 11.5051 9.96623C11.714 9.7573 11.8797 9.50926 11.9928 9.23628C12.1059 8.9633 12.1641 8.67072 12.1641 8.37524C12.1641 8.07977 12.1059 7.78719 11.9928 7.51421C11.8797 7.24122 11.714 6.99319 11.5051 6.78425C11.2961 6.57532 11.0481 6.40959 10.7751 6.29651C10.5021 6.18344 10.2095 6.12524 9.91406 6.12524C9.31733 6.12524 8.74503 6.3623 8.32307 6.78425C7.90112 7.20621 7.66406 7.77851 7.66406 8.37524C7.66406 8.97198 7.90112 9.54428 8.32307 9.96623C8.74503 10.3882 9.31733 10.6252 9.91406 10.6252Z"
+												fill="#FF8000" />
+											    <path
+												d="M21.1602 21.1252C21.1602 21.9209 20.8441 22.684 20.2815 23.2466C19.7189 23.8092 18.9558 24.1252 18.1602 24.1252H6.16016C5.36451 24.1252 4.60144 23.8092 4.03884 23.2466C3.47623 22.684 3.16016 21.9209 3.16016 21.1252V3.12524C3.16016 2.32959 3.47623 1.56653 4.03884 1.00392C4.60144 0.441315 5.36451 0.125244 6.16016 0.125244L14.4102 0.125244L21.1602 6.87524V21.1252ZM6.16016 1.62524C5.76233 1.62524 5.3808 1.78328 5.0995 2.06458C4.81819 2.34589 4.66016 2.72742 4.66016 3.12524V18.1252L7.99616 14.7892C8.11438 14.6713 8.26858 14.5962 8.43433 14.5758C8.60008 14.5554 8.76788 14.591 8.91116 14.6767L12.1602 16.6252L15.3957 12.0952C15.459 12.0067 15.5408 11.933 15.6354 11.8793C15.7301 11.8255 15.8353 11.793 15.9438 11.784C16.0522 11.7751 16.1614 11.7898 16.2636 11.8272C16.3658 11.8646 16.4586 11.9238 16.5357 12.0007L19.6602 15.1252V6.87524H16.6602C16.0634 6.87524 15.4911 6.63819 15.0692 6.21623C14.6472 5.79428 14.4102 5.22198 14.4102 4.62524V1.62524H6.16016Z"
+												fill="#FF8000" />
 											</g>
 											<defs>
 											    <clipPath id="clip0_1666_337">
-											      <rect width="24" height="24" fill="white" transform="translate(0.160156 0.125244)"/>
+											      <rect width="24" height="24" fill="white"
+												transform="translate(0.160156 0.125244)" />
 											    </clipPath>
 									  		</defs>
 										</svg>
@@ -239,7 +245,7 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="group-9">
 				<div class="group-10">
 					<div class="overlap-group-4">
@@ -262,13 +268,13 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</div>
-		
+
 			<div class="doran-profile">
 				<div class="doran-profile-photo">
 					<img class="doran-profile-photoImg"
 						src="${cpath }/resources/images/doran/test.png" />
 				</div>
-				
+
 				<!-- alert("MemVO [mem_id=ksween, mem_name=김수인, mem_gender=Male, 
 				mem_bd=2001-05-04, mem_email=ksween@naver.com, mem_phone=01046302647, 
 				mem_pw=1234, mem_code=test111, mem_addr=null, mem_point=50, 
@@ -307,7 +313,7 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</div> -->
-			
+
 			<footer class="footer">
 				<div class="company-loco">
 					<div class="company">
@@ -367,9 +373,11 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</footer>
-			
-		</div><!-- div -->
-	</div><!-- div-wrapper -->
+
+		</div>
+		<!-- div -->
+	</div>
+	<!-- div-wrapper -->
 </body>
 
 </html>
