@@ -89,9 +89,10 @@
 									<button class="view-details-btn">자세히 볼게요</button>
 								</a>
 								<div class="mask-group-wrapper">
-									<img class="mask-group" src="img/mask-group-8.png" />
+									<img class="mask-group" src="${cpath}/resources/images/menu/menu-heart-unfill.png" />
 								</div>
-								<img class="vector" src="img/vector-11.png" />
+								<div class="like-text">80</div>
+								<img class="vector" src="${cpath}/resources/images/menu/menu-heart-fill.png" />
 								<div class="text-wrapper-4">${pro.pro_price}</div>
 							</div>
 						</div>

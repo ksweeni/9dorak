@@ -40,7 +40,7 @@
 				<div class="specific">
 					<div class="overlap-2">
 						<div class="title">${menudetail.pro_name }</div>
-						<img class="heart" src="${cpath}/resources/images/menu/heart.svg" />
+						<img id="heart" class="heart" src="${cpath}/resources/images/menu/menu-heart-unfill.png"  onclick="toggleHeart()"/>
 					</div>
 					<div class="text-wrapper">${menudetail.pro_price } 원</div>
 					<div class="price-and-button">
@@ -641,6 +641,16 @@
             showItemsForPage(currentPage);
         });
     });
+    
+    // 하트 클릭 시 이모지 변화
+    function toggleHeart() {
+      var heartImage = document.getElementById('heart');
+      if (heartImage.src.endsWith('unfill.png')) {
+        heartImage.src = '${cpath}/resources/images/menu/menu-heart-fill.png';
+      } else {
+        heartImage.src = '${cpath}/resources/images/menu/menu-heart-unfill.png';
+      }
+    }
 
     // 유용해요 클릭 및 유용 수 증가 
     document.addEventListener('DOMContentLoaded', function () {

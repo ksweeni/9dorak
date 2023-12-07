@@ -15,24 +15,28 @@
 </head>
 <body>
 
-<c:forEach items="${slist}" var="search">
-    <div class="green-beans">
-        <div class="overlap-group">
-            <div class="text-wrapper-2">${search.pro_name}</div>
-            <!-- <div class="frame">
+	<c:forEach items="${slist}" var="search">
+		<div class="green-beans">
+			<div class="overlap-group">
+				<div class="text-wrapper-2">${search.pro_name}</div>
+				<!-- <div class="frame">
                 <a href="#" class="view-details-btn">자세히 볼게요</a>
             </div> -->
-            <a class="frame" href="${cpath }/menu/menuSpecificReview.do?pro_no=${search.pro_no}">
-				<button class="view-details-btn">자세히 볼게요</button>
-			</a>
-            <div class="mask-group-wrapper">
-                <img class="mask-group" src="img/mask-group-8.png" />
-            </div>
-            <img class="vector" src="img/vector-11.png" />
-            <div class="text-wrapper-4">${search.pro_price}</div>
-        </div>
-    </div>
-</c:forEach>
-	
+				<a class="frame"
+					href="${cpath }/menu/menuSpecificReview.do?pro_no=${search.pro_no}">
+					<button class="view-details-btn">자세히 볼게요</button>
+				</a>
+				<div class="mask-group-wrapper">
+					<img class="mask-group" src="img/mask-group-8.png" />
+				</div>
+				
+				<div class="like-text">80</div>
+				<img class="vector"
+					src="${cpath}/resources/images/menu/menu-heart-fill.png" />
+				<div class="text-wrapper-4">${search.pro_price}</div>
+			</div>
+		</div>
+	</c:forEach>
+
 </body>
 </html>
