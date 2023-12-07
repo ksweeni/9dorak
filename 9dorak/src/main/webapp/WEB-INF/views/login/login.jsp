@@ -31,50 +31,24 @@
 	Kakao.init('5441b1f53765881e55f0aca5e80b8b62'); // 사용하려는 앱의 JavaScript 키 입력
 
 	// 카카오 로그인 버튼 클릭 시 호출되는 함수
-	function kakaoLogin() {
-		Kakao.Auth.login({
-			success : function(response) {
-				Kakao.API.request({
-					url : '/v2/user/me',
-					success : function(response) {
-						kakaoLoginPro(response)
-					},
-					fail : function(error) {
-						console.log(error)
-					},
-				})
+function kakaoLogin() {
+	Kakao.Auth.login({
+		success: function (response) {
+		Kakao.API.request({
+			url: '/v2/user/me',
+			success: function (response) {
+				kakaoLoginPro(response)
 			},
-			fail : function(error) {
+			fail: function (error) {
 				console.log(error)
 			},
 		})
-	}
-	
-	function kakaoLoginPro(response){
-		var data = {id:response.id,email:response.kakao_account.email}
-		$.ajax({
-			type : 'POST',
-			url : '/user/kakaoLoginPro.do',
-			data : data,
-			dataType : 'json',
-			success : function(data){
-				console.log(data)
-				if(data.JavaData == "YES"){
-					alert("로그인되었습니다.");
-					location.href = '/home'
-				}else if(data.JavaData == "register"){
-					$("#kakaoEmail").val(response.kakao_account.email);
-					$("#kakaoId").val(response.id);
-					$("#kakaoForm").submit();
-				}else{
-					alert("로그인에 실패했습니다");
-				}
-				
-			},
-			error: function(xhr, status, error){
-				alert("로그인에 실패했습니다."+error);
-			}
-		});
+	},
+		fail: function (error) {
+			console.log(error)
+		},
+	})
+}
 </script>
 
 </head>
@@ -143,9 +117,7 @@
 
 	<div class="form-group row" id="kakaologin">
 		<div class="kakaobtn">
-			<input type="hidden" name="kakaoeamil" id="kakaoemail" /> <input
-				type="hidden" name="kakaoname" id="kakaoname" /> <a
-				href="javascript:kakaoLogin();"> <img
+			<a href="javascript:kakaoLogin();"> <img
 				src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg"
 				width="222" alt="카카오 로그인 버튼" /></a>
 		</div>
