@@ -54,7 +54,9 @@ public class DoranController {
 			System.out.println(memId);
 			System.out.println("백에서 받은 아이디:"+memId.getMem_id());
 			System.out.println("백에서 받은 포인트:"+memId.getMem_point());
+			System.out.println("그 사람의 레벨 : " + memId.getMem_grade());
 			model.addAttribute("memPoint", memId.getMem_point());
+			model.addAttribute("memLevel", memId.getMem_grade());
 		}
 		return "doran/doran";
 	}
