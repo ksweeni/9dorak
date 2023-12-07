@@ -20,6 +20,40 @@ String contextPath = request.getContextPath();
 	type="text/css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<!--아이콘-->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+<!-- 부트스트랩 -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+	crossorigin="anonymous">
+<!-- 부트스트랩 icon -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<!-- 부트스트랩 js -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+<!-- 폰트어썸 js -->
+<script src="https://kit.fontawesome.com/1169190f22.js"
+	crossorigin="anonymous"></script>
+
+<!--css-->
+<link rel="stylesheet" href="css/market/common.css">
+<link rel="stylesheet" href="css/market/index.css">
+<link rel="stylesheet" href="css/market/join.css">
+
+<!-- js -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="js/market/menu_hover.js"></script>
+<script src="js/market/login_modal.js"></script>
 <style type="text/css">
 @charset "UTF-8";
 
@@ -230,7 +264,7 @@ String contextPath = request.getContextPath();
     height: 34px;
     position: absolute;
     left: 50%;
-    top: 1123.62109375px;
+    top: 1072.62109375px;
     text-align: center;
     font-size: 28px;
     transform: translateX(-50%);
@@ -243,7 +277,7 @@ String contextPath = request.getContextPath();
     height: 34px;
     position: absolute;
     left: 50%;
-    top: 2377.1455078125px;
+    top: 2401.1455078125px;
     text-align: center;
     font-size: 28px;
     letter-spacing: 0;
@@ -251,16 +285,16 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2548 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 328px;
-	height: 34px;
-	position: absolute;
-	left: 50%;
-	top: 3287.06396484375px;
-	text-align: center;
-	font-size: 28px;
-	letter-spacing: 0;
-	transform: translateX(-50%);
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 328px;
+    height: 34px;
+    position: absolute;
+    left: 50%;
+    top: 3365.06396484375px;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 0;
+    transform: translateX(-50%);
 }
 
 .e1433_2549 {
@@ -273,15 +307,15 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2550 {
-	color: rgba(0, 0, 0, 1);
-	width: 626.6953125px;
-	height: 39px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	text-align: center;
-	font-size: 32px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 626.6953125px;
+    height: 39px;
+    position: absolute;
+    left: 0px;
+    top: -52px;
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 0;
 }
 
 .e1433_2551 {
@@ -298,7 +332,7 @@ String contextPath = request.getContextPath();
     height: 44px;
     position: absolute;
     left: 50%;
-    top: 40px;
+    top: 60px;
     text-align: left;
     font-size: 36px;
     letter-spacing: 0;
@@ -339,7 +373,7 @@ String contextPath = request.getContextPath();
     height: 63px;
     position: absolute;
     left: 50%;
-    top: 3983px;
+    top: 4029px;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
     border-bottom-left-radius: 35px;
@@ -362,18 +396,18 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2557 {
-	background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 181px;
-	height: 63px;
-	position: absolute;
-	left: 50%;
-	top: 2164px;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
-	border-bottom-left-radius: 35px;
-	border-bottom-right-radius: 35px;
-	transform: translateX(-50%);
-	cursor:pointer;
+    background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 181px;
+    height: 63px;
+    position: absolute;
+    left: 50%;
+    top: 2105px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    transform: translateX(-50%);
+    cursor: pointer;
 }
 
 .e1433_2558 {
@@ -683,12 +717,12 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2578 {
-	width: 1440px;
-	height: 429px;
-	position: absolute;
-	left: 50%;
-	top: 4871px;
-	transform: translateX(-50%);
+    width: 1440px;
+    height: 429px;
+    position: absolute;
+    left: 50%;
+    top: 4251px;
+    transform: translateX(-50%);
 }
 
 .e1433_2579 {
@@ -987,31 +1021,31 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2607 {
-	width: 900px;
-	height: 44px;
-	position: absolute;
-	left: 142px;
-	top: 0px;
+    width: 900px;
+    height: 44px;
+    position: absolute;
+    left: 142px;
+    top: 11px;
 }
 
 .e1433_2608 {
-	color: rgba(0, 0, 0, 1);
-	width: 900px;
-	height: 44px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	text-align: center;
-	font-size: 36px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 900px;
+    height: 44px;
+    position: absolute;
+    left: 0px;
+    top: 67px;
+    text-align: center;
+    font-size: 36px;
+    letter-spacing: 0;
 }
 
 .allergy-bar {
-	width: 1200px;
-	height: 102px;
-	position: absolute;
-	left: 0px;
-	top: 77.41867065429688px;
+    width: 1200px;
+    height: 102px;
+    position: absolute;
+    left: 0px;
+    top: 114.41867065429688px;
 }
 
 .e1433_2610 {
@@ -1709,11 +1743,11 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2650 {
-    width: 1263.6988525390625px;
-    height: 734.47607421875px;
+    width: 1577.6988525390625px;
+    height: 178.47607421875px;
     position: absolute;
     left: 50%;
-    top: 351.51353454589844px;
+    top: 374.51353454589844px;
     margin-top: -10%;
     transform: translateX(-50%);
 }
@@ -2323,12 +2357,12 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2689 {
-	width: 1246.5px;
-	height: 420px;
-	position: absolute;
-	left: 50%;
-	top: 1270.76904296875px;
-	transform: translateX(-50%);
+    width: 1246.5px;
+    height: 420px;
+    position: absolute;
+    left: 50%;
+    top: 1194.76904296875px;
+    transform: translateX(-50%);
 }
 
 .e1433_2690 {
@@ -2437,15 +2471,15 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2699 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 65px;
-	height: 17px;
-	position: absolute;
-	left: 18px;
-	top: 11px;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 65px;
+    height: 17px;
+    position: absolute;
+    left: 18px;
+    top: 6px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0;
 }
 
 .e1433_2700 {
@@ -2554,15 +2588,15 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2709 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 65px;
-	height: 17px;
-	position: absolute;
-	left: 18px;
-	top: 11px;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 65px;
+    height: 17px;
+    position: absolute;
+    left: 18px;
+    top: 6px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0;
 }
 
 .e1433_2710 {
@@ -2676,19 +2710,19 @@ String contextPath = request.getContextPath();
 	height: 17px;
 	position: absolute;
 	left: 18px;
-	top: 11px;
+	top: 6px;
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
 }
 
 .e1433_2720 {
-	width: 1246.5px;
-	height: 420px;
-	position: absolute;
-	left: 50%;
-	top: 1710px;
-	transform: translateX(-50%);
+    width: 1246.5px;
+    height: 420px;
+    position: absolute;
+    left: 50%;
+    top: 1654px;
+    transform: translateX(-50%);
 }
 
 .e1433_2721 {
@@ -2802,7 +2836,7 @@ String contextPath = request.getContextPath();
 	height: 17px;
 	position: absolute;
 	left: 18px;
-	top: 9px;
+	top: 7px;
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
@@ -2919,7 +2953,7 @@ String contextPath = request.getContextPath();
 	height: 17px;
 	position: absolute;
 	left: 18px;
-	top: 10px;
+	top: 7px;
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
@@ -3036,7 +3070,7 @@ String contextPath = request.getContextPath();
 	height: 17px;
 	position: absolute;
 	left: 18px;
-	top: 11px;
+	top: 7px;
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
@@ -3157,16 +3191,16 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2761 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 65px;
-	height: 17px;
-	position: absolute;
-	left: 18px;
-	top: 10px;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	cursor:pointer;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 65px;
+    height: 17px;
+    position: absolute;
+    left: 18px;
+    top: 7px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0;
+    cursor: pointer;
 }
 
 .e1433_2762 {
@@ -3275,16 +3309,16 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2771 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 65px;
-	height: 17px;
-	position: absolute;
-	left: 18px;
-	top: 10px;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	cursor:pointer;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 65px;
+    height: 17px;
+    position: absolute;
+    left: 18px;
+    top: 6px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0;
+    cursor: pointer;
 }
 
 .e1433_2772 {
@@ -3393,25 +3427,25 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2781 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 65px;
-	height: 17px;
-	position: absolute;
-	left: 18px;
-	top: 10px;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	cursor:pointer;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 65px;
+    height: 17px;
+    position: absolute;
+    left: 18px;
+    top: 7px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0;
+    cursor: pointer;
 }
 
 .e1433_2782 {
-	width: 1246.5px;
-	height: 420px;
-	position: absolute;
-	left: 50%;
-	top: 3532px;
-	transform: translateX(-50%);
+    width: 1246.5px;
+    height: 420px;
+    position: absolute;
+    left: 50%;
+    top: 3574px;
+    transform: translateX(-50%);
 }
 
 .e1433_2783 {
@@ -3520,16 +3554,16 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2792 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 65px;
-	height: 17px;
-	position: absolute;
-	left: 18px;
-	top: 10px;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	cursor:pointer;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 65px;
+    height: 17px;
+    position: absolute;
+    left: 18px;
+    top: 7px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0;
+    cursor: pointer;
 }
 
 .e1433_2793 {
@@ -3638,16 +3672,16 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2802 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 65px;
-	height: 17px;
-	position: absolute;
-	left: 18px;
-	top: 11px;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	cursor:pointer;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 65px;
+    height: 17px;
+    position: absolute;
+    left: 18px;
+    top: 7px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0;
+    cursor: pointer;
 }
 
 .e1433_2803 {
@@ -3756,16 +3790,16 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2812 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 65px;
-	height: 17px;
-	position: absolute;
-	left: 18px;
-	top: 10px;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	cursor:pointer;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 65px;
+    height: 17px;
+    position: absolute;
+    left: 18px;
+    top: 7px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0;
+    cursor: pointer;
 }
 
 .e1433_2813 {
@@ -3794,43 +3828,59 @@ String contextPath = request.getContextPath();
 	transform: translateX(-50%);
 }
 
-.12345 {
-	left: -50&;
-	transform: translateX(-50%);
+.dropdown-container {
+   position: relative;
 }
 
-li {
-  list-style: none;
+.dropdown-content {
+   position: absolute;
+   top: 100%; /* Position the dropdown below the header */
+   display: none;
+   /* z-index: 999; */
 }
-.kind_wrap {
-  border:2px solid black; 
-  width:100%; 
-  max-width:800px; 
-  margin:0 auto; 
-  position: relative;
+
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   width: 90px;
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   z-index: 1;
+   top: 100%;
+   right: 0;
+   display: none;
 }
-.kind_wrap > .kind_slider {
-  overflow: hidden;
+
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
 }
-.kind_wrap > .kind_slider .slider { 
-  position: relative; 
-  transition: 0.5s;
+
+.dropdown:hover .dropdown-content {
+   display: block;
+   top: 100%; /* 상위 요소에서 100% 위치에 표시 */
+   z-index: 900;
+   left: 0;
+   top: 100%; /* 상위 요소에서 100% 위치에 표시 */
 }
-.kind_wrap > .kind_slider .slider li {
-  float:left;
+
+.drop {
+   height: 40px;
 }
-.kind_wrap > .kind_slider img {
-  vertical-align: top;
+
+.drop:hover {
+   color: red;
 }
-.kind_wrap .arrow > a.prev {
-  position: absolute; 
-  left:-50px; 
-  top:100px;
+
+a {
+/*     color: var(--bs-link-color); */
+   text-decoration: none;
 }
-.kind_wrap .arrow > a.next {
-  position: absolute; 
-  right:-50px; 
-  top:100px;
+
+.carousel-item.active {
+    cursor: pointer;
 }
 
 </style>
@@ -3889,12 +3939,15 @@ li {
 	</div>
 	<div class=e1433_2555>
 		<span class="e1433_2556">
-		<a href="${pageContext.request.contextPath}/menu/menu.do" style="color: white;">전체 메뉴 보기</a>
+		<a href="${pageContext.request.contextPath}/menu/menu.do" style="color: white;">
+		<span>전체 메뉴 보기</span>
+		</a>
 		</span>
 	</div>
 	<div class=e1433_2557>
 		<span class="e1433_2558">
-		<a href="${pageContext.request.contextPath}/menu/menu.do" style="color: white;">전체 메뉴 보기</a>
+		<a href="${pageContext.request.contextPath}/menu/menu.do" style="color: white;">
+		<span>전체 메뉴 보기</span></a>
 		</span>
 	</div>
 	
@@ -4018,8 +4071,8 @@ li {
 		</div>
 	</div>
 
-	<div class="e1433_2640"></div>
-	<div class=e1433_2641>
+	<!-- <div class="e1433_2640"></div> -->
+<!-- 	<div class=e1433_2641>
 		<div class="e1433_2642"></div>
 		<div class=e1433_2643>
 			<div class=e1433_2644>
@@ -4039,77 +4092,43 @@ li {
 			</div>
 		</div>
 		<div class="e1433_2649"></div>
-	</div>
+	</div> -->
 	<div class=e1433_2650>
-		<div class=e1433_2651>
-			<span class="ei1433_2651_3_76">
-			<a href="${pageContext.request.contextPath}/menu/menu.do" style="color: white;">지금 바로 주문하기</a>
-			</span>
-		</div>
-		<div class=e1433_2652>
-			<div class=e1433_2653>
-				<div class=ei1433_2653_3_117>
-					<div class="ei1433_2653_3_117_3_83"></div>
+				<div id="carouselExampleControls" class="carousel slide"
+				data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="${cpath}/resources/images/main/main_family.png"
+							class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<a href="${cpath}/event/challenge.do">
+						<img src="${cpath}/resources/images/main/main_event.png"
+							class="d-block w-100" alt="...">
+						</a>
+					</div>
+					<div class="carousel-item">
+						<img src="${cpath}/resources/images/main/main_family.png"
+							class="d-block w-100" alt="...">
+					</div>	
+					<div class="carousel-item">
+						<a href="${cpath}/event/challenge.do">
+						<img src="${cpath}/resources/images/main/main_event.png"
+							class="d-block w-100" alt="...">
+						</a>
+					</div>
 				</div>
+				<button class="carousel-control-prev" type="button"
+					data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button"
+					data-bs-target="#carouselExampleControls" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
 			</div>
-			<span class="e1433_2654">가족등록이란?</span>
-		</div>
-		<div class="e1433_2655"></div>
-		<div class=e1433_2657>
-			<div class="e1433_2658"></div>
-			<span class="e1433_2659">다양한 맛, 영양가득</span><span class="e1433_2660">우리
-				아이의 마음에 쏙 든 메뉴를 찾아요</span>
-			<div class="e1433_2661"></div>
-		</div>
-		<div class=e1433_2662>
-			<div class="e1433_2663"></div>
-			<div class=e1433_2664>
-				<span class="e1433_2665">알맞은 시간, 장소로</span><span class="e1433_2666">아이를
-					위한 따뜻한 도시락이 도착해요</span>
-			</div>
-			<div class="e1433_2667"></div>
-		</div>
-		<div class=e1433_2668>
-			<div class="e1433_2669"></div>
-			<div class=e1433_2670>
-				<span class="e1433_2671">취향 가득하게</span><span class="e1433_2672">아이가
-					담고</span>
-			</div>
-			<div class="e1433_2673"></div>
-		</div>
-		<div class=e1433_2674>
-			<div class="e1433_2675">
-				<div class=e1433_2686>
-				<span class="e1433_2687">가족 등록</span>
-				<span class="e1433_2688">아이를 위한 합리적인 가격</span>
-			</div>
-			</div>
-			<div class=e1433_2676>
-				<div class="ei1433_2676_3_106"></div>
-				<div class="ei1433_2676_3_107"></div>
-				<div class="ei1433_2676_3_108"></div>
-			</div>
-			<div class=e1433_2677>
-				<div class="e1433_2678"></div>
-			</div>
-		</div>
-		<div class=e1433_2679>
-			<div class="e1433_2680"></div>
-			<div class="e1433_2681"></div>
-		</div>
-		<span class="e1433_2682">구도락 </span><span class="e1433_2683">밥은
-			잘 먹었는지, 무얼 먹었는지 바쁜 일상 속 우리 아이를 걱정하는 마음 이제는 아이를 위한 맞춤형 도시락으로 부모님의 따뜻한
-			마음을 전달해보세요</span>
-		<div class=e1433_2684>
-			<div class="ei1433_2684_3_85"></div>
-			<div class="ei1433_2684_3_99"></div>
-			<div class="ei1433_2684_3_100"></div>
-		</div>
-		<div class=e1433_2685>
-			<div class="ei1433_2685_3_85"></div>
-			<div class="ei1433_2685_3_99"></div>
-			<div class="ei1433_2685_3_100"></div>
-		</div>
 	</div>
 	<div class=e1433_2689>
 		<div class=e1433_2690>
@@ -4120,9 +4139,10 @@ li {
 			<div class=e1433_2695>
 				<span class="e1433_2696">${likelist[0].pro_price}원</span>
 				<span class="e1433_2697">${likelist[0].pro_name}</span>
-				<div class=e1433_2698>
-					<span class="e1433_2699">자세히보기</span>
-				</div>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${likelist[0].pro_no}" class=e1433_2698>
+					<span class="e1433_2699">
+					자세히보기</span>
+				</a>
 			</div>
 		</div>
 		<div class=e1433_2700>
@@ -4133,9 +4153,9 @@ li {
 			<div class=e1433_2705>
 				<span class="e1433_2706">${likelist[1].pro_price}원</span>
 				<span class="e1433_2707">${likelist[1].pro_name}</span>
-				<div class=e1433_2708>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${likelist[1].pro_no}" class=e1433_2708>
 					<span class="e1433_2709">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 		<div class=e1433_2710>
@@ -4146,9 +4166,9 @@ li {
 			<div class=e1433_2715>
 				<span class="e1433_2716">${likelist[2].pro_price}원</span>
 				<span class="e1433_2717">${likelist[2].pro_name}</span>
-				<div class=e1433_2718>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${likelist[2].pro_no}" class=e1433_2718>
 					<span class="e1433_2719">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -4161,9 +4181,9 @@ li {
 			<div class=e1433_2726>
 				<span class="e1433_2727">${likelist[3].pro_price}원</span>
 				<span class="e1433_2728">${likelist[3].pro_name}</span>
-				<div class=e1433_2729>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${likelist[3].pro_no}" class=e1433_2729>
 					<span class="e1433_2730">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 		<div class=e1433_2731>
@@ -4174,9 +4194,9 @@ li {
 			<div class=e1433_2736>
 				<span class="e1433_2737">${likelist[4].pro_price}원</span>
 				<span class="e1433_2738">${likelist[4].pro_name}</span>
-				<div class=e1433_2739>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${likelist[4].pro_no}" class=e1433_2739>
 					<span class="e1433_2740">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 		<div class=e1433_2741>
@@ -4187,9 +4207,9 @@ li {
 			<div class=e1433_2746>
 				<span class="e1433_2747">${likelist[5].pro_price}원</span>
 				<span class="e1433_2748">${likelist[5].pro_name}</span>
-				<div class=e1433_2749>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${likelist[5].pro_no}" class=e1433_2749>
 					<span class="e1433_2750">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -4204,9 +4224,9 @@ li {
 			<div class=e1433_2757>
 				<span class="e1433_2758">${prolist[0].pro_price}원</span>
 				<span class="e1433_2759">${prolist[0].pro_name}</span>
-				<div class=e1433_2760>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${prolist[0].pro_no}" class=e1433_2760>
 					<span class="e1433_2761">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 		<div class=e1433_2762>
@@ -4217,9 +4237,9 @@ li {
 			<div class=e1433_2767>
 				<span class="e1433_2768">${prolist[1].pro_price}원</span>
 				<span class="e1433_2769">${prolist[1].pro_name}</span>
-				<div class=e1433_2770>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${prolist[1].pro_no}" class=e1433_2770>
 					<span class="e1433_2771">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 		<div class=e1433_2772>
@@ -4230,9 +4250,9 @@ li {
 			<div class=e1433_2777>
 				<span class="e1433_2778">${prolist[2].pro_price}원</span>
 				<span class="e1433_2779">${prolist[2].pro_name}</span>
-				<div class=e1433_2780>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${prolist[2].pro_no}" class=e1433_2780>
 					<span class="e1433_2781">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -4247,9 +4267,9 @@ li {
 			<div class=e1433_2788>
 				<span class="e1433_2789">${prolist[0].pro_price}원</span> <span
 					class="e1433_2790">${prolist[0].pro_name}</span>
-				<div class=e1433_2791>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${prolist[0].pro_no}" class=e1433_2791>
 					<span class="e1433_2792">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 		<div class=e1433_2793>
@@ -4260,9 +4280,9 @@ li {
 			<div class=e1433_2798>
 				<span class="e1433_2799">${prolist[1].pro_price}원</span> <span
 					class="e1433_2800">${prolist[1].pro_name}</span>
-				<div class=e1433_2801>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${prolist[1].pro_no}" class=e1433_2801>
 					<span class="e1433_2802">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 		<div class=e1433_2803>
@@ -4273,16 +4293,16 @@ li {
 			<div class=e1433_2808>
 				<span class="e1433_2809">${prolist[2].pro_price}원</span> <span
 					class="e1433_2810">${prolist[2].pro_name}</span>
-				<div class=e1433_2811>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${prolist[2].pro_no}" class=e1433_2811>
 					<span class="e1433_2812">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>
 	<!-- menu end -->
 
-	<span class="e1433_2813">아이와 함께 즐겨요 👨‍👩‍👧‍👦 </span>
-	<span class="e1433_2814">아이와 함께 즐기는 이벤트와 챌린지</span>
+	<!-- <span class="e1433_2813">아이와 함께 즐겨요 👨‍👩‍👧‍👦 </span> -->
+	<!-- <span class="e1433_2814">아이와 함께 즐기는 이벤트와 챌린지</span> -->
 
 	
 	<script type="text/javascript">
