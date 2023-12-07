@@ -12,7 +12,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src = "https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
 <script>
 	function showLoginError() {
@@ -23,6 +25,56 @@
 		}
 	}
 	window.onload = showLoginError;
+</script>
+
+<script>
+	Kakao.init('5441b1f53765881e55f0aca5e80b8b62'); // 사용하려는 앱의 JavaScript 키 입력
+
+	// 카카오 로그인 버튼 클릭 시 호출되는 함수
+	function kakaoLogin() {
+		Kakao.Auth.login({
+			success : function(response) {
+				Kakao.API.request({
+					url : '/v2/user/me',
+					success : function(response) {
+						kakaoLoginPro(response)
+					},
+					fail : function(error) {
+						console.log(error)
+					},
+				})
+			},
+			fail : function(error) {
+				console.log(error)
+			},
+		})
+	}
+	
+	function kakaoLoginPro(response){
+		var data = {id:response.id,email:response.kakao_account.email}
+		$.ajax({
+			type : 'POST',
+			url : '/user/kakaoLoginPro.do',
+			data : data,
+			dataType : 'json',
+			success : function(data){
+				console.log(data)
+				if(data.JavaData == "YES"){
+					alert("로그인되었습니다.");
+					location.href = '/home'
+				}else if(data.JavaData == "register"){
+					$("#kakaoEmail").val(response.kakao_account.email);
+					$("#kakaoId").val(response.id);
+					$("#kakaoForm").submit();
+				}else{
+					alert("로그인에 실패했습니다");
+				}
+				
+			},
+			error: function(xhr, status, error){
+				alert("로그인에 실패했습니다."+error);
+			}
+		});
 </script>
 
 </head>
@@ -88,55 +140,17 @@
 			</div>
 		</div>
 	</div>
-	<%-- <div class="kakao-login-wrapper">
-		<a href="<c:url value="/kakao_login" />"> <img
-			src="${cpath}/resources/images/kakao_login_medium_narrow.png">
-		</a>
-		</div> --%>
-		<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.5.0/kakao.min.js"
-  integrity="sha384-kYPsUbBPlktXsY6/oNHSUDZoTX6+YI51f63jCPEIPFP09ttByAdxd2mEjKuhdqn4" crossorigin="anonymous"></script>
-<script>
-  Kakao.init('5441b1f53765881e55f0aca5e80b8b62'); // 사용하려는 앱의 JavaScript 키 입력
-</script>
 
-<a id="kakao-login-btn" href="javascript:loginWithKakao()">
-  <img src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="222"
-    alt="카카오 로그인 버튼" />
-</a>
-<p id="token-result"></p>
+	<div class="form-group row" id="kakaologin">
+		<div class="kakaobtn">
+			<input type="hidden" name="kakaoeamil" id="kakaoemail" /> <input
+				type="hidden" name="kakaoname" id="kakaoname" /> <a
+				href="javascript:kakaoLogin();"> <img
+				src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg"
+				width="222" alt="카카오 로그인 버튼" /></a>
+		</div>
+	</div>
 
-<script>
-  function loginWithKakao() {
-    Kakao.Auth.authorize({
-      redirectUri: 'https://127.0.0.1:9090/myapp',
-    });
-  }
-
-  // 아래는 데모를 위한 UI 코드입니다.
-  displayToken()
-  function displayToken() {
-    var token = getCookie('authorize-access-token');
-
-    if(token) {
-      Kakao.Auth.setAccessToken(token);
-      Kakao.Auth.getStatusInfo()
-        .then(function(res) {
-          if (res.status === 'connected') {
-            document.getElementById('token-result').innerText
-              = 'login success, token: ' + Kakao.Auth.getAccessToken();
-          }
-        })
-        .catch(function(err) {
-          Kakao.Auth.setAccessToken(null);
-        });
-    }
-  }
-
-  function getCookie(name) {
-    var parts = document.cookie.split(name + '=');
-    if (parts.length === 2) { return parts[1].split(';')[0]; }
-  }
-</script>
 </body>
 </html>
 
