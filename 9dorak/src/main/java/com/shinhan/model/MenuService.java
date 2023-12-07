@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.ProVO;
 
 
@@ -48,6 +49,10 @@ public class MenuService {
 
 	public List<ProVO> searchCategoryCheck(String ingre_no) {
 		return dao.searchCategoryCheck(ingre_no);
+	}
+	
+	public List<MemreviewVO> selectProReview(int prono) {
+		return dao.selectProReview(prono);
 	}
 
 //	public int insertMember(DoranVO doran) {
