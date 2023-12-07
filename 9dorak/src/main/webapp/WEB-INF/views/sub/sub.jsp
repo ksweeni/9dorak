@@ -56,10 +56,10 @@
 			class="e1567_2321">2) 취향에 맞는 메뉴를 선택하시면 됩니다.</span>
 		<div class="e1543_3022" OnClick="location.href ='${pageContext.request.contextPath}/sub/subdetail.do'" style="cursor:pointer;">
 		</div>
-			<span class="e1543_3028">배부르9 구독하기</span>
+			<span class="e1543_3028" OnClick="location.href ='${pageContext.request.contextPath}/sub/subdetail.do'" style="cursor:pointer;">배부르9 구독하기</span>
 		<div class=e1543_3032>
 			<div class="e1543_3023" OnClick="location.href ='${pageContext.request.contextPath}/sub/subdetail2.do'" style="cursor:pointer;"></div>
-			<span class="e1543_3031">배터지9 구독하기</span>
+			<span class="e1543_3031" OnClick="location.href ='${pageContext.request.contextPath}/sub/subdetail2.do'" style="cursor:pointer;">배터지9 구독하기</span>
 		</div>
 		<span class="e1543_3033">월 요금</span>
 		<span class="e1543_3041">59,000원(개당 6,555원)</span>
