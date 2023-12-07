@@ -21,12 +21,11 @@ import com.shinhan.model.MenuService;
  */
 @Controller
 public class HomeController {
-	
+
 	@Autowired
 	MenuService menuService;
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -34,10 +33,10 @@ public class HomeController {
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		String formattedDate = dateFormat.format(date);
-		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("serverTime", formattedDate);
 		return "home";
 	}
-	
+
 	@GetMapping("/main.do")
 	public String allergy_menu(Model model) {
 		List<ProVO> prolist = menuService.selectAll();
@@ -46,23 +45,22 @@ public class HomeController {
 		model.addAttribute("likelist", likelist);
 		return "main";
 	}
-	
+
 	@GetMapping("searchAllergyCheck.do")
 	public String searchAllergyCheck(Model model, ProVO pro) {
-		//@RequestParam("pro_aller") String pro_aller
+		// @RequestParam("pro_aller") String pro_aller
 		List<ProVO> slist = menuService.searchAllergyCheck(pro.getPro_aller());
 		/* System.out.println("searchAllergyCheck.do"); */
 		model.addAttribute("slist", slist);
 		return "main/main_allergy";
 	}
-	
-//	@GetMapping("searchCategoryCheck.do")
-//	public String searchCategoryCheck(Model model, ProVO pro) {
-//		//@RequestParam("pro_aller") String pro_aller
-//		List<ProVO> clist = menuService.searchCategoryCheck(pro.getIngre_no());
-//		System.out.println(clist);
-//		model.addAttribute("clist", clist);
-//		return "main/main_category";
-//	}
-	
+
+	@GetMapping("searchCategoryCheck.do")
+	public String searchCategoryCheck(Model model, ProVO pro) {
+	List<ProVO> clist = menuService.searchCategoryCheck(pro.getIngre_no());
+	System.out.println(clist);
+	model.addAttribute("clist", clist);
+	return "main/main_category";
+	}
+
 }

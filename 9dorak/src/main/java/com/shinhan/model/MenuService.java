@@ -46,6 +46,10 @@ public class MenuService {
 		return dao.selectByNo(pro_no);
 	}
 
+	public List<ProVO> searchCategoryCheck(String ingre_no) {
+		return dao.searchCategoryCheck(ingre_no);
+	}
+
 //	public int insertMember(DoranVO doran) {
 //		return dao.insertDoran(doran);
 //	}
