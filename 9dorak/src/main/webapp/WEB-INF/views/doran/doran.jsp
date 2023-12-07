@@ -191,10 +191,10 @@
 									<img class="doran-profile-photoImg" src="${cpath }/resources/images/doran/test.png" />
 								</div>
 								<div class="doran-profile-info">
-									<div class="doran-profile-info-memname">외국잼민이</div>
+									<div class="doran-profile-info-memname">${sessionScope.loginmem.mem_id}</div>
 									<div class="doran-profile-info-grade">
 										<div class="doran-profile-info-lv">LV.</div>
-										<div class="doran-profile-info-memgrade">낑깡</div>
+										<div class="doran-profile-info-memgrade">${memLevel}</div>
 									</div>
 								</div>
 								<div class="doran-profile-point">
