@@ -83,48 +83,44 @@ div-wrapper {
 
 .div-wrapper .overlap-group-wrapper {
 	position: relative;
-	width: 200px;
-	height: 200px;
-	background-color: #f39132;
-	border-radius: 20px;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    background-color: #f39132;
+    border-radius: 2rem;
 }
 
 .div-wrapper .overlap-group {
 	position: relative;
-	width: 74px;
-	height: 63px;
-	top: 69px;
-	left: 63px;
-	background-image: url(./img/vector-6.svg);
-	background-size: 100% 100%;
+	border-radius: 2rem;
+    width: 200px;
+    height: 200px;
+    /*background-image: url(./img/vector-6.svg);  기본 사진 */
+    background-size: 100% 100%;
 }
 
 .div-wrapper .vector {
-	position: absolute;
-	width: 74px;
-	height: 63px;
-	top: 0;
-	left: 0;
+	position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 2rem;
 }
 
 .div-wrapper .overlap {
+	border-radius: 2rem;
 	position: relative;
-	width: 74px;
-	height: 63px;
-	top: 69px;
-	left: 64px;
-	background-image: url(./img/image.svg);
-	background-size: 100% 100%;
+    width: 200px;
+    height: 200px;
+    /* 기본 값 줘야 함 background-image: url(./img/image.svg);*/
+    background-size: 100% 100%;
 }
 
 .div-wrapper .vector-wrapper {
 	position: relative;
-	width: 74px;
-	height: 63px;
-	top: 69px;
-	left: 64px;
-	background-image: url(./img/vector.svg);
-	background-size: 100% 100%;
+    width: 74px;
+    height: 63px;
+    /*background-image: url(./img/vector.svg); 기본값 줘야 함 */
+    background-size: 100% 100%;
 }
 
 .div-wrapper .specific {
@@ -205,15 +201,15 @@ div-wrapper {
 
 .div-wrapper .text-wrapper-2 {
 	position: relative;
-	width: 10px;
-	top: 8px;
-	left: 74px;
-	font-weight: 500;
-	color: #777777;
-	font-size: 20px;
-	text-align: center;
-	letter-spacing: 0;
-	line-height: normal;
+    width: 20px;
+    top: 8px;
+    left: 70px;
+    font-weight: 500;
+    color: #777777;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
 .div-wrapper .entypo-plus-wrapper {
@@ -796,6 +792,7 @@ div-wrapper {
 }
 
 .div-wrapper .view-2 {
+	cursor: pointer;
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
@@ -842,6 +839,7 @@ div-wrapper {
 }
 
 .div-wrapper .frame-11 {
+	cursor: pointer;
 	display: inline-flex;
 	align-items: flex-end;
 	gap: 11px;
@@ -850,6 +848,7 @@ div-wrapper {
 }
 
 .div-wrapper .frame-12 {
+	cursor: pointer;
 	display: inline-flex;
 	align-items: center;
 	gap: 11px;
