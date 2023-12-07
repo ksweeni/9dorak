@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+progress {
+	-webkit-appearance: none;
+	margin-top:5px;
+}
+
+::-webkit-progress-bar {
+	background-color: rgba(215, 215, 215, 0.46);
+	border-radius: 2rem;
+	height: 15px;
+}
+
+::-webkit-progress-value {
+	background-color: #ffcbae;
+	border-radius: 2rem;
+}
+
 .div-wrapper {
 	background-color: #ffffff;
 	display: flex;
@@ -106,8 +122,8 @@
 	width: 252px;
 	align-items: flex-start;
 	justify-content: center;
-	gap: 12px;
 	position: relative;
+	margin-top: 2%;
 }
 
 .div-wrapper .text-wrapper {
@@ -144,6 +160,7 @@
 	border: 1px solid;
 	border-color: #0f91d2b2;
 	box-sizing: border-box;
+	left: 15%;
 }
 
 .div-wrapper .select-file {
@@ -172,7 +189,7 @@
 .div-wrapper .button-group {
 	gap: 8px;
 	top: 20px;
-	left: 449px;
+	left: 470px;
 	display: inline-flex;
 	align-items: center;
 	position: relative;
@@ -180,19 +197,22 @@
 
 .div-wrapper .cancel-wrapper {
 	cursor: pointer;
-	justify-content: center;
-	gap: 10px;
-	padding: 12px 24px;
-	flex: 0 0 auto;
-	margin-top: -0.2px;
-	margin-bottom: -0.2px;
-	margin-left: -0.2px;
-	background-color: #ffffff;
-	border-radius: 5px;
-	display: inline-flex;
-	align-items: center;
-	position: relative;
-	box-sizing: border-box;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    flex: 0 0 auto;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    margin-right: -1px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #0000001a;
+    box-shadow: 0px 1px 1px #00000029;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .div-wrapper .cancel {
@@ -817,7 +837,7 @@
   	white-space: nowrap;
   	border: none;
   	background-color: rgba(0, 0, 0, 0);
-  	background-image: url(../images/icon_dorandoran.png);
+  	background-image: url(../images/doran/icon_dorandoran.png);
   	background-repeat: no-repeat;
   	background-size: 32px 32px;
   	padding: 0 7px 0 50px;
@@ -853,7 +873,7 @@
 	white-space: nowrap;
 	border: none;
   	background-color: rgba(0, 0, 0, 0);
-  	background-image: url(../images/icon_mytext.png);
+  	background-image: url(../images/doran/icon_mytext.png);
   	background-repeat: no-repeat;
   	background-size: 32px 32px;
   	padding: 0 7px 0 50px;
@@ -863,7 +883,7 @@
 	position: absolute;
 	width: 126px;
 	top: 39px;
-	left: 106px;
+	left: 89px;
 	font-weight: 600;
 	color: #ffffff;
 	font-size: 1.7rem;
@@ -959,24 +979,22 @@
 	width: 100px;
 	height: 100px;
 	margin-top: 13px;
-	margin-left: 0px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border-radius: 50%;
-  	overflow: hidden;
 }
 
 .doran-button-frofile-setting{
 	width: 229.594px;
-	height: 43.32px;
+	height: 40px;
 	flex-shrink: 0;
 	border-radius: 10px;
 	background: #F38820;
-	margin-top: 100px;
 	margin-left: 75px;
 	margin-right: 75px;
 	color: white;
 	border: none;
 	font-size: 1.1rem;
+	margin-top: -4%;
 }
 
 .doranTitleBox{
@@ -1024,4 +1042,96 @@
     font-size: 1.2rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.doran-profile-point{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.doran-profile-info{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 9%;
+}
+
+.doran-profile-info-memname{
+	font-size: 24px;
+    font-weight: 500;
+}
+
+.doran-profile-info-grade{
+	position: relative;
+    display: flex;
+    gap: 3px;
+    color: rgba(182, 182, 182, 1);
+}
+
+.doran-upload-contents{
+	position: relative;
+    top: -45%;
+}
+
+.doran-upload-profilPhotoImg{
+	width: 100px;
+    height: 100px;
+    margin-top: 13px;
+    border-radius: 50%;
+    margin-left: 2%;
+}
+
+.doran-profile-photoImg{
+	width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.screen .info-point {
+    column-gap: 6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.doran-fileUpload{
+	position: relative;
+    top: 16%;
+    left: 6%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.doran-fileUploadText{
+	font-weight: bold;
+}
+
+.doran-fileUploadBar{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.doran-fileUploadBar-fileSize{
+	position: absolute;
+    left: 524px;
+    font-size: 0.9rem;
+    color: rgba(182, 182, 182, 1);
+}
+
+.doran-fileUploadBar-filePreview{
+	border: none;
+    background: none;
+    cursor: pointer;
+    color: rgba(244, 140, 40, 1);
+    position: relative;
+    left: -1%;
 }
