@@ -20,6 +20,7 @@
 		<typeAlias type="com.shinhan.dto.AnnoVO" alias="annovo" />
 		<typeAlias type="com.shinhan.dto.SubVO" alias="subvo" />
 		<typeAlias type="com.shinhan.dto.SubdetailVO" alias="subdetailvo" />
+		<typeAlias type="com.shinhan.dto.MemreviewVO" alias="memreviewvo" />
 
 	</typeAliases>
 </configuration>
