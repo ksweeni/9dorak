@@ -51,4 +51,19 @@ public class LoginDAOMybatis {
 
         sqlSession.update(NAMESPACE + "updatePwd", updatePwdParams);
     }
+
+	public Map<String, Object> kakaoConnectionCheck(Map<String, Object> paramMap) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setKakaoConnection(Map<String, Object> paramMap) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Map<String, Object> userKakaoLoginPro(Map<String, Object> paramMap) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
