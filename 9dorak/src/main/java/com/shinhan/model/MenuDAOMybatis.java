@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.ProVO;
 
 
@@ -66,7 +67,13 @@ public class MenuDAOMybatis {
 		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchCategoryCheck", ingre_no);
 		return plist;
 	}
-
+	
+	public List<MemreviewVO> selectProReview(int prono) {
+		List<MemreviewVO> rlist = sqlSession.selectList(NAMESPACE + "selectProReview", prono);
+		//System.out.println("DAO rlist:" + rlist);
+		return rlist;
+	}
+	
 //	public int insertDoran(DoranVO doran) {
 //		System.out.println("inserting :"+doran);
 //		return sqlSession.insert(NAMESPACE + "insertDoran", doran);

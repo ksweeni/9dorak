@@ -2,6 +2,16 @@ package com.shinhan.dto;
 
 import java.sql.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter@Setter
+@ToString
 public class MemreviewVO {
 	int orderdetail_no; //주문상세 고유 번호
 	Date memriew_date; //리뷰 작성날짜

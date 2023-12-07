@@ -12,6 +12,7 @@ import com.shinhan.dto.CommentVO;
 import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DlikeVO;
 import com.shinhan.dto.DoranVO;
+import com.shinhan.dto.MemVO;
 
 
 @Repository 
@@ -75,6 +76,11 @@ public class DoranDAOMybatis {
 	// 내가 쓴 글 좋아요 순 조회
 	public List<DoranVO> selectAllByDlikeForMe(String memId) {
 		return sqlSession.selectList(NAMESPACE + "selectAllByDlikeForMe", memId);
+	}
+
+	public DoranVO selectDoran_no(int doran_no) {
+		DoranVO doran = sqlSession.selectOne(NAMESPACE + "selectDoran_no", doran_no);
+		return doran;
 	}
 
 
