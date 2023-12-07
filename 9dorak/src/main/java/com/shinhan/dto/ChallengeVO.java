@@ -2,6 +2,8 @@ package com.shinhan.dto;
 
 import java.sql.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +26,8 @@ public class ChallengeVO {
 	String  mem_id; //회원 아이디
 	
 
+
+	 
 
 	
 	private int currentPage;

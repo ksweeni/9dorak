@@ -154,6 +154,8 @@
 	<br> 좋아요 :
 	<input type="text" value="${likeCnt}" readonly="readonly" id="likeCnt"></input>
 	<br>
+	<img src="${cpath}/resources/upload/${chall.challenge_image}"/>
+	<br>
 	<input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input>
 	<br>
 

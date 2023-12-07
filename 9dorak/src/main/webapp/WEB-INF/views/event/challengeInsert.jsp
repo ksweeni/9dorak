@@ -5,6 +5,7 @@
 request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +18,11 @@ String contextPath = request.getContextPath();
 </style>
 </head>
 <body>
-	<form action="insertChal.do" method="post">
+	<form action="${cpath }/event/insertChal.do" method="post" enctype="multipart/form-data" >
 	<input type="text" name="challenge_name" placeholder="제목"/>
 	<input type="text" name= "challenge_cont" placeholder="내용"/>
 	<!-- 가상폴더 업로드 하면 적용하자 -->
-	<!-- <input type="text" /> -->
+	<input type="file" name= "singleFile"/>
 	<input type="date" name= "challenge_start" placeholder="챌린지 시작 날짜"/>
 	<input type="date" name= "challenge_end" placeholder="챌린지 종료 날짜"/>
 	<button type ="submit">글쓰기</button>

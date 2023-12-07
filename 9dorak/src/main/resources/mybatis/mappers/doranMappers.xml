@@ -109,7 +109,7 @@
 		)
 		VALUES (
 		#{doran_no}, #{doran_title}, #{doran_cont},
-		#{doran_date},
+		sysdate,
 		#{doran_image}, #{doran_view}, #{mem_id}
 		)
 	</insert>
