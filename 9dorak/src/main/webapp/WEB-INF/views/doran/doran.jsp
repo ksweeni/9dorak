@@ -91,7 +91,8 @@
 				<div id="here">
 					<!--data forEach -->
 				</div>
-
+				
+				<!--  
 				<div class="doran-card">
 
 					<c:forEach items="${dlist}" var="doran" varStatus="loop">
@@ -136,6 +137,7 @@
 
 				</div>
 				<!-- doran-card -->
+				
 			</div>
 			<!-- group-4 -->
 
