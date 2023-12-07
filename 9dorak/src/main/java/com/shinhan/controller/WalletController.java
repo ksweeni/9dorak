@@ -17,6 +17,7 @@ import com.shinhan.model.WalletService;
 public class WalletController {
 	@Autowired
 	WalletService wService;
+	// 안녕
 
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
