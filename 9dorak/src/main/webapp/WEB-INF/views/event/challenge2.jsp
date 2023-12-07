@@ -145,7 +145,6 @@
 		<br></br>
 		<br></br>
 		<p>${chall}</p>
-
 		챌린지명 : <input type="text" value="${chall.challenge_name}" id="challenge_name"></input><br>
 		챌린지내용 :<input type="text" value="${chall.challenge_cont}" id="challenge_cont"></input><br>
 		챌린지 등록날짜 : <input type="text" value="${chall.challenge_date}" id="challenge_date"></input><br>

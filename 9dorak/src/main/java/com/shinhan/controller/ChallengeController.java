@@ -61,7 +61,6 @@ public class ChallengeController {
 	@GetMapping("insertChal.do")
 	public String insertChalPage(Model model) {
 //		System.out.println("insertChalPage");
-
 		return "event/challengeInsert";
 	}
 
