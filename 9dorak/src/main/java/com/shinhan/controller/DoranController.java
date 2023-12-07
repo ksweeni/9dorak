@@ -55,8 +55,7 @@ public class DoranController {
 			System.out.println("백에서 받은 아이디:"+memId.getMem_id());
 			System.out.println("백에서 받은 포인트:"+memId.getMem_point());
 			System.out.println("그 사람의 레벨 : " + memId.getMem_grade());
-			model.addAttribute("memPoint", memId.getMem_point());
-			model.addAttribute("memLevel", memId.getMem_grade());
+
 		}
 		return "doran/doran";
 	}
@@ -138,7 +137,7 @@ public class DoranController {
 
 	@PostMapping(value = "doranUpload.do", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public String handleDoranUpload(DoranVO doran) {
+	public String handleDoranUpload(DoranVO doran, HttpSession session, Model model) {
 //		public String handleDoranUpload(@RequestParam("doranTitle") String doranTitle,
 //				@RequestParam("doranCont") String doranCont, @RequestParam("doranView") int doranView,
 //				@RequestParam("memId") String memId, @RequestParam("doranDate") String doranDateString,																// to String
@@ -154,6 +153,10 @@ public class DoranController {
 //			e.printStackTrace();
 //		}
 
+		MemVO memId = (MemVO) session.getAttribute("loginmem");
+		
+		
+		
 		int dsize = dService.selectAll().size();
 
 //		DoranVO doran = new DoranVO();

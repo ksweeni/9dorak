@@ -187,17 +187,17 @@
 									<div class="doran-profile-info-memname">${sessionScope.loginmem.mem_id}</div>
 									<div class="doran-profile-info-grade">
 										<div class="doran-profile-info-lv">LV.</div>
-										<div class="doran-profile-info-memgrade">${memLevel}</div>
+										<div class="doran-profile-info-memgrade">${sessionScope.loginmem.mem_grade}</div>
 									</div>
 								</div>
 								<div class="doran-profile-point">
 									<div class="info-point">
 										<div>보유한포인트</div>
-										<div>${memPoint}</div>
+										<div>${sessionScope.loginmem.mem_point}</div>
 									</div>
 									<div class="progress-div">
 										<progress id="progress" class="overlap-group-3" id="progress"
-											value="50" min="0" max="324"></progress>
+											value="${sessionScope.loginmem.mem_point}" min="0" max="324"></progress>
 									</div>
 								</div>
 								<button class="doran-button-frofile-setting">

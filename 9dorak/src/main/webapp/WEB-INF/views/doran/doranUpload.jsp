@@ -18,9 +18,6 @@ String contextPath = request.getContextPath();
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-	alert("${sessionScope.loginmem}");
-</script>
-<script>
 	var doranImage; // 전역 변수로 선언
 	function uploadData() {
 		const currentDate = new Date();
@@ -265,36 +262,34 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</div>
-			<%-- <div class="doran-profile">
-				<div class="doran-profile-photo">
-					<img src="${cpath }/resources/images/test.png" />
-				</div>
-				<button class="doran-button-frofile-setting">
-					<span>프로필 설정하기</span>
-				</button>
-			</div> --%>
+		
 			<div class="doran-profile">
 				<div class="doran-profile-photo">
 					<img class="doran-profile-photoImg"
 						src="${cpath }/resources/images/doran/test.png" />
 				</div>
+				
+				<!-- alert("MemVO [mem_id=ksween, mem_name=김수인, mem_gender=Male, 
+				mem_bd=2001-05-04, mem_email=ksween@naver.com, mem_phone=01046302647, 
+				mem_pw=1234, mem_code=test111, mem_addr=null, mem_point=50, 
+				mem_grade="낑깡", mem_aller=null, mem_quit=0]"); -->
 				<div class="doran-profile-info">
-					<div class="doran-profile-info-memname">외국잼민이</div>
+					<div class="doran-profile-info-memname">${sessionScope.loginmem.mem_id}</div>
 					<div class="doran-profile-info-grade">
 						<div class="doran-profile-info-lv">LV.</div>
-						<div class="doran-profile-info-memgrade">낑깡</div>
+						<div class="doran-profile-info-memgrade">${sessionScope.loginmem.mem_grade}</div>
 					</div>
 				</div>
 				<div class="doran-profile-point">
 					<div class="info-point">
-						<div>보유한포인트</div>
-						<div>${memPoint}</div>
+						<div>보유한 포인트</div>
+						<div>${sessionScope.loginmem.mem_point}</div>
 
 					</div>
 
 					<div class="progress-div">
 						<progress id="progress" class="overlap-group-3" id="progress"
-							value="50" min="0" max="324"></progress>
+							value="${sessionScope.loginmem.mem_point}" min="0" max="324"></progress>
 					</div>
 
 
