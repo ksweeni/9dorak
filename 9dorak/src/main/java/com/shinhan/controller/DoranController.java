@@ -194,6 +194,11 @@ public class DoranController {
 
 	@GetMapping("doranFeedDetail.do")
 	public String doranFeedDetail(Model model) {
+		
+		
+		// 나중에 클릭하면 넘어온 파라미터 게시물 넘버로 바꿔줘
+		DoranVO doran =  dService.selectDoran_no(1);
+		System.out.println(doran);
 		// 현재 1번 게시글에 대한 댓글 정보 가져오기 test
 		List<CommentVO> comments = dService.selectAllCommentAbout(1);
 		model.addAttribute("comments", comments);
