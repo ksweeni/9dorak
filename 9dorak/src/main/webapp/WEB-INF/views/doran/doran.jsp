@@ -23,6 +23,7 @@
 
 	const memId = '${sessionScope.loginmem.mem_id}';
 	console.log("회원아이디 : ", memId);
+	
 </script>
 <body>
 	<div class="screen">
@@ -54,6 +55,10 @@
 			<div class="overlap-3">
 				<div class="group-6">
 					<div class="group-wrapper">
+						<div class="doran-upload-profilPhoto">
+							<img class="doran-upload-profilPhotoImg" src="${cpath }/resources/images/sandwich_lunchbox01.png" />
+						</div>
+						<div class="doran-upload-contents">
 						<div class="doran-context">
 							<input class="doran-context-title" type="text" placeholder="제목">
 							<textarea placeholder="내용을 자유롭게 입력하세요!"></textarea>
@@ -61,9 +66,9 @@
 						<div class="upload-button-wrap">
 							<div class="doran-upload-media">
 								<button class="doran-button-upload-photo">사진</button>
-								<button class="doran-button-upload-video">비디오</button>
 							</div>
 							<button type="submit" class="doran-button-upload">업로드</button>
+						</div>
 						</div>
 					</div>
 					<!-- group-wrapper -->
@@ -94,7 +99,7 @@
 							<div class="doran-topInfo">
 								<div>
 									<img class="doran-uploadInfo-profile"
-										src="${cpath }/resources/images/test.png" />
+										src="${cpath }/resources/images/doran/test.png" />
 								</div>
 								<div class="doran-uploadInfo">
 									<div class="doran-uploadInfo-memid">${doran.mem_id }</div>
@@ -110,17 +115,17 @@
 								<div class="doran-review">
 									<div class="doran-review-like">
 										<img class="doran-review-likeicon"
-											src="${cpath }/resources/images/icon_doranemptylike.png" />
+											src="${cpath }/resources/images/doran/icon_doranunfilllike.png" />
 										<div class="doran-review-like2">${doran.dlike}</div>
 									</div>
 									<div class="doran-review-reviewCnt">
 										<img class="doran-review-reviewCnticon"
-											src="${cpath }/resources/images/icon_doranviewcnt.png" />
+											src="${cpath }/resources/images/doran/icon_doranviewcnt.png" />
 										<div class="doran-review-reviewCnt2">${doran.doran_view}</div>
 									</div>
 									<div class="doran-review-dcomment">
 										<img class="doran-review-dcommenticon"
-											src="${cpath }/resources/images/icon_dorancomment.png" />
+											src="${cpath }/resources/images/doran/icon_dorancomment.png" />
 										<div class="doran-review-dcomment2">${doran.dcomment}</div>
 									</div>
 								</div>
@@ -181,7 +186,7 @@
 						<div class="div-2">
 							<div class="doran-profile">
 								<div class="doran-profile-photo">
-									<img src="${cpath }/resources/images/test.png" />
+									<img class="doran-profile-photoImg" src="${cpath }/resources/images/doran/test.png" />
 								</div>
 								<div class="doran-profile-info">
 									<div class="doran-profile-info-memname">외국잼민이</div>
@@ -204,9 +209,6 @@
 
 
 								</div>
-								<div>
-									<div></div>
-								</div>
 								<button class="doran-button-frofile-setting">
 									<span>프로필 설정하기</span>
 								</button>
@@ -220,7 +222,7 @@
 					method="get">
 					<button type="submit" class="group-18">
 						<div class="group-19">
-							<img class="create" src="img/create.svg" />
+							<img class="create" src="${cpath }/resources/images/doran/icon_darantext.png" />
 							<div class="text-wrapper-22">글 작성하기</div>
 						</div>
 					</button>
@@ -392,6 +394,7 @@
 
 				return false;
 			}
+			
 		</script>
 		<!-- div -->
 	</div>

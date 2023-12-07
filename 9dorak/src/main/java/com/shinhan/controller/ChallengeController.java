@@ -49,17 +49,7 @@ public class ChallengeController {
 		model.addAttribute("pagingVO", pagingVO);
 		return "event/challenge";
 	}
-//	@GetMapping("challenge.do")
-//	public String challenge(Model model,@ModelAttribute("challengeVO") ChallengeVO ChallengeVO,
-//			@RequestParam(defaultValue="1") int curPage) {
-//		
-//		
-//		
-//		List<ChallengeVO> chlist = chService.selectAll();
-////		System.out.println(chlist);
-//		model.addAttribute("chlist", chlist);
-//		return "event/challenge";
-//	}
+
 
 	@GetMapping("challengeDetail.do")
 	public String challenge2(Model model, ChallengeVO challenge) {

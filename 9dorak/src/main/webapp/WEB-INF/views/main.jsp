@@ -225,27 +225,29 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2546 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 140.063843px;
-	height: 34px;
-	position: absolute;
-	left: 662.9680786132812px;
-	top: 1123.62109375px;
-	text-align: center;
-	font-size: 28px;
-	letter-spacing: 0;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 140.063843px;
+    height: 34px;
+    position: absolute;
+    left: 50%;
+    top: 1123.62109375px;
+    text-align: center;
+    font-size: 28px;
+    transform: translateX(-50%);
+    letter-spacing: 0;
 }
 
 .e1433_2547 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 114.0638427734375px;
-	height: 34px;
-	position: absolute;
-	left: 662.9680786132812px;
-	top: 2337.1455078125px;
-	text-align: center;
-	font-size: 28px;
-	letter-spacing: 0;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: max-content;
+    height: 34px;
+    position: absolute;
+    left: 50%;
+    top: 2377.1455078125px;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 0;
+    transform: translateX(-50%);
 }
 
 .e1433_2548 {
@@ -253,19 +255,21 @@ String contextPath = request.getContextPath();
 	width: 328px;
 	height: 34px;
 	position: absolute;
-	left: 556px;
+	left: 50%;
 	top: 3287.06396484375px;
 	text-align: center;
 	font-size: 28px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2549 {
 	width: 626.6953125px;
 	height: 39px;
 	position: absolute;
-	left: 406.65234375px;
+	left: 50%;
 	top: 1169.11865234375px;
+	transform: translateX(-50%);
 }
 
 .e1433_2550 {
@@ -281,36 +285,39 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2551 {
-	width: 592px;
+	width: max-content;
 	height: 44px;
 	position: absolute;
-	left: 447px;
+	left: 50%;
 	top: 2388px;
 }
 
 .e1433_2552 {
-	color: rgba(0, 0, 0, 1);
-	width: 592px;
-	height: 44px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	text-align: left;
-	font-size: 36px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: max-content;
+    height: 44px;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    text-align: left;
+    font-size: 36px;
+    letter-spacing: 0;
+    transform: translateX(-50%);
 }
 
 .e1433_2553 {
-	background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 181px;
-	height: 63px;
-	position: absolute;
-	left: 652.5px;
-	top: 3055px;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
-	border-bottom-left-radius: 35px;
-	border-bottom-right-radius: 35px;
+    background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 181px;
+    height: 63px;
+    position: absolute;
+    left: 50%;
+    top: 3070px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    transform: translateX(-50%);
+    cursor: pointer;
 }
 
 .e1433_2554 {
@@ -323,19 +330,22 @@ String contextPath = request.getContextPath();
 	text-align: left;
 	font-size: 20px;
 	letter-spacing: 0;
+	cursor:pointer;
 }
 
 .e1433_2555 {
-	background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 181px;
-	height: 63px;
-	position: absolute;
-	left: 652.5px;
-	top: 4005px;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
-	border-bottom-left-radius: 35px;
-	border-bottom-right-radius: 35px;
+    background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 181px;
+    height: 63px;
+    position: absolute;
+    left: 50%;
+    top: 3983px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    transform: translateX(-50%);
+    cursor: pointer;
 }
 
 .e1433_2556 {
@@ -348,6 +358,7 @@ String contextPath = request.getContextPath();
 	text-align: left;
 	font-size: 20px;
 	letter-spacing: 0;
+	cursor:pointer;
 }
 
 .e1433_2557 {
@@ -355,12 +366,14 @@ String contextPath = request.getContextPath();
 	width: 181px;
 	height: 63px;
 	position: absolute;
-	left: 629.75px;
-	top: 2184px;
+	left: 50%;
+	top: 2164px;
 	border-top-left-radius: 35px;
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	transform: translateX(-50%);
+	cursor:pointer;
 }
 
 .e1433_2558 {
@@ -373,14 +386,16 @@ String contextPath = request.getContextPath();
 	text-align: left;
 	font-size: 20px;
 	letter-spacing: 0;
+	cursor:pointer;
 }
 
 .e1433_2559 {
-	width: 1300px;
-	height: 100px;
-	position: absolute;
-	left: 93px;
-	top: 2456px;
+    width: 1300px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 2492px;
+    transform: translateX(-50%);
 }
 
 
@@ -671,8 +686,9 @@ String contextPath = request.getContextPath();
 	width: 1440px;
 	height: 429px;
 	position: absolute;
-	left: 0px;
+	left: 50%;
 	top: 4871px;
+	transform: translateX(-50%);
 }
 
 .e1433_2579 {
@@ -965,8 +981,9 @@ String contextPath = request.getContextPath();
 	width: 1200px;
 	height: 179.41867065429688px;
 	position: absolute;
-	left: 125px;
+	left: 50%;
 	top: 3338.5810546875px;
+	transform: translateX(-50%);
 }
 
 .e1433_2607 {
@@ -1540,22 +1557,28 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2640 {
-	width: 1400px;
-	height: 441.34423828125px;
-	position: absolute;
-	left: 23px;
-	top: 4299.65576171875px;
-	background-image: url(resources/images/main_event.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    width: 1400px;
+    height: 504.34423828125px;
+    position: absolute;
+    left: 50%;
+    top: 4275.65576171875px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateX(-50%);
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    box-sizing: border-box;
 }
+
 
 .e1433_2641 {
 	width: 211px;
 	height: 48px;
 	position: absolute;
-	left: 593px;
+	left: 50%;
 	top: 4776px;
+	transform: translateX(-50%);
 }
 
 .e1433_2642 {
@@ -1564,9 +1587,10 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 17px;
 	top: 9px;
-	background-image: url(resources/images/main_small_direction01.png);
+	background-image: url(resources/images/main/main_small_direction01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2643 {
@@ -1678,45 +1702,48 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 162px;
 	top: 11.5px;
-	background-image: url(resources/images/main_small_direction01.png);
+	background-image: url(resources/images/main/main_small_direction01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2650 {
-	width: 1263.6988525390625px;
-	height: 734.47607421875px;
-	position: absolute;
-	left: 103.99996948242188px;
-	top: 231.51353454589844px;
-	margin-top: -10%;
+    width: 1263.6988525390625px;
+    height: 734.47607421875px;
+    position: absolute;
+    left: 50%;
+    top: 351.51353454589844px;
+    margin-top: -10%;
+    transform: translateX(-50%);
 }
 
 .e1433_2651 {
-	background-image: linear-gradient(0deg, rgba(239.0625, 171.328125, 103.59375, 1)
+    background-image: linear-gradient(0deg, rgba(239.0625, 171.328125, 103.59375, 1)
 		0%, rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1)
 		100%);
-	width: 278px;
-	height: 86px;
-	position: absolute;
-	left: 0.000030517578125px;
-	top: 593.046875px;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
+    width: 278px;
+    height: 86px;
+    position: absolute;
+    left: 0.000030517578125px;
+    top: 539.046875px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
 }
 
 .ei1433_2651_3_76 {
-	color: rgba(255, 255, 255, 1);
-	width: 207px;
-	height: 32px;
-	position: absolute;
-	left: 35.5px;
-	top: 27px;
-	text-align: left;
-	font-size: 26px;
-	letter-spacing: 0;
+    color: rgba(255, 255, 255, 1);
+    width: 207px;
+    height: 32px;
+    position: absolute;
+    left: 48.5px;
+    top: 27px;
+    text-align: left;
+    font-size: 26px;
+    letter-spacing: 0;
 }
 
 .e1433_2562 {
@@ -1750,17 +1777,18 @@ String contextPath = request.getContextPath();
 }
 
 .ei1433_2653_3_117_3_83 {
-	/* box-shadow: 0px 0px 25px rgba(130.68749696016312, 165.49499720335007, 255, 0.25); */
-	border-radius: 500px;
-	/* background-color: rgba(255, 255, 255, 1); */
-	width: 121px;
-	height: 106px;
-	position: absolute;
-	left: 283px;
-	top: 576px;
-	background-image: url(resources/images/main_arrow03.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    /* box-shadow: 0px 0px 25px rgba(130.68749696016312, 165.49499720335007, 255, 0.25); */
+    border-radius: 500px;
+    /* background-color: rgba(255, 255, 255, 1); */
+    width: 121px;
+    height: 106px;
+    position: absolute;
+    left: 283px;
+    top: 522px;
+    background-image: url(resources/images/main/main_arrow03.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
 }
 
 .ei1433_2653_3_117_3_84 {
@@ -1788,25 +1816,26 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2654 {
-	position: relative;
-	left: 381px;
-	top: 621px;
-	font-size: 20px;
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    position: relative;
+    left: 381px;
+    top: 571px;
+    font-size: 20px;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    cursor: pointer;
 }
 
 .e1433_2655 {
-	background-color: rgba(196.82332813739777, 196.82332813739777, 196.82332813739777,
+    background-color: rgba(196.82332813739777, 196.82332813739777, 196.82332813739777,
 		0.20000000298023224);
-	width: 445px;
-	height: 734.47607421875px;
-	position: absolute;
-	left: 818.6988525390625px;
-	top: 0px;
-	border-top-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-left-radius: 30px;
-	border-bottom-right-radius: 30px;
+    width: 445px;
+    height: 645.47607421875px;
+    position: absolute;
+    left: 818.6988525390625px;
+    top: 32px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .e1433_2657 {
@@ -1856,23 +1885,23 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2661 {
-	/* box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.25); */
-	width: 290px;
-	height: 198px;
-	position: absolute;
-	left: -9.030884px;
-	top: -29px;
-	background-image: url(resources/images/main01.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    /* box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.25); */
+    width: 128px;
+    height: 140px;
+    position: absolute;
+    left: 63.969116px;
+    top: 33px;
+    background-image: url(resources/images/main/main01.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .e1433_2662 {
-	width: 258px;
-	height: 293.0310974121094px;
-	position: absolute;
-	left: 701px;
-	top: 394.9278869628906px;
+    width: 258px;
+    height: 293.0310974121094px;
+    position: absolute;
+    left: 701px;
+    top: 354.9278869628906px;
 }
 
 .e1433_2663 {
@@ -1922,15 +1951,15 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2667 {
-	/* box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.25); */
-	width: 269.59024px;
-	height: 167.455078px;
-	position: absolute;
-	left: -3.795105px;
-	top: -12px;
-	background-image: url(resources/images/main03.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    /* box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.25); */
+    width: 170.59024px;
+    height: 160.455078px;
+    position: absolute;
+    left: 48.204895px;
+    top: 4px;
+    background-image: url(resources/images/main/main03.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .e1433_2668 {
@@ -1988,36 +2017,36 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2673 {
-	width: 290px;
-	height: 198px;
-	position: absolute;
-	left: -15.030884px;
-	top: -24px;
-	background-image: url(resources/images/main02.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    width: 207px;
+    height: 198px;
+    position: absolute;
+    left: 5.969116px;
+    top: 15px;
+    background-image: url(resources/images/main/main02.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .e1433_2674 {
-	width: 282px;
-	height: 317.40863037109375px;
-	position: absolute;
-	left: 943px;
-	top: 369.34625244140625px;
+    width: 282px;
+    height: 262.40863037109375px;
+    position: absolute;
+    left: 943px;
+    top: 325.34625244140625px;
 }
 
 .e1433_2675 {
-	box-shadow: 0px 0px 31px rgba(0, 0, 0, 0.05000000074505806);
-	background-color: rgba(255, 255, 255, 1);
-	width: 258px;
-	height: 269.636474609375px;
-	position: absolute;
-	left: 23.999984741210938px;
-	top: 47.77215576171875px;
-	border-top-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-left-radius: 30px;
-	border-bottom-right-radius: 30px;
+    box-shadow: 0px 0px 31px rgba(0, 0, 0, 0.05000000074505806);
+    background-color: rgba(255, 255, 255, 1);
+    width: 258px;
+    height: 275.636474609375px;
+    position: absolute;
+    left: 23.999984741210938px;
+    top: 47.77215576171875px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .e1433_2676 {
@@ -2083,15 +2112,15 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2678 {
-	/* box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.25); */
-	width: 243.180176px;
-	height: 172.590485px;
-	position: absolute;
-	left: -13px;
-	top: 12px;
-	background-image: url(resources/images/main04.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    /* box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.25); */
+    width: 136.18017599999996px;
+    height: 139.590485px;
+    position: absolute;
+    left: 38px;
+    top: 43px;
+    background-image: url(resources/images/main/main04.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .e1433_2679 {
@@ -2134,15 +2163,15 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2682 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 213px;
-	height: 94px;
-	position: absolute;
-	left: 0px;
-	top: 237.958984375px;
-	text-align: left;
-	font-size: 77px;
-	letter-spacing: 0;
+    color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 213px;
+    height: 94px;
+    position: absolute;
+    left: 0px;
+    top: 225.958984375px;
+    text-align: left;
+    font-size: 77px;
+    letter-spacing: 0;
 }
 
 .e1433_2683 {
@@ -2270,35 +2299,36 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2687 {
-	color: rgba(0, 0, 0, 1);
-	width: 121px;
-	height: 27px;
-	position: absolute;
-	left: 22px;
-	top: 0px;
-	text-align: left;
-	font-size: 22px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 121px;
+    height: 27px;
+    position: absolute;
+    left: -1047px;
+    top: -504px;
+    text-align: left;
+    font-size: 22px;
+    letter-spacing: 0;
 }
 
 .e1433_2688 {
-	color: rgba(0, 0, 0, 1);
-	width: 102px;
-	height: 44px;
-	position: absolute;
-	left: 13px;
-	top: 37px;
-	text-align: center;
-	font-size: 18px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 102px;
+    height: 44px;
+    position: absolute;
+    left: -1056px;
+    top: -473px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0;
 }
 
 .e1433_2689 {
 	width: 1246.5px;
 	height: 420px;
 	position: absolute;
-	left: 97px;
+	left: 50%;
 	top: 1270.76904296875px;
+	transform: translateX(-50%);
 }
 
 .e1433_2690 {
@@ -2346,9 +2376,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2695 {
@@ -2372,15 +2403,16 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2697 {
-	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 215px;
-	height: 29px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	text-align: left;
-	font-size: 24px;
-	letter-spacing: 0;
+    color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
+    width: auto;
+    height: 29px;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    text-align: left;
+    font-size: 24px;
+    letter-spacing: 0;
+    transform: translateX(-50%);
 }
 
 .e1433_2698 {
@@ -2396,6 +2428,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2698 {
@@ -2460,9 +2493,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2705 {
@@ -2487,14 +2521,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2707 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 214px;
+	width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 0px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2708 {
@@ -2510,6 +2545,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2708 {
@@ -2574,9 +2610,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2715 {
@@ -2601,14 +2638,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2717 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 214px;
+	width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 0px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2718 {
@@ -2624,6 +2662,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2718 {
@@ -2647,8 +2686,9 @@ String contextPath = request.getContextPath();
 	width: 1246.5px;
 	height: 420px;
 	position: absolute;
-	left: 97px;
+	left: 50%;
 	top: 1710px;
+	transform: translateX(-50%);
 }
 
 .e1433_2721 {
@@ -2696,9 +2736,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2726 {
@@ -2723,14 +2764,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2728 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 214px;
+    width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 0px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2729 {
@@ -2746,6 +2788,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2729 {
@@ -2810,9 +2853,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2736 {
@@ -2837,14 +2881,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2738 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 214px;
+	width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 0px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2739 {
@@ -2860,6 +2905,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2739 {
@@ -2924,9 +2970,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2746 {
@@ -2951,14 +2998,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2748 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 214px;
+	width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 0px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2749 {
@@ -2974,6 +3022,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2749 {
@@ -2994,11 +3043,12 @@ String contextPath = request.getContextPath();
 }
 
 .e1433_2751 {
-	width: 1246.5px;
-	height: 420px;
-	position: absolute;
-	left: 119.75px;
-	top: 2578.29052734375px;
+    width: 1246.5px;
+    height: 420px;
+    position: absolute;
+    left: 50%;
+    top: 2618.29052734375px;
+    transform: translateX(-50%);
 }
 
 .e1433_2752 {
@@ -3046,9 +3096,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2757 {
@@ -3073,14 +3124,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2759 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 214px;
+	width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 0px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2760 {
@@ -3096,6 +3148,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2760 {
@@ -3113,6 +3166,7 @@ String contextPath = request.getContextPath();
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
+	cursor:pointer;
 }
 
 .e1433_2762 {
@@ -3160,9 +3214,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2767 {
@@ -3187,14 +3242,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2769 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 214px;
+	width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 0px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2770 {
@@ -3210,6 +3266,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2770 {
@@ -3227,6 +3284,7 @@ String contextPath = request.getContextPath();
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
+	cursor:pointer;
 }
 
 .e1433_2772 {
@@ -3274,9 +3332,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2777 {
@@ -3301,14 +3360,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2779 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 214px;
+	width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 0px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2780 {
@@ -3324,6 +3384,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2780 {
@@ -3341,14 +3402,16 @@ String contextPath = request.getContextPath();
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
+	cursor:pointer;
 }
 
 .e1433_2782 {
 	width: 1246.5px;
 	height: 420px;
 	position: absolute;
-	left: 119.75px;
+	left: 50%;
 	top: 3532px;
+	transform: translateX(-50%);
 }
 
 .e1433_2783 {
@@ -3396,9 +3459,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2788 {
@@ -3423,14 +3487,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2790 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 238px;
+	width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 26px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2791 {
@@ -3446,6 +3511,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2791 {
@@ -3463,6 +3529,7 @@ String contextPath = request.getContextPath();
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
+	cursor:pointer;
 }
 
 .e1433_2793 {
@@ -3510,9 +3577,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2798 {
@@ -3537,14 +3605,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2800 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 214px;
+	width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 39px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2801 {
@@ -3560,6 +3629,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2801 {
@@ -3577,6 +3647,7 @@ String contextPath = request.getContextPath();
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
+	cursor:pointer;
 }
 
 .e1433_2803 {
@@ -3624,9 +3695,10 @@ String contextPath = request.getContextPath();
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/sandwich_lunchbox01.png);
+	background-image: url(resources/images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor:pointer;
 }
 
 .e1433_2808 {
@@ -3651,14 +3723,15 @@ String contextPath = request.getContextPath();
 
 .e1433_2810 {
 	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: 216px;
+	width: max-content;
 	height: 29px;
 	position: absolute;
-	left: 40px;
+	left: 50%;
 	top: 0px;
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2811 {
@@ -3674,6 +3747,7 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 35px;
 	border-bottom-left-radius: 35px;
 	border-bottom-right-radius: 35px;
+	cursor:pointer;
 }
 
 .1433_2811 {
@@ -3691,6 +3765,7 @@ String contextPath = request.getContextPath();
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
+	cursor:pointer;
 }
 
 .e1433_2813 {
@@ -3698,11 +3773,12 @@ String contextPath = request.getContextPath();
 	width: 272.426025390625px;
 	height: 34px;
 	position: absolute;
-	left: 586.7869873046875px;
+	left: 50%;
 	top: 4177.328125px;
 	text-align: center;
 	font-size: 28px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .e1433_2814 {
@@ -3710,16 +3786,51 @@ String contextPath = request.getContextPath();
 	width: 900px;
 	height: 44px;
 	position: absolute;
-	left: 273px;
+	left: 50%;
 	top: 4226.328125px;
 	text-align: center;
 	font-size: 36px;
 	letter-spacing: 0;
+	transform: translateX(-50%);
 }
 
 .12345 {
 	left: -50&;
 	transform: translateX(-50%);
+}
+
+li {
+  list-style: none;
+}
+.kind_wrap {
+  border:2px solid black; 
+  width:100%; 
+  max-width:800px; 
+  margin:0 auto; 
+  position: relative;
+}
+.kind_wrap > .kind_slider {
+  overflow: hidden;
+}
+.kind_wrap > .kind_slider .slider { 
+  position: relative; 
+  transition: 0.5s;
+}
+.kind_wrap > .kind_slider .slider li {
+  float:left;
+}
+.kind_wrap > .kind_slider img {
+  vertical-align: top;
+}
+.kind_wrap .arrow > a.prev {
+  position: absolute; 
+  left:-50px; 
+  top:100px;
+}
+.kind_wrap .arrow > a.next {
+  position: absolute; 
+  right:-50px; 
+  top:100px;
 }
 
 </style>
@@ -3732,7 +3843,9 @@ String contextPath = request.getContextPath();
 					<div class="text-wrapper-22">
 						<a href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
 					</div>
-					<div class="text-wrapper-23">구독하기</div>
+					<div class="text-wrapper-23">
+					<a href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+					</div>
 					<div class="text-wrapper-24">요모조모</div>
 					<div class="text-wrapper-25">
 						<a href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
@@ -3770,13 +3883,19 @@ String contextPath = request.getContextPath();
 		<span class="e1433_2552">다양한 메뉴와 추천 상품을 즐겨보세요</span>
 	</div>
 	<div class=e1433_2553>
-		<span class="e1433_2554">전체 메뉴 보기</span>
+		<span class="e1433_2554">
+		<a href="${pageContext.request.contextPath}/menu/menu.do" style="color: white;">전체 메뉴 보기</a>
+		</span>
 	</div>
 	<div class=e1433_2555>
-		<span class="e1433_2556">전체 메뉴 보기</span>
+		<span class="e1433_2556">
+		<a href="${pageContext.request.contextPath}/menu/menu.do" style="color: white;">전체 메뉴 보기</a>
+		</span>
 	</div>
 	<div class=e1433_2557>
-		<span class="e1433_2558">전체 메뉴 보기</span>
+		<span class="e1433_2558">
+		<a href="${pageContext.request.contextPath}/menu/menu.do" style="color: white;">전체 메뉴 보기</a>
+		</span>
 	</div>
 	
 	<!-- 추천 상품 마무리-->
@@ -3898,6 +4017,7 @@ String contextPath = request.getContextPath();
 			</div>
 		</div>
 	</div>
+
 	<div class="e1433_2640"></div>
 	<div class=e1433_2641>
 		<div class="e1433_2642"></div>
@@ -3922,7 +4042,9 @@ String contextPath = request.getContextPath();
 	</div>
 	<div class=e1433_2650>
 		<div class=e1433_2651>
-			<span class="ei1433_2651_3_76">지금 바로 주문하기</span>
+			<span class="ei1433_2651_3_76">
+			<a href="${pageContext.request.contextPath}/menu/menu.do" style="color: white;">지금 바로 주문하기</a>
+			</span>
 		</div>
 		<div class=e1433_2652>
 			<div class=e1433_2653>
@@ -3956,7 +4078,12 @@ String contextPath = request.getContextPath();
 			<div class="e1433_2673"></div>
 		</div>
 		<div class=e1433_2674>
-			<div class="e1433_2675"></div>
+			<div class="e1433_2675">
+				<div class=e1433_2686>
+				<span class="e1433_2687">가족 등록</span>
+				<span class="e1433_2688">아이를 위한 합리적인 가격</span>
+			</div>
+			</div>
 			<div class=e1433_2676>
 				<div class="ei1433_2676_3_106"></div>
 				<div class="ei1433_2676_3_107"></div>
@@ -3983,10 +4110,6 @@ String contextPath = request.getContextPath();
 			<div class="ei1433_2685_3_99"></div>
 			<div class="ei1433_2685_3_100"></div>
 		</div>
-	</div>
-	<div class=e1433_2686>
-		<span class="e1433_2687">가족 등록</span><span class="e1433_2688">아이를
-			위한 합리적인 가격</span>
 	</div>
 	<div class=e1433_2689>
 		<div class=e1433_2690>
@@ -4160,8 +4283,9 @@ String contextPath = request.getContextPath();
 
 	<span class="e1433_2813">아이와 함께 즐겨요 👨‍👩‍👧‍👦 </span>
 	<span class="e1433_2814">아이와 함께 즐기는 이벤트와 챌린지</span>
-	<script type="text/javascript">
+
 	
+	<script type="text/javascript">
 	//카테고리
 	$(".e1433_2559 button").on("click", function(){
 		$.ajax({
