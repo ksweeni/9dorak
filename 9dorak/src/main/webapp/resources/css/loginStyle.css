@@ -323,14 +323,8 @@
 	color: #f48e28;
 }
 
- .kakao-login-wrapper {
-    height: 50px;
-    width: 200px;
-} 
-
-.kakao-login-wrapper a {
-    max-width: 100%; 
-    display: block;
-    width: 200px;
-    height: 50px;
-} */
+.kakao {
+	position: relative;
+	top: 540px;
+	left: 70px;
+}
