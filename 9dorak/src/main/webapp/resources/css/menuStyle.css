@@ -740,6 +740,7 @@
 }
 
 .screen .overlap-group-3 {
+	padding-left: 20px;
 	font-size: 1.3rem;
 	position: relative;
 	width: 600px;
@@ -747,6 +748,11 @@
 	border-radius: 40px;
 	border: 3px solid;
 	border-color: #b5b5b5;
+}
+
+.screen .overlap-group-3:focus-visible {
+	outline: none;
+    box-shadow: 0px 0px 16px 0px lightgray;
 }
 
 .screen .text-wrapper-16 {

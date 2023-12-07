@@ -675,7 +675,7 @@
     
     // 상품 수량 변화
     var counterValue = 1; // 최소값 설정
-    var proPrice = ${menudetail.pro_price}; // 상품 가격
+    var proPrice = "${menudetail.pro_price}"; // 상품 가격
     
     function increaseValue() {
       counterValue++;
