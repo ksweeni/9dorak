@@ -10,7 +10,7 @@ import com.shinhan.dto.CommentVO;
 import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DlikeVO;
 import com.shinhan.dto.DoranVO;
-
+import com.shinhan.dto.DoranlikeVO;
 
 @Service
 public class DoranService {
@@ -21,15 +21,15 @@ public class DoranService {
 	public List<DoranVO> selectAll() {
 		return dao.selectAll();
 	}
-	
-	public List<DoranVO> selectAllByView(){
+
+	public List<DoranVO> selectAllByView() {
 		return dao.selectAllByView();
 	}
-	
-	public List<DoranVO> selectAllByDlike(){
+
+	public List<DoranVO> selectAllByDlike() {
 		return dao.selectAllByDlike();
 	}
-	
+
 	public int insertDoran(DoranVO doran) {
 		return dao.insertDoran(doran);
 	}
@@ -37,15 +37,14 @@ public class DoranService {
 	public List<DlikeVO> selectLike() {
 		return dao.selectLike();
 	}
-	
-	public List<DCommentVO> selectComment(){
+
+	public List<DCommentVO> selectComment() {
 		return dao.selectComment();
 	}
-	
-	public List<CommentVO> selectAllCommentAbout(int doranNo) {
-        return dao.selectAllCommentAbout(doranNo);
-    }
 
+	public List<CommentVO> selectAllCommentAbout(int doranNo) {
+		return dao.selectAllCommentAbout(doranNo);
+	}
 
 	public List<DoranVO> selectAllForMe(String memId) {
 		return dao.selectAllForMe(memId);
@@ -64,9 +63,11 @@ public class DoranService {
 		return dao.selectDoran_no(doran_no);
 	}
 
+	// 좋아요 추가
+	public int insertDoranLike(DoranlikeVO dlike) {
+		return dao.insertDoranLike(dlike);
+	}
 
-
-	
 //
 //	@Transactional // ��� �����ϰų� ��� �����ϰų�
 //	public MemVO updateTransViewCount(int bno) {
@@ -87,8 +88,5 @@ public class DoranService {
 //	public int delete(int bno) {
 //		return dao.delete(bno);
 //	}
-
-
-
 
 }

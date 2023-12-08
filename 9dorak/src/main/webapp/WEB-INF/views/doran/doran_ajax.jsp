@@ -36,7 +36,6 @@
 					</div>
 					<div class="doran-review-reviewCnt">
 						<img class="doran-review-reviewCnticon"
-				
 							src="${cpath }/resources/images/doran/icon_doranviewcnt.png" />
 						<div class="doran-review-reviewCnt2">${doran.doran_view}</div>
 					</div>
@@ -70,8 +69,27 @@
 		                likeIcon.src = likeIcon.src.endsWith("-unfill.png") ?
 		                    "${cpath}/resources/images/doran/icon_doran-like-fill.png" :
 		                    "${cpath}/resources/images/doran/icon_doran-like-unfill.png";
+		                   alert("${sessionScope.loginmem.mem_id}");
+		                   
+		                   // 세션에 저장된 값 가져오기
+		                    var memId = "${sessionScope.loginmem.mem_id}";
+
+		                    alert(memId);
+
+		                    $.ajax({
+		                        url: cpath + "/doran/doranLikeUpdate.do",
+		                        data: {
+		                            "doran_no": ${doran.doran_no},
+		                            "mem_id": memId
+		                        },
+		                        success: function (responseData) {
+		                            alert(responseData);
+		                           // $("#here").html(responseData);
+		                        }
+		                    });
+		                }
 		            }
-		        }
+		        
 		</script>
 	</c:forEach>
 </div>

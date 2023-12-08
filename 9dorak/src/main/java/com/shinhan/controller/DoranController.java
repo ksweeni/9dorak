@@ -23,6 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.shinhan.dto.CommentVO;
 import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DoranVO;
+import com.shinhan.dto.DoranlikeVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.model.DoranService;
 
@@ -202,5 +203,13 @@ public class DoranController {
 		model.addAttribute("comments", comments);
 		logger.info(comments.toString());
 		return "doran/doranFeedDetail";
+	}
+	
+	@GetMapping("doranLikeUpdate.do")
+	public String doranLikeUpdate(@RequestParam int doran_no, String mem_id) {
+	    System.out.println("doranLikeUpdate");
+	    System.out.println(doran_no+ " " + mem_id);
+	   
+	    return "redirect:/doran/doran.do";
 	}
 }
