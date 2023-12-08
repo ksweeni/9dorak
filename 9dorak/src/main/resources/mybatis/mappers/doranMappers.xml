@@ -206,8 +206,7 @@
 
 	<!-- 좋아요 추가 -->
 	<insert id="insertDoranLike" parameterType="doranlikevo">
-		insert into doranlike
-		(doran_no, mem_id) values (#{doran_no},#{mem_id});
+		insert into doranlike (doran_no, mem_id)  values  ( #{doran_no} , #{mem_id} );
 	</insert>
 
 

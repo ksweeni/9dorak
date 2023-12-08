@@ -209,7 +209,11 @@ public class DoranController {
 	public String doranLikeUpdate(@RequestParam int doran_no, String mem_id) {
 	    System.out.println("doranLikeUpdate");
 	    System.out.println(doran_no+ " " + mem_id);
-	   
+	    DoranlikeVO dlike = new DoranlikeVO();
+	    dlike.setDoran_no(doran_no);
+	    dlike.setMem_id(mem_id);
+	    System.out.println(dlike);
+	    dService.insertDoranLike(dlike);
 	    return "redirect:/doran/doran.do";
 	}
 }

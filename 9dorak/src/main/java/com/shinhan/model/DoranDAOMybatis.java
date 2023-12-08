@@ -13,7 +13,6 @@ import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DlikeVO;
 import com.shinhan.dto.DoranVO;
 import com.shinhan.dto.DoranlikeVO;
-import com.shinhan.dto.MemVO;
 
 
 @Repository 
@@ -86,6 +85,7 @@ public class DoranDAOMybatis {
 	
 	// 좋아요 추가
 	public int insertDoranLike(DoranlikeVO dlike) {
+		System.out.println(dlike);
 		return sqlSession.insert(NAMESPACE + "insertDoranLike", dlike);
 	}
 
