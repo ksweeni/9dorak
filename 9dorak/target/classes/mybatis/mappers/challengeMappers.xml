@@ -52,6 +52,7 @@
 		#{mem_id}
 		)
 	</insert>
+	
 	<select id="getLike" resultType="int" parameterType="int">
 		SELECT
 		COUNT(*)

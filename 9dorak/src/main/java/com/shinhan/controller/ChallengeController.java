@@ -5,9 +5,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.PagingVO;
 import com.shinhan.model.ChallengeService;
@@ -151,6 +148,15 @@ public class ChallengeController {
 			return "삭제 실패";
 		}
 
+	}
+	
+	
+	// challengeLunchBox test
+	@GetMapping("challengeLunchBox.do")
+	public String challengeLunchBox(Model model) {
+		List<ChallengeVO> clist = chService.selectAll();
+		model.addAttribute("clist", clist);
+		return "event/challengeLunchBox";
 	}
 
 }
