@@ -11,5 +11,5 @@ import lombok.ToString;
 @Setter
 @ToString
 public class DlikeVO {
-	int cnt;
+	private int cnt;
 }

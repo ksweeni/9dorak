@@ -81,12 +81,29 @@
 		where pro_no = #{pro_no}
 	</select>
 
-    <select id="selectProReview" parameterType="int" resultType="memreviewvo">
+	<select id="selectProReview" parameterType="int" resultType="memreviewvo">
 	    select memreview.*
 		from  orderdetail, memreview
 		where  orderdetail.pro_no = #{pro_no} 
 		and orderdetail.orderdetail_no = memreview.orderdetail_no
     </select>
+    
+<!-- <resultMap type="HashMap" id="proreviewMap">
+    	<id column="orderdetail_no" property="orderdetail_no"/>
+    	<id column="memriew_date" property="memriew_date"/>
+    	<id column="memreview_cont" property="memreview_cont"/>
+    	<id column="memreview_starpoint" property="memreview_starpoint"/>
+    	<id column="pro_no" property="pro_no"/>
+    	<id column="mem_id" property="mem_id"/>
+    </resultMap>
+    
+    <select id="selectProReview" parameterType="int" resultMap="proreviewMap">
+	    select memreview.*, orders.mem_id
+		from memreview, orderdetail, orders
+		where orderdetail.pro_no = #{pro_no}
+			and orderdetail.orderdetail_no = memreview.orderdetail_no
+			and orderdetail.order_no = orders.order_no
+    </select> -->
 
 	<!-- <insert id="insertDoran" parameterType="doranvo">
 		INSERT INTO DORAN (
