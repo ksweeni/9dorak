@@ -563,27 +563,27 @@
 		</footer>
 
 		<header class="header">
-			<div class="top-nav">
-				<div class="navbar">
-					<div class="text-wrapper-27">이벤트</div>
-					<div class="text-wrapper-28">메뉴보기</div>
-					<div class="text-wrapper-29">구독하기</div>
-					<div class="text-wrapper-30">요모조모</div>
-					<div class="text-wrapper-31">도란도란</div>
-				</div>
-				<img class="untitled-2" src="img/untitled-1-1.png" />
-				<div class="div-2">
-					<div class="text-wrapper-32">로그인 | 회원가입</div>
-					<div class="group-14">
-						<div class="overlap-group-7">
-							<img class="group-15" src="img/group-1.svg" />
-							<div class="ellipse"></div>
-							<div class="text-wrapper-33">2</div>
+				<div class="top-nav">
+					<div class="navbar">
+						<div class="text-event">이벤트</div>
+						<div class="text-menu">메뉴보기</div>
+						<div class="text-subscribe">구독하기</div>
+						<div class="text-yomo">요모조모</div>
+						<div class="text-doran">도란도란</div>
+					</div>
+					<img class="untitled-2" src="${cpath}/resources/images/main/header-logo.png" />
+					<div class="div-3">
+						<div class="text-wrapper-28">로그인 | 회원가입</div>
+						<div class="group-20">
+							<div class="header-overlap-group-3">
+								<img class="header-group-21" src="${cpath}/resources/images/main/header-cart.png" />
+								<div class="ellipse-light"></div>
+								<!-- <div class="text-wrapper-29">2</div> -->
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</header>
+			</header>
 	</div>
 	<script>
     function selectButton(button) {

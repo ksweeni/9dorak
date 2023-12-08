@@ -1353,28 +1353,9 @@ div-wrapper {
 	left: 8px;
 }
 
-.div-wrapper .header {
-	position: absolute;
-	width: 1116px;
-	height: 56px;
-	top: 35px;
-	left: 162px;
-	background-color: transparent;
-}
 
-.div-wrapper .top-nav {
-	position: relative;
-	width: 1116px;
-	height: 56px;
-}
 
-.div-wrapper .navbar {
-	position: absolute;
-	width: 419px;
-	height: 22px;
-	top: 17px;
-	left: 382px;
-}
+
 
 .div-wrapper .text-wrapper-27 {
 	left: 359px;
@@ -1383,12 +1364,7 @@ div-wrapper {
 	color: #000000;
 }
 
-.div-wrapper .text-wrapper-28 {
-	left: 0;
-	position: absolute;
-	top: 0;
-	color: #000000;
-}
+
 
 .div-wrapper .text-wrapper-29 {
 	left: 84px;

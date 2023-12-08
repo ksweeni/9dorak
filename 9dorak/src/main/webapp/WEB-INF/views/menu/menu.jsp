@@ -22,20 +22,22 @@
 		<header class="header">
 			<div class="top-nav">
 				<div class="navbar">
-					<div class="text-wrapper-21">이벤트</div>
-					<div class="text-wrapper-22">메뉴보기</div>
-					<div class="text-wrapper-23">구독하기</div>
-					<div class="text-wrapper-24">요모조모</div>
-					<div class="text-wrapper-25">도란도란</div>
+					<div class="text-event">이벤트</div>
+					<div class="text-menu">메뉴보기</div>
+					<div class="text-subscribe">구독하기</div>
+					<div class="text-yomo">요모조모</div>
+					<div class="text-doran">도란도란</div>
 				</div>
-				<img class="untitled-2" src="img/untitled-1-1.png" />
-				<div class="div-2">
-					<div class="text-wrapper-26">로그인 | 회원가입</div>
-					<div class="group-5">
-						<div class="overlap-group-5">
-							<img class="group-6" src="img/group-1.svg" />
-							<div class="ellipse-3"></div>
-							<div class="text-wrapper-27">2</div>
+				<img class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				<div class="div-3">
+					<div class="text-wrapper-28">로그인 | 회원가입</div>
+					<div class="group-20">
+						<div class="header-overlap-group-3">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<div class="ellipse-light"></div>
+							<!-- <div class="text-wrapper-29">2</div> -->
 						</div>
 					</div>
 				</div>
@@ -85,14 +87,17 @@
 								<!-- <div class="frame">
 									<button class="view-details-btn">자세히 볼게요</button>
 								</div> -->
-								<a class="frame" href="${cpath }/menu/menuSpecificReview.do?pro_no=${pro.pro_no}">
+								<a class="frame"
+									href="${cpath }/menu/menuSpecificReview.do?pro_no=${pro.pro_no}">
 									<button class="view-details-btn">자세히 볼게요</button>
 								</a>
 								<div class="mask-group-wrapper">
-									<img class="mask-group" src="${cpath}/resources/images/menu/menu-heart-unfill.png" />
+									<img class="mask-group"
+										src="${cpath}/resources/images/menu/menu-heart-unfill.png" />
 								</div>
 								<div class="like-text">${pro.pro_like }</div>
-								<img class="vector" src="${cpath}/resources/images/menu/menu-heart-fill.png" />
+								<img class="vector"
+									src="${cpath}/resources/images/menu/menu-heart-fill.png" />
 								<div class="text-wrapper-4">${pro.pro_price}원</div>
 							</div>
 						</div>
@@ -208,11 +213,11 @@
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20"
 						viewBox="0 0 14 20" fill="none">
 						<path
-								d="M2.21875 12.5L7 17.1395L11.7812 12.5L13.25 13.9353L7 20L0.75 13.9353L2.21875 12.5Z"
-								fill="#FFB673" />
+							d="M2.21875 12.5L7 17.1395L11.7812 12.5L13.25 13.9353L7 20L0.75 13.9353L2.21875 12.5Z"
+							fill="#FFB673" />
 						<path
-								d="M11.7813 7.5L7 2.86051L2.21875 7.5L0.75 6.06469L7 0L13.25 6.06469L11.7813 7.5Z"
-								fill="#FFB673" />
+							d="M11.7813 7.5L7 2.86051L2.21875 7.5L0.75 6.06469L7 0L13.25 6.06469L11.7813 7.5Z"
+							fill="#FFB673" />
 					</svg>
 				</div>
 				<div class="frame-13">
@@ -220,11 +225,11 @@
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20"
 						viewBox="0 0 14 20" fill="none">
 						<path
-								d="M2.21875 12.5L7 17.1395L11.7812 12.5L13.25 13.9353L7 20L0.75 13.9353L2.21875 12.5Z"
-								fill="#FFB673" />
+							d="M2.21875 12.5L7 17.1395L11.7812 12.5L13.25 13.9353L7 20L0.75 13.9353L2.21875 12.5Z"
+							fill="#FFB673" />
 						<path
-								d="M11.7813 7.5L7 2.86051L2.21875 7.5L0.75 6.06469L7 0L13.25 6.06469L11.7813 7.5Z"
-								fill="#FFB673" />
+							d="M11.7813 7.5L7 2.86051L2.21875 7.5L0.75 6.06469L7 0L13.25 6.06469L11.7813 7.5Z"
+							fill="#FFB673" />
 					</svg>
 				</div>
 			</div>
@@ -310,7 +315,8 @@
 				type : 'GET',
 				data : {
 					pro_name : $('#searchTxt').val(), //검색내용
-					ingre_no : chkCtgr //카테고리선택
+					ingre_no : chkCtgr
+				//카테고리선택
 				},
 				success : function(data) {
 					//alert("완료!");
@@ -327,12 +333,12 @@
 			});
 
 		}
-		
+
 		//정렬
 		$(".filter button").on("click", function() {
-			
+
 			var a = $("button.selected");
-			
+
 			//alert(a.val());
 			$.ajax({
 				url : "${cpath}/menu/searchOrderby.do",
@@ -366,9 +372,9 @@
 			//alert(chkCtgr);
 			searchBtnClick();
 		}
-		
+
 		//알러지
-		$(".allergy-bar button").on("click", function(){
+		$(".allergy-bar button").on("click", function() {
 			//alert($(this).val());
 			$.ajax({
 				url : "${cpath}/menu/searchAllergyCheck.do",
@@ -386,7 +392,7 @@
 			});
 		})
 
- 		let selectedButton = null;
+		let selectedButton = null;
 
 		function allerButtonClick(allergy) {
 			const button = document.getElementById(allergy + 'Button');

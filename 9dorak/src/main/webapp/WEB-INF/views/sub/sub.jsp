@@ -16,38 +16,29 @@
 <body>
 	<div class="screen">
 		<header class="header">
-			<div class="top-nav">
-				<div class="navbar">
-					<div class="text-wrapper-22">
-						<a href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+				<div class="top-nav">
+					<div class="navbar">
+						<div class="text-event">이벤트</div>
+						<div class="text-menu">메뉴보기</div>
+						<div class="text-subscribe">구독하기</div>
+						<div class="text-yomo">요모조모</div>
+						<div class="text-doran">도란도란</div>
 					</div>
-					<div class="text-wrapper-23">구독하기</div>
-					<div class="text-wrapper-24">요모조모</div>
-					<div class="text-wrapper-25">
-						<a href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
-					</div>
-					<div class="text-wrapper-21">
-						<a href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
-					</div>
-				</div>
-				<img class="untitled-2" src="img/untitled-1-1.png" />
-				<div class="div-2">
-					<div class="text-wrapper-26">
-						<span><a
-							href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a></span>
-						| <span> <a
-							href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a></span>
-					</div>
-					<div class="group-5">
-						<div class="overlap-group-5">
-							<img class="group-6" src="img/group-1.svg" />
-							<div class="ellipse-3"></div>
-							<div class="text-wrapper-27">2</div>
+					<img class="untitled-2" src="${cpath}/resources/images/main/header-logo.png" />
+					<div class="div-3">
+						<div class="text-wrapper-28">로그인 | 회원가입</div>
+						<div class="group-20">
+							<div class="header-overlap-group-3">
+								<img class="header-group-21" src="${cpath}/resources/images/main/header-cart.png" />
+								<div class="ellipse-light"></div>
+								<!-- <div class="text-wrapper-29">2</div> -->
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</header>
+			</header>
+		
+		
 	</div>
 	<div class=e1518_2324>
 		<span class="e1543_3020">원하는 구독 서비스를 선택하세요.</span><span
