@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shinhan.dto.MemVO;
+import com.shinhan.model.MailSendService;
 import com.shinhan.model.MyPageService;
 import com.shinhan.model.RegisterService;
 
@@ -34,6 +36,8 @@ public class RegisterController {
 	@Autowired
 	RegisterService rService;
 	MyPageService mService;
+	@Autowired
+	MailSendService MailSendService;
 	private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
 
 	@GetMapping("registerType.do")
@@ -78,6 +82,19 @@ public class RegisterController {
 		MemVO loginmem = mService.getMember(mem.getMem_id());
 		session.setAttribute("loginmem", loginmem);
 		return "home";
+	}
+
+	@GetMapping("emailCheckPage.do")
+	public String emailCheckPage() {
+
+		return "register/emailCheck";
+	}
+
+	@GetMapping("emailCheck.do")
+	@ResponseBody
+	public String emailCheck(@RequestParam("email") String email) {
+		System.out.println("이메일 인증 이메일 : " + email);
+		return MailSendService.joinEmail(email);
 	}
 
 }
