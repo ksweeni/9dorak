@@ -37,14 +37,8 @@ String contextPath = request.getContextPath();
 							<!-- 제목 -->
 							<div class="group">
 								<div class="overlap-group-2">
-
-
-
 									<div class="input-wrapper">
 										<div class="input">
-
-
-
 											<div class="label-check-helper">
 												<div class="label-check">
 													<div class="text-wrapper">제목</div>
@@ -54,7 +48,6 @@ String contextPath = request.getContextPath();
 												name="challenge_name" placeholder="참여하는 챌린지의 이름을 입력해주세요" />
 										</div>
 									</div>
-
 									<!-- 내용 -->
 									<div class="group-2">
 										<div class="input-2">
@@ -95,7 +88,8 @@ String contextPath = request.getContextPath();
 									</div>
 									<div class="bottom">
 										<!-- 파일 선택 -->
-										<input type="file" name="singleFile" />
+										<label class="fileUpload" for="singleFile">파일 선택</label> <input
+											type="file" id="singleFile" style="display: none;" />
 
 										<!-- 글쓰기 버튼 -->
 										<button type="submit" class="right-aligned-button">글쓰기</button>

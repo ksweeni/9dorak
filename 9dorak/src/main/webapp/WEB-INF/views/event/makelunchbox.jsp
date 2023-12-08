@@ -150,9 +150,11 @@
 		<div class=e55_3318>
 			<div class=e55_3319>
 				<div class=e55_3320>
-					<span class="e55_3321">Paylaş</span>
-					<div class="e55_3322"></div>
-					<span class="e55_3323">도시락 만들기</span>
+					<div class="e55_3322"
+						onclick="location.href='${pageContext.request.contextPath}/event/challengeLunchBox.do'"
+						style="cursor: pointer;">
+						<span class="e55_3323">도시락 만들기</span>
+					</div>
 					<div class=e55_3324>
 						<div class=e55_3325>
 							<div class="ei55_3325_3_1439"></div>
@@ -321,12 +323,9 @@
 				<p class="e55_914">11월의 후보</p>
 				<p class="e55_915">당월 말까지 투표가 진행됩니다 !</p>
 			</div>
-			<span class="e55_2229">추천합니다 </span> 
-			<span class="e55_2226">요리사</span>
-			<span class="cooker">ksween</span> 
-			<span class="e55_2230">레시피
-				연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락</span> 
-				<span class="e55_2234">추천합니다
+			<span class="e55_2229">추천합니다 </span> <span class="e55_2226">요리사</span>
+			<span class="cooker">ksween</span> <span class="e55_2230">레시피
+				연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락</span> <span class="e55_2234">추천합니다
 			</span><span class="e55_2235">요리사 ksween</span><span class="e55_2236">레시피
 				연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락</span><span class="e55_2231">추천합니다 </span><span
 				class="e55_2232">요리사 ksween</span><span class="e55_2233">레시피

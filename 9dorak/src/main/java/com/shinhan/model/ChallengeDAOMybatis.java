@@ -2,16 +2,12 @@ package com.shinhan.model;
 
 import java.util.List;
 import java.util.Map;
-
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.shinhan.dto.ChallengeVO;
-
-
 
 @Repository
 public class ChallengeDAOMybatis {
@@ -55,14 +51,13 @@ public class ChallengeDAOMybatis {
 	}
 
 	public int selectBoardListCnt(ChallengeVO ChallengeVO) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(NAMESPACE + "selectBoardListCnt", ChallengeVO);
 	}
 
 
 	public List<Map<String, Object>> list(ChallengeVO ChallengeVO) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectList(NAMESPACE + "list", ChallengeVO);
 	}
+	
 
 }

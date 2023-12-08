@@ -47,5 +47,4 @@ public class EventController {
 		model.addAttribute("elist", elist);
 		return "event/friendadd";
 	}
-
 }
