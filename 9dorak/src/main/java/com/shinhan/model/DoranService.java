@@ -76,6 +76,10 @@ public class DoranService {
 	public int deleteDoranLike(DoranlikeVO dlike) {
 		return dao.deleteDoranLike(dlike);
 	}
+	
+	public List<DoranVO>  selectSearchDoran(String keyword){
+		return dao.selectSearchDoran(keyword);
+	}
 
 //
 //	@Transactional // ��� �����ϰų� ��� �����ϰų�
