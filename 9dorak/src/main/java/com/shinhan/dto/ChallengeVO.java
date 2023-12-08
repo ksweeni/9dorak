@@ -1,9 +1,7 @@
 package com.shinhan.dto;
 
 import java.sql.Date;
-
 import org.springframework.web.multipart.MultipartFile;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

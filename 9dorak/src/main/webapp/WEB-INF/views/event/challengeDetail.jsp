@@ -154,56 +154,54 @@
 	<br> 좋아요 :
 	<input type="text" value="${likeCnt}" readonly="readonly" id="likeCnt"></input>
 	<br>
-	<img src="${cpath}/resources/upload/${chall.challenge_image}"/>
+	<img src="${cpath}/resources/upload/${chall.challenge_image}" />
 	<br>
 	<input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input>
 	<br>
 
 	<button id="update">수정</button>
-	<button id = "delete">삭제</button>
+	<button id="delete">삭제</button>
 
 </body>
 <script>
-$("#update").on("click", function () {
-	/*  alert("알림입니다"); */
-	//alert($("#challenge_name").val())
- 	var challenge_name = $("#challenge_name").val();
-	var challenge_cont = $("#challenge_cont").val();
-	var challenge_date = $("#challenge_date").val();
-	var challenge_no = $("#challenge_no").val();
-	var param = {
+	$("#update").on("click", function() {
+		/*  alert("알림입니다"); */
+		//alert($("#challenge_name").val())
+		var challenge_name = $("#challenge_name").val();
+		var challenge_cont = $("#challenge_cont").val();
+		var challenge_date = $("#challenge_date").val();
+		var challenge_no = $("#challenge_no").val();
+		var param = {
 			"challenge_name" : challenge_name,
-			"challenge_cont" : challenge_cont,	
-			"challenge_no" : challenge_no	
+			"challenge_cont" : challenge_cont,
+			"challenge_no" : challenge_no
+		}
+		$.ajax({
+			url : "${cpath}/event/challengeUpdate.do",
+			type : "post",
+			data : param,
+			success : function(res) {
+				alert(res);
+				location.href = "${cpath}/event/challenge.do";
 			}
-	$.ajax({
-		url:"${cpath}/event/challengeUpdate.do",
-		type: "post",
-		data: param,
-		success: function(res){
-			alert(res);
-			location.href="${cpath}/event/challenge.do";
-		}		
-	})
-}) // update
+		})
+	}) // update
 
+	$("#delete").on("click", function() {
 
-$("#delete").on("click", function () {
-
-
-	var challenge_no = $("#challenge_no").val();
-	var param = {
-			"challenge_no" : challenge_no	
+		var challenge_no = $("#challenge_no").val();
+		var param = {
+			"challenge_no" : challenge_no
+		}
+		$.ajax({
+			url : "${cpath}/event/challengeDelete.do",
+			type : "post",
+			data : param,
+			success : function(res) {
+				alert(res);
+				location.href = "${cpath}/event/challenge.do";
 			}
-	$.ajax({
-		url:"${cpath}/event/challengeDelete.do",
-		type: "post",
-		data: param,
-		success: function(res){
-			alert(res);
-			location.href="${cpath}/event/challenge.do";
-		}		
-	})
-}) // delete
+		})
+	}) // delete
 </script>
 </html>
