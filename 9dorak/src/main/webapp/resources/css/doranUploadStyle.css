@@ -594,28 +594,6 @@ progress {
 	left: 8px;
 }
 
-.div-wrapper .header {
-	position: absolute;
-	width: 1116px;
-	height: 56px;
-	top: 35px;
-	left: 162px;
-	background-color: transparent;
-}
-
-.div-wrapper .top-nav {
-	position: relative;
-	width: 1116px;
-	height: 56px;
-}
-
-.div-wrapper .navbar {
-	position: absolute;
-	width: 334px;
-	height: 22px;
-	top: 17px;
-	left: 382px;
-}
 
 .div-wrapper .text-wrapper-11 {
 	left: 0;
@@ -687,12 +665,6 @@ progress {
 	position: absolute;
 	top: 9px;
 	left: 0;
-	font-weight: var(- -h5-font-weight);
-	color: #000000;
-	font-size: var(- -h5-font-size);
-	letter-spacing: var(- -h5-letter-spacing);
-	line-height: var(- -h5-line-height);
-	font-style: var(- -h5-font-style);
 }
 
 .div-wrapper .group-7 {
@@ -717,16 +689,7 @@ progress {
 	left: 0;
 }
 
-.div-wrapper .ellipse {
-	position: absolute;
-	width: 15px;
-	height: 15px;
-	top: 1px;
-	left: 14px;
-	background-color: var(- -tangerine);
-	border-radius: 7.5px;
-	box-shadow: 0px 0px 22px #cc0000cc;
-}
+
 
 .div-wrapper .text-wrapper-16 {
 	position: absolute;
@@ -791,19 +754,7 @@ progress {
 	border-radius: 100px;
 }
 
-.div-wrapper .ellipsis {
-	position: absolute;
-	height: 24px;
-	top: 9px;
-	left: 12px;
-	font-weight: 400;
-	color: #ffffff;
-	font-size: 20px;
-	text-align: center;
-	letter-spacing: 0;
-	line-height: normal;
-	white-space: nowrap;
-}
+
 
 .div-wrapper .tab {
 	display: flex;
@@ -816,6 +767,10 @@ progress {
 	top: 139px;
 	left: 20px;
 	border-radius: 100px;
+}
+
+.overlap-group-3 .text-wrapper-29 {
+	top: -31px!important;
 }
 
 .div-wrapper .icon {

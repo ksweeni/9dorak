@@ -118,14 +118,11 @@ public class MenuController {
 		//System.out.println(mService.selectByNo(pro.getPro_no()));
 		//System.out.println("menuSpecificReview:" + pro.getPro_no());
 		
-		try {
-			List<MemreviewVO> rlist = mService.selectProReview(pro.getPro_no());
-			model.addAttribute("rlist", rlist);
-			System.out.println("rlist:" + rlist);
-		}catch (Exception e) {
-			
-		}
-		
+		List<MemreviewVO> rlist = mService.selectProReview(pro.getPro_no());
+		//List<Map<String, Object>> rlist = mService.selectProReview(pro.getPro_no());
+		model.addAttribute("rlist", rlist);
+		System.out.println("rlist:" + rlist);
+
 		model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
 			 	
 		return "menu/menuSpecificReview";

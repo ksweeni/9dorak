@@ -11,5 +11,5 @@ import lombok.ToString;
 @Setter
 @ToString
 public class DCommentVO {
-	int cnt;
+	private int cnt;
 }

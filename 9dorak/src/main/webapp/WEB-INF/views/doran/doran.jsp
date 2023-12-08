@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/doranStyle.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/doranStyle.css?e"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,18 +21,18 @@
 			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
-						<div class="text-wrapper-23">이벤트</div>
-						<div class="text-wrapper-24">메뉴보기</div>
-						<div class="text-wrapper-25">구독하기</div>
-						<div class="text-wrapper-26">요모조모</div>
-						<div class="text-wrapper-27">도란도란</div>
+						<div class="text-event">이벤트</div>
+						<div class="text-menu">메뉴보기</div>
+						<div class="text-subscribe">구독하기</div>
+						<div class="text-yomo">요모조모</div>
+						<div class="text-doran">도란도란</div>
 					</div>
-					<img class="untitled-2" src="img/untitled-1-1.png" />
+					<img class="untitled-2" src="${cpath}/resources/images/main/header-logo.png" />
 					<div class="div-3">
 						<div class="text-wrapper-28">로그인 | 회원가입</div>
 						<div class="group-20">
 							<div class="overlap-group-3">
-								<img class="group-21" src="img/group-1.svg" />
+								<img class="group-21" src="${cpath}/resources/images/main/header-cart.png" />
 								<div class="ellipse"></div>
 								<div class="text-wrapper-29">2</div>
 							</div>
@@ -46,7 +46,7 @@
 					<div class="group-wrapper">
 						<div class="doran-upload-profilPhoto">
 							<img class="doran-upload-profilPhotoImg"
-								src="${cpath }/resources/images/sandwich_lunchbox01.png" />
+								src="${cpath }/resources/images/main/sandwich_lunchbox01.png" />
 						</div>
 						<div class="doran-upload-contents">
 							<div class="doran-context">
@@ -54,9 +54,7 @@
 								<textarea placeholder="내용을 자유롭게 입력하세요!"></textarea>
 							</div>
 							<div class="upload-button-wrap">
-								<div class="doran-upload-media">
-									<button class="doran-button-upload-photo">사진</button>
-								</div>
+								
 								<button type="submit" class="doran-button-upload">업로드</button>
 							</div>
 						</div>

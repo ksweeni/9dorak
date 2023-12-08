@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -17,31 +17,29 @@ String contextPath = request.getContextPath();
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-	
-</script>
 </head>
-
 <body>
 	<div class="div-wrapper">
 		<div class="div">
-
 			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
-						<div class="text-wrapper-11">메뉴보기</div>
-						<div class="text-wrapper-12">구독하기</div>
-						<div class="text-wrapper-13">요모조모</div>
-						<div class="text-wrapper-14">도란도란</div>
+						<div class="text-event">이벤트</div>
+						<div class="text-menu">메뉴보기</div>
+						<div class="text-subscribe">구독하기</div>
+						<div class="text-yomo">요모조모</div>
+						<div class="text-doran">도란도란</div>
 					</div>
-					<img class="untitled-2" src="img/untitled-1-1.png" />
-					<div class="group-6">
-						<div class="text-wrapper-15">로그인 | 회원가입</div>
-						<div class="group-7">
+					<img class="untitled-2"
+						src="${cpath}/resources/images/main/header-logo.png" />
+					<div class="div-3">
+						<div class="text-wrapper-28">로그인 | 회원가입</div>
+						<div class="group-20">
 							<div class="overlap-group-3">
-								<img class="group-8" src="img/group-1.svg" />
+								<img class="group-21"
+									src="${cpath}/resources/images/main/header-cart.png" />
 								<div class="ellipse"></div>
-								<div class="text-wrapper-16">2</div>
+								<div class="text-wrapper-29">2</div>
 							</div>
 						</div>
 					</div>
@@ -57,10 +55,12 @@ String contextPath = request.getContextPath();
 								<div class="overlap-group">
 									<!-- 게시 내용 입력 -->
 									<div class="doranTitleBox">
-										<textarea id="doranTitle" placeholder="자유롭게 제목을 입력해보세요" name = "doran_title"></textarea>
+										<textarea id="doranTitle" placeholder="자유롭게 제목을 입력해보세요"
+											name="doran_title"></textarea>
 									</div>
 									<div class="doranContBox">
-										<textarea id="doranCont" placeholder="자유롭게 입력해보세요" name = "doran_cont"></textarea>
+										<textarea id="doranCont" placeholder="자유롭게 입력해보세요"
+											name="doran_cont"></textarea>
 									</div>
 									<div class="upload-field">
 										<div class="type-n">
@@ -73,15 +73,15 @@ String contextPath = request.getContextPath();
 													<p class="p">JPG, PNG or PDF, file size no more than
 														10MB</p>
 												</div>
-
+												​
 												<!-- 버튼 클릭 시 파일첨부 테스트 -->
-												<input type="file" id="fileInput" name = "singleFile">
-									
+												<input type="file" id="fileInput" name="singleFile"> <!-- 멀티파트 객체로 singleFile이 넘어간다 -->
 
+												​
 											</div>
 										</div>
 									</div>
-
+									​
 									<%-- <div class="doran-fileUpload">
 										<div class="doran-fileUploadText">
 											<div class="doran-fileUploadText-file">File</div>
@@ -110,7 +110,7 @@ String contextPath = request.getContextPath();
 											<div class="doran-fileUploadBar-fileSize">파일크기</div>
 										</div>
 									</div> --%>
-
+									​
 									<!-- 업로드 testing -->
 									<div class="button-group-wrapper">
 										<div class="button-group">
@@ -122,7 +122,7 @@ String contextPath = request.getContextPath();
 											</button>
 										</div>
 									</div>
-
+									​
 								</div>
 							</div>
 							<div class="frame-wrapper">

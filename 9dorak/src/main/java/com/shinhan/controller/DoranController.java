@@ -23,6 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.shinhan.dto.CommentVO;
 import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DoranVO;
+import com.shinhan.dto.DoranlikeVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.model.DoranService;
 
@@ -157,18 +158,15 @@ public class DoranController {
 		String originFileName = singleFile.getOriginalFilename();
 //		String ext = originFileName.substring(originFileName.lastIndexOf("."));
 		String ext = "";
-		int lastIndex = originFileName.lastIndexOf(".");
-		if (lastIndex != -1) {
+		int lastIndex = originFileName.lastIndexOf("."); // 확장자
+		if (lastIndex != -1) { // 확장자가 없다면
 		    ext = originFileName.substring(lastIndex);
 		}
 
 		// ext를 이용한 나머지 로직 수행
-
-		String ranFileName = UUID.randomUUID().toString() + ext;
-
+		String ranFileName = UUID.randomUUID().toString() + ext; //랜덤값으로 파일의 이름을 준다
 		File changeFile = new File(root + "\\" + ranFileName);
 
-		
 		// 파일업로드
 		try {
 			singleFile.transferTo(changeFile);
@@ -205,5 +203,13 @@ public class DoranController {
 		model.addAttribute("comments", comments);
 		logger.info(comments.toString());
 		return "doran/doranFeedDetail";
+	}
+	
+	@GetMapping("doranLikeUpdate.do")
+	public String doranLikeUpdate(@RequestParam int doran_no, String mem_id) {
+	    System.out.println("doranLikeUpdate");
+	    System.out.println(doran_no+ " " + mem_id);
+	   
+	    return "redirect:/doran/doran.do";
 	}
 }
