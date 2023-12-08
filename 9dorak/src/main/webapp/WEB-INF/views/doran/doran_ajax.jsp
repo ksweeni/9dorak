@@ -3,9 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <div class="doran-card">
-
 	<c:forEach items="${dlist}" var="doran" varStatus="loop">
-		<div class="doran-feed">
+		<div class="doran-feed" id="doran-feed-${loop.index}">
 			<div class="doran-topInfo">
 				<div>
 					<img class="doran-uploadInfo-profile"
@@ -17,8 +16,15 @@
 				</div>
 			</div>
 			<div class="doran-uploadContent">
-				<img class="doran-uploadContent-image"
-					src="${cpath }/resources/upload/${doran.doran_image}" />
+				<c:choose>
+					<c:when test="${not empty doran.doran_image}">
+						<img class="doran-uploadContent-image"
+							src="${cpath}/resources/upload/${doran.doran_image}" />
+					</c:when>
+					<c:otherwise>
+						<!-- 이미지가 비어있을 경우 아무것도 표시하지 않음 -->
+					</c:otherwise>
+				</c:choose>
 				<div class="doran-uploadContent-content">${doran.doran_cont}</div>
 			</div>
 			<div class="doran-underInfo">
@@ -42,5 +48,18 @@
 				<div class="doran-uploadInfo-time">${doran.doran_date }</div>
 			</div>
 		</div>
+		
+
+		<script>
+			// 이미지가 없을 경우 높이를 200px로 설정하는 class 추가
+			var doranImage = "${doran.doran_image}";
+			var doranFeed = document.getElementById("doran-feed-${loop.index}");
+
+			if (doranFeed && !doranImage.trim()) {
+				doranFeed.classList.add('doran-feed-no-image');
+			}
+			console.log("제목", "${doran.doran_title}");
+			console.log("이미지", "${doran.doran_image}");
+		</script>
 	</c:forEach>
 </div>
