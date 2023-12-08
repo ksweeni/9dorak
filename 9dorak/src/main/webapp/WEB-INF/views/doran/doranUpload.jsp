@@ -35,11 +35,11 @@ String contextPath = request.getContextPath();
 					<div class="div-3">
 						<div class="text-wrapper-28">로그인 | 회원가입</div>
 						<div class="group-20">
-							<div class="overlap-group-3">
-								<img class="group-21"
+							<div class="header-overlap-group-3">
+								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
-								<div class="ellipse"></div>
-								<div class="text-wrapper-29">2</div>
+								<div class="ellipse-light"></div>
+								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
 					</div>
@@ -75,7 +75,8 @@ String contextPath = request.getContextPath();
 												</div>
 												​
 												<!-- 버튼 클릭 시 파일첨부 테스트 -->
-												<input type="file" id="fileInput" name="singleFile"> <!-- 멀티파트 객체로 singleFile이 넘어간다 -->
+												<input type="file" id="fileInput" name="singleFile">
+												<!-- 멀티파트 객체로 singleFile이 넘어간다 -->
 
 												​
 											</div>
