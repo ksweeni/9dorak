@@ -157,18 +157,15 @@ public class DoranController {
 		String originFileName = singleFile.getOriginalFilename();
 //		String ext = originFileName.substring(originFileName.lastIndexOf("."));
 		String ext = "";
-		int lastIndex = originFileName.lastIndexOf(".");
-		if (lastIndex != -1) {
+		int lastIndex = originFileName.lastIndexOf("."); // 확장자
+		if (lastIndex != -1) { // 확장자가 없다면
 		    ext = originFileName.substring(lastIndex);
 		}
 
 		// ext를 이용한 나머지 로직 수행
-
-		String ranFileName = UUID.randomUUID().toString() + ext;
-
+		String ranFileName = UUID.randomUUID().toString() + ext; //랜덤값으로 파일의 이름을 준다
 		File changeFile = new File(root + "\\" + ranFileName);
 
-		
 		// 파일업로드
 		try {
 			singleFile.transferTo(changeFile);

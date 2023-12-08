@@ -75,7 +75,7 @@ String contextPath = request.getContextPath();
 												</div>
 												​
 												<!-- 버튼 클릭 시 파일첨부 테스트 -->
-												<input type="file" id="fileInput" name="singleFile">
+												<input type="file" id="fileInput" name="singleFile"> <!-- 멀티파트 객체로 singleFile이 넘어간다 -->
 
 												​
 											</div>

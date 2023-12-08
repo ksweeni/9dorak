@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/doranStyle.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/doranStyle.css?e"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,9 +54,7 @@
 								<textarea placeholder="내용을 자유롭게 입력하세요!"></textarea>
 							</div>
 							<div class="upload-button-wrap">
-								<div class="doran-upload-media">
-									<button class="doran-button-upload-photo">사진</button>
-								</div>
+								
 								<button type="submit" class="doran-button-upload">업로드</button>
 							</div>
 						</div>

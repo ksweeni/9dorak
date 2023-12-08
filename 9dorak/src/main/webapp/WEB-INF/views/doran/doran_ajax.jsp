@@ -18,7 +18,7 @@
 			</div>
 			<div class="doran-uploadContent">
 				<img class="doran-uploadContent-image"
-					src="${cpath }/resources/images/menu/cake.png" />
+					src="${cpath }/resources/upload/${doran.doran_image}" />
 				<div class="doran-uploadContent-content">${doran.doran_cont}</div>
 			</div>
 			<div class="doran-underInfo">
