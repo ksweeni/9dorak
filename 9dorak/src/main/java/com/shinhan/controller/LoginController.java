@@ -119,4 +119,6 @@ public class LoginController {
 			return "login/createNewPwd";
 		}
 	}
+	
+	
 }

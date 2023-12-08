@@ -16,6 +16,7 @@
 
 </head>
 <body>
+
 	<div class="div-wrapper">
 		<div class="div">
 			<div class="menu">
@@ -187,7 +188,8 @@
 			<div class="menu-selection-wrapper">
 				<div class="menu-selection">
 					<button class="common-button" onclick="selectButton(this)">
-						<div class="recipes">제품상세</div>
+						<div class="recipes">제품상세
+						</div>
 						<div class="rectangle-4"></div>
 					</button>
 					<button class="common-button" onclick="selectButton(this)">
@@ -196,9 +198,6 @@
 					</button>
 				</div>
 			</div>
-
-
-
 
 			<div class="auto-layout">
 				<div class="auto-layout-vertical">
@@ -223,7 +222,7 @@
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div>
-					<div class="group-7">
+					<%-- <div class="group-7">
 						<div class="overlap-6">
 							<img class="rectangle-5"
 								src="${cpath}/resources/images/menu/cake.png" />
@@ -243,17 +242,20 @@
 								src="${cpath}/resources/images/menu/cake.png" />
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
-					</div>
-				</div>
+					</div> --%>
+				</div><!-- group-5 -->
+				
 				<div class="frame-8">
 					<div class="text-wrapper-13">사진 및 동영상 후기</div>
-					<div class="view-2">
+					<a href="${cpath }/menu/menuMediaReview.do?reviewdetail=${menudetail.pro_no}" class="view-2">
 						<div class="text-wrapper-13">모아보기</div>
 						<img class="img-2"
 							src="${cpath}/resources/images/menu/right-forward.svg" />
-					</div>
+					</a>
 				</div>
-			</div>
+				
+			</div><!-- picture-reviews -->
+			
 			<div class="text-reviews-and">
 				<div class="frame-review">
 					<div class="text-wrapper-13">텍스트 리뷰</div>
@@ -272,43 +274,44 @@
 				</div>
 				<div class="reviews-texts">
 					<div class="review">
-						<div class="view-3">
-							<div class="frame-13">
-								<div class="rectangle-6"></div>
-								<div class="group-9">
-									<div class="frame-2">
-										<div class="text-wrapper-14">ksween</div>
-										<div class="text-wrapper-15">2023.11.21</div>
-									</div>
-									<div class="frame-14">
-										<div class="text-wrapper-14">주문메뉴</div>
-										<div class="text-wrapper-15">[배부르9] 한종범 불고기 도시락</div>
-									</div>
-								</div>
-							</div>
-							<div class="frame-15">
-								<div class="frame-16">
-									<div class="frame-17">
-										<div class="text-wrapper-14">맛</div>
-										<div class="text-wrapper-16">최고에요</div>
-									</div>
-									<div class="frame-18">
-										<div class="text-wrapper-14">만족도</div>
-										<div class="text-wrapper-16">최고에요</div>
+						<c:forEach items="${rlist }" var="review" varStatus="loop">
+							<div class="view-3">
+								<div class="frame-13">
+									<div class="rectangle-6"></div>
+									<div class="group-9">
+										<div class="frame-2">
+											<div class="text-wrapper-14">ksween</div>
+											<div class="text-wrapper-15">2023.12.06</div>
+										</div>
+										<div class="frame-14">
+											<div class="text-wrapper-14">주문메뉴</div>
+											<div class="text-wrapper-15">${menudetail.pro_name }</div>
+										</div>
 									</div>
 								</div>
-								<p class="text-wrapper-17">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !!
-									데브옵스가 끝나고 허겁지겁 먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
-								<div class="frame-19">
-									<img class="happy"
-										src="${cpath}/resources/images/menu/happy-unfill.svg" />
-									<div class="text-wrapper-18">유용해요</div>
-									<div class="text-wrapper-18">0</div>
+								<div class="frame-15">
+									<div class="frame-16">
+										<div class="frame-17">
+											<div class="text-wrapper-14">맛</div>
+											<div class="text-wrapper-16">최고에요</div>
+										</div>
+										<div class="frame-18">
+											<div class="text-wrapper-14">만족도</div>
+											<div class="text-wrapper-16">최고에요</div>
+										</div>
+									</div>
+									<p class="text-wrapper-17">${review.memreview_cont }</p>
+									<div class="frame-19">
+										<img class="happy"
+											src="${cpath}/resources/images/menu/happy-unfill.svg" />
+										<div class="text-wrapper-18">유용해요</div>
+										<div class="text-wrapper-18">0</div>
+									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="review">
+							</div><!-- view-3 -->
+						</c:forEach>
+					</div><!-- review -->
+					<%-- <div class="review">
 						<div class="view-3">
 							<div class="frame-13">
 								<div class="rectangle-6"></div>
@@ -455,8 +458,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
+					</div> --%>
+				</div><!-- reviews-texts -->
 
 				<!-- pagination -->
 				<div class="pagination">
@@ -496,9 +499,8 @@
 				</div>
 
 
-			</div>
+			</div> <!-- text-reviews-and -->
 		</div>
-
 
 		<footer class="footer">
 			<div class="company-loco">
@@ -741,7 +743,6 @@
         });
     });
 });
-
 
 
 </script>

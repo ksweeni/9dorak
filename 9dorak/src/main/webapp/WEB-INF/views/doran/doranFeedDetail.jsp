@@ -171,10 +171,10 @@
 						style="width: 752px; height: 993px; position: absolute; left: -0.5px; top: -0.5px; border-radius: 10px; background: #fff;"></div>
 					<img
 						style="width: 689px; height: 724.76px; position: absolute; left: 31.5px; top: 135.94px; border-radius: 10px;"
-						src="unsplash:blihvfxbi9s.png" />
+						src="${cpath }/resources/upload/${doran.doran_image}" />
 					<p
 						style="width: 689px; height: 64.38px; position: absolute; left: 31px; top: 867px; font-size: 20px; font-weight: 500; text-align: left; color: #7c7c7c;">
-						엄마가 사준 디저트 매우 맛있다 학교 앞에도 있었으면 좋겠다!!! #반모#중2#슬릭백장인</p>
+						${doran.doran_cont }</p>
 					<div
 						style="width: 25px; height: 41.92px; position: absolute; left: 32px; top: 682.68px; overflow: hidden;"></div>
 					<div

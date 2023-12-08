@@ -14,31 +14,30 @@
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
-    <a href="javascript:kakaoLogin()"><img src="${pageContext.request.contextPath}/resources/images/kakao_login_medium_narrow.png" style="width: 200px"></a>
-</div>
 
-<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<script type="text/javascript"
+	src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript">
-    Kakao.init('5441b1f53765881e55f0aca5e80b8b62');
-    function kakaoLogin() {
-        Kakao.Auth.login({
-            success: function (response) {
-                Kakao.API.request({
-                    url: '/v2/user/me',
-                    success: function (response) {
-                        alert(JSON.stringify(response))
-                    },
-                    fail: function (error) {
-                        alert(JSON.stringify(error))
-                    },
-                })
-            },
-            fail: function (error) {
-                alert(JSON.stringify(error))
-            },
-        })
-    }
+	Kakao.init('5441b1f53765881e55f0aca5e80b8b62');
+	function kakaoLogin() {
+		Kakao.Auth.login({
+			success : function(response) {
+				Kakao.API.request({
+					url : '/v2/user/me',
+					success : function(response) {
+						alert(JSON.stringify(response))
+					},
+					fail : function(error) {
+						alert(JSON.stringify(error))
+					},
+				})
+			},
+			fail : function(error) {
+				alert(JSON.stringify(error))
+			},
+		})
+	}
 </script>
 
 <script>
@@ -70,7 +69,7 @@
 								<div class="text-wrapper-2">로그인</div>
 							</div>
 						</div>
-						<form action="${pageContext.request.contextPath }/login/login.do"
+						<form action="${pageContext.request.contextPath}/login/login.do"
 							method="post">
 							<div class="view">
 								<div class="group-3">
@@ -96,6 +95,9 @@
 								</button>
 							</div>
 						</form>
+						<a class="kakao" href="javascript:kakaoLogin()"><img
+							src="${pageContext.request.contextPath}/resources/images/kakao_login_medium_narrow.png"
+							style="width: 200px"></a>
 					</div>
 					<div class="frame">
 						<p class="p">

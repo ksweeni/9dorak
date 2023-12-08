@@ -91,9 +91,9 @@
 								<div class="mask-group-wrapper">
 									<img class="mask-group" src="${cpath}/resources/images/menu/menu-heart-unfill.png" />
 								</div>
-								<div class="like-text">80</div>
+								<div class="like-text">${pro.pro_like }</div>
 								<img class="vector" src="${cpath}/resources/images/menu/menu-heart-fill.png" />
-								<div class="text-wrapper-4">${pro.pro_price}</div>
+								<div class="text-wrapper-4">${pro.pro_price}원</div>
 							</div>
 						</div>
 					</c:forEach>

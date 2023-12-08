@@ -18,7 +18,7 @@
   position: relative;
   width: 100%;
   height: 1018px;
-  left: 6px;
+  left: 150px;
   background-size: 100% 100%;
 }
 
@@ -209,21 +209,33 @@
 
 .login .div-wrapper {
   position: absolute;
-  width: 190px;
-  height: 63px;
+  width: 200px;
+  height: 50px;
   background-color: #f48e28;
-  border-radius: 35px;
+  border-radius: 5px;
   box-shadow: 0px 10px 30px #c4501182;
-  left: 40px;
+  left: 35px;
   border: none;
   cursor: pointer;
+}
+
+.login .div-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 1px;
+    background-color: rgba(182, 182, 182, 1); 
+    bottom: -50%;
+    transform: translateY(50%);
+    margin-top: 15px; /* 수정: 수평선의 상단 간격 조절 */
+    left: -5%; /* 수정: 왼쪽으로 이동하는 정도 조절 */
 }
 
 .login .text-wrapper-5 {
   position: absolute;
   width: 124px;
-  top: 17px;
-  left: 35px;
+  top: 14px;
+  left: 37px;
   font-weight: 600;
   color: #ffffff;
   font-size: 20px;
@@ -323,14 +335,9 @@
 	color: #f48e28;
 }
 
- .kakao-login-wrapper {
-    height: 50px;
-    width: 200px;
-} 
-
-.kakao-login-wrapper a {
-    max-width: 100%; 
-    display: block;
-    width: 200px;
-    height: 50px;
-} */
+.kakao {
+	position: relative;
+	top: 540px;
+	left: 75px;
+	cursor: pointer;
+}
