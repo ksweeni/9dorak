@@ -29,13 +29,14 @@
 			</div>
 			<div class="doran-underInfo">
 				<div class="doran-review">
-					<div class="doran-review-like">
-						<img class="doran-review-likeicon"
-							src="${cpath }/resources/images/doran/icon_doranunfilllike.png" />
+					<div class="doran-review-like" onclick="toggleLike(${loop.index})">
+						<img class="doran-review-likeicon" id="like-icon-${loop.index}"
+							src="${cpath }/resources/images/doran/icon_doran-like-unfill.png" />
 						<div class="doran-review-like2">${doran.dlike}</div>
 					</div>
 					<div class="doran-review-reviewCnt">
 						<img class="doran-review-reviewCnticon"
+				
 							src="${cpath }/resources/images/doran/icon_doranviewcnt.png" />
 						<div class="doran-review-reviewCnt2">${doran.doran_view}</div>
 					</div>
@@ -48,7 +49,7 @@
 				<div class="doran-uploadInfo-time">${doran.doran_date }</div>
 			</div>
 		</div>
-		
+
 
 		<script>
 			// 이미지가 없을 경우 높이를 200px로 설정하는 class 추가
@@ -60,6 +61,17 @@
 			}
 			console.log("제목", "${doran.doran_title}");
 			console.log("이미지", "${doran.doran_image}");
+			
+			 function toggleLike(index) {
+		            var likeIcon = document.getElementById("like-icon-" + index);
+
+		            if (likeIcon) {
+		                // 이미지 파일 이름이 'unfill'로 끝나면 'fill'로 변경하고 그 반대도 적용
+		                likeIcon.src = likeIcon.src.endsWith("-unfill.png") ?
+		                    "${cpath}/resources/images/doran/icon_doran-like-fill.png" :
+		                    "${cpath}/resources/images/doran/icon_doran-like-unfill.png";
+		            }
+		        }
 		</script>
 	</c:forEach>
 </div>

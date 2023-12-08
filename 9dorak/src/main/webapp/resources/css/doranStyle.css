@@ -1057,6 +1057,7 @@ progress {
 }
 
 .screen .doran-feed {
+	cursor: pointer;
 	width: 700px;
 	margin-bottom: 1rem;
 	border: none;
