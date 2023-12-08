@@ -74,7 +74,7 @@
 	<div class=e854_1005>
 		<div class=e831_684>
 			<div class=e831_685>
-				<span class="e831_686">조회수 순</span>
+				<button class="e831_686">조회수 순</button>
 				<div class=e831_687>
 					<div class="ei831_687_773_285"></div>
 					<div class=ei831_687_773_286>
@@ -84,7 +84,7 @@
 			</div>
 		</div>
 		<div class=e844_862>
-			<span class="e844_863">최근글 순</span>
+			<button class="e844_863">최근글 순</button>
 			<div class=e844_864>
 				<div class="ei844_864_773_285"></div>
 				<div class=ei844_864_773_286>
@@ -216,7 +216,6 @@
 	<script type="text/javascript">
 	//검색어 정렬 e815_1067
 	$(".ei815_1066_6_1").on("click", function(){
-		alert($(".e815_1067").val())
 		$.ajax({
 			url : "${cpath}/yomo/searchYomo.do",
 			type : 'GET',
@@ -228,6 +227,21 @@
 			}
 		});
 	})
+	
+			//정렬
+		$(".e854_1005 button").on("click", function() {
+			
+			$.ajax({
+				url : "${cpath}/yomo/yomoOrderby.do",
+				type : 'GET',
+				data : {
+					order_type : $(this).text()
+				},
+				success : function(data) {
+					$('.e844_9999').html(data);
+				}
+			});
+		})
 	
 	</script>
 </body>

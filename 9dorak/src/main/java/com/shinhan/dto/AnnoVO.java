@@ -21,5 +21,5 @@ public class AnnoVO {
 	private Date anno_date; //공지사항 작성 날짜
 	private String anno_writer; //공지사항 작성자
 	private String anno_image; //공지사항 이미지
-	
+	private String order_type;
 }

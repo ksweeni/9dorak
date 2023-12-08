@@ -29,7 +29,6 @@ public class YomoController {
 	public String notice(Model model) {
 		List<AnnoVO> ylist = yservice.selectAll();
 		model.addAttribute("annolist", ylist);
-		System.out.println(ylist);
 		return "yomo/notice";
 	}
 	
@@ -46,6 +45,20 @@ public class YomoController {
 		List<AnnoVO> ylist = yservice.searchYomo(anno.getAnno_title());
 		/* System.out.println("searchAllergyCheck.do"); */
 		model.addAttribute("ylist", ylist);
+		return "yomo/notice_search";
+	}
+	
+	@GetMapping("yomoOrderby.do")
+	public String yomoOrderby(Model model, AnnoVO anno) {
+		if(anno.getOrder_type().equals("조회수 순")) {
+			System.out.println(anno.getOrder_type());
+			List<AnnoVO> ylist = yservice.selectOrderbyView();
+			model.addAttribute("ylist", ylist);
+			//System.out.println(slist);
+		}else if(anno.getOrder_type().equals("최근글 순")) {
+			List<AnnoVO> ylist = yservice.selectOrderbyNew();
+			model.addAttribute("ylist", ylist);
+		}
 		return "yomo/notice_search";
 	}
 	

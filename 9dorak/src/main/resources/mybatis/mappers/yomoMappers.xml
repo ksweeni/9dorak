@@ -18,5 +18,13 @@
 		SELECT * FROM anno WHERE anno_title LIKE
 		'%'||#{anno_title}||'%'
 	</select>
+	
+	<select id="selectOrderbyView" resultType="annovo">
+		select * from anno order by anno_view desc
+	</select>
+	
+	<select id="selectOrderbyNew" resultType="annovo">
+		select * from anno order by anno_date desc
+	</select>
 
 </mapper>

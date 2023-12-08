@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shinhan.dto.AnnoVO;
+import com.shinhan.dto.ProVO;
 
 @Service
 public class YomoService {
@@ -24,6 +25,14 @@ public class YomoService {
 
 	public List<AnnoVO> searchYomo(String anno_title) {
 		return dao.searchYomo(anno_title);
+	}
+
+	public List<AnnoVO> selectOrderbyView() {
+		return dao.selectOrderbyView();
+	}
+
+	public List<AnnoVO> selectOrderbyNew() {
+		return dao.selectOrderbyNew();
 	}
 
 }
