@@ -2,6 +2,17 @@ package com.shinhan.dto;
 
 import java.sql.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class AnnoVO {
 	private int anno_no; //공지사항 고유 번호
 	private String anno_title; //공지사항 제목

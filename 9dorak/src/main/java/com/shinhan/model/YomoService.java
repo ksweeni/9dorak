@@ -16,4 +16,12 @@ public class YomoService {
 	public List<AnnoVO> selectAll() {
 		return dao.selectAll();
 	}
+
+	public AnnoVO selectByno(int anno_no) {
+		return dao.selectByno(anno_no);
+	}
+
+	public List<AnnoVO> searchYomo(String anno_title) {
+		return dao.searchYomo(anno_title);
+	}
 }
