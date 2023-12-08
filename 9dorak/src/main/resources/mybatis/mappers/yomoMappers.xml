@@ -8,15 +8,15 @@
 	<select id="selectAll" resultType="annovo">
 		select * from anno
 	</select>
-	
-	<select id="selectByno" resultType="annovo"
-		parameterType="int">
+
+	<select id="selectByno" resultType="annovo" parameterType="int">
 		select * from anno where anno_no = #{anno_no}
 	</select>
 
 	<select id="searchYomo" resultType="annovo"
 		parameterType="String">
-		SELECT * FROM anno WHERE anno_title LIKE '%'||#{anno_title}||'%'
+		SELECT * FROM anno WHERE anno_title LIKE
+		'%'||#{anno_title}||'%'
 	</select>
 
 </mapper>

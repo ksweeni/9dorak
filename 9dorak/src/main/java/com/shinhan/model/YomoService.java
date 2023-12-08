@@ -1,5 +1,6 @@
 package com.shinhan.model;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,4 +25,5 @@ public class YomoService {
 	public List<AnnoVO> searchYomo(String anno_title) {
 		return dao.searchYomo(anno_title);
 	}
+
 }

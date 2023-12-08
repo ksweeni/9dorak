@@ -1,5 +1,6 @@
 package com.shinhan.model;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -37,4 +38,5 @@ public class YomoDAOMybatis {
 		List<AnnoVO> ylist = sqlSession.selectList(NAMESPACE + "searchYomo", anno_title);
 		return ylist;
 	}
+
 }

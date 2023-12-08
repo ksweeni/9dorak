@@ -46,7 +46,7 @@ public class YomoController {
 		List<AnnoVO> ylist = yservice.searchYomo(anno.getAnno_title());
 		/* System.out.println("searchAllergyCheck.do"); */
 		model.addAttribute("ylist", ylist);
-		return "yomo/yomo_search";
+		return "yomo/notice_search";
 	}
 	
 	/*

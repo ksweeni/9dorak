@@ -20,9 +20,9 @@
 		<tbody>
 			<c:forEach var="anno" items="${ylist}" varStatus="rowStatus">
 				<tr>
-					<td>${anno.anno_no}</td>
-					<td>${anno.anno_title}</td>
-					<td>${anno.anno_date}</td>
+					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/noticeDetail.do?anno_no=' + ${anno.anno_no}">${anno.anno_no}</td>
+					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/noticeDetail.do?anno_no=' + ${anno.anno_no}">${anno.anno_title}</td>
+					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/noticeDetail.do?anno_no=' + ${anno.anno_no}">${anno.anno_date}</td>
 				</tr>
 			</c:forEach>
 		</tbody>
