@@ -52,13 +52,43 @@
                var account_email = res.kakao_account.email;
                var profile_nickname = res.properties.nickname;
 
-                console.log(account_email, profile_nickname);
+               console.log(account_email, profile_nickname);
+               
             },
             fail: function (error) {
                 alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
             }
         });
     } 
+    
+    //백으로 사용자 정보 넘기기
+    function kakaoLoginPro(response){
+	var data = {id:response.id,email:response.kakao_account.email}
+	$.ajax({
+		type : 'POST',
+		url : '/login/kakaoLoginPro.do',
+		data : data,
+		dataType : 'json',
+		success : function(data){
+			console.log(data)
+			if(data.JavaData == "YES"){
+				alert("로그인되었습니다.");
+				location.href = '/user/usermain.do'
+			}else if(data.JavaData == "register"){
+				$("#kakaoEmail").val(response.kakao_account.email);
+				$("#kakaoId").val(response.id);
+				$("#kakaoForm").submit();
+			}else{
+				alert("로그인에 실패했습니다");
+			}
+			
+		},
+		error: function(xhr, status, error){
+			alert("로그인에 실패했습니다."+error);
+		}
+	});
+	
+}
     
  	// 로그아웃 기능 - 카카오 서버에 접속하는 엑세스 토큰을 만료, 사용자 어플리케이션의 로그아웃은 따로 진행.
  	function kakaoLogout() {
@@ -169,8 +199,6 @@
 							<a href="http://developers.kakao.com/logout">카카오 로그아웃</a>
 							<button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
 						<p id="token-result"></p>
-						<button class="api-btn" onclick="requestUserInfo()"
-							style="visibility: hidden">사용자 정보 가져오기</button>
 						<button class="api-btn" onclick="unlinkApp()">앱 탈퇴하기</button>
 						</p>
 					</div>
