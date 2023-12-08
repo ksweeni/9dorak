@@ -220,8 +220,12 @@ public class DoranController {
 			System.out.println("좋아요 추가!");
 			dService.insertDoranLike(dlike);
 		}
-
 		
 		return "redirect:/doran/doran.do";
+	}
+	
+	@GetMapping("doranSearch.do")
+	public String selectSearchDoran() {
+		return "";
 	}
 }

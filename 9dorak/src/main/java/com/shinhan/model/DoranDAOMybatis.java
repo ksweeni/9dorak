@@ -98,6 +98,10 @@ public class DoranDAOMybatis {
 		return sqlSession.insert(NAMESPACE + "deleteDoranLike", dlike);
 
 	}
+	// 검색
+	public List<DoranVO>  selectSearchDoran(String keyword){
+		return sqlSession.selectList(NAMESPACE + "selectSearchDoran", keyword);
+	}
 
 
 

@@ -224,6 +224,16 @@
 		where doran_no = #{doran_no} and mem_id= #{mem_id}
 	</delete>
 
+	<!-- 검색 -->
+	<select id="selectSearchDoran" resultType="doranvo"
+		parameterType="String">
+		select *
+		from doran
+		where doran_title like
+		'%'||#{keyword}||'%' or doran_cont like
+		'%'||#{keyword}||'%'
+	</select>
+
 
 	<!-- doran_no에 대한 좋아요 수까지 합한 결과물 SELECT D.*, COALESCE(L.dlikes, 0) AS dlikes 
 		FROM DORAN D LEFT JOIN ( SELECT doran_no, COUNT(*) AS dlikes FROM DORANLIKE 
