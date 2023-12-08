@@ -117,6 +117,7 @@ request.setCharacterEncoding("UTF-8");
 	<a href="${pageContext.request.contextPath}/menu/menuMediaReview.do">사진 및 동영상 모아보기 test</a>
 	<a href="${pageContext.request.contextPath}/wallet/basket.do">장바구니</a>
 	<a href="${pageContext.request.contextPath}/wallet/pay.do">결제</a>
+	<a href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
 
 
 <!-- 로그인 하면 로그아웃 버튼 로그인 안하면 로그아웃 버튼도 이거 수정해서 하면 될거에요  -->
