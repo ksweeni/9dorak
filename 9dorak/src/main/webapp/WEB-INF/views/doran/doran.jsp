@@ -31,10 +31,10 @@
 					<div class="div-3">
 						<div class="text-wrapper-28">로그인 | 회원가입</div>
 						<div class="group-20">
-							<div class="overlap-group-3">
-								<img class="group-21" src="${cpath}/resources/images/main/header-cart.png" />
-								<div class="ellipse"></div>
-								<div class="text-wrapper-29">2</div>
+							<div class="header-overlap-group-3">
+								<img class="header-group-21" src="${cpath}/resources/images/main/header-cart.png" />
+								<div class="ellipse-light"></div>
+								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
 					</div>

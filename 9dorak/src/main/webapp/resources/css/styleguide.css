@@ -9,126 +9,139 @@
 }
 
 .header {
-	position: relative!important;
-    width: 1116px!important;
-    height: 56px!important;
-    top: 35px!important;
-    left: 50%!important;
-    background-color: transparent!important;
-    display: flex!important;
-    flex-direction: row!important;
-    transform: translateX(-50%)!important;
-    justify-content: center!important;
+	position: relative !important;
+	width: 1116px !important;
+	height: 56px !important;
+	top: 35px !important;
+	left: 50% !important;
+	background-color: transparent !important;
+	display: flex !important;
+	flex-direction: row !important;
+	transform: translateX(-50%) !important;
+	justify-content: center !important;
 }
 
-.top-nav{
-	position: relative!important;
-	width: 1116px!important;
-	height: 56px!important;
+.top-nav {
+	position: relative !important;
+	width: 1116px !important;
+	height: 56px !important;
 }
 
 .navbar {
-	cursor: pointer!important;
-	font-size: 1.2rem!important;
-	font-weight: 700!important;
-	position: relative!important;
-	width: 40rem!important;
-	height: 30px!important;
-	top: 17px!important;
-	left: 20rem!important;
-	display: flex!important;
-	flex-direction: row!important;
-	align-items: center!important;
-	column-gap: 3rem!important;
-	font-size: 1.2rem!important;
+	cursor: pointer !important;
+	font-size: 1.2rem !important;
+	font-weight: 700 !important;
+	position: relative !important;
+	width: 40rem !important;
+	height: 30px !important;
+	top: 17px !important;
+	left: 20rem !important;
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+	column-gap: 3rem !important;
+	font-size: 1.2rem !important;
 }
 
 .navbar .text-wrapper-13 { /*이벤트 */
-	width: 4rem!important;
-	position: relative!important;
-	top: 0!important;
+	width: 4rem !important;
+	position: relative !important;
+	top: 0 !important;
 }
 
 .navbar .text-wrapper-14 {
-	width: 5rem!important; /* 메뉴보기 */
-	position: relative!important;
-	top: 0!important;
+	width: 5rem !important; /* 메뉴보기 */
+	position: relative !important;
+	top: 0 !important;
 }
 
 .navbar .text-wrapper-15 {
-	width: 5rem!important; /* 구독하기 */
-	position: relative!important;
-	top: 0!important;
+	width: 5rem !important; /* 구독하기 */
+	position: relative !important;
+	top: 0 !important;
 }
 
 .navbar .text-wrapper-16 {
 	width: 5rem; /* 요모조모 */
 	position: relative;
-	top: 0!important;
+	top: 0 !important;
 }
 
 .navbar .text-wrapper-17 {
-	width: 5rem!important;; /* 도란도란 */
-	position: relative!important;
-	top: 0!important;
+	width: 5rem !important;; /* 도란도란 */
+	position: relative !important;
+	top: 0 !important;
 }
 
 .top-nav .untitled-2 {
-	width: 150px!important;
-	height: 70.3px!important;
-	position: relative!important;
-	top: -2rem!important;
-	left: 0!important;
-	object-fit: contain!important;
+	width: 150px !important;
+	height: 70.3px !important;
+	position: relative !important;
+	top: -2rem !important;
+	left: 0 !important;
+	object-fit: contain !important;
 }
 
 .navbar .text-event {
-	width: 4rem!important;
+	width: 4rem !important;
 }
 
 .navbar .text-menu, .navbar .text-subscribe, .navbar .text-yomo, .navbar .text-doran
 	{
-	width: 5rem!important;
+	width: 5rem !important;
 }
 
 .top-nav .div-3 {
-	position: relative!important;
-	width: 176px!important;
-	height: 31px!important;
-	top: -5.2rem!important;
-	left: 942px!important;
-	font-weight: 700!important;
-	font-size: 1.2rem!important;
+	position: relative !important;
+	width: 176px !important;
+	height: 31px !important;
+	top: -5.2rem !important;
+	left: 942px !important;
+	font-weight: 700 !important;
+	font-size: 1.2rem !important;
 }
 
 .div-3 .text-wrapper-28 {
-	position: relative!important;
+	position: relative !important;
 }
 
 .div-3 .group-20 {
-	position: relative!important;
-	width: 30px!important;
-	height: 30px!important;
-	top: -1.9rem!important;
-	left: 146px!important;
+	position: relative !important;
+	width: 30px !important;
+	height: 30px !important;
+	top: -1.9rem !important;
+	left: 146px !important;
 }
 
-
-.ellipse {
-	position: absolute!important;
-	width: 15px!important;
-	height: 15px!important;
-	top: 3px!important;
-	left: 16px!important;
-	background-color: var(--tangerine)!important;
-	border-radius: 7.5px!important;
-	box-shadow: 0px 0px 22px #cc0000cc!important;
+.ellipse-light {
+	position: absolute !important;
+	width: 15px !important;
+	height: 15px !important;
+	top: 3px !important;
+	left: 16px !important;
+	background-color: var(- -tangerine) !important;
+	border-radius: 7.5px !important;
+	box-shadow: 0px 0px 22px #cc0000cc !important;
 }
 
 .overlap-group-3 .text-wrapper-29 {
-	position: relative!important;
-    top: 0!important;
-    left: 18px!important;
+	position: relative !important;
+	top: 0 !important;
+	left: 18px !important;
+}
+
+.header-overlap-group-3 {
+	position: relative;
+	height: 31px;
+	left: -1px;
+}
+
+.header-group-21 {
+	position: absolute;
+	width: 23px;
+	height: 25px;
+	top: 6px;
+	left: 0;
 }
 
 :root { -

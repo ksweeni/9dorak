@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -201,8 +202,9 @@ public class DoranController {
 		logger.info(comments.toString());
 		return "doran/doranFeedDetail";
 	}
-
-	@GetMapping("doranLikeUpdate.do")
+//	@GetMapping("doranLikeUpdate.do")
+	@RequestMapping(value = "doranLikeUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
 	public String doranLikeUpdate(@RequestParam int doran_no, String mem_id) {
 		System.out.println("doranLikeUpdate");
 		System.out.println(doran_no + " " + mem_id);
@@ -215,13 +217,15 @@ public class DoranController {
 		if (dService.selectDoranLikeBy(dlike) > 0) {
 			System.out.println("좋아요 삭제 ~");
 			dService.deleteDoranLike(dlike);
+			return "삭제";
 
 		} else {
 			System.out.println("좋아요 추가!");
 			dService.insertDoranLike(dlike);
+			return "추가";
 		}
 		
-		return "redirect:/doran/doran.do";
+		
 	}
 	
 	@GetMapping("doranSearch.do")
