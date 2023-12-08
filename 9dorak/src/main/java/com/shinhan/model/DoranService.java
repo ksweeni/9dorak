@@ -68,6 +68,15 @@ public class DoranService {
 		return dao.insertDoranLike(dlike);
 	}
 
+	// 좋아요 체크
+	public int selectDoranLikeBy(DoranlikeVO dlike) {
+		return dao.selectDoranLikeBy(dlike);
+	}
+
+	public int deleteDoranLike(DoranlikeVO dlike) {
+		return dao.deleteDoranLike(dlike);
+	}
+
 //
 //	@Transactional // ��� �����ϰų� ��� �����ϰų�
 //	public MemVO updateTransViewCount(int bno) {

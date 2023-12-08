@@ -204,10 +204,25 @@
 		SELECT * FROM doran where doran_no = #{doran_no}
 	</select>
 
+	<!-- 좋아요 조회 -->
+	<select id="selectDoranLikeBy" parameterType="doranlikevo"
+		resultType="int">
+		select count(*) from doranlike where doran_no = #{doran_no}
+		and mem_id=
+		#{mem_id}
+	</select>
+
 	<!-- 좋아요 추가 -->
 	<insert id="insertDoranLike" parameterType="doranlikevo">
-		insert into doranlike (doran_no, mem_id)  values  ( #{doran_no} , #{mem_id} );
+		insert into doranlike
+		(doran_no, mem_id) values ( #{doran_no} , #{mem_id} )
 	</insert>
+
+	<!-- 좋아요 삭제 -->
+	<delete id="deleteDoranLike" parameterType="doranlikevo">
+		delete from doranlike
+		where doran_no = #{doran_no} and mem_id= #{mem_id}
+	</delete>
 
 
 	<!-- doran_no에 대한 좋아요 수까지 합한 결과물 SELECT D.*, COALESCE(L.dlikes, 0) AS dlikes 

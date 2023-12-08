@@ -89,6 +89,16 @@ public class DoranDAOMybatis {
 		return sqlSession.insert(NAMESPACE + "insertDoranLike", dlike);
 	}
 
+	public int selectDoranLikeBy(DoranlikeVO dlike) {
+		System.out.println("좋아요 체킹 "+dlike);
+		return sqlSession.insert(NAMESPACE + "selectDoranLikeBy", dlike);
+	}
+
+	public int deleteDoranLike(DoranlikeVO dlike) {
+		return sqlSession.insert(NAMESPACE + "deleteDoranLike", dlike);
+
+	}
+
 
 
 //	public BoardVO selectById(int bno) {
