@@ -51,13 +51,11 @@ public class ChallengeDAOMybatis {
 	}
 
 	public int selectBoardListCnt(ChallengeVO ChallengeVO) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(NAMESPACE + "selectBoardListCnt", ChallengeVO);
 	}
 
 
 	public List<Map<String, Object>> list(ChallengeVO ChallengeVO) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectList(NAMESPACE + "list", ChallengeVO);
 	}
 	

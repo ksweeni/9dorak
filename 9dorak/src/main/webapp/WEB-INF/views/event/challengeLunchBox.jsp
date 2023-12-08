@@ -17,52 +17,73 @@
 			<div class="frame">
 				<div class="group">
 					<div class="overlap">
-						<div class="overlap-group-wrapper">
-							<div class="overlap-group">
-								<div class="input-wrapper">
-									<div class="input">
-										<div class="label-check-helper">
-											<div class="label-check">
-												<div class="text-wrapper">도시락 이름은 무엇인가요?</div>
+						<!--  action path 수정할 것! -->
+						<form action="${cpath}/event/insertChal.do" method="post"
+							enctype="multipart/form-data">
+							<div class="overlap-group-wrapper">
+								<div class="overlap-group">
+									<div class="input-wrapper">
+										<div class="input">
+											<div class="label-check-helper">
+												<div class="label-check">
+													<div class="text-wrapper">도시락 이름은 무엇인가요?</div>
+												</div>
 											</div>
+											<input class="container-default" type="text"
+												name="lunchBoxName" placeholder="귀여운 도시락 이름은 ??" />
 										</div>
-										<div class="container-default"></div>
 									</div>
-								</div>
-								<div class="div-wrapper">
-									<div class="input">
-										<div class="label-check-helper">
-											<div class="label-check">
-												<p class="text-wrapper">간단한 한 줄 소개 부탁드려요</p>
+									
+									<div class="group-2">
+										<div class="input">
+											<div class="label-check-helper">
+												<div class="label-check">
+													<div class="text-wrapper">도시락 레시피를 알려주세요</div>
+												</div>
 											</div>
+											<input class="container-default" type="text"
+												name="lunchBoxRecipe" placeholder="나만의 도시락 레시피를 자세히 적어주세요!" />
 										</div>
-										<div class="container-default"></div>
 									</div>
-								</div>
-								<div class="group-2">
-									<div class="input">
-										<div class="label-check-helper">
-											<div class="label-check">
-												<div class="text-wrapper">도시락 레시피를 알려주세요</div>
+									
+									<div class="div-wrapper">
+										<div class="input">
+											<div class="label-check-helper">
+												<div class="label-check">
+													<div class="text-wrapper">간단한 한 줄 소개 부탁드려요</div>
+												</div>
 											</div>
+
+											<input class="container-default" type="text"
+												name="lunchBoxComment"
+												placeholder="나만의 도시락을 가장 잘 나타낼 수 있게 한 줄로 작성 해 주세요!" />
 										</div>
-										<div class="container-default"></div>
 									</div>
+									
 								</div>
 							</div>
-						</div>
-						<div class="frame-wrapper">
-							<div class="button-group-wrapper">
-								<div class="button-group">
-									<button class="button">
-										<div class="cancel">취소하기</div>
-									</button>
-									<button class="upload-wrapper">
-										<div class="upload">업로드</div>
-									</button>
+							<div class="frame-wrapper">
+								<div class="input">
+									<div class="bottom">
+										<!-- 파일 선택 -->
+										<div class="label-check">
+											<div class="text-wrapper">도시락을 설명하는 사진이나 그림을 올려주세요</div>
+										</div>
+										<label class="fileUpload" for="singleFile">파일 선택</label> <input
+											type="file" id="singleFile" style="display: none;" />
+									</div>
 								</div>
+								<br>
+								<br>
+								<br>
+									<!-- 취소버튼 -->
+									<button type="reset" class="reset-button"
+										value="내용 초기화">reset</button>
+
+									<!-- 글쓰기 버튼 -->
+									<button type="submit" class="upload-button">글쓰기</button>
 							</div>
-						</div>
+						</form>
 					</div>
 					<div class="frame-2">
 						<div class="frame-3">
@@ -135,21 +156,21 @@
 			<div class="group-7">
 				<div class="date">
 					<div class="navbar">
-							<div class="text-wrapper-10"
-					onclick="location.href='${pageContext.request.contextPath}/event/challenge.do'"
-					style="cursor: pointer;">챌린지 ZONE</div>
-				<div class="text-wrapper-10"
-					onclick="location.href='${pageContext.request.contextPath}/event/freelunchbox.do'"
-					style="cursor: pointer;">도시락 무료 체험</div>
-				<div class="element-sep"
-					onclick="location.href='${pageContext.request.contextPath}/event/makelunchbox.do'"
-					style="cursor: pointer;">도시락 만들9</div>
-				<div class="text-wrapper-10"
-					onclick="location.href='${pageContext.request.contextPath}/event/friendreco.do'"
-					style="cursor: pointer;">친구 추천</div>
-				<div class="text-wrapper-10"
-					onclick="location.href='${pageContext.request.contextPath}/event/friendadd.do'"
-					style="cursor: pointer;">친구 추가</div>
+						<div class="text-wrapper-10"
+							onclick="location.href='${pageContext.request.contextPath}/event/challenge.do'"
+							style="cursor: pointer;">챌린지 ZONE</div>
+						<div class="text-wrapper-10"
+							onclick="location.href='${pageContext.request.contextPath}/event/freelunchbox.do'"
+							style="cursor: pointer;">도시락 무료 체험</div>
+						<div class="element-sep"
+							onclick="location.href='${pageContext.request.contextPath}/event/makelunchbox.do'"
+							style="cursor: pointer;">도시락 만들9</div>
+						<div class="text-wrapper-10"
+							onclick="location.href='${pageContext.request.contextPath}/event/friendreco.do'"
+							style="cursor: pointer;">친구 추천</div>
+						<div class="text-wrapper-10"
+							onclick="location.href='${pageContext.request.contextPath}/event/friendadd.do'"
+							style="cursor: pointer;">친구 추가</div>
 					</div>
 				</div>
 				<img class="base" src="img/base.svg" />
