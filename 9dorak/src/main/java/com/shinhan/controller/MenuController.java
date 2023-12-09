@@ -1,8 +1,11 @@
 package com.shinhan.controller;
 
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +21,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.shinhan.dto.MemVO;
 import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.MenuService;
@@ -115,9 +119,11 @@ public class MenuController {
 	}
 	
 	@GetMapping("menuSpecificReview.do")
-	public String menuSpecificReview(Model model, ProVO pro) {
+	public String menuSpecificReview(Model model, ProVO pro, HttpSession session) {
 		//System.out.println(mService.selectByNo(pro.getPro_no()));
 		//System.out.println("menuSpecificReview:" + pro.getPro_no());
+		MemVO memVO = (MemVO) session.getAttribute("loginmem");
+		String memId = memVO.getMem_id();
 		
 		List<Map<String, Object>> rlist = mService.selectProReview(pro.getPro_no());
 		model.addAttribute("rlist", rlist);
@@ -127,6 +133,12 @@ public class MenuController {
 		model.addAttribute("phtCnt",revwCnt.get("phtCnt"));
 		model.addAttribute("txtCnt",revwCnt.get("txtCnt"));
 		
+		Map<String, Object> ReserveInputMap = new HashMap<String, Object>();
+		
+		ReserveInputMap.put("mem_id", memId);
+		ReserveInputMap.put("pro_no", pro.getPro_no());
+		
+		model.addAttribute("reserveCnt", mService.selectReserveYn(ReserveInputMap));
 		model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
 			 	
 		return "menu/menuSpecificReview";

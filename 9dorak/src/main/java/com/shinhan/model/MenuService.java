@@ -1,13 +1,11 @@
 package com.shinhan.model;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.ProVO;
 
 
@@ -59,6 +57,18 @@ public class MenuService {
 	
 	public Map<String, Object> reviewCnt(int prono){
 		return dao.proRevwCnt(prono);
+	};
+	
+	public int selectReserveYn (Map<String, Object> map) {
+		return dao.selectReserveYn(map);
+	};
+	
+	public int insertReserve (Map<String, Object> map) {
+		return dao.insertReserve(map);
+	};
+	
+	public int deleteReserve (Map<String, Object> map) {
+		return dao.deleteReserve(map);
 	};
 
 //	public int insertMember(DoranVO doran) {

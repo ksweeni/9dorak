@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.ProVO;
 
 
@@ -78,20 +77,27 @@ public class MenuDAOMybatis {
 	
 	public Map<String, Object> proRevwCnt(int prono) {
 		
-		Map<String, Object> map = new HashMap();
+		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("totCnt", sqlSession.selectOne(NAMESPACE+ "proRevwTotCnt", prono));
 		map.put("phtCnt", sqlSession.selectOne(NAMESPACE+ "proRevwPhtCnt", prono));
 		map.put("txtCnt", sqlSession.selectOne(NAMESPACE+ "proRevwTxtCnt", prono));
 		return map;
 	}
+		
+	public int selectReserveYn(Map<String, Object> map) {
+		return sqlSession.selectOne(NAMESPACE + "selectReserveYn", map);
+	}
 	
+	public int insertReserve(Map<String, Object> map) {
+		int result = sqlSession.insert(NAMESPACE + "insertReserve", map);
+		return result;
+	}
 	
-//	public int insertDoran(DoranVO doran) {
-//		System.out.println("inserting :"+doran);
-//		return sqlSession.insert(NAMESPACE + "insertDoran", doran);
-//		
-//	}
-
+	public int deleteReserve(Map<String, Object> map) {
+		int result = sqlSession.insert(NAMESPACE + "deleteReserve", map);
+		return result;
+	}
+	
 //	public BoardVO selectById(int bno) {
 //		BoardVO board = sqlSession.selectOne(NAMESPACE + "selectById", bno);
 //		logger.info("selectById :  {}", board.toString());

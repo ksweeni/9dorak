@@ -129,6 +129,22 @@
 		   and orderdetail.orderdetail_no = memreview.orderdetail_no
 		   and memreview.memreview_image is null
     </select>
+   
+    <select id="selectReserveYn" parameterType="HashMap" resultType="int">
+	    select 
+	           count(*)
+		  from reserve
+	     where mem_id = #{mem_id}
+		   and pro_no = #{pro_no}
+    </select>
+    
+   <insert id="insertReserve" parameterType="HashMap" >
+		insert into reserve (mem_id, pro_no) values (#{mem_id},#{pro_no})
+    </insert>
+    
+    <delete id="deleteReserve"  parameterType="HashMap">
+    	delete reserve where mem_id = #{mem_id} and pro_no = #{pro_no}
+    </delete>
 
 	<!-- <insert id="insertDoran" parameterType="doranvo">
 		INSERT INTO DORAN (

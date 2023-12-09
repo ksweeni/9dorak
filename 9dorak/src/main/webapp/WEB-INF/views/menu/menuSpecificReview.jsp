@@ -603,7 +603,10 @@
     }
 
     // 제품 이미지
-   
+    if('${reserveCnt}' > 0){
+    	toggleHeart();
+    }
+    
     var cpathValue = '${cpath}';
     var imageUrl = cpathValue + '/resources/images/menu/subtest-1.png';
     var groupDiv = document.querySelector('.div-wrapper .group');
@@ -704,6 +707,10 @@
         heartImage.src = '${cpath}/resources/images/menu/menu-heart-unfill.png';
       }
     }
+    
+    function HeartSubmit() {
+		
+	};
 
     // 유용해요 클릭 및 유용 수 증가 
     document.addEventListener('DOMContentLoaded', function () {
