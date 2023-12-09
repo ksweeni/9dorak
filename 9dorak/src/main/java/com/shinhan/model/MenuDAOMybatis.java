@@ -1,6 +1,8 @@
 package com.shinhan.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -68,11 +70,21 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 	
-	public List<MemreviewVO> selectProReview(int prono) {
-		List<MemreviewVO> rlist = sqlSession.selectList(NAMESPACE + "selectProReview", prono);
+	public List<Map<String, Object>> selectProReview(int prono) {
+		List<Map<String, Object>> rlist = sqlSession.selectList(NAMESPACE + "selectProReview", prono);
 		//System.out.println("DAO rlist:" + rlist);
 		return rlist;
 	}
+	
+	public Map<String, Object> proRevwCnt(int prono) {
+		
+		Map<String, Object> map = new HashMap();
+		map.put("totCnt", sqlSession.selectOne(NAMESPACE+ "proRevwTotCnt", prono));
+		map.put("phtCnt", sqlSession.selectOne(NAMESPACE+ "proRevwPhtCnt", prono));
+		map.put("txtCnt", sqlSession.selectOne(NAMESPACE+ "proRevwTxtCnt", prono));
+		return map;
+	}
+	
 	
 //	public int insertDoran(DoranVO doran) {
 //		System.out.println("inserting :"+doran);

@@ -7,6 +7,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.type.filter.AbstractClassTestingTypeFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -118,11 +119,14 @@ public class MenuController {
 		//System.out.println(mService.selectByNo(pro.getPro_no()));
 		//System.out.println("menuSpecificReview:" + pro.getPro_no());
 		
-		List<MemreviewVO> rlist = mService.selectProReview(pro.getPro_no());
-		//List<Map<String, Object>> rlist = mService.selectProReview(pro.getPro_no());
+		List<Map<String, Object>> rlist = mService.selectProReview(pro.getPro_no());
 		model.addAttribute("rlist", rlist);
-		System.out.println("rlist:" + rlist);
-
+		
+		Map<String, Object> revwCnt = mService.reviewCnt(pro.getPro_no());
+		model.addAttribute("totCnt",revwCnt.get("totCnt"));
+		model.addAttribute("phtCnt",revwCnt.get("phtCnt"));
+		model.addAttribute("txtCnt",revwCnt.get("txtCnt"));
+		
 		model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
 			 	
 		return "menu/menuSpecificReview";

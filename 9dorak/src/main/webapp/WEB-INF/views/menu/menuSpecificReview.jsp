@@ -201,15 +201,15 @@
 
 			<div class="auto-layout">
 				<div class="auto-layout-vertical">
-					<div class="text-wrapper-9">24+</div>
+					<div class="text-wrapper-9">${phtCnt}+</div>
 					<div class="text-wrapper-10">사진 및 동영상 후기</div>
 				</div>
 				<div class="auto-layout-vertical">
-					<div class="text-wrapper-11">53개의 리뷰</div>
+					<div class="text-wrapper-11">${totCnt}개의 리뷰</div>
 					<div class="text-wrapper-10">Burger eaters and counting</div>
 				</div>
 				<div class="auto-layout-vertical">
-					<div class="text-wrapper-9">+31</div>
+					<div class="text-wrapper-9">+${txtCnt}</div>
 					<div class="text-wrapper-10">텍스트 리뷰</div>
 				</div>
 			</div>
@@ -280,8 +280,8 @@
 									<div class="rectangle-6"></div>
 									<div class="group-9">
 										<div class="frame-2">
-											<div class="text-wrapper-14">ksween</div>
-											<div class="text-wrapper-15">2023.12.06</div>
+											<div class="text-wrapper-14">${review.mem_id }</div>
+											<div class="text-wrapper-15">${review.memreview_date }</div>
 										</div>
 										<div class="frame-14">
 											<div class="text-wrapper-14">주문메뉴</div>

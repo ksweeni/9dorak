@@ -80,17 +80,10 @@
 		from pro
 		where pro_no = #{pro_no}
 	</select>
-
-	<select id="selectProReview" parameterType="int" resultType="memreviewvo">
-	    select memreview.*
-		from  orderdetail, memreview
-		where  orderdetail.pro_no = #{pro_no} 
-		and orderdetail.orderdetail_no = memreview.orderdetail_no
-    </select>
     
-<!-- <resultMap type="HashMap" id="proreviewMap">
+	<resultMap type="HashMap" id="proreviewMap">
     	<id column="orderdetail_no" property="orderdetail_no"/>
-    	<id column="memriew_date" property="memriew_date"/>
+    	<id column="memreview_date" property="memreview_date"/>
     	<id column="memreview_cont" property="memreview_cont"/>
     	<id column="memreview_starpoint" property="memreview_starpoint"/>
     	<id column="pro_no" property="pro_no"/>
@@ -98,12 +91,44 @@
     </resultMap>
     
     <select id="selectProReview" parameterType="int" resultMap="proreviewMap">
-	    select memreview.*, orders.mem_id
+	    select 
+	      memreview.orderdetail_no
+	    , memreview.memreview_date
+	    , memreview.memreview_cont
+	    , memreview.memreview_starpoint
+	    , orderdetail.pro_no
+	    , orders.mem_id 
 		from memreview, orderdetail, orders
 		where orderdetail.pro_no = #{pro_no}
 			and orderdetail.orderdetail_no = memreview.orderdetail_no
 			and orderdetail.order_no = orders.order_no
-    </select> -->
+    </select> 
+
+    <select id="proRevwTotCnt" parameterType="int" resultType="int">
+	    select 
+	           count(*)
+	  	  from memreview, orderdetail
+		 where orderdetail.pro_no = #{pro_no}
+		   and orderdetail.orderdetail_no = memreview.orderdetail_no
+    </select>
+    
+    <select id="proRevwPhtCnt" parameterType="int" resultType="int">
+	    select 
+	           count(*)
+	  	  from memreview, orderdetail
+		 where orderdetail.pro_no = #{pro_no}
+		   and orderdetail.orderdetail_no = memreview.orderdetail_no
+		   and memreview.memreview_image is not null
+    </select>
+    
+    <select id="proRevwTxtCnt" parameterType="int" resultType="int">
+	    select 
+	           count(*)
+	  	  from memreview, orderdetail
+		 where orderdetail.pro_no = #{pro_no}
+		   and orderdetail.orderdetail_no = memreview.orderdetail_no
+		   and memreview.memreview_image is null
+    </select>
 
 	<!-- <insert id="insertDoran" parameterType="doranvo">
 		INSERT INTO DORAN (
