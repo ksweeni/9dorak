@@ -22,15 +22,36 @@
 				<div class="top-nav">
 					<div class="navbar">
 						<div class="text-event">이벤트</div>
-						<div class="text-menu">메뉴보기</div>
+						<div class="text-menu">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+						</div>
 						<div class="text-subscribe">구독하기</div>
 						<div class="text-yomo">요모조모</div>
-						<div class="text-doran">도란도란</div>
+						<div class="text-doran">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+						</div>
 					</div>
 					<img class="untitled-2"
 						src="${cpath}/resources/images/main/header-logo.png" />
 					<div class="div-3">
-						<div class="text-wrapper-28">로그인 | 회원가입</div>
+						<div class="text-wrapper-28">
+							<c:choose>
+								<c:when test="${not empty sessionScope.loginmem.mem_id}">
+									<span
+										style="font-weight: bold; left: 2.5rem; position: relative;">
+										<c:out value="${sessionScope.loginmem.mem_id}" /> 님
+									</span>
+								</c:when>
+								<c:otherwise>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/login/login.do">로그인</a> |
+            <a class="header-a"
+										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+								</c:otherwise>
+							</c:choose>
+						</div>
 						<div class="group-20">
 							<div class="header-overlap-group-3">
 								<img class="header-group-21"
