@@ -3,6 +3,7 @@ package com.shinhan.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -134,6 +136,30 @@ public class DoranController {
 
 		return "doran/doran_ajax";
 	}
+	
+	@PostMapping("quickUpload.do")
+	public String quickUpload(@RequestBody Map<String, String> requestData, Model model, HttpSession session) {
+	    String title = requestData.get("title");
+	    String content = requestData.get("content");
+
+	    System.out.println("간편 업로드 입니다");
+	    int dsize = dService.selectAll().size();
+	    MemVO memVO = (MemVO) session.getAttribute("loginmem");
+	    DoranVO doran = new DoranVO();
+	    String memId = memVO.getMem_id();
+	    doran.setDoran_no(dsize + 1);
+	    doran.setDoran_title(title);
+	    doran.setDoran_cont(content);
+	    doran.setDoran_view(0);
+	    doran.setMem_id(memId);
+	    doran.setDoran_image(null);
+	    System.out.println("입력될 정보:" + doran);
+
+	    dService.insertDoran(doran);
+
+	    return "redirect:/doran/doran.do";
+	}
+
 
 	@PostMapping("doranUpload.do")
 	public String handleDoranUpload(DoranVO doran, @RequestParam MultipartFile singleFile, HttpServletRequest request,
@@ -237,4 +263,7 @@ public class DoranController {
 		
 		return "doran/doran_ajax";
 	}
+	
+
+	
 }

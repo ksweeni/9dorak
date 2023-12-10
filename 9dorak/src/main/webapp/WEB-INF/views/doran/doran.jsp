@@ -27,12 +27,14 @@
 						<div class="text-yomo">요모조모</div>
 						<div class="text-doran">도란도란</div>
 					</div>
-					<img class="untitled-2" src="${cpath}/resources/images/main/header-logo.png" />
+					<img class="untitled-2"
+						src="${cpath}/resources/images/main/header-logo.png" />
 					<div class="div-3">
 						<div class="text-wrapper-28">로그인 | 회원가입</div>
 						<div class="group-20">
 							<div class="header-overlap-group-3">
-								<img class="header-group-21" src="${cpath}/resources/images/main/header-cart.png" />
+								<img class="header-group-21"
+									src="${cpath}/resources/images/main/header-cart.png" />
 								<div class="ellipse-light"></div>
 								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
@@ -46,16 +48,18 @@
 					<div class="group-wrapper">
 						<div class="doran-upload-profilPhoto">
 							<img class="doran-upload-profilPhotoImg"
-								src="${cpath }/resources/images/main/sandwich_lunchbox01.png" />
+								src="${cpath}/resources/images/main/sandwich_lunchbox01.png" />
 						</div>
 						<div class="doran-upload-contents">
 							<div class="doran-context">
-								<input class="doran-context-title" type="text" placeholder="제목">
-								<textarea placeholder="내용을 자유롭게 입력하세요!"></textarea>
+								<input class="doran-context-title" id="doran-quick-title"
+									type="text" placeholder="제목">
+								<textarea placeholder="내용을 자유롭게 입력하세요!" id="doran-quick-content"></textarea>
 							</div>
 							<div class="upload-button-wrap">
-								
-								<button type="submit" class="doran-button-upload">업로드</button>
+
+								<button type="submit" class="doran-button-upload"
+									onclick="quickUpload()">업로드</button>
 							</div>
 						</div>
 					</div>
@@ -79,8 +83,8 @@
 				<div id="here">
 					<!--data forEach -->
 				</div>
-				
-				
+
+
 			</div>
 			<!-- group-4 -->
 
@@ -112,7 +116,8 @@
 							placeholder="검색어를 입력하세요">
 					</div>
 					<div class="doran-search">
-						<button class="doran-search-button" id="searchBtn" onclick="searchBtnClick()">
+						<button class="doran-search-button" id="searchBtn"
+							onclick="searchBtnClick()">
 							<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
 								viewBox="0 0 15 15" fill="none">
 								<path
@@ -357,25 +362,25 @@
 
 				return false;
 			}
-			
+
 			// 검색어 클릭 버튼
-			function searchBtnClick(){
-				
+			function searchBtnClick() {
+
 				var searchInput = document.getElementById("searchTxt").value;
-				
+
 				$.ajax({
 					url : "${cpath}/doran/doranSearch.do",
 					type : 'GET',
 					data : {
 						keyword : searchInput
 					},
-					success: function(responseData) {
-					    if (responseData && responseData.length > 0) {
-					       // alert("검색 성공 !");
-					        $('#here').html(responseData);
-					    } else if (responseData.length == 0){
-					        alert("검색 결과가 없습니다.");
-					    }
+					success : function(responseData) {
+						if (responseData && responseData.length > 0) {
+							// alert("검색 성공 !");
+							$('#here').html(responseData);
+						} else if (responseData.length == 0) {
+							alert("검색 결과가 없습니다.");
+						}
 					},
 
 					error : function() {
@@ -383,7 +388,40 @@
 					}
 				});
 			}
-			
+
+			// 간편 업로드 
+			function quickUpload() {
+				var memId = "${sessionScope.loginmem.mem_id}";
+
+				if (!memId || memId.trim() === "") {
+					alert("로그인이 필요한 서비스입니다 !");
+					window.location.href = "${cpath}/login/loginForm.do";
+					return;
+				}
+
+				var quickTitle = document.getElementById("doran-quick-title").value;
+				var quickContent = document
+						.getElementById("doran-quick-content").value;
+
+				var requestData = {
+					title : quickTitle,
+					content : quickContent
+				};
+
+				$.ajax({
+					url : "${cpath}/doran/quickUpload.do",
+					type : "POST",
+					data : JSON.stringify(requestData),
+					contentType : "application/json; charset=utf-8",
+					success : function(responseData) {
+						alert("업로드 성공!");
+						console.log(responseData);
+					},
+					error : function() {
+						alert("업로드 에러");
+					}
+				});
+			}
 		</script>
 		<!-- div -->
 	</div>
