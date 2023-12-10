@@ -26,5 +26,9 @@
 	<select id="selectOrderbyNew" resultType="annovo">
 		select * from anno order by anno_date desc
 	</select>
+	
+	<select id="selectFaqAll" resultType="faqvo">
+		select * from faq
+	</select>
 
 </mapper>

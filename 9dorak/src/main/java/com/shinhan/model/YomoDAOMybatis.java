@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.ChallengeVO;
+import com.shinhan.dto.FaqVO;
 import com.shinhan.dto.ProVO;
 
 @Repository
@@ -49,6 +50,12 @@ public class YomoDAOMybatis {
 	public List<AnnoVO> selectOrderbyNew() {
 		List<AnnoVO> ylist = sqlSession.selectList(NAMESPACE + "selectOrderbyNew");
 		return ylist;
+	}
+
+
+	public List<FaqVO> selectFaqAll() {
+		List<FaqVO> flist = sqlSession.selectList(NAMESPACE + "selectFaqAll");
+		return flist;
 	}
 
 }
