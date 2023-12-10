@@ -63,6 +63,13 @@
     }
 
     function toggleLike(index) {
+    	var memId = "${sessionScope.loginmem.mem_id}";
+    	alert("회원 아이디 :",memId);
+    	if (!memId || memId.trim() === "") {
+			alert("로그인이 필요한 서비스입니다 !");
+			window.location.href = "${cpath}/login/loginForm.do";
+			return;
+		}
     	
    		alert(index);
          var likeIcon = document.getElementById("like-icon-" + index);
