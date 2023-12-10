@@ -190,8 +190,7 @@
 			<div class="menu-selection-wrapper">
 				<div class="menu-selection">
 					<button class="common-button" onclick="selectButton(this)">
-						<div class="recipes">제품상세
-						</div>
+						<div class="recipes">제품상세</div>
 						<div class="rectangle-4"></div>
 					</button>
 					<button class="common-button" onclick="selectButton(this)">
@@ -207,7 +206,7 @@
 					<div class="text-wrapper-10">사진 및 동영상 후기</div>
 				</div>
 				<div class="auto-layout-vertical">
-					<div class="text-wrapper-11">${totCnt}개의 리뷰</div>
+					<div class="text-wrapper-11">${totCnt}개의리뷰</div>
 					<div class="text-wrapper-10">Burger eaters and counting</div>
 				</div>
 				<div class="auto-layout-vertical">
@@ -245,19 +244,22 @@
 							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
 						</div>
 					</div> --%>
-				</div><!-- group-5 -->
-				
+				</div>
+				<!-- group-5 -->
+
 				<div class="frame-8">
 					<div class="text-wrapper-13">사진 및 동영상 후기</div>
-					<a href="${cpath }/menu/menuMediaReview.do?reviewdetail=${menudetail.pro_no}" class="view-2">
-						<div class="text-wrapper-13">모아보기</div>
-						<img class="img-2"
-							src="${cpath}/resources/images/menu/right-forward.svg" />
+					<a
+						href="${cpath }/menu/menuMediaReview.do?reviewdetail=${menudetail.pro_no}"
+						class="view-2">
+						<div class="text-wrapper-13">모아보기</div> <img class="img-2"
+						src="${cpath}/resources/images/menu/right-forward.svg" />
 					</a>
 				</div>
-				
-			</div><!-- picture-reviews -->
-			
+
+			</div>
+			<!-- picture-reviews -->
+
 			<div class="text-reviews-and">
 				<div class="frame-review">
 					<div class="text-wrapper-13">텍스트 리뷰</div>
@@ -310,9 +312,11 @@
 										<div class="text-wrapper-18">0</div>
 									</div>
 								</div>
-							</div><!-- view-3 -->
+							</div>
+							<!-- view-3 -->
 						</c:forEach>
-					</div><!-- review -->
+					</div>
+					<!-- review -->
 					<%-- <div class="review">
 						<div class="view-3">
 							<div class="frame-13">
@@ -461,7 +465,8 @@
 							</div>
 						</div>
 					</div> --%>
-				</div><!-- reviews-texts -->
+				</div>
+				<!-- reviews-texts -->
 
 				<!-- pagination -->
 				<div class="pagination">
@@ -501,7 +506,8 @@
 				</div>
 
 
-			</div> <!-- text-reviews-and -->
+			</div>
+			<!-- text-reviews-and -->
 		</div>
 
 		<footer class="footer">
@@ -565,27 +571,50 @@
 		</footer>
 
 		<header class="header">
-				<div class="top-nav">
-					<div class="navbar">
-						<div class="text-event">이벤트</div>
-						<div class="text-menu">메뉴보기</div>
-						<div class="text-subscribe">구독하기</div>
-						<div class="text-yomo">요모조모</div>
-						<div class="text-doran">도란도란</div>
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-event">이벤트</div>
+					<div class="text-menu">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
 					</div>
-					<img class="untitled-2" src="${cpath}/resources/images/main/header-logo.png" />
-					<div class="div-3">
-						<div class="text-wrapper-28">로그인 | 회원가입</div>
-						<div class="group-20">
-							<div class="header-overlap-group-3">
-								<img class="header-group-21" src="${cpath}/resources/images/main/header-cart.png" />
-								<div class="ellipse-light"></div>
-								<!-- <div class="text-wrapper-29">2</div> -->
-							</div>
+					<div class="text-subscribe">구독하기</div>
+					<div class="text-yomo">요모조모</div>
+					<div class="text-doran">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+					</div>
+				</div>
+				<img class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				<div class="div-3">
+					<div class="text-wrapper-28">
+						<c:choose>
+							<c:when test="${not empty sessionScope.loginmem.mem_id}">
+								<span
+									style="font-weight: bold; left: 2.5rem; position: relative;">
+									<c:out value="${sessionScope.loginmem.mem_id}" /> 님
+								</span>
+							</c:when>
+							<c:otherwise>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/login/login.do">로그인</a> |
+            <a class="header-a"
+									href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<div class="group-20">
+						<div class="header-overlap-group-3">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<div class="ellipse-light"></div>
+							<!-- <div class="text-wrapper-29">2</div> -->
 						</div>
 					</div>
 				</div>
-			</header>
+			</div>
+		</header>
 	</div>
 	<script>
 	$(document).ready(function() {
