@@ -229,7 +229,12 @@ public class DoranController {
 	}
 	
 	@GetMapping("doranSearch.do")
-	public String selectSearchDoran() {
-		return "";
+	public String selectSearchDoran(@RequestParam String keyword, Model model) {
+		List<DoranVO> dlist = dService.selectSearchDoran(keyword);
+		System.out.println("도란 검색 입니다" + dlist);
+		
+		model.addAttribute("dlist", dlist);
+		
+		return "doran/doran_ajax";
 	}
 }
