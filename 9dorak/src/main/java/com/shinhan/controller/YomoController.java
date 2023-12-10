@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.ChallengeVO;
+import com.shinhan.dto.FaqVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.YomoService;
 
@@ -60,6 +61,14 @@ public class YomoController {
 			model.addAttribute("ylist", ylist);
 		}
 		return "yomo/notice_search";
+	}
+	
+	@GetMapping("faq.do")
+	public String faq(Model model) {
+		List<FaqVO> flist = yservice.selectFaqAll();
+		model.addAttribute("flist", flist);
+		System.out.println(flist);
+		return "yomo/faq";
 	}
 	
 	/*

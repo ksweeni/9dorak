@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shinhan.dto.AnnoVO;
+import com.shinhan.dto.FaqVO;
 import com.shinhan.dto.ProVO;
 
 @Service
@@ -17,6 +18,10 @@ public class YomoService {
 	
 	public List<AnnoVO> selectAll() {
 		return dao.selectAll();
+	}
+	
+	public List<FaqVO> selectFaqAll() {
+		return dao.selectFaqAll();
 	}
 
 	public AnnoVO selectByno(int anno_no) {
