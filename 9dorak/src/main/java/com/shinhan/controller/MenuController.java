@@ -120,10 +120,16 @@ public class MenuController {
 	
 	@GetMapping("menuSpecificReview.do")
 	public String menuSpecificReview(Model model, ProVO pro, HttpSession session) {
-		//System.out.println(mService.selectByNo(pro.getPro_no()));
-		//System.out.println("menuSpecificReview:" + pro.getPro_no());
+
 		MemVO memVO = (MemVO) session.getAttribute("loginmem");
-		String memId = memVO.getMem_id();
+		if(memVO != null) {
+			Map<String, Object> ReserveInputMap = new HashMap<String, Object>();
+			String memId = memVO.getMem_id();
+			ReserveInputMap.put("mem_id", memId);
+			ReserveInputMap.put("pro_no", pro.getPro_no());
+			
+			model.addAttribute("reserveCnt", mService.selectReserveYn(ReserveInputMap));
+		}
 		
 		List<Map<String, Object>> rlist = mService.selectProReview(pro.getPro_no());
 		model.addAttribute("rlist", rlist);
@@ -132,16 +138,36 @@ public class MenuController {
 		model.addAttribute("totCnt",revwCnt.get("totCnt"));
 		model.addAttribute("phtCnt",revwCnt.get("phtCnt"));
 		model.addAttribute("txtCnt",revwCnt.get("txtCnt"));
-		
-		Map<String, Object> ReserveInputMap = new HashMap<String, Object>();
-		
-		ReserveInputMap.put("mem_id", memId);
-		ReserveInputMap.put("pro_no", pro.getPro_no());
-		
-		model.addAttribute("reserveCnt", mService.selectReserveYn(ReserveInputMap));
+
 		model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
 			 	
 		return "menu/menuSpecificReview";
 	}
 	
+	@GetMapping("reserve.do")
+	public String searchAllergyCheck(Model model, ProVO pro, HttpSession session, @RequestParam Map<String, Object> map) {
+		MemVO memVO = (MemVO) session.getAttribute("loginmem");
+		int rslt = 0;
+		if(memVO != null) {
+			Map<String, Object> ReserveInputMap = new HashMap<String, Object>();
+			String memId = memVO.getMem_id();
+			String flag = (String)map.get("flag");
+			String pro_no = (String)map.get("pro_no");
+			ReserveInputMap.put("mem_id", memId);
+			ReserveInputMap.put("pro_no", pro_no);
+			
+			//System.out.println(ReserveInputMap.get("mem_id"));
+			//System.out.println(ReserveInputMap.get("pro_no"));
+			
+			if(flag.equals("1")) {
+				 rslt =  mService.insertReserve(ReserveInputMap);
+			}else if(flag.equals("2")){
+				 rslt =  mService.deleteReserve(ReserveInputMap);
+			}
+		}else {
+		;	
+		}
+		
+		return "menu/menuSpecificReview";
+	}
 }

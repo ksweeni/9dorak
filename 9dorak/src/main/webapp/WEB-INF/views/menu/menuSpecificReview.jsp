@@ -12,6 +12,8 @@
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <title>Insert title here</title>
 
 </head>
@@ -586,6 +588,12 @@
 			</header>
 	</div>
 	<script>
+	$(document).ready(function() {
+		var heartImage = document.getElementById('heart');
+	    if('${reserveCnt}' > 0){
+	    	heartImage.src = '${cpath}/resources/images/menu/menu-heart-fill.png';
+	    }
+	});
     function selectButton(button) {
         const buttons = document.querySelectorAll('.menu-selection-wrapper .common-button');
         buttons.forEach((btn) => {
@@ -603,10 +611,6 @@
     }
 
     // 제품 이미지
-    if('${reserveCnt}' > 0){
-    	toggleHeart();
-    }
-    
     var cpathValue = '${cpath}';
     var imageUrl = cpathValue + '/resources/images/menu/subtest-1.png';
     var groupDiv = document.querySelector('.div-wrapper .group');
@@ -703,13 +707,29 @@
       var heartImage = document.getElementById('heart');
       if (heartImage.src.endsWith('unfill.png')) {
         heartImage.src = '${cpath}/resources/images/menu/menu-heart-fill.png';
+        HeartSubmit("1");
       } else {
         heartImage.src = '${cpath}/resources/images/menu/menu-heart-unfill.png';
+        HeartSubmit("2");
       }
     }
     
-    function HeartSubmit() {
-		
+    function HeartSubmit(flag) {
+    	
+    	$.ajax({
+			url : "${cpath}/menu/reserve.do",
+			type : 'GET',
+			data : {
+				flag : flag
+			, pro_no : ${menudetail.pro_no}
+			},
+			success : function(data) {
+				//alert("성공");
+			},
+			error : function() {
+				//alert("에러");
+			}
+		});
 	};
 
     // 유용해요 클릭 및 유용 수 증가 
