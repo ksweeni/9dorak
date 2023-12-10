@@ -24,7 +24,7 @@ public class MemVO {
 	private String mem_grade; //회원등급
 	private String mem_aller; //회원고유알레르기
 	private int mem_quit; //회원탈퇴
-	
+	private String kakaologin; //카카오로그인
 	
 	public String getMem_id() {
 		return mem_id;
@@ -103,6 +103,12 @@ public class MemVO {
 	}
 	public void setMem_quit(int mem_quit) {
 		this.mem_quit = mem_quit;
+	}		
+	public String getKakaologin() {
+		return kakaologin;
+	}
+	public void setKakaologin(String kakaologin) {
+		this.kakaologin = kakaologin;
 	}
 	
 	@Override
@@ -110,7 +116,7 @@ public class MemVO {
 		return "MemVO [mem_id=" + mem_id + ", mem_name=" + mem_name + ", mem_gender=" + mem_gender + ", mem_bd="
 				+ mem_bd + ", mem_email=" + mem_email + ", mem_phone=" + mem_phone + ", mem_pw=" + mem_pw
 				+ ", mem_code=" + mem_code + ", mem_addr=" + mem_addr + ", mem_point=" + mem_point + ", mem_grade="
-				+ mem_grade + ", mem_aller=" + mem_aller + ", mem_quit=" + mem_quit + "]";
+				+ mem_grade + ", mem_aller=" + mem_aller + ", mem_quit=" + mem_quit + ", kakaologin=" + kakaologin
+				+ "]";
 	}
-	
 }

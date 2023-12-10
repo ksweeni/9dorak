@@ -28,6 +28,18 @@ public class LoginService {
 	public void updatePwd(String mem_id, String new_pw) {
 		dao.updatePwd(mem_id, new_pw);
 	}
+	
+	public MemVO kakaoConnectionCheck(Map<String, Object> paramMap) {
+        return dao.kakaoConnectionCheck(paramMap);
+    }
 
+    public void setKakaoConnection(Map<String, Object> paramMap) {
+        dao.setKakaoConnection(paramMap);
+    }
+
+    public MemVO userKakaoLoginPro(Map<String, Object> paramMap) {
+        return dao.userKakaoLoginPro(paramMap);
+    }
 }
+
 

@@ -123,4 +123,25 @@ public class LoginController {
 			return "login/createNewPwd";
 		}
 	}
+	
+	@RequestMapping(value="/kakaoLoginPro.do", method=RequestMethod.POST)
+	public Map<String, Object> kakaoLoginPro(@RequestParam Map<String,Object> paramMap,HttpSession session) throws SQLException, Exception {
+	    System.out.println("paramMap:" + paramMap);
+	    Map <String, Object> resultMap = new HashMap<String, Object>();
+
+	    MemVO kakaoConnectionCheck = lservice.kakaoConnectionCheck(paramMap);
+	    if(kakaoConnectionCheck == null) { //일치하는 이메일 없으면 가입
+	        resultMap.put("JavaData", "register");
+	    }else {
+	        if(kakaoConnectionCheck.getKakaologin() == null && kakaoConnectionCheck.getMem_email() != null) { //이메일 가입 되어있고 카카오 연동 안되어 있을시
+	            System.out.println("kakaoLogin");
+	            lservice.setKakaoConnection(paramMap);
+	        }
+	        MemVO loginCheck = lservice.userKakaoLoginPro(paramMap);
+	        session.setAttribute("userInfo", loginCheck);
+	        resultMap.put("JavaData", "YES");
+	    }
+
+	    return resultMap;
+	}
 }

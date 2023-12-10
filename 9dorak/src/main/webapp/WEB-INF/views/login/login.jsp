@@ -48,48 +48,49 @@
             success: function (res) {
                 console.log(res);            
                 
-                // 이메일, 닉네임
+               // 이메일, 닉네임, id
                var account_email = res.kakao_account.email;
                var profile_nickname = res.properties.nickname;
+               var id = res.id;
 
-               console.log(account_email, profile_nickname);
+               console.log(account_email, profile_nickname, id);
                
+               // 받아온 정보를 kakaoLoginPro 함수에 전달
+               kakaoLoginPro(res);
             },
-            fail: function (error) {
-                alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
-            }
-        });
-    } 
-    
-    //백으로 사용자 정보 넘기기
-    function kakaoLoginPro(response){
-	var data = {id:response.id,email:response.kakao_account.email}
-	$.ajax({
-		type : 'POST',
-		url : '/login/kakaoLoginPro.do',
-		data : data,
-		dataType : 'json',
-		success : function(data){
-			console.log(data)
-			if(data.JavaData == "YES"){
-				alert("로그인되었습니다.");
-				location.href = '/user/usermain.do'
-			}else if(data.JavaData == "register"){
-				$("#kakaoEmail").val(response.kakao_account.email);
-				$("#kakaoId").val(response.id);
-				$("#kakaoForm").submit();
-			}else{
-				alert("로그인에 실패했습니다");
-			}
-			
-		},
-		error: function(xhr, status, error){
-			alert("로그인에 실패했습니다."+error);
-		}
-	});
-	
-}
-    
+               fail: function (error) {
+                   alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
+               }
+           });
+       } 
+       
+       // Ajax를 이용하여 백엔드로 전송
+       function kakaoLoginPro(response){
+    		var data = {id:response.id,email:response.kakao_account.email}
+    		$.ajax({
+    			type : 'POST',
+    			url : '/login/kakaoLoginPro.do',
+    			data : data,
+    			dataType : 'json',
+    			success : function(data){
+    				console.log(data)
+    				if(data.JavaData == "YES"){
+    					alert("로그인되었습니다.");
+    					location.href = '/user/usermain.do'
+    				}else if(data.JavaData == "register"){
+    					$("#kakaoEmail").val(response.kakao_account.email);
+    					$("#kakaoId").val(response.id);
+    					$("#kakaoForm").submit();
+    				}else{
+    					alert("로그인에 실패했습니다");
+    				}
+    				
+    			},
+    			error: function(xhr, status, error){
+    				alert("로그인에 실패했습니다."+error);
+    			}
+    		});               
+                  
  	// 로그아웃 기능 - 카카오 서버에 접속하는 엑세스 토큰을 만료, 사용자 어플리케이션의 로그아웃은 따로 진행.
  	function kakaoLogout() {
     	Kakao.Auth.logout()
