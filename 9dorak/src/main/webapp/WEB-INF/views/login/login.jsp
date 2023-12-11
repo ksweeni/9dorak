@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/loginStyle.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/loginStyle.css?s"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,37 +96,16 @@
                   
  	// 로그아웃 기능 - 카카오 서버에 접속하는 엑세스 토큰을 만료, 사용자 어플리케이션의 로그아웃은 따로 진행.
  	function kakaoLogout() {
-    	Kakao.Auth.logout()
-      .then(function() {
-    	  alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
-        deleteCookie();
-      })
-      .catch(function() {
-        alert('Not logged in');
-      });
-  }
-    function deleteCookie() {
-        document.cookie = 'authorize-access-token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-      }
-
-
-    //연결끊기
-    function unlinkApp() {
-        Kakao.API.request({
-          url: '/v1/user/unlink',
-        })
-          .then(function(res) {
-            alert('success: ' + JSON.stringify(res));
-            deleteCookie();
-          })
-          .catch(function(err) {
-            alert('fail: ' + JSON.stringify(err));
-          });
-      }
-    
-    function deleteCookie() {
-        document.cookie = 'authorize-access-token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-      }
+ 		Kakao.Auth.logout()
+ 		  .then(function(response) {
+ 		    console.log(Kakao.Auth.getAccessToken()); // null
+ 		    // 카카오 로그아웃이 성공한 후, 서버로 로그아웃 요청
+ 		    window.location.href = "/logout.do";
+ 		  })
+ 		  .catch(function(error) {
+ 		    console.log('Not logged in.');
+ 		  });
+ 	}
 </script>
 
 <script>
@@ -200,11 +179,9 @@
 							<button
 								onclick="location.href='${pageContext.request.contextPath}/login/findIdForm.do'"
 								type="submit" class="text-wrapper-9">아이디 / 비밀번호 찾기</button>
-							<a href="http://developers.kakao.com/logout">카카오 로그아웃</a>
-							<button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
 						<p id="token-result"></p>
-						<button class="api-btn" onclick="unlinkApp()">앱 탈퇴하기</button>
-						</p>
+						<a href="http://developers.kakao.com/logout">카카오 로그아웃</a>
+						<button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
 					</div>
 				</div>
 			</div>
