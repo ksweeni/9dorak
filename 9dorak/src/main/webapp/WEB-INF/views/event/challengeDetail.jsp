@@ -158,7 +158,7 @@
 	<br>
 	<input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input>
 	<br>
-
+	
 	<button id="update">수정</button>
 	<button id="delete">삭제</button>
 

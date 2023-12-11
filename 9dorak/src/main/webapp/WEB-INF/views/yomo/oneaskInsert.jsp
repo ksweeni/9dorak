@@ -1,14 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+request.setCharacterEncoding("UTF-8");
+String contextPath = request.getContextPath();
+%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css" type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/oneaskStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
+	type="text/css" />
+<link rel="stylesheet"
+	href="${cpath}/resources/css/oneaskInsertStyle.css?d" type="text/css" />
 <title>Insert title here</title>
 </head>
 <body>
@@ -36,59 +44,95 @@
 			</div>
 		</div>
 		<div class="e844_606"></div>
-		<div class=e815_1065>
-			<div class=e815_1066>
-				<div class="ei815_1066_6_1"></div>
-			</div>
-			<input type="text" class="e815_1067" placeholder="검색어를 입력하세요">
-		</div>
-	</div>
-	<div class="e844_9999">
-	<table class="table table-bordered table-hover">
-		<thead>
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>문의 상태</th>
-				<th>작성일</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="oneask" items="${olist}" varStatus="rowStatus">
-				<tr>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_no}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_title}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.mem_id}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_status}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_date}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	</div>
-	<div class="e844_616">
-		<div id="button" style="text-align: right;">
-		<button type="button" class="right-aligned-button">1:1문의 글쓰기</button>
-	</div>
 	</div>
 	<div class=e844_617>
 		<span class="e844_618">1:1 문의</span>
 	</div>
 	<div class=e854_1005>
-		<div class=e831_684>
-		</div>
-		<div class=e844_862>
-			<button class="e844_863">최근글 순</button>
-			<div class=e844_864>
-				<div class="ei844_864_773_285"></div>
-				<div class=ei844_864_773_286>
-					<div class="ei844_864_773_287"></div>
+		<div class=e831_684></div>
+	</div>
+	<div class="div-wrapper">
+		<div class="div">
+			<div class="overlap">
+				<div class="group">
+					<div class="overlap-group">
+						<form action="${cpath}/yomo/insertOneask.do" method="post"
+							enctype="multipart/form-data">
+							<!-- 제목 -->
+							<div class="group">
+								<div class="overlap-group-2">
+									<div class="input-wrapper">
+										<div class="input">
+											<div class="label-check-helper">
+												<div class="label-check">
+													<div class="text-wrapper">제목</div>
+												</div>
+											</div>
+											<input class="container-default" type="text"
+												name="oneask_title" placeholder="문의 제목을 입력해주세요" />
+										</div>
+									</div>
+									<!-- 내용 -->
+									<div class="group-2">
+										<div class="input-2">
+											<div class="label-check-helper">
+												<div class="label-check">
+													<div class="text-wrapper">내용</div>
+												</div>
+											</div>
+											<input class="container-default-2" type="text"
+												name="oneask_cont" placeholder="문의 내용을 자세히 적어주세요" />
+										</div>
+									</div>
+
+									<div class="bottom">
+										<label class="fileUpload" for="singleFile"
+											onmousedown="handleMouseDown(event)">파일 선택</label> <input
+											type="file" name="singleFile" id="singleFile"
+											style="display: none;" /> <span id="selectedFileName"></span>
+										<script>
+											function handleMouseDown(event) {
+												event.preventDefault();
+												var fileInput = document
+														.getElementById("singleFile");
+												fileInput.click();
+											}
+											document
+													.addEventListener(
+															"DOMContentLoaded",
+															function() {
+																var fileInput = document
+																		.getElementById("singleFile");
+																var selectedFileNameSpan = document
+																		.getElementById("selectedFileName");
+																fileInput
+																		.addEventListener(
+																				"change",
+																				function() {
+																					if (fileInput.files.length > 0) {
+																						selectedFileNameSpan.textContent = fileInput.files[0].name;
+																					} else {
+																						selectedFileNameSpan.textContent = "";
+																					}
+																					console
+																							.log(
+																									"File selected:",
+																									fileInput.files[0].name);
+																				});
+															});
+										</script>
+										<!-- 글쓰기 버튼 -->
+										<button type="submit" class="right-aligned-button">1:1문의
+											쓰기</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="e844_619"></div>
 	<div class=e1081_4450>
 		<div class=e1081_4451>
 			<div class=e1081_4452>
@@ -102,17 +146,16 @@
 			<span class="e1081_4458">김수인</span><span class="e1081_4459">LV.낑깡</span>
 		</div>
 		<div class=e1081_4460>
-			<a href="${pageContext.request.contextPath}/yomo/notice.do" class=e1081_4461>
-				<span class="e1081_4462">공지사항</span>
-			</a>
-			<a href="${pageContext.request.contextPath}/yomo/faq.do" class=e1081_4463>
-				<span class="e1081_4464">자주 묻는 질문</span>
+			<a href="${pageContext.request.contextPath}/yomo/notice.do"
+				class=e1081_4461> <span class="e1081_4462">공지사항</span>
+			</a> <a href="${pageContext.request.contextPath}/yomo/faq.do"
+				class=e1081_4463> <span class="e1081_4464">자주 묻는 질문</span>
 			</a>
 			<div class=e1081_4465>
 				<span class="e1081_4466">1:1 문의</span>
 			</div>
-			<a href="${pageContext.request.contextPath}/yomo/aboutus.do" class=e1081_4467>
-				<span class="e1081_4468">About Us</span>
+			<a href="${pageContext.request.contextPath}/yomo/aboutus.do"
+				class=e1081_4467> <span class="e1081_4468">About Us</span>
 			</a>
 		</div>
 	</div>
@@ -207,37 +250,5 @@
 		</div>
 	</div>
 	<div class="e1558_2333"></div>
-	<script type="text/javascript">
-	$(".ei815_1066_6_1").on("click", function(){
-		$.ajax({
-			url : "${cpath}/yomo/searchOneask.do",
-			type : 'GET',
-			data : {
-				oneask_title : $(".e815_1067").val()
-			},
-			success : function(data) {
-				$('.e844_9999').html(data);
-			}
-		});
-	})
-	
-	$(".e854_1005 button").on("click", function() {
-		
-		$.ajax({
-			url : "${cpath}/yomo/oneaskOrderby.do",
-			type : 'GET',
-			data : {
-				order_type : $(this).text()
-			},
-			success : function(data) {
-				$('.e844_9999').html(data);
-			}
-		});
-	})
-	
-	$(".right-aligned-button").on("click",function(){
-		location.href = "${cpath}/yomo/insertOneask.do";
-	}) 
-	</script>
 </body>
 </html>

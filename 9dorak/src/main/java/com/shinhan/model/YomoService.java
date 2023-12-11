@@ -57,4 +57,8 @@ public class YomoService {
 		return dao.selectBynoOneask(oneask_no);
 	}
 
+	public int insertOneask(OneaskVO oneask) {
+		return dao.insertOneask(oneask);
+	}
+
 }

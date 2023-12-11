@@ -83,4 +83,10 @@ public class YomoDAOMybatis {
 		return oneask;
 	}
 
+
+	public int insertOneask(OneaskVO oneask) {
+		int result = sqlSession.insert(NAMESPACE + "insertOneask", oneask);
+		return result;
+	}
+
 }
