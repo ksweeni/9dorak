@@ -592,65 +592,67 @@
 			</div>
 			<!-- text-reviews-and -->
 
-		<footer class="footer">
-			<div class="company-loco">
-				<div class="company">
-					<p class="text-wrapper-19">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Commodo libero viverra dapibus odio
-						sit malesuada in quis. Arcu tristique elementum viverra integer
-						id.</p>
-					<img class="untitled" src="img/untitled-1-2.png" />
-				</div>
-				<div class="social-icon">
-					<div class="facebook">
-						<img class="mask-group" src="img/mask-group-3.png" />
-					</div>
-					<div class="instagram">
-						<img class="mask-group-2" src="img/mask-group.png" />
-					</div>
-					<div class="twitter">
-						<img class="mask-group-3" src="img/mask-group-2.png" />
-					</div>
-					<div class="linkind">
-						<img class="mask-group-3" src="img/mask-group-4.png" />
-					</div>
-				</div>
-			</div>
-			<div class="contact-us">
-				<div class="text-wrapper-20">Contact Us</div>
-				<div class="group-10">
-					<div class="text-wrapper-21">1234 Country Club Ave</div>
-					<div class="text-wrapper-22">NC 123456, London, UK</div>
-					<div class="text-wrapper-23">+0123 456 7891</div>
-				</div>
-				<div class="group-11">
-					<div class="overlap-group-6">
-						<div class="img-wrapper">
-							<img class="vector-2" src="img/vector-2.svg" />
+		<div class="footer-wrapping">
+				<footer class="footer">
+					<div class="footer-company-loco">
+						<div class="footer-company">
+							<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요 
+							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 
+							구독 좋아요 알림 설정까지~</p>
+							<img class="footer-logo" src="${cpath}/resources/images/main/footer-logo.png" />
 						</div>
-						<div class="text-wrapper-24">Enter your email....</div>
+						<div class="footer-social-icon">
+							<div class="footer-facebook">
+								<img class="footer-mask-group" src="${cpath}/resources/images/main/footer-facebook.png" />
+							</div>
+							<div class="footer-instagram">
+								<img class="footer-img" src="${cpath}/resources/images/main/footer-insta.png" />
+							</div>
+							<div class="footer-twitter">
+								<img class="footer-mask-group-2" src="${cpath}/resources/images/main/footer-twitter.png" />
+							</div>
+							<div class="footer-linkind">
+								<img class="footer-mask-group-2" src="${cpath}/resources/images/main/footer-linkedin.png" />
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="user-link">
-				<div class="text-wrapper-25">User Link</div>
-				<div class="group-12">
-					<div class="text-wrapper-21">About Us</div>
-					<div class="text-wrapper-22">Contact Us</div>
-					<div class="text-wrapper-23">Order Delivery</div>
-					<div class="payment-tex">Payment &amp; Tex</div>
-					<div class="text-wrapper-26">Terms of Services</div>
-				</div>
-			</div>
-			<div class="opening-restaurant">
-				<div class="text-wrapper-25">Opening Restaurant</div>
-				<div class="group-13">
-					<div class="text-wrapper-21">Sat-Wet: 09:00am-10:00PM</div>
-					<div class="text-wrapper-22">Thursdayt: 09:00am-11:00PM</div>
-					<div class="text-wrapper-23">Friday: 09:00am-8:00PM</div>
-				</div>
-			</div>
-		</footer>
+					<div class="footer-contact-us">
+						<div class="footer-text-wrapper-2">Contact Us</div>
+						<div class="footer-group">
+							<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+							<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+							<div class="footer-text-wrapper-3">+0123 456 7891</div>
+						</div>
+						<div class="footer-overlap-group-wrapper">
+							<div class="footer-overlap-group">
+								<div class="footer-vector-wrapper">
+									<img class="footer-vector" src="${cpath}/resources/images/main/footer-email-button.png" />
+								</div>
+								<input class="footer-enter-email" placeholder="Enter your email....">
+							</div>
+						</div>
+					</div>
+					<div class="footer-user-link">
+						<div class="footer-text-wrapper-7">User Link</div>
+						<div class="footer-group-2">
+							<div class="footer-text-wrapper-3">About Us</div>
+							<div class="footer-text-wrapper-3">Contact Us</div>
+							<div class="footer-text-wrapper-3">Order Delivery</div>
+							<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+							<div class="footer-text-wrapper-3">Terms of Services</div>
+						</div>
+					</div>
+					<div class="footer-opening-restaurant">
+						<div class="footer-text-wrapper-7">Opening Restaurant</div>
+						<div class="footer-group-3">
+							<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+							<div class="footer-text-wrapper-3">Thursdayt: 09:00am-11:00PM</div>
+							<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+						</div>
+					</div>
+				</footer>
+			  </div>
+			  
 		</div><!-- div -->
 	</div><!-- div-wrapper -->
 	<script>
