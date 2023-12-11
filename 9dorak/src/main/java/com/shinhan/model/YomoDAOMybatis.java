@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.FaqVO;
+import com.shinhan.dto.OneaskVO;
 import com.shinhan.dto.ProVO;
 
 @Repository
@@ -56,6 +57,36 @@ public class YomoDAOMybatis {
 	public List<FaqVO> selectFaqAll() {
 		List<FaqVO> flist = sqlSession.selectList(NAMESPACE + "selectFaqAll");
 		return flist;
+	}
+
+
+	public List<OneaskVO> selectOneaskAll() {
+		List<OneaskVO> olist = sqlSession.selectList(NAMESPACE + "selectOneaskAll");
+		return olist;
+	}
+
+
+	public List<OneaskVO> selectOrderbyNewOneask() {
+		List<OneaskVO> olist = sqlSession.selectList(NAMESPACE + "selectOrderbyNewOneask");
+		return olist;
+	}
+
+
+	public List<OneaskVO> searchOneask(String oneask_title) {
+		List<OneaskVO> olist = sqlSession.selectList(NAMESPACE + "searchOneask", oneask_title);
+		return olist;
+	}
+
+
+	public OneaskVO selectBynoOneask(int oneask_no) {
+		OneaskVO oneask = sqlSession.selectOne(NAMESPACE + "selectBynoOneask", oneask_no);
+		return oneask;
+	}
+
+
+	public int insertOneask(OneaskVO oneask) {
+		int result = sqlSession.insert(NAMESPACE + "insertOneask", oneask);
+		return result;
 	}
 
 }
