@@ -23,7 +23,6 @@ public class MyPageService {
 	public int updateMember(MemVO mem) {
 		// TODO Auto-generated method stub
 		return dao.updateMember(mem);
-		
 	}
 
 	public int deleteMember(String mem_id) {
