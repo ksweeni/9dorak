@@ -1519,7 +1519,7 @@
 .table {
     position: absolute;
     border-collapse: collapse;
-    left: 45%;
+    left: 50%;
     transform: translateX(-50%);
     top: 562px;
     width: 946px;
