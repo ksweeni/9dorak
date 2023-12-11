@@ -97,6 +97,21 @@ public class MenuDAOMybatis {
 		int result = sqlSession.insert(NAMESPACE + "deleteReserve", map);
 		return result;
 	}
+
+	public int updateReserve(String pro_no) {
+		int result = sqlSession.update(NAMESPACE + "updateProLike", pro_no);
+		return result;
+	}
+
+//	public int selectProLike(int pro_no) {
+//
+//		return sqlSession.selectOne(NAMESPACE + "selectProLike", pro_no);
+//	}
+//
+//	public int updateProLike(int pro_no) {
+//		
+//		return sqlSession.selectOne(NAMESPACE + "updateProLike", pro_no);
+//	}
 	
 //	public BoardVO selectById(int bno) {
 //		BoardVO board = sqlSession.selectOne(NAMESPACE + "selectById", bno);

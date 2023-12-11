@@ -73,9 +73,9 @@ public class MenuController {
 	//정렬
 	@GetMapping("searchOrderby.do")
 	public String searchOrderby(Model model, ProVO pro) {
-		System.out.println(pro.getOrder_type());
+		//System.out.println(pro.getOrder_type());
 		//System.out.println(pro.getPro_aller());
-		System.out.println(pro.getIngre_no());
+		//System.out.println(pro.getIngre_no());
 		//@RequestParam("order_type") String order_type
 		
 		//카테고리 + 정렬
@@ -145,9 +145,10 @@ public class MenuController {
 	}
 	
 	@GetMapping("reserve.do")
-	public String searchAllergyCheck(Model model, ProVO pro, HttpSession session, @RequestParam Map<String, Object> map) {
+	public String reservCheck(Model model, ProVO pro, HttpSession session, @RequestParam Map<String, Object> map) {
 		MemVO memVO = (MemVO) session.getAttribute("loginmem");
 		int rslt = 0;
+		int rslt2 = 0;
 		if(memVO != null) {
 			Map<String, Object> ReserveInputMap = new HashMap<String, Object>();
 			String memId = memVO.getMem_id();
@@ -161,8 +162,12 @@ public class MenuController {
 			
 			if(flag.equals("1")) {
 				 rslt =  mService.insertReserve(ReserveInputMap);
+				 rslt2 = mService.updateReserve(pro_no);
+				 //System.out.println(pro_no);
+				 
 			}else if(flag.equals("2")){
 				 rslt =  mService.deleteReserve(ReserveInputMap);
+				 rslt2 = mService.updateReserve(pro_no);
 			}
 		}else {
 		;	
@@ -170,4 +175,6 @@ public class MenuController {
 		
 		return "menu/menuSpecificReview";
 	}
+	
+
 }
