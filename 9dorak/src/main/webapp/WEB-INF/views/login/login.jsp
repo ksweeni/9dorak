@@ -66,21 +66,23 @@
        
        // Ajax를 이용하여 백엔드로 전송
        function kakaoLoginPro(response){
-    		var data = {id:response.id,email:response.kakao_account.email}
+    		var data = {name:response.properties.nickname,email:response.kakao_account.email,id:response.id}
     		$.ajax({
     			type : 'POST',
-    			url : '/login/kakaoLoginPro.do',
+    			url : 'kakaoLoginPro.do',
     			data : data,
     			dataType : 'json',
     			success : function(data){
     				console.log(data)
     				if(data.JavaData == "YES"){
     					alert("로그인되었습니다.");
-    					location.href = '/'; // 메인 페이지로 리다이렉트
+    					location.href = '${cpath}/main.do'; // 메인 페이지로
     				}else if(data.JavaData == "register"){
     					$("#kakaoEmail").val(response.kakao_account.email);
+    					$("#kakaoName").val(response.properties.nickname);
     					$("#kakaoId").val(response.id);
     					$("#kakaoForm").submit();
+    					alert("회원가입이 필요합니다.");
     				}else{
     					alert("로그인에 실패했습니다");
     				}
@@ -208,6 +210,11 @@
 			</div>
 		</div>
 	</div>
+<form name="kakaoForm" id="kakaoForm" method = "post" action="../register/registerType.do">
+<input type="hidden" name="email" id="kakaoEmail" />
+<input type="hidden" name="name" id="kakaoName" />
+<input type="hidden" name="id" id="kakaoId" />
+</form>
 </body>
 </html>
 

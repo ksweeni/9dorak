@@ -44,21 +44,15 @@
     <select id="kakaoConnectionCheck" resultType="memvo">
         select *
         from mem
-        where kakaologin = #{kakaologin}
+        where mem_id = #{id}
     </select>
-
-    <!-- 카카오 연동 설정 -->
-    <update id="setKakaoConnection">
-        update mem
-        set kakaologin = #{kakaologin}
-        where mem_id = #{mem_id}
-    </update>
 
     <!-- 카카오 로그인 처리 -->
     <select id="userKakaoLoginPro" resultType="memvo">
         select *
         from mem
-        where kakaologin = #{kakaologin}
+        where mem_id = #{mem_id}
     </select>
+    
 	
 </mapper>

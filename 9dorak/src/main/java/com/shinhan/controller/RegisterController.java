@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,9 +44,13 @@ public class RegisterController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
 
-	 
-	@GetMapping("registerType.do")
-	public void registerType() {
+	//카카오 정보로 회원가입 시 사용자정보 session에 저장
+	@RequestMapping(value = "registerType.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public void registerType(String email, String name, String id, HttpSession session) {
+		session.setAttribute("email", email);
+		session.setAttribute("name", name);
+		session.setAttribute("id", id);
+		session.setAttribute("kakao", email==null?0:1);
 	}
 
 	@GetMapping("registerForm.do")

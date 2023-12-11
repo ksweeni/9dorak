@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -124,21 +125,18 @@ public class LoginController {
 		}
 	}
 	
-	@RequestMapping(value="/kakaoLoginPro.do", method=RequestMethod.POST)
-	public Map<String, Object> kakaoLoginPro(@RequestParam Map<String,Object> paramMap,HttpSession session) throws SQLException, Exception {
+	@RequestMapping(value="kakaoLoginPro.do", method=RequestMethod.POST)
+	public @ResponseBody Map<String, Object> kakaoLoginPro(@RequestParam Map<String,Object> paramMap,HttpSession session) throws SQLException, Exception {
 	    System.out.println("paramMap:" + paramMap);
 	    Map <String, Object> resultMap = new HashMap<String, Object>();
 
 	    MemVO kakaoConnectionCheck = lservice.kakaoConnectionCheck(paramMap);
-	    //일치하는 이메일 없으면 가입
-	    if(kakaoConnectionCheck == null) { 
+	    //일치하는 id 없으면 가입
+	    if(kakaoConnectionCheck == null) {         
 	        resultMap.put("JavaData", "register");
+	        
 	    }else {
-	    	//이메일 가입 되어있고 카카오 연동 안되어 있을시
-	        if(kakaoConnectionCheck.getKakaologin() == null && kakaoConnectionCheck.getMem_email() != null) {
-	            System.out.println("kakaoLogin");
-	            lservice.setKakaoConnection(paramMap);
-	        }
+
 	        MemVO loginCheck = lservice.userKakaoLoginPro(paramMap);
 	        session.setAttribute("userInfo", loginCheck);
 	        resultMap.put("JavaData", "YES");
@@ -146,4 +144,17 @@ public class LoginController {
 
 	    return resultMap;
 	}
+	
+	@RequestMapping(value="registerForm.do")
+	public String setKakaoInfo(Model model,HttpSession session,@RequestParam Map<String,Object> paramMap) {
+		System.out.println("setKakaoInfo");	
+		System.out.println("param ==>"+paramMap);
+		
+		model.addAttribute("name",paramMap.get("name"));
+		model.addAttribute("email",paramMap.get("email"));
+		model.addAttribute("id",paramMap.get("id"));
+		
+		return "register/registerType";
+	}
+	
 }

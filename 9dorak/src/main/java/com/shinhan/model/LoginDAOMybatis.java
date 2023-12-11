@@ -56,10 +56,6 @@ public class LoginDAOMybatis {
         return sqlSession.selectOne(NAMESPACE + "kakaoConnectionCheck", paramMap);
     }
 
-    public void setKakaoConnection(Map<String, Object> paramMap) {
-        sqlSession.update(NAMESPACE + "setKakaoConnection", paramMap);
-    }
-
     public MemVO userKakaoLoginPro(Map<String, Object> paramMap) {
         return sqlSession.selectOne(NAMESPACE + "userKakaoLoginPro", paramMap);
     }

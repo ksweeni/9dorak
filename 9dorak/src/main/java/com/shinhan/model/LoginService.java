@@ -33,10 +33,6 @@ public class LoginService {
         return dao.kakaoConnectionCheck(paramMap);
     }
 
-    public void setKakaoConnection(Map<String, Object> paramMap) {
-        dao.setKakaoConnection(paramMap);
-    }
-
     public MemVO userKakaoLoginPro(Map<String, Object> paramMap) {
         return dao.userKakaoLoginPro(paramMap);
     }

@@ -1068,7 +1068,9 @@ a {
 							<div class="e106_402">중복확인</div>
 						</button>
 					</div>
-					<input class="e106_422" type="text" id="mem_id" name="mem_id"
+					<input class="e106_422" type="text" id="mem_id" 
+					name="mem_id"
+					value="${id }" ${kakao==1?"readonly":"" }
 						placeholder="hcghcg17" /> <span class="e106_423">아이디</span>
 				</div>
 				<div class=e106_418>
@@ -1077,10 +1079,12 @@ a {
 				</div>
 				<div class=e106_415>
 					<input class="e106_416" type="text" id="mem_name" name="mem_name"
+						value="${name }" ${kakao==1?"readonly":"" }
 						placeholder="홍찬기" /> <span class="e106_417">이름</span>
 				</div>
 				<div class=e106_412>
 					<input class="e106_413" type="email" name="mem_email"
+					    value="${email }" ${kakao==1?"readonly":"" }
 						id="mem_email" placeholder="hcghcg17@naver.com" /> <span
 						class="e106_414">이메일</span>
 					<div class=e106_397 id="emailCheck">
