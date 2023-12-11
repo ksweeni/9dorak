@@ -76,7 +76,7 @@
     				console.log(data)
     				if(data.JavaData == "YES"){
     					alert("로그인되었습니다.");
-    					location.href = '${cpath}/main.do'; // 메인 페이지로
+    					location.href = '${cpath}/main.do'; // 메인 테스트 페이지로
     				}else if(data.JavaData == "register"){
     					$("#kakaoEmail").val(response.kakao_account.email);
     					$("#kakaoName").val(response.properties.nickname);

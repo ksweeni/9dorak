@@ -51,7 +51,7 @@
     <select id="userKakaoLoginPro" resultType="memvo">
         select *
         from mem
-        where mem_id = #{mem_id}
+        where mem_id = #{id}
     </select>
     
 	
