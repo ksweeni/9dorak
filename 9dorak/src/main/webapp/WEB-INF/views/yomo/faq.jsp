@@ -67,22 +67,18 @@
 			<span class="e1081_4458">김수인</span><span class="e1081_4459">LV.낑깡</span>
 		</div>
 		<div class=e1081_4460>
-			<div class=e1081_4461>
-				<a href="${pageContext.request.contextPath}/yomo/notice.do"> <span
-					class="e1081_4462">공지사항</span>
-				</a>
-			</div>
+			<a href="${pageContext.request.contextPath}/yomo/notice.do" class=e1081_4461>
+				<span class="e1081_4462">공지사항</span>
+			</a>
 			<div class=e1081_4463>
 				<span class="e1081_4464">자주 묻는 질문</span>
 			</div>
-			<div class=e1081_4465>
-				<a href="${pageContext.request.contextPath}/yomo/oneask.do">
+			<a href="${pageContext.request.contextPath}/yomo/oneask.do" class=e1081_4465>
 				<span class="e1081_4466">1:1 문의</span>
-				</a>
-			</div>
-			<div class=e1081_4467>
+			</a>
+			<a href="${pageContext.request.contextPath}/yomo/aboutus.do" class=e1081_4467>
 				<span class="e1081_4468">About Us</span>
-			</div>
+			</a>
 		</div>
 	</div>
 	<div class=e1081_4206>
