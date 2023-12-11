@@ -30,5 +30,21 @@
 	<select id="selectFaqAll" resultType="faqvo">
 		select * from faq
 	</select>
+	
+	<select id="selectBynoOneask" resultType="oneaskvo" parameterType="int">
+		select * from oneask where oneask_no = #{oneask_no}
+	</select>
+	
+	<select id="selectOneaskAll" resultType="oneaskvo">
+		select * from oneask
+	</select>
+
+	<select id="searchOneask" resultType="oneaskvo" parameterType="String">
+		SELECT * FROM oneask WHERE oneask_title LIKE '%'||#{oneask_title}||'%'
+	</select>
+	
+	<select id="selectOrderbyNewOneask" resultType="oneaskvo">
+		select * from oneask order by oneask_date desc
+	</select>
 
 </mapper>

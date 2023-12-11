@@ -15,28 +15,8 @@
   position: relative;
 }
 
-.div-wrapper .header {
-  position: absolute;
-  width: 1116px;
-  height: 56px;
-  top: 35px;
-  left: 162px;
-  background-color: transparent;
-}
 
-.div-wrapper .top-nav {
-  position: relative;
-  width: 1116px;
-  height: 56px;
-}
 
-.div-wrapper .navbar {
-  position: absolute;
-  width: 334px;
-  height: 22px;
-  top: 17px;
-  left: 382px;
-}
 
 .div-wrapper .text-wrapper {
   left: 0;
@@ -1026,17 +1006,7 @@
   font-style: var(--p1-font-style);
 }
 
-.div-wrapper .text-wrapper-28 {
-  position: absolute;
-  top: 68px;
-  left: 0;
-  font-weight: var(--p1-font-weight);
-  color: var(--gray);
-  font-size: var(--p1-font-size);
-  letter-spacing: var(--p1-letter-spacing);
-  line-height: var(--p1-line-height);
-  font-style: var(--p1-font-style);
-}
+
 
 .div-wrapper .group-15 {
   position: absolute;

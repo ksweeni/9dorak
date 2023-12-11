@@ -19,54 +19,64 @@
 		<div class="div">
 
 			<header class="header">
-			    <div class="top-nav">
-			        <div class="navbar">
-			            <div class="text-event">
-			                <a class="header-a" href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
-			            </div>
-			            <div class="text-menu">
-			                <a class="header-a" href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
-			            </div>
-			            <div class="text-subscribe">
-			                <a class="header-a" href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
-			            </div>
-			            <div class="text-yomo">
-			                <a class="header-a" href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
-			            </div>
-			            <div class="text-doran">
-			                <a class="header-a" href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
-			            </div>
-			        </div>
-			        <a href="${pageContext.request.contextPath}/main.do">
-			            <img class="untitled-2" src="${cpath}/resources/images/main/header-logo.png" />
-			        </a>
-			        <div class="div-3">
-			            <div class="text-wrapper-28">
-			                <c:choose>
-			                    <c:when test="${not empty sessionScope.loginmem.mem_id}">
-			                        <span style="font-weight: bold; left: 2.5rem; position: relative;">
-			                            <c:out value="${sessionScope.loginmem.mem_id}" /> 님
-			                        </span>
-			                    </c:when>
-			                    <c:otherwise>
-			                        <a class="header-a" href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
-			                        <a class="header-a" href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
-			                    </c:otherwise>
-			                </c:choose>
-			            </div>
-			            <div class="group-20">
-			                <div class="header-overlap-group-3">
-			                    <img class="header-group-21" src="${cpath}/resources/images/main/header-cart.png" />
-			                    <div class="ellipse-light"></div>
-			                    <!-- <div class="text-wrapper-29">2</div> -->
-			                </div>
-			            </div>
-			        </div>
-			    </div>
+				<div class="top-nav">
+					<div class="navbar">
+						<div class="text-event">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+						</div>
+						<div class="text-menu">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+						</div>
+						<div class="text-subscribe">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+						</div>
+						<div class="text-yomo">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+						</div>
+						<div class="text-doran">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+						</div>
+					</div>
+					<a href="${pageContext.request.contextPath}/main.do"> <img
+						class="untitled-2"
+						src="${cpath}/resources/images/main/header-logo.png" />
+					</a>
+					<div class="div-3">
+						<div class="text-wrapper-28">
+							<c:choose>
+								<c:when test="${not empty sessionScope.loginmem.mem_id}">
+									<span
+										style="font-weight: bold; left: 2.5rem; position: relative;">
+										<c:out value="${sessionScope.loginmem.mem_id}" /> 님
+									</span>
+								</c:when>
+								<c:otherwise>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+								</c:otherwise>
+							</c:choose>
+						</div>
+						<div class="group-20">
+							<div class="header-overlap-group-3">
+								<img class="header-group-21"
+									src="${cpath}/resources/images/main/header-cart.png" />
+								<div class="ellipse-light"></div>
+								<!-- <div class="text-wrapper-29">2</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
 			</header>
-			
 
-			
+
+
 
 			<div class="overlap-3">
 				<div class="group-6">
@@ -206,27 +216,31 @@
 				</form>
 			</div>
 
-			<div class="footer-wrapping">
+			
 				<footer class="footer">
 					<div class="footer-company-loco">
 						<div class="footer-company">
-							<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요 
-							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 
-							구독 좋아요 알림 설정까지~</p>
-							<img class="footer-logo" src="${cpath}/resources/images/main/footer-logo.png" />
+							<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+								우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+							<img class="footer-logo"
+								src="${cpath}/resources/images/main/footer-logo.png" />
 						</div>
 						<div class="footer-social-icon">
 							<div class="footer-facebook">
-								<img class="footer-mask-group" src="${cpath}/resources/images/main/footer-facebook.png" />
+								<img class="footer-mask-group"
+									src="${cpath}/resources/images/main/footer-facebook.png" />
 							</div>
 							<div class="footer-instagram">
-								<img class="footer-img" src="${cpath}/resources/images/main/footer-insta.png" />
+								<img class="footer-img"
+									src="${cpath}/resources/images/main/footer-insta.png" />
 							</div>
 							<div class="footer-twitter">
-								<img class="footer-mask-group-2" src="${cpath}/resources/images/main/footer-twitter.png" />
+								<img class="footer-mask-group-2"
+									src="${cpath}/resources/images/main/footer-twitter.png" />
 							</div>
 							<div class="footer-linkind">
-								<img class="footer-mask-group-2" src="${cpath}/resources/images/main/footer-linkedin.png" />
+								<img class="footer-mask-group-2"
+									src="${cpath}/resources/images/main/footer-linkedin.png" />
 							</div>
 						</div>
 					</div>
@@ -240,9 +254,11 @@
 						<div class="footer-overlap-group-wrapper">
 							<div class="footer-overlap-group">
 								<div class="footer-vector-wrapper">
-									<img class="footer-vector" src="${cpath}/resources/images/main/footer-email-button.png" />
+									<img class="footer-vector"
+										src="${cpath}/resources/images/main/footer-email-button.png" />
 								</div>
-								<input class="footer-enter-email" placeholder="Enter your email....">
+								<input class="footer-enter-email"
+									placeholder="Enter your email....">
 							</div>
 						</div>
 					</div>
@@ -260,195 +276,197 @@
 						<div class="footer-text-wrapper-7">Opening Restaurant</div>
 						<div class="footer-group-3">
 							<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
-							<div class="footer-text-wrapper-3">Thursdayt: 09:00am-11:00PM</div>
+							<div class="footer-text-wrapper-3">Thursdayt:
+								09:00am-11:00PM</div>
 							<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
 						</div>
 					</div>
 				</footer>
-			  </div> 
-
-		</div>
+			
 
 
-		<script>
-			var message = "${dlist}";
-			var dlike = "${dlike}";
-			var dcomment = "${dcomment}";
-			const memPoint = "${memPoint}";
 
-			console.log(memPoint);
-			var doranProfile = document.querySelector('.doran-profile');
-			var doranWriting = document.querySelector('.group-18');
 
-			var memId = '${sessionScope.loginmem.mem_id}';
-			console.log("회원아이디 : ", memId);
-			if (memId == '') {
-				doranProfile.style.display = 'none';
-				doranWriting.style.display = 'none';
-			}
+			<script>
+				var message = "${dlist}";
+				var dlike = "${dlike}";
+				var dcomment = "${dcomment}";
+				const memPoint = "${memPoint}";
 
-			var cpath = "${cpath}";
-			var dataForRadioButton = null; // Initialize with null
+				console.log(memPoint);
+				var doranProfile = document.querySelector('.doran-profile');
+				var doranWriting = document.querySelector('.group-18');
 
-			// 시작할 때 default
-			$(document).ready(function() {
-				getData('latest');
-				applyStylesToButton(".orderby_latest");
-			});
-
-			// 클릭된 정렬 버튼에 style 추가
-			function applyStylesToButton(buttonClass) {
-				$(".orderby_latest, .orderby_views, .orderby_likes").css({
-					"font-size" : "",
-					"font-weight" : "",
-					"color" : "",
-					"text-shadow" : "",
-					"border-bottom" : ""
-				});
-
-				$(buttonClass).css({
-					"font-size" : "1.2rem",
-					"font-weight" : "bold",
-					"color" : "black",
-					"text-shadow" : "2px 2px 4px rgba(0, 0, 0, 0.5)",
-					"border-bottom" : "3px solid #FFC670"
-				});
-			}
-
-			function getData(dataFor) {
-				
-
-				// Check if the button is already active
-				if ($("#" + dataFor).hasClass("active")) {
-					console.log("Button already active. ID:", dataFor);
-					return;
+				var memId = '${sessionScope.loginmem.mem_id}';
+				console.log("회원아이디 : ", memId);
+				if (memId == '') {
+					doranProfile.style.display = 'none';
+					doranWriting.style.display = 'none';
 				}
 
-				$(".tab button, .tab-2 button").removeClass("active");
-				$("#" + dataFor).addClass("active");
-				console.log("Button set to active. ID:", dataFor);
+				var cpath = "${cpath}";
+				var dataForRadioButton = null; // Initialize with null
 
-				// Check if "내가 쓴 글" is selected, login
-				if (dataFor == "myDoran") {
+				// 시작할 때 default
+				$(document).ready(function() {
+					getData('latest');
+					applyStylesToButton(".orderby_latest");
+				});
+
+				// 클릭된 정렬 버튼에 style 추가
+				function applyStylesToButton(buttonClass) {
+					$(".orderby_latest, .orderby_views, .orderby_likes").css({
+						"font-size" : "",
+						"font-weight" : "",
+						"color" : "",
+						"text-shadow" : "",
+						"border-bottom" : ""
+					});
+
+					$(buttonClass).css({
+						"font-size" : "1.2rem",
+						"font-weight" : "bold",
+						"color" : "black",
+						"text-shadow" : "2px 2px 4px rgba(0, 0, 0, 0.5)",
+						"border-bottom" : "3px solid #FFC670"
+					});
+				}
+
+				function getData(dataFor) {
+
+					// Check if the button is already active
+					if ($("#" + dataFor).hasClass("active")) {
+						console.log("Button already active. ID:", dataFor);
+						return;
+					}
+
+					$(".tab button, .tab-2 button").removeClass("active");
+					$("#" + dataFor).addClass("active");
+					console.log("Button set to active. ID:", dataFor);
+
+					// Check if "내가 쓴 글" is selected, login
+					if (dataFor == "myDoran") {
+						var memId = "${sessionScope.loginmem.mem_id}";
+						if (!memId || memId.trim() === "") {
+							alert("로그인이 필요한 서비스입니다 !");
+							window.location.href = "${cpath}/login/loginForm.do";
+							return;
+						}
+					}
+
+					dataForRadioButton = $("#" + dataFor);
+
+					$.ajax({
+						url : cpath + "/doran/doranFor.do",
+						data : {
+							"dataFor" : dataFor
+						},
+						success : function(responseData) {
+
+							$("#here").html(responseData);
+						}
+					});
+				}
+
+				function submitForm(orderBy) {
+
+					if (dataForRadioButton) {
+						var activeWrapperId = dataForRadioButton.closest(
+								'.text-wrapper-18, .text-wrapper-19')
+								.attr('id');
+						console.log("Active Wrapper ID:", activeWrapperId);
+
+						applyStylesToButton(".orderby_" + orderBy);
+
+						var url;
+						if (activeWrapperId === 'myDoran') {
+							url = cpath + "/doran/doranFilterForMe.do";
+						} else {
+							url = cpath + "/doran/doranFilter.do";
+						}
+
+						$.ajax({
+							url : url,
+							data : {
+								"orderBy" : orderBy
+							},
+							success : function(responseData) {
+
+								$("#here").html(responseData);
+							}
+						});
+					} else {
+						console
+								.error("No radio button with name 'dataFor' is checked.");
+					}
+
+					return false;
+				}
+
+				// 검색어 클릭 버튼
+				function searchBtnClick() {
+
+					var searchInput = document.getElementById("searchTxt").value;
+
+					$.ajax({
+						url : "${cpath}/doran/doranSearch.do",
+						type : 'GET',
+						data : {
+							keyword : searchInput
+						},
+						success : function(responseData) {
+							if (responseData && responseData.length > 0) {
+
+								$('#here').html(responseData);
+							} else if (responseData.length == 0) {
+								alert("검색 결과가 없습니다.");
+							}
+						},
+
+						error : function() {
+							alert("에러가 발생했습니다 ! 다시 시도해 주세요");
+						}
+					});
+				}
+
+				// 간편 업로드 
+				function quickUpload() {
 					var memId = "${sessionScope.loginmem.mem_id}";
+
 					if (!memId || memId.trim() === "") {
 						alert("로그인이 필요한 서비스입니다 !");
 						window.location.href = "${cpath}/login/loginForm.do";
 						return;
 					}
-				}
 
-				dataForRadioButton = $("#" + dataFor);
+					var quickTitle = document
+							.getElementById("doran-quick-title").value;
+					var quickContent = document
+							.getElementById("doran-quick-content").value;
 
-				$.ajax({
-					url : cpath + "/doran/doranFor.do",
-					data : {
-						"dataFor" : dataFor
-					},
-					success : function(responseData) {
-						
-						$("#here").html(responseData);
-					}
-				});
-			}
-
-			function submitForm(orderBy) {
-				
-
-				if (dataForRadioButton) {
-					var activeWrapperId = dataForRadioButton.closest(
-							'.text-wrapper-18, .text-wrapper-19').attr('id');
-					console.log("Active Wrapper ID:", activeWrapperId);
-
-					applyStylesToButton(".orderby_" + orderBy);
-
-					var url;
-					if (activeWrapperId === 'myDoran') {
-						url = cpath + "/doran/doranFilterForMe.do";
-					} else {
-						url = cpath + "/doran/doranFilter.do";
-					}
+					var requestData = {
+						title : quickTitle,
+						content : quickContent
+					};
 
 					$.ajax({
-						url : url,
-						data : {
-							"orderBy" : orderBy
-						},
+						url : "${cpath}/doran/quickUpload.do",
+						type : "POST",
+						data : JSON.stringify(requestData),
+						contentType : "application/json; charset=utf-8",
 						success : function(responseData) {
-							
-							$("#here").html(responseData);
+
+							console.log(responseData);
+						},
+						error : function() {
+							alert("업로드 에러");
 						}
 					});
-				} else {
-					console
-							.error("No radio button with name 'dataFor' is checked.");
 				}
-
-				return false;
-			}
-
-			// 검색어 클릭 버튼
-			function searchBtnClick() {
-
-				var searchInput = document.getElementById("searchTxt").value;
-
-				$.ajax({
-					url : "${cpath}/doran/doranSearch.do",
-					type : 'GET',
-					data : {
-						keyword : searchInput
-					},
-					success : function(responseData) {
-						if (responseData && responseData.length > 0) {
-							
-							$('#here').html(responseData);
-						} else if (responseData.length == 0) {
-							alert("검색 결과가 없습니다.");
-						}
-					},
-
-					error : function() {
-						alert("에러가 발생했습니다 ! 다시 시도해 주세요");
-					}
-				});
-			}
-
-			// 간편 업로드 
-			function quickUpload() {
-				var memId = "${sessionScope.loginmem.mem_id}";
-
-				if (!memId || memId.trim() === "") {
-					alert("로그인이 필요한 서비스입니다 !");
-					window.location.href = "${cpath}/login/loginForm.do";
-					return;
-				}
-
-				var quickTitle = document.getElementById("doran-quick-title").value;
-				var quickContent = document
-						.getElementById("doran-quick-content").value;
-
-				var requestData = {
-					title : quickTitle,
-					content : quickContent
-				};
-
-				$.ajax({
-					url : "${cpath}/doran/quickUpload.do",
-					type : "POST",
-					data : JSON.stringify(requestData),
-					contentType : "application/json; charset=utf-8",
-					success : function(responseData) {
-						
-						console.log(responseData);
-					},
-					error : function() {
-						alert("업로드 에러");
-					}
-				});
-			}
-		</script>
-		<!-- div -->
+			</script>
+			<!-- div -->
+		</div>
+		<!-- screen -->
 	</div>
-	<!-- screen -->
 </body>
 </html>
