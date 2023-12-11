@@ -1048,9 +1048,8 @@
 .screen .header {
 	width: 1116px;
 	height: 56px;
-	top: 35px;
-	left: 162px;
 	background-color: transparent;
+	transform: translateX(-50%);
 }
 
 .screen .top-nav {

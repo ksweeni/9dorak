@@ -69,7 +69,20 @@ public class MenuService {
 	
 	public int deleteReserve (Map<String, Object> map) {
 		return dao.deleteReserve(map);
-	};
+	}
+
+	public int updateReserve(String pro_no) {
+		return dao.updateReserve(pro_no);
+	}
+
+//	public int selectProLike(int pro_no) {
+//		return dao.selectProLike(pro_no);
+//	}
+//
+//	public int updateProLike(int pro_no) {
+//		return dao.updateProLike(pro_no);
+//	}
+
 
 //	public int insertMember(DoranVO doran) {
 //		return dao.insertDoran(doran);
