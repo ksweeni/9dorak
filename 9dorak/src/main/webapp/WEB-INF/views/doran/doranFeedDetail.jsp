@@ -17,7 +17,7 @@
 </head>
 <script>
 	var c = "${comments}";
-	var doran = ="${doran}";
+	var doran = "${doran}";
 	console.log(c);
 	console.log(doran);
 </script>
@@ -89,8 +89,16 @@
 						<div class="overlap-group-2">
 							<img class="unsplash"
 								src="${cpath }/resources/upload/${doran.doran_image}" />
-							<p class="p">엄마가 사준 디저트 매우 맛있다 학교 앞에도 있었으면 좋겠다!!!
-								#반모#중2#슬릭백장인</p>
+							<p class="p">${doran.doran_cont}</p>
+							<p>${doran.doran_no}</p>
+							<p>멤버 아이디 ${doran.mem_id}</p>
+							<p>${doran.doran_title}</p>
+							<p>${doran.doran_cont}</p>
+							<p>${doran.doran_date}</p>
+							<p>조회수${doran.doran_view}</p>
+							<p>좋아요 수${doran.dlike}</p>
+							<p>댓글수${doran.dcomment}</p>
+
 
 							<div class="doran-underInfo">
 								<div class="doran-review">
@@ -101,7 +109,7 @@
 									</div>
 									<div class="doran-review-reviewCnt">
 										<img class="doran-review-reviewCnticon"
-											src="${cpath }/resources/images/doran/icon_doranviewcnt.png" />
+											src="${cpath}/resources/images/doran/icon_doranviewcnt.png" />
 										<div class="doran-review-reviewCnt2">${doran.doran_view}</div>
 									</div>
 									<div class="doran-review-dcomment">
@@ -110,7 +118,13 @@
 										<div class="doran-review-dcomment2">${doran.dcomment}</div>
 									</div>
 								</div>
-								<div class="doran-uploadInfo-time">${doran.doran_date }</div>
+								<div class="doran-uploadInfo-time">${doran.doran_date}</div>
+								
+								<c:forEach items="${comments}" var="comment" varStatus="loop">
+									<p>댓글 번호 ${comment.comment_no}</p>
+									<p>댓글 내용 ${comment.comment_cont}</p>
+									<p>댓글 날짜 ${comment.comment_date}</p>
+								</c:forEach>
 							</div>
 
 							<div class="group-4">
@@ -122,13 +136,17 @@
 										<div class="text-wrapper-11">${sessionScope.loginmem.mem_grade}</div>
 									</div>
 									<div class="group-5">
-										<div class="text-wrapper-12">8분전</div>
+										<div class="text-wrapper-12">${doran.doran_date}</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
+
+
+
 				<div class="frame-4">
 					<div class="text-wrapper-13">COMMENTS ☁️</div>
 					<div class="overlap-wrapper">
