@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
+import com.shinhan.dto.ProVO;
 
 @Service
 public class MyPageService {
@@ -50,6 +52,26 @@ public class MyPageService {
 	public int selectDelivery(MemDeliveryVO memDel) {
 		// TODO Auto-generated method stub
 		return dao.selectDelivery(memDel);
+	}
+
+	public List<ProVO> getLikeList(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.getLikeList(mem_id);
+	}
+
+	public List<CouponVO> getCoupon(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.getCoupon(mem_id);
+	}
+
+	public int couponCheck(CouponVO coupon) {
+		// TODO Auto-generated method stub
+		return dao.couponCheck(coupon);
+	}
+
+	public int couponRegUpdate(CouponVO coupon) {
+		// TODO Auto-generated method stub
+		return dao.couponRegUpdate(coupon);
 	}
 
 

@@ -24,6 +24,7 @@
 		<typeAlias type="com.shinhan.dto.SubdetailVO" alias="subdetailvo" />
 		<typeAlias type="com.shinhan.dto.BasketVO" alias="basketvo" />
 		<typeAlias type="com.shinhan.dto.PayVO" alias="payvo" />
+		<typeAlias type="com.shinhan.dto.CouponVO" alias="couponvo" />
 
 	</typeAliases>
 </configuration>

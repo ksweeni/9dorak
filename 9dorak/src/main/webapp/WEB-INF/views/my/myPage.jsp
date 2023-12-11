@@ -272,13 +272,13 @@ String contextPath = request.getContextPath();
 	<span class="e69_320">회원등급</span>
 	<div class=e69_172>
 		<div class=e69_173>
-			<div class=e69_174>
+		<!-- 	<div class=e69_174>
 				<div class=e69_175>
 					<span class="e69_176">찜</span><span class="e69_177">Set your
 						default language, currency, and timezone</span>
 				</div>
 				<div class="e72_336"></div>
-			</div>
+			</div> -->
 			<div class=e69_180>
 				<div class=e69_181>
 					<span class="e69_182">Manage your personal data, connected
@@ -287,13 +287,13 @@ String contextPath = request.getContextPath();
 				<span class="e69_185">친구초대</span>
 				<div class="e72_334"></div>
 			</div>
-			<div class=e69_186>
+			<a class=e69_186 href= "${cpath }/my/pointAndCoupon.do">
 				<div class=e69_187>
-					<span class="e69_188">포인트 및 쿠폰</span><span class="e69_189">Choose
+					<span class="e69_188">찜 목록 / 포인트 및 쿠폰</span><span class="e69_189">Choose
 						notification preferences and how you want to be contacted</span>
 				</div>
 				<div class="e72_332"></div>
-			</div>
+			</a>
 			<div class=e69_195>
 				<div class=e69_196>
 					<span class="e69_197">주문/결제 내역</span><span class="e69_198">Manage
