@@ -13,7 +13,7 @@ request.setCharacterEncoding("UTF-8");
 <title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<!--아이콘-->
+<!--아이콘-->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 
@@ -47,51 +47,50 @@ request.setCharacterEncoding("UTF-8");
 <script src="js/market/login_modal.js"></script>
 <style>
 /* dropdown */
-
 .dropdown-container {
-   position: relative;
+	position: relative;
 }
 
 .dropdown-content {
-   position: absolute;
-   top: 100%; /* Position the dropdown below the header */
-   display: none;
-   /* z-index: 999; */
+	position: absolute;
+	top: 100%; /* Position the dropdown below the header */
+	display: none;
+	/* z-index: 999; */
 }
 
 .dropdown-content {
-   display: none;
-   position: absolute;
-   background-color: #f9f9f9;
-   width: 90px;
-   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-   z-index: 1;
-   top: 100%;
-   right: 0;
-   display: none;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	width: 90px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	top: 100%;
+	right: 0;
+	display: none;
 }
 
 .dropdown-content a {
-   color: black;
-   padding: 12px 16px;
-   text-decoration: none;
-   display: block;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
 }
 
 .dropdown:hover .dropdown-content {
-   display: block;
-   top: 100%; /* 상위 요소에서 100% 위치에 표시 */
-   z-index: 900;
-   left: 0;
-   top: 100%; /* 상위 요소에서 100% 위치에 표시 */
+	display: block;
+	top: 100%; /* 상위 요소에서 100% 위치에 표시 */
+	z-index: 900;
+	left: 0;
+	top: 100%; /* 상위 요소에서 100% 위치에 표시 */
 }
 
 .drop {
-   height: 40px;
+	height: 40px;
 }
 
 .drop:hover {
-   color: red;
+	color: red;
 }
 }
 </style>
@@ -108,20 +107,21 @@ request.setCharacterEncoding("UTF-8");
 	<a href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
 	<a href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
 	<a href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
-	
-	<a href="${pageContext.request.contextPath}/menu/menuSpecificReview.do">특정 제품 리뷰
-		test page</a>
+
+	<a href="${pageContext.request.contextPath}/menu/menuSpecificReview.do">특정
+		제품 리뷰 test page</a>
 	<a href="${pageContext.request.contextPath}/main.do">메인 테스트</a>
 	<a href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
-	<a href="${pageContext.request.contextPath}/menu/menuMediaReview.do">사진 및 동영상 모아보기 test</a>
+	<a href="${pageContext.request.contextPath}/menu/menuMediaReview.do">사진
+		및 동영상 모아보기 test</a>
 	<a href="${pageContext.request.contextPath}/wallet/basket.do">장바구니</a>
 	<a href="${pageContext.request.contextPath}/wallet/pay.do">결제</a>
 	<a href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
 
 
-<!-- 로그인 하면 로그아웃 버튼 로그인 안하면 로그아웃 버튼도 이거 수정해서 하면 될거에요  -->
-<!-- 동지현누님 로그인하면 로그인 버튼 안보이는 게 맞으니까 놀라지말 것 !!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- 지현이누나가 저장해놓은 세션 공간 이름이 loginmem 이니까 비어있는지 없는지 확인해서 출력해주는 것  -->
+	<!-- 로그인 하면 로그아웃 버튼 로그인 안하면 로그아웃 버튼도 이거 수정해서 하면 될거에요  -->
+	<!-- 동지현누님 로그인하면 로그인 버튼 안보이는 게 맞으니까 놀라지말 것 !!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<!-- 지현이누나가 저장해놓은 세션 공간 이름이 loginmem 이니까 비어있는지 없는지 확인해서 출력해주는 것  -->
 	<c:choose>
 		<c:when test="${empty sessionScope.loginmem}">
 			<a href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a>
@@ -132,48 +132,49 @@ request.setCharacterEncoding("UTF-8");
 	</c:choose>
 
 
-<!-- main_content 영역 -->
-		<div id="main_content">
-			<!--메인 슬라이드-->
-			<div id="carouselExampleControls" class="carousel slide"
-				data-bs-ride="carousel">
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="${cpath }/resources/images/test.png"
-							class="d-block w-100" alt="...">
-					</div>
-					<div class="carousel-item">
-						<img src="${cpath }/resources/images/test.png"
-							class="d-block w-100" alt="...">
-					</div>
-					<div class="carousel-item">
-						<img src="${cpath }/resources/images/test.png"
-							class="d-block w-100" alt="...">
-					</div>
-					<div class="carousel-item">
-						<img src="${cpath }/resources/images/test.png"
-							class="d-block w-100" alt="...">
-					</div>
-					<div class="carousel-item">
-						<img src="${cpath }/resources/images/test.png"
-							class="d-block w-100" alt="...">
-					</div>
-					<div class="carousel-item">
-						<img src="${cpath }/resources/images/test.png"
-							class="d-block w-100" alt="...">
-					</div>
+	<!-- main_content 영역 -->
+	<div id="main_content">
+		<!--메인 슬라이드-->
+		<div id="carouselExampleControls" class="carousel slide"
+			data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="${cpath }/resources/images/test.png"
+						class="d-block w-100" alt="...">
 				</div>
-				<button class="carousel-control-prev" type="button"
-					data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button"
-					data-bs-target="#carouselExampleControls" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
+				<div class="carousel-item">
+					<img src="${cpath }/resources/images/test2.png"
+						class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="${cpath}/resources/images/test3.png" class="d-block w-100"
+						alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="${cpath }/resources/images/test.png"
+						class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="${cpath }/resources/images/test3.png"
+						class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="${cpath }/resources/images/test2.png"
+						class="d-block w-100" alt="...">
+				</div>
 			</div>
-	
+			<button class="carousel-control-prev" type="button"
+				data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button"
+				data-bs-target="#carouselExampleControls" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+
 </body>
 </html>
