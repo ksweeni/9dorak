@@ -17,6 +17,9 @@ String contextPath = request.getContextPath();
 	type="text/css" />
 <link rel="stylesheet"
 	href="${cpath}/resources/css/challengeStyle3.css?d" type="text/css" />
+	
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class="div-wrapper">
@@ -86,10 +89,34 @@ String contextPath = request.getContextPath();
 											</div>
 										</div>
 									</div>
+									<!-- 파일 선택 부분 js로 수정함 -->
 									<div class="bottom">
-										<!-- 파일 선택 -->
-										<label class="fileUpload" for="singleFile">파일 선택</label> <input
-											type="file" id="singleFile" style="display: none;" />
+<label class="fileUpload" for="singleFile" onmousedown="handleMouseDown(event)">파일 선택</label>
+<input type="file" name="singleFile" id="singleFile" style="display: none;"/>
+
+<span id="selectedFileName"></span>
+
+<script>
+function handleMouseDown(event) {
+    event.preventDefault();
+    var fileInput = document.getElementById("singleFile");
+    fileInput.click();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var fileInput = document.getElementById("singleFile");
+    var selectedFileNameSpan = document.getElementById("selectedFileName");
+
+    fileInput.addEventListener("change", function() {
+        if (fileInput.files.length > 0) {
+            selectedFileNameSpan.textContent = fileInput.files[0].name;
+        } else {
+            selectedFileNameSpan.textContent = "";
+        }
+        console.log("File selected:", fileInput.files[0].name);
+    });
+});
+</script>
 
 										<!-- 글쓰기 버튼 -->
 										<button type="submit" class="right-aligned-button">글쓰기</button>
