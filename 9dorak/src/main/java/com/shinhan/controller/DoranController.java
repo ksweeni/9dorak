@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shinhan.dto.CommentVO;
-import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DoranVO;
 import com.shinhan.dto.DoranlikeVO;
 import com.shinhan.dto.MemVO;
@@ -54,10 +54,6 @@ public class DoranController {
 			model.addAttribute("memPoint", "로그인하고 포인트를 얻으세요");
 		} else {
 			System.out.println(memId);
-			System.out.println("백에서 받은 아이디:" + memId.getMem_id());
-			System.out.println("백에서 받은 포인트:" + memId.getMem_point());
-			System.out.println("그 사람의 레벨 : " + memId.getMem_grade());
-
 		}
 		return "doran/doran";
 	}
@@ -190,17 +186,15 @@ public class DoranController {
 		return "redirect:/doran/doran.do";
 	}
 
-	@GetMapping("doranFeedDetail.do")
-	public String doranFeedDetail(Model model) {
-
-		// 나중에 클릭하면 넘어온 파라미터 게시물 넘버로 바꿔줘
-		DoranVO doran = dService.selectDoran_no(14);
-		// 현재 1번 게시글에 대한 댓글 정보 가져오기 test
-		List<CommentVO> comments = dService.selectAllCommentAbout(1);
-		model.addAttribute("doran", doran);
-		model.addAttribute("comments", comments);
-		logger.info(comments.toString());
-		return "doran/doranFeedDetail";
+	@GetMapping("/doranFeedDetail/{doranNo}")
+	public String doranFeedDetail(@PathVariable int doranNo, Model model) {
+	    DoranVO doran = dService.selectDoran_no(doranNo);
+	    List<CommentVO> comments = dService.selectAllCommentAbout(doranNo);
+	    model.addAttribute("doran", doran);
+	    model.addAttribute("comments", comments);
+	    System.out.println("게시물 상세로 넘어간다" + doran);
+	    System.out.println(comments);
+	    return "/doran/doranFeedDetail";
 	}
 
 	@RequestMapping(value = "doranLikeUpdate.do", produces = "text/plain;charset=utf-8")

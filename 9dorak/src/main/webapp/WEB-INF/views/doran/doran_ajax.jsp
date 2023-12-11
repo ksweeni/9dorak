@@ -5,7 +5,7 @@
 <div class="doran-card">
 
 	<c:forEach items="${dlist}" var="doran" varStatus="loop">
-		<div class="doran-feed" id="doran-feed-${loop.index}">
+		<div class="doran-feed" id="doran-feed-${loop.index}" onclick="toFeedDetail(${doran.doran_no})">
 
 			<div class="doran-topInfo">
 				<div>
@@ -103,6 +103,12 @@
             }); 
      
     }
+    
+    function toFeedDetail(doranNum) {
+        alert(doranNum);
+        window.location.href = '${cpath}/doran/doranFeedDetail/' + doranNum;
+    }
+
 </script>
 
 	</c:forEach>

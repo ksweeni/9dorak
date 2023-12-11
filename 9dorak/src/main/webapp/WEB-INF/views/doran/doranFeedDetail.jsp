@@ -17,7 +17,9 @@
 </head>
 <script>
 	var c = "${comments}";
+	var doran = ="${doran}";
 	console.log(c);
+	console.log(doran);
 </script>
 <body>
 

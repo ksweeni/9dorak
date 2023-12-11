@@ -108,8 +108,7 @@ request.setCharacterEncoding("UTF-8");
 	<a href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
 	<a href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
 	<a href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
-	<a href="${pageContext.request.contextPath}/doran/doranFeedDetail.do">도란게시물
-		상세 test page</a>
+	
 	<a href="${pageContext.request.contextPath}/menu/menuSpecificReview.do">특정 제품 리뷰
 		test page</a>
 	<a href="${pageContext.request.contextPath}/main.do">메인 테스트</a>
