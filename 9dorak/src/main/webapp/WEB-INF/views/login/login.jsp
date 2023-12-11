@@ -76,7 +76,7 @@
     				console.log(data)
     				if(data.JavaData == "YES"){
     					alert("로그인되었습니다.");
-    					location.href = '/user/usermain.do'
+    					location.href = '/'; // 메인 페이지로 리다이렉트
     				}else if(data.JavaData == "register"){
     					$("#kakaoEmail").val(response.kakao_account.email);
     					$("#kakaoId").val(response.id);
@@ -89,13 +89,14 @@
     			error: function(xhr, status, error){
     				alert("로그인에 실패했습니다."+error);
     			}
-    		});               
+    		});  
+       }
                   
  	// 로그아웃 기능 - 카카오 서버에 접속하는 엑세스 토큰을 만료, 사용자 어플리케이션의 로그아웃은 따로 진행.
  	function kakaoLogout() {
     	Kakao.Auth.logout()
       .then(function() {
-        alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
+    	  alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
         deleteCookie();
       })
       .catch(function() {

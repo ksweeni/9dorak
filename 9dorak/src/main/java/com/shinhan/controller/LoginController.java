@@ -130,10 +130,12 @@ public class LoginController {
 	    Map <String, Object> resultMap = new HashMap<String, Object>();
 
 	    MemVO kakaoConnectionCheck = lservice.kakaoConnectionCheck(paramMap);
-	    if(kakaoConnectionCheck == null) { //일치하는 이메일 없으면 가입
+	    //일치하는 이메일 없으면 가입
+	    if(kakaoConnectionCheck == null) { 
 	        resultMap.put("JavaData", "register");
 	    }else {
-	        if(kakaoConnectionCheck.getKakaologin() == null && kakaoConnectionCheck.getMem_email() != null) { //이메일 가입 되어있고 카카오 연동 안되어 있을시
+	    	//이메일 가입 되어있고 카카오 연동 안되어 있을시
+	        if(kakaoConnectionCheck.getKakaologin() == null && kakaoConnectionCheck.getMem_email() != null) {
 	            System.out.println("kakaoLogin");
 	            lservice.setKakaoConnection(paramMap);
 	        }
