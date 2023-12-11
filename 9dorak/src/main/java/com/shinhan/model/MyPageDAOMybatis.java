@@ -8,9 +8,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.DoranVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
+import com.shinhan.dto.ProVO;
 
 @Repository
 public class MyPageDAOMybatis {
@@ -58,7 +60,25 @@ public class MyPageDAOMybatis {
 		return result;
 	}
 
+	public List<ProVO> getLikeList(String mem_id) {
+		List<ProVO> likeList = sqlSession.selectList(NAMESPACE + "getLikeList", mem_id);
+		return likeList;
+	}
 
+	public List<CouponVO> getCoupon(String mem_id) {
+		List<CouponVO> cList = sqlSession.selectList(NAMESPACE + "getCoupon", mem_id);
+		return cList;
+	}
+
+	public int couponCheck(CouponVO coupon) {
+		int result = sqlSession.selectOne(NAMESPACE + "couponCheck", coupon);
+		return result;
+	}
+
+	public int couponRegUpdate(CouponVO coupon) {
+		int result = sqlSession.update(NAMESPACE + "couponRegUpdate", coupon);
+		return result;
+	}
 
 //	public List<MemVO> selectAll() {
 //		List<MemVO> mlist = sqlSession.selectList(NAMESPACE + "selectAll");
