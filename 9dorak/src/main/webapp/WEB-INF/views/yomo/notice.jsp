@@ -110,21 +110,17 @@
 			<div class=e1081_4461>
 				<span class="e1081_4462">공지사항</span>
 			</div>
-			<div class=e1081_4463>
-				<a href="${pageContext.request.contextPath}/yomo/faq.do">
+			<a href="${pageContext.request.contextPath}/yomo/faq.do" class=e1081_4463>
 				<span class="e1081_4464">자주 묻는 질문</span>
-				</a>
-			</div>
-			<div class=e1081_4465>
-			<a href="${pageContext.request.contextPath}/yomo/oneask.do">
+			</a>
+			<a href="${pageContext.request.contextPath}/yomo/oneask.do" class=e1081_4465>
 				<span class="e1081_4466">1:1 문의</span>
 			</a>
-			</div>
-			<div class=e1081_4467>
+			<a href="${pageContext.request.contextPath}/yomo/aboutus.do" class=e1081_4467>
 				<span class="e1081_4468">About Us</span>
+			</a>
 			</div>
 		</div>
-	</div>
 	<div class=e1081_4206>
 		<div class="e1081_4207"></div>
 		<div class=e1081_4208>

@@ -103,6 +103,11 @@ public class YomoController {
 		return "yomo/oneask_search";
 	}
 	
+	@GetMapping("aboutus.do")
+	public String aboutus() {
+		return "yomo/aboutus";
+	}
+	
 	/*
 	 * @GetMapping("getAnnoList")
 	 * 

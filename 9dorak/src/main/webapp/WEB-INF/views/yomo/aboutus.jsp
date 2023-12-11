@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css" type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/oneaskStyle.css?d" type="text/css" />
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
+	type="text/css" />
+<link rel="stylesheet" href="${cpath}/resources/css/aboutusStyle.css?d"
+	type="text/css" />
 <meta charset="UTF-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -36,62 +37,116 @@
 			</div>
 		</div>
 		<div class="e844_606"></div>
-		<div class=e815_1065>
-			<div class=e815_1066>
-				<div class="ei815_1066_6_1"></div>
-			</div>
-			<input type="text" class="e815_1067" placeholder="검색어를 입력하세요">
-		</div>
 	</div>
-	<div class="e844_9999">
-	<table class="table table-bordered table-hover">
-		<thead>
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>문의 상태</th>
-				<th>작성일</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="oneask" items="${olist}" varStatus="rowStatus">
-				<tr>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_no}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_title}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.mem_id}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_status}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_date}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	</div>
+	<div class="e844_9999"></div>
 	<div class="e844_616"></div>
 	<div class=e844_617>
-		<span class="e844_618">1:1 문의</span>
+		<span class="e844_618">About us</span>
 	</div>
-	<div class=e854_1005>
-		<div class=e831_684>
-		</div>
-		<div class=e844_862>
-			<button class="e844_863">최근글 순</button>
-			<div class=e844_864>
-				<div class="ei844_864_773_285"></div>
-				<div class=ei844_864_773_286>
-					<div class="ei844_864_773_287"></div>
+	<div class="e844_619">
+		<div class=e62_324>
+			<div class=e75_191>
+				<span class="e75_192">이것만은 꼭 지켜요</span><span class="e75_193">구도락의
+					세 가지 원칙을 소개합니다</span>
+				<div class=e75_194>
+					<div class=e75_195>
+						<div class=ei75_195_17_183>
+							<div class="ei75_195_17_162"></div>
+							<div class=ei75_195_17_161>
+								<div class=ei75_195_17_154>
+									<div class="ei75_195_17_156"></div>
+								</div>
+							</div>
+						</div>
+						<span class="ei75_195_17_186">꼼꼼한 영양소 체크</span>
+					</div>
+				</div>
+				<div class=e75_196>
+					<div class=e75_197>
+						<div class=ei75_197_17_183>
+							<div class="ei75_197_17_162"></div>
+						</div>
+						<span class="ei75_197_17_186">아이의 취향과 부모의 바램을 함께</span>
+					</div>
+					<div class=e75_198>
+						<div class=ei75_198_17_153>
+							<div class="ei75_198_17_157"></div>
+						</div>
+					</div>
+				</div>
+				<div class=e75_199>
+					<div class=e75_200>
+						<div class=ei75_200_17_183>
+							<div class="ei75_200_17_162"></div>
+						</div>
+						<span class="ei75_200_17_186">올바른 시간과 장소</span>
+					</div>
+					<div class=e75_201>
+						<div class=ei75_201_17_155>
+							<div class="ei75_201_17_158"></div>
+						</div>
+					</div>
 				</div>
 			</div>
+			<div class=e75_202>
+				<div class=e75_203>
+					<div class=e75_204>
+						<span class="e75_206">구도락이란</span><span class="e75_207">구도락은
+							소중한 우리 아이들을 건강하게 키우고 싶은 바램에서 탄생했어요. 맞벌이 부부 아이의 건강한 식습관을 책임질 수 있는
+							방법을 찾았어요!</span>
+					</div>
+					<div class=e75_208>
+						<span class="e75_209">9일간의 구독</span><span class="e75_210">일주일은
+							너무 짧지 않나요? 9일 동안의 구독서비스를 선물할게요. 무료 체험 서비스를 통해 구도락을 경험해보세요!</span>
+						<div class="e75_211"></div>
+					</div>
+					<div class=e75_212>
+						<span class="e75_213">도시락이 궁금해요</span><span class="e75_214">아이
+							건강, 나이, 신체 상태에 따른 메뉴가 추천됩니다. 고른 영양소와 엄선한 재료들로 만들어진 도시락을 9일 연속으로
+							받아볼 수 있어요!</span>
+					</div>
+					<div class=e75_216>
+						<div class=e75_217>
+							<div class="e75_218"></div>
+							<div class="e75_219"></div>
+							<div class="e75_220"></div>
+						</div>
+						<div class=e75_221>
+							<div class="e75_222"></div>
+							<div class="e75_224"></div>
+							<div class="e75_312"></div>
+						</div>
+					</div>
+				</div>
+				<span class="e75_225">아이를 위한 9일의 도시락</span><span class="e75_226">구도락을
+					소개합니다</span>
+			</div>
+			<div class=e75_252>
+				<div class=e75_253>
+				</div>
+				<a href="${pageContext.request.contextPath}/event/freelunchbox.do" class=e75_256>
+					<span class="ei75_256_17_225">무료 체험하기</span>
+					<div class=ei75_256_17_218>
+						<div class=ei75_256_17_218_17_210>
+							<div class="ei75_256_17_218_17_210_3_106"></div>
+						</div>
+						<div class=ei75_256_17_218_17_214>
+							<div class="ei75_256_17_218_17_214_17_203"></div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="e75_315"></div>
+			<div class="e75_316"></div>
 		</div>
 	</div>
-	<div class="e844_619"></div>
 	<div class=e1081_4450>
 		<div class=e1081_4451>
 			<div class=e1081_4452>
 				<span class="e1081_4453">요모조모</span>
 			</div>
 		</div>
-		<span class="e1081_4454">1:1 문의</span>
+		<span class="e1081_4454">About us</span>
 	</div>
 	<div class=e1081_4455>
 		<div class=e1081_4456>
@@ -104,12 +159,12 @@
 			<a href="${pageContext.request.contextPath}/yomo/faq.do" class=e1081_4463>
 				<span class="e1081_4464">자주 묻는 질문</span>
 			</a>
-			<div class=e1081_4465>
+			<a href="${pageContext.request.contextPath}/yomo/oneask.do" class=e1081_4465>
 				<span class="e1081_4466">1:1 문의</span>
-			</div>
-			<a href="${pageContext.request.contextPath}/yomo/aboutus.do" class=e1081_4467>
-				<span class="e1081_4468">About Us</span>
 			</a>
+			<div class=e1081_4467>
+				<span class="e1081_4468">About Us</span>
+			</div>
 		</div>
 	</div>
 	<div class=e1081_4206>
@@ -203,33 +258,5 @@
 		</div>
 	</div>
 	<div class="e1558_2333"></div>
-	<script>
-	$(".ei815_1066_6_1").on("click", function(){
-		$.ajax({
-			url : "${cpath}/yomo/searchOneask.do",
-			type : 'GET',
-			data : {
-				oneask_title : $(".e815_1067").val()
-			},
-			success : function(data) {
-				$('.e844_9999').html(data);
-			}
-		});
-	})
-	
-	$(".e854_1005 button").on("click", function() {
-		
-		$.ajax({
-			url : "${cpath}/yomo/oneaskOrderby.do",
-			type : 'GET',
-			data : {
-				order_type : $(this).text()
-			},
-			success : function(data) {
-				$('.e844_9999').html(data);
-			}
-		});
-	})
-	</script>
 </body>
 </html>
