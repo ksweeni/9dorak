@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.FaqVO;
+import com.shinhan.dto.OneaskVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.YomoService;
 
@@ -52,7 +53,7 @@ public class YomoController {
 	@GetMapping("yomoOrderby.do")
 	public String yomoOrderby(Model model, AnnoVO anno) {
 		if(anno.getOrder_type().equals("조회수 순")) {
-			System.out.println(anno.getOrder_type());
+			/* System.out.println(anno.getOrder_type()); */
 			List<AnnoVO> ylist = yservice.selectOrderbyView();
 			model.addAttribute("ylist", ylist);
 			//System.out.println(slist);
@@ -67,8 +68,39 @@ public class YomoController {
 	public String faq(Model model) {
 		List<FaqVO> flist = yservice.selectFaqAll();
 		model.addAttribute("flist", flist);
-		System.out.println(flist);
 		return "yomo/faq";
+	}
+	
+	@GetMapping("oneaskDetail.do")
+	public String oneask(Model model, OneaskVO oneask) {
+		OneaskVO oneaskvo = yservice.selectBynoOneask(oneask.getOneask_no());
+		model.addAttribute("oneask", oneaskvo);
+		return "yomo/oneaskDetail";
+	}
+	
+	@GetMapping("oneask.do")
+	public String oneask(Model model) {
+		List<OneaskVO> olist = yservice.selectOneaskAll();
+		model.addAttribute("olist", olist);
+		return "yomo/oneask";
+	}
+	
+	@GetMapping("searchOneask.do")
+	public String searchOneask(Model model, OneaskVO oneask) {
+		// @RequestParam("pro_aller") String pro_aller
+		List<OneaskVO> olist = yservice.searchOneask(oneask.getOneask_title());
+		model.addAttribute("olist", olist);
+		return "yomo/oneask_search";
+	}
+	
+	@GetMapping("oneaskOrderby.do")
+	public String yomoOrderby(Model model, OneaskVO oneask) {
+		if(oneask.getOrder_type().equals("최근글 순")) {
+			List<OneaskVO> olist = yservice.selectOrderbyNewOneask();
+			model.addAttribute("olist", olist);
+			//System.out.println(olist);
+		}
+		return "yomo/oneask_search";
 	}
 	
 	/*

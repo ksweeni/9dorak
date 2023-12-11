@@ -20,4 +20,5 @@ public class OneaskVO {
 	private String oneask_image; // 문의 이미지
 	private String oneask_status; // 문의 처리여부
 	private String  mem_id; // 회원 아이디
+	private String order_type;
 }

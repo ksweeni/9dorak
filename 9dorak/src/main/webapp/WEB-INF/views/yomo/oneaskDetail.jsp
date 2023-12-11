@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -7,11 +7,9 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/faqStyle.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/oneaskDetailStyle.css?d"
 	type="text/css" />
 <meta charset="UTF-8">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -40,27 +38,35 @@
 		</div>
 		<div class="e844_606"></div>
 	</div>
-	<div class="e844_9999"></div>
-	<div class="e844_616"></div>
+	<div class="e844_9999">
+	</div>
+	<div class="e844_616">
+	<hr>
+	<p><b>${oneask.oneask_title}</b></p>
+	<hr>
+	<p>문의상태 : ${oneask.oneask_status}</p>
+	<p>작성날짜 : ${oneask.oneask_date}</p>
+	<hr>
+	<div class="e844_999">
+	<p>${oneask.oneask_cont}</p>
+	</div>
+	<hr>
+	</div>
 	<div class=e844_617>
-		<span class="e844_618">자주 묻는 질문</span>
+		<span class="e844_618">1:1 문의</span>
 	</div>
-	<div class="e844_619">
-	<br><br>
-		<c:forEach var="faq" items="${flist}" varStatus="rowStatus">
-			<span class="faq_title"><b>${faq.faq_title}</b></span>
-			<br><br>
-			<span class="faq_cont">${faq.faq_cont}</span>
-			<br><br><br><br><br>
-		</c:forEach>
+	<div class=e854_1005>
+		<div class=e831_684>
+		</div>
 	</div>
+	<div class="e844_619"></div>
 	<div class=e1081_4450>
 		<div class=e1081_4451>
 			<div class=e1081_4452>
 				<span class="e1081_4453">요모조모</span>
 			</div>
 		</div>
-		<span class="e1081_4454">자주 묻는 질문</span>
+		<span class="e1081_4454">1:1 문의</span>
 	</div>
 	<div class=e1081_4455>
 		<div class=e1081_4456>
@@ -68,17 +74,19 @@
 		</div>
 		<div class=e1081_4460>
 			<div class=e1081_4461>
-				<a href="${pageContext.request.contextPath}/yomo/notice.do"> <span
-					class="e1081_4462">공지사항</span>
-				</a>
+			<a href="${pageContext.request.contextPath}/yomo/notice.do">
+				<span class="e1081_4462">공지사항</span>
+			</a>
 			</div>
 			<div class=e1081_4463>
+				<a href="${pageContext.request.contextPath}/yomo/faq.do">
 				<span class="e1081_4464">자주 묻는 질문</span>
+				</a>
 			</div>
 			<div class=e1081_4465>
-				<a href="${pageContext.request.contextPath}/yomo/oneask.do">
+			<a href="${pageContext.request.contextPath}/yomo/oneask.do">
 				<span class="e1081_4466">1:1 문의</span>
-				</a>
+			</a>
 			</div>
 			<div class=e1081_4467>
 				<span class="e1081_4468">About Us</span>

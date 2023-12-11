@@ -116,7 +116,9 @@
 				</a>
 			</div>
 			<div class=e1081_4465>
+			<a href="${pageContext.request.contextPath}/yomo/oneask.do">
 				<span class="e1081_4466">1:1 문의</span>
+			</a>
 			</div>
 			<div class=e1081_4467>
 				<span class="e1081_4468">About Us</span>
@@ -230,7 +232,7 @@
 		});
 	})
 	
-			//정렬
+		//정렬
 		$(".e854_1005 button").on("click", function() {
 			
 			$.ajax({
