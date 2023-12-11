@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,14 +54,16 @@ public class ChallengeController {
 	}
 
 	@GetMapping("challengeDetail.do")
-	public String challenge2(Model model, ChallengeVO challenge) {
+	public String challenge2(Model model, ChallengeVO challenge, HttpSession session) {
 //		System.out.println("challenge2.do");
 //		System.out.println(challenge.getChallenge_no());
 		ChallengeVO chall = chService.selectByno(challenge.getChallenge_no());
 		int likeCnt = chService.getLike(challenge.getChallenge_no());
-
+		String login_id = (String)session.getAttribute("loginmem");
+		
 //		System.out.println(likeCnt);
 //		System.out.println(chall);
+		model.addAttribute("login_id", login_id);
 		model.addAttribute("chall", chall);
 		model.addAttribute("likeCnt", likeCnt);
 		return "event/challengeDetail";
