@@ -623,6 +623,7 @@
 	    	heartImage.src = '${cpath}/resources/images/menu/menu-heart-fill.png';
 	    }
 	});
+	
     function selectButton(button) {
         const buttons = document.querySelectorAll('.menu-selection-wrapper .common-button');
         buttons.forEach((btn) => {
@@ -683,7 +684,7 @@
         document.getElementById('nextPage').style.display = (pageNumber === numElements.length) ? 'none' : 'block';
     }
 
- 
+
     showItemsForPage(currentPage);
 
     // Next Page Button
@@ -743,6 +744,7 @@
       }
     }
     
+    //하트 클릭시 찜목록 추가
     function HeartSubmit(flag) {
     	
     	$.ajax({
