@@ -1,6 +1,7 @@
 package com.shinhan.model;
 
 import java.util.List;
+import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,11 +18,59 @@ public class WalletDAOMybatis {
 	Logger logger = LoggerFactory.getLogger(WalletDAOMybatis.class);
 	String NAMESPACE = "net.firstzone.wallet.";
 	
+	// 장바구니 추가
+    public int addBasket(BasketVO basket) {
+        return sqlSession.insert(NAMESPACE + "addBasket", basket);
+    }
+
+    // 장바구니 삭제
+    public int deleteBasket(Map<String, Object> parameters) {
+        return sqlSession.delete(NAMESPACE + "deleteBasket", parameters);
+    }
+
+    // 장바구니 수량 수정
+    public int modifyCount(BasketVO basket) {
+        return sqlSession.update(NAMESPACE + "modifyCount", basket);
+    }
+
+    // mem_id의 장바구니 목록
+    public List<BasketVO> getBasket(String mem_id) {
+        return sqlSession.selectList(NAMESPACE + "getBasket", mem_id);
+    }
+
+    // mem_id의 장바구니 확인
+    public List<BasketVO> checkBasket(String mem_id) {
+        return sqlSession.selectList(NAMESPACE + "checkBasket", mem_id);
+    }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	// 장바구니에 상품 담기
+//	public int insertPro(BasketVO basket) {
+//		int result = sqlSession.insert(NAMESPACE + "insertPro", basket);
+//		return result;
+//	}
+	
+	
+
+	
+	
+	
 	// 장바구니 select all
 	public List<BasketVO> selectAllBasket() {
 		List<BasketVO> blist = sqlSession.selectList(NAMESPACE + "selectAllBasket");
 		System.out.println(blist);
-		logger.info("selectAllBasket :  {}", blist.size());
 		return blist;
 	}
 	
@@ -32,6 +81,5 @@ public class WalletDAOMybatis {
 		logger.info("selectAllPay : {}", plist.size());
 		return plist;
 	}
-	
 	
 }

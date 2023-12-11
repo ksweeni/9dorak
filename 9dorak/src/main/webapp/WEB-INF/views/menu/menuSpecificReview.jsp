@@ -14,7 +14,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<title>Insert title here</title>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 
 </head>
 <body>
@@ -81,13 +82,48 @@
 
 								</div>
 							</button>
-							<button class="button-medium-text">
-								<div class="overlap-group-2">
-									<div class="label">&nbsp;&nbsp; 구도락 담기</div>
-									<img class="icon-cart"
-										src="${cpath}/resources/images/menu/Cart.png" />
-								</div>
-							</button>
+							<button class="button-medium-text" onclick="addToCart(${menudetail.pro_no}, '${cpath}/wallet/basket.do')">
+    <div class="overlap-group-2">
+        <div class="label">&nbsp;&nbsp; 구도락 담기</div>
+        <img class="icon-cart" src="${cpath}/resources/images/menu/Cart.png" />
+    </div>
+</button>
+							
+							
+							
+<script>
+    function addToCart(pro_no, cpath) {
+        var productInfo = {
+            pro_no: pro_no,
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '/myapp/wallet/basket.do',
+            data: JSON.stringify(productInfo),
+            contentType: 'application/json',
+        })
+        .done(function(response) {
+            alert('장바구니 성공!');
+            window.location.href = '/myapp/wallet/basket.do';
+        })
+        .fail(function(error) {
+            alert('장바구니 실패ㅜㅜ');
+        });
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+							
+							
 
 							<!-- <div class="frame-2">
 								<button class="label-wrapper">

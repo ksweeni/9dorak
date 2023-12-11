@@ -17,6 +17,9 @@ String contextPath = request.getContextPath();
 	type="text/css" />
 <link rel="stylesheet"
 	href="${cpath}/resources/css/challengeStyle3.css?d" type="text/css" />
+	
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class="div-wrapper">
