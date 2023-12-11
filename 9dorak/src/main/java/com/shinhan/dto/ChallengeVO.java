@@ -24,7 +24,7 @@ public class ChallengeVO {
 	private String  mem_id; //회원 아이디
 	
 
-
+	String asd;
 	 
 
 	
