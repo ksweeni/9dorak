@@ -43,6 +43,11 @@
 	font-size: 1.2rem !important;
 }
 
+.header-a {
+	text-decoration: none;
+	color:black;
+}
+
 .navbar .text-wrapper-13 { /*이벤트 */
 	width: 4rem !important;
 	position: relative !important;

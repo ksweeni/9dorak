@@ -19,43 +19,72 @@
 		<div class="div">
 
 			<header class="header">
-				<div class="top-nav">
-					<div class="navbar">
-						<div class="text-event">이벤트</div>
-						<div class="text-menu">메뉴보기</div>
-						<div class="text-subscribe">구독하기</div>
-						<div class="text-yomo">요모조모</div>
-						<div class="text-doran">도란도란</div>
-					</div>
-					<img class="untitled-2" src="${cpath}/resources/images/main/header-logo.png" />
-					<div class="div-3">
-						<div class="text-wrapper-28">로그인 | 회원가입</div>
-						<div class="group-20">
-							<div class="header-overlap-group-3">
-								<img class="header-group-21" src="${cpath}/resources/images/main/header-cart.png" />
-								<div class="ellipse-light"></div>
-								<!-- <div class="text-wrapper-29">2</div> -->
-							</div>
-						</div>
-					</div>
-				</div>
+			    <div class="top-nav">
+			        <div class="navbar">
+			            <div class="text-event">
+			                <a class="header-a" href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+			            </div>
+			            <div class="text-menu">
+			                <a class="header-a" href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+			            </div>
+			            <div class="text-subscribe">
+			                <a class="header-a" href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+			            </div>
+			            <div class="text-yomo">
+			                <a class="header-a" href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+			            </div>
+			            <div class="text-doran">
+			                <a class="header-a" href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+			            </div>
+			        </div>
+			        <a href="${pageContext.request.contextPath}/main.do">
+			            <img class="untitled-2" src="${cpath}/resources/images/main/header-logo.png" />
+			        </a>
+			        <div class="div-3">
+			            <div class="text-wrapper-28">
+			                <c:choose>
+			                    <c:when test="${not empty sessionScope.loginmem.mem_id}">
+			                        <span style="font-weight: bold; left: 2.5rem; position: relative;">
+			                            <c:out value="${sessionScope.loginmem.mem_id}" /> 님
+			                        </span>
+			                    </c:when>
+			                    <c:otherwise>
+			                        <a class="header-a" href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a" href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+			                    </c:otherwise>
+			                </c:choose>
+			            </div>
+			            <div class="group-20">
+			                <div class="header-overlap-group-3">
+			                    <img class="header-group-21" src="${cpath}/resources/images/main/header-cart.png" />
+			                    <div class="ellipse-light"></div>
+			                    <!-- <div class="text-wrapper-29">2</div> -->
+			                </div>
+			            </div>
+			        </div>
+			    </div>
 			</header>
+			
+
+			
 
 			<div class="overlap-3">
 				<div class="group-6">
 					<div class="group-wrapper">
 						<div class="doran-upload-profilPhoto">
 							<img class="doran-upload-profilPhotoImg"
-								src="${cpath }/resources/images/main/sandwich_lunchbox01.png" />
+								src="${cpath}/resources/images/main/sandwich_lunchbox01.png" />
 						</div>
 						<div class="doran-upload-contents">
 							<div class="doran-context">
-								<input class="doran-context-title" type="text" placeholder="제목">
-								<textarea placeholder="내용을 자유롭게 입력하세요!"></textarea>
+								<input class="doran-context-title" id="doran-quick-title"
+									type="text" placeholder="제목">
+								<textarea placeholder="내용을 자유롭게 입력하세요!" id="doran-quick-content"></textarea>
 							</div>
 							<div class="upload-button-wrap">
-								
-								<button type="submit" class="doran-button-upload">업로드</button>
+
+								<button type="submit" class="doran-button-upload"
+									onclick="quickUpload()">업로드</button>
 							</div>
 						</div>
 					</div>
@@ -79,53 +108,8 @@
 				<div id="here">
 					<!--data forEach -->
 				</div>
-				
-				<!--  
-				<div class="doran-card">
 
-					<c:forEach items="${dlist}" var="doran" varStatus="loop">
-						<div class="doran-feed">
-							<div class="doran-topInfo">
-								<div>
-									<img class="doran-uploadInfo-profile"
-										src="${cpath }/resources/images/doran/test.png" />
-								</div>
-								<div class="doran-uploadInfo">
-									<div class="doran-uploadInfo-memid">${doran.mem_id }</div>
-									<div class="doran-uploadInfo-title">${doran.doran_title }</div>
-								</div>
-							</div>
-							<div class="doran-uploadContent">
-								<img class="doran-uploadContent-image"
-									src="${cpath }/resources/images/menu/cake.png" />
-								<div class="doran-uploadContent-content">${doran.doran_cont}</div>
-							</div>
-							<div class="doran-underInfo">
-								<div class="doran-review">
-									<div class="doran-review-like">
-										<img class="doran-review-likeicon"
-											src="${cpath }/resources/images/doran/icon_doranunfilllike.png" />
-										<div class="doran-review-like2">${doran.dlike}</div>
-									</div>
-									<div class="doran-review-reviewCnt">
-										<img class="doran-review-reviewCnticon"
-											src="${cpath }/resources/images/doran/icon_doranviewcnt.png" />
-										<div class="doran-review-reviewCnt2">${doran.doran_view}</div>
-									</div>
-									<div class="doran-review-dcomment">
-										<img class="doran-review-dcommenticon"
-											src="${cpath }/resources/images/doran/icon_dorancomment.png" />
-										<div class="doran-review-dcomment2">${doran.dcomment}</div>
-									</div>
-								</div>
-								<div class="doran-uploadInfo-time">${doran.doran_date }</div>
-							</div>
-						</div>
-					</c:forEach>
 
-				</div>
-				<!-- doran-card -->
-				
 			</div>
 			<!-- group-4 -->
 
@@ -157,7 +141,8 @@
 							placeholder="검색어를 입력하세요">
 					</div>
 					<div class="doran-search">
-						<button class="doran-search-button">
+						<button class="doran-search-button" id="searchBtn"
+							onclick="searchBtnClick()">
 							<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
 								viewBox="0 0 15 15" fill="none">
 								<path
@@ -402,9 +387,66 @@
 
 				return false;
 			}
-			
-			
-			
+
+			// 검색어 클릭 버튼
+			function searchBtnClick() {
+
+				var searchInput = document.getElementById("searchTxt").value;
+
+				$.ajax({
+					url : "${cpath}/doran/doranSearch.do",
+					type : 'GET',
+					data : {
+						keyword : searchInput
+					},
+					success : function(responseData) {
+						if (responseData && responseData.length > 0) {
+							// alert("검색 성공 !");
+							$('#here').html(responseData);
+						} else if (responseData.length == 0) {
+							alert("검색 결과가 없습니다.");
+						}
+					},
+
+					error : function() {
+						alert("에러가 발생했습니다 ! 다시 시도해 주세요");
+					}
+				});
+			}
+
+			// 간편 업로드 
+			function quickUpload() {
+				var memId = "${sessionScope.loginmem.mem_id}";
+
+				if (!memId || memId.trim() === "") {
+					alert("로그인이 필요한 서비스입니다 !");
+					window.location.href = "${cpath}/login/loginForm.do";
+					return;
+				}
+
+				var quickTitle = document.getElementById("doran-quick-title").value;
+				var quickContent = document
+						.getElementById("doran-quick-content").value;
+
+				var requestData = {
+					title : quickTitle,
+					content : quickContent
+				};
+
+				$.ajax({
+					url : "${cpath}/doran/quickUpload.do",
+					type : "POST",
+					data : JSON.stringify(requestData),
+					contentType : "application/json; charset=utf-8",
+					success : function(responseData) {
+						alert("업로드 성공!");
+						console.log(responseData);
+					},
+					error : function() {
+						alert("업로드 에러");
+					}
+				});
+			}
 		</script>
 		<!-- div -->
 	</div>

@@ -24,6 +24,7 @@ import com.shinhan.model.MailSendService;
 import com.shinhan.model.MyPageService;
 import com.shinhan.model.RegisterService;
 
+import lombok.RequiredArgsConstructor;
 import oracle.jdbc.proxy.annotation.Post;
 
 /**
@@ -31,15 +32,18 @@ import oracle.jdbc.proxy.annotation.Post;
  */
 @Controller
 @RequestMapping("register")
+@RequiredArgsConstructor
 public class RegisterController {
 //	
-	@Autowired
-	RegisterService rService;
-	MyPageService mService;
-	@Autowired
-	MailSendService MailSendService;
+ 
+	final RegisterService rService;
+	final MyPageService mService;
+	final MailSendService MailSendService;
+	
+	
 	private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
 
+	 
 	@GetMapping("registerType.do")
 	public void registerType() {
 	}
@@ -79,11 +83,12 @@ public class RegisterController {
 	@PostMapping("register.do")
 	public String register(Model model, MemVO mem, HttpSession session) {
 		int result = rService.insertMember(mem);
-		MemVO loginmem = mService.getMember(mem.getMem_id());
+		String login_id = mem.getMem_id();
+		MemVO loginmem = mService.getMember(login_id);
 		session.setAttribute("loginmem", loginmem);
 		return "home";
 	}
-
+	
 	@GetMapping("emailCheckPage.do")
 	public String emailCheckPage() {
 
