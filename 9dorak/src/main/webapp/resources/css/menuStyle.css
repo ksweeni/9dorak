@@ -79,11 +79,11 @@
 	width: 1450px;
 	height: 4000px;
 	position: relative;
-	right: 4%;
+	right: 2%;
 	display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
 
 .screen .menu-and-pagenation {
@@ -816,7 +816,7 @@
 	width: 960px;
 	height: 266px;
 	top: 0;
-	left: 94px;
+	left: 120px;
 }
 
 .screen .frame-3 {

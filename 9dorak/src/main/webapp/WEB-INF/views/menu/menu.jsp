@@ -18,6 +18,7 @@
 </head>
 <body>
 	<div class="screen">
+	<div>
 
 		<header class="header">
 			    <div class="top-nav">
@@ -315,6 +316,7 @@
 				</div>
 			</div>
 		</footer>
+	</div>
 	</div>
 
 	<script type="text/javascript">

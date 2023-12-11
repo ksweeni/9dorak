@@ -1482,3 +1482,7 @@ div-wrapper {
 	line-height: var(- -p2-line-height);
 	font-style: var(- -p2-font-style);
 }
+
+.top-nav{
+	left: 33.5%;
+}
