@@ -52,8 +52,7 @@ public class DoranDAOMybatis {
 		return sqlSession.selectList(NAMESPACE + "selectLike");
 	}
 	// 댓글 수 카운트
-	public List<DCommentVO> selectComment(){
-		logger.info("selectComment :  {}");
+	public List<CommentVO> selectComment(){
 		return sqlSession.selectList(NAMESPACE+"selectComment");
 	}
 	
@@ -85,7 +84,6 @@ public class DoranDAOMybatis {
 	
 	// 좋아요 추가
 	public int insertDoranLike(DoranlikeVO dlike) {
-		System.out.println(dlike);
 		return sqlSession.insert(NAMESPACE + "insertDoranLike", dlike);
 	}
 
@@ -101,6 +99,10 @@ public class DoranDAOMybatis {
 	// 검색
 	public List<DoranVO>  selectSearchDoran(String keyword){
 		return sqlSession.selectList(NAMESPACE + "selectSearchDoran", keyword);
+	}
+	// 댓글 추가
+	public int insertComment(CommentVO comment){
+		return sqlSession.insert(NAMESPACE + "insertComment", comment);
 	}
 
 

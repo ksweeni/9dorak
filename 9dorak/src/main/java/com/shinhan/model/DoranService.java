@@ -38,7 +38,7 @@ public class DoranService {
 		return dao.selectLike();
 	}
 
-	public List<DCommentVO> selectComment() {
+	public List<CommentVO> selectComment() {
 		return dao.selectComment();
 	}
 
@@ -79,6 +79,10 @@ public class DoranService {
 	
 	public List<DoranVO>  selectSearchDoran(String keyword){
 		return dao.selectSearchDoran(keyword);
+	}
+	
+	public int insertComment(CommentVO comment){
+		return dao.insertComment(comment);
 	}
 
 //
