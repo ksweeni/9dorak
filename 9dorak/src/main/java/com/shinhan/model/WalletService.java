@@ -47,7 +47,6 @@ public class WalletService {
 		return dao.checkBasket(mem_id, pro_no);
 	}
 	
-	
 	public int addBasket(BasketVO basket) {
 		return dao.addBasket(basket);
 	}

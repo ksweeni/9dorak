@@ -74,23 +74,9 @@ public class WalletDAOMybatis {
         params.put("pro_no", pro_no);
         return sqlSession.selectList(NAMESPACE + "checkBasket", params);
     }
-
-    
-    
-    
-//    
-//    // 장바구니 추가
-//    public List<BasketVO> addBasket(BasketVO basket) {
-//    	List<BasketVO> blist = sqlSession.insert(NAMESPACE + "addBasket", basket);
-//    	
-//    	
-//    	int result = sqlSession.insert(NAMESPACE + "addBasket", basket);
-//        return result;
-//    }
     
     public int addBasket(BasketVO basket) {
     	return sqlSession.insert(NAMESPACE + "addBasket", basket);
     }
-    
     
 }
