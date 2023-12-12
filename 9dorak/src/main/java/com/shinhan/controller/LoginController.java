@@ -137,9 +137,14 @@ public class LoginController {
 	        
 	    }else {
 
-	        MemVO loginCheck = lservice.userKakaoLoginPro(paramMap);
-	        session.setAttribute("userInfo", loginCheck);
+	        MemVO kakaologin = lservice.userKakaoLoginPro(paramMap);
+	        
+	        //로그인 정보를 세션에 저장
+	        session.setAttribute("loginmem", kakaologin);
 	        resultMap.put("JavaData", "YES");
+	        
+	        //MemVO loginInfo = (MemVO) session.getAttribute("kakaologin");
+	        //System.out.println(loginInfo);
 	    }
 
 	    return resultMap;

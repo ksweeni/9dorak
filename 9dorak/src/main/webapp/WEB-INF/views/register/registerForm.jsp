@@ -1079,7 +1079,6 @@ a {
 				</div>
 				<div class=e106_415>
 					<input class="e106_416" type="text" id="mem_name" name="mem_name"
-						value="${name }" ${kakao==1?"readonly":"" }
 						placeholder="홍찬기" /> <span class="e106_417">이름</span>
 				</div>
 				<div class=e106_412>

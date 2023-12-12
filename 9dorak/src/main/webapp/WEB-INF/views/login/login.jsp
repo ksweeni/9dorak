@@ -28,10 +28,13 @@
 	  
  	 //카카오 로그인 후 토큰 값 저장.
     function loginWithKakao() {
-        Kakao.Auth.login({
+        Kakao.Auth.loginForm({
             success: function (authObj) {
                 console.log(authObj); // access토큰 값
                 Kakao.Auth.setAccessToken(authObj.access_token); // access토큰값 저장
+                
+             	// 쿠키에 access_token 저장
+                document.cookie = 'authorize-access-token=' + authObj.access_token + '; Path=/;';
 
                 getInfo();
             },
@@ -75,8 +78,8 @@
     			success : function(data){
     				console.log(data)
     				if(data.JavaData == "YES"){
-    					alert("로그인되었습니다.");
-    					location.href = '${cpath}/main.do'; // 메인 테스트 페이지로
+    					alert("로그인 되었습니다.");
+    					location.href = '${cpath}'; // 메인 테스트 페이지로
     				}else if(data.JavaData == "register"){
     					$("#kakaoEmail").val(response.kakao_account.email);
     					$("#kakaoName").val(response.properties.nickname);
@@ -93,19 +96,26 @@
     			}
     		});  
        }
-                  
- 	// 로그아웃 기능 - 카카오 서버에 접속하는 엑세스 토큰을 만료, 사용자 어플리케이션의 로그아웃은 따로 진행.
- 	function kakaoLogout() {
- 		Kakao.Auth.logout()
- 		  .then(function(response) {
- 		    console.log(Kakao.Auth.getAccessToken()); // null
- 		    // 카카오 로그아웃이 성공한 후, 서버로 로그아웃 요청
- 		    window.location.href = "/logout.do";
- 		  })
- 		  .catch(function(error) {
- 		    console.log('Not logged in.');
- 		  });
- 	}
+       
+       function kakaoLogout() {			
+			//토큰이 있는지 확인
+			if(!Kakao.Auth.getAccessToken()) {
+				console.log('Not logged in.');
+				return;
+			}
+			//카카오 로그아웃
+			Kakao.Auth.logout(function() {
+				console.log(Kakao.Auth.getAccessToken()); //null
+				
+				deleteCookie();
+				alert("로그아웃 되었습니다.");
+				window.location.href = '${cpath}/my/logout.do';
+			});
+       }
+       function deleteCookie() {
+    	    document.cookie = 'authorize-access-token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    	  }
+       
 </script>
 
 <script>
@@ -180,8 +190,8 @@
 								onclick="location.href='${pageContext.request.contextPath}/login/findIdForm.do'"
 								type="submit" class="text-wrapper-9">아이디 / 비밀번호 찾기</button>
 						<p id="token-result"></p>
-						<a href="http://developers.kakao.com/logout">카카오 로그아웃</a>
-						<button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
+						<!-- <a href="http://developers.kakao.com/logout">카카오 로그아웃</a>
+						<button class="api-btn" onclick="kakaoLogout()">로그아웃</button> -->
 					</div>
 				</div>
 			</div>
