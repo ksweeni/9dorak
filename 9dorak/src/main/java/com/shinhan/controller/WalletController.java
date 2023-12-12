@@ -58,28 +58,6 @@ public class WalletController {
 	
 	
 
-    @PostMapping("deleteBasket")
-    public String deleteBasket(@RequestParam("mem_id") String mem_id,
-                               @RequestParam("pro_no") int pro_no) {
-        wService.deleteBasket(mem_id, pro_no);
-        return "wallet/basket";
-    }
-
-    @PostMapping("modifyCount")
-    public String modifyCount(@RequestParam("mem_id") String mem_id,
-                              @RequestParam("pro_no") int pro_no,
-                              @RequestParam("basket_pro_count") int basket_pro_count) {
-        BasketVO basket = new BasketVO(pro_no, null, basket_pro_count, mem_id);
-        wService.modifyCount(basket);
-        return "wallet/basket";
-    }
-    
-    @PostMapping("getBasket")
-    public String getBasket(@RequestParam("mem_id") String mem_id, Model model) {
-        List<BasketVO> basketList = wService.getBasket(mem_id);
-        model.addAttribute("basketList", basketList);
-        return "wallet/basket";
-    }
 
     
     
@@ -107,7 +85,6 @@ public class WalletController {
     
     @PostMapping("addBasket.do")
     public @ResponseBody Map<String, Object> addBasket(Model model, BasketVO basket, HttpServletRequest request) {
-        basket.setBasket_date(new Timestamp(System.currentTimeMillis()));
         Map<String, Object> response = new HashMap<>();
         int result = wService.addBasket(basket);
         
