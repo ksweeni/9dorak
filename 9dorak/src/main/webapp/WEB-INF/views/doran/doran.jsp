@@ -18,6 +18,7 @@
 	<div class="screen">
 		<div class="div">
 
+
 			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
@@ -76,8 +77,6 @@
 			</header>
 
 
-
-
 			<div class="overlap-3">
 				<div class="group-6">
 					<div class="group-wrapper">
@@ -127,11 +126,7 @@
 				<div class="group-13">
 					<div class="div-2">
 						<div class="card">
-							<div class="frame-wrapper">
-								<div class="ellipsis-wrapper">
-									<div class="ellipsis">􀍠</div>
-								</div>
-							</div>
+									<div class="ellipsis"><img class="ellipsis-img" src="${cpath }/resources/images/doran/doran_logo.png" /></div>
 							<div class="tab">
 								<button id="doran" class="text-wrapper-18"
 									onclick="getData('doran')">도란도란</button>
@@ -197,7 +192,6 @@
 									<span>프로필 설정하기</span>
 								</button>
 							</div>
-
 
 						</div>
 					</div>
@@ -276,15 +270,15 @@
 						<div class="footer-text-wrapper-7">Opening Restaurant</div>
 						<div class="footer-group-3">
 							<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
-							<div class="footer-text-wrapper-3">Thursdayt:
+							<div class="footer-text-wrapper-3">Thursday:
 								09:00am-11:00PM</div>
 							<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
 						</div>
 					</div>
 				</footer>
-			
 
-		</div>
+
+		</div><!-- div -->
 
 
 		<script>

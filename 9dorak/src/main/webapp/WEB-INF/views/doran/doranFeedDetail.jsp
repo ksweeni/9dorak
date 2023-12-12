@@ -133,11 +133,10 @@
 									src="img/unsplash-y3kc-7qhmjk.svg" />
 								<div class="frame-2">
 									<div class="frame-3">
-										<div class="text-wrapper-10">${sessionScope.loginmem.mem_id}</div>
-										<div class="text-wrapper-11">${sessionScope.loginmem.mem_grade}</div>
+										<div class="text-wrapper-10">${doran.mem_id}</div>
 									</div>
 									<div class="group-5">
-										<div class="text-wrapper-12">${doran.doran_date}</div>
+										<div class="text-wrapper-12">${doran.doran_title}</div>
 									</div>
 								</div>
 							</div>
@@ -306,7 +305,7 @@
 						<div class="card">
 							<div class="frame-7">
 								<div class="ellipsis-wrapper">
-									<div class="ellipsis">􀍠</div>
+									<div class="ellipsis"><img class="ellipsis-img" src="${cpath }/resources/images/doran/doran_logo.png" /></div>
 								</div>
 							</div>
 							<div class="tab">
@@ -382,7 +381,7 @@
 					<div class="footer-text-wrapper-7">Opening Restaurant</div>
 					<div class="footer-group-3">
 						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
-						<div class="footer-text-wrapper-3">Thursdayt:
+						<div class="footer-text-wrapper-3">Thursday:
 							09:00am-11:00PM</div>
 						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
 					</div>
