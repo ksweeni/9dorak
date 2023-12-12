@@ -57,19 +57,24 @@ public class MenuService {
 	
 	public Map<String, Object> reviewCnt(int prono){
 		return dao.proRevwCnt(prono);
-	};
+	}
 	
 	public int selectReserveYn (Map<String, Object> map) {
 		return dao.selectReserveYn(map);
-	};
+	}
 	
 	public int insertReserve (Map<String, Object> map) {
 		return dao.insertReserve(map);
-	};
+	}
 	
 	public int deleteReserve (Map<String, Object> map) {
 		return dao.deleteReserve(map);
-	};
+	}
+	
+	public int updateReserve(String pro_no) {
+		return dao.updateReserve(pro_no);
+	}
+	
 
 //	public int insertMember(DoranVO doran) {
 //		return dao.insertDoran(doran);
