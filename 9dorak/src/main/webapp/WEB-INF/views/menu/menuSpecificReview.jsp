@@ -840,7 +840,7 @@
                 alert("장바구니에 담았습니다!");
             } else {
                 console.error("콘솔 - Failed to add item to the basket:", response.message);
-                alert("It wasn't added to your shopping cart!");
+                alert("장바구니에 담기지 않았습니다");
             }
         },
 
