@@ -7,14 +7,12 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/noticeStyle.css?d"
-	type="text/css" />
+<link rel="stylesheet"
+	href="${cpath}/resources/css/oneaskDetailStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+<title>Insert title here</title>
 </head>
+<body>
 <body>
 	<div class=e815_534>
 		<div class=e1140_2927>
@@ -40,58 +38,26 @@
 			</div>
 		</div>
 		<div class="e844_606"></div>
-		<div class=e815_1065>
-			<div class=e815_1066>
-				<div class="ei815_1066_6_1"></div>
-			</div>
-			<input type="text" class="e815_1067" placeholder="검색어를 입력하세요">
-		</div>
 	</div>
 	<div class="e844_9999">
-	<table class="table table-bordered table-hover">
-		<thead>
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성일</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="anno" items="${annolist}" varStatus="rowStatus">
-				<tr>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/noticeDetail.do?anno_no=' + ${anno.anno_no}">${anno.anno_no}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/noticeDetail.do?anno_no=' + ${anno.anno_no}">${anno.anno_title}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/noticeDetail.do?anno_no=' + ${anno.anno_no}">${anno.anno_date}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
 	</div>
-	<div class="e844_616"></div>
+	<div class="e844_616">
+		<hr>
+		<p>
+		<b>${oneask.oneask_title}</b>
+		</p>
+		<hr>
+		<p>날짜 : ${oneask.oneask_date}</p>
+		<p>작성자 : ${oneask.mem_id}</p>
+		<p>문의상태 : ${oneask.oneask_status}</p>
+		<hr>
+		<div class="e844_999">
+			<p>${oneask.oneask_cont}</p>
+		</div>
+		<hr>
+	</div>
 	<div class=e844_617>
-		<span class="e844_618">공지사항</span>
-	</div>
-	<div class=e854_1005>
-		<div class=e831_684>
-			<div class=e831_685>
-				<button class="e831_686">조회수 순</button>
-				<div class=e831_687>
-					<div class="ei831_687_773_285"></div>
-					<div class=ei831_687_773_286>
-						<div class="ei831_687_773_287"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class=e844_862>
-			<button class="e844_863">최근글 순</button>
-			<div class=e844_864>
-				<div class="ei844_864_773_285"></div>
-				<div class=ei844_864_773_286>
-					<div class="ei844_864_773_287"></div>
-				</div>
-			</div>
-		</div>
+		<span class="e844_618">1:1 문의</span>
 	</div>
 	<div class="e844_619"></div>
 	<div class=e1081_4450>
@@ -100,24 +66,23 @@
 				<span class="e1081_4453">요모조모</span>
 			</div>
 		</div>
-		<span class="e1081_4454">공지사항</span>
+		<span class="e1081_4454">1:1 문의</span>
 	</div>
 	<div class=e1081_4455>
 		<div class=e1081_4456>
 			<span class="e1081_4458">김수인</span><span class="e1081_4459">LV.낑깡</span>
 		</div>
 		<div class=e1081_4460>
-			<div class=e1081_4461>
-				<span class="e1081_4462">공지사항</span>
-			</div>
-			<a href="${pageContext.request.contextPath}/yomo/faq.do" class=e1081_4463>
-				<span class="e1081_4464">자주 묻는 질문</span>
+			<a href="${pageContext.request.contextPath}/yomo/notice.do"
+				class=e1081_4461> <span class="e1081_4462">공지사항</span>
+			</a> <a href="${pageContext.request.contextPath}/yomo/faq.do"
+				class=e1081_4463> <span class="e1081_4464">자주 묻는 질문</span>
 			</a>
 			<a href="${pageContext.request.contextPath}/yomo/oneask.do" class=e1081_4465>
 				<span class="e1081_4466">1:1 문의</span>
 			</a>
-			<a href="${pageContext.request.contextPath}/yomo/aboutus.do" class=e1081_4467>
-				<span class="e1081_4468">About Us</span>
+			<a href="${pageContext.request.contextPath}/yomo/aboutus.do"
+				class=e1081_4467> <span class="e1081_4468">About Us</span>
 			</a>
 		</div>
 	</div>
@@ -212,37 +177,5 @@
 		</div>
 	</div>
 	<div class="e1558_2333"></div>
-	
-	<script type="text/javascript">
-	//검색어 정렬 e815_1067
-	$(".ei815_1066_6_1").on("click", function(){
-		$.ajax({
-			url : "${cpath}/yomo/searchYomo.do",
-			type : 'GET',
-			data : {
-				anno_title : $(".e815_1067").val()
-			},
-			success : function(data) {
-				$('.e844_9999').html(data);
-			}
-		});
-	})
-	
-			//정렬
-		$(".e854_1005 button").on("click", function() {
-			
-			$.ajax({
-				url : "${cpath}/yomo/yomoOrderby.do",
-				type : 'GET',
-				data : {
-					order_type : $(this).text()
-				},
-				success : function(data) {
-					$('.e844_9999').html(data);
-				}
-			});
-		})
-	
-	</script>
 </body>
 </html>
