@@ -10,7 +10,6 @@ request.setCharacterEncoding("UTF-8");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<!--아이콘-->
@@ -95,6 +94,8 @@ request.setCharacterEncoding("UTF-8");
 }
 }
 </style>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<h1>Hello world!</h1>
