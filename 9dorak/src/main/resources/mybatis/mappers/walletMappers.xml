@@ -43,10 +43,9 @@
 		where mem_id=#{mem_id}
 	</select>
 
-	<!-- 장바구니 존재 여부 확인 -->
-	<select id="checkBasket" resultType="int">
-		select count(*) from basket
-		where mem_id=#{mem_id}
+	<!-- 아이디+상품 장바구니 존재 여부 확인 -->
+	<select id="checkBasket" resultType="basketvo">
+		select * from basket where mem_id=#{mem_id} and pro_no=#{pro_no}
 	</select>
 
 </mapper>

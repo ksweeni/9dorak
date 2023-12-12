@@ -26,9 +26,6 @@ public class WalletService {
 	
 	
 	
-	public int addBasket(BasketVO basket) {
-		return dao.addBasket(basket);
-	}
 	
 	public int deleteBasket(String mem_id, int pro_no) {
 		return dao.deleteBasket(mem_id, pro_no);
@@ -42,7 +39,17 @@ public class WalletService {
 		return dao.getBasket(mem_id);
 	}
 	
-	public int checkBasket(String mem_id) {
-		return dao.checkBasket(mem_id);
+	
+	
+	
+	
+	public List<BasketVO> checkBasket(String mem_id, int pro_no) {
+		return dao.checkBasket(mem_id, pro_no);
 	}
+	
+	
+	public int addBasket(BasketVO basket) {
+		return dao.addBasket(basket);
+	}
+	
 }
