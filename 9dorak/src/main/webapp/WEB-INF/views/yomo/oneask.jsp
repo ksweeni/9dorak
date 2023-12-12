@@ -1,19 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
-	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/noticeStyle.css?d"
-	type="text/css" />
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css" type="text/css" />
+<link rel="stylesheet" href="${cpath}/resources/css/oneaskStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<title>Insert title here</title>
 </head>
 <body>
 	<div class=e815_534>
@@ -53,35 +49,34 @@
 			<tr>
 				<th>번호</th>
 				<th>제목</th>
+				<th>작성자</th>
+				<th>문의 상태</th>
 				<th>작성일</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="anno" items="${annolist}" varStatus="rowStatus">
+			<c:forEach var="oneask" items="${olist}" varStatus="rowStatus">
 				<tr>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/noticeDetail.do?anno_no=' + ${anno.anno_no}">${anno.anno_no}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/noticeDetail.do?anno_no=' + ${anno.anno_no}">${anno.anno_title}</td>
-					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/noticeDetail.do?anno_no=' + ${anno.anno_no}">${anno.anno_date}</td>
+					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_no}</td>
+					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_title}</td>
+					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.mem_id}</td>
+					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_status}</td>
+					<td onclick="location.href ='${pageContext.request.contextPath}/yomo/oneaskDetail.do?oneask_no=' + ${oneask.oneask_no}">${oneask.oneask_date}</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 	</div>
-	<div class="e844_616"></div>
+	<div class="e844_616">
+		<div id="button" style="text-align: right;">
+		<button type="button" class="right-aligned-button">1:1문의 글쓰기</button>
+	</div>
+	</div>
 	<div class=e844_617>
-		<span class="e844_618">공지사항</span>
+		<span class="e844_618">1:1 문의</span>
 	</div>
 	<div class=e854_1005>
 		<div class=e831_684>
-			<div class=e831_685>
-				<button class="e831_686">조회수 순</button>
-				<div class=e831_687>
-					<div class="ei831_687_773_285"></div>
-					<div class=ei831_687_773_286>
-						<div class="ei831_687_773_287"></div>
-					</div>
-				</div>
-			</div>
 		</div>
 		<div class=e844_862>
 			<button class="e844_863">최근글 순</button>
@@ -100,31 +95,25 @@
 				<span class="e1081_4453">요모조모</span>
 			</div>
 		</div>
-		<span class="e1081_4454">공지사항</span>
+		<span class="e1081_4454">1:1 문의</span>
 	</div>
 	<div class=e1081_4455>
 		<div class=e1081_4456>
 			<span class="e1081_4458">김수인</span><span class="e1081_4459">LV.낑깡</span>
 		</div>
 		<div class=e1081_4460>
-			<div class=e1081_4461>
+			<a href="${pageContext.request.contextPath}/yomo/notice.do" class=e1081_4461>
 				<span class="e1081_4462">공지사항</span>
-			</div>
-			<div class=e1081_4463>
-				<a href="${pageContext.request.contextPath}/yomo/faq.do">
+			</a>
+			<a href="${pageContext.request.contextPath}/yomo/faq.do" class=e1081_4463>
 				<span class="e1081_4464">자주 묻는 질문</span>
-				</a>
-			</div>
+			</a>
 			<div class=e1081_4465>
-				<a href="${pageContext.request.contextPath}/yomo/oneask.do">
 				<span class="e1081_4466">1:1 문의</span>
-				</a>
 			</div>
-			<div class=e1081_4467>
-			<a href="${pageContext.request.contextPath}/yomo/aboutus.do">
+			<a href="${pageContext.request.contextPath}/yomo/aboutus.do" class=e1081_4467>
 				<span class="e1081_4468">About Us</span>
-				</a>
-			</div>
+			</a>
 		</div>
 	</div>
 	<div class=e1081_4206>
@@ -218,15 +207,13 @@
 		</div>
 	</div>
 	<div class="e1558_2333"></div>
-	
 	<script type="text/javascript">
-	//검색어 정렬 e815_1067
 	$(".ei815_1066_6_1").on("click", function(){
 		$.ajax({
-			url : "${cpath}/yomo/searchYomo.do",
+			url : "${cpath}/yomo/searchOneask.do",
 			type : 'GET',
 			data : {
-				anno_title : $(".e815_1067").val()
+				oneask_title : $(".e815_1067").val()
 			},
 			success : function(data) {
 				$('.e844_9999').html(data);
@@ -234,21 +221,23 @@
 		});
 	})
 	
-			//정렬
-		$(".e854_1005 button").on("click", function() {
-			
-			$.ajax({
-				url : "${cpath}/yomo/yomoOrderby.do",
-				type : 'GET',
-				data : {
-					order_type : $(this).text()
-				},
-				success : function(data) {
-					$('.e844_9999').html(data);
-				}
-			});
-		})
+	$(".e854_1005 button").on("click", function() {
+		
+		$.ajax({
+			url : "${cpath}/yomo/oneaskOrderby.do",
+			type : 'GET',
+			data : {
+				order_type : $(this).text()
+			},
+			success : function(data) {
+				$('.e844_9999').html(data);
+			}
+		});
+	})
 	
+	$(".right-aligned-button").on("click",function(){
+		location.href = "${cpath}/yomo/insertOneask.do";
+	}) 
 	</script>
 </body>
 </html>
