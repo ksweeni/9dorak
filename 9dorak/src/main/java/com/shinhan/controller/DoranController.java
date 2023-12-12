@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shinhan.dto.CommentVO;
-import com.shinhan.dto.DCommentVO;
 import com.shinhan.dto.DoranVO;
 import com.shinhan.dto.DoranlikeVO;
 import com.shinhan.dto.MemVO;
@@ -54,10 +54,6 @@ public class DoranController {
 			model.addAttribute("memPoint", "로그인하고 포인트를 얻으세요");
 		} else {
 			System.out.println(memId);
-			System.out.println("백에서 받은 아이디:" + memId.getMem_id());
-			System.out.println("백에서 받은 포인트:" + memId.getMem_point());
-			System.out.println("그 사람의 레벨 : " + memId.getMem_grade());
-
 		}
 		return "doran/doran";
 	}
@@ -65,7 +61,6 @@ public class DoranController {
 	@GetMapping("/doranFilter.do")
 	public String doran2(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model) {
 		List<DoranVO> dlist;
-		System.out.println(orderBy);
 		if ("views".equals(orderBy)) {
 			dlist = dService.selectAllByView();
 		} else if ("latest".equals(orderBy)) {
@@ -73,14 +68,7 @@ public class DoranController {
 		} else {
 			dlist = dService.selectAllByDlike();
 		}
-		// List<DlikeVO> dlike = dService.selectLike();
-		List<DCommentVO> dcomment = dService.selectComment();
 		model.addAttribute("dlist", dlist);
-		// model.addAttribute("dlike", dlike);
-		model.addAttribute("dcomment", dcomment);
-		// System.out.println("좋아요: " + dlike);
-		System.out.println("댓글 수: " + dcomment);
-		System.out.println("orderBy : " + orderBy);
 		return "doran/doran_ajax";
 	}
 
@@ -89,22 +77,18 @@ public class DoranController {
 	public String doranFor(@RequestParam(name = "dataFor", defaultValue = "doran") String dataFor, Model model,
 			HttpSession session, RedirectAttributes redirectAttributes) {
 		List<DoranVO> dlist;
-
 		System.out.println("DateFor:" + dataFor);
 		if (dataFor.equals("myDoran")) {
 			MemVO memId = (MemVO) session.getAttribute("loginmem");
-			System.out.println(memId.getMem_id() + "나의 도란 데이터를 보여주마");
 			dlist = dService.selectAllForMe(memId.getMem_id());
 		} else {
 			dlist = dService.selectAll();
 		}
-
 		if (dlist.size() == 0) {
 			System.out.println("해당하는 데이터가 없습니다 ~ 글을 써 이 사람아");
 		}
 
 		model.addAttribute("dlist", dlist);
-		System.out.println(dlist);
 		return "doran/doran_ajax";
 	}
 
@@ -119,10 +103,8 @@ public class DoranController {
 	public String doranFilterForMe(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model,
 			HttpSession session) {
 		List<DoranVO> dlist;
-
 		MemVO memVO = (MemVO) session.getAttribute("loginmem");
 		String memId = memVO.getMem_id();
-		System.out.println(memId + "가 쓴 글을 필터링 한다 : " + orderBy);
 
 		if ("views".equals(orderBy)) {
 			dlist = dService.selectAllByViewForMe(memId);
@@ -131,43 +113,34 @@ public class DoranController {
 		} else {
 			dlist = dService.selectAllByDlikeForMe(memId);
 		}
-
 		model.addAttribute("dlist", dlist);
-
 		return "doran/doran_ajax";
 	}
-	
+
 	@PostMapping("quickUpload.do")
 	public String quickUpload(@RequestBody Map<String, String> requestData, Model model, HttpSession session) {
-	    String title = requestData.get("title");
-	    String content = requestData.get("content");
+		String title = requestData.get("title");
+		String content = requestData.get("content");
 
-	    System.out.println("간편 업로드 입니다");
-	    int dsize = dService.selectAll().size();
-	    MemVO memVO = (MemVO) session.getAttribute("loginmem");
-	    DoranVO doran = new DoranVO();
-	    String memId = memVO.getMem_id();
-	    doran.setDoran_no(dsize + 1);
-	    doran.setDoran_title(title);
-	    doran.setDoran_cont(content);
-	    doran.setDoran_view(0);
-	    doran.setMem_id(memId);
-	    doran.setDoran_image(null);
-	    System.out.println("입력될 정보:" + doran);
-
-	    dService.insertDoran(doran);
-
-	    return "redirect:/doran/doran.do";
+		int dsize = dService.selectAll().size();
+		MemVO memVO = (MemVO) session.getAttribute("loginmem");
+		DoranVO doran = new DoranVO();
+		String memId = memVO.getMem_id();
+		doran.setDoran_no(dsize + 1);
+		doran.setDoran_title(title);
+		doran.setDoran_cont(content);
+		doran.setDoran_view(0);
+		doran.setMem_id(memId);
+		doran.setDoran_image(null);
+		dService.insertDoran(doran);
+		return "redirect:/doran/doran.do";
 	}
-
 
 	@PostMapping("doranUpload.do")
 	public String handleDoranUpload(DoranVO doran, @RequestParam MultipartFile singleFile, HttpServletRequest request,
 			HttpSession session) {
 
 		int dsize = dService.selectAll().size();
-		////////////////////////////////
-
 		String path = request.getSession().getServletContext().getRealPath("resources");
 		System.out.println("path : " + path);
 //		String root = path + "\\uploadFiles" ;
@@ -181,7 +154,6 @@ public class DoranController {
 
 		// 업로드할 폴더 설정
 		String originFileName = singleFile.getOriginalFilename();
-//		String ext = originFileName.substring(originFileName.lastIndexOf("."));
 		String ext = "";
 		int lastIndex = originFileName.lastIndexOf("."); // 확장자
 		if (lastIndex != -1) { // 확장자가 없다면
@@ -209,26 +181,21 @@ public class DoranController {
 		doran.setDoran_view(0);
 		doran.setMem_id(memId);
 		doran.setDoran_image(ranFileName);
-
 		dService.insertDoran(doran);
-
 		return "redirect:/doran/doran.do";
 	}
 
-	@GetMapping("doranFeedDetail.do")
-	public String doranFeedDetail(Model model) {
-
-		// 나중에 클릭하면 넘어온 파라미터 게시물 넘버로 바꿔줘
-		DoranVO doran = dService.selectDoran_no(14);
-//		System.out.println(doran);
-		// 현재 1번 게시글에 대한 댓글 정보 가져오기 test
-		List<CommentVO> comments = dService.selectAllCommentAbout(1);
+	@GetMapping("/doranFeedDetail/{doranNo}")
+	public String doranFeedDetail(@PathVariable int doranNo, Model model) {
+		DoranVO doran = dService.selectDoran_no(doranNo);
+		List<CommentVO> comments = dService.selectAllCommentAbout(doranNo);
 		model.addAttribute("doran", doran);
 		model.addAttribute("comments", comments);
-		logger.info(comments.toString());
-		return "doran/doranFeedDetail";
+		System.out.println("게시물 상세로 넘어간다" + doran);
+		System.out.println(comments);
+		return "/doran/doranFeedDetail";
 	}
-//	@GetMapping("doranLikeUpdate.do")
+
 	@RequestMapping(value = "doranLikeUpdate.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String doranLikeUpdate(@RequestParam int doran_no, String mem_id) {
@@ -238,32 +205,23 @@ public class DoranController {
 		dlike.setDoran_no(doran_no);
 		dlike.setMem_id(mem_id);
 		System.out.println(dlike);
-
 		// 이미 좋아요 된 것이면 취소하고 없으면 insert 한다
 		if (dService.selectDoranLikeBy(dlike) > 0) {
 			System.out.println("좋아요 삭제 ~");
 			dService.deleteDoranLike(dlike);
 			return "삭제";
-
 		} else {
 			System.out.println("좋아요 추가!");
 			dService.insertDoranLike(dlike);
 			return "추가";
 		}
-		
-		
 	}
-	
+
 	@GetMapping("doranSearch.do")
 	public String selectSearchDoran(@RequestParam String keyword, Model model) {
 		List<DoranVO> dlist = dService.selectSearchDoran(keyword);
-		System.out.println("도란 검색 입니다" + dlist);
-		
 		model.addAttribute("dlist", dlist);
-		
 		return "doran/doran_ajax";
 	}
-	
 
-	
 }

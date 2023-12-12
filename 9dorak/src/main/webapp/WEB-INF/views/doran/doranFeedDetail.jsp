@@ -17,7 +17,9 @@
 </head>
 <script>
 	var c = "${comments}";
+	var doran = "${doran}";
 	console.log(c);
+	console.log(doran);
 </script>
 <body>
 
@@ -87,8 +89,16 @@
 						<div class="overlap-group-2">
 							<img class="unsplash"
 								src="${cpath }/resources/upload/${doran.doran_image}" />
-							<p class="p">엄마가 사준 디저트 매우 맛있다 학교 앞에도 있었으면 좋겠다!!!
-								#반모#중2#슬릭백장인</p>
+							<p class="p">${doran.doran_cont}</p>
+							<p>${doran.doran_no}</p>
+							<p>멤버 아이디 ${doran.mem_id}</p>
+							<p>${doran.doran_title}</p>
+							<p>${doran.doran_cont}</p>
+							<p>${doran.doran_date}</p>
+							<p>조회수${doran.doran_view}</p>
+							<p>좋아요 수${doran.dlike}</p>
+							<p>댓글수${doran.dcomment}</p>
+
 
 							<div class="doran-underInfo">
 								<div class="doran-review">
@@ -99,7 +109,7 @@
 									</div>
 									<div class="doran-review-reviewCnt">
 										<img class="doran-review-reviewCnticon"
-											src="${cpath }/resources/images/doran/icon_doranviewcnt.png" />
+											src="${cpath}/resources/images/doran/icon_doranviewcnt.png" />
 										<div class="doran-review-reviewCnt2">${doran.doran_view}</div>
 									</div>
 									<div class="doran-review-dcomment">
@@ -108,7 +118,13 @@
 										<div class="doran-review-dcomment2">${doran.dcomment}</div>
 									</div>
 								</div>
-								<div class="doran-uploadInfo-time">${doran.doran_date }</div>
+								<div class="doran-uploadInfo-time">${doran.doran_date}</div>
+
+								<c:forEach items="${comments}" var="comment" varStatus="loop">
+									<p>댓글 번호 ${comment.comment_no}</p>
+									<p>댓글 내용 ${comment.comment_cont}</p>
+									<p>댓글 날짜 ${comment.comment_date}</p>
+								</c:forEach>
 							</div>
 
 							<div class="group-4">
@@ -120,13 +136,17 @@
 										<div class="text-wrapper-11">${sessionScope.loginmem.mem_grade}</div>
 									</div>
 									<div class="group-5">
-										<div class="text-wrapper-12">8분전</div>
+										<div class="text-wrapper-12">${doran.doran_date}</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
+
+
+
 				<div class="frame-4">
 					<div class="text-wrapper-13">COMMENTS ☁️</div>
 					<div class="overlap-wrapper">
@@ -204,7 +224,8 @@
 											src="img/unsplash-u3pi6hhsyew.svg" />
 										<div class="textzone">
 											<div class="overlap-group-4">
-												<div class="text-wrapper-17">자유롭게 작성해 보세요 ..</div>
+												<textarea class="text-wrapper-17"
+													placeholder="자유롭게 작성해 보세요 ..."></textarea>
 											</div>
 										</div>
 										<div class="group-wrapper">
@@ -212,7 +233,7 @@
 												<div class="overlap-group-5">
 													<div class="text-wrapper-18">Paylaş</div>
 													<div class="rectangle"></div>
-													<div class="text-wrapper-19">댓글달기</div>
+													<button class="text-wrapper-19" onclick="commentSubmit()">댓글달기</button>
 													<img class="carbon-send-alt"
 														src="img/carbon-send-alt-filled.svg" />
 												</div>
@@ -297,22 +318,7 @@
 						<div class="text-wrapper-22">도란도란</div>
 					</div>
 				</div>
-				<div class="group-13">
-					<div class="overlap-3">
-						<input class="text-wrapper-23" id=searchTxt type="text"
-							placeholder="검색어를 입력하세요" />
-					</div>
-					<div class="doran-search">
-						<button class="doran-search-button">
-							<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
-								viewBox="0 0 15 15" fill="none">
-							<path
-									d="M10.581 9.26619L14.4699 13.1551C14.833 13.5182 14.833 14.1068 14.4699 14.4699C14.1068 14.833 13.5182 14.833 13.1551 14.4699L9.26619 10.581C8.30427 11.2771 7.12193 11.6875 5.84375 11.6875C2.61634 11.6875 0 9.07116 0 5.84375C0 2.61634 2.61634 0 5.84375 0C9.07116 0 11.6875 2.61634 11.6875 5.84375C11.6875 7.12193 11.2771 8.30427 10.581 9.26619ZM5.84375 9.82812C8.04426 9.82812 9.82812 8.04426 9.82812 5.84375C9.82812 3.64324 8.04426 1.85938 5.84375 1.85938C3.64324 1.85938 1.85938 3.64324 1.85938 5.84375C1.85938 8.04426 3.64324 9.82812 5.84375 9.82812Z"
-									fill="#F48E28" />
-						</svg>
-						</button>
-					</div>
-				</div>
+
 			</div>
 
 
@@ -383,6 +389,18 @@
 			</footer>
 
 			<!-- footer -->
+			<script>
+				function commentSubmit() {
+					alert("댓글달기 클릭");
+					var memId = "${sessionScope.loginmem.mem_id}";
+
+					if (!memId || memId.trim() === "") {
+						alert("로그인이 필요한 서비스입니다 !");
+						window.location.href = "${cpath}/login/loginForm.do";
+						return;
+					}
+				}
+			</script>
 
 		</div>
 		<!-- div -->
