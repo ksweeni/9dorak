@@ -17,7 +17,9 @@
 </head>
 <script>
 	var c = "${comments}";
+	var doran = "${doran}";
 	console.log(c);
+	console.log(doran);
 </script>
 <body>
 
@@ -27,20 +29,31 @@
 			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
-						<div class="text-event">이벤트</div>
+						<div class="text-event">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+						</div>
 						<div class="text-menu">
 							<a class="header-a"
 								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
 						</div>
-						<div class="text-subscribe">구독하기</div>
-						<div class="text-yomo">요모조모</div>
+						<div class="text-subscribe">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+						</div>
+						<div class="text-yomo">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+						</div>
 						<div class="text-doran">
 							<a class="header-a"
 								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
 						</div>
 					</div>
-					<img class="untitled-2"
+					<a href="${pageContext.request.contextPath}/main.do"> <img
+						class="untitled-2"
 						src="${cpath}/resources/images/main/header-logo.png" />
+					</a>
 					<div class="div-3">
 						<div class="text-wrapper-28">
 							<c:choose>
@@ -52,8 +65,8 @@
 								</c:when>
 								<c:otherwise>
 									<a class="header-a"
-										href="${pageContext.request.contextPath}/login/login.do">로그인</a> |
-            <a class="header-a"
+										href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
 										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
 								</c:otherwise>
 							</c:choose>
@@ -76,8 +89,16 @@
 						<div class="overlap-group-2">
 							<img class="unsplash"
 								src="${cpath }/resources/upload/${doran.doran_image}" />
-							<p class="p">엄마가 사준 디저트 매우 맛있다 학교 앞에도 있었으면 좋겠다!!!
-								#반모#중2#슬릭백장인</p>
+							<p class="p">${doran.doran_cont}</p>
+							<p>${doran.doran_no}</p>
+							<p>멤버 아이디 ${doran.mem_id}</p>
+							<p>${doran.doran_title}</p>
+							<p>${doran.doran_cont}</p>
+							<p>${doran.doran_date}</p>
+							<p>조회수${doran.doran_view}</p>
+							<p>좋아요 수${doran.dlike}</p>
+							<p>댓글수${doran.dcomment}</p>
+
 
 							<div class="doran-underInfo">
 								<div class="doran-review">
@@ -88,7 +109,7 @@
 									</div>
 									<div class="doran-review-reviewCnt">
 										<img class="doran-review-reviewCnticon"
-											src="${cpath }/resources/images/doran/icon_doranviewcnt.png" />
+											src="${cpath}/resources/images/doran/icon_doranviewcnt.png" />
 										<div class="doran-review-reviewCnt2">${doran.doran_view}</div>
 									</div>
 									<div class="doran-review-dcomment">
@@ -97,7 +118,13 @@
 										<div class="doran-review-dcomment2">${doran.dcomment}</div>
 									</div>
 								</div>
-								<div class="doran-uploadInfo-time">${doran.doran_date }</div>
+								<div class="doran-uploadInfo-time">${doran.doran_date}</div>
+
+								<c:forEach items="${comments}" var="comment" varStatus="loop">
+									<p>댓글 번호 ${comment.comment_no}</p>
+									<p>댓글 내용 ${comment.comment_cont}</p>
+									<p>댓글 날짜 ${comment.comment_date}</p>
+								</c:forEach>
 							</div>
 
 							<div class="group-4">
@@ -109,13 +136,17 @@
 										<div class="text-wrapper-11">${sessionScope.loginmem.mem_grade}</div>
 									</div>
 									<div class="group-5">
-										<div class="text-wrapper-12">8분전</div>
+										<div class="text-wrapper-12">${doran.doran_date}</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
+
+
+
 				<div class="frame-4">
 					<div class="text-wrapper-13">COMMENTS ☁️</div>
 					<div class="overlap-wrapper">
@@ -193,7 +224,8 @@
 											src="img/unsplash-u3pi6hhsyew.svg" />
 										<div class="textzone">
 											<div class="overlap-group-4">
-												<div class="text-wrapper-17">자유롭게 작성해 보세요 ..</div>
+												<textarea class="text-wrapper-17"
+													placeholder="자유롭게 작성해 보세요 ..."></textarea>
 											</div>
 										</div>
 										<div class="group-wrapper">
@@ -201,7 +233,7 @@
 												<div class="overlap-group-5">
 													<div class="text-wrapper-18">Paylaş</div>
 													<div class="rectangle"></div>
-													<div class="text-wrapper-19">댓글달기</div>
+													<button class="text-wrapper-19" onclick="commentSubmit()">댓글달기</button>
 													<img class="carbon-send-alt"
 														src="img/carbon-send-alt-filled.svg" />
 												</div>
@@ -286,84 +318,89 @@
 						<div class="text-wrapper-22">도란도란</div>
 					</div>
 				</div>
-				<div class="group-13">
-					<div class="overlap-3">
-						<input class="text-wrapper-23" id=searchTxt type="text"
-							placeholder="검색어를 입력하세요" />
-					</div>
-					<div class="doran-search">
-						<button class="doran-search-button">
-							<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
-								viewBox="0 0 15 15" fill="none">
-							<path
-									d="M10.581 9.26619L14.4699 13.1551C14.833 13.5182 14.833 14.1068 14.4699 14.4699C14.1068 14.833 13.5182 14.833 13.1551 14.4699L9.26619 10.581C8.30427 11.2771 7.12193 11.6875 5.84375 11.6875C2.61634 11.6875 0 9.07116 0 5.84375C0 2.61634 2.61634 0 5.84375 0C9.07116 0 11.6875 2.61634 11.6875 5.84375C11.6875 7.12193 11.2771 8.30427 10.581 9.26619ZM5.84375 9.82812C8.04426 9.82812 9.82812 8.04426 9.82812 5.84375C9.82812 3.64324 8.04426 1.85938 5.84375 1.85938C3.64324 1.85938 1.85938 3.64324 1.85938 5.84375C1.85938 8.04426 3.64324 9.82812 5.84375 9.82812Z"
-									fill="#F48E28" />
-						</svg>
-						</button>
-					</div>
-				</div>
+
 			</div>
 
+
 			<footer class="footer">
-				<div class="company-loco">
-					<div class="company">
-						<p class="text-wrapper-24">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Commodo libero viverra dapibus odio
-							sit malesuada in quis. Arcu tristique elementum viverra integer
-							id.</p>
-						<img class="untitled-2" src="img/untitled-1-2.png" />
+				<div class="footer-company-loco">
+					<div class="footer-company">
+						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+						<img class="footer-logo"
+							src="${cpath}/resources/images/main/footer-logo.png" />
 					</div>
-					<div class="social-icon">
-						<div class="facebook">
-							<img class="mask-group" src="img/mask-group.png" />
+					<div class="footer-social-icon">
+						<div class="footer-facebook">
+							<img class="footer-mask-group"
+								src="${cpath}/resources/images/main/footer-facebook.png" />
 						</div>
-						<div class="instagram">
-							<img class="mask-group-2" src="img/image.png" />
+						<div class="footer-instagram">
+							<img class="footer-img"
+								src="${cpath}/resources/images/main/footer-insta.png" />
 						</div>
-						<div class="twitter">
-							<img class="mask-group-3" src="img/mask-group-2.png" />
+						<div class="footer-twitter">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-twitter.png" />
 						</div>
-						<div class="linkind">
-							<img class="mask-group-3" src="img/mask-group-3.png" />
+						<div class="footer-linkind">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-linkedin.png" />
 						</div>
 					</div>
 				</div>
-				<div class="contact-us">
-					<div class="text-wrapper-25">Contact Us</div>
-					<div class="group-14">
-						<div class="text-wrapper-26">1234 Country Club Ave</div>
-						<div class="text-wrapper-27">NC 123456, London, UK</div>
-						<div class="text-wrapper-28">+0123 456 7891</div>
+				<div class="footer-contact-us">
+					<div class="footer-text-wrapper-2">Contact Us</div>
+					<div class="footer-group">
+						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+						<div class="footer-text-wrapper-3">+0123 456 7891</div>
 					</div>
-					<div class="group-15">
-						<div class="overlap-group-7">
-							<div class="vector-wrapper">
-								<img class="vector-3" src="img/image.svg" />
+					<div class="footer-overlap-group-wrapper">
+						<div class="footer-overlap-group">
+							<div class="footer-vector-wrapper">
+								<img class="footer-vector"
+									src="${cpath}/resources/images/main/footer-email-button.png" />
 							</div>
-							<div class="text-wrapper-29">Enter your email....</div>
+							<input class="footer-enter-email"
+								placeholder="Enter your email....">
 						</div>
 					</div>
 				</div>
-				<div class="user-link">
-					<div class="text-wrapper-30">User Link</div>
-					<div class="group-16">
-						<div class="text-wrapper-26">About Us</div>
-						<div class="text-wrapper-27">Contact Us</div>
-						<div class="text-wrapper-28">Order Delivery</div>
-						<div class="payment-tex">Payment &amp; Tex</div>
-						<div class="text-wrapper-31">Terms of Services</div>
+				<div class="footer-user-link">
+					<div class="footer-text-wrapper-7">User Link</div>
+					<div class="footer-group-2">
+						<div class="footer-text-wrapper-3">About Us</div>
+						<div class="footer-text-wrapper-3">Contact Us</div>
+						<div class="footer-text-wrapper-3">Order Delivery</div>
+						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+						<div class="footer-text-wrapper-3">Terms of Services</div>
 					</div>
 				</div>
-				<div class="opening-restaurant">
-					<div class="text-wrapper-30">Opening Restaurant</div>
-					<div class="group-17">
-						<div class="text-wrapper-26">Sat-Wet: 09:00am-10:00PM</div>
-						<div class="text-wrapper-27">Thursdayt: 09:00am-11:00PM</div>
-						<div class="text-wrapper-28">Friday: 09:00am-8:00PM</div>
+				<div class="footer-opening-restaurant">
+					<div class="footer-text-wrapper-7">Opening Restaurant</div>
+					<div class="footer-group-3">
+						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+						<div class="footer-text-wrapper-3">Thursdayt:
+							09:00am-11:00PM</div>
+						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
 					</div>
 				</div>
 			</footer>
+
 			<!-- footer -->
+			<script>
+				function commentSubmit() {
+					alert("댓글달기 클릭");
+					var memId = "${sessionScope.loginmem.mem_id}";
+
+					if (!memId || memId.trim() === "") {
+						alert("로그인이 필요한 서비스입니다 !");
+						window.location.href = "${cpath}/login/loginForm.do";
+						return;
+					}
+				}
+			</script>
 
 		</div>
 		<!-- div -->

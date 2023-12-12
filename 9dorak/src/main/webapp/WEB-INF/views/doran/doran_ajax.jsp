@@ -5,7 +5,8 @@
 <div class="doran-card">
 
 	<c:forEach items="${dlist}" var="doran" varStatus="loop">
-		<div class="doran-feed" id="doran-feed-${loop.index}">
+		<div class="doran-feed" id="doran-feed-${loop.index}"
+			onclick="toFeedDetail(${doran.doran_no})">
 
 			<div class="doran-topInfo">
 				<div>
@@ -36,8 +37,9 @@
 						<img class="doran-review-likeicon"
 							id="like-icon-${doran.doran_no}"
 							src="${cpath }/resources/images/doran/icon_doran-like-unfill.png" />
-							<input type="hidden" value="${doran.dlike}" id="dlike">
-						<div class="doran-review-like${doran.doran_no}" id="doran-review-like2">${doran.dlike}</div>
+						<input type="hidden" value="${doran.dlike}" id="dlike">
+						<div class="doran-review-like${doran.doran_no}"
+							id="doran-review-like2">${doran.dlike}</div>
 					</div>
 					<div class="doran-review-reviewCnt">
 						<img class="doran-review-reviewCnticon"
@@ -71,35 +73,23 @@
 			return;
 		}
     	
-   		alert(index);
+   		 alert(index);
          var likeIcon = document.getElementById("like-icon-" + index);
-        //alert(${dlist[index-1].doran_no}); // Use single quotes here
-
+      
 
          if (likeIcon) {
             // 이미지 파일 이름이 'unfill'로 끝나면 'fill'로 변경하고 그 반대도 적용
             likeIcon.src = likeIcon.src.endsWith("-unfill.png") ?
-                '${cpath}/resources/images/doran/icon_doran-like-fill.png' : // Use single quotes here
-                '${cpath}/resources/images/doran/icon_doran-like-unfill.png'; // Use single quotes here
+                '${cpath}/resources/images/doran/icon_doran-like-fill.png' : 
+                '${cpath}/resources/images/doran/icon_doran-like-unfill.png';
 
-            alert('${sessionScope.loginmem.mem_id}'); // Use single quotes here
+            alert('${sessionScope.loginmem.mem_id}'); 
          }
             // 세션에 저장된 값 가져오기
-             var memId = '${sessionScope.loginmem.mem_id}'; // Use single quotes here
-          /*   var indexNum = ${dlist[index].doran_no};  */
-        /*      var vv = '${dlist[index].doran_title}'; */ // Use single quotes here */
-          /*    alert(vv); */
-
-    /*         var doranVO = ${doran}; // Assuming dlist[loop.index] returns a doranVO object
-            var doranNo = doranVO ? doranVO.doran_no : null; */
-
-          /*   console.log(doranNo);
-            alert(doranNo); */
+             var memId = '${sessionScope.loginmem.mem_id}'; 
 
             alert($(".doran-review-like" + index).text());
 
-     
-            
              $.ajax({
                 url: '${cpath}/doran/doranLikeUpdate.do', // Use single quotes here
                 data: {
@@ -108,17 +98,19 @@
                 },
                 success: function (responseData) {
                     alert(  responseData);
-                   // $(".doran-review-like2").text()
+                  
                 
                 }
             }); 
-     //   }    
+     
     }
+    
+    function toFeedDetail(doranNum) {
+        alert(doranNum);
+        window.location.href = '${cpath}/doran/doranFeedDetail/' + doranNum;
+    }
+
 </script>
 
-
-
-
 	</c:forEach>
-
 </div>
