@@ -18,24 +18,36 @@
 </head>
 <body>
 	<div class="screen">
-
+	  <div>
+	  
 		<header class="header">
 			<div class="top-nav">
 				<div class="navbar">
-					<div class="text-event">이벤트</div>
+					<div class="text-event">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+					</div>
 					<div class="text-menu">
 						<a class="header-a"
 							href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
 					</div>
-					<div class="text-subscribe">구독하기</div>
-					<div class="text-yomo">요모조모</div>
+					<div class="text-subscribe">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+					</div>
+					<div class="text-yomo">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+					</div>
 					<div class="text-doran">
 						<a class="header-a"
 							href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
 					</div>
 				</div>
-				<img class="untitled-2"
+				<a href="${pageContext.request.contextPath}/main.do"> <img
+					class="untitled-2"
 					src="${cpath}/resources/images/main/header-logo.png" />
+				</a>
 				<div class="div-3">
 					<div class="text-wrapper-28">
 						<c:choose>
@@ -47,8 +59,8 @@
 							</c:when>
 							<c:otherwise>
 								<a class="header-a"
-									href="${pageContext.request.contextPath}/login/login.do">로그인</a> |
-            <a class="header-a"
+									href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
 									href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
 							</c:otherwise>
 						</c:choose>
@@ -64,6 +76,7 @@
 				</div>
 			</div>
 		</header>
+
 		<div class="div">
 			<div class="menu-and-pagenation">
 				<div class="pagination">
@@ -314,7 +327,9 @@
 				</div>
 			</div>
 		</footer>
-	</div>
+		
+	  </div>
+	</div><!-- screen -->
 
 	<script type="text/javascript">
 		var chkCtgr = null;

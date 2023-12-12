@@ -21,6 +21,64 @@
 
 	<div class="div-wrapper">
 		<div class="div">
+		
+			<header class="header">
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-event">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+					</div>
+					<div class="text-menu">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+					</div>
+					<div class="text-subscribe">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+					</div>
+					<div class="text-yomo">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+					</div>
+					<div class="text-doran">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+					</div>
+				</div>
+				<a href="${pageContext.request.contextPath}/main.do"> <img
+					class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				</a>
+				<div class="div-3">
+					<div class="text-wrapper-28">
+						<c:choose>
+							<c:when test="${not empty sessionScope.loginmem.mem_id}">
+								<span
+									style="font-weight: bold; left: 2.5rem; position: relative;">
+									<c:out value="${sessionScope.loginmem.mem_id}" /> 님
+								</span>
+							</c:when>
+							<c:otherwise>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+									href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<div class="group-20">
+						<div class="header-overlap-group-3">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<div class="ellipse-light"></div>
+							<!-- <div class="text-wrapper-29">2</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		
 			<div class="menu">
 				<div id="main-group" class="group"></div>
 				<div class="sub-image">
@@ -497,18 +555,15 @@
 					<div class="carat-wrapper" id="nextPage">
 						<svg class="carat" xmlns="http://www.w3.org/2000/svg" width="31"
 							height="30" viewBox="0 0 31 30" fill="none">
-<path
+							<path
 								d="M11.8577 9.2625L17.5827 15L11.8577 20.7375L13.6202 22.5L21.1202 15L13.6202 7.5L11.8577 9.2625Z"
 								fill="#C4CDD5" />
-</svg>
-
+						</svg>
 					</div>
 				</div>
 
-
 			</div>
 			<!-- text-reviews-and -->
-		</div>
 
 		<footer class="footer">
 			<div class="company-loco">
@@ -569,53 +624,9 @@
 				</div>
 			</div>
 		</footer>
-
-		<header class="header">
-			<div class="top-nav">
-				<div class="navbar">
-					<div class="text-event">이벤트</div>
-					<div class="text-menu">
-						<a class="header-a"
-							href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
-					</div>
-					<div class="text-subscribe">구독하기</div>
-					<div class="text-yomo">요모조모</div>
-					<div class="text-doran">
-						<a class="header-a"
-							href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
-					</div>
-				</div>
-				<img class="untitled-2"
-					src="${cpath}/resources/images/main/header-logo.png" />
-				<div class="div-3">
-					<div class="text-wrapper-28">
-						<c:choose>
-							<c:when test="${not empty sessionScope.loginmem.mem_id}">
-								<span
-									style="font-weight: bold; left: 2.5rem; position: relative;">
-									<c:out value="${sessionScope.loginmem.mem_id}" /> 님
-								</span>
-							</c:when>
-							<c:otherwise>
-								<a class="header-a"
-									href="${pageContext.request.contextPath}/login/login.do">로그인</a> |
-            <a class="header-a"
-									href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
-							</c:otherwise>
-						</c:choose>
-					</div>
-					<div class="group-20">
-						<div class="header-overlap-group-3">
-							<img class="header-group-21"
-								src="${cpath}/resources/images/main/header-cart.png" />
-							<div class="ellipse-light"></div>
-							<!-- <div class="text-wrapper-29">2</div> -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-	</div>
+		
+		</div><!-- div -->
+	</div><!-- div-wrapper -->
 	<script>
 	$(document).ready(function() {
 		var heartImage = document.getElementById('heart');
