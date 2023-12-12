@@ -76,7 +76,7 @@ String contextPath = request.getContextPath();
 								<div class="overlap-group">
 									<!-- 게시 내용 입력 -->
 									<div class="doranTitleBox">
-										<textarea id="doranTitle" placeholder="자유롭게 제목을 입력해보세요"
+										<textarea id="doranTitle" placeholder="제목을 입력해보세요"
 											name="doran_title"></textarea>
 									</div>
 									<div class="doranContBox">
@@ -98,11 +98,10 @@ String contextPath = request.getContextPath();
 												<!-- 버튼 클릭 시 파일첨부 테스트 -->
 												<input type="file" id="fileInput" name="singleFile">
 												<!-- 멀티파트 객체로 singleFile이 넘어간다 -->
-
-												​
-											</div>
-										</div>
-									</div>
+​
+											</div><!-- bottom-content -->
+										</div><!-- type-n -->
+									</div><!-- upload-field -->
 									​
 									<%-- <div class="doran-fileUpload">
 										<div class="doran-fileUploadText">
@@ -164,9 +163,7 @@ String contextPath = request.getContextPath();
 					<div class="overlap-group-4">
 						<div class="card">
 							<div class="frame-4">
-								<div class="ellipsis-wrapper">
-									<div class="ellipsis">􀍠</div>
-								</div>
+								<div class="ellipsis"><img class="ellipsis-img" src="${cpath }/resources/images/doran/doran_logo.png" /></div>
 							</div>
 							<div class="tab">
 								<button id="doran" class="text-wrapper-17"
@@ -182,40 +179,47 @@ String contextPath = request.getContextPath();
 				</div>
 			</div>
 
-			<div class="doran-profile">
-				<div class="doran-profile-photo">
-					<img class="doran-profile-photoImg"
-						src="${cpath }/resources/images/doran/test.png" />
-				</div>
+			<div class="group-15">
+				<div class="group-16">
+					<div class="group-17">
+						<div class="div-2">
+							<div class="doran-profile">
+								<div class="doran-profile-photo">
+									<img class="doran-profile-photoImg"
+										src="${cpath }/resources/images/doran/test.png" />
+								</div>
+								<!-- alert("MemVO [mem_id=ksween, mem_name=김수인, mem_gender=Male, 
+									mem_bd=2001-05-04, mem_email=ksween@naver.com, mem_phone=01046302647, 
+									mem_pw=1234, mem_code=test111, mem_addr=null, mem_point=50, 
+									mem_grade="낑깡", mem_aller=null, mem_quit=0]"); -->
+								<div class="doran-profile-info">
+									<div class="doran-profile-info-memname">${sessionScope.loginmem.mem_id}</div>
+									<div class="doran-profile-info-grade">
+										<div class="doran-profile-info-lv">LV.</div>
+										<div class="doran-profile-info-memgrade">${sessionScope.loginmem.mem_grade}</div>
+									</div>
+								</div>
+								<div class="doran-profile-point">
+									<div class="info-point">
+										<div>보유한포인트</div>
+										<div>${sessionScope.loginmem.mem_point}</div>
 
-				<!-- alert("MemVO [mem_id=ksween, mem_name=김수인, mem_gender=Male, 
-				mem_bd=2001-05-04, mem_email=ksween@naver.com, mem_phone=01046302647, 
-				mem_pw=1234, mem_code=test111, mem_addr=null, mem_point=50, 
-				mem_grade="낑깡", mem_aller=null, mem_quit=0]"); -->
-				<div class="doran-profile-info">
-					<div class="doran-profile-info-memname">${sessionScope.loginmem.mem_id}</div>
-					<div class="doran-profile-info-grade">
-						<div class="doran-profile-info-lv">LV.</div>
-						<div class="doran-profile-info-memgrade">${sessionScope.loginmem.mem_grade}</div>
+									</div>
+
+									<div class="progress-div">
+										<progress id="progress" class="overlap-group-3" id="progress"
+											value="${sessionScope.loginmem.mem_point}" min="0" max="324"></progress>
+									</div>
+
+								</div>
+								<button class="doran-button-frofile-setting">
+									<span>프로필 설정하기</span>
+								</button>
+							</div>
+
+						</div>
 					</div>
 				</div>
-				<div class="doran-profile-point">
-					<div class="info-point">
-						<div>보유한 포인트</div>
-						<div>${sessionScope.loginmem.mem_point}</div>
-
-					</div>
-
-					<div class="progress-div">
-						<progress id="progress" class="overlap-group-3" id="progress"
-							value="${sessionScope.loginmem.mem_point}" min="0" max="324"></progress>
-					</div>
-
-
-				</div>
-				<button class="doran-button-frofile-setting">
-					<span>프로필 설정하기</span>
-				</button>
 			</div>
 			<!-- <div class="group-wrapper">
 				<div class="group-11">
@@ -228,61 +232,67 @@ String contextPath = request.getContextPath();
 			</div> -->
 
 			<footer class="footer">
-				<div class="company-loco">
-					<div class="company">
-						<p class="text-wrapper-3">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Commodo libero viverra dapibus odio
-							sit malesuada in quis. Arcu tristique elementum viverra integer
-							id.</p>
-						<img class="untitled" src="img/untitled-1-2.png" />
+				<div class="footer-company-loco">
+					<div class="footer-company">
+						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+						<img class="footer-logo"
+							src="${cpath}/resources/images/main/footer-logo.png" />
 					</div>
-					<div class="social-icon">
-						<div class="facebook">
-							<img class="mask-group" src="img/mask-group-3.png" />
+					<div class="footer-social-icon">
+						<div class="footer-facebook">
+							<img class="footer-mask-group"
+								src="${cpath}/resources/images/main/footer-facebook.png" />
 						</div>
-						<div class="instagram">
-							<img class="img" src="img/mask-group-2.png" />
+						<div class="footer-instagram">
+							<img class="footer-img"
+								src="${cpath}/resources/images/main/footer-insta.png" />
 						</div>
-						<div class="twitter">
-							<img class="mask-group-2" src="img/mask-group.png" />
+						<div class="footer-twitter">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-twitter.png" />
 						</div>
-						<div class="linkind">
-							<img class="mask-group-2" src="img/image.png" />
+						<div class="footer-linkind">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-linkedin.png" />
 						</div>
 					</div>
 				</div>
-				<div class="contact-us">
-					<div class="text-wrapper-4">Contact Us</div>
-					<div class="group-2">
-						<div class="text-wrapper-5">1234 Country Club Ave</div>
-						<div class="text-wrapper-6">NC 123456, London, UK</div>
-						<div class="text-wrapper-7">+0123 456 7891</div>
+				<div class="footer-contact-us">
+					<div class="footer-text-wrapper-2">Contact Us</div>
+					<div class="footer-group">
+						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+						<div class="footer-text-wrapper-3">+0123 456 7891</div>
 					</div>
-					<div class="group-3">
-						<div class="overlap-group-2">
-							<div class="vector-wrapper">
-								<img class="vector" src="img/vector-2.svg" />
+					<div class="footer-overlap-group-wrapper">
+						<div class="footer-overlap-group">
+							<div class="footer-vector-wrapper">
+								<img class="footer-vector"
+									src="${cpath}/resources/images/main/footer-email-button.png" />
 							</div>
-							<div class="text-wrapper-8">Enter your email....</div>
+							<input class="footer-enter-email"
+								placeholder="Enter your email....">
 						</div>
 					</div>
 				</div>
-				<div class="user-link">
-					<div class="text-wrapper-9">User Link</div>
-					<div class="group-4">
-						<div class="text-wrapper-5">About Us</div>
-						<div class="text-wrapper-6">Contact Us</div>
-						<div class="text-wrapper-7">Order Delivery</div>
-						<div class="payment-tex">Payment &amp; Tex</div>
-						<div class="text-wrapper-10">Terms of Services</div>
+				<div class="footer-user-link">
+					<div class="footer-text-wrapper-7">User Link</div>
+					<div class="footer-group-2">
+						<div class="footer-text-wrapper-3">About Us</div>
+						<div class="footer-text-wrapper-3">Contact Us</div>
+						<div class="footer-text-wrapper-3">Order Delivery</div>
+						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+						<div class="footer-text-wrapper-3">Terms of Services</div>
 					</div>
 				</div>
-				<div class="opening-restaurant">
-					<div class="text-wrapper-9">Opening Restaurant</div>
-					<div class="group-5">
-						<div class="text-wrapper-5">Sat-Wet: 09:00am-10:00PM</div>
-						<div class="text-wrapper-6">Thursdayt: 09:00am-11:00PM</div>
-						<div class="text-wrapper-7">Friday: 09:00am-8:00PM</div>
+				<div class="footer-opening-restaurant">
+					<div class="footer-text-wrapper-7">Opening Restaurant</div>
+					<div class="footer-group-3">
+						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+						<div class="footer-text-wrapper-3">Thursday:
+							09:00am-11:00PM</div>
+						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
 					</div>
 				</div>
 			</footer>
