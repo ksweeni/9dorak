@@ -8,9 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.shinhan.dto.DoranVO;
+import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
+import com.shinhan.dto.ProVO;
 
 @Repository
 public class MyPageDAOMybatis {
