@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.shinhan.dto.ProVO;
 import com.shinhan.dto.SubVO;
 
 @Repository
@@ -23,5 +24,25 @@ public class SubDAOMybatis {
 		System.out.println(sublist);
 		logger.info("selectAll :  {}", sublist.size());
 		return sublist;
+	}
+
+	public List<ProVO> selectAllSub9A() {
+		List<ProVO> sub9alist = sqlSession.selectList(NAMESPACE + "selectAllSub9A");
+		return sub9alist;
+	}
+
+	public List<ProVO> selectAllSub9B() {
+		List<ProVO> sub9blist = sqlSession.selectList(NAMESPACE + "selectAllSub9B");
+		return sub9blist;
+	}
+
+	public List<ProVO> selectAllSub19A() {
+		List<ProVO> sub19alist = sqlSession.selectList(NAMESPACE + "selectAllSub19A");
+		return sub19alist;
+	}
+
+	public List<ProVO> selectAllSub19B() {
+		List<ProVO> sub19blist = sqlSession.selectList(NAMESPACE + "selectAllSub19B");
+		return sub19blist;
 	}
 }
