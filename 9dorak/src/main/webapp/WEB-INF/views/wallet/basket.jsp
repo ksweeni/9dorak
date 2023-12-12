@@ -49,6 +49,7 @@
 			
 			
 			<p>Mem ID: ${mem_id}</p>
+			<p>BASKET_PRO_COUNT: ${basket_pro_count}</p>
     <p>Product Number: ${pro_no}</p>
     <p>Product Name: ${pro_name}</p>
 			
