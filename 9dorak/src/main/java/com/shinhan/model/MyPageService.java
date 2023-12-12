@@ -53,6 +53,26 @@ public class MyPageService {
 	}
 
 
+	
+	//
+	
+	public List<ProVO> getLikeList(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.getLikeList(mem_id);
+	}
+	public List<CouponVO> getCoupon(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.getCoupon(mem_id);
+	}
+	public int couponCheck(CouponVO coupon) {
+		// TODO Auto-generated method stub
+		return dao.couponCheck(coupon);
+	}
+	public int couponRegUpdate(CouponVO coupon) {
+		// TODO Auto-generated method stub
+		return dao.couponRegUpdate(coupon);
+	}
+
 
 
 

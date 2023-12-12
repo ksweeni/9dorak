@@ -59,6 +59,24 @@ public class MyPageDAOMybatis {
 	}
 
 
+	//
+	
+	public List<ProVO> getLikeList(String mem_id) {
+		List<ProVO> likeList = sqlSession.selectList(NAMESPACE + "getLikeList", mem_id);
+		return likeList;
+	}
+	public List<CouponVO> getCoupon(String mem_id) {
+		List<CouponVO> cList = sqlSession.selectList(NAMESPACE + "getCoupon", mem_id);
+		return cList;
+	}
+	public int couponCheck(CouponVO coupon) {
+		int result = sqlSession.selectOne(NAMESPACE + "couponCheck", coupon);
+		return result;
+	}
+	public int couponRegUpdate(CouponVO coupon) {
+		int result = sqlSession.update(NAMESPACE + "couponRegUpdate", coupon);
+		return result;
+	}
 
 //	public List<MemVO> selectAll() {
 //		List<MemVO> mlist = sqlSession.selectList(NAMESPACE + "selectAll");

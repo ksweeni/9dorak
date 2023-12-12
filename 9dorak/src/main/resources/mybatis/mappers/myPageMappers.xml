@@ -53,7 +53,36 @@
 	<select id="selectDelivery" resultType="int"
 		parameterType="memdeliveryvo">
 		SELECT COUNT(*) FROM MEMDELIVERY
-		WHERE mem_id = #{mem_id} AND mem_delname = #{mem_delname}
+		WHERE mem_id = #{mem_id}
+		AND mem_delname = #{mem_delname}
 	</select>
+	
+	<!--  -->
+	
+	
+	<select id="getLikeList" resultType="provo"
+		parameterType="String">
+		SELECT *
+		FROM RESERVE R join pro P on R.pro_no = P.pro_no
+		where mem_id = #{mem_id}
+	</select>
+	<select id="getCoupon" resultType="couponvo"
+		parameterType="String">
+		SELECt *
+		FROM coupon where mem_id = #{mem_id} and
+		coupon_reg = '등록'
+	</select>
+	<select id="couponCheck" resultType="int"
+		parameterType="couponvo">
+		SELECT COUNT(*) FROM coupon where coupon_reg = '미등록' and
+		coupon_code =#{coupon_code}
+	</select>
+	<update id="couponRegUpdate" parameterType="couponvo">
+		update coupon
+		set
+		coupon_reg='등록'
+		where
+		coupon_code=#{coupon_code}
+	</update>
 
 </mapper>

@@ -131,4 +131,41 @@ public class MyPageController {
 	}
 
 
+	
+	//
+	
+	@GetMapping("pointAndCoupon.do")
+	public String pointAndCouponPage(Model model, HttpSession session) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		String mem_id = loginmem.getMem_id();
+		List<ProVO> likeList = mService.getLikeList("aaa");
+		// 나중에는 로그인한 사람 아이디로 바꾸자
+		model.addAttribute("loginmem", loginmem);
+		model.addAttribute("likeList", likeList);
+		return "my/pointAndCoupon";
+	}
+	@GetMapping("coupon_ajax.do")
+	public String couponPage(Model model, HttpSession session) {
+//		System.out.println("coupon_ajax.do");
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		String mem_id = loginmem.getMem_id();
+		List<CouponVO> clist = mService.getCoupon(mem_id);
+		model.addAttribute("loginmem", loginmem);
+		model.addAttribute("clist", clist);
+		return "my/coupon_ajax";
+	}
+	@RequestMapping(value = "couponReg.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String couponPage(Model model, HttpSession session, CouponVO coupon ){
+//		System.out.println(coupon);
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		model.addAttribute("loginmem", loginmem);
+		int check = mService.couponCheck(coupon);
+		if (check == 1) {
+			int result = mService.couponRegUpdate(coupon);
+			return "쿠폰 등록 성공";
+		} else {
+			return "이미 등록되거나 잘못된 코드 입니다.";
+		}
+	}
 }
