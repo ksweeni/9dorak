@@ -35,5 +35,7 @@ public class ProVO {
 	private int pro_weight; //중량
 	private String ingre_no; //카테고리 번호
 	private String order_type; //정렬 
+	private String pro_sub9; //상품 배부르구 메뉴 여부
+	private String pro_sub19; //상품 배터지구 메뉴 여부
 	
 }

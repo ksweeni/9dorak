@@ -123,7 +123,7 @@
 				<span class="e75_225">아이를 위한 9일의 도시락</span><span class="e75_226">구도락을
 					소개합니다</span>
 			</div>
-			<div class=e75_252>
+			<a href="${pageContext.request.contextPath}/event/freelunchbox.do" class=e75_252>
 				<div class=e75_253>
 					<div class="e75_254"></div>
 					<span class="e75_255">무료 체험하기</span>
@@ -139,7 +139,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</a>
 			<div class="e75_315"></div>
 			<div class="e75_316"></div>
 		</div>

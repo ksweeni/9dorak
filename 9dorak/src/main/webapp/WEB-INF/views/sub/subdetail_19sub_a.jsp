@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/subdetailStyle3.css"
+<link rel="stylesheet" href="${cpath}/resources/css/sub19adetailStyle.css"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -144,8 +144,8 @@
 		<div class=e1537_3167>
 			<span class="e1537_3168"><b>이번달 배터지9 메뉴</b></span>
 		</div>
-		<span class="e1543_3047"><a href="${pageContext.request.contextPath}/sub/subdetail2.do">A 메뉴</a></span>
-		<span class="e1543_3294">B 메뉴</span>
+		<span class="e1543_3047">A 메뉴</span>
+		<span class="e1543_3294"><a href="${pageContext.request.contextPath}/sub/subdetail_19sub_b.do">B 메뉴</a></span>
 		<span class="e1543_3414">|</span>
 		<div class="e1543_3351"><hr></div>
 		<div class=e1543_3353>
@@ -154,10 +154,10 @@
 				<div class="e1543_3357"></div>
 			</div>
 			<div class=e1543_3358>
-				<span class="e1543_3360">샌드위치 김밥 도시락 X 4</span>
-				<div class=e1543_3361 style="cursor:pointer;">
+				<span class="e1543_3360">${sub19allist[0].pro_name} X 4</span>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[0].pro_no}" class=e1543_3361>
 					<span class="e1543_3362">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 		<div class=e1543_3363>
@@ -166,10 +166,10 @@
 				<div class="e1543_3367"></div>
 			</div>
 			<div class=e1543_3368>
-				<span class="e1543_3370">샌드위치 김밥 도시락 X 3</span>
-				<div class=e1543_3371 style="cursor:pointer;">
+				<span class="e1543_3370">${sub19allist[1].pro_name} X 3</span>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[1].pro_no}" class=e1543_3371>
 					<span class="e1543_3372">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 		<div class=e1543_3373>
@@ -178,10 +178,10 @@
 				<div class="e1543_3377"></div>
 			</div>
 			<div class=e1543_3378>
-				<span class="e1543_3380">샌드위치 김밥 도시락 X 3</span>
-				<div class=e1543_3381 style="cursor:pointer;">
+				<span class="e1543_3380">${sub19allist[2].pro_name} X 3</span>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[2].pro_no}" class=e1543_3381>
 					<span class="e1543_3382">자세히보기</span>
-				</div>
+				</a>
 			</div>
 		</div>
 		<div class=e1543_3383>
@@ -191,10 +191,10 @@
 					<div class="e1543_3388"></div>
 				</div>
 				<div class=e1543_3389>
-					<span class="e1543_3391">샌드위치 김밥 도시락 X 3</span>
-					<div class=e1543_3392 style="cursor:pointer;">
+					<span class="e1543_3391">${sub19allist[3].pro_name} X 3</span>
+					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[3].pro_no}" class=e1543_3392>
 						<span class="e1543_3393">자세히보기</span>
-					</div>
+					</a>
 				</div>
 			</div>
 			<div class=e1543_3394>
@@ -203,10 +203,10 @@
 					<div class="e1543_3398"></div>
 				</div>
 				<div class=e1543_3399>
-					<span class="e1543_3401">샌드위치 김밥 도시락 X 3</span>
-					<div class=e1543_3402 style="cursor:pointer;">
+					<span class="e1543_3401">${sub19allist[4].pro_name} X 3</span>
+					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[4].pro_no}" class=e1543_3402>
 						<span class="e1543_3403">자세히보기</span>
-					</div>
+					</a>
 				</div>
 			</div>
 			<div class=e1543_3404>
@@ -215,16 +215,16 @@
 					<div class="e1543_3408"></div>
 				</div>
 				<div class=e1543_3409>
-					<span class="e1543_3411">샌드위치 김밥 도시락 X 3</span>
-					<div class=e1543_3412 style="cursor:pointer;">
-						<span class="e1543_3413" >자세히보기</span>
-					</div>
+					<span class="e1543_3411">${sub19allist[5].pro_name} X 3</span>
+					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[5].pro_no}" class=e1543_3412>
+						<span class="e1543_3413">자세히보기</span>
+					</a>
 				</div>
 			</div>
 		</div>
-		<div class=e1543_3415 style="cursor:pointer;">
+		<a href="${cpath}/wallet/pay.do" class=e1543_3415 style="cursor:pointer;">
 			<span class="e1543_3416">구독하기</span>
-		</div>
+		</a>
 	</div>
 
 </body>

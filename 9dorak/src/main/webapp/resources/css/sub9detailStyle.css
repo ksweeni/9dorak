@@ -1165,10 +1165,11 @@
 }
 .e1547_3729 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 247px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 35px;
+    left: 48px;
     top: -2px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1177,10 +1178,11 @@
 }
 .e1547_3788 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 247px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 33px;
+    left: 50px;
     top: 6px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1269,10 +1271,11 @@
 }
 .e1547_3738 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 254px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 29px;
+    left: 56px;
     top: -2px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1281,10 +1284,11 @@
 }
 .e1547_3790 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 254px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 27px;
+    left: 65px;
     top: 5px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1373,10 +1377,11 @@
 }
 .e1547_3747 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 239px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 28px;
+    left: 72px;
     top: 8px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1385,10 +1390,11 @@
 }
 .e1547_3799 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 239px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 34px;
+    left: 58px;
     top: -7px;
     /* font-family: Montserrat; */
     text-align: left;

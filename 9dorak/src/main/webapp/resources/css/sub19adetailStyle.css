@@ -766,11 +766,11 @@
 	letter-spacing:0;
 }
 .e1543_3294 {
-	color: rgba(243.00000071525574, 136.00000709295273, 32.00000189244747, 1);
+	color:rgba(145.19726157188416, 142.37393707036972, 142.37393707036972, 1);
 	width:73px;
 	height:35px;
 	position:absolute;
-	left:232px;
+	left: 245px;
 	top:341px;
 	/* font-family:Inter; */
 	text-align:left;
@@ -853,10 +853,11 @@
 }
 .e1543_3360 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 247px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 32px;
+    left: 48px;
     top: -4px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -945,10 +946,11 @@
 }
 .e1543_3370 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 254px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 32px;
+    left: 56px;
     top: -3px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1037,10 +1039,11 @@
 }
 .e1543_3380 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 239px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 30px;
+    left: 57px;
     top: -9px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1136,10 +1139,11 @@
 }
 .e1543_3391 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 247px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 29px;
+    left: 50px;
     top: 6px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1228,10 +1232,11 @@
 }
 .e1543_3401 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 254px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 30px;
+    left: 66px;
     top: 7px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1320,10 +1325,11 @@
 }
 .e1543_3411 {
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: 239px;
+    width: auto;
+    max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 34px;
+    left: 77px;
     top: 11px;
     /* font-family: Montserrat; */
     text-align: left;
