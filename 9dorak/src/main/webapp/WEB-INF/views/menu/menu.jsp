@@ -116,12 +116,12 @@
 					<c:forEach items="${mlist}" var="pro" varStatus="loop">
 						<div class="green-beans">
 							<div class="overlap-group">
-								<div class="text-wrapper-2">${pro.pro_name}</div>
+								<div class="text-wrapper-2">${pro.pro_name }</div>
 								<!-- <div class="frame">
 									<button class="view-details-btn">자세히 볼게요</button>
 								</div> -->
 								<a class="frame"
-									href="${cpath }/menu/menuSpecificReview.do?pro_no=${pro.pro_no}">
+									href="${cpath }/menu/menuSpecificReview.do?pro_no=${pro.pro_no }">
 									<button class="view-details-btn">자세히 볼게요</button>
 								</a>
 								<div class="mask-group-wrapper">
@@ -131,7 +131,7 @@
 								<div class="like-text">${pro.pro_like }</div>
 								<img class="vector"
 									src="${cpath}/resources/images/menu/menu-heart-fill.png" />
-								<div class="text-wrapper-4">${pro.pro_price}원</div>
+								<div class="text-wrapper-4">${pro.pro_price }원</div>
 							</div>
 						</div>
 					</c:forEach>

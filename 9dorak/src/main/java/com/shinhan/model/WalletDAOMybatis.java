@@ -1,5 +1,7 @@
 package com.shinhan.model;
 
+import java.sql.Timestamp;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
@@ -41,11 +43,7 @@ public class WalletDAOMybatis {
 	
 	
 	
-    // 장바구니 추가
-    public int addBasket(BasketVO basket) {
-        int result = sqlSession.insert(NAMESPACE + "addBasket", basket);
-        return result;
-    }
+    
 
     // 장바구니 삭제
     public int deleteBasket(String mem_id, int pro_no) {
@@ -64,8 +62,21 @@ public class WalletDAOMybatis {
         return sqlSession.selectList(NAMESPACE + "getBasket", mem_id);
     }
 
+    
+    
+    
+    
+    
     // mem_id의 장바구니 존재 여부 확인
-    public int checkBasket(String mem_id) {
-        return sqlSession.selectOne(NAMESPACE + "checkBasket", mem_id);
+    public List<BasketVO> checkBasket(String mem_id, int pro_no) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("mem_id", mem_id);
+        params.put("pro_no", pro_no);
+        return sqlSession.selectList(NAMESPACE + "checkBasket", params);
     }
+    
+    public int addBasket(BasketVO basket) {
+    	return sqlSession.insert(NAMESPACE + "addBasket", basket);
+    }
+    
 }

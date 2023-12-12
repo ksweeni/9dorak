@@ -89,8 +89,8 @@ String contextPath = request.getContextPath();
 											</div>
 										</div>
 									</div>
-									<!-- 파일 선택 부분 js로 수정함 -->
-									<div class="bottom">
+<!-- 파일 선택 부분 js로 수정함 -->
+<div class="bottom">
 <label class="fileUpload" for="singleFile" onmousedown="handleMouseDown(event)">파일 선택</label>
 <input type="file" name="singleFile" id="singleFile" style="display: none;"/>
 
