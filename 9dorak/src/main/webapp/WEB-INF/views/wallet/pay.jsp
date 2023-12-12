@@ -10,6 +10,9 @@
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/payStyle.css"
 	type="text/css" />
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class="screen">
