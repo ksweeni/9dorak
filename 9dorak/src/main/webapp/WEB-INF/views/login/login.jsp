@@ -93,8 +93,20 @@
     			}
     		});  
        }
-                  
- 	// 로그아웃 기능 - 카카오 서버에 접속하는 엑세스 토큰을 만료, 사용자 어플리케이션의 로그아웃은 따로 진행.
+       function kakaoLogout() {			
+			//토큰이 있는지 확인
+			if(!Kakao.Auth.getAccessToken()) {
+				console.log('Not logged in.');
+				return;
+			}
+			//카카오 로그아웃
+			Kakao.Auth.logout(function() {
+				console.log(Kakao.Auth.getAccessToken()); //null
+				window.location.href = '${cpath}/my/logout.do';
+			});
+       };
+             
+ 	/* // 로그아웃 기능 - 카카오 서버에 접속하는 엑세스 토큰을 만료, 사용자 어플리케이션의 로그아웃은 따로 진행.
  	function kakaoLogout() {
  		Kakao.Auth.logout()
  		  .then(function(response) {
@@ -105,7 +117,7 @@
  		  .catch(function(error) {
  		    console.log('Not logged in.');
  		  });
- 	}
+ 	} */
 </script>
 
 <script>
