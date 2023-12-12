@@ -7,8 +7,8 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/sub19bdetailStyle.css"
-	type="text/css" />
+<link rel="stylesheet"
+	href="${cpath}/resources/css/sub19bdetailStyle.css" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
@@ -50,113 +50,90 @@
 		</header>
 	</div>
 	<div class=e1537_3083>
-		<div class=e1537_3084>
-			<div class="e1537_3085"></div>
-			<div class=e1537_3086>
-				<div class=e1537_3087>
-					<span class="e1537_3088">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Commodo libero viverra dapibus odio
-						sit malesuada in quis. Arcu tristique elementum viverra integer
-						id.</span>
-					<div class="e1537_3089"></div>
+
+		<footer class="footer">
+			<div class="footer-company-loco">
+				<div class="footer-company">
+					<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+						우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+					<img class="footer-logo"
+						src="${cpath}/resources/images/main/footer-logo.png" />
 				</div>
-				<div class=e1537_3090>
-					<div class=e1537_3091>
-						<div class=e1537_3092>
-							<div class="e1537_3093"></div>
-						</div>
-						<div class=e1537_3094>
-							<div class=e1537_3095>
-								<div class="e1537_3096"></div>
-							</div>
-						</div>
+				<div class="footer-social-icon">
+					<div class="footer-facebook">
+						<img class="footer-mask-group"
+							src="${cpath}/resources/images/main/footer-facebook.png" />
 					</div>
-					<div class=e1537_3097>
-						<div class=e1537_3098>
-							<div class="e1537_3099"></div>
-						</div>
-						<div class=e1537_3100>
-							<div class=e1537_3101>
-								<div class="e1537_3102"></div>
-							</div>
-						</div>
+					<div class="footer-instagram">
+						<img class="footer-img"
+							src="${cpath}/resources/images/main/footer-insta.png" />
 					</div>
-					<div class=e1537_3103>
-						<div class=e1537_3104>
-							<div class="e1537_3105"></div>
-						</div>
-						<div class=e1537_3106>
-							<div class=e1537_3107>
-								<div class="e1537_3108"></div>
-							</div>
-						</div>
+					<div class="footer-twitter">
+						<img class="footer-mask-group-2"
+							src="${cpath}/resources/images/main/footer-twitter.png" />
 					</div>
-					<div class=e1537_3109>
-						<div class=e1537_3110>
-							<div class="e1537_3111"></div>
-						</div>
-						<div class=e1537_3112>
-							<div class=e1537_3113>
-								<div class="e1537_3114"></div>
-							</div>
-						</div>
+					<div class="footer-linkind">
+						<img class="footer-mask-group-2"
+							src="${cpath}/resources/images/main/footer-linkedin.png" />
 					</div>
 				</div>
 			</div>
-			<div class=e1537_3115>
-				<span class="e1537_3116">Contact Us</span>
-				<div class=e1537_3117>
-					<span class="e1537_3118">1234 Country Club Ave</span><span
-						class="e1537_3119">NC 123456, London, UK</span><span
-						class="e1537_3120">+0123 456 7891</span>
+			<div class="footer-contact-us">
+				<div class="footer-text-wrapper-2">Contact Us</div>
+				<div class="footer-group">
+					<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+					<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+					<div class="footer-text-wrapper-3">+0123 456 7891</div>
 				</div>
-				<div class=e1537_3121>
-					<div class="e1537_3122"></div>
-					<div class=e1537_3123>
-						<div class=ei1537_3123_21_320>
-							<div class="ei1537_3123_21_320_3_106"></div>
+				<div class="footer-overlap-group-wrapper">
+					<div class="footer-overlap-group">
+						<div class="footer-vector-wrapper">
+							<img class="footer-vector"
+								src="${cpath}/resources/images/main/footer-email-button.png" />
 						</div>
-						<div class=ei1537_3123_21_324>
-							<div class="ei1537_3123_21_324_17_203"></div>
-						</div>
+						<input class="footer-enter-email"
+							placeholder="Enter your email....">
 					</div>
-					<span class="e1537_3124">Enter your email....</span>
 				</div>
 			</div>
-			<div class=e1537_3125>
-				<span class="e1537_3126">User Link</span>
-				<div class=e1537_3127>
-					<span class="e1537_3128">About Us</span><span class="e1537_3129">Contact
-						Us</span><span class="e1537_3130">Order Delivery</span><span
-						class="e1537_3131">Payment & Tex</span><span class="e1537_3132">Terms
-						of Services</span>
+			<div class="footer-user-link">
+				<div class="footer-text-wrapper-7">User Link</div>
+				<div class="footer-group-2">
+					<div class="footer-text-wrapper-3">About Us</div>
+					<div class="footer-text-wrapper-3">Contact Us</div>
+					<div class="footer-text-wrapper-3">Order Delivery</div>
+					<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+					<div class="footer-text-wrapper-3">Terms of Services</div>
 				</div>
 			</div>
-			<div class=e1537_3133>
-				<span class="e1537_3134">Opening Restaurant</span>
-				<div class=e1537_3135>
-					<span class="e1537_3136">Sat-Wet: 09:00am-10:00PM</span><span
-						class="e1537_3137">Thursdayt: 09:00am-11:00PM</span><span
-						class="e1537_3138">Friday: 09:00am-8:00PM</span>
+			<div class="footer-opening-restaurant">
+				<div class="footer-text-wrapper-7">Opening Restaurant</div>
+				<div class="footer-group-3">
+					<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+					<div class="footer-text-wrapper-3">Thursdayt: 09:00am-11:00PM</div>
+					<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
 				</div>
 			</div>
-		</div>
+		</footer>
 		<div class=e1537_3167>
 			<span class="e1537_3168"><b>이번달 배터지9 메뉴</b></span>
 		</div>
-		<span class="e1543_3047"><a href="${pageContext.request.contextPath}/sub/subdetail_19sub_a.do">A 메뉴</a></span>
-		<span class="e1543_3294">B 메뉴</span>
-		<span class="e1543_3414">|</span>
-		<div class="e1543_3351"><hr></div>
+		<span class="e1543_3047"><a
+			href="${pageContext.request.contextPath}/sub/subdetail_19sub_a.do">A
+				메뉴</a></span> <span class="e1543_3294">B 메뉴</span> <span class="e1543_3414">|</span>
+		<div class="e1543_3351">
+			<hr>
+		</div>
 		<div class=e1543_3353>
 			<div class=e1543_3354>
 				<div class="e1543_3355"></div>
 				<div class="e1543_3357"></div>
 			</div>
 			<div class=e1543_3358>
-				<span class="e1543_3360">${sub19bllist[0].pro_name} X 4</span>
-				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[0].pro_no}" class=e1543_3361 style="cursor:pointer;">
-					<span class="e1543_3362">자세히보기</span>
+				<span class="e1543_3360">${sub19bllist[0].pro_name} X 4</span> <a
+					href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[0].pro_no}"
+					class=e1543_3361 style="cursor: pointer;"> <span
+					class="e1543_3362">자세히보기</span>
 				</a>
 			</div>
 		</div>
@@ -166,9 +143,10 @@
 				<div class="e1543_3367"></div>
 			</div>
 			<div class=e1543_3368>
-				<span class="e1543_3370">${sub19bllist[1].pro_name} X 3</span>
-				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[1].pro_no}" class=e1543_3371 style="cursor:pointer;">
-					<span class="e1543_3372">자세히보기</span>
+				<span class="e1543_3370">${sub19bllist[1].pro_name} X 3</span> <a
+					href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[1].pro_no}"
+					class=e1543_3371 style="cursor: pointer;"> <span
+					class="e1543_3372">자세히보기</span>
 				</a>
 			</div>
 		</div>
@@ -178,9 +156,10 @@
 				<div class="e1543_3377"></div>
 			</div>
 			<div class=e1543_3378>
-				<span class="e1543_3380">${sub19bllist[2].pro_name}X 3</span>
-				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[2].pro_no}" class=e1543_3381 style="cursor:pointer;">
-					<span class="e1543_3382">자세히보기</span>
+				<span class="e1543_3380">${sub19bllist[2].pro_name}X 3</span> <a
+					href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[2].pro_no}"
+					class=e1543_3381 style="cursor: pointer;"> <span
+					class="e1543_3382">자세히보기</span>
 				</a>
 			</div>
 		</div>
@@ -191,9 +170,10 @@
 					<div class="e1543_3388"></div>
 				</div>
 				<div class=e1543_3389>
-					<span class="e1543_3391">${sub19bllist[3].pro_name} X 3</span>
-					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[3].pro_no}" class=e1543_3392 style="cursor:pointer;">
-						<span class="e1543_3393">자세히보기</span>
+					<span class="e1543_3391">${sub19bllist[3].pro_name} X 3</span> <a
+						href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[3].pro_no}"
+						class=e1543_3392 style="cursor: pointer;"> <span
+						class="e1543_3393">자세히보기</span>
 					</a>
 				</div>
 			</div>
@@ -203,9 +183,10 @@
 					<div class="e1543_3398"></div>
 				</div>
 				<div class=e1543_3399>
-					<span class="e1543_3401">${sub19bllist[4].pro_name} X 3</span>
-					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[4].pro_no}" class=e1543_3402 style="cursor:pointer;">
-						<span class="e1543_3403">자세히보기</span>
+					<span class="e1543_3401">${sub19bllist[4].pro_name} X 3</span> <a
+						href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[4].pro_no}"
+						class=e1543_3402 style="cursor: pointer;"> <span
+						class="e1543_3403">자세히보기</span>
 					</a>
 				</div>
 			</div>
@@ -215,15 +196,16 @@
 					<div class="e1543_3408"></div>
 				</div>
 				<div class=e1543_3409>
-					<span class="e1543_3411">${sub19bllist[5].pro_name} X 3</span>
-					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[5].pro_no}" class=e1543_3412 style="cursor:pointer;">
-						<span class="e1543_3413" >자세히보기</span>
+					<span class="e1543_3411">${sub19bllist[5].pro_name} X 3</span> <a
+						href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19bllist[5].pro_no}"
+						class=e1543_3412 style="cursor: pointer;"> <span
+						class="e1543_3413">자세히보기</span>
 					</a>
 				</div>
 			</div>
 		</div>
-		<a href="${cpath}/wallet/pay.do" class=e1543_3415 style="cursor:pointer;">
-			<span class="e1543_3416">구독하기</span>
+		<a href="${cpath}/wallet/pay.do" class=e1543_3415
+			style="cursor: pointer;"> <span class="e1543_3416">구독하기</span>
 		</a>
 	</div>
 

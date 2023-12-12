@@ -7,8 +7,8 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/noticeDetailStyle.css?d"
-	type="text/css" />
+<link rel="stylesheet"
+	href="${cpath}/resources/css/noticeDetailStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -47,14 +47,16 @@
 	</div>
 	<div></div>
 	<div class="e844_616">
-	<hr>
-	<p><b>${anno.anno_title}</b></p>
-	<p>${anno.anno_date}</p>
-	<hr>
-	<div class="e844_999">
-	<p>${anno.anno_cont}</p>
-	</div>
-	<hr>
+		<hr>
+		<p>
+			<b>${anno.anno_title}</b>
+		</p>
+		<p>${anno.anno_date}</p>
+		<hr>
+		<div class="e844_999">
+			<p>${anno.anno_cont}</p>
+		</div>
+		<hr>
 	</div>
 	<div class=e844_617>
 		<span class="e844_618">공지사항</span>
@@ -97,110 +99,82 @@
 			<span class="e1081_4458">김수인</span><span class="e1081_4459">LV.낑깡</span>
 		</div>
 		<div class=e1081_4460>
-			<a href="${pageContext.request.contextPath}/yomo/notice.do" class=e1081_4461>
-				<span class="e1081_4462">공지사항</span>
-			</a>
-			<a href="${pageContext.request.contextPath}/yomo/faq.do" class=e1081_4463>
-				<span class="e1081_4464">자주 묻는 질문</span>
-			</a>
-			<a href="${pageContext.request.contextPath}/yomo/oneask.do" class=e1081_4465>
-				<span class="e1081_4466">1:1 문의</span>
-			</a>
-			<a href="${pageContext.request.contextPath}/yomo/aboutus.do" class=e1081_4467>
-				<span class="e1081_4468">About Us</span>
+			<a href="${pageContext.request.contextPath}/yomo/notice.do"
+				class=e1081_4461> <span class="e1081_4462">공지사항</span>
+			</a> <a href="${pageContext.request.contextPath}/yomo/faq.do"
+				class=e1081_4463> <span class="e1081_4464">자주 묻는 질문</span>
+			</a> <a href="${pageContext.request.contextPath}/yomo/oneask.do"
+				class=e1081_4465> <span class="e1081_4466">1:1 문의</span>
+			</a> <a href="${pageContext.request.contextPath}/yomo/aboutus.do"
+				class=e1081_4467> <span class="e1081_4468">About Us</span>
 			</a>
 		</div>
 	</div>
-	<div class=e1081_4206>
-		<div class="e1081_4207"></div>
-		<div class=e1081_4208>
-			<div class=e1081_4209>
-				<span class="e1081_4210">Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit. Commodo libero viverra dapibus odio
-					sit malesuada in quis. Arcu tristique elementum viverra integer id.</span>
-				<div class="e1081_4211"></div>
+
+	<footer class="footer">
+		<div class="footer-company-loco">
+			<div class="footer-company">
+				<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요 우리는
+					홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+				<img class="footer-logo"
+					src="${cpath}/resources/images/main/footer-logo.png" />
 			</div>
-			<div class=e1081_4212>
-				<div class=e1081_4213>
-					<div class=e1081_4214>
-						<div class="e1081_4215"></div>
-					</div>
-					<div class=e1081_4216>
-						<div class=e1081_4217>
-							<div class="e1081_4218"></div>
-						</div>
-					</div>
+			<div class="footer-social-icon">
+				<div class="footer-facebook">
+					<img class="footer-mask-group"
+						src="${cpath}/resources/images/main/footer-facebook.png" />
 				</div>
-				<div class=e1081_4219>
-					<div class=e1081_4220>
-						<div class="e1081_4221"></div>
-					</div>
-					<div class=e1081_4222>
-						<div class=e1081_4223>
-							<div class="e1081_4224"></div>
-						</div>
-					</div>
+				<div class="footer-instagram">
+					<img class="footer-img"
+						src="${cpath}/resources/images/main/footer-insta.png" />
 				</div>
-				<div class=e1081_4225>
-					<div class=e1081_4226>
-						<div class="e1081_4227"></div>
-					</div>
-					<div class=e1081_4228>
-						<div class=e1081_4229>
-							<div class="e1081_4230"></div>
-						</div>
-					</div>
+				<div class="footer-twitter">
+					<img class="footer-mask-group-2"
+						src="${cpath}/resources/images/main/footer-twitter.png" />
 				</div>
-				<div class=e1081_4231>
-					<div class=e1081_4232>
-						<div class="e1081_4233"></div>
-					</div>
-					<div class=e1081_4234>
-						<div class=e1081_4235>
-							<div class="e1081_4236"></div>
-						</div>
-					</div>
+				<div class="footer-linkind">
+					<img class="footer-mask-group-2"
+						src="${cpath}/resources/images/main/footer-linkedin.png" />
 				</div>
 			</div>
 		</div>
-		<div class=e1081_4237>
-			<span class="e1081_4238">Contact Us</span>
-			<div class=e1081_4239>
-				<span class="e1081_4240">1234 Country Club Ave</span><span
-					class="e1081_4241">NC 123456, London, UK</span><span
-					class="e1081_4242">+0123 456 7891</span>
+		<div class="footer-contact-us">
+			<div class="footer-text-wrapper-2">Contact Us</div>
+			<div class="footer-group">
+				<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+				<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+				<div class="footer-text-wrapper-3">+0123 456 7891</div>
 			</div>
-			<div class=e1081_4243>
-				<div class="e1081_4244"></div>
-				<div class=e1081_4245>
-					<div class=ei1081_4245_21_320>
-						<div class="ei1081_4245_21_320_3_106"></div>
+			<div class="footer-overlap-group-wrapper">
+				<div class="footer-overlap-group">
+					<div class="footer-vector-wrapper">
+						<img class="footer-vector"
+							src="${cpath}/resources/images/main/footer-email-button.png" />
 					</div>
-					<div class=ei1081_4245_21_324>
-						<div class="ei1081_4245_21_324_17_203"></div>
-					</div>
+					<input class="footer-enter-email"
+						placeholder="Enter your email....">
 				</div>
-				<span class="e1081_4246">Enter your email....</span>
 			</div>
 		</div>
-		<div class=e1081_4247>
-			<span class="e1081_4248">User Link</span>
-			<div class=e1081_4249>
-				<span class="e1081_4250">About Us</span><span class="e1081_4251">Contact
-					Us</span><span class="e1081_4252">Order Delivery</span><span
-					class="e1081_4253">Payment & Tex</span><span class="e1081_4254">Terms
-					of Services</span>
+		<div class="footer-user-link">
+			<div class="footer-text-wrapper-7">User Link</div>
+			<div class="footer-group-2">
+				<div class="footer-text-wrapper-3">About Us</div>
+				<div class="footer-text-wrapper-3">Contact Us</div>
+				<div class="footer-text-wrapper-3">Order Delivery</div>
+				<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+				<div class="footer-text-wrapper-3">Terms of Services</div>
 			</div>
 		</div>
-		<div class=e1081_4255>
-			<span class="e1081_4256">Opening Restaurant</span>
-			<div class=e1081_4257>
-				<span class="e1081_4258">Sat-Wet: 09:00am-10:00PM</span><span
-					class="e1081_4259">Thursdayt: 09:00am-11:00PM</span><span
-					class="e1081_4260">Friday: 09:00am-8:00PM</span>
+		<div class="footer-opening-restaurant">
+			<div class="footer-text-wrapper-7">Opening Restaurant</div>
+			<div class="footer-group-3">
+				<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+				<div class="footer-text-wrapper-3">Thursdayt: 09:00am-11:00PM</div>
+				<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
 			</div>
 		</div>
-	</div>
+	</footer>
 	<div class="e1558_2333"></div>
 </body>
 </html>

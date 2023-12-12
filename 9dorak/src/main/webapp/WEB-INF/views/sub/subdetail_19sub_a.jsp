@@ -50,97 +50,72 @@
 		</header>
 	</div>
 	<div class=e1537_3083>
-		<div class=e1537_3084>
-			<div class="e1537_3085"></div>
-			<div class=e1537_3086>
-				<div class=e1537_3087>
-					<span class="e1537_3088">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Commodo libero viverra dapibus odio
-						sit malesuada in quis. Arcu tristique elementum viverra integer
-						id.</span>
-					<div class="e1537_3089"></div>
-				</div>
-				<div class=e1537_3090>
-					<div class=e1537_3091>
-						<div class=e1537_3092>
-							<div class="e1537_3093"></div>
+	
+			<footer class="footer">
+				<div class="footer-company-loco">
+					<div class="footer-company">
+						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+						<img class="footer-logo"
+							src="${cpath}/resources/images/main/footer-logo.png" />
+					</div>
+					<div class="footer-social-icon">
+						<div class="footer-facebook">
+							<img class="footer-mask-group"
+								src="${cpath}/resources/images/main/footer-facebook.png" />
 						</div>
-						<div class=e1537_3094>
-							<div class=e1537_3095>
-								<div class="e1537_3096"></div>
+						<div class="footer-instagram">
+							<img class="footer-img"
+								src="${cpath}/resources/images/main/footer-insta.png" />
+						</div>
+						<div class="footer-twitter">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-twitter.png" />
+						</div>
+						<div class="footer-linkind">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-linkedin.png" />
+						</div>
+					</div>
+				</div>
+				<div class="footer-contact-us">
+					<div class="footer-text-wrapper-2">Contact Us</div>
+					<div class="footer-group">
+						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+						<div class="footer-text-wrapper-3">+0123 456 7891</div>
+					</div>
+					<div class="footer-overlap-group-wrapper">
+						<div class="footer-overlap-group">
+							<div class="footer-vector-wrapper">
+								<img class="footer-vector"
+									src="${cpath}/resources/images/main/footer-email-button.png" />
 							</div>
-						</div>
-					</div>
-					<div class=e1537_3097>
-						<div class=e1537_3098>
-							<div class="e1537_3099"></div>
-						</div>
-						<div class=e1537_3100>
-							<div class=e1537_3101>
-								<div class="e1537_3102"></div>
-							</div>
-						</div>
-					</div>
-					<div class=e1537_3103>
-						<div class=e1537_3104>
-							<div class="e1537_3105"></div>
-						</div>
-						<div class=e1537_3106>
-							<div class=e1537_3107>
-								<div class="e1537_3108"></div>
-							</div>
-						</div>
-					</div>
-					<div class=e1537_3109>
-						<div class=e1537_3110>
-							<div class="e1537_3111"></div>
-						</div>
-						<div class=e1537_3112>
-							<div class=e1537_3113>
-								<div class="e1537_3114"></div>
-							</div>
+							<input class="footer-enter-email"
+								placeholder="Enter your email....">
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class=e1537_3115>
-				<span class="e1537_3116">Contact Us</span>
-				<div class=e1537_3117>
-					<span class="e1537_3118">1234 Country Club Ave</span><span
-						class="e1537_3119">NC 123456, London, UK</span><span
-						class="e1537_3120">+0123 456 7891</span>
-				</div>
-				<div class=e1537_3121>
-					<div class="e1537_3122"></div>
-					<div class=e1537_3123>
-						<div class=ei1537_3123_21_320>
-							<div class="ei1537_3123_21_320_3_106"></div>
-						</div>
-						<div class=ei1537_3123_21_324>
-							<div class="ei1537_3123_21_324_17_203"></div>
-						</div>
+				<div class="footer-user-link">
+					<div class="footer-text-wrapper-7">User Link</div>
+					<div class="footer-group-2">
+						<div class="footer-text-wrapper-3">About Us</div>
+						<div class="footer-text-wrapper-3">Contact Us</div>
+						<div class="footer-text-wrapper-3">Order Delivery</div>
+						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+						<div class="footer-text-wrapper-3">Terms of Services</div>
 					</div>
-					<span class="e1537_3124">Enter your email....</span>
 				</div>
-			</div>
-			<div class=e1537_3125>
-				<span class="e1537_3126">User Link</span>
-				<div class=e1537_3127>
-					<span class="e1537_3128">About Us</span><span class="e1537_3129">Contact
-						Us</span><span class="e1537_3130">Order Delivery</span><span
-						class="e1537_3131">Payment & Tex</span><span class="e1537_3132">Terms
-						of Services</span>
+				<div class="footer-opening-restaurant">
+					<div class="footer-text-wrapper-7">Opening Restaurant</div>
+					<div class="footer-group-3">
+						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+						<div class="footer-text-wrapper-3">Thursdayt:
+							09:00am-11:00PM</div>
+						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+					</div>
 				</div>
-			</div>
-			<div class=e1537_3133>
-				<span class="e1537_3134">Opening Restaurant</span>
-				<div class=e1537_3135>
-					<span class="e1537_3136">Sat-Wet: 09:00am-10:00PM</span><span
-						class="e1537_3137">Thursdayt: 09:00am-11:00PM</span><span
-						class="e1537_3138">Friday: 09:00am-8:00PM</span>
-				</div>
-			</div>
-		</div>
+			</footer>
 		<div class=e1537_3167>
 			<span class="e1537_3168"><b>이번달 배터지9 메뉴</b></span>
 		</div>

@@ -228,96 +228,71 @@ function redirectToChallenge(challenge_no) {
 		<button type="button" class="right-aligned-button">챌린지 글쓰기</button>
 	</div>
 	<div class=e47_426>
-		<div class=e47_454>
-			<div class="e47_455"></div>
-			<div class=e47_456>
-				<div class=e47_457>
-					<span class="e47_458">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Commodo libero viverra dapibus odio
-						sit malesuada in quis. Arcu tristique elementum viverra integer
-						id.</span>
-					<div class="e47_459"></div>
-				</div>
-				<div class=e47_460>
-					<div class=e47_461>
-						<div class=e47_462>
-							<div class="e47_463"></div>
+			<footer class="footer">
+				<div class="footer-company-loco">
+					<div class="footer-company">
+						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+						<img class="footer-logo"
+							src="${cpath}/resources/images/main/footer-logo.png" />
+					</div>
+					<div class="footer-social-icon">
+						<div class="footer-facebook">
+							<img class="footer-mask-group"
+								src="${cpath}/resources/images/main/footer-facebook.png" />
 						</div>
-						<div class=e47_464>
-							<div class=e47_465>
-								<div class="e47_466"></div>
+						<div class="footer-instagram">
+							<img class="footer-img"
+								src="${cpath}/resources/images/main/footer-insta.png" />
+						</div>
+						<div class="footer-twitter">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-twitter.png" />
+						</div>
+						<div class="footer-linkind">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-linkedin.png" />
+						</div>
+					</div>
+				</div>
+				<div class="footer-contact-us">
+					<div class="footer-text-wrapper-2">Contact Us</div>
+					<div class="footer-group">
+						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+						<div class="footer-text-wrapper-3">+0123 456 7891</div>
+					</div>
+					<div class="footer-overlap-group-wrapper">
+						<div class="footer-overlap-group">
+							<div class="footer-vector-wrapper">
+								<img class="footer-vector"
+									src="${cpath}/resources/images/main/footer-email-button.png" />
 							</div>
-						</div>
-					</div>
-					<div class=e47_467>
-						<div class=e47_468>
-							<div class="e47_469"></div>
-						</div>
-						<div class=e47_470>
-							<div class=e47_471>
-								<div class="e47_472"></div>
-							</div>
-						</div>
-					</div>
-					<div class=e47_473>
-						<div class=e47_474>
-							<div class="e47_475"></div>
-						</div>
-						<div class=e47_476>
-							<div class=e47_477>
-								<div class="e47_478"></div>
-							</div>
-						</div>
-					</div>
-					<div class=e47_479>
-						<div class=e47_480>
-							<div class="e47_481"></div>
-						</div>
-						<div class=e47_482>
-							<div class=e47_483>
-								<div class="e47_484"></div>
-							</div>
+							<input class="footer-enter-email"
+								placeholder="Enter your email....">
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class=e47_485>
-				<span class="e47_486">Contact Us</span>
-				<div class=e47_487>
-					<span class="e47_488">1234 Country Club Ave</span><span
-						class="e47_489">NC 123456, London, UK</span><span class="e47_490">+0123
-						456 7891</span>
-				</div>
-				<div class=e47_491>
-					<div class="e47_492"></div>
-					<div class=e47_493>
-						<div class=ei47_493_21_320>
-							<div class="ei47_493_21_320_3_106"></div>
-						</div>
-						<div class=ei47_493_21_324>
-							<div class="ei47_493_21_324_17_203"></div>
-						</div>
+				<div class="footer-user-link">
+					<div class="footer-text-wrapper-7">User Link</div>
+					<div class="footer-group-2">
+						<div class="footer-text-wrapper-3">About Us</div>
+						<div class="footer-text-wrapper-3">Contact Us</div>
+						<div class="footer-text-wrapper-3">Order Delivery</div>
+						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+						<div class="footer-text-wrapper-3">Terms of Services</div>
 					</div>
-					<span class="e47_494">Enter your email....</span>
 				</div>
-			</div>
-			<div class=e47_495>
-				<span class="e47_496">User Link</span>
-				<div class=e47_497>
-					<span class="e47_498">About Us</span><span class="e47_499">Contact
-						Us</span><span class="e47_500">Order Delivery</span><span class="e47_501">Payment
-						& Tex</span><span class="e47_502">Terms of Services</span>
+				<div class="footer-opening-restaurant">
+					<div class="footer-text-wrapper-7">Opening Restaurant</div>
+					<div class="footer-group-3">
+						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+						<div class="footer-text-wrapper-3">Thursdayt:
+							09:00am-11:00PM</div>
+						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+					</div>
 				</div>
-			</div>
-			<div class=e47_503>
-				<span class="e47_504">Opening Restaurant</span>
-				<div class=e47_505>
-					<span class="e47_506">Sat-Wet: 09:00am-10:00PM</span><span
-						class="e47_507">Thursdayt: 09:00am-11:00PM</span><span
-						class="e47_508">Friday: 09:00am-8:00PM</span>
-				</div>
-			</div>
-		</div>
+			</footer>
 	</div>
 </body>
 
