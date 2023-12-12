@@ -12,6 +12,7 @@
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <title>Insert title here</title>
 
 </head>
@@ -225,7 +226,7 @@
 										<div class="textzone">
 											<div class="overlap-group-4">
 												<textarea class="text-wrapper-17"
-													placeholder="자유롭게 작성해 보세요 ..."></textarea>
+													placeholder="자유롭게 작성해 보세요 ..." id="comment"></textarea>
 											</div>
 										</div>
 										<div class="group-wrapper">
@@ -388,24 +389,40 @@
 				</div>
 			</footer>
 
-			<!-- footer -->
-			<script>
-				function commentSubmit() {
-					alert("댓글달기 클릭");
-					var memId = "${sessionScope.loginmem.mem_id}";
 
-					if (!memId || memId.trim() === "") {
-						alert("로그인이 필요한 서비스입니다 !");
-						window.location.href = "${cpath}/login/loginForm.do";
-						return;
-					}
-				}
+			<script>
+			function commentSubmit() {
+			    var memId = "${sessionScope.loginmem.mem_id}";
+
+			    if (!memId || memId.trim() === "") {
+			        alert("로그인이 필요한 서비스입니다 !");
+			        window.location.href = "${cpath}/login/loginForm.do";
+			        return;
+			    }
+
+			    var commentText = document.getElementById('comment').value;
+			    console.log(commentText); // Use console.log for debugging
+
+			    $.ajax({
+			        url: "${cpath}/doran/uploadComment.do",
+			        method: "POST", // Specify the HTTP method
+			        data: {
+			            "newComment": commentText,
+			            "doranNo" : ${doran.doran_no}
+			        },
+			        success: function (responseData) {
+			            console.log("성공 결과: ", responseData);
+			        },
+			        error: function () {
+			            console.error("에러가 발생했습니다 ! 다시 시도해 주세요");
+			        }
+			    });
+			}
+
 			</script>
 
 		</div>
-		<!-- div -->
 	</div>
 	<!-- div-wrapper -->
-
 </body>
 </html>
