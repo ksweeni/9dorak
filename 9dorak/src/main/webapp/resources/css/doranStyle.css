@@ -40,28 +40,21 @@ progress {
 }
 
 .screen .div {
-	background-color: var(- -white);
+	background-color: white;
 	width: 1440px;
-	height: 2500px;
+	height: fit-content;
 	position: relative;
 }
 
 .screen .overlap {
-	position: absolute;
+	left: 50%;
+    transform: translateX(-50%);
+	position: relative;
 	width: 1440px;
 	height: 932px;
-	top: 1568px;
-	left: 0;
+	
 }
 
-.screen .footer {
-	position: absolute;
-	width: 1440px;
-	height: 429px;
-	top: 503px;
-	left: 0;
-	background-color: #f9f9ff;
-}
 
 .screen .company-loco {
 	position: absolute;
@@ -92,14 +85,7 @@ progress {
 	font-style: var(- -p1-font-style);
 }
 
-.screen .untitled {
-	width: 181px;
-	height: 108px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	object-fit: cover;
-}
+
 
 .screen .social-icon {
 	position: absolute;
@@ -193,13 +179,6 @@ progress {
 	font-style: var(- -h4-font-style);
 }
 
-.screen .group {
-	position: absolute;
-	width: 215px;
-	height: 90px;
-	top: 100px;
-	left: 10px;
-}
 
 .screen .text-wrapper-3 {
 	top: 0;
