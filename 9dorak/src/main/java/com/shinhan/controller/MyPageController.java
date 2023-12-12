@@ -51,6 +51,11 @@ public class MyPageController {
 		session.invalidate();
 		return "home";
 	}
+	
+	@GetMapping("myDeliveryList.do")
+	public String myDelivery(Model model) {
+		return "my/myDeliveryList";
+	}
 
 	@GetMapping("myMenu.do")
 	public String myMenu(Model model, HttpSession session) {
