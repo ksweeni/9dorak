@@ -1,0 +1,7 @@
+.target/*
+.classpath
+.settings
+.project
+*.class
+*.properties
+9dorak/src/main/webapp/META-INF/MANIFEST.MF

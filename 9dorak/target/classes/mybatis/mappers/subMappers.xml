@@ -7,5 +7,21 @@
 	<select id="selectAll" resultType="subvo">
 		select * from sub
 	</select>
+	
+	<select id="selectAllSub9A" resultType="provo">
+		select * from pro where pro_sub9 = 'A'
+	</select>
+	
+	<select id="selectAllSub9B" resultType="provo">
+		select * from pro where pro_sub9 = 'B'
+	</select>
+	
+	<select id="selectAllSub19A" resultType="provo">
+		select * from pro where pro_sub19 = 'A'
+	</select>
+	
+	<select id="selectAllSub19B" resultType="provo">
+		select * from pro where pro_sub19 = 'B'
+	</select>
 
 </mapper>

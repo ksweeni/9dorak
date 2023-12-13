@@ -74,6 +74,17 @@ public class MyPageService {
 		return dao.couponRegUpdate(coupon);
 	}
 
+	public int profileUpdate(MemVO memVO) {
+		// TODO Auto-generated method stub
+		return dao.profileUpdate(memVO);
+	}
+
+	public int profileDelete(MemVO memVO) {
+		// TODO Auto-generated method stub
+		return dao.profileDelete(memVO);
+	}
+
+
 
 
 

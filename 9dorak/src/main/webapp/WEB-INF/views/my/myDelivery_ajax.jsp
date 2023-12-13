@@ -707,7 +707,7 @@ String contextPath = request.getContextPath();
 
 .e125_211 {
 	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 83px;
+	width: 145px;
 	height: 26px;
 	position: absolute;
 	left: 52px;
