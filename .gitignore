@@ -6,3 +6,4 @@
 *.class
 9dorak/src/main/webapp/META-INF/MANIFEST.MF
 9dorak/src/main/webapp/META-INF/maven/com.shinhan/myapp/pom.properties
+9dorak/target/m2e-wtp/web-resources/META-INF/maven/com.shinhan/myapp/pom.properties
