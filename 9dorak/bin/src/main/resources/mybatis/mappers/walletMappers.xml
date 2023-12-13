@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.firstzone.wallet">
+
+	<select id="selectAllBasket" resultType="basketvo">
+		select * from basket
+	</select>
+
+	<select id="selectAllPay" resultType="payvo">
+		select * from pay
+	</select>
+
+
+
+	
+
+	<!-- 장바구니 삭제 -->
+	<delete id="deleteBasket" parameterType="map">
+		delete from basket where
+		mem_id=#{mem_id} and pro_no=#{pro_no}
+	</delete>
+
+	<!-- 장바구니 수량 수정 -->
+	<update id="modifyCount">
+		update basket set
+		basket_pro_count=#{basket_pro_count} where mem_id=#{mem_id} and
+		pro_no=#{pro_no}
+	</update>
+
+	<!-- 장바구니 목록 -->
+	<select id="getBasket" resultType="basketvo">
+		select b.mem_id, b.pro_no,
+		b.basket_pro_count, p.pro_name, p.pro_price
+		from basket b left outer
+		join pro p on p.pro_no = b.pro_no
+		where mem_id=#{mem_id}
+	</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- 아이디+상품 장바구니 존재 여부 확인 -->
+	<select id="checkBasket" resultType="basketvo">
+		select * from basket where mem_id=#{mem_id} and pro_no=#{pro_no}
+	</select>
+	
+	<!-- 장바구니 담기 -->
+	<insert id="addBasket" parameterType="basketvo">
+		insert into basket (pro_no,
+		basket_date, basket_pro_count, mem_id) values (#{pro_no},
+		sysdate, #{basket_pro_count}, #{mem_id})
+	</insert>
+	
+	<!-- 빈 장바구니 -->
+	<select id="emptyBasket" resultType="basketvo">
+		select * from basket where mem_id=#{mem_id}
+	</select>
+
+</mapper>

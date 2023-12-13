@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.firstzone.doran">
+
+	<!-- 최신순 조회 -->
+	<select id="selectAll" resultType="doranvo">
+		SELECT D.*, COALESCE(L.dlike,
+		0) AS dlike, COALESCE(C.dcomment, 0) AS dcomment
+		FROM DORAN D
+		LEFT JOIN
+		(
+		SELECT doran_no, COUNT(*) AS dlike
+		FROM DORANLIKE
+		WHERE doran_no IN
+		(SELECT doran_no FROM DORAN)
+		GROUP BY doran_no
+		) L ON D.doran_no =
+		L.doran_no
+		LEFT JOIN (
+		SELECT doran_no, COUNT(*) AS dcomment
+		FROM
+		comments
+		WHERE doran_no IN (SELECT doran_no FROM DORAN)
+		GROUP BY
+		doran_no
+		) C ON D.doran_no = C.doran_no
+		ORDER BY D.doran_date DESC
+	</select>
+
+	<!-- 조회수 순 조회 -->
+	<select id="selectAllByView" resultType="doranvo">
+		SELECT D.*,
+		COALESCE(L.dlike, 0) AS dlike, COALESCE(C.dcomment, 0) AS dcomment
+		FROM DORAN D
+		LEFT JOIN (
+		SELECT doran_no, COUNT(*) AS dlike
+		FROM
+		DORANLIKE
+		WHERE doran_no IN (SELECT doran_no FROM DORAN)
+		GROUP BY
+		doran_no
+		) L ON D.doran_no = L.doran_no
+		LEFT JOIN (
+		SELECT doran_no,
+		COUNT(*) AS dcomment
+		FROM comments
+		WHERE doran_no IN (SELECT doran_no
+		FROM DORAN)
+		GROUP BY doran_no
+		) C ON D.doran_no = C.doran_no
+		ORDER BY
+		D.doran_view DESC
+	</select>
+
+	<!-- 좋아요 순 조회 -->
+	<select id="selectAllByDlike" resultType="doranvo">
+		SELECT D.*,
+		COALESCE(L.dlike, 0) AS dlike, COALESCE(C.dcomment, 0) AS dcomment
+		FROM DORAN D
+		LEFT JOIN (
+		SELECT doran_no, COUNT(*) AS dlike
+		FROM
+		DORANLIKE
+		WHERE doran_no IN (SELECT doran_no FROM DORAN)
+		GROUP BY
+		doran_no
+		) L ON D.doran_no = L.doran_no
+		LEFT JOIN (
+		SELECT doran_no,
+		COUNT(*) AS dcomment
+		FROM comments
+		WHERE doran_no IN (SELECT doran_no
+		FROM DORAN)
+		GROUP BY doran_no
+		) C ON D.doran_no = C.doran_no
+		ORDER BY
+		dlike DESC
+	</select>
+
+	<!-- 좋아요 수 카운트 -->
+	<select id="selectLike" resultType="int">
+		select count(*) as dlikes
+		from doranlike where doran_no in (select doran_no from doran)
+		group by
+		doran_no
+	</select>
+
+	<!-- 댓글 수 카운트 -->
+	<select id="selectComment" resultType="int">
+		select * from comments
+	</select>
+
+	<!-- 특정 게시글에 대한 댓글 정보 All -->
+	<select id="selectAllCommentAbout" parameterType="int"
+		resultType="commentvo">
+		select * from comments where doran_no = #{doran_no}
+	</select>
+
+	<insert id="insertDoran" parameterType="doranvo">
+		INSERT INTO DORAN (
+		doran_no,
+		doran_title, doran_cont, doran_date, doran_image, doran_view,
+		mem_id
+		)
+		VALUES (
+		#{doran_no}, #{doran_title}, #{doran_cont},
+		sysdate,
+		#{doran_image}, #{doran_view}, #{mem_id}
+		)
+	</insert>
+
+	<!-- 내가 쓴 글 최신순 -->
+	<select id="selectAllForMe" parameterType="String"
+		resultType="doranvo">
+		SELECT D.*, COALESCE(L.dlike, 0) AS dlike,
+		COALESCE(C.dcomment, 0) AS
+		dcomment
+		FROM DORAN D
+		LEFT JOIN (
+		SELECT
+		doran_no, COUNT(*) AS dlike
+		FROM DORANLIKE
+		WHERE doran_no IN (SELECT
+		doran_no FROM DORAN)
+		GROUP BY doran_no
+		) L ON D.doran_no = L.doran_no
+		LEFT JOIN (
+		SELECT doran_no, COUNT(*) AS dcomment
+		FROM comments
+		WHERE
+		doran_no IN (SELECT doran_no FROM DORAN)
+		GROUP BY doran_no
+		) C ON
+		D.doran_no = C.doran_no
+		WHERE D.mem_id = #{memId}
+		order by doran_date
+		desc
+	</select>
+
+	<!-- 내가 쓴 글 조회수 순 -->
+	<select id="selectAllByViewForMe" parameterType="String"
+		resultType="doranvo">
+		SELECT D.*, COALESCE(L.dlike, 0) AS dlike,
+		COALESCE(C.dcomment, 0) AS
+		dcomment
+		FROM DORAN D
+		LEFT JOIN (
+		SELECT
+		doran_no, COUNT(*) AS dlike
+		FROM DORANLIKE
+		WHERE doran_no IN (SELECT
+		doran_no FROM DORAN)
+		GROUP BY doran_no
+		) L ON D.doran_no = L.doran_no
+		LEFT JOIN (
+		SELECT doran_no, COUNT(*) AS dcomment
+		FROM comments
+		WHERE
+		doran_no IN (SELECT doran_no FROM DORAN)
+		GROUP BY doran_no
+		) C ON
+		D.doran_no = C.doran_no
+		WHERE D.mem_id = #{memId}
+		order by doran_view
+		desc
+	</select>
+
+	<!-- 내가 쓴 글 좋아요 순 -->
+	<select id="selectAllByDlikeForMe" parameterType="String"
+		resultType="doranvo">
+		SELECT D.*, COALESCE(L.dlike, 0) AS dlike,
+		COALESCE(C.dcomment, 0) AS
+		dcomment
+		FROM DORAN D
+		LEFT JOIN (
+		SELECT
+		doran_no, COUNT(*) AS dlike
+		FROM DORANLIKE
+		WHERE doran_no IN (SELECT
+		doran_no FROM DORAN)
+		GROUP BY doran_no
+		) L ON D.doran_no = L.doran_no
+		LEFT JOIN (
+		SELECT doran_no, COUNT(*) AS dcomment
+		FROM comments
+		WHERE
+		doran_no IN (SELECT doran_no FROM DORAN)
+		GROUP BY doran_no
+		) C ON
+		D.doran_no = C.doran_no
+		WHERE D.mem_id = #{memId}
+		order by dlike desc
+	</select>
+
+
+	<!-- 클릭한 게시물 정보 얻어오기 -->
+	<select id="selectDoran_no" parameterType="int"
+		resultType="doranvo">
+		SELECT * FROM doran where doran_no = #{doran_no}
+	</select>
+
+	<!-- 좋아요 조회 -->
+	<select id="selectDoranLikeBy" parameterType="doranlikevo"
+		resultType="int">
+		select count(*) from doranlike where doran_no = #{doran_no}
+		and mem_id=
+		#{mem_id}
+	</select>
+
+	<!-- 좋아요 추가 -->
+	<insert id="insertDoranLike" parameterType="doranlikevo">
+		insert into doranlike
+		(doran_no, mem_id) values ( #{doran_no} , #{mem_id} )
+	</insert>
+
+	<!-- 좋아요 삭제 -->
+	<delete id="deleteDoranLike" parameterType="doranlikevo">
+		delete from doranlike
+		where doran_no = #{doran_no} and mem_id= #{mem_id}
+	</delete>
+
+	<!-- 검색 -->
+	<select id="selectSearchDoran" resultType="doranvo"
+		parameterType="String">
+		select *
+		from doran
+		where doran_title like
+		'%'||#{keyword}||'%' or doran_cont like
+		'%'||#{keyword}||'%'
+	</select>
+
+	<!-- 댓글 추가 -->
+	<insert id="insertComment" parameterType="commentvo">
+		insert into comments values (#{comment_no}, #{comment_cont}, sysdate,
+		#{doran_no})
+	</insert>
+
+
+	<!-- doran_no에 대한 좋아요 수까지 합한 결과물 SELECT D.*, COALESCE(L.dlikes, 0) AS dlikes 
+		FROM DORAN D LEFT JOIN ( SELECT doran_no, COUNT(*) AS dlikes FROM DORANLIKE 
+		WHERE doran_no IN (SELECT doran_no FROM DORAN) GROUP BY doran_no ) L ON D.doran_no 
+		= L.doran_no order by D.doran_no; -->
+
+	<!-- 조회수 순으로 정렬한 결과 + 좋아요 SELECT D.*, COALESCE(L.dlikes, 0) AS dlikes FROM 
+		DORAN D LEFT JOIN ( SELECT doran_no, COUNT(*) AS dlikes FROM DORANLIKE WHERE 
+		doran_no IN (SELECT doran_no FROM DORAN) GROUP BY doran_no ) L ON D.doran_no 
+		= L.doran_no order by D.doran_view desc; -->
+
+
+	<!-- <update id="empUpdate" parameterType="empvo"> update employees set 
+		first_name= #{first_name}, last_name=#{last_name}, email=#{email}, phone_number=#{phone_number}, 
+		hire_date=#{hire_date}, job_id=#{job_id}, salary=#{salary}, commission_pct=#{commission_pct}, 
+		manager_id=#{manager_id}, department_id=#{department_id} where employee_id=#{employee_id} 
+		</update> <delete id="empDelete" parameterType="int"> delete from employees 
+		where employee_id = #{employee_id} </delete> <insert id="empInsert" parameterType="empvo"> 
+		insert into employees (first_name, last_name, email, phone_number, hire_date, 
+		job_id, salary, commission_pct, pic, manager_id, department_id, employee_id) 
+		values (#{first_name}, #{last_name}, #{email}, #{phone_number}, #{hire_date}, 
+		#{job_id}, #{salary}, #{commission_pct},#{pic}, <if test="manager_id==0"> 
+		null, </if> <if test="manager_id!=0"> #{manager_id}, </if> <if test="department_id==0"> 
+		null, </if> <if test="department_id!=0"> #{department_id}, </if> #{employee_id}) 
+		</insert> -->
+</mapper>
