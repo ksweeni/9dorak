@@ -88,17 +88,20 @@
 				<div class="feeds">
 					<div class="group-3">
 						<div class="overlap-group-2">
+							<button class="detailfeed_deleteBtn">
+								<img class="detailfeed_deleteBtnImg" src="${cpath }/resources/images/doran/detailfeed_deleteBtn.png" />
+							</button>
 							<img class="unsplash"
 								src="${cpath }/resources/upload/${doran.doran_image}" />
 							<p class="p">${doran.doran_cont}</p>
-							<p>${doran.doran_no}</p>
+							<%-- <p>${doran.doran_no}</p>
 							<p>멤버 아이디 ${doran.mem_id}</p>
 							<p>${doran.doran_title}</p>
 							<p>${doran.doran_cont}</p>
 							<p>${doran.doran_date}</p>
 							<p>조회수${doran.doran_view}</p>
 							<p>좋아요 수${doran.dlike}</p>
-							<p>댓글수${doran.dcomment}</p>
+							<p>댓글수${doran.dcomment}</p> --%>
 
 
 							<div class="doran-underInfo">

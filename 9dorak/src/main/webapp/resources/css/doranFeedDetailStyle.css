@@ -183,10 +183,10 @@
 }
 
 .div-wrapper .p {
-	position: absolute;
+	position: relative;
 	width: 657px;
 	height: 64px;
-	top: 835px;
+	top: 800px;
 	left: 21px;
 	font-weight: 500;
 	font-size: 20px;
@@ -1277,7 +1277,7 @@ progress {
 
 .doran-underInfo {
 	position: relative;
-	top: 64%;
+	top: 800px;
 	left: 3%;
 	display: flex;
 	margin-top: 30px;
@@ -1351,4 +1351,17 @@ progress {
 .comment-span{
 	position: relative;
     left: 15px;
+}
+
+.detailfeed_deleteBtnImg{
+	width: 27px;
+    height: 27px;
+}
+
+.detailfeed_deleteBtn{
+	border: none;
+    background-color: rgba(0, 123, 255, 0);
+    position: relative;
+    left: 94%;
+    top: 1%;
 }
