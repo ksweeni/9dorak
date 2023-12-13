@@ -12,9 +12,9 @@ public class WalletService {
 	@Autowired
 	WalletDAOMybatis dao;
 
-//	public List<BasketVO> selectAllBasket() {
-//		return dao.selectAllBasket();
-//	}
+	public List<BasketVO> selectAllBasket() {
+		return dao.selectAllBasket();
+	}
 	
 	public List<PayVO> selectAllPay() {
 		return dao.selectAllPay();
@@ -38,6 +38,12 @@ public class WalletService {
 	public List<BasketVO> getBasket(String mem_id) {
 		return dao.getBasket(mem_id);
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

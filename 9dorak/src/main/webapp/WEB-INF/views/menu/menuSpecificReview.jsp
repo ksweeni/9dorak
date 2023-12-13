@@ -772,7 +772,7 @@
     
     
 
-   // 아이디+상품이 장바구니에 이미 있는지 확인
+    // 아이디+상품이 장바구니에 이미 있는지 확인
     function checkBasket() {
 	    var mem_id = "${sessionScope.loginmem.mem_id}";
 	    

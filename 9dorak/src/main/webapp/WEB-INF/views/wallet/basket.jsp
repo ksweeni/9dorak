@@ -14,6 +14,207 @@
 <title>9도락</title>
 </head>
 <body>
+	<div class="case">
+		<div class="div">
+			<div class="view">
+				<div class="frame">
+					<div class="div-wrapper">
+						<div class="text-wrapper">가족등록 인증</div>
+					</div>
+				</div>
+			</div>
+			<div class="view-2">
+				<div class="frame-2">
+					<div class="frame-3">
+						<div class="text-wrapper-2">결제정보</div>
+						<div class="text-wrapper-3">2 Items</div>
+					</div>
+					<div class="frame-4">
+						<div class="frame-5">
+							<p class="p">
+								<span class="span">from</span> <span class="text-wrapper-4">
+									ksweeni</span>
+							</p>
+							<div class="frame-3">
+								<div class="frame-6">
+									<div class="text-wrapper-5">스팸마요 도시락</div>
+									<div class="text-wrapper-6">8000원</div>
+								</div>
+								<div class="frame-wrapper">
+									<div class="frame-7">
+										<img class="img" src="img/image-4.svg" />
+										<div class="frame-8">
+											<div class="text-wrapper-7">1</div>
+										</div>
+										<img class="img-2" src="img/image-3.svg" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="frame-5">
+							<p class="p">
+								<span class="span">from</span> <span class="text-wrapper-4">
+									jongbumee</span>
+							</p>
+							<div class="frame-3">
+								<div class="frame-9">
+									<div class="text-wrapper-8">불고기 햄치즈 도시락</div>
+									<div class="text-wrapper-6">8000원</div>
+								</div>
+								<div class="frame-wrapper">
+									<div class="frame-7">
+										<img class="img" src="img/image.svg" />
+										<div class="frame-8">
+											<div class="text-wrapper-7">1</div>
+										</div>
+										<img class="img-2" src="img/image-2.svg" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="frame-10">
+					<div class="frame-11">
+						<div class="text-wrapper-9">총 합계</div>
+						<div class="text-wrapper-9">₹11,400.00</div>
+					</div>
+					<div class="frame-11">
+						<div class="text-wrapper-9">배송비</div>
+						<div class="text-wrapper-9">₹11,400.00</div>
+					</div>
+				</div>
+				<div class="frame-11">
+					<div class="text-wrapper-10">총 결제 예상 금액</div>
+					<div class="text-wrapper-10">₹7,400.00</div>
+				</div>
+				<div class="frame-12">
+					<div class="text-wrapper-11">결제하기</div>
+				</div>
+			</div>
+			<div class="group-wrapper">
+				<div class="group">
+					<div class="frame-13">
+						<div class="view-3">
+							<img class="checkbox" src="img/checkbox-2.svg" />
+							<div class="text-wrapper-12">선택해제</div>
+						</div>
+						<div class="text-wrapper-13">선택삭제</div>
+					</div>
+					<div class="cart-menus-wrapper">
+						<div class="cart-menus">
+							<div class="frame-14">
+								<div class="frame-15">
+									<div class="text-wrapper-14">2023-11-21 (화)</div>
+									<div class="group-2">
+										<div class="frame-16">
+											<div class="frame-17">
+												<img class="rectangle" src="img/rectangle-76.png" />
+												<div class="frame-18">
+													<div class="text-wrapper-15">스팸마요 도시락</div>
+													<div class="text-wrapper-16">7,000원</div>
+												</div>
+											</div>
+											<div class="button-product-add">
+												<div class="text-wrapper-17">1</div>
+												<div class="entypo-plus-wrapper">
+													<img class="img-3" src="img/entypo-plus-3.svg" />
+												</div>
+												<div class="entypo-minus-wrapper">
+													<img class="img-3" src="img/entypo-minus.svg" />
+												</div>
+											</div>
+										</div>
+										<img class="close" src="${cpath}/resources/images/wallet/delete_btn.svg" />
+										<div class="frame-19">
+											<img class="checkbox-2" src="img/checkbox.svg" />
+											<div class="text-wrapper-18">ksweeni</div>
+										</div>
+									</div>
+								</div>
+								<div class="group-2">
+									<div class="frame-16">
+										<div class="frame-17">
+											<img class="rectangle" src="img/rectangle-76-3.png" />
+											<div class="frame-18">
+												<div class="text-wrapper-15">스팸마요 도시락</div>
+												<div class="text-wrapper-16">7,000원</div>
+											</div>
+										</div>
+										<div class="button-product-add">
+											<div class="text-wrapper-17">1</div>
+											<div class="entypo-plus-wrapper">
+												<img class="img-3" src="img/entypo-plus-2.svg" />
+											</div>
+											<div class="entypo-minus-wrapper">
+												<img class="img-3" src="img/entypo-minus-2.svg" />
+											</div>
+										</div>
+									</div>
+									<img class="close" src="img/close-2.svg" />
+									<div class="frame-19">
+										<img class="checkbox-2" src="img/checkbox.svg" />
+										<div class="text-wrapper-18">ksweeni</div>
+									</div>
+								</div>
+								<div class="frame-20">
+									<div class="text-wrapper-14">2023-11-22 (수)</div>
+									<div class="group-2">
+										<div class="frame-16">
+											<div class="frame-17">
+												<img class="rectangle" src="img/rectangle-76-2.png" />
+												<div class="frame-18">
+													<div class="text-wrapper-15">스팸마요 도시락</div>
+													<div class="text-wrapper-16">7,000원</div>
+												</div>
+											</div>
+											<div class="button-product-add">
+												<div class="text-wrapper-17">1</div>
+												<div class="entypo-plus-wrapper">
+													<img class="img-3" src="img/entypo-plus-4.svg" />
+												</div>
+												<div class="entypo-minus-wrapper">
+													<img class="img-3" src="img/entypo-minus-3.svg" />
+												</div>
+											</div>
+										</div>
+										<img class="close" src="img/close-2.svg" />
+										<div class="frame-21">
+											<img class="checkbox-2" src="img/checkbox.svg" />
+											<div class="text-wrapper-19">jongbumee</div>
+										</div>
+									</div>
+								</div>
+								<div class="group-2">
+									<div class="frame-16">
+										<div class="frame-17">
+											<img class="rectangle" src="img/image.png" />
+											<div class="frame-18">
+												<div class="text-wrapper-15">스팸마요 도시락</div>
+												<div class="text-wrapper-16">7,000원</div>
+											</div>
+										</div>
+										<div class="button-product-add">
+											<div class="text-wrapper-17">1</div>
+											<div class="entypo-plus-wrapper">
+												<img class="img-3" src="img/entypo-plus.svg" />
+											</div>
+											<div class="entypo-minus-wrapper">
+												<img class="img-3" src="img/entypo-minus-4.svg" />
+											</div>
+										</div>
+									</div>
+									<img class="close" src="img/close.svg" />
+									<div class="frame-19">
+										<img class="checkbox-2" src="img/checkbox.svg" />
+										<div class="text-wrapper-18">ksweeni</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="account-navigation">
 				<div class="ol">
 					<div class="frame-22">
@@ -43,45 +244,6 @@
 					</div>
 				</div>
 			</header>
-			
-			
-			
-			
-			
-			<p>Mem ID: ${mem_id}</p>
-			<p>BASKET_PRO_COUNT: ${basket_pro_count}</p>
-    <p>Product Number: ${pro_no}</p>
-    <p>Product Name: ${pro_name}</p>
-			
-			<!-- 
-			
-				<p>${chall}</p>
-	상품명 : <input type="text" value="${chall.challenge_name}" id="challenge_name"></input>
-	<br>
-	 상품 갯수 : <input type="text" value="${chall.challenge_cont}" id="challenge_cont"></input>
-	<br>
-	 상품 등록날짜 :
-	<input type="text" value="${chall.challenge_date}" id="challenge_date"></input>
-	<br>
-	 상품 고유 번호 :
-	<input type="text" value="${likeCnt}" readonly="readonly" id="likeCnt"></input>
-	<br>
-	<br>
-	<br>
-
-	<button id="update">수정</button>
-	<button id="delete">삭제</button>
-			
-			 -->
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			<div class="overlap-wrapper">
 				<div class="overlap">
 					<footer class="footer">
