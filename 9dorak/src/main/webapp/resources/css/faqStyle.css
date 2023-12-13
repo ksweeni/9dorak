@@ -10,6 +10,8 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    left: 971px;
+    top: -27px;
 }
 .e1140_2927 { 
 	width:1116px;
@@ -788,7 +790,7 @@
     height: 3px;
     position: absolute;
     left: 378px;
-    top: 351px;
+    top: 223px;
 }
 .e1081_4450 { 
 	width:700px;
@@ -1520,4 +1522,9 @@
 }
 .faq_cont {
   width: 100px;
+}
+.profile_photo {
+    height: 40px;
+    width: 40px;
+    background-image: url(../images/yomo/profile.png);
 }

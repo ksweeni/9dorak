@@ -15,28 +15,42 @@
 <body>
 <body>
 	<div class=e815_534>
-		<div class=e1140_2927>
-			<div class=e1140_2928>
-				<div class=e1140_2929>
-					<span class="e1140_2930">이벤트</span><span class="e1140_2931">메뉴보기</span><span
-						class="e1140_2932">구독하기</span><span class="e1140_2933">요모조모</span><span
-						class="e1140_2934">도란도란</span>
+			<header class="header">
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-event"
+					OnClick="location.href ='${pageContext.request.contextPath}/event/challenge.do'" style="cursor: pointer;">
+					이벤트</div>
+					<div class="text-menu"
+					OnClick="location.href ='${pageContext.request.contextPath}/menu/menu.do'" style="cursor: pointer;">
+					메뉴보기</div>
+					<div class="text-subscribe"
+					OnClick="location.href ='${pageContext.request.contextPath}/sub/sub.do'" style="cursor: pointer;">
+					구독하기</div>
+					<div class="text-yomo"
+					OnClick="location.href ='${pageContext.request.contextPath}/yomo/notice.do'" style="cursor: pointer;">
+					요모조모</div>
+					<div class="text-doran"
+					OnClick="location.href ='${pageContext.request.contextPath}/doran/doran.do'" style="cursor: pointer;">
+					도란도란</div>
 				</div>
-				<div class="e1140_2935"></div>
-				<div class=e1140_2936>
-					<span class="e1140_2937">로그인 | 회원가입</span>
-					<div class=e1140_2938>
-						<div class=e1140_2939>
-							<div class="ei1140_2939_1_112"></div>
-							<div class="ei1140_2939_1_113"></div>
-							<div class="ei1140_2939_1_114"></div>
+				<img class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				<div class="div-3">
+					<div class="text-wrapper-28"><a OnClick="location.href ='${pageContext.request.contextPath}/login/loginForm.do'" style="cursor: pointer;">로그인</a>
+					 | 
+					 <a OnClick="location.href ='${pageContext.request.contextPath}/register/registerType.do'" style="cursor: pointer;">회원가입</a></div>
+					<div class="group-20" OnClick="location.href ='${pageContext.request.contextPath}/wallet/basket.do'" style="cursor: pointer;">
+						<div class="header-overlap-group-3">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<div class="ellipse-light"></div>
+							<!-- <div class="text-wrapper-29">2</div> -->
 						</div>
-						<div class="e1140_2940"></div>
-						<span class="e1140_2941">2</span>
 					</div>
 				</div>
 			</div>
-		</div>
+		</header>
 		<div class="e844_606"></div>
 	</div>
 	<div class="e844_9999">
@@ -56,9 +70,6 @@
 		</div>
 		<hr>
 	</div>
-	<div class=e844_617>
-		<span class="e844_618">1:1 문의</span>
-	</div>
 	<div class="e844_619"></div>
 	<div class=e1081_4450>
 		<div class=e1081_4451>
@@ -70,6 +81,7 @@
 	</div>
 	<div class=e1081_4455>
 		<div class=e1081_4456>
+		<div class="profile_photo"></div>
 			<span class="e1081_4458">김수인</span><span class="e1081_4459">LV.낑깡</span>
 		</div>
 		<div class=e1081_4460>
