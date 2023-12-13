@@ -75,8 +75,19 @@ public class WalletDAOMybatis {
         return sqlSession.selectList(NAMESPACE + "checkBasket", params);
     }
     
+    // 장바구니에 상품 추가
     public int addBasket(BasketVO basket) {
     	return sqlSession.insert(NAMESPACE + "addBasket", basket);
     }
+    
+    // 장바구니 비었는지 여부 확인
+    public List<BasketVO> emptyBasket(String mem_id) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("mem_id", mem_id);
+        return sqlSession.selectList(NAMESPACE + "emptyBasket", params);
+    }
+    
+    
+    
     
 }

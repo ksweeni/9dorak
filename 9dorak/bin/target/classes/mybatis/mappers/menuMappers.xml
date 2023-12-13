@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.firstzone.menu">
+
+	<!-- 메뉴 전체보기 -->
+	<select id="selectAll" resultType="provo">
+		select * from pro
+	</select>
+	
+	<!-- 메뉴 검색 -->
+	<select id="selectSearchPro" resultType="provo" parameterType="provo">
+		select *
+		  from pro t1,
+			   category t2
+		  where t1.pro_no=t2.pro_no
+		<if test="ingre_no != null and ingre_no != ''" >
+			and t2.ingre_no = #{ingre_no}
+		</if>
+		<if test="pro_name != null and pro_name != ''" >
+			and t1.pro_name like '%'||#{pro_name}||'%'
+		</if>
+	</select>
+	
+	<!-- 신상품순 정렬 -->
+	<select id="selectOrderbyNew" resultType="provo">
+		select * from pro order by pro_rd desc
+	</select>
+	
+	<!-- 인기순 정렬 -->
+	<select id="selectOrderbyLike" resultType="provo">
+		select * from pro order by pro_like desc
+	</select>
+	
+	<!-- 알러지 -->
+	<select id="searchAllergyCheck" resultType="provo" parameterType="String">
+		select *
+		from pro
+		where pro_aller not in #{pro_aller}
+		or pro_aller is null
+	</select>
+	
+	<!-- 알러지 + 정렬 -->
+	<select id="selectAllOrder" resultType="provo" parameterType="provo">
+		select *
+		from pro
+		where pro_aller not in #{pro_aller} or pro_aller is null
+			<if test="order_type eq '인기순'">
+				order by pro_like desc
+			</if>
+			<if test="order_type eq '신상품 순'">
+				order by pro_rd desc
+			</if>
+	</select>
+	
+	<!-- 카테고리 + 정렬 -->
+	<select id="selectCtgrOrder" resultType="provo" parameterType="provo">
+		select *
+		  from pro t1,
+			   category t2
+		  where t1.pro_no = t2.pro_no
+          and ingre_no = #{ingre_no}
+			<if test="order_type eq '인기순'">
+				order by pro_like desc
+			</if>
+			<if test="order_type eq '신상품 순'">
+				order by pro_rd desc
+			</if>
+	</select>
+	
+	<!-- 카테고리 -->
+	<select id="searchCategoryCheck" resultType="provo" parameterType="String">
+		SELECT pro.*, category.ingre_no
+		FROM pro
+		LEFT JOIN category ON pro.pro_no = category.pro_no where ingre_no = #{ingre_no}
+	</select>
+	
+	<!-- 상품상세보기 -->
+	<select id="selectByNo" resultType="provo" parameterType="provo">
+		select *
+		from pro
+		where pro_no = #{pro_no}
+	</select>
+    
+    <!-- 상품리뷰 맵 -->
+	<resultMap type="HashMap" id="proreviewMap">
+    	<id column="orderdetail_no" property="orderdetail_no"/>
+    	<id column="memreview_date" property="memreview_date"/>
+    	<id column="memreview_cont" property="memreview_cont"/>
+    	<id column="memreview_starpoint" property="memreview_starpoint"/>
+    	<id column="pro_no" property="pro_no"/>
+    	<id column="mem_id" property="mem_id"/>
+    </resultMap>
+    
+    <!-- 상품리뷰 -->
+    <select id="selectProReview" parameterType="int" resultMap="proreviewMap">
+	    select 
+	      memreview.orderdetail_no
+	    , memreview.memreview_date
+	    , memreview.memreview_cont
+	    , memreview.memreview_starpoint
+	    , orderdetail.pro_no
+	    , orders.mem_id 
+		from memreview, orderdetail, orders
+		where orderdetail.pro_no = #{pro_no}
+			and orderdetail.orderdetail_no = memreview.orderdetail_no
+			and orderdetail.order_no = orders.order_no
+    </select> 
+
+	<!-- 리뷰 토탈 카운트 -->
+    <select id="proRevwTotCnt" parameterType="int" resultType="int">
+	    select 
+	           count(*)
+	  	  from memreview, orderdetail
+		 where orderdetail.pro_no = #{pro_no}
+		   and orderdetail.orderdetail_no = memreview.orderdetail_no
+    </select>
+    
+    <!-- 사진 리뷰 카운트 -->
+    <select id="proRevwPhtCnt" parameterType="int" resultType="int">
+	    select 
+	           count(*)
+	  	  from memreview, orderdetail
+		 where orderdetail.pro_no = #{pro_no}
+		   and orderdetail.orderdetail_no = memreview.orderdetail_no
+		   and memreview.memreview_image is not null
+    </select>
+    
+    <!-- 텍스트 리뷰 카운트 -->
+    <select id="proRevwTxtCnt" parameterType="int" resultType="int">
+	    select 
+	           count(*)
+	  	  from memreview, orderdetail
+		 where orderdetail.pro_no = #{pro_no}
+		   and orderdetail.orderdetail_no = memreview.orderdetail_no
+		   and memreview.memreview_image is null
+    </select>
+   
+   <!-- 찜여부 구분 -->
+    <select id="selectReserveYn" parameterType="HashMap" resultType="int">
+	    select 
+	           count(*)
+		  from reserve
+	     where mem_id = #{mem_id}
+		   and pro_no = #{pro_no}
+    </select>
+    
+    <!-- 찜목록 추가 -->
+    <insert id="insertReserve" parameterType="HashMap" >
+		insert into reserve (mem_id, pro_no) values (#{mem_id},#{pro_no})
+    </insert>
+    
+    <!-- 찜목록 삭제 -->
+    <delete id="deleteReserve"  parameterType="HashMap">
+    	delete reserve where mem_id = #{mem_id} and pro_no = #{pro_no}
+    </delete>
+    
+    <!-- 찜목록 추가에 따른 상품좋아요 업데이트 -->
+    <update id="updateProLike" parameterType="String">
+    	update pro set pro_like = (select count(*) from reserve where pro_no = #{pro_no})
+		where pro_no = #{pro_no}
+    </update>
+
+	<!-- <insert id="insertDoran" parameterType="doranvo">
+		INSERT INTO DORAN (
+		doran_no,
+		doran_title, doran_cont, doran_date, doran_image, doran_view, mem_id
+		)
+		VALUES (
+		#{doranNo}, #{doranTitle}, #{doranCont}, #{doranDate},
+		#{doranImage}, #{doranView}, #{memId}
+		)
+	</insert> -->
+
+	<!-- <update id="empUpdate" parameterType="empvo"> update employees set 
+		first_name= #{first_name}, last_name=#{last_name}, email=#{email}, phone_number=#{phone_number}, 
+		hire_date=#{hire_date}, job_id=#{job_id}, salary=#{salary}, commission_pct=#{commission_pct}, 
+		manager_id=#{manager_id}, department_id=#{department_id} where employee_id=#{employee_id} 
+		</update> <delete id="empDelete" parameterType="int"> delete from employees 
+		where employee_id = #{employee_id} </delete> <insert id="empInsert" parameterType="empvo"> 
+		insert into employees (first_name, last_name, email, phone_number, hire_date, 
+		job_id, salary, commission_pct, pic, manager_id, department_id, employee_id) 
+		values (#{first_name}, #{last_name}, #{email}, #{phone_number}, #{hire_date}, 
+		#{job_id}, #{salary}, #{commission_pct},#{pic}, <if test="manager_id==0"> 
+		null, </if> <if test="manager_id!=0"> #{manager_id}, </if> <if test="department_id==0"> 
+		null, </if> <if test="department_id!=0"> #{department_id}, </if> #{employee_id}) 
+		</insert> -->
+		
+</mapper>
