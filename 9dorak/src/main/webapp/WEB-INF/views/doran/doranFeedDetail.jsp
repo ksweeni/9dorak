@@ -121,11 +121,11 @@
 								</div>
 								<div class="doran-uploadInfo-time">${doran.doran_date}</div>
 
-								<c:forEach items="${comments}" var="comment" varStatus="loop">
+								<%-- <c:forEach items="${comments}" var="comment" varStatus="loop">
 									<p>댓글 번호 ${comment.comment_no}</p>
 									<p>댓글 내용 ${comment.comment_cont}</p>
 									<p>댓글 날짜 ${comment.comment_date}</p>
-								</c:forEach>
+								</c:forEach> --%>
 							</div>
 
 							<div class="group-4">
@@ -145,8 +145,6 @@
 				</div>
 
 
-
-
 				<div class="frame-4">
 					<div class="text-wrapper-13">COMMENTS ☁️</div>
 					<div class="overlap-wrapper">
@@ -154,22 +152,26 @@
 							<div class="frame-5">
 								<div class="frame-wrapper">
 									<div class="frame-6">
+									
+									<c:forEach items="${comments}" var="comment" varStatus="loop">
 										<div class="comment">
 											<div class="reply">
+												<div class="comments-info">
 												<div class="text-wrapper-14">Name</div>
+												<div class="text-wrapper-16">${comment.comment_date}</div>
+												</div>
 												<div class="message">
 													<div class="overlap-group-3">
 														<div class="text">
-															<div class="text-wrapper-15">Here’s some
-																feedback...</div>
+															<div class="text-wrapper-15">${comment.comment_cont}</div>
 														</div>
-														<img class="tail" src="img/tail-2.svg" />
 													</div>
 												</div>
 											</div>
-											<div class="text-wrapper-16">2023.11.22</div>
 										</div>
-										<div class="comment">
+									</c:forEach>
+									
+										<!-- <div class="comment">
 											<div class="reply">
 												<div class="text-wrapper-14">Name</div>
 												<div class="message">
@@ -213,8 +215,8 @@
 												</div>
 											</div>
 											<div class="text-wrapper-16">2023.11.22</div>
-										</div>
-									</div>
+										</div> -->
+									</div><!-- frame-6 -->
 								</div>
 							</div>
 							<div class="group-6">
@@ -231,11 +233,8 @@
 										<div class="group-wrapper">
 											<div class="group-7">
 												<div class="overlap-group-5">
-													<div class="text-wrapper-18">Paylaş</div>
 													<div class="rectangle"></div>
-													<button class="text-wrapper-19" onclick="commentSubmit()">댓글달기</button>
-													<img class="carbon-send-alt"
-														src="img/carbon-send-alt-filled.svg" />
+													<button class="text-wrapper-19" onclick="commentSubmit()"><span class="comment-span">댓글달기</span></button>
 												</div>
 											</div>
 										</div>
@@ -390,6 +389,15 @@
 
 
 			<script>
+			var memId = "${sessionScope.loginmem.mem_id}";
+			var doranProfile = document.querySelector('.doran-profile');
+			var doranWriting = document.querySelector('.group-18');
+
+			if (memId == '') {
+				doranProfile.style.display = 'none';
+				doranWriting.style.display = 'none';
+			}
+			
 			function commentSubmit() {
 			    var memId = "${sessionScope.loginmem.mem_id}";
 
@@ -417,7 +425,8 @@
 			        }
 			    });
 			}
-
+			
+			
 			</script>
 
 		</div>
