@@ -90,6 +90,10 @@ function redirectToChallenge(challenge_no) {
 		alert('Redirect to challenge number ' + challenge_no);
 }
 </script>
+
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class="screen">

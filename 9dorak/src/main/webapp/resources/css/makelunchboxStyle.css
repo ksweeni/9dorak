@@ -865,6 +865,7 @@
   position: relative;
   width: 346px;
   height: 69px;
+  cursor: pointer;
 }
 
 .element .overlap-group-7 {
@@ -985,7 +986,7 @@
   left: 0;
 }
 
-.element .navbar {
+.element .navbarChall {
   display: flex;
   width: 960px;
   align-items: flex-start;
@@ -1502,4 +1503,8 @@
   letter-spacing: var(--p2-letter-spacing);
   line-height: var(--p2-line-height);
   font-style: var(--p2-font-style);
+}
+
+.footer {
+	top: 0;
 }

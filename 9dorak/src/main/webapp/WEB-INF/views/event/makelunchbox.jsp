@@ -1,21 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+request.setCharacterEncoding("UTF-8");
+String contextPath = request.getContextPath();
+%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet"
 	href="${cpath}/resources/css/makelunchboxStyle.css?d" type="text/css" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
+	<div class="screen">
+		<div class="div">
 
-
-<header class="header">
+			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
 						<div class="text-event">
@@ -79,361 +91,414 @@
 
 
 
-    <div class="element">
-      <div class="div">
-        <div class="group">
-          <div class="text-wrapper">내가 만든 구도락, 신메뉴로&nbsp;&nbsp;탄생</div>
-          <div class="text-wrapper-2">여러분만의 구도락을 제안하고, 추천해보세요</div>
-        </div>
-        <div class="group-2">
-          <div class="frame">
-            <div class="overlap-wrapper">
-              <div class="overlap">
-                <div class="div-2">
-                  <div class="overlap-group">
-                    <div class="group-3">
-                      <div class="overlap-group-wrapper">
-                        <div class="overlap-2">
-                          <div class="div-wrapper">
-                            <div class="overlap-3">
-                              <div class="group-4">
-                                <div class="rectangle-wrapper">
-                                  <img class="rectangle" src="img/rectangle-1484-3.svg" />
-                                </div>
-                              </div>
-                              <img class="icon-trophy" src="img/trophy-2.svg" />
-                              <img class="star" src="img/star-1.svg" />
-                            </div>
-                          </div>
-                          <div class="text-wrapper-3">Foundations</div>
-                          <div class="group-5"></div>
-                          <div class="topic-title">연어 비빔 도시락</div>
-                          <p class="date-earned-may">
-                            <span class="span">요리사 <br /></span>
-                            <span class="text-wrapper-4">ksween<br /></span>
-                            <span class="span"><br />레시피<br /></span>
-                            <span class="text-wrapper-4"
-                              >연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락 <br
-                            /></span>
-                            <span class="span"><br />추천합니다 <br /></span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="certification">
-                      <div class="overlap-4">
-                        <div class="group-6">
-                          <div class="overlap-group-2">
-                            <img class="img" src="img/star-7-3.svg" />
-                            <img class="rectangle-2" src="img/rectangle-1485-2.svg" />
-                            <img class="icon-check" src="img/check.png" />
-                          </div>
-                        </div>
-                        <img class="icon-navigation" src="img/check-24px-2.svg" />
-                        <img class="ellipse" src="img/ellipse-10-3.svg" />
-                      </div>
-                    </div>
-                    <div class="group-7">
-                      <div class="overlap-5">
-                        <div class="rectangle-3"></div>
-                        <div class="gold-certified-wrapper"><div class="gold-certified">86개의 좋아요</div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <img class="star-2" src="img/star.svg" />
-              </div>
-            </div>
-            <div class="overlap-wrapper">
-              <div class="overlap">
-                <div class="div-2">
-                  <div class="group-8">
-                    <div class="overlap-group-wrapper">
-                      <div class="overlap-2">
-                        <div class="div-wrapper">
-                          <div class="overlap-3">
-                            <div class="group-4">
-                              <div class="img-wrapper"><img class="rectangle" src="img/rectangle-1484.svg" /></div>
-                            </div>
-                            <img class="icon-trophy" src="img/trophy-3.svg" />
-                            <img class="star" src="img/star-1-3.svg" />
-                          </div>
-                        </div>
-                        <div class="text-wrapper-3">Foundations</div>
-                        <div class="group-5"></div>
-                        <div class="topic-title">연어 비빔 도시락</div>
-                        <p class="date-earned-may">
-                          <span class="span">요리사 <br /></span>
-                          <span class="text-wrapper-4">ksween<br /></span>
-                          <span class="span"><br />레시피<br /></span>
-                          <span class="text-wrapper-4"
-                            >연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락 <br
-                          /></span>
-                          <span class="span"><br />추천합니다 <br /></span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="group-9">
-                  <div class="overlap-5">
-                    <div class="rectangle-4"></div>
-                    <div class="group-10"><div class="text-wrapper-5">50개의 좋아요</div></div>
-                  </div>
-                </div>
-                <img class="star-3" src="img/star-2.svg" />
-                <div class="medallions">
-                  <div class="overlap-4">
-                    <div class="group-6">
-                      <div class="overlap-group-3">
-                        <img class="star-4" src="img/star-7.svg" />
-                        <img class="rectangle-5" src="img/rectangle-1485-3.svg" />
-                        <img class="icon-check-2" src="img/check-2.png" />
-                      </div>
-                    </div>
-                    <img class="icon-navigation-2" src="img/check-24px.svg" />
-                    <img class="ellipse" src="img/ellipse-10-2.svg" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="overlap-wrapper">
-              <div class="overlap">
-                <div class="div-2">
-                  <div class="overlap">
-                    <div class="div-2">
-                      <div class="group-8">
-                        <div class="overlap-group-wrapper">
-                          <div class="overlap-2">
-                            <div class="div-wrapper">
-                              <div class="overlap-3">
-                                <div class="group-4">
-                                  <div class="overlap-group-4">
-                                    <img class="rectangle" src="img/rectangle-1484-2.svg" />
-                                  </div>
-                                </div>
-                                <img class="icon-trophy" src="img/trophy.svg" />
-                                <img class="star" src="img/star-1-2.svg" />
-                              </div>
-                            </div>
-                            <div class="text-wrapper-3">Foundations</div>
-                            <div class="group-5"></div>
-                            <div class="topic-title">돼지갈비 도시락</div>
-                            <p class="date-earned-may">
-                              <span class="span">요리사 <br /></span>
-                              <span class="text-wrapper-4">ksween<br /></span>
-                              <span class="span"><br />레시피<br /></span>
-                              <span class="text-wrapper-4">양념 돼지 갈비가 들어간 양념만점 도시락<br /><br /></span>
-                              <span class="span"><br />추천합니다 <br /></span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <img class="star-2" src="img/star-3.svg" />
-                    <div class="medallions-2">
-                      <div class="overlap-4">
-                        <div class="group-6">
-                          <div class="overlap-group-5">
-                            <img class="star-4" src="img/star-7-2.svg" />
-                            <img class="rectangle-5" src="img/rectangle-1485.svg" />
-                            <img class="icon-check-2" src="img/check-3.png" />
-                          </div>
-                        </div>
-                        <img class="icon-navigation-2" src="img/check-24px-3.svg" />
-                        <img class="ellipse" src="img/ellipse-10.svg" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="group-11">
-                  <div class="overlap-5">
-                    <div class="rectangle-6"></div>
-                    <div class="group-12"><div class="text-wrapper-6">34개의 좋아요</div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="group-13">
-            <div class="text-wrapper-7">11월의 후보</div>
-            <p class="p">당월 말까지 투표가 진행됩니다 !</p>
-          </div>
-        </div>
-        <div class="group-14">
-          <div class="desktop-quiz-rows">
-            <div class="property-default">
-              <div class="overlap-group-6">
-                <div class="blur">
-                  <div class="quiz-row-wrapper">
-                    <div class="quiz-row"><img class="blur" src="img/blur.svg" /></div>
-                  </div>
-                </div>
-                <div class="group-15">
-                  <div class="frame-2">
-                    <div class="text-wrapper-8">jongbumee</div>
-                    <div class="text-wrapper-9">간장 곤드레밥</div>
-                  </div>
-                  <div class="group-16">
-                    <img class="vector" src="img/image.svg" />
-                    <div class="text-wrapper-10">25</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="property-default-2">
-              <div class="overlap-group-6">
-                <div class="blur">
-                  <div class="quiz-row-wrapper">
-                    <div class="quiz-row"><img class="blur" src="img/blur-6.svg" /></div>
-                  </div>
-                </div>
-                <div class="group-15">
-                  <div class="frame-2">
-                    <div class="text-wrapper-8">jongbumee</div>
-                    <div class="text-wrapper-9">간장 곤드레밥</div>
-                  </div>
-                  <div class="group-16">
-                    <img class="vector" src="img/vector-4.svg" />
-                    <div class="text-wrapper-10">25</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="property-default-3">
-              <div class="overlap-group-6">
-                <div class="blur">
-                  <div class="quiz-row-wrapper">
-                    <div class="quiz-row"><img class="blur" src="img/blur-4.svg" /></div>
-                  </div>
-                </div>
-                <div class="group-15">
-                  <div class="frame-2">
-                    <div class="text-wrapper-8">jongbumee</div>
-                    <div class="text-wrapper-9">간장 곤드레밥</div>
-                  </div>
-                  <div class="group-16">
-                    <img class="vector" src="img/vector-5.svg" />
-                    <div class="text-wrapper-10">25</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="property-default-4">
-              <div class="overlap-group-6">
-                <div class="blur">
-                  <div class="quiz-row-wrapper">
-                    <div class="quiz-row"><img class="blur" src="img/blur-3.svg" /></div>
-                  </div>
-                </div>
-                <div class="group-15">
-                  <div class="frame-2">
-                    <div class="text-wrapper-8">jongbumee</div>
-                    <div class="text-wrapper-9">간장 곤드레밥</div>
-                  </div>
-                  <div class="group-16">
-                    <img class="vector" src="img/vector-6.svg" />
-                    <div class="text-wrapper-10">25</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="property-default-5">
-              <div class="overlap-group-6">
-                <div class="blur">
-                  <div class="quiz-row-wrapper">
-                    <div class="quiz-row"><img class="blur" src="img/blur-5.svg" /></div>
-                  </div>
-                </div>
-                <div class="group-15">
-                  <div class="frame-2">
-                    <div class="text-wrapper-8">jongbumee</div>
-                    <div class="text-wrapper-9">간장 곤드레밥</div>
-                  </div>
-                  <div class="group-16">
-                    <img class="vector" src="img/vector-3.svg" />
-                    <div class="text-wrapper-10">25</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="property-default-6">
-              <div class="overlap-group-6">
-                <div class="blur">
-                  <div class="quiz-row-wrapper">
-                    <div class="quiz-row"><img class="blur" src="img/blur-2.svg" /></div>
-                  </div>
-                </div>
-                <div class="group-15">
-                  <div class="frame-2">
-                    <div class="text-wrapper-8">jongbumee</div>
-                    <div class="text-wrapper-9">간장 곤드레밥</div>
-                  </div>
-                  <div class="group-16">
-                    <img class="vector" src="img/vector.svg" />
-                    <div class="text-wrapper-10">25</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pagination">
-            <div class="page"><img class="carat" src="img/carat.svg" /></div>
-            <div class="page-active-wrapper">
-              <div class="page-active"><div class="num">1</div></div>
-            </div>
-            <div class="num-wrapper"><div class="num-2">2</div></div>
-            <div class="num-wrapper"><div class="num-2">3</div></div>
-            <div class="num-wrapper"><div class="num-2">4</div></div>
-            <div class="num-wrapper"><div class="num-2">5</div></div>
-            <div class="carat-wrapper"><img class="carat" src="img/carat-2.svg" /></div>
-          </div>
-        </div>
-        <div class="frame-wrapper">
-          <div class="frame-3">
-            <div class="group-17">
-              <div class="overlap-group-7">
-                <div class="text-wrapper-11">Paylaş</div>
-                <div class="rectangle-7"></div>
-                <div class="text-wrapper-12">도시락 만들기</div>
-                <div class="carbon-send-alt"><img class="create" src="img/create.svg" /></div>
-              </div>
-            </div>
-            <div class="frame-4">
-              <div class="frame-5">
-                <div class="frame-6">
-                  <div class="text-wrapper-13">최근 순</div>
-                  <img class="filter" src="img/filter.svg" />
-                </div>
-              </div>
-              <div class="frame-5">
-                <div class="frame-6">
-                  <div class="text-wrapper-13">추천 순</div>
-                  <img class="filter" src="img/filter.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="group-18">
-          <div class="date">
-            <div class="navbar">
-              <div class="text-wrapper-14">챌린지 ZONE</div>
-              <div class="text-wrapper-14">도시락 무료 체험</div>
-              <div class="element-sep">도시락 만들9</div>
-              <div class="text-wrapper-14">친구 추천</div>
-              <div class="text-wrapper-14">친구 추가</div>
-            </div>
-          </div>
-          <img class="base" src="img/base.svg" />
-        </div>
-    
-      </div>
-    </div>
-    
-    
-    
-    <footer class="footer">
+			<div class="element">
+				<div class="div">
+
+					<div class="group-18">
+						<div class="date">
+							<div class="navbarChall">
+								<div class="text-wrapper-14">챌린지 ZONE</div>
+								<div class="text-wrapper-14">도시락 무료 체험</div>
+								<div class="element-sep">도시락 만들9</div>
+								<div class="text-wrapper-14">친구 추천</div>
+								<div class="text-wrapper-14">친구 추가</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+
+
+
+
+
+
+					<div class="group">
+						<div class="text-wrapper">내가 만든 구도락, 신메뉴로&nbsp;&nbsp;탄생</div>
+						<div class="text-wrapper-2">여러분만의 구도락을 제안하고, 추천해보세요</div>
+					</div>
+					<div class="group-2">
+						<div class="frame">
+							<div class="overlap-wrapper">
+								<div class="overlap">
+									<div class="div-2">
+										<div class="overlap-group">
+											<div class="group-3">
+												<div class="overlap-group-wrapper">
+													<div class="overlap-2">
+														<div class="div-wrapper">
+															<div class="overlap-3">
+																<div class="group-4">
+																	<div class="rectangle-wrapper">
+																		<img class="rectangle" src="img/rectangle-1484-3.svg" />
+																	</div>
+																</div>
+																<img class="icon-trophy" src="img/trophy-2.svg" /> <img
+																	class="star" src="img/star-1.svg" />
+															</div>
+														</div>
+														<div class="text-wrapper-3">Foundations</div>
+														<div class="group-5"></div>
+														<div class="topic-title">연어 비빔 도시락</div>
+														<p class="date-earned-may">
+															<span class="span">요리사 <br /></span> <span
+																class="text-wrapper-4">ksween<br /></span> <span
+																class="span"><br />레시피<br /></span> <span
+																class="text-wrapper-4">연어와
+																초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락 <br />
+															</span> <span class="span"><br />추천합니다 <br /></span>
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="certification">
+												<div class="overlap-4">
+													<div class="group-6">
+														<div class="overlap-group-2">
+															<img class="img" src="img/star-7-3.svg" /> <img
+																class="rectangle-2" src="img/rectangle-1485-2.svg" /> <img
+																class="icon-check" src="img/check.png" />
+														</div>
+													</div>
+													<img class="icon-navigation" src="img/check-24px-2.svg" />
+													<img class="ellipse" src="img/ellipse-10-3.svg" />
+												</div>
+											</div>
+											<div class="group-7">
+												<div class="overlap-5">
+													<div class="rectangle-3"></div>
+													<div class="gold-certified-wrapper">
+														<div class="gold-certified">86개의 좋아요</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<img class="star-2" src="img/star.svg" />
+								</div>
+							</div>
+							<div class="overlap-wrapper">
+								<div class="overlap">
+									<div class="div-2">
+										<div class="group-8">
+											<div class="overlap-group-wrapper">
+												<div class="overlap-2">
+													<div class="div-wrapper">
+														<div class="overlap-3">
+															<div class="group-4">
+																<div class="img-wrapper">
+																	<img class="rectangle" src="img/rectangle-1484.svg" />
+																</div>
+															</div>
+															<img class="icon-trophy" src="img/trophy-3.svg" /> <img
+																class="star" src="img/star-1-3.svg" />
+														</div>
+													</div>
+													<div class="text-wrapper-3">Foundations</div>
+													<div class="group-5"></div>
+													<div class="topic-title">연어 비빔 도시락</div>
+													<p class="date-earned-may">
+														<span class="span">요리사 <br /></span> <span
+															class="text-wrapper-4">ksween<br /></span> <span
+															class="span"><br />레시피<br /></span> <span
+															class="text-wrapper-4">연어와
+															초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락 <br />
+														</span> <span class="span"><br />추천합니다 <br /></span>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="group-9">
+										<div class="overlap-5">
+											<div class="rectangle-4"></div>
+											<div class="group-10">
+												<div class="text-wrapper-5">50개의 좋아요</div>
+											</div>
+										</div>
+									</div>
+									<img class="star-3" src="img/star-2.svg" />
+									<div class="medallions">
+										<div class="overlap-4">
+											<div class="group-6">
+												<div class="overlap-group-3">
+													<img class="star-4" src="img/star-7.svg" /> <img
+														class="rectangle-5" src="img/rectangle-1485-3.svg" /> <img
+														class="icon-check-2" src="img/check-2.png" />
+												</div>
+											</div>
+											<img class="icon-navigation-2" src="img/check-24px.svg" /> <img
+												class="ellipse" src="img/ellipse-10-2.svg" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="overlap-wrapper">
+								<div class="overlap">
+									<div class="div-2">
+										<div class="overlap">
+											<div class="div-2">
+												<div class="group-8">
+													<div class="overlap-group-wrapper">
+														<div class="overlap-2">
+															<div class="div-wrapper">
+																<div class="overlap-3">
+																	<div class="group-4">
+																		<div class="overlap-group-4">
+																			<img class="rectangle" src="img/rectangle-1484-2.svg" />
+																		</div>
+																	</div>
+																	<img class="icon-trophy" src="img/trophy.svg" /> <img
+																		class="star" src="img/star-1-2.svg" />
+																</div>
+															</div>
+															<div class="text-wrapper-3">Foundations</div>
+															<div class="group-5"></div>
+															<div class="topic-title">돼지갈비 도시락</div>
+															<p class="date-earned-may">
+																<span class="span">요리사 <br /></span> <span
+																	class="text-wrapper-4">ksween<br /></span> <span
+																	class="span"><br />레시피<br /></span> <span
+																	class="text-wrapper-4">양념 돼지 갈비가 들어간 양념만점 도시락<br />
+																<br /></span> <span class="span"><br />추천합니다 <br /></span>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<img class="star-2" src="img/star-3.svg" />
+											<div class="medallions-2">
+												<div class="overlap-4">
+													<div class="group-6">
+														<div class="overlap-group-5">
+															<img class="star-4" src="img/star-7-2.svg" /> <img
+																class="rectangle-5" src="img/rectangle-1485.svg" /> <img
+																class="icon-check-2" src="img/check-3.png" />
+														</div>
+													</div>
+													<img class="icon-navigation-2" src="img/check-24px-3.svg" />
+													<img class="ellipse" src="img/ellipse-10.svg" />
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="group-11">
+										<div class="overlap-5">
+											<div class="rectangle-6"></div>
+											<div class="group-12">
+												<div class="text-wrapper-6">34개의 좋아요</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="group-13">
+							<div class="text-wrapper-7">11월의 후보</div>
+							<p class="p">당월 말까지 투표가 진행됩니다 !</p>
+						</div>
+					</div>
+					<div class="group-14">
+						<div class="desktop-quiz-rows">
+							<div class="property-default">
+								<div class="overlap-group-6">
+									<div class="blur">
+										<div class="quiz-row-wrapper">
+											<div class="quiz-row">
+												<img class="blur" src="img/blur.svg" />
+											</div>
+										</div>
+									</div>
+									<div class="group-15">
+										<div class="frame-2">
+											<div class="text-wrapper-8">jongbumee</div>
+											<div class="text-wrapper-9">간장 곤드레밥</div>
+										</div>
+										<div class="group-16">
+											<img class="vector" src="img/image.svg" />
+											<div class="text-wrapper-10">25</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="property-default-2">
+								<div class="overlap-group-6">
+									<div class="blur">
+										<div class="quiz-row-wrapper">
+											<div class="quiz-row">
+												<img class="blur" src="img/blur-6.svg" />
+											</div>
+										</div>
+									</div>
+									<div class="group-15">
+										<div class="frame-2">
+											<div class="text-wrapper-8">jongbumee</div>
+											<div class="text-wrapper-9">간장 곤드레밥</div>
+										</div>
+										<div class="group-16">
+											<img class="vector" src="img/vector-4.svg" />
+											<div class="text-wrapper-10">25</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="property-default-3">
+								<div class="overlap-group-6">
+									<div class="blur">
+										<div class="quiz-row-wrapper">
+											<div class="quiz-row">
+												<img class="blur" src="img/blur-4.svg" />
+											</div>
+										</div>
+									</div>
+									<div class="group-15">
+										<div class="frame-2">
+											<div class="text-wrapper-8">jongbumee</div>
+											<div class="text-wrapper-9">간장 곤드레밥</div>
+										</div>
+										<div class="group-16">
+											<img class="vector" src="img/vector-5.svg" />
+											<div class="text-wrapper-10">25</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="property-default-4">
+								<div class="overlap-group-6">
+									<div class="blur">
+										<div class="quiz-row-wrapper">
+											<div class="quiz-row">
+												<img class="blur" src="img/blur-3.svg" />
+											</div>
+										</div>
+									</div>
+									<div class="group-15">
+										<div class="frame-2">
+											<div class="text-wrapper-8">jongbumee</div>
+											<div class="text-wrapper-9">간장 곤드레밥</div>
+										</div>
+										<div class="group-16">
+											<img class="vector" src="img/vector-6.svg" />
+											<div class="text-wrapper-10">25</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="property-default-5">
+								<div class="overlap-group-6">
+									<div class="blur">
+										<div class="quiz-row-wrapper">
+											<div class="quiz-row">
+												<img class="blur" src="img/blur-5.svg" />
+											</div>
+										</div>
+									</div>
+									<div class="group-15">
+										<div class="frame-2">
+											<div class="text-wrapper-8">jongbumee</div>
+											<div class="text-wrapper-9">간장 곤드레밥</div>
+										</div>
+										<div class="group-16">
+											<img class="vector" src="img/vector-3.svg" />
+											<div class="text-wrapper-10">25</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="property-default-6">
+								<div class="overlap-group-6">
+									<div class="blur">
+										<div class="quiz-row-wrapper">
+											<div class="quiz-row">
+												<img class="blur" src="img/blur-2.svg" />
+											</div>
+										</div>
+									</div>
+									<div class="group-15">
+										<div class="frame-2">
+											<div class="text-wrapper-8">jongbumee</div>
+											<div class="text-wrapper-9">간장 곤드레밥</div>
+										</div>
+										<div class="group-16">
+											<img class="vector" src="img/vector.svg" />
+											<div class="text-wrapper-10">25</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pagination">
+							<div class="page">
+								<img class="carat" src="img/carat.svg" />
+							</div>
+							<div class="page-active-wrapper">
+								<div class="page-active">
+									<div class="num">1</div>
+								</div>
+							</div>
+							<div class="num-wrapper">
+								<div class="num-2">2</div>
+							</div>
+							<div class="num-wrapper">
+								<div class="num-2">3</div>
+							</div>
+							<div class="num-wrapper">
+								<div class="num-2">4</div>
+							</div>
+							<div class="num-wrapper">
+								<div class="num-2">5</div>
+							</div>
+							<div class="carat-wrapper">
+								<img class="carat" src="img/carat-2.svg" />
+							</div>
+						</div>
+					</div>
+					<div class="frame-wrapper">
+
+
+						<div class="frame-3">
+
+
+							<div class="group-17"
+								onclick="location.href='${pageContext.request.contextPath}/event/challengeLunchBox.do'">
+								<div class="overlap-group-7">
+									<div class="rectangle-7"></div>
+									<div class="text-wrapper-12">도시락 만들기</div>
+									<div class="carbon-send-alt">
+										<img class="create"
+											src="${cpath}/resources/images/event/roundWhite.png" />
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="frame-4">
+								<div class="frame-5">
+									<div class="frame-6">
+										<div class="text-wrapper-13">최근 순</div>
+										<img class="filter" src="img/filter.svg" />
+									</div>
+								</div>
+								<div class="frame-5">
+									<div class="frame-6">
+										<div class="text-wrapper-13">추천 순</div>
+										<img class="filter" src="img/filter.svg" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+				</div>
+			</div>
+
+
+
+			<footer class="footer">
 				<div class="footer-company-loco">
 					<div class="footer-company">
 						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
@@ -498,8 +563,9 @@
 					</div>
 				</div>
 			</footer>
-    
-    
-    
-  </body>
+		</div>
+	</div>
+	<!-- screen -->
+
+</body>
 </html>
