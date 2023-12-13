@@ -15,4 +15,11 @@
 <select id="searchOneask" resultType="oneaskvo" parameterType="String"> SELECT * FROM oneask WHERE oneask_title LIKE '%'||#{oneask_title}||'%' </select>
 <select id="selectOrderbyNewOneask" resultType="oneaskvo"> select * from oneask order by oneask_date desc </select>
 <insert id="insertOneask" parameterType="oneaskvo"> INSERT INTO oneask ( oneask_no, oneask_title, oneask_cont, oneask_date, oneask_image, oneask_status, mem_id ) VALUES ( oneask_seq.NEXTVAL, #{oneask_title}, #{oneask_cont}, sysdate, #{oneask_image}, '문의 접수', #{mem_id} ) </insert>
+	<update id="updateOneask" parameterType="oneaskvo">
+		update oneask
+		set
+		oneask_answer=#{oneask_answer}
+		where
+		oneask_no=#{oneask_no}
+	</update>
 </mapper>
