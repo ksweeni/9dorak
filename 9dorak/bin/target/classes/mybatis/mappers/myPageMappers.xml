@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.firstzone.myPage">
+
+
+	<select id="getMember" parameterType="String" resultType="memvo">
+		SELECT
+		* FROM MEM WHERE mem_id = #{login_id}
+	</select>
+
+	<update id="updateMember" parameterType="memvo">
+		update mem
+		set
+		mem_pw =
+		#{mem_pw},
+		mem_name = #{mem_name},
+		mem_bd=#{mem_bd}
+		where
+		mem_id=#{mem_id}
+
+	</update>
+
+
+	<delete id="deleteMember" parameterType="String">
+		delete from mem
+		where
+		mem_id = #{mem_id}
+	</delete>
+
+	<select id="getDelivery" resultType="memdeliveryvo"
+		parameterType="String">
+		SELECT * FROM MEMDELIVERY where mem_id = #{mem_id}
+	</select>
+
+	<delete id="deleteDelivery" parameterType="memdeliveryvo">
+		delete FROM
+		MEMDELIVERY where mem_id = #{mem_id} and mem_delname = #{mem_delname}
+	</delete>
+
+
+	<insert id="insertDelivery" parameterType="memdeliveryvo">
+		INSERT INTO
+		MEMDELIVERY (mem_id, mem_delname, mem_zipcode, mem_road,
+		mem_addr,
+		mem_detail, mem_refer)
+		VALUES (#{mem_id}, #{mem_delname},
+		#{mem_zipcode},#{mem_road}, #{mem_addr},
+		#{mem_detail}, #{mem_refer})
+	</insert>
+
+	<select id="selectDelivery" resultType="int"
+		parameterType="memdeliveryvo">
+		SELECT COUNT(*) FROM MEMDELIVERY
+		WHERE mem_id = #{mem_id}
+		AND mem_delname = #{mem_delname}
+	</select>
+	
+	<!--  -->
+	
+	
+	<select id="getLikeList" resultType="provo"
+		parameterType="String">
+		SELECT *
+		FROM RESERVE R join pro P on R.pro_no = P.pro_no
+		where mem_id = #{mem_id}
+	</select>
+	<select id="getCoupon" resultType="couponvo"
+		parameterType="String">
+		SELECt *
+		FROM coupon where mem_id = #{mem_id} and
+		coupon_reg = '등록'
+	</select>
+	<select id="couponCheck" resultType="int"
+		parameterType="couponvo">
+		SELECT COUNT(*) FROM coupon where coupon_reg = '미등록' and
+		coupon_code =#{coupon_code}
+	</select>
+	<update id="couponRegUpdate" parameterType="couponvo">
+		update coupon
+		set
+		coupon_reg='등록'
+		where
+		coupon_code=#{coupon_code}
+	</update>
+
+
+	<update id="profileUpdate" parameterType="memvo">
+		update mem
+		set
+		mem_image
+		= #{mem_image}
+		where
+		mem_id = #{mem_id}
+	</update>
+	
+	
+	<update id="profileDelete" parameterType="memvo">
+		update mem
+		set
+		mem_image
+		= 'resources/images/my/baseProfile.png'
+		where
+		mem_id = #{mem_id}
+	</update>
+	
+	
+
+</mapper>

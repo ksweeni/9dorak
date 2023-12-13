@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.firstzone.challenge">
+
+	<select id="selectAll" resultType="challengevo">
+		select * from challenge
+	</select>
+
+	<select id="selectByno" resultType="challengevo"
+		parameterType="int">
+		select * from challenge where challenge_no =
+		#{challenge_no}
+	</select>
+
+	<update id="updateChall" parameterType="challengevo">
+		update challenge
+		set
+		challenge_name=#{challenge_name},
+		challenge_cont=#{challenge_cont},
+		challenge_date=sysdate
+		where
+		challenge_no=#{challenge_no}
+	</update>
+
+	<!-- <update id="empUpdate" parameterType="empvo"> update employees set 
+		first_name=#{first_name}, last_name=#{last_name}, email=#{email}, phone_number=#{phone_number}, 
+		hire_date=#{hire_date}, job_id=#{job_id}, salary=#{salary}, commission_pct=#{commission_pct}, 
+		manager_id=#{manager_id}, department_id=#{department_id} where employee_id=#{employee_id} 
+		</update> -->
+
+
+	<insert id="insertChal" parameterType="challengevo">
+		INSERT INTO challenge (
+		challenge_no,
+		challenge_name,
+		challenge_cont,
+		challenge_image,
+		challenge_date,
+		challenge_start,
+		challenge_end,
+		mem_id
+		) VALUES (
+		challenge_seq.NEXTVAL,
+		#{challenge_name},
+		#{challenge_cont},
+		#{challenge_image},
+		sysdate,
+		#{challenge_start},
+		#{challenge_end},
+		#{mem_id}
+		)
+	</insert>
+	
+	<select id="getLike" resultType="int" parameterType="int">
+		SELECT
+		COUNT(*)
+		FROM CHALLLIKE
+		WHERE challenge_no = #{challenge_no}
+	</select>
+
+	<delete id="deleteChal" parameterType="int">
+		DELETE FROM challenge
+		where challenge_no = #{challenge_no}
+	</delete>
+
+
+
+	<!-- 게시물 테스트 -->
+	<select id="selectBoardListCnt" resultType="int">
+		SELECT
+		COUNT(*)
+		FROM
+		challenge
+	</select>
+
+
+	<!-- <select id="list" resultType="hashMap"> SELECT * FROM ( <![CDATA[SELECT 
+		challenge_no, challenge_name, challenge_date , ROWNUM as rnum ]]> FROM ( 
+		SELECT * FROM challenge WHERE 1=1 ORDER BY challenge_no ) <![CDATA[WHERE 
+		ROWNUM <= #{currentPage} + 10]]> ) WHERE rnum > #{currentPage} </select> -->
+
+	<select id="list" resultMap="myMap">
+		SELECT *
+		FROM (
+    <![CDATA[SELECT challenge_no, challenge_name, challenge_date , ROWNUM as rnum ]]>
+		FROM (
+		SELECT *
+		FROM challenge
+		WHERE 1=1
+		ORDER BY challenge_no
+		)
+    <![CDATA[WHERE ROWNUM <= #{currentPage} + 10]]>
+		)
+		WHERE rnum > #{currentPage}
+	</select>
+
+	<resultMap id="myMap" type="hashMap">
+		<result property="challenge_no" column="CHALLENGE_NO" />
+		<result property="challenge_name" column="CHALLENGE_NAME" />
+		<result property="challenge_date" column="CHALLENGE_DATE" />
+		<!-- 나머지 필드에 대한 매핑 -->
+	</resultMap>
+
+</mapper>

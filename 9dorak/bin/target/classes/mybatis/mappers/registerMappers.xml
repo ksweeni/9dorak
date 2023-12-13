@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.firstzone.register">
+
+	<select id="selectAll" resultType="memvo">
+		select * from mem
+	</select>
+
+	<select id="idCheck" parameterType="String" resultType="int">
+		SELECT
+		COUNT(*) FROM mem WHERE mem_id = #{mem_id}
+	</select>
+
+
+	<select id="codeCheck" parameterType="String" resultType="int">
+		SELECT
+		COUNT(*) FROM mem WHERE mem_code = #{mem_code}
+	</select>
+	<insert id="insertMember" parameterType="memvo">
+		<selectKey keyProperty="mem_code" resultType="String"
+			order="BEFORE">
+			SELECT 'ABISE' || code_seq.nextval AS mem_code FROM dual
+		</selectKey>
+		INSERT INTO mem (
+		mem_id, mem_name, mem_bd, mem_email,
+		mem_phone, mem_pw, mem_code, mem_addr, mem_image
+		) VALUES (
+		#{mem_id}, #{mem_name} , #{mem_bd}, #{mem_email},
+		#{mem_phone}, #{mem_pw}, #{mem_code},
+		#{mem_addr},  'resources/images/my/baseProfile.png'
+		)
+	</insert>
+
+</mapper>
