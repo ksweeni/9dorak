@@ -57,4 +57,8 @@ public class WalletService {
 		return dao.addBasket(basket);
 	}
 	
+	public List<BasketVO> emptyBasket(String mem_id) {
+		return dao.emptyBasket(mem_id);
+	}
+	
 }
