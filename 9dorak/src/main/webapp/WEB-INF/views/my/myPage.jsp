@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -25,7 +25,20 @@ String contextPath = request.getContextPath();
 <body style="width: 100%">
 	<div class=e69_166>
 		<div class="e69_167">
-			<div class="e69_169"></div>
+
+			<c:choose>
+				<c:when
+					test="${mem.mem_image eq 'resources/images/my/baseProfile.png'}">
+					<div class="e69_169"
+						style="background-image: url(${cpath}/${mem.mem_image});"></div>
+				</c:when>
+				<c:otherwise>
+					<div class="e69_169"
+						style="background-image: url(${cpath}/resources/upload/${mem.mem_image}); "></div>
+				</c:otherwise>
+			</c:choose>
+
+
 			<div class=e69_168>
 				<span class="e69_170">${mem.mem_id }</span>
 			</div>
@@ -114,7 +127,8 @@ String contextPath = request.getContextPath();
 		<div class=e69_173>
 			<div class=e69_174>
 				<div class=e69_175>
-					<span class="e69_176">찜</span><span class="e69_177">Check your personalized favorites and wishlist</span>
+					<span class="e69_176">찜</span><span class="e69_177">Check
+						your personalized favorites and wishlist</span>
 				</div>
 				<div class="e72_336"></div>
 			</div>
@@ -122,15 +136,17 @@ String contextPath = request.getContextPath();
 			<div class=e69_180>
 				<div class=e69_181>
 					<span class="e69_176" style="top: -30px;">친구초대</span> <span
-						class="e69_182">Register and check your list of friends and acquaintances to discover various benefits</span>
+						class="e69_182">Register and check your list of friends and
+						acquaintances to discover various benefits</span>
 				</div>
 
 				<div class="e72_334"></div>
 			</div>
 
-			<a class=e69_186 href = "${cpath }/my/pointAndCoupon.do">
+			<a class=e69_186 href="${cpath }/my/pointAndCoupon.do">
 				<div class=e69_187>
-					<span class="e69_176">포인트 및 쿠폰</span><span class="e69_189">Enjoy various benefits through points and coupons</span>
+					<span class="e69_176">포인트 및 쿠폰</span><span class="e69_189">Enjoy
+						various benefits through points and coupons</span>
 				</div>
 				<div class="e72_332"></div>
 			</a>
@@ -140,29 +156,32 @@ String contextPath = request.getContextPath();
 						taxpayer information and tax documents</span>
 				</div>
 				<div class="e72_330"></div>
-			</div>	
+			</div>
 			<div class=e69_201>
 				<div class=e69_202>
-					<span class="e69_176">배송 내역/조회</span><span class="e69_204">Check and view your delivery history</span>
+					<span class="e69_176">배송 내역/조회</span><span class="e69_204">Check
+						and view your delivery history</span>
 				</div>
 				<div class="e72_322"></div>
 			</div>
 			<div class=e69_208>
 				<div class=e69_209>
-					<span class="e69_176">구독변경 및 구독멈추기</span><span class="e69_211">Modify or pause your subscription</span>
+					<span class="e69_176">구독변경 및 구독멈추기</span><span class="e69_211">Modify
+						or pause your subscription</span>
 				</div>
 				<div class="e72_326"></div>
 			</div>
 			<div class=e69_214>
 				<div class=e69_215>
-					<span class="e69_176">나의 구독 내역</span><span class="e69_217">Experience the joy of subscribing to Dosirak from Gudalok and enjoy</span>
+					<span class="e69_176">나의 구독 내역</span><span class="e69_217">Experience
+						the joy of subscribing to Dosirak from Gudalok and enjoy</span>
 				</div>
 				<div class="e72_328"></div>
 			</div>
 		</div>
 	</div>
 
-	<footer class="footer" style="top:47rem;">
+	<footer class="footer" style="top: 47rem;">
 		<div class="footer-company-loco">
 			<div class="footer-company">
 				<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요 우리는
