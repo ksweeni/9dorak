@@ -21,9 +21,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import src.main.java.com.shinhan.dto.ChallengeVO;
-import src.main.java.com.shinhan.dto.PagingVO;
-import src.main.java.com.shinhan.model.ChallengeService;
+import com.shinhan.dto.ChallengeVO;
+import com.shinhan.dto.PagingVO;
+import com.shinhan.model.ChallengeService;
 
 @Controller
 @RequestMapping("event")
