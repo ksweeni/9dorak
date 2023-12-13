@@ -65,7 +65,26 @@ public class MyPageController {
 		model.addAttribute("mem", mem);
 		return "my/myMenu";
 	}
-
+	
+	
+	//마이페이지 -주문/결제내역 페이지
+	@GetMapping("orderDetails.do")
+	public String orderDetails(Model model, HttpSession session) {
+		return "my/orderDetails";
+	}
+	//마이페이지 -결제내역 페이지
+	@GetMapping("orderPayment.do")
+	public String orderPayment(Model model, HttpSession session) {
+		return "my/orderPayment";
+	}
+	//마이페이지 -결제취소내역 페이지
+	@GetMapping("orderCancel.do")
+	public String orderCancel(Model model, HttpSession session) {
+		return "my/orderCancel";
+	}
+	
+	
+	
 	@RequestMapping(value = "updateMember.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String updateMember(Model model, HttpSession session, MemVO mem) {

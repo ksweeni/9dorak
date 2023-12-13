@@ -121,6 +121,7 @@ request.setCharacterEncoding("UTF-8");
 	<a href="${pageContext.request.contextPath}/wallet/pay.do">결제</a>
 	<a href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
 	<a href="${pageContext.request.contextPath}/my/myDeliveryList.do">마이페이지-배송조회</a>
+	<a href="${pageContext.request.contextPath}/my/orderDetails.do">마이페이지-주문/결제내역</a>
 
 
 <!-- 로그인 하면 로그아웃 버튼 로그인 안하면 로그아웃 버튼도 이거 수정해서 하면 될거에요  -->
