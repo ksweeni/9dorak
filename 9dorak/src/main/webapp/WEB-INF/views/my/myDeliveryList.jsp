@@ -10,7 +10,7 @@ String contextPath = request.getContextPath();
 <html>
 <head>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet"
 	href="${cpath}/resources/css/myDeliveryListStyle.css" type="text/css" />
@@ -54,9 +54,12 @@ String contextPath = request.getContextPath();
 							<c:choose>
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
 									<span
-										style="font-weight: bold; left: 2.5rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_id}" /> 님
+										style="font-weight: bold; left: -1rem; position: relative;">
+										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
 									</span>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/logout.do"
+										style="position: relative; left: -1rem">로그아웃</a>
 								</c:when>
 								<c:otherwise>
 									<a class="header-a"
@@ -78,21 +81,21 @@ String contextPath = request.getContextPath();
 				</div>
 			</header>
 			<div class="frame">
-				<div class="frame-2">
-					<div class="text-wrapper">최근 6개월</div>
-				</div>
-				<div class="frame-3">
-					<div class="text-wrapper-2">2023</div>
-				</div>
-				<div class="frame-3">
-					<div class="text-wrapper-2">2022</div>
-				</div>
-				<div class="frame-3">
-					<div class="text-wrapper-2">2021</div>
-				</div>
-				<div class="frame-3">
-					<div class="text-wrapper-2">2020</div>
-				</div>
+				<button class="frame-2">
+					최근 6개월
+				</button>
+				<button class="frame-3">
+					2023
+				</button>
+				<button class="frame-3">
+					2022
+				</button>
+				<button class="frame-3">
+					2021
+				</button>
+				<button class="frame-3">
+					2020
+				</button>
 			</div>
 			<div class="frame-4">
 				<div class="frame-5">
@@ -119,45 +122,50 @@ String contextPath = request.getContextPath();
 				</div>
 				<div class="frame-5">
 					<div class="frame-6">
-						<div class="text-wrapper-3">2023. 11. 24 주문</div>
+						<div class="text-wrapper-3">2023. 11. 25 주문</div>
 					</div>
 					<div class="frame-7">
 						<div class="frame-6">
 							<p class="element">
-								<span class="text-wrapper-6">도시락 준비 중</span> <span class="span">ᆞ
-								</span> <span class="text-wrapper-4">11. 26 (일) 도착예정</span>
+								<span class="span">결제완료ᆞ </span> <span class="text-wrapper-4">11.
+									27 (월) 도착예정</span>
 							</p>
 						</div>
-						<div class="group-2">
-							<div class="frame-10">
-								<p class="p">배부르9 | 9일 도시락 패키지, 1세트</p>
-								<div class="text-wrapper-5">59,000원</div>
+						<div class="group">
+							<div class="frame-8">
+								<img class="mask-group" src="img/mask-group-2.png" />
+								<div class="frame-9">
+									<p class="p">배부르9 | 9일 도시락 패키지, 1세트</p>
+									<div class="text-wrapper-5">59,000원</div>
+								</div>
 							</div>
-							<img class="img" src="img/mask-group-4.png" />
 						</div>
 					</div>
 				</div>
 				<div class="frame-5">
 					<div class="frame-6">
-						<div class="text-wrapper-3">2023. 11. 23 주문</div>
+						<div class="text-wrapper-3">2023. 11. 25 주문</div>
 					</div>
 					<div class="frame-7">
 						<div class="frame-6">
 							<p class="element">
-								<span class="text-wrapper-6">배송 시작</span> <span class="span">ᆞ
-								</span> <span class="text-wrapper-4">11. 25 (토) 도착예정</span>
+								<span class="span">도시락 준비 중ᆞ </span> <span class="text-wrapper-4">11.
+									27 (월) 도착예정</span>
 							</p>
 						</div>
-						<div class="group-3">
-							<div class="frame-10">
-								<p class="p">배터지9 | 19일 도시락 패키지, 1세트</p>
-								<div class="text-wrapper-5">99,000원</div>
+						<div class="group">
+							<div class="frame-8">
+								<img class="mask-group" src="img/mask-group-2.png" />
+								<div class="frame-9">
+									<p class="p">배부르9 | 9일 도시락 패키지, 1세트</p>
+									<div class="text-wrapper-5">59,000원</div>
+								</div>
 							</div>
-							<img class="img" src="img/image.png" />
 						</div>
 					</div>
 				</div>
 			</div>
+			
 			<div class="view">
 				<div class="frame-11">
 					<div class="frame-12">
@@ -271,7 +279,7 @@ String contextPath = request.getContextPath();
 					<div class="text-wrapper-20">LV.낑깡</div>
 				</div>
 				<div class="links">
-					<div class="privacy">
+					<div class="list-privacy">
 						<div class="text-wrapper-21">배송 내역 조회</div>
 					</div>
 				</div>
@@ -281,7 +289,7 @@ String contextPath = request.getContextPath();
 					<div class="frame-17">
 						<div class="text-wrapper-22">마이페이지</div>
 						<div class="li">
-							<img class="svg" src="img/svg.svg" />
+							<img class="svg" src="${cpath}/resources/images/my/image_8.png" />
 							<div class="text-wrapper-23">배송 내역 조회</div>
 						</div>
 					</div>
