@@ -77,8 +77,8 @@
 			<div class="menu">
 				<div class="username">
 					<div class="medium"></div>
-					<div class="text-wrapper">김수인</div>
-					<div class="text-wrapper-2">LV.낑깡</div>
+					<div class="text-wrapper">${loginmem.mem_id }</div>
+					<div class="text-wrapper-2">LV.${loginmem.mem_grade }</div>
 				</div>
 				<div class="links">
 					<div class="privacy">
@@ -116,21 +116,21 @@
 					</div>
 				</div>
 				<div class="frame-5">
-					<div class="frame-6">
+					<button class="frame-6">
 						<div class="text-wrapper-16">최근 6개월</div>
-					</div>
-					<div class="frame-7">
+					</button>
+					<button class="frame-7">
 						<div class="text-wrapper-17">2023</div>
-					</div>
-					<div class="frame-7">
+					</button>
+					<button class="frame-7">
 						<div class="text-wrapper-17">2022</div>
-					</div>
-					<div class="frame-7">
+					</button>
+					<button class="frame-7">
 						<div class="text-wrapper-17">2021</div>
-					</div>
-					<div class="frame-7">
+					</button>
+					<button class="frame-7">
 						<div class="text-wrapper-17">2020</div>
-					</div>
+					</button>
 				</div>
 			</div>
 			<div class="account-navigation">

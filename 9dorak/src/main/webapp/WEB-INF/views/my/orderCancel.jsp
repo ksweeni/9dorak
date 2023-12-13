@@ -96,28 +96,28 @@
 					</div>
 				</div>
 				<div class="frame-5">
-					<div class="frame-6">
+					<button class="frame-6">
 						<div class="text-wrapper-5">최근 6개월</div>
-					</div>
-					<div class="frame-7">
+					</button>
+					<button class="frame-7">
 						<div class="text-wrapper-6">2023</div>
-					</div>
-					<div class="frame-7">
+					</button>
+					<button class="frame-7">
 						<div class="text-wrapper-6">2022</div>
-					</div>
-					<div class="frame-7">
+					</button>
+					<button class="frame-7">
 						<div class="text-wrapper-6">2021</div>
-					</div>
-					<div class="frame-7">
+					</button>
+					<button class="frame-7">
 						<div class="text-wrapper-6">2020</div>
-					</div>
+					</button>
 				</div>
 			</div>
 			<div class="menu">
 				<div class="username">
 					<div class="medium"></div>
-					<div class="text-wrapper-7">김수인</div>
-					<div class="text-wrapper-8">LV.낑깡</div>
+					<div class="text-wrapper-7">${loginmem.mem_id }</div>
+					<div class="text-wrapper-8">LV.${loginmem.mem_grade }</div>
 				</div>
 				<div class="links">
 					<div class="privacy">
