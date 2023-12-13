@@ -18,7 +18,6 @@
 	<div class="screen">
 		<div class="div">
 
-
 			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
@@ -75,7 +74,6 @@
 					</div>
 				</div>
 			</header>
-
 
 			<div class="overlap-3">
 				<div class="group-6">
