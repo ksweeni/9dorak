@@ -15,20 +15,33 @@
 </head>
 <body>
 	<div class="screen">
+		<div class=e1518_2324>
 		<header class="header">
 			<div class="top-nav">
 				<div class="navbar">
-					<div class="text-event">이벤트</div>
-					<div class="text-menu">메뉴보기</div>
-					<div class="text-subscribe">구독하기</div>
-					<div class="text-yomo">요모조모</div>
-					<div class="text-doran">도란도란</div>
+					<div class="text-event"
+					OnClick="location.href ='${pageContext.request.contextPath}/event/challenge.do'" style="cursor: pointer;">
+					이벤트</div>
+					<div class="text-menu"
+					OnClick="location.href ='${pageContext.request.contextPath}/menu/menu.do'" style="cursor: pointer;">
+					메뉴보기</div>
+					<div class="text-subscribe"
+					OnClick="location.href ='${pageContext.request.contextPath}/sub/sub.do'" style="cursor: pointer;">
+					구독하기</div>
+					<div class="text-yomo"
+					OnClick="location.href ='${pageContext.request.contextPath}/yomo/notice.do'" style="cursor: pointer;">
+					요모조모</div>
+					<div class="text-doran"
+					OnClick="location.href ='${pageContext.request.contextPath}/doran/doran.do'" style="cursor: pointer;">
+					도란도란</div>
 				</div>
 				<img class="untitled-2"
 					src="${cpath}/resources/images/main/header-logo.png" />
 				<div class="div-3">
-					<div class="text-wrapper-28">로그인 | 회원가입</div>
-					<div class="group-20">
+					<div class="text-wrapper-28"><a OnClick="location.href ='${pageContext.request.contextPath}/login/loginForm.do'" style="cursor: pointer;">로그인</a>
+					 | 
+					 <a OnClick="location.href ='${pageContext.request.contextPath}/register/registerType.do'" style="cursor: pointer;">회원가입</a></div>
+					<div class="group-20" OnClick="location.href ='${pageContext.request.contextPath}/wallet/basket.do'" style="cursor: pointer;">
 						<div class="header-overlap-group-3">
 							<img class="header-group-21"
 								src="${cpath}/resources/images/main/header-cart.png" />
@@ -39,10 +52,8 @@
 				</div>
 			</div>
 		</header>
-
-
 	</div>
-	<div class=e1518_2324>
+		<div class="e1543_9999">
 		<span class="e1543_3020">원하는 구독 서비스를 선택하세요.</span><span
 			class="e1543_3021">1) 한 달에 한 번 도시락이 배송됩니다.</span><span
 			class="e1567_2322">3) 구독은 언제든지 변경 또는 해지 가능합니다.</span><span
@@ -74,6 +85,7 @@
 		</div>
 		<div class="e1543_3039">
 			<hr>
+		</div>
 		</div>
 		<footer class="footer">
 			<div class="footer-company-loco">

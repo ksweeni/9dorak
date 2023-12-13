@@ -833,16 +833,18 @@
 	left:84.6833724975586px;
 	top:303.83203125px;
 }
-.e1543_3357 { 
+.e1543_3357 {
 	width:400px;
 	height:264.630859375px;
 	position:absolute;
 	left:0.499969482421875px;
 	top:0px;
 	border-radius:Symbol(figma.mixed)px;
-	background-image:url(../images/sandwich_lunchbox01.png);
+	background-image: url(../images/menu/food.png);
 	background-repeat:no-repeat;
 	background-size:cover;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
 }
 .e1543_3358 { 
 	width:256px;
@@ -886,7 +888,7 @@
     height: 17px;
     position: absolute;
     left: 8px;
-    top: 8px;
+    top: 10px;
     /* font-family: Montserrat; */
     text-align: center;
     font-size: 14px;
@@ -926,16 +928,18 @@
 	left:84.18340301513672px;
 	top:303.83203125px;
 }
-.e1543_3367 { 
+.e1543_3367 {
 	width:400px;
 	height:264.630859375px;
 	position:absolute;
 	left:0px;
 	top:0px;
 	border-radius:Symbol(figma.mixed)px;
-	background-image:url(../images/sandwich_lunchbox01.png);
+	background-image: url(../images/menu/food.png);
 	background-repeat:no-repeat;
 	background-size:cover;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
 }
 .e1543_3368 { 
 	width:254px;
@@ -1019,16 +1023,18 @@
 	left:84.18340301513672px;
 	top:303.83203125px;
 }
-.e1543_3377 { 
+.e1543_3377 {
 	width:400px;
 	height:264.630859375px;
 	position:absolute;
 	left:0px;
 	top:0px;
 	border-radius:Symbol(figma.mixed)px;
-	background-image:url(../images/sandwich_lunchbox01.png);
+	background-image: url(../images/menu/food.png);
 	background-repeat:no-repeat;
 	background-size:cover;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
 }
 .e1543_3378 { 
 	width:254px;
@@ -1119,16 +1125,18 @@
 	left:84.6833724975586px;
 	top:303.83203125px;
 }
-.e1543_3388 { 
+.e1543_3388 {
 	width:400px;
 	height:264.630859375px;
 	position:absolute;
 	left:0.499969482421875px;
 	top:0px;
 	border-radius:Symbol(figma.mixed)px;
-	background-image:url(../images/sandwich_lunchbox01.png);
+	background-image: url(../images/menu/food.png);
 	background-repeat:no-repeat;
 	background-size:cover;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
 }
 .e1543_3389 { 
 	width:254px;
@@ -1172,7 +1180,7 @@
     height: 17px;
     position: absolute;
     left: 8px;
-    top: 8px;
+    top: 10px;
     /* font-family: Montserrat; */
     text-align: center;
     font-size: 14px;
@@ -1212,16 +1220,18 @@
 	left:84.18340301513672px;
 	top:303.83203125px;
 }
-.e1543_3398 { 
+.e1543_3398 {
 	width:400px;
 	height:264.630859375px;
 	position:absolute;
 	left:0px;
 	top:0px;
 	border-radius:Symbol(figma.mixed)px;
-	background-image:url(../images/sandwich_lunchbox01.png);
+	background-image: url(../images/menu/food.png);
 	background-repeat:no-repeat;
 	background-size:cover;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
 }
 .e1543_3399 { 
 	width:254px;
@@ -1265,7 +1275,7 @@
     height: 17px;
     position: absolute;
     left: 14px;
-    top: 8px;
+    top: 10px;
     /* font-family: Montserrat; */
     text-align: center;
     font-size: 14px;
@@ -1305,16 +1315,18 @@
 	left:84.18340301513672px;
 	top:303.83203125px;
 }
-.e1543_3408 { 
+.e1543_3408 {
 	width:400px;
 	height:264.630859375px;
 	position:absolute;
 	left:0px;
 	top:0px;
 	border-radius:Symbol(figma.mixed)px;
-	background-image:url(../images/sandwich_lunchbox01.png);
+	background-image: url(../images/menu/food.png);
 	background-repeat:no-repeat;
 	background-size:cover;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
 }
 .e1543_3409 { 
 	width:254px;
@@ -1358,7 +1370,7 @@
     height: 17px;
     position: absolute;
     left: 10px;
-    top: 8px;
+    top: 10px;
     /* font-family: Montserrat; */
     text-align: center;
     font-size: 14px;
@@ -1370,7 +1382,7 @@
     height: 63px;
     position: absolute;
     left: 684px;
-    top: 1335px;
+    top: 1322px;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
     border-bottom-left-radius: 35px;
