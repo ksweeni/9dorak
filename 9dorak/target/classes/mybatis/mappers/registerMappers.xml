@@ -24,13 +24,12 @@
 			SELECT 'ABISE' || code_seq.nextval AS mem_code FROM dual
 		</selectKey>
 		INSERT INTO mem (
-		mem_id, mem_name, mem_gender, mem_bd, mem_email,
-		mem_phone, mem_pw, mem_code, mem_addr
+		mem_id, mem_name, mem_bd, mem_email,
+		mem_phone, mem_pw, mem_code, mem_addr, mem_image
 		) VALUES (
-		#{mem_id}, #{mem_name},
-		'남자' , #{mem_bd}, #{mem_email},
+		#{mem_id}, #{mem_name} , #{mem_bd}, #{mem_email},
 		#{mem_phone}, #{mem_pw}, #{mem_code},
-		#{mem_addr}
+		#{mem_addr},  'resources/images/my/baseProfile.png'
 		)
 	</insert>
 

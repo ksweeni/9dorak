@@ -173,16 +173,18 @@ String contextPath = request.getContextPath();
 
 .e154_578 {
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 152.17800903320312px;
+	width: 152.17800903320312px; height : 18px; position : absolute; left :
+	193.292969px; top : 0px; font-family : Roboto; text-align : left;
+	font-size : 14px; letter-spacing : 0;
+	line-height: px;
 	height: 18px;
 	position: absolute;
-	left: 125.29296875px;
+	left: 193.292969px;
 	top: 0px;
 	font-family: Roboto;
 	text-align: left;
 	font-size: 14px;
 	letter-spacing: 0;
-	line-height: px;
 }
 
 .e154_579 {
@@ -201,18 +203,63 @@ String contextPath = request.getContextPath();
 
 .e154_580 {
 	width: 15.217805862426758px;
-	height: 11.37930965423584px;
+	height: 23.37931px; position : absolute; left : 167.841797px; top :
+	-2px; background-image : url(/myapp/resources/images/my/image_8.png);
+	background-repeat : no-repeat; background-size : cover; position :
+	absolute; left : 167.841797px; top : -2px; background-image :
+	url(/myapp/resources/images/my/image_8.png); background-repeat :
+	no-repeat; left : 167.841797px; top : -2px; background-image :
+	url(/myapp/resources/images/my/image_8.png); background-repeat :
+	no-repeat; background-size : cover; position : absolute; left :
+	167.841797px; top : -2px; background-image :
+	url(/myapp/resources/images/my/image_8.png); top : -2px;
+	background-image : url(/myapp/resources/images/my/image_8.png);
+	background-repeat : no-repeat; background-size : cover; position :
+	absolute; left : 167.841797px; top : -2px; background-image :
+	url(/myapp/resources/images/my/image_8.png); background-image :
+	url(/myapp/resources/images/my/image_8.png); background-repeat :
+	no-repeat; background-size : cover; position : absolute; left :
+	167.841797px; top : -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
 	position: absolute;
-	left: 91.841796875px;
-	top: 3px;
-	background-image: url(${cpath}/resources/images/my/image_8.png);
+	left: 167.841797px;
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	position: absolute;
+	left: 167.841797px;
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-repeat: no-repeat;
+	left: 167.841797px;
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	left: 167.841797px;
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	left: 167.841797px;
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	left: 167.841797px;
+	top: -2px;
 }
 
 .e154_581 {
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 77.61075592041016px;
+	width: 160.610756px;
 	height: 18px;
 	position: absolute;
 	left: 2.05078125px;
@@ -221,7 +268,6 @@ String contextPath = request.getContextPath();
 	text-align: left;
 	font-size: 14px;
 	letter-spacing: 0;
-	line-height: px;
 }
 
 .e154_582 {
@@ -393,7 +439,7 @@ String contextPath = request.getContextPath();
 
 .e154_593 {
 	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 83px;
+	width: 145px;
 	height: 26px;
 	position: absolute;
 	left: 52px;
@@ -862,7 +908,7 @@ String contextPath = request.getContextPath();
 				<span class="e154_578">쿠폰 목록</span><span class="e154_579">쿠폰
 					목록</span>
 				<div class="e154_580"></div>
-				<span class="e154_581">내 정보</span>
+				<span class="e154_581">찜 목록 / 포인트 및 쿠폰</span>
 			</div>
 			<div class=e154_582>
 				<div class=e154_583>
@@ -894,7 +940,8 @@ String contextPath = request.getContextPath();
 			</div>
 			<div class=e154_591>
 				<div class=e154_592>
-					<span class="e154_593">${loginmem.mem_id }</span><span class="e154_594">LV.${loginmem.mem_grade }</span>
+					<span class="e154_593">${loginmem.mem_id }</span><span
+						class="e154_594">LV.${loginmem.mem_grade }</span>
 					<div class="e154_595"></div>
 				</div>
 				<div class=e154_596>
@@ -907,9 +954,9 @@ String contextPath = request.getContextPath();
 					<div class=e154_601>
 						<span class="e154_602">나의 포인트</span>
 					</div>
-					<div class=e154_603>
+					<!-- 			<div class=e154_603>
 						<span class="e154_604">적립 및 사용 목록</span>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -965,7 +1012,8 @@ String contextPath = request.getContextPath();
 				/* alert($("#coupon").val()); */
 
 				$.ajax({
-					url : "${cpath}/my/couponReg.do?coupon_code="+ $('#coupon_code').val(),
+					url : "${cpath}/my/couponReg.do?coupon_code="
+							+ $('#coupon_code').val(),
 					type : "get",
 					success : function(res) {
 						if (res == "쿠폰 등록 성공") {
@@ -978,16 +1026,25 @@ String contextPath = request.getContextPath();
 
 								}
 							}) // ajax
-						} else{
+						} else {
 							alert(res);
 						}
 					}
 				});
 			});
-	
-	$(".e155_635").on("click",function(){
+
+	$(".e155_635").on("click", function() {
 		$.ajax({
-			url : "${cpath}/my/pointAndCoupon.do",		
+			url : "${cpath}/my/pointAndCoupon.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+		});
+	})
+	$(".e154_601").on("click", function() {
+		$.ajax({
+			url : "${cpath}/my/point_ajax.do",
 			type : "get",
 			success : function(res) {
 				$("body").html(res);
