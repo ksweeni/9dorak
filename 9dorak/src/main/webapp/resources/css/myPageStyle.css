@@ -58,15 +58,15 @@
 }
 
 .e69_169 {
-    order: -4;
-    border-radius: 50%;
-    border: 5px solid #FAF9FF;
-    width: 170px;
-    height: 200px;
-    position: relative;
-    overflow: hidden;
-    background: url('../images/my/ellipse_1.png') center/cover no-repeat; 
-    background-position: center; 
+	order: -4;
+	border-radius: 50%;
+	border: 5px solid #FAF9FF;
+	width: 170px;
+	height: 200px;
+	position: relative;
+	overflow: hidden;
+	background: center/cover no-repeat;
+	background-position: center;
 }
 
 .e72_336 {
@@ -1086,7 +1086,8 @@
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	font-weight: 600; text-align : left;
+	font-weight: 600;
+	text-align: left;
 	font-size: 16px;
 	letter-spacing: 0;
 	line-height: px;
@@ -1345,18 +1346,12 @@
 	border-bottom-right-radius: 12px;
 }
 
-.e69_208:hover,
-.e69_214:hover,
-.e69_201:hover,
-.e69_186:hover,
-.e69_180:hover,
-.e69_174:hover,
-.e69_195:hover {
-    font-weight: 700;
-    box-shadow: 5px 4px 5px 0px lightgray;
-    transition: all 0.3s ease; 
+.e69_208:hover, .e69_214:hover, .e69_201:hover, .e69_186:hover, .e69_180:hover,
+	.e69_174:hover, .e69_195:hover {
+	font-weight: 700;
+	box-shadow: 5px 4px 5px 0px lightgray;
+	transition: all 0.3s ease;
 }
-
 
 .e69_209 {
 	width: 345.26873779296875px;
