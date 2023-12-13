@@ -89,10 +89,7 @@
 
 	<!-- 댓글 수 카운트 -->
 	<select id="selectComment" resultType="int">
-		select count(*) from
-		comments where doran_no in (select doran_no from doran)
-		group by
-		doran_no
+		select * from comments
 	</select>
 
 	<!-- 특정 게시글에 대한 댓글 정보 All -->
@@ -233,6 +230,12 @@
 		'%'||#{keyword}||'%' or doran_cont like
 		'%'||#{keyword}||'%'
 	</select>
+
+	<!-- 댓글 추가 -->
+	<insert id="insertComment" parameterType="commentvo">
+		insert into comments values (#{comment_no}, #{comment_cont}, sysdate,
+		#{doran_no})
+	</insert>
 
 
 	<!-- doran_no에 대한 좋아요 수까지 합한 결과물 SELECT D.*, COALESCE(L.dlikes, 0) AS dlikes 
