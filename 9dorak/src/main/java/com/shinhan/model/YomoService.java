@@ -61,4 +61,8 @@ public class YomoService {
 		return dao.insertOneask(oneask);
 	}
 
+	public int updateOneask(OneaskVO oneask) {
+		return dao.updateOneask(oneask);
+	}
+
 }
