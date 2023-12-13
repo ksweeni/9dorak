@@ -13,7 +13,7 @@ String contextPath = request.getContextPath();
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/myLevelStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/myLevelStyle.css?d"
 	type="text/css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -22,16 +22,15 @@ String contextPath = request.getContextPath();
 	<div class="div-wrapper">
 		<div class="div">
 			<div class="full-name-and-bio">
-				<img class="ellipse" src="img/ellipse-1.png" />
+				<img class="ellipse" src="${cpath}/resources/images/test.png" />
 				<div class="text-wrapper">나는 수이니</div>
-				<div class="text-wrapper-2">Uzbekistan, Tashkent</div>
-				<p class="p">I’m web designer, I work in programs like figma,
-					adobe photoshop, adobe illustrator</p>
+				
+				
 			</div>
 			<div class="personal-info">
 				<div class="group">
 					<div class="group-2">
-						<img class="image" src="img/image-10-3.png" />
+						<img class="image" src="${cpath}/resources/images/my/level_1.png" />
 						<p class="div-2">
 							<span class="span">이번 달 등급은 </span> <span class="text-wrapper-3">낑깡</span>
 							<span class="span">이에요</span>
@@ -43,7 +42,7 @@ String contextPath = request.getContextPath();
 			<div class="group-wrapper">
 				<div class="group">
 					<div class="group-3">
-						<img class="img" src="img/image-10.png" />
+						<img class="img" src="${cpath}/resources/images/my/level_1.png" />
 						<p class="div-2">
 							<span class="span">다음 달 예상 등급은 </span> <span
 								class="text-wrapper-3">낑깡</span> <span class="span">이에요</span>
@@ -187,26 +186,26 @@ String contextPath = request.getContextPath();
 			<div class="overlap-wrapper">
 				<div class="overlap">
 					<div class="personal-info-2">
-						<img class="image-2" src="img/image-7.png" />
+						<img class="image-2" src="${cpath}/resources/images/my/level_2.png" />
 						<div class="text-wrapper-22">귤</div>
 						<div class="text-wrapper-23">구독 1회 이상</div>
-						<img class="image-3" src="img/image-8.png" />
+						<img class="image-3" src="${cpath}/resources/images/my/level_3.png" />
 						<div class="text-wrapper-24">오렌지</div>
 						<p class="text-wrapper-25">구독 5회 이상 또는 누적 결제 금액 25만원</p>
 						<div class="text-wrapper-26">등급별 혜택 안내</div>
-						<img class="line" src="img/line-9.svg" /> <img class="line-2"
-							src="img/line-10.svg" /> <img class="line-3"
-							src="img/line-11.svg" />
+						<img class="line" src="${cpath}/resources/images/my/level_line.png"" /> <img class="line-2"
+							src="${cpath}/resources/images/my/level_line.png" /> 
+						<img class="line-3" src="${cpath}/resources/images/my/level_line.png" />
 						<div class="text-wrapper-27">기본등급</div>
-						<div class="text-wrapper-28">낑깡</div>
-						<img class="image-4" src="img/image-10-2.png" />
+						<div class="text-wrapper-level1">낑깡</div>
+						<img class="image-4" src="${cpath}/resources/images/my/level_1.png" />
 						<div class="text-wrapper-29">한라봉</div>
 						<p class="text-wrapper-30">구독 9회 이상 또는 누적 결제 금액 50만원</p>
-						<img class="image-5" src="img/image-9.png" />
+						<img class="image-5" src="${cpath}/resources/images/my/level_4.png" />
 					</div>
 					<p class="element">
-						<span class="text-wrapper-31">결제 금액의</span> <span
-							class="text-wrapper-32">&nbsp;</span> <span
+						<span class="text-wrapper-31">결제 금액의</span> 
+							<span
 							class="text-wrapper-33">0.5%</span> <span class="text-wrapper-31">
 							적립</span>
 					</p>
