@@ -28,12 +28,12 @@ public class WalletController {
 
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
-//	@GetMapping("basket.do")
-//	public String basket(Model model) {
-//		List<BasketVO> blist = wService.selectAllBasket();
-//		model.addAttribute("blist", blist);
-//		return "wallet/basket";
-//	}
+	@GetMapping("basket.do")
+	public String basket(Model model) {
+		List<BasketVO> blist = wService.selectAllBasket();
+		model.addAttribute("blist", blist);
+		return "wallet/basket";
+	}
 	
 	@GetMapping("pay.do")
 	public String pay(Model model) {
@@ -64,7 +64,12 @@ public class WalletController {
     
     
     
-    
+	@PostMapping("basketEmpty.do")
+	public String basketEmpty(Model model) {
+		List<BasketVO> blist = wService.selectAllBasket();
+		model.addAttribute("blist", blist);
+		return "wallet/basketEmpty";
+	}
     
     
     

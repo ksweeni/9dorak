@@ -20,13 +20,13 @@ public class WalletDAOMybatis {
 	Logger logger = LoggerFactory.getLogger(WalletDAOMybatis.class);
 	String NAMESPACE = "net.firstzone.wallet.";
 	
-//	// 장바구니 select all
-//	public List<BasketVO> selectAllBasket() {
-//		List<BasketVO> blist = sqlSession.selectList(NAMESPACE + "selectAllBasket");
-//		System.out.println(blist);
-//		logger.info("selectAllBasket :  {}", blist.size());
-//		return blist;
-//	}
+	// 장바구니 select all
+	public List<BasketVO> selectAllBasket() {
+		List<BasketVO> blist = sqlSession.selectList(NAMESPACE + "selectAllBasket");
+		System.out.println(blist);
+		logger.info("selectAllBasket :  {}", blist.size());
+		return blist;
+	}
 	
 	// 결제하기 select all
 	public List<PayVO> selectAllPay() {

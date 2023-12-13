@@ -204,6 +204,7 @@ String contextPath = request.getContextPath();
 	height: 30px;
 	top: 0;
 	left: 146px;
+	cursor: pointer;
 }
 
 .screen .overlap-group-5 {
@@ -3884,6 +3885,11 @@ a {
 }
 
 </style>
+
+
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
+
 </head>
 <body>
 	<div class="screen">
@@ -3913,10 +3919,8 @@ a {
 							href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a></span>
 					</div>
 					<div class="group-5">
-						<div class="overlap-group-5">
-							<img class="group-6" src="img/group-1.svg" />
-							<div class="ellipse-3"></div>
-							<div class="text-wrapper-27">2</div>
+						<div class="overlap-group-5" onclick="loginBasket()">
+							<img class="group-6" src="${cpath}/resources/images/main/header-cart.png" />
 						</div>
 					</div>
 				</div>
@@ -4377,6 +4381,17 @@ a {
 			selectedButton = button;
 		}
 		/* allerCheck(); */
+	}
+	
+	function loginBasket() {
+		var mem_id = "${sessionScope.loginmem.mem_id}";
+	    
+	    // 로그인 여부 확인
+	    if (mem_id == "") {
+			alert("로그인이 필요한 서비스입니다 !");
+			window.location.href = "${cpath}/login/loginForm.do";
+			return;
+		}
 	}
 	</script>
 	
