@@ -62,7 +62,7 @@ String contextPath = request.getContextPath();
 <title>9도락</title>
 </head>
 <body>
-	<div class="screen">
+<div class="screen">
 		<div class="div">
 
 			<header class="header">
@@ -123,10 +123,8 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</header>
-		</div>
 
 
-	</div>
 	<span class="e1433_2546">좋아요 ❤️</span>
 	<span class="e1433_2547">추천 👍</span>
 	<span class="e1433_2548">못먹는 음식은 NOPE 🙅🏻</span>
@@ -206,44 +204,7 @@ String contextPath = request.getContextPath();
 	</div>
 	<!-- 추천 상품 끝-->
 
-	<div class=e1433_2578>
-		<div class="e1433_2579"></div>
-		<div class=e1433_2580>
-			<div class=e1433_2581>
-				<span class="e1433_2582">Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit. Commodo libero viverra dapibus odio
-					sit malesuada in quis. Arcu tristique elementum viverra integer id.</span>
-				<div class="e1433_2583"></div>
-			</div>
-		</div>
-		<div class=e1433_2584>
-			<span class="e1433_2585">Contact Us</span>
-			<div class=e1433_2586>
-				<span class="e1433_2587">1234 Country Club Ave</span><span
-					class="e1433_2588">NC 123456, London, UK</span><span
-					class="e1433_2589">+0123 456 7891</span>
-			</div>
-		</div>
-		<div class=e1433_2590>
-			<span class="e1433_2591">User Link</span>
-			<div class=e1433_2592>
-				<span class="e1433_2593">About Us</span><span class="e1433_2594">Contact
-					Us</span><span class="e1433_2595">Order Delivery</span><span
-					class="e1433_2596">Payment & Tex</span><span class="e1433_2597">Terms
-					of Services</span>
-			</div>
-		</div>
-		<div class=e1433_2598>
-			<span class="e1433_2599">Opening Restaurant</span>
-			<div class=e1433_2600>
-				<span class="e1433_2601">Sat-Wet: 09:00am-10:00PM</span><span
-					class="e1433_2602">Thursdayt: 09:00am-11:00PM</span><span
-					class="e1433_2603">Friday: 09:00am-8:00PM</span>
-			</div>
-		</div>
-		<div class="e1433_2604"></div>
-		<div class="e1433_2605"></div>
-	</div>
+	
 	<div class=e1433_2606>
 		<div class=e1433_2607>
 			<span class="e1433_2608">못 먹는 음식은 제외하고, 세심하게 메뉴를 골라보세요</span>
@@ -509,6 +470,77 @@ String contextPath = request.getContextPath();
 	<!-- <span class="e1433_2814">아이와 함께 즐기는 이벤트와 챌린지</span> -->
 
 
+
+
+
+
+<footer class="footer">
+				<div class="footer-company-loco">
+					<div class="footer-company">
+						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+						<img class="footer-logo"
+							src="${cpath}/resources/images/main/footer-logo.png" />
+					</div>
+					<div class="footer-social-icon">
+						<div class="footer-facebook">
+							<img class="footer-mask-group"
+								src="${cpath}/resources/images/main/footer-facebook.png" />
+						</div>
+						<div class="footer-instagram">
+							<img class="footer-img"
+								src="${cpath}/resources/images/main/footer-insta.png" />
+						</div>
+						<div class="footer-twitter">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-twitter.png" />
+						</div>
+						<div class="footer-linkind">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-linkedin.png" />
+						</div>
+					</div>
+				</div>
+				<div class="footer-contact-us">
+					<div class="footer-text-wrapper-2">Contact Us</div>
+					<div class="footer-group">
+						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+						<div class="footer-text-wrapper-3">+0123 456 7891</div>
+					</div>
+					<div class="footer-overlap-group-wrapper">
+						<div class="footer-overlap-group">
+							<div class="footer-vector-wrapper">
+								<img class="footer-vector"
+									src="${cpath}/resources/images/main/footer-email-button.png" />
+							</div>
+							<input class="footer-enter-email"
+								placeholder="Enter your email....">
+						</div>
+					</div>
+				</div>
+				<div class="footer-user-link">
+					<div class="footer-text-wrapper-7">User Link</div>
+					<div class="footer-group-2">
+						<div class="footer-text-wrapper-3">About Us</div>
+						<div class="footer-text-wrapper-3">Contact Us</div>
+						<div class="footer-text-wrapper-3">Order Delivery</div>
+						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+						<div class="footer-text-wrapper-3">Terms of Services</div>
+					</div>
+				</div>
+				<div class="footer-opening-restaurant">
+					<div class="footer-text-wrapper-7">Opening Restaurant</div>
+					<div class="footer-group-3">
+						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+						<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
+						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+					</div>
+				</div>
+			</footer>
+		<!-- div -->
+</div>
+
 	<script type="text/javascript">
 		//카테고리
 		$(".e1433_2559 button").on("click", function() {
@@ -638,6 +670,7 @@ String contextPath = request.getContextPath();
 		}
 		
 	</script>
-
+</div>
+	<!-- screen -->
 </body>
 </html>
