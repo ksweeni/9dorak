@@ -190,13 +190,13 @@
 	border-bottom-left-radius:30px;
 	border-bottom-right-radius:30px;
 }
-.e815_1065 { 
+.e815_1065 {
 	background-color:rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
 	width:341px;
 	height:46px;
 	position:absolute;
-	left:377px;
-	top:399px;
+	left: 372px;
+	top: 253px;
 	border-top-left-radius:14px;
 	border-top-right-radius:14px;
 	border-bottom-left-radius:14px;
@@ -625,9 +625,9 @@
     width: 388px;
     height: 109px;
     position: absolute;
-    left: 892px;
-    top: 882px;
-    border-radius: 8px;
+    left: 896px;
+    top: 797px;
+    border-radius: 35px;
 }
 .e844_617 { 
 	width:197px;
@@ -726,7 +726,7 @@
     height: 32px;
     position: absolute;
     left: 40px;
-    top: 0px;
+    top: -144px;
 }
 .e844_863 {
     color: rgba(255, 107.09999665617943, 0, 1);
@@ -1525,10 +1525,10 @@
 .table {
     position: absolute;
     border-collapse: collapse;
-    left: 45%;
+    left: 50%;
     transform: translateX(-50%);
-    top: 562px;
-    width: 912px;
+    top: 373px;
+    width: 942px;
 }
 
 .table th,
@@ -1565,4 +1565,9 @@ th:nth-child(2) {
     border: 2px solid #f38820;
     border-radius: 60px;
     background-color: white;
+}
+.profile_photo {
+    height: 40px;
+    width: 40px;
+    background-image: url(../images/yomo/profile.png);
 }

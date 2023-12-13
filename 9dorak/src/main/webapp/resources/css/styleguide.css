@@ -351,7 +351,8 @@
 	width: 30px !important;
 	height: 30px !important;
 	top: -1.9rem !important;
-	left: 146px !important;
+	left: 10.2rem!important;
+	cursor: pointer;
 }
 
 .ellipse-light {

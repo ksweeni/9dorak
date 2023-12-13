@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/orderDetailsStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/orderPaymentStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -74,69 +74,10 @@
 				</div>
 			</header>
 
-			<div class="menu">
-				<div class="username">
-					<div class="medium"></div>
-					<div class="text-wrapper">김수인</div>
-					<div class="text-wrapper-2">LV.낑깡</div>
-				</div>
-				<div class="links">
-					<div class="privacy">
-						<div class="text-wrapper-3">주문 내역</div>
-					</div>
-					<div class="duolingo-for-schools">
-						<a class="header-a"
-							href="${pageContext.request.contextPath}/my/orderPayment.do">결제 내역</a>
-					</div>
-					<div class="duolingo-for-schools-2">
-							<a class="header-a"
-							href="${pageContext.request.contextPath}/my/orderCancel.do">결제 취소 내역</a>
-					</div>
-				</div>
-			</div>
-			<div class="group-4">
-				<div class="group-5">
-					<div class="overlap-group-2">
-						<div class="coupons">
-							<div class="frame">
-								<div class="frame-2">
-									<div class="coupons-2">주문완료</div>
-								</div>
-								<div class="frame-3"></div>
-							</div>
-						</div>
-						<div class="frame-4"></div>
-						<div class="primary-button">
-							<div class="cancel">주문상세</div>
-						</div>
-						<div class="text-wrapper-13">21,000원</div>
-						<div class="text-wrapper-14">그린샐러드 도시락 외 2건</div>
-						<div class="text-wrapper-15">11.23 주문</div>
-						<img class="rectangle" src="img/rectangle-26.png" />
-					</div>
-				</div>
-				<div class="frame-5">
-					<div class="frame-6">
-						<div class="text-wrapper-16">최근 6개월</div>
-					</div>
-					<div class="frame-7">
-						<div class="text-wrapper-17">2023</div>
-					</div>
-					<div class="frame-7">
-						<div class="text-wrapper-17">2022</div>
-					</div>
-					<div class="frame-7">
-						<div class="text-wrapper-17">2021</div>
-					</div>
-					<div class="frame-7">
-						<div class="text-wrapper-17">2020</div>
-					</div>
-				</div>
-			</div>
 			<div class="account-navigation">
 				<div class="ol">
-					<div class="frame-8">
-						<div class="text-wrapper-18">주문/결제 내역</div>
+					<div class="frame">
+						<div class="text-wrapper">주문/결제 내역</div>
 						<div class="li">
 							<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
 								viewBox="0 0 10 10" fill="none">
@@ -144,13 +85,78 @@
 									d="M2.38408 0.949976C2.33265 0.898177 2.29192 0.836754 2.26422 0.769215C2.23652 0.701676 2.2224 0.629342 2.22266 0.556345C2.22292 0.483348 2.23755 0.411116 2.26572 0.343775C2.2939 0.276433 2.33506 0.215299 2.38686 0.163865C2.43866 0.112431 2.50008 0.0717024 2.56762 0.0440059C2.63516 0.0163094 2.70749 0.00218694 2.78049 0.00244488C2.85349 0.00270282 2.92572 0.0173361 2.99306 0.0455092C3.0604 0.0736823 3.12153 0.114844 3.17297 0.166643L7.61741 4.61109C7.72089 4.71518 7.77896 4.85598 7.77896 5.00275C7.77896 5.14952 7.72089 5.29033 7.61741 5.39442L3.17297 9.83886C3.12153 9.89066 3.0604 9.93182 2.99306 9.96C2.92572 9.98817 2.85349 10.0028 2.78049 10.0031C2.70749 10.0033 2.63516 9.9892 2.56762 9.9615C2.50008 9.93381 2.43866 9.89308 2.38686 9.84164C2.33506 9.79021 2.2939 9.72908 2.26572 9.66173C2.23755 9.59439 2.22292 9.52216 2.22266 9.44916C2.2224 9.37617 2.23652 9.30383 2.26422 9.23629C2.29192 9.16875 2.33265 9.10733 2.38408 9.05553L6.43408 5.00553L2.38408 0.949976Z"
 									fill="#767676" />
         </svg>
-							<div class="text-wrapper-19">주문 내역</div>
+							<div class="text-wrapper-2">결제 내역</div>
 						</div>
 					</div>
 				</div>
-				<div class="text-wrapper-20">주문 내역</div>
+				<div class="text-wrapper-3">결제 내역</div>
 			</div>
-
+			<div class="group">
+				<div class="overlap-group-wrapper">
+					<div class="overlap-group">
+						<div class="frame-2"></div>
+						<div class="primary-button">
+							<div class="cancel">결제상세</div>
+						</div>
+						<div class="cancel-wrapper">
+							<div class="cancel">결제취소</div>
+						</div>
+						<div class="text-wrapper-4">21,000원</div>
+						<div class="text-wrapper-5">그린샐러드 도시락 외 2건</div>
+						<div class="text-wrapper-6">11.23 결제</div>
+						<img class="rectangle" src="img/rectangle-26.png" />
+						<div class="coupons">
+							<div class="frame-3">
+								<div class="frame-4">
+									<div class="coupons-2">결제완료</div>
+								</div>
+								<div class="frame-5"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="frame-6">
+					<div class="frame-7">
+						<div class="text-wrapper-7">최근 6개월</div>
+					</div>
+					<div class="frame-8">
+						<div class="text-wrapper-8">2023</div>
+					</div>
+					<div class="frame-8">
+						<div class="text-wrapper-8">2022</div>
+					</div>
+					<div class="frame-8">
+						<div class="text-wrapper-8">2021</div>
+					</div>
+					<div class="frame-8">
+						<div class="text-wrapper-8">2020</div>
+					</div>
+				</div>
+			</div>
+			<div class="menu-wrapper">
+				<div class="menu">
+					<div class="username">
+						<div class="medium"></div>
+						<div class="text-wrapper-16">김수인</div>
+						<div class="text-wrapper-17">LV.낑깡</div>
+					</div>
+					<div class="links">
+						<div class="privacy">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/my/orderDetails.do">주문
+								내역</a>
+						</div>
+						<div class="duolingo-for-schools">
+							<div class="text-wrapper-19">결제 내역</div>
+						</div>
+						<div class="duolingo-for-schools-2">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/my/orderCancel.do">결제
+								취소 내역</a>
+						</div>
+					</div>
+				</div>
+			</div>
 			<footer class="footer">
 				<div class="footer-company-loco">
 					<div class="footer-company">
@@ -196,6 +202,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="footer-user-link">
 					<div class="footer-text-wrapper-7">User Link</div>
 					<div class="footer-group-2">

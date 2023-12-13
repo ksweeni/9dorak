@@ -28,12 +28,12 @@ public class WalletController {
 
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
-//	@GetMapping("basket.do")
-//	public String basket(Model model) {
-//		List<BasketVO> blist = wService.selectAllBasket();
-//		model.addAttribute("blist", blist);
-//		return "wallet/basket";
-//	}
+	@GetMapping("basket.do")
+	public String basket(Model model) {
+		List<BasketVO> blist = wService.selectAllBasket();
+		model.addAttribute("blist", blist);
+		return "wallet/basket";
+	}
 	
 	@GetMapping("pay.do")
 	public String pay(Model model) {
@@ -64,7 +64,7 @@ public class WalletController {
     
     
     
-    
+	
     
     
     
@@ -89,6 +89,20 @@ public class WalletController {
         int result = wService.addBasket(basket);
         
         if (result > 0) {
+        	response.put("success", true);
+        } else {
+        	response.put("success", false);
+        }
+        return response;
+    }
+    
+    @PostMapping("emptyBasket.do")
+    @ResponseBody
+    public Map<String, Object> emptyBasket(@RequestParam("mem_id") String mem_id) {
+    	Map<String, Object> response = new HashMap<>();
+    	List<BasketVO> basketList = wService.emptyBasket(mem_id);
+    	
+    	if (basketList != null && !basketList.isEmpty()) {
         	response.put("success", true);
         } else {
         	response.put("success", false);

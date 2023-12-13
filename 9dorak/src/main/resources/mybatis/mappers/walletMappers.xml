@@ -42,6 +42,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 	<!-- 아이디+상품 장바구니 존재 여부 확인 -->
 	<select id="checkBasket" resultType="basketvo">
 		select * from basket where mem_id=#{mem_id} and pro_no=#{pro_no}
@@ -53,5 +62,10 @@
 		basket_date, basket_pro_count, mem_id) values (#{pro_no},
 		sysdate, #{basket_pro_count}, #{mem_id})
 	</insert>
+	
+	<!-- 빈 장바구니 -->
+	<select id="emptyBasket" resultType="basketvo">
+		select * from basket where mem_id=#{mem_id}
+	</select>
 
 </mapper>

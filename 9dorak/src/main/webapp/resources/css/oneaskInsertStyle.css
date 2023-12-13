@@ -781,12 +781,13 @@
 	top:6.375px;
 }
 .div-wrapper {
-    width: 932px;
-    height: 233px;
+    width: 1100px;
+    height: -136px;
     position: absolute;
-    left: 107px;
-    /* top: 351px; */
+    left: 425px;
+    top: 278px;
     /* border: solid; */
+    border-top: 37px;
 }
 .e1081_4450 { 
 	width:700px;
@@ -1572,7 +1573,6 @@ th:nth-child(2) {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	width: 100%;
 }
 
 .div-wrapper .div {
@@ -1594,8 +1594,8 @@ th:nth-child(2) {
 	position: absolute;
 	width: 1200px;
 	height: 1038px;
-	top: 0;
-	left: 0;
+	top: -192px;
+	left: -50px;
 }
 
 .div-wrapper .overlap-group {
@@ -2472,4 +2472,9 @@ th:nth-child(2) {
 	border-radius: 4px;
 	color: white;
 	cursor: pointer;
+}
+.profile_photo {
+    height: 40px;
+    width: 40px;
+    background-image: url(../images/yomo/profile.png);
 }

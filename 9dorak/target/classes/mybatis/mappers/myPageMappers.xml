@@ -85,26 +85,4 @@
 		coupon_code=#{coupon_code}
 	</update>
 
-
-	<update id="profileUpdate" parameterType="memvo">
-		update mem
-		set
-		mem_image
-		= #{mem_image}
-		where
-		mem_id = #{mem_id}
-	</update>
-	
-	
-	<update id="profileDelete" parameterType="memvo">
-		update mem
-		set
-		mem_image
-		= 'resources/images/my/baseProfile.png'
-		where
-		mem_id = #{mem_id}
-	</update>
-	
-	
-
 </mapper>

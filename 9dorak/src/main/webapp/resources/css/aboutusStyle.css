@@ -1532,11 +1532,11 @@
 	position:absolute;
 }
 .e75_191 {
-	width:899px;
-	height:425px;
-	position:absolute;
-	left: 378px;
-	top: 1204px;
+    width: 899px;
+    height: 425px;
+    position: absolute;
+    left: 409px;
+    top: 1204px;
 }
 .e75_192 { 
 	color:rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
@@ -2139,4 +2139,9 @@
 	background-image: url(../images/yomo/aboutus05.png);
 	background-repeat:no-repeat;
 	background-size:cover;
+}
+.profile_photo {
+    height: 40px;
+    width: 40px;
+    background-image: url(../images/yomo/profile.png);
 }

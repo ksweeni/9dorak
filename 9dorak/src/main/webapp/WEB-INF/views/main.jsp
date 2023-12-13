@@ -54,6 +54,7 @@ String contextPath = request.getContextPath();
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="js/market/menu_hover.js"></script>
 <script src="js/market/login_modal.js"></script>
+
 <style type="text/css">
 @charset "UTF-8";
 
@@ -204,6 +205,7 @@ String contextPath = request.getContextPath();
 	height: 30px;
 	top: 0;
 	left: 146px;
+	cursor: pointer;
 }
 
 .screen .overlap-group-5 {
@@ -3884,44 +3886,77 @@ a {
 }
 
 </style>
+
+
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
+
 </head>
 <body>
 	<div class="screen">
+	<div class="div">
+	
 		<header class="header">
-			<div class="top-nav">
-				<div class="navbar">
-					<div class="text-wrapper-22">
-						<a href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+				<div class="top-nav">
+					<div class="navbar">
+						<div class="text-event">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+						</div>
+						<div class="text-menu">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+						</div>
+						<div class="text-subscribe">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+						</div>
+						<div class="text-yomo">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+						</div>
+						<div class="text-doran">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+						</div>
 					</div>
-					<div class="text-wrapper-23">
-					<a href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
-					</div>
-					<div class="text-wrapper-24">요모조모</div>
-					<div class="text-wrapper-25">
-						<a href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
-					</div>
-					<div class="text-wrapper-21">
-						<a href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
-					</div>
-				</div>
-				<img class="untitled-2" src="img/untitled-1-1.png" />
-				<div class="div-2">
-					<div class="text-wrapper-26">
-						<span><a
-							href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a></span>
-						| <span> <a
-							href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a></span>
-					</div>
-					<div class="group-5">
-						<div class="overlap-group-5">
-							<img class="group-6" src="img/group-1.svg" />
-							<div class="ellipse-3"></div>
-							<div class="text-wrapper-27">2</div>
+					<a href="${pageContext.request.contextPath}/main.do"> <img
+						class="untitled-2"
+						src="${cpath}/resources/images/main/header-logo.png" />
+					</a>
+					<div class="div-3">
+						<div class="text-wrapper-28">
+							<c:choose>
+								<c:when test="${not empty sessionScope.loginmem.mem_id}">
+									<span
+										style="font-weight: bold; left: -1rem; position: relative;">
+										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+									</span>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/logout.do"
+										style="position: relative; left: -1rem">로그아웃</a>
+								</c:when>
+								<c:otherwise>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+								</c:otherwise>
+							</c:choose>
+						</div>
+						<div class="group-20">
+							<div class="header-overlap-group-3" onclick="loginBasket()">
+								<img class="header-group-21"
+									src="${cpath}/resources/images/main/header-cart.png" />
+								<!-- <div class="text-wrapper-29">2</div> -->
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</header>
+			</header>
+		</div>
+		
+		
 	</div>
 	<span class="e1433_2546">좋아요 ❤️</span>
 	<span class="e1433_2547">추천 👍</span>
@@ -4378,6 +4413,58 @@ a {
 		}
 		/* allerCheck(); */
 	}
+	
+	function loginBasket() {
+		var mem_id = "${sessionScope.loginmem.mem_id}";
+	    
+	    // 로그인 여부 확인
+	    if (mem_id == "") {
+			alert("로그인이 필요한 서비스입니다 !");
+			window.location.href = "${cpath}/login/loginForm.do";
+			return;
+		}
+	}
+	
+	window.onload = emptyBasket;
+		
+	function emptyBasket() {
+		
+		var mem_id = "${sessionScope.loginmem.mem_id}";
+
+		$.ajax({
+	        type: "POST",
+	        url: "${cpath}/wallet/emptyBasket.do",
+	        data: {
+	            mem_id: mem_id,
+	        },
+	        dataType: "json",
+	        success: function (response) {
+	        	if (response.success) {
+	                console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
+	                alert("상품이 이미 장바구니에 존재합니다! - 불키자");
+	                lightsOn();
+	            } else {
+	                console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
+	            }
+	        },
+	        error: function (xhr, status, error) {
+	            console.error("콘솔 - Error during basket operation. Status: " + status);
+	            console.error("콘솔 - Server response: " + xhr.responseText);
+	            alert("An error occurred during the checkBasket operation!");
+	        }
+
+	    });
+	}
+	
+	function lightsOn() {
+		var bodyElement = document.body;
+		var ellipseDiv = document.createElement("div");
+		ellipseDiv.className = "ellipse-light";
+		bodyElement.appendChild(ellipseDiv);
+		
+		console.log("장바구니 가득 차서 불 켜짐!");
+	}
+	
 	</script>
 	
 </body>

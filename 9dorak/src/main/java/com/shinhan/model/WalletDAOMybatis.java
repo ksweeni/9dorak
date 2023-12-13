@@ -20,13 +20,13 @@ public class WalletDAOMybatis {
 	Logger logger = LoggerFactory.getLogger(WalletDAOMybatis.class);
 	String NAMESPACE = "net.firstzone.wallet.";
 	
-//	// 장바구니 select all
-//	public List<BasketVO> selectAllBasket() {
-//		List<BasketVO> blist = sqlSession.selectList(NAMESPACE + "selectAllBasket");
-//		System.out.println(blist);
-//		logger.info("selectAllBasket :  {}", blist.size());
-//		return blist;
-//	}
+	// 장바구니 select all
+	public List<BasketVO> selectAllBasket() {
+		List<BasketVO> blist = sqlSession.selectList(NAMESPACE + "selectAllBasket");
+		System.out.println(blist);
+		logger.info("selectAllBasket :  {}", blist.size());
+		return blist;
+	}
 	
 	// 결제하기 select all
 	public List<PayVO> selectAllPay() {
@@ -75,8 +75,19 @@ public class WalletDAOMybatis {
         return sqlSession.selectList(NAMESPACE + "checkBasket", params);
     }
     
+    // 장바구니에 상품 추가
     public int addBasket(BasketVO basket) {
     	return sqlSession.insert(NAMESPACE + "addBasket", basket);
     }
+    
+    // 장바구니 비었는지 여부 확인
+    public List<BasketVO> emptyBasket(String mem_id) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("mem_id", mem_id);
+        return sqlSession.selectList(NAMESPACE + "emptyBasket", params);
+    }
+    
+    
+    
     
 }

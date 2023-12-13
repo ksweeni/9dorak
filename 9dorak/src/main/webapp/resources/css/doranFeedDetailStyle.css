@@ -176,17 +176,17 @@
 .div-wrapper .unsplash {
 	position: absolute;
 	width: 650px;
-	height: 725px;
+	height: 700px;
 	top: 135px;
 	left: 25px;
 	border-radius: 10px;
 }
 
 .div-wrapper .p {
-	position: absolute;
+	position: relative;
 	width: 657px;
 	height: 64px;
-	top: 867px;
+	top: 800px;
 	left: 21px;
 	font-weight: 500;
 	font-size: 20px;
@@ -376,19 +376,35 @@
 
 .div-wrapper .frame-wrapper {
 	width: 700px;
-	height: 865px;
-	background-color: #f8f8f8;
-	border-radius: 10px;
+    height: 640px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow-x: hidden;
+	overflow-y: auto; /* 내용이 넘칠 때 스크롤이 나타남 */
+}
+
+.frame-wrapper::-webkit-scrollbar {
+	width: 10px; /* 스크롤 바의 너비 */
+}
+
+.frame-wrapper::-webkit-scrollbar-thumb {
+	background-color: #e3e3e5; /* 스크롤 바의 색상 */
+	border-radius: 10px; /* 스크롤 바의 모서리 둥글기 */
+}
+
+.frame-wrapper::-webkit-scrollbar-track {
+	background-color: #f0f0f0; /* 스크롤 바 트랙의 색상 */
 }
 
 .div-wrapper .frame-6 {
 	display: inline-flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 28px;
+	gap: 20px;
 	position: relative;
-	top: 51px;
+	top: 40px;
 	left: 32px;
+	padding-bottom: 40px;
 }
 
 .div-wrapper .comment {
@@ -414,8 +430,7 @@
 	width: fit-content;
 	margin-top: -1px;
 	font-weight: 400;
-	color: #808080;
-	font-size: 12px;
+	font-size: 1rem;
 	letter-spacing: 0;
 	line-height: normal;
 }
@@ -434,8 +449,6 @@
 
 .div-wrapper .text {
 	display: flex;
-	width: 208px;
-	height: 48px;
 	align-items: flex-start;
 	padding: 10px 13px;
 	position: absolute;
@@ -452,7 +465,7 @@
 	transform: rotate(180deg);
 	font-weight: 400;
 	color: #424242;
-	font-size: 15px;
+	font-size: 1rem;
 	letter-spacing: 0;
 	line-height: normal;
 	white-space: nowrap;
@@ -472,7 +485,7 @@
 	height: 20px;
 	font-weight: 400;
 	color: #8c8c8c;
-	font-size: 15px;
+	font-size: 0.9rem;
 	letter-spacing: 0;
 	line-height: normal;
 }
@@ -505,6 +518,7 @@
 	height: 50px;
 	top: 28px;
 	left: 22px;
+	border-radius: 50px;
 }
 
 .div-wrapper .textzone {
@@ -575,25 +589,31 @@
 }
 
 .div-wrapper .rectangle {
-	position: absolute;
-	width: 123px;
-	height: 36px;
-	top: 0;
-	left: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 60px 25px 0 562px;
 	background-color: #e3e3e5;
 	border-radius: 10px;
 }
 
 .div-wrapper .text-wrapper-19 {
-	position: absolute;
-	top: 5px;
-	left: 39px;
-	font-weight: 800;
-	color: #8c8c8c;
-	font-size: 20px;
-	letter-spacing: 0;
-	line-height: normal;
-	white-space: nowrap;
+	top: -60px;
+    font-weight: 800;
+    color: #8c8c8c;
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    background-image: url(../images/doran/icon_upload.png);
+    background-repeat: no-repeat;
+    background-size: 34px 25px;
+    background-position: 7px center;
+    position: relative;
+    border: none;
+    width: 114px;
+    height: 35px;
+    border-radius: 10px;
 }
 
 .div-wrapper .carbon-send-alt {
@@ -1014,7 +1034,6 @@
 	width: 177px;
 	top: 21px;
 	left: 21px;
-	font-family: var(- -p2-font-family);
 	font-weight: var(- -p2-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p2-font-size);
@@ -1258,7 +1277,7 @@ progress {
 
 .doran-underInfo {
 	position: relative;
-	top: 65%;
+	top: 800px;
 	left: 3%;
 	display: flex;
 	margin-top: 30px;
@@ -1321,4 +1340,28 @@ progress {
 .text-wrapper-17:focus-visible {
 	    outline: none;
 	    box-shadow: 5px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.comments-info{
+	position: relative;
+	display: flex;
+	gap:10%;
+}
+
+.comment-span{
+	position: relative;
+    left: 15px;
+}
+
+.detailfeed_deleteBtnImg{
+	width: 27px;
+    height: 27px;
+}
+
+.detailfeed_deleteBtn{
+	border: none;
+    background-color: rgba(0, 123, 255, 0);
+    position: relative;
+    left: 94%;
+    top: 1%;
 }

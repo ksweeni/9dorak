@@ -626,7 +626,7 @@
     height: 282px;
     position: absolute;
     left: 385px;
-    top: 354px;
+    top: 262px;
     border-radius: 8px;
 }
 .e844_616 p:first-of-type {
@@ -647,7 +647,7 @@
 }
 
 .e844_616 hr:last-of-type {
-    margin-top: 400px;
+    margin-top: 244px;
 }
 
 .e844_616 hr:nth-of-type(2) {
@@ -1594,4 +1594,9 @@ th:nth-child(2) {
     border: 2px solid #f38820;
     border-radius: 60px;
     background-color: white;
+}
+.profile_photo {
+    height: 40px;
+    width: 40px;
+    background-image: url(../images/yomo/profile.png);
 }
