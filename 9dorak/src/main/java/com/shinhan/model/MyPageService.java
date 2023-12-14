@@ -87,9 +87,12 @@ public class MyPageService {
 	
 	
 	//주문내역
-	public List<Map<String, Object>>  orderList(String mem_id) {
-		
+	public List<Map<String, Object>>  orderList(String mem_id) {		
 		return dao.orderList(mem_id);
+	}
+	//결제내역
+	public List<Map<String, Object>>  paymentList(String mem_id) {		
+		return dao.paymentList(mem_id);
 	}
 
 
