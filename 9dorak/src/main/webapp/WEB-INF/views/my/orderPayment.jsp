@@ -20,11 +20,7 @@
 		$.ajax({
 			url : "paymentList.do",
 			success : function(responseData) {
-				if(responseData.trim() == "") {
-					$("#here").html("결제내역이 존재하지 않습니다.");
-				}else {
-					$("#here").html(responseData);
-				}				
+				$("#here").html(responseData);
 			}
 		});
 	}
@@ -110,9 +106,8 @@
 				<div class="text-wrapper-3">결제 내역</div>
 			</div>
 			<div class="group">
-				<div id="here">
-				</div>
-				<div class="frame-6">
+				<div id="here"></div>
+				<!-- 				<div class="frame-6">
 					<button class="frame-7">
 						<div class="text-wrapper-7">최근 6개월</div>
 					</button>
@@ -128,7 +123,7 @@
 					<button class="frame-8">
 						<div class="text-wrapper-8">2020</div>
 					</button>
-				</div>
+				</div> -->
 			</div>
 			<div class="menu-wrapper">
 				<div class="menu">

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/orderDetailsStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/orderDetailsStyle.css?s" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -111,7 +111,7 @@
 			<div class="group-4">
 				<div id="here">
 				</div>
-				<div class="frame-5">
+<!-- 				<div class="frame-5">
 					<button class="frame-6">
 						<div class="text-wrapper-16">최근 6개월</div>
 					</button>
@@ -127,7 +127,7 @@
 					<button class="frame-7">
 						<div class="text-wrapper-17">2020</div>
 					</button>
-				</div>
+				</div> -->
 			</div>
 			<div class="account-navigation">
 				<div class="ol">

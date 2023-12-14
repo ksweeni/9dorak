@@ -145,7 +145,6 @@
 		and py.pay_status in ('결제 대기','결제 완료')
 	</select>
 
-
 	<!-- 결제취소내역보기 -->
 	<select id="cancelList" parameterType="string" resultType="map">
 		SELECT od.pro_no, p.pro_name, od.orderdetail_price,

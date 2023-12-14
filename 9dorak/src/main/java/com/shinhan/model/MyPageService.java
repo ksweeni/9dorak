@@ -95,6 +95,10 @@ public class MyPageService {
 	public List<Map<String, Object>>  paymentList(String mem_id) {		
 		return dao.paymentList(mem_id);
 	}
+	//결제취소내역
+	public List<Map<String, Object>>  cancelList(String mem_id) {		
+		return dao.cancelList(mem_id);
+	}
 
 	// 배송 조회 내역
 	public List<DeliveryVO> AllDeliveryHistory(String mem_id){

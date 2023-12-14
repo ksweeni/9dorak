@@ -8,9 +8,23 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/orderCancelStyle.css" type="text/css" />
+	href="${cpath}/resources/css/orderCancelStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+ $(function(){
+	 myCancel();
+ });
+  function myCancel(){
+	  $.ajax({
+		  url:"cancelList.do",
+		  success:function(responseData){
+			  $("#here").html(responseData);
+		  }
+	  });
+  }
+</script>
 </head>
 
 <body>
@@ -75,27 +89,9 @@
 			</header>
 
 			<div class="group">
-				<div class="overlap-group-wrapper">
-					<div class="overlap-group">
-						<div class="coupons">
-							<div class="frame">
-								<div class="frame-2">
-									<div class="text-wrapper">취소완료</div>
-								</div>
-								<div class="frame-3"></div>
-							</div>
-						</div>
-						<div class="frame-4"></div>
-						<div class="primary-button">
-							<div class="cancel">취소상세</div>
-						</div>
-						<div class="text-wrapper-2">21,000원</div>
-						<div class="text-wrapper-3">그린샐러드 도시락 외 2건</div>
-						<div class="text-wrapper-4">11.23 결제취소</div>
-						<img class="rectangle" src="img/rectangle-26.png" />
-					</div>
+				<div id="here">
 				</div>
-				<div class="frame-5">
+<!-- 				<div class="frame-5">
 					<button class="frame-6">
 						<div class="text-wrapper-5">최근 6개월</div>
 					</button>
@@ -111,7 +107,7 @@
 					<button class="frame-7">
 						<div class="text-wrapper-6">2020</div>
 					</button>
-				</div>
+				</div> -->
 			</div>
 			<div class="menu">
 				<div class="username">
@@ -131,7 +127,7 @@
 							내역</a>
 					</div>
 					<div class="duolingo-for-schools-2">
-						<div class="text-wrapper-11">결제 취소 내역</div>
+						<div class="text-wrapper-11" onclick="myCancel()">결제 취소 내역</div>
 					</div>
 				</div>
 			</div>
