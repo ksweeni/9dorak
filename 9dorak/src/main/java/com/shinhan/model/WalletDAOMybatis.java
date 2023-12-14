@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.shinhan.dto.BasketVO;
+import com.shinhan.dto.MemVO;
 import com.shinhan.dto.PayVO;
 
 @Repository
@@ -67,7 +68,17 @@ public class WalletDAOMybatis {
     
     
     
-    // mem_id의 장바구니 존재 여부 확인
+    
+    
+    
+    
+    // 회원 아이디 정보
+    public MemVO checkMember(String mem_id) {
+		MemVO member = sqlSession.selectOne(NAMESPACE + "checkMember", mem_id);
+		return member;
+	}
+    
+    // 아이디-상품 장바구니 존재 여부 확인
     public List<BasketVO> checkBasket(String mem_id, int pro_no) {
         Map<String, Object> params = new HashMap<>();
         params.put("mem_id", mem_id);
@@ -86,8 +97,4 @@ public class WalletDAOMybatis {
         params.put("mem_id", mem_id);
         return sqlSession.selectList(NAMESPACE + "emptyBasket", params);
     }
-    
-    
-    
-    
 }

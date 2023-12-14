@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.shinhan.dto.BasketVO;
+import com.shinhan.dto.MemDeliveryVO;
+import com.shinhan.dto.MemVO;
 import com.shinhan.dto.PayVO;
 import com.shinhan.model.WalletService;
 
@@ -28,12 +32,12 @@ public class WalletController {
 
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
-	@GetMapping("basket.do")
-	public String basket(Model model) {
-		List<BasketVO> blist = wService.selectAllBasket();
-		model.addAttribute("blist", blist);
-		return "wallet/basket";
-	}
+//	@GetMapping("basket.do")
+//	public String basket(Model model) {
+//		List<BasketVO> blist = wService.selectAllBasket();
+//		model.addAttribute("blist", blist);
+//		return "wallet/basket";
+//	}
 	
 	@GetMapping("pay.do")
 	public String pay(Model model) {
@@ -54,17 +58,16 @@ public class WalletController {
 	
 	
 
-	
-	
-	
-
-
-    
-    
-    
-    
-    
-	
+    // 회원이 담은 상품 목록
+	@GetMapping("basket.do")
+	public String basket(Model model, HttpSession session) {
+		MemVO loginmem = (MemVO)session.getAttribute("loginmem");
+		MemVO member = wService.checkMember(loginmem.getMem_id());
+		List<BasketVO> blist = wService.emptyBasket(loginmem.getMem_id());
+		model.addAttribute("mem", member);
+		model.addAttribute("blist", blist);
+		return "wallet/basket";
+	}
     
     
     
@@ -111,5 +114,4 @@ public class WalletController {
         }
         return response;
     }
-
 }
