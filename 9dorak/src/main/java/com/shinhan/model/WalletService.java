@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.shinhan.dto.BasketVO;
+import com.shinhan.dto.MemVO;
 import com.shinhan.dto.PayVO;
 
 @Service
@@ -46,8 +47,9 @@ public class WalletService {
 	
 	
 	
-	
-	
+	public MemVO checkMember(String mem_id) {
+		return dao.checkMember(mem_id);
+	}
 	
 	public List<BasketVO> checkBasket(String mem_id, int pro_no) {
 		return dao.checkBasket(mem_id, pro_no);
@@ -60,5 +62,4 @@ public class WalletService {
 	public List<BasketVO> emptyBasket(String mem_id) {
 		return dao.emptyBasket(mem_id);
 	}
-	
 }

@@ -208,7 +208,7 @@ String contextPath = request.getContextPath();
 							<div class="member">
 								<span class="e126_321">회원 아이디</span>
 								<span class="e126_322">${items.mem_id}</span>
-								<span class="e126_324">주문한 상품 번호</span>
+								<span class="e126_324">주문한 상품</span>
 								<span class="e126_325">${items.pro_no}</span>
 								<span class="e126_324">주문한 수량</span>
 								<span class="e126_325">${items.basket_pro_count}</span>
@@ -217,7 +217,7 @@ String contextPath = request.getContextPath();
 							</div>
 				</c:forEach>
 			</div>
-					
+						
 						
 						
 						
