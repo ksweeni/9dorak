@@ -133,7 +133,7 @@ public class MenuController {
 		
 		List<Map<String, Object>> rlist = mService.selectProReview(pro.getPro_no());
 		model.addAttribute("rlist", rlist);
-		
+
 		Map<String, Object> revwCnt = mService.reviewCnt(pro.getPro_no());
 		model.addAttribute("totCnt",revwCnt.get("totCnt"));
 		model.addAttribute("phtCnt",revwCnt.get("phtCnt"));
