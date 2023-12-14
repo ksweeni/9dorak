@@ -160,7 +160,7 @@
 										<div class="comment">
 											<div class="reply">
 												<div class="comments-info">
-												<div class="text-wrapper-14">Name</div>
+												<div class="text-wrapper-14">${comment.mem_id}</div>
 												<div class="text-wrapper-16">${comment.comment_date}</div>
 												</div>
 												<div class="message">
@@ -174,51 +174,6 @@
 										</div>
 									</c:forEach>
 									
-										<!-- <div class="comment">
-											<div class="reply">
-												<div class="text-wrapper-14">Name</div>
-												<div class="message">
-													<div class="overlap-group-3">
-														<div class="text">
-															<div class="text-wrapper-15">Here’s some
-																feedback...</div>
-														</div>
-														<img class="tail" src="img/tail-3.svg" />
-													</div>
-												</div>
-											</div>
-											<div class="text-wrapper-16">2023.11.22</div>
-										</div>
-										<div class="comment">
-											<div class="reply">
-												<div class="text-wrapper-14">Name</div>
-												<div class="message">
-													<div class="overlap-group-3">
-														<div class="text">
-															<div class="text-wrapper-15">Here’s some
-																feedback...</div>
-														</div>
-														<img class="tail" src="img/tail.svg" />
-													</div>
-												</div>
-											</div>
-											<div class="text-wrapper-16">2023.11.22</div>
-										</div>
-										<div class="comment">
-											<div class="reply">
-												<div class="text-wrapper-14">Name</div>
-												<div class="message">
-													<div class="overlap-group-3">
-														<div class="text">
-															<div class="text-wrapper-15">Here’s some
-																feedback...</div>
-														</div>
-														<img class="tail" src="img/tail-4.svg" />
-													</div>
-												</div>
-											</div>
-											<div class="text-wrapper-16">2023.11.22</div>
-										</div> -->
 									</div><!-- frame-6 -->
 								</div>
 							</div>

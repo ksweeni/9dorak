@@ -137,15 +137,18 @@ public class DoranController {
 	}
 	
 	@PostMapping("uploadComment.do")
-	public String uploadComment(@RequestParam String newComment, @RequestParam int doranNo) {
+	public String uploadComment(@RequestParam String newComment, @RequestParam int doranNo, HttpSession session) {
 	    System.out.println("Received comment from frontend: " + newComment);
 	    List<CommentVO> clist = dService.selectComment(); 
+	    MemVO memVO = (MemVO) session.getAttribute("loginmem");
+	    String memId = memVO.getMem_id();
 	    CommentVO comment = new CommentVO();
 	    comment.setComment_cont(newComment);
 	    comment.setDoran_no(doranNo);
 	    comment.setComment_no(clist.size()+1);
+	    comment.setMem_id(memId);
 	    dService.insertComment(comment);
-	    return "redirect:/doran/doranFeedDetail";
+	    return "redirect:/doran/doranFeedDetail/" + doranNo + "?timestamp=" + System.currentTimeMillis();
 	}
 	
 	@PostMapping("doranUpload.do")
@@ -203,9 +206,6 @@ public class DoranController {
 		List<CommentVO> comments = dService.selectAllCommentAbout(doranNo);
 		model.addAttribute("doran", doran);
 		model.addAttribute("comments", comments);
-		System.out.println("댓글 사이즈 : " + comments.size());
-		System.out.println("게시물 상세로 넘어간다" + doran);
-		System.out.println(comments);
 		return "/doran/doranFeedDetail";
 	}
 
