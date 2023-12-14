@@ -168,14 +168,12 @@
 	<!-- 배송 조회 내역 -->
 	<select id="AllDeliveryHistory" parameterType="String"
 		resultType="deliveryvo">
-		select *
-		from delivery
-		where delivery_name = (
-		select m.mem_name
-		from orders o
-		join mem m on o.mem_id = m.mem_id
-		where o.mem_id = #{mem_id} and o.order_status = '주문 완료'
-		)
+		SELECT d.*, m.mem_name, o.order_date
+		FROM delivery d
+		JOIN orders o ON d.order_no = o.order_no
+		JOIN mem m ON o.mem_id = m.mem_id
+		WHERE o.mem_id = #{mem_id} AND o.order_status = '주문 완료'
+
 	</select>
 
 

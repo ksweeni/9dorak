@@ -102,9 +102,12 @@ console.log("${dlist}");
 				</button>
 			</div>
 			<div class="frame-4">
+					
+			
 				<div class="frame-5">
 					<div class="frame-6">
 						<div class="text-wrapper-3">2023. 11. 25 주문</div>
+						
 					</div>
 					<div class="frame-7">
 						<div class="frame-6">
@@ -124,6 +127,7 @@ console.log("${dlist}");
 						</div>
 					</div>
 				</div>
+				
 				<div class="frame-5">
 					<div class="frame-6">
 						<div class="text-wrapper-3">2023. 11. 25 주문</div>
