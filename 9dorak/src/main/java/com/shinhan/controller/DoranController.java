@@ -2,6 +2,7 @@ package com.shinhan.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -135,22 +136,39 @@ public class DoranController {
 		dService.insertDoran(doran);
 		return "redirect:/doran/doran.do";
 	}
-	
+
 	@PostMapping("uploadComment.do")
-	public String uploadComment(@RequestParam String newComment, @RequestParam int doranNo, HttpSession session) {
-	    System.out.println("Received comment from frontend: " + newComment);
-	    List<CommentVO> clist = dService.selectComment(); 
-	    MemVO memVO = (MemVO) session.getAttribute("loginmem");
-	    String memId = memVO.getMem_id();
-	    CommentVO comment = new CommentVO();
-	    comment.setComment_cont(newComment);
-	    comment.setDoran_no(doranNo);
-	    comment.setComment_no(clist.size()+1);
-	    comment.setMem_id(memId);
-	    dService.insertComment(comment);
-	    return "redirect:/doran/doranFeedDetail/" + doranNo + "?timestamp=" + System.currentTimeMillis();
+	@ResponseBody
+	public Map<String, Object> uploadComment(@RequestParam String newComment, @RequestParam int doranNo, HttpSession session) 
+	{
+		
+		Map<String, Object> response = new HashMap<>();
+		try {
+			System.out.println("Received comment from frontend: " + newComment);
+			List<CommentVO> clist = dService.selectComment();
+			MemVO memVO = (MemVO) session.getAttribute("loginmem");
+			String memId = memVO.getMem_id();
+			CommentVO comment = new CommentVO();
+			comment.setComment_cont(newComment);
+			comment.setDoran_no(doranNo);
+			comment.setComment_no(clist.size() + 1);
+			comment.setMem_id(memId);
+			dService.insertComment(comment);
+
+			List<CommentVO> updatedComments = dService.selectAllCommentAbout(doranNo);
+
+			// 업데이트된 댓글 목록을 응답에 추가
+			response.put("comments", updatedComments);
+			response.put("success", true);
+		} catch (Exception e) {
+			response.put("success", false);
+			response.put("error", e.getMessage());
+		}
+		return response;
+
+		// return"redirect:/doran/doranFeedDetail/"+doranNo+"?timestamp="+System.currentTimeMillis();
 	}
-	
+
 	@PostMapping("doranUpload.do")
 	public String handleDoranUpload(DoranVO doran, @RequestParam MultipartFile singleFile, HttpServletRequest request,
 			HttpSession session) {
