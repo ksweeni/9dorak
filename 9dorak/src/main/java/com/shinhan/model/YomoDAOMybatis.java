@@ -87,4 +87,10 @@ public class YomoDAOMybatis {
 		return result;
 	}
 
+
+	public int updateOneask(OneaskVO oneask) {
+		int result = sqlSession.update(NAMESPACE + "updateOneask", oneask);
+		return result;
+	}
+
 }

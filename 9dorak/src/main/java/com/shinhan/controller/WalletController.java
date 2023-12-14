@@ -68,7 +68,7 @@ public class WalletController {
     
     
     
-    
+    // 장바구니에 이미 해당 아이디-상품 존재 여부 
     @PostMapping("checkBasket.do")
     @ResponseBody
     public Map<String, Object> checkBasket(@RequestParam("mem_id") String mem_id, @RequestParam("pro_no") int pro_no) {
@@ -83,6 +83,7 @@ public class WalletController {
         return response;
     }
     
+    // 메뉴 상세 페이지에서 구도락 담기
     @PostMapping("addBasket.do")
     public @ResponseBody Map<String, Object> addBasket(Model model, BasketVO basket, HttpServletRequest request) {
         Map<String, Object> response = new HashMap<>();
@@ -96,6 +97,7 @@ public class WalletController {
         return response;
     }
     
+    // 장바구니 비어있는지 여부 판별하여, 불 켜기
     @PostMapping("emptyBasket.do")
     @ResponseBody
     public Map<String, Object> emptyBasket(@RequestParam("mem_id") String mem_id) {

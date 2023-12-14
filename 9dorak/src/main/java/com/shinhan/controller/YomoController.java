@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,14 +17,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.shinhan.dto.AnnoVO;
-import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.FaqVO;
+import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OneaskVO;
-import com.shinhan.dto.ProVO;
+import com.shinhan.model.MyPageService;
 import com.shinhan.model.YomoService;
 
 @Controller
@@ -32,6 +32,8 @@ public class YomoController {
 	
 	@Autowired
 	YomoService yservice;
+	@Autowired
+	MyPageService mService;
 
 	private static final Logger logger = LoggerFactory.getLogger(YomoController.class);
 	
@@ -80,16 +82,23 @@ public class YomoController {
 	}
 	
 	@GetMapping("oneaskDetail.do")
-	public String oneask(Model model, OneaskVO oneask) {
+	public String oneask(Model model, OneaskVO oneask, HttpSession session) {
 		OneaskVO oneaskvo = yservice.selectBynoOneask(oneask.getOneask_no());
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+//		MemVO mem = mService.getMember(loginmem.getMem_id());
 		model.addAttribute("oneask", oneaskvo);
+		model.addAttribute("mem", loginmem);
+		System.out.println(oneaskvo);
+		System.out.println(loginmem);
 		return "yomo/oneaskDetail";
 	}
 	
 	@GetMapping("oneask.do")
-	public String oneask(Model model) {
+	public String oneask(Model model, OneaskVO oneask) {
 		List<OneaskVO> olist = yservice.selectOneaskAll();
+		int result = yservice.updateOneask(oneask);
 		model.addAttribute("olist", olist);
+		/* System.out.println(oneask); */
 		return "yomo/oneask";
 	}
 	

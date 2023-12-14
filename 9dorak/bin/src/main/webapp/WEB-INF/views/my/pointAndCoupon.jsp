@@ -373,7 +373,7 @@ String contextPath = request.getContextPath();
 
 .e145_1516 {
 	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 83px;
+	width: 145px;
 	height: 26px;
 	position: absolute;
 	left: 52px;
@@ -884,9 +884,9 @@ String contextPath = request.getContextPath();
 					<div class=e145_1560>
 						<span class="e145_1561">나의 포인트</span>
 					</div>
-					<div class=e145_1526>
+				<!-- 	<div class=e145_1526>
 						<span class="e145_1527">적립 및 사용 목록</span>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -942,6 +942,17 @@ String contextPath = request.getContextPath();
 
 			}
 		}) // ajax
+
+	})
+	$(".e145_1560").on("click", function() {
+
+		$.ajax({
+			url : "${cpath}/my/point_ajax.do",		
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+		});
 
 	})
 </script>

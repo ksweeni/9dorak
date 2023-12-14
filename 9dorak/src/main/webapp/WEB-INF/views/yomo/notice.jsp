@@ -80,6 +80,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	</div>
 	<div class=e854_1005>
 		<div class=e831_684>
 			<div class=e831_685>
@@ -131,7 +132,6 @@
 			</a>
 		</div>
 	</div>
-		</div>
 			<footer class="footer">
 				<div class="footer-company-loco">
 					<div class="footer-company">

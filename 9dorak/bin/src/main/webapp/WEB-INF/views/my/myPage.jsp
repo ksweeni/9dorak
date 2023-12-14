@@ -128,19 +128,19 @@ String contextPath = request.getContextPath();
 				<div class="e72_334"></div>
 			</div>
 
-			<div class=e69_186>
+			<a class=e69_186 href = "${cpath }/my/pointAndCoupon.do">
 				<div class=e69_187>
 					<span class="e69_176">포인트 및 쿠폰</span><span class="e69_189">Enjoy various benefits through points and coupons</span>
 				</div>
 				<div class="e72_332"></div>
-			</div>
+			</a>
 			<div class=e69_195>
 				<div class=e69_196>
 					<span class="e69_176">주문/결제 내역</span><span class="e69_198">Manage
 						taxpayer information and tax documents</span>
 				</div>
 				<div class="e72_330"></div>
-			</div>
+			</div>	
 			<div class=e69_201>
 				<div class=e69_202>
 					<span class="e69_176">배송 내역/조회</span><span class="e69_204">Check and view your delivery history</span>

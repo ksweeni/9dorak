@@ -174,7 +174,7 @@
 							</div>
 						</form>
 						<a class="kakao" href="javascript:loginWithKakao()"><img
-							src="${pageContext.request.contextPath}/resources/images/kakao_login_medium_narrow.png"
+							src="${pageContext.request.contextPath}/resources/images/login/kakao_login_medium_narrow.png"
 							style="width: 200px"></a>
 					</div>
 					<div class="frame">

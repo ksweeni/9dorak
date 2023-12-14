@@ -236,7 +236,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 146px;
-	border : 1px solid gray;
+	border: 1px solid gray;
 	border-top-left-radius: 16px;
 	border-top-right-radius: 16px;
 	border-bottom-left-radius: 16px;
@@ -258,7 +258,7 @@ String contextPath = request.getContextPath();
 
 .e79_256 {
 	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 83px;
+	width: 145px;
 	height: 26px;
 	position: absolute;
 	left: 52px;
@@ -336,7 +336,6 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 52px;
-	
 }
 
 .e79_262 {
@@ -415,9 +414,11 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 128px;
 	top: 0px;
-	background-image: url(${cpath}/resources/images/my/profile.png);
+	/* 	background-image: url(${cpath}/resources/images/my/snsicon.png); */
+	/*  	background-image: url(${cpath}/resources/upload/${mem.mem_image});  */
 	background-repeat: no-repeat;
 	background-size: cover;
+	border-radius: 30px;
 }
 
 .79_425 {
@@ -460,7 +461,7 @@ String contextPath = request.getContextPath();
 }
 
 .e82_185 {
-	width: 23px;
+	width: 33px;
 	height: 32px;
 	position: absolute;
 	left: 0px;
@@ -1082,12 +1083,11 @@ String contextPath = request.getContextPath();
 <body style="width: 100%">
 	<div class=e79_160>
 		<div class=e81_146>
-			<a href = "${cpath }" class=e81_147>
+			<a href="${cpath }" class=e81_147>
 				<div class="e81_148"></div>
-			</a>
-			<a href="${cpath }/menu/menu.do" class="e81_149">메뉴보기</a><span
+			</a> <a href="${cpath }/menu/menu.do" class="e81_149">메뉴보기</a><span
 				class="e81_150">구독하기</span><span class="e81_151">요모조모</span><a
-				href="${cpath }/doran/doran.do" class="e81_152">도란도란</a><a 
+				href="${cpath }/doran/doran.do" class="e81_152">도란도란</a><a
 				href="${cpath }/event/challenge.do" class="e81_153">이벤트</a><a
 				href="${cpath }/my/logout.do" class="e81_154">로그아웃</a>
 			<div class="e81_155"></div>
@@ -1124,14 +1124,30 @@ String contextPath = request.getContextPath();
 			</div>
 			<div class=e79_161>
 				<div class=e79_162>
-					<div class="e79_388"></div>
-					<div class=e79_425>
-						<span class="e79_426">Update</span>
-					</div>
-					<div class=e79_427>
-						<div class="e82_185"></div>
-						<span class="e79_430">Remove</span>
-					</div>
+					<form action="#" enctype="multipart/form-data">
+						<c:choose>
+							<c:when
+								test="${mem.mem_image eq 'resources/images/my/baseProfile.png'}">
+								<div class="e79_388" id="uploadedImage"
+									style="background-image: url(${cpath}/${mem.mem_image});"></div>
+							</c:when>
+							<c:otherwise>
+								<div class="e79_388" id="uploadedImage"
+									style="background-image: url(${cpath}/resources/upload/${mem.mem_image});"></div>
+							</c:otherwise>
+						</c:choose>
+
+						<div class="e79_425">
+							<label for="fileInput" class="e79_426">Update</label> <input
+								type="file" id="fileInput" name="singleFile"
+								style="display: none" onchange="uploadFile()" />
+						</div>
+						<div class="e79_427">
+							<div class="e82_185"></div>
+							<span class="e79_430">Remove</span>
+						</div>
+					</form>
+
 					<form action="#">
 						<div class=e79_410>
 							<span class="e79_244">아이디</span>
@@ -1258,11 +1274,45 @@ String contextPath = request.getContextPath();
 		$.ajax({
 
 			url : "${cpath}/my/myDelivery.do",
-			type:"get",
+			type : "get",
 			success : function(res) {
-				$("body").html(res);				
+				$("body").html(res);
 			}
 
+		})
+	})
+
+	function uploadFile() {
+		var input = document.getElementById('fileInput');
+		var file = input.files[0];
+
+		if (file) {
+			var formData = new FormData();
+			formData.append('singleFile', file);
+
+			$.ajax({
+				url : "${cpath}/my/profileUplode.do",
+				type : "post",
+				data : formData,
+				enctype : "multipart/form-data",
+				processData : false, // 필수: FormData를 전송할 때 jQuery가 데이터를 처리하지 않도록 설정
+				contentType : false, // 필수: Content-Type 헤더를 설정하지 않도록 설정
+				success : function(res) {
+					window.location.reload();
+				}
+			})
+		}
+	}/// 프로필 사진 변경
+	
+	
+	$(".e79_427").on("click",function(){
+		$.ajax({
+			url : "${cpath}/my/profileDelete.do",
+			type : "post",
+			success : function(res) {
+				alert("성공")
+				window.location.reload();
+			}
 		})
 	})
 </script>

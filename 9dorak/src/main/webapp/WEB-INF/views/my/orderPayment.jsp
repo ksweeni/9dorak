@@ -11,6 +11,20 @@
 	href="${cpath}/resources/css/orderPaymentStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+	$(function() {
+		myPayment();
+	});
+	function myPayment() {
+		$.ajax({
+			url : "paymentList.do",
+			success : function(responseData) {
+				$("#here").html(responseData);
+			}
+		});
+	}
+</script>
 </head>
 
 <body>
@@ -92,53 +106,32 @@
 				<div class="text-wrapper-3">결제 내역</div>
 			</div>
 			<div class="group">
-				<div class="overlap-group-wrapper">
-					<div class="overlap-group">
-						<div class="frame-2"></div>
-						<div class="primary-button">
-							<div class="cancel">결제상세</div>
-						</div>
-						<div class="cancel-wrapper">
-							<div class="cancel">결제취소</div>
-						</div>
-						<div class="text-wrapper-4">21,000원</div>
-						<div class="text-wrapper-5">그린샐러드 도시락 외 2건</div>
-						<div class="text-wrapper-6">11.23 결제</div>
-						<img class="rectangle" src="img/rectangle-26.png" />
-						<div class="coupons">
-							<div class="frame-3">
-								<div class="frame-4">
-									<div class="coupons-2">결제완료</div>
-								</div>
-								<div class="frame-5"></div>
-							</div>
-						</div>
-					</div>
+				<div id="here">
 				</div>
 				<div class="frame-6">
-					<div class="frame-7">
+					<button class="frame-7">
 						<div class="text-wrapper-7">최근 6개월</div>
-					</div>
-					<div class="frame-8">
+					</button>
+					<button class="frame-8">
 						<div class="text-wrapper-8">2023</div>
-					</div>
-					<div class="frame-8">
+					</button>
+					<button class="frame-8">
 						<div class="text-wrapper-8">2022</div>
-					</div>
-					<div class="frame-8">
+					</button>
+					<button class="frame-8">
 						<div class="text-wrapper-8">2021</div>
-					</div>
-					<div class="frame-8">
+					</button>
+					<button class="frame-8">
 						<div class="text-wrapper-8">2020</div>
-					</div>
+					</button>
 				</div>
 			</div>
 			<div class="menu-wrapper">
 				<div class="menu">
 					<div class="username">
 						<div class="medium"></div>
-						<div class="text-wrapper-16">김수인</div>
-						<div class="text-wrapper-17">LV.낑깡</div>
+						<div class="text-wrapper-16">${loginmem.mem_id }</div>
+						<div class="text-wrapper-17">LV.${loginmem.mem_grade }</div>
 					</div>
 					<div class="links">
 						<div class="privacy">
@@ -147,7 +140,7 @@
 								내역</a>
 						</div>
 						<div class="duolingo-for-schools">
-							<div class="text-wrapper-19">결제 내역</div>
+							<div class="text-wrapper-19" onclick="myPayment()">결제 내역</div>
 						</div>
 						<div class="duolingo-for-schools-2">
 							<a class="header-a"

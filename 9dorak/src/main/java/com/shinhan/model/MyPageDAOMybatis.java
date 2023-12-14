@@ -1,6 +1,7 @@
 package com.shinhan.model;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -59,25 +60,52 @@ public class MyPageDAOMybatis {
 		return result;
 	}
 
-
 	//
-	
+
 	public List<ProVO> getLikeList(String mem_id) {
 		List<ProVO> likeList = sqlSession.selectList(NAMESPACE + "getLikeList", mem_id);
 		return likeList;
 	}
+
 	public List<CouponVO> getCoupon(String mem_id) {
 		List<CouponVO> cList = sqlSession.selectList(NAMESPACE + "getCoupon", mem_id);
 		return cList;
 	}
+
 	public int couponCheck(CouponVO coupon) {
 		int result = sqlSession.selectOne(NAMESPACE + "couponCheck", coupon);
 		return result;
 	}
+
 	public int couponRegUpdate(CouponVO coupon) {
 		int result = sqlSession.update(NAMESPACE + "couponRegUpdate", coupon);
 		return result;
 	}
+
+	public int profileUpdate(MemVO memVO) {
+		int result = sqlSession.update(NAMESPACE + "profileUpdate", memVO);
+		return result;
+	}
+
+	public int profileDelete(MemVO memVO) {
+		int result = sqlSession.update(NAMESPACE + "profileDelete", memVO);
+		return result;
+	}
+	
+	
+	
+	//주문내역
+	public List<Map<String, Object>>  orderList(String mem_id) {
+		List<Map<String, Object>> myorderList = sqlSession.selectList(NAMESPACE + "orderList", mem_id);
+		return myorderList;
+	}
+	//결제내역
+	public List<Map<String, Object>>  paymentList(String mem_id) {
+		List<Map<String, Object>> myPaymentList = sqlSession.selectList(NAMESPACE + "paymentList", mem_id);
+		return myPaymentList;
+	}
+
+
 
 //	public List<MemVO> selectAll() {
 //		List<MemVO> mlist = sqlSession.selectList(NAMESPACE + "selectAll");
