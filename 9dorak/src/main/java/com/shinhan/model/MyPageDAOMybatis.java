@@ -99,6 +99,11 @@ public class MyPageDAOMybatis {
 		List<Map<String, Object>> myorderList = sqlSession.selectList(NAMESPACE + "orderList", mem_id);
 		return myorderList;
 	}
+	//결제내역
+	public List<Map<String, Object>>  paymentList(String mem_id) {
+		List<Map<String, Object>> myPaymentList = sqlSession.selectList(NAMESPACE + "paymentList", mem_id);
+		return myPaymentList;
+	}
 
 
 

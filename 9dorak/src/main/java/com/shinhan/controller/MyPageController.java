@@ -72,8 +72,7 @@ public class MyPageController {
 	@GetMapping("orderDetails.do")
 	public String orderDetails(Model model, HttpSession session) {
 		return "my/orderDetails";
-	}
-	
+	}	
 	@GetMapping("orderList.do")
 	public String orderList(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
@@ -87,6 +86,14 @@ public class MyPageController {
 	public String orderPayment(Model model, HttpSession session) {
 		return "my/orderPayment";
 	}
+	@GetMapping("paymentList.do")
+	public String paymentList(Model model, HttpSession session) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		List<Map<String, Object>> paymentList = mService.paymentList(loginmem.getMem_id());
+		model.addAttribute("paymentList",paymentList);
+		return "my/myPaymentList";
+	}
+	
 	//마이페이지 -결제취소내역 페이지
 	@GetMapping("orderCancel.do")
 	public String orderCancel(Model model, HttpSession session) {
