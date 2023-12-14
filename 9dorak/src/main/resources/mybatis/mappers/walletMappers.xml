@@ -14,7 +14,7 @@
 
 
 
-	
+
 
 	<!-- 장바구니 삭제 -->
 	<delete id="deleteBasket" parameterType="map">
@@ -29,13 +29,16 @@
 		pro_no=#{pro_no}
 	</update>
 
+
+
+
+
+
 	<!-- 장바구니 목록 -->
 	<select id="getBasket" resultType="basketvo">
-		select b.mem_id, b.pro_no,
-		b.basket_pro_count, p.pro_name, p.pro_price
-		from basket b left outer
-		join pro p on p.pro_no = b.pro_no
-		where mem_id=#{mem_id}
+		select b.basket_pro_count, p.pro_name, p.pro_price
+		from basket b join pro p on p.pro_no = b.pro_no
+		where mem_id=#{mem_id} order by b.pro_no
 	</select>
 
 
@@ -43,26 +46,37 @@
 
 
 
+
+
+	<!-- 상품의 사진 이미지 1개만 가져오기 -->
+	<select id="getProImage" parameterType="String">
+		select proimage_image from proimage where pro_no=#{pro_no} and rownum <= 1
+	</select>
+
 	<!-- 회원 아이디 정보 -->
-	<select id="checkMember" parameterType="String" resultType="memvo">
+	<select id="checkMember" parameterType="String"
+		resultType="memvo">
 		select * from mem where mem_id=#{mem_id}
 	</select>
 
 	<!-- 아이디+상품 장바구니 존재 여부 확인 -->
 	<select id="checkBasket" resultType="basketvo">
-		select * from basket where mem_id=#{mem_id} and pro_no=#{pro_no}
+		select * from basket where
+		mem_id=#{mem_id} and pro_no=#{pro_no}
 	</select>
-	
+
 	<!-- 장바구니 담기 -->
 	<insert id="addBasket" parameterType="basketvo">
 		insert into basket (pro_no,
 		basket_date, basket_pro_count, mem_id) values (#{pro_no},
-		sysdate, #{basket_pro_count}, #{mem_id})
+		sysdate,
+		#{basket_pro_count}, #{mem_id})
 	</insert>
-	
+
 	<!-- 빈 장바구니 -->
 	<select id="emptyBasket" resultType="basketvo">
-		select * from basket where mem_id=#{mem_id}
+		select * from basket where
+		mem_id=#{mem_id}
 	</select>
 
 </mapper>

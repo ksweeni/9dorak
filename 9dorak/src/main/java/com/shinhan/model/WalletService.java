@@ -44,7 +44,9 @@ public class WalletService {
 	
 	
 	
-	
+	public String getProImage(int pro_no) {
+		return dao.getProImage(pro_no);
+	}
 	
 	
 	public MemVO checkMember(String mem_id) {

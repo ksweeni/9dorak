@@ -70,6 +70,14 @@ public class WalletDAOMybatis {
     
     
     
+    // 상품 이미지 1개만 가져오기
+    public String getProImage(int pro_no) {
+    	String image = sqlSession.selectOne(NAMESPACE + "getProImage", pro_no);
+    	return image;
+    }
+    
+    
+    
     
     
     // 회원 아이디 정보
