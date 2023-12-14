@@ -3,8 +3,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
-<div class="overlap-group-wrapper">
+<style>
+.nullpayment {
 
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center; 
+}
+</style>
+
+
+<div class="overlap-group-wrapper">
+<c:choose>
+<c:when test="${not empty paymentList}">
 	<c:forEach items="${paymentList}" var="payment">
 		<div class="overlap-group">
 			<div class="frame-2"></div>
@@ -28,4 +40,11 @@
 			</div>
 		</div>
 	</c:forEach>
+	</c:when>
+	<c:otherwise>
+			<div class="nullpayment">
+				결제내역이 존재하지 않습니다.
+			</div>
+		</c:otherwise>
+	</c:choose>
 </div>
