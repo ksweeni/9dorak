@@ -40,7 +40,8 @@
 		challenge_date,
 		challenge_start,
 		challenge_end,
-		mem_id
+		mem_id,
+		challenge_category
 		) VALUES (
 		challenge_seq.NEXTVAL,
 		#{challenge_name},
@@ -49,7 +50,8 @@
 		sysdate,
 		#{challenge_start},
 		#{challenge_end},
-		#{mem_id}
+		#{mem_id},
+		'challenezone'
 		)
 	</insert>
 	

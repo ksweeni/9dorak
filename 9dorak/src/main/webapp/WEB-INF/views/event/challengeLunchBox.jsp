@@ -9,11 +9,46 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/challengeStyle4.css?d" type="text/css" />
+	href="${cpath}/resources/css/challengeLunchboxStyle.css?d" type="text/css" />
 </head>
 <body>
+			<header class="header">
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-event"
+					OnClick="location.href ='${pageContext.request.contextPath}/event/challenge.do'" style="cursor: pointer;">
+					이벤트</div>
+					<div class="text-menu"
+					OnClick="location.href ='${pageContext.request.contextPath}/menu/menu.do'" style="cursor: pointer;">
+					메뉴보기</div>
+					<div class="text-subscribe"
+					OnClick="location.href ='${pageContext.request.contextPath}/sub/sub.do'" style="cursor: pointer;">
+					구독하기</div>
+					<div class="text-yomo"
+					OnClick="location.href ='${pageContext.request.contextPath}/yomo/notice.do'" style="cursor: pointer;">
+					요모조모</div>
+					<div class="text-doran"
+					OnClick="location.href ='${pageContext.request.contextPath}/doran/doran.do'" style="cursor: pointer;">
+					도란도란</div>
+				</div>
+				<img class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				<div class="div-3">
+					<div class="text-wrapper-28"><a OnClick="location.href ='${pageContext.request.contextPath}/login/loginForm.do'" style="cursor: pointer;">로그인</a>
+					 | 
+					 <a OnClick="location.href ='${pageContext.request.contextPath}/register/registerType.do'" style="cursor: pointer;">회원가입</a></div>
+					<div class="group-20" OnClick="location.href ='${pageContext.request.contextPath}/wallet/basket.do'" style="cursor: pointer;">
+						<div class="header-overlap-group-3">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<div class="ellipse-light"></div>
+							<!-- <div class="text-wrapper-29">2</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 	<div class="element">
-		<div class="div">
 			<div class="frame">
 				<div class="group">
 					<div class="overlap">
@@ -30,7 +65,7 @@
 												</div>
 											</div>
 											<input class="container-default" type="text"
-												name="lunchBoxName" placeholder="귀여운 도시락 이름은 ??" />
+												name="challenge_name" placeholder="귀여운 도시락 이름은 ??" />
 										</div>
 									</div>
 									
@@ -42,7 +77,7 @@
 												</div>
 											</div>
 											<input class="container-default" type="text"
-												name="lunchBoxRecipe" placeholder="나만의 도시락 레시피를 자세히 적어주세요!" />
+												name="challenge_recipe" placeholder="나만의 도시락 레시피를 자세히 적어주세요!" />
 										</div>
 									</div>
 									
@@ -55,7 +90,7 @@
 											</div>
 
 											<input class="container-default" type="text"
-												name="lunchBoxComment"
+												name="challenge_cont"
 												placeholder="나만의 도시락을 가장 잘 나타낼 수 있게 한 줄로 작성 해 주세요!" />
 										</div>
 									</div>
@@ -69,8 +104,9 @@
 										<div class="label-check">
 											<div class="text-wrapper">도시락을 설명하는 사진이나 그림을 올려주세요</div>
 										</div>
-										<label class="fileUpload" for="singleFile">파일 선택</label> <input
-											type="file" id="singleFile" style="display: none;" />
+										<label class="fileUpload" for="singleFile" onmousedown="handleMouseDown(event)">파일 선택</label> 
+										<input type="file" id="singleFile" style="display: none;" />
+										<span id="selectedFileName"></span>
 									</div>
 								</div>
 								<br>
@@ -160,66 +196,46 @@
 					</div>
 				</div>
 			</footer>
-			<div class="group-7">
-				<div class="date">
-					<div class="navbar">
-						<div class="text-wrapper-10"
-							onclick="location.href='${pageContext.request.contextPath}/event/challenge.do'"
-							style="cursor: pointer;">챌린지 ZONE</div>
-						<div class="text-wrapper-10"
-							onclick="location.href='${pageContext.request.contextPath}/event/freelunchbox.do'"
-							style="cursor: pointer;">도시락 무료 체험</div>
-						<div class="element-sep"
-							onclick="location.href='${pageContext.request.contextPath}/event/makelunchbox.do'"
-							style="cursor: pointer;">도시락 만들9</div>
-						<div class="text-wrapper-10"
-							onclick="location.href='${pageContext.request.contextPath}/event/friendreco.do'"
-							style="cursor: pointer;">친구 추천</div>
-						<div class="text-wrapper-10"
-							onclick="location.href='${pageContext.request.contextPath}/event/friendadd.do'"
-							style="cursor: pointer;">친구 추가</div>
-					</div>
-				</div>
-				<img class="base" src="img/base.svg" />
-			</div>
-			<header class="header">
-				<div class="top-nav">
-					<div class="navbar-2">
-						<div class="text-wrapper-11"
-							onclick="location.href='${pageContext.request.contextPath}/event/challenge.do'"
-							style="cursor: pointer;">이벤트</div>
-						<div class="text-wrapper-12"
-							onclick="location.href='${pageContext.request.contextPath}/menu/menu.do'"
-							style="cursor: pointer;">메뉴보기</div>
-						<div class="text-wrapper-13"
-							onclick="location.href='${pageContext.request.contextPath}/event/challenge.do'"
-							style="cursor: pointer;">구독하기</div>
-						<div class="text-wrapper-14"
-							onclick="location.href='${pageContext.request.contextPath}/event/challenge.do'"
-							style="cursor: pointer;">요모조모</div>
-						<div class="text-wrapper-15"
-							onclick="location.href='${pageContext.request.contextPath}/doran/doran.do'"
-							style="cursor: pointer;">도란도란</div>
-					</div>
-					<img class="untitled-2" src="img/untitled-1-1.png" />
-					<div class="div-2">
-						<div class="text-wrapper-16">
-							<span><a
-								href="${pageContext.request.contextPath}/login/login.do">로그인</a></span>
-							| <span><a
-								href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a></span>
-						</div>
-						<div class="group-8">
-							<div class="overlap-group-3">
-								<img class="group-9" src="img/group-1.svg" />
-								<div class="ellipse"></div>
-								<div class="text-wrapper-17">2</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
+		<div id="event_menu">
+			<ul>
+				<li><a
+				href="${pageContext.request.contextPath}/event/challenge.do"
+				>챌린지 ZONE</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/event/freelunchbox.do">도시락
+						무료 체험</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/event/makelunchbox.do">도시락
+						만들9</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/event/friendreco.do">친구
+						추천</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/event/friendadd.do">친구
+						추가</a></li>
+			</ul>
 		</div>
 	</div>
+	<hr>
+	<script>
+	function handleMouseDown(event) {
+	    event.preventDefault();
+	    var fileInput = document.getElementById("singleFile");
+	    fileInput.click();
+	}
+	document.addEventListener("DOMContentLoaded", function() {
+	    var fileInput = document.getElementById("singleFile");
+	    var selectedFileNameSpan = document.getElementById("selectedFileName");
+
+	    fileInput.addEventListener("change", function() {
+	        if (fileInput.files.length > 0) {
+	            selectedFileNameSpan.textContent = fileInput.files[0].name;
+	        } else {
+	            selectedFileNameSpan.textContent = "";
+	        }
+	        console.log("File selected:", fileInput.files[0].name);
+	    });
+	});
+	</script>
 </body>
 </html>

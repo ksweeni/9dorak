@@ -888,11 +888,12 @@
 
 .bottom {
 	position: relative;
-	top: 835px;
+	top: 680px;
 	left: 257px;
 }
 
 .right-aligned-button {
+	position: relative;
 	margin: 0 500px;
 	width: 100px;
 	height: 50px;
@@ -901,6 +902,7 @@
 	border: 2px solid #f38820;
 	border-radius: 50px;
 	background-color: white;
+	left: 124px;
 }
 
 .fileUpload {
