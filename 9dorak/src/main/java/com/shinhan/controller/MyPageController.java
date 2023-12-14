@@ -58,6 +58,11 @@ public class MyPageController {
 	public String myDelivery(Model model) {
 		return "my/myDeliveryList";
 	}
+	
+	@GetMapping("myLevel.do")
+	public String myLevel() {
+		return "my/myLevel";
+	}
 
 	@GetMapping("myMenu.do")
 	public String myMenu(Model model, HttpSession session) {
