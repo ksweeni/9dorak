@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.shinhan.dto.ChallengeVO;
+import com.shinhan.dto.ChalllikeVO;
 
 @Repository
 public class ChallengeDAOMybatis {
@@ -58,6 +59,10 @@ public class ChallengeDAOMybatis {
 	public List<Map<String, Object>> list(ChallengeVO ChallengeVO) {
 		return sqlSession.selectList(NAMESPACE + "list", ChallengeVO);
 	}
-	
+
+	public int updatelikeChal(int challenge_no) {
+		int result = sqlSession.update(NAMESPACE + "updatelikeChal", challenge_no);
+		return result;
+	}
 
 }

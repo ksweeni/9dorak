@@ -286,6 +286,15 @@ h5 {
   padding-right: 20px;
 }
 
+.table-bordered th:nth-child(3),
+.table-bordered td:nth-child(3) {
+  width: 30px; /* 원하는 너비로 수정해주세요 */
+}
+
+.table-bordered th:nth-child(4),
+.table-bordered td:nth-child(4) {
+  width: 180px; /* 원하는 너비로 수정해주세요 */
+}
 
 .table tbody tr:hover {
   background-color: #f5f5f5;
@@ -315,14 +324,16 @@ h5 {
 }
 
 .right-aligned-button {
-  margin: 0 300px;
-  width: 100px;
-  height: 50px;
-  font-size: 15px;
-  color: #f38820;
-  border: 2px solid #f38820;
-  border-radius: 50px;
-  background-color: white;
+    position: relative;
+    margin: 0 300px;
+    width: 100px;
+    left: 484px;
+    height: 50px;
+    font-size: 15px;
+    color: #f38820;
+    border: 2px solid #f38820;
+    border-radius: 50px;
+    background-color: white;
 }
 
 .left-shifted-button {
@@ -874,7 +885,8 @@ h5 {
 	font-size:18px;
 	letter-spacing:0;
 }
-
-.header {
-	left: 30% !important;
+.table_number {
+    position: relative;
+    left: 490px;
+    top: 29px;
 }
