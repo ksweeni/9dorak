@@ -1,6 +1,7 @@
 package com.shinhan.model;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -89,6 +90,14 @@ public class MyPageDAOMybatis {
 	public int profileDelete(MemVO memVO) {
 		int result = sqlSession.update(NAMESPACE + "profileDelete", memVO);
 		return result;
+	}
+	
+	
+	
+	//주문내역
+	public List<Map<String, Object>>  orderList(String mem_id) {
+		List<Map<String, Object>> myorderList = sqlSession.selectList(NAMESPACE + "orderList", mem_id);
+		return myorderList;
 	}
 
 
