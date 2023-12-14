@@ -5,7 +5,6 @@
 
 <style>
 .nullpayment {
-
     font-size: 30px;
     font-weight: bold;
     margin-top: 50px;
@@ -21,10 +20,8 @@
 		<div class="overlap-group">
 			<div class="frame-2"></div>
 			<div class="primary-button">
-				<div class="cancel">결제상세</div>
 			</div>
 			<div class="cancel-wrapper">
-				<div class="cancel">결제취소</div>
 			</div>
 			<div class="text-wrapper-4">${payment.ORDERDETAIL_PRICE}</div>
 			<div class="text-wrapper-5">${payment.PRO_NAME }</div>

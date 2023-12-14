@@ -97,13 +97,18 @@ public class MyPageDAOMybatis {
 	
 	//주문내역
 	public List<Map<String, Object>>  orderList(String mem_id) {
-		List<Map<String, Object>> myorderList = sqlSession.selectList(NAMESPACE + "orderList", mem_id);
-		return myorderList;
+		List<Map<String, Object>> myOrderList = sqlSession.selectList(NAMESPACE + "orderList", mem_id);
+		return myOrderList;
 	}
 	//결제내역
 	public List<Map<String, Object>>  paymentList(String mem_id) {
 		List<Map<String, Object>> myPaymentList = sqlSession.selectList(NAMESPACE + "paymentList", mem_id);
 		return myPaymentList;
+	}
+	//결제취소내역
+	public List<Map<String, Object>>  cancelList(String mem_id) {
+		List<Map<String, Object>> myCancelList = sqlSession.selectList(NAMESPACE + "cancelList", mem_id);
+		return myCancelList;
 	}
 	
 	// 배송 조회 내역
