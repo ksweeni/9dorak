@@ -21,6 +21,8 @@ public class ChallengeVO {
 	private Date  challenge_date; //챌린지 작성 날짜
 	private Date  challenge_start; //챌린지 시작 날짜
 	private Date  challenge_end; //챌린지 종료 날짜
+	private String  challenge_category;//챌린지 구분
+	private String  challenge_recipe;//챌린지 레시피
 	private String  mem_id; //회원 아이디
 	
 
