@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shinhan.dto.CouponVO;
+import com.shinhan.dto.DeliveryVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.ProVO;
@@ -95,6 +96,10 @@ public class MyPageService {
 		return dao.paymentList(mem_id);
 	}
 
+	// 배송 조회 내역
+	public List<DeliveryVO> AllDeliveryHistory(String mem_id){
+		return dao.AllDeliveryHistory(mem_id);
+	}
 
 
 
