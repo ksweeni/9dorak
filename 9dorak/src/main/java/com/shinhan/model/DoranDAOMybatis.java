@@ -108,8 +108,12 @@ public class DoranDAOMybatis {
 	
 	// 조회수 증가
 	public int updateViewCount(int doran_no) {
-		int result = sqlSession.insert(NAMESPACE + "updateViewCount", doran_no);
-		return result;
+		return sqlSession.insert(NAMESPACE + "updateViewCount", doran_no);
+	}
+	
+	// 게시물 삭제
+	public int deleteDoran(int doran_no) {
+		return sqlSession.delete(NAMESPACE + "deleteDoran", doran_no);
 	}
 
 

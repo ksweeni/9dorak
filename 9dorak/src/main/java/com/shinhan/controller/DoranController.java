@@ -264,7 +264,21 @@ public class DoranController {
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("조회수 증가 중 에러가 발생했습니다.");
 		}
-
 	}
+	
+	@PostMapping("deleteDoran.do")
+	@ResponseBody
+	public Map<String, Object> deleteDoran(@RequestParam int doranNo) {
+	    Map<String, Object> response = new HashMap<>();
+	    try {
+	        dService.deleteDoran(doranNo);
+	        response.put("success", true);
+	    } catch (Exception e) {
+	        response.put("success", false);
+	        response.put("error", e.getMessage());
+	    }
+	    return response;
+	}
+
 
 }

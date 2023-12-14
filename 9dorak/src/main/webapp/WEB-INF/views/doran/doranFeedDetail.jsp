@@ -88,9 +88,9 @@
 				<div class="feeds">
 					<div class="group-3">
 						<div class="overlap-group-2">
-							<button class="detailfeed_deleteBtn">
+							<button class="detailfeed_deleteBtn" onclick="deleteDoran(${doran.doran_no})">
 								<img class="detailfeed_deleteBtnImg"
-									src="${cpath }/resources/images/doran/detailfeed_deleteBtn.png" />
+									src="${cpath}/resources/images/doran/detailfeed_deleteBtn.png" />
 							</button>
 							<img class="unsplash"
 								src="${cpath }/resources/upload/${doran.doran_image}" />
@@ -435,6 +435,33 @@
 			        $(".detailfeed_deleteBtn").hide();
 			    }
 			});
+			
+			function deleteDoran(doranNo) {
+			    if (confirm("게시글을 정말 삭제하시겠습니까?")) {
+			        $.ajax({
+			            url: "${cpath}/doran/deleteDoran.do",
+			            type: "POST",
+			            data: {
+			                "doranNo": doranNo
+			            },
+			            success: function (responseData) {
+			                if (responseData.success) {
+			                    
+			                    alert("게시글이 삭제되었습니다.");
+			                    window.location.href = "${cpath}/doran/doran.do";
+			                   
+			                } else {
+			                    
+			                    alert("게시글 삭제에 실패했습니다. 에러 메시지: " + responseData.error);
+			                }
+			            },
+			            error: function () {
+			                console.error("게시글 삭제 중 에러가 발생했습니다.");
+			            }
+			        });
+			    }
+			}
+
 
 			
 						

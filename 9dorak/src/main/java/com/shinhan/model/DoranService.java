@@ -88,6 +88,10 @@ public class DoranService {
 	public int updateViewCount(int doran_no) {
 		return dao.updateViewCount(doran_no);
 	}
+	
+	public int deleteDoran(int doran_no) {
+		return dao.deleteDoran(doran_no);
+	}
 
 //
 //	@Transactional // ��� �����ϰų� ��� �����ϰų�
