@@ -117,7 +117,7 @@ request.setCharacterEncoding("UTF-8");
 	<a href="${pageContext.request.contextPath}/main.do">메인 테스트</a>
 	<a href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
 	<a href="${pageContext.request.contextPath}/menu/menuMediaReview.do">사진 및 동영상 모아보기 test</a>
-	<a href="${pageContext.request.contextPath}/wallet/basketEmpty.do">장바구니</a>
+	<a href="${pageContext.request.contextPath}/wallet/basket.do">장바구니</a>
 	<a href="${pageContext.request.contextPath}/wallet/pay.do">결제</a>
 	<a href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
 	<a href="${pageContext.request.contextPath}/my/myDeliveryList.do">마이페이지-배송조회</a>

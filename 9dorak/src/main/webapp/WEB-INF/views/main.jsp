@@ -619,15 +619,16 @@ String contextPath = request.getContextPath();
 			// 로그인 여부 확인
 			if (mem_id == "") {
 				alert("로그인이 필요한 서비스입니다 !");
-				window.location.href = "${cpath}/login/loginForm.do";
+				window.location.href="${cpath}/login/loginForm.do";
 				return;
+			} else {
+				window.location.href="${pageContext.request.contextPath}/wallet/basket.do";
 			}
 		}
 
 		window.onload = emptyBasket;
 
 		function emptyBasket() {
-
 			var mem_id = "${sessionScope.loginmem.mem_id}";
 
 					$.ajax({
@@ -640,19 +641,16 @@ String contextPath = request.getContextPath();
 						success : function(response) {
 							if (response.success) {
 								console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
-								alert("상품이 이미 장바구니에 존재합니다! - 불키자");
+								//alert("상품이 이미 장바구니에 존재합니다! - 불키자");
 								lightsOn();
 							} else {
 								console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
 							}
 						},
 						error : function(xhr, status, error) {
-							console
-									.error("콘솔 - Error during basket operation. Status: "
-											+ status);
-							console.error("콘솔 - Server response: "
-									+ xhr.responseText);
-							alert("An error occurred during the checkBasket operation!");
+							console.error("콘솔 - Error during basket operation. Status: " + status);
+							console.error("콘솔 - Server response: " + xhr.responseText);
+							//alert("An error occurred during the checkBasket operation!");
 						}
 
 					});
