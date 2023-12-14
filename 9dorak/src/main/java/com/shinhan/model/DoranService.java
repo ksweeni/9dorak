@@ -84,6 +84,10 @@ public class DoranService {
 	public int insertComment(CommentVO comment){
 		return dao.insertComment(comment);
 	}
+	
+	public int updateViewCount(int doran_no) {
+		return dao.updateViewCount(doran_no);
+	}
 
 //
 //	@Transactional // ��� �����ϰų� ��� �����ϰų�

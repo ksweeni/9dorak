@@ -100,9 +100,16 @@ public class DoranDAOMybatis {
 	public List<DoranVO>  selectSearchDoran(String keyword){
 		return sqlSession.selectList(NAMESPACE + "selectSearchDoran", keyword);
 	}
+	
 	// 댓글 추가
 	public int insertComment(CommentVO comment){
 		return sqlSession.insert(NAMESPACE + "insertComment", comment);
+	}
+	
+	// 조회수 증가
+	public int updateViewCount(int doran_no) {
+		int result = sqlSession.insert(NAMESPACE + "updateViewCount", doran_no);
+		return result;
 	}
 
 

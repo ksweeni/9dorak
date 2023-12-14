@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -95,7 +97,6 @@ public class DoranController {
 
 	@GetMapping("doranUpload.do")
 	public String doranUpload(Model model) {
-		System.out.println("업로드 페이지로 이동");
 		return "doran/doranUpload";
 	}
 
@@ -139,9 +140,9 @@ public class DoranController {
 
 	@PostMapping("uploadComment.do")
 	@ResponseBody
-	public Map<String, Object> uploadComment(@RequestParam String newComment, @RequestParam int doranNo, HttpSession session) 
-	{
-		
+	public Map<String, Object> uploadComment(@RequestParam String newComment, @RequestParam int doranNo,
+			HttpSession session) {
+
 		Map<String, Object> response = new HashMap<>();
 		try {
 			System.out.println("Received comment from frontend: " + newComment);
@@ -253,6 +254,17 @@ public class DoranController {
 		List<DoranVO> dlist = dService.selectSearchDoran(keyword);
 		model.addAttribute("dlist", dlist);
 		return "doran/doran_ajax";
+	}
+
+	@PostMapping("updateViewCount.do")
+	public ResponseEntity<String> updateView(@RequestParam int doranNo) {
+		try {
+			dService.updateViewCount(doranNo);
+			return ResponseEntity.ok("조회수가 증가했습니다.");
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("조회수 증가 중 에러가 발생했습니다.");
+		}
+
 	}
 
 }
