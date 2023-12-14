@@ -425,6 +425,18 @@
 			    return html;
 			}
 			
+			// 삭제 버튼 숨기기/보이기
+			$(document).ready(function() {
+			    var loggedInUser = "${sessionScope.loginmem.mem_id}";
+			    var Author = "${doran.mem_id}";
+			    if (loggedInUser === Author) {
+			        $(".detailfeed_deleteBtn").show();
+			    } else {
+			        $(".detailfeed_deleteBtn").hide();
+			    }
+			});
+
+			
 						
 			
 			</script>
