@@ -11,6 +11,17 @@
 	href="${cpath}/resources/css/orderDetailsStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  function myOrder(){
+	  $.ajax({
+		  url:"orderList.do",
+		  success:function(responseData){
+			  $("#here").html(responseData);
+		  }
+	  });
+  }
+</script>
 </head>
 
 <body>
@@ -82,7 +93,7 @@
 				</div>
 				<div class="links">
 					<div class="privacy">
-						<div class="text-wrapper-3">주문 내역</div>
+						<div class="text-wrapper-3" onclick="myOrder()">주문 내역</div>
 					</div>
 					<div class="duolingo-for-schools">
 						<a class="header-a"
@@ -95,25 +106,7 @@
 				</div>
 			</div>
 			<div class="group-4">
-				<div class="group-5">
-					<div class="overlap-group-2">
-						<div class="coupons">
-							<div class="frame">
-								<div class="frame-2">
-									<div class="coupons-2">주문완료</div>
-								</div>
-								<div class="frame-3"></div>
-							</div>
-						</div>
-						<div class="frame-4"></div>
-						<div class="primary-button">
-							<div class="cancel">주문상세</div>
-						</div>
-						<div class="text-wrapper-13">21,000원</div>
-						<div class="text-wrapper-14">그린샐러드 도시락 외 2건</div>
-						<div class="text-wrapper-15">11.23 주문</div>
-						<img class="rectangle" src="img/rectangle-26.png" />
-					</div>
+				<div id="here">
 				</div>
 				<div class="frame-5">
 					<button class="frame-6">

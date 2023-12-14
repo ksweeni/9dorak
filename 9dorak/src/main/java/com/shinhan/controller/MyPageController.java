@@ -2,9 +2,8 @@ package com.shinhan.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;import java.util.Date;
 import java.util.List;
-import java.util.Locale;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,13 +17,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.shinhan.dto.CouponVO;
-import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.ProVO;
@@ -77,6 +73,15 @@ public class MyPageController {
 	public String orderDetails(Model model, HttpSession session) {
 		return "my/orderDetails";
 	}
+	
+	@GetMapping("orderList.do")
+	public String orderList(Model model, HttpSession session) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		List<Map<String, Object>> orderList = mService.orderList(loginmem.getMem_id());
+		model.addAttribute("orderList",orderList);
+		return "my/myorderList";
+	}
+		
 	//마이페이지 -결제내역 페이지
 	@GetMapping("orderPayment.do")
 	public String orderPayment(Model model, HttpSession session) {
@@ -87,7 +92,6 @@ public class MyPageController {
 	public String orderCancel(Model model, HttpSession session) {
 		return "my/orderCancel";
 	}
-	
 	
 	
 	@RequestMapping(value = "updateMember.do", produces = "text/plain;charset=utf-8")
