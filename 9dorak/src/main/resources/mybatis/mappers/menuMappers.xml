@@ -9,7 +9,7 @@
 		select * from pro
 	</select>
 	
-	<!-- 메뉴 검색 -->
+	<!-- 카테고리 + 검색 -->
 	<select id="selectSearchPro" resultType="provo" parameterType="provo">
 		select *
 		  from pro t1,
@@ -33,7 +33,7 @@
 		select * from pro order by pro_like desc
 	</select>
 	
-	<!-- 알러지 -->
+	<!-- 알러지 + 검색 -->
 	<select id="searchAllergyCheck" resultType="provo" parameterType="provo">
 		select *
 		  from pro

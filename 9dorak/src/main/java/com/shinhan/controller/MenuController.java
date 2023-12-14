@@ -55,7 +55,7 @@ public class MenuController {
 	//@ResponseBody
 	public String searchPro(Model model,@RequestParam Map<String, Object> map) throws JsonMappingException, JsonProcessingException {
 		
-		ObjectMapper mapper = new ObjectMapper();
+		//ObjectMapper mapper = new ObjectMapper();
 		ProVO pro = new ProVO();
 		
 		//System.out.println("검색어 :"+(String)map.get("pro_name"));

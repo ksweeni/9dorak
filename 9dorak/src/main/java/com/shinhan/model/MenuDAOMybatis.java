@@ -44,10 +44,10 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 
-	public List<ProVO> searchAllergyCheck(String pro_aller) {
-		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck", pro_aller);
-		return plist;
-	}
+//	public List<ProVO> searchAllergyCheck(String pro_aller) {
+//		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck", pro_aller);
+//		return plist;
+//	}
 
 	public List<ProVO> selectAllOrder(ProVO pro) {
 		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectAllOrder", pro);

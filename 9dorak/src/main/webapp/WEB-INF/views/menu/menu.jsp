@@ -342,7 +342,7 @@
 	<script type="text/javascript">
 		var chkCtgr = null;
 
-		//검색하기
+		//카테고리+검색
 		function searchBtnClick(allerCheckList) {
 
 			/* var allerListJson;
@@ -351,8 +351,8 @@
 				allerListJson = JSON.stringify(allerCheckList);
 			} else {
 				allerListJson = JSON.stringify(allerArrList);
-			}
- */
+			}*/
+			
 			$.ajax({
 				url : "${cpath}/menu/searchPro.do",
 				type : 'GET',
@@ -416,7 +416,7 @@
 			searchBtnClick();
 		}
 
-		//알러지
+		//알러지+검색
 		$(".allergy-bar button").on("click", function() {
 			//alert($(this).val());
 			$.ajax({
