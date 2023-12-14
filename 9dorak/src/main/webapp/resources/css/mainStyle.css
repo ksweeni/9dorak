@@ -3637,3 +3637,25 @@ a {
 .carousel-item.active {
     cursor: pointer;
 }
+
+.footer {
+	top: 260rem;
+}
+
+.top-nav .div-3 {
+	top: -4.7rem !important;
+	left: 1035px !important;
+}
+
+.div-3 .group-20 {
+	top: -2.2rem !important;
+}
+
+.footer-vector {
+	right: 45px !important;
+}
+
+.ellipse-light {
+	left: 0.7rem !important;
+}
+	

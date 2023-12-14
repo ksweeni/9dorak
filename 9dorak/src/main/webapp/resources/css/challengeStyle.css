@@ -874,3 +874,7 @@ h5 {
 	font-size:18px;
 	letter-spacing:0;
 }
+
+.header {
+	left: 30% !important;
+}
