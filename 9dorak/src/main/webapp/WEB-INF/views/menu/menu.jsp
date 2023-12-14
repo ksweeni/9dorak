@@ -419,6 +419,7 @@
 		//알러지+검색
 		$(".allergy-bar button").on("click", function() {
 			//alert($(this).val());
+			//alert($('#searchTxt').val());
 			$.ajax({
 				url : "${cpath}/menu/searchAllergyCheck.do",
 				type : 'GET',

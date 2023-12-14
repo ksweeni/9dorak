@@ -110,15 +110,15 @@ public class MenuController {
 	
 	//알러지+검색
 	@GetMapping("searchAllergyCheck.do")
-	public String searchAllergyCheck(Model model, @RequestParam Map<String, Object> map) {
+	public String searchAllergyCheck(Model model, @RequestParam Map<String, Object> map) throws JsonMappingException, JsonProcessingException {
 	   //System.out.println(pro_aller);
 	   //@RequestParam("pro_aller") String pro_aller
 	   ProVO pro = new ProVO();
-	      
+	   
 	   pro.setPro_name((String)map.get("pro_name"));
 	   pro.setPro_aller((String)map.get("pro_aller"));
-	   //System.out.println(pro.getPro_aller());
-	   //System.out.println(pro.getPro_name());
+	   System.out.println(pro.getPro_aller());
+	   System.out.println(pro.getPro_name());
 	      
 	   List<ProVO> slist = mService.searchAllergyCheck(pro);
 	   model.addAttribute("slist", slist);
