@@ -92,42 +92,32 @@ function redirectToChallenge(challenge_no) {
 </script>
 </head>
 <body>
-	<div class="screen">
-		<header class="header">
+			<header class="header">
 			<div class="top-nav">
 				<div class="navbar">
-					<div class="text-event">이벤트</div>
-					<div class="text-menu">
-						<a class="header-a"
-							href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
-					</div>
-					<div class="text-subscribe">구독하기</div>
-					<div class="text-yomo">요모조모</div>
-					<div class="text-doran">
-						<a class="header-a"
-							href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
-					</div>
+					<div class="text-event"
+					OnClick="location.href ='${pageContext.request.contextPath}/event/challenge.do'" style="cursor: pointer;">
+					이벤트</div>
+					<div class="text-menu"
+					OnClick="location.href ='${pageContext.request.contextPath}/menu/menu.do'" style="cursor: pointer;">
+					메뉴보기</div>
+					<div class="text-subscribe"
+					OnClick="location.href ='${pageContext.request.contextPath}/sub/sub.do'" style="cursor: pointer;">
+					구독하기</div>
+					<div class="text-yomo"
+					OnClick="location.href ='${pageContext.request.contextPath}/yomo/notice.do'" style="cursor: pointer;">
+					요모조모</div>
+					<div class="text-doran"
+					OnClick="location.href ='${pageContext.request.contextPath}/doran/doran.do'" style="cursor: pointer;">
+					도란도란</div>
 				</div>
 				<img class="untitled-2"
 					src="${cpath}/resources/images/main/header-logo.png" />
 				<div class="div-3">
-					<div class="text-wrapper-28">
-						<c:choose>
-							<c:when test="${not empty sessionScope.loginmem.mem_id}">
-								<span
-									style="font-weight: bold; left: 2.5rem; position: relative;">
-									<c:out value="${sessionScope.loginmem.mem_id}" /> 님
-								</span>
-							</c:when>
-							<c:otherwise>
-								<a class="header-a"
-									href="${pageContext.request.contextPath}/login/login.do">로그인</a> |
-            <a class="header-a"
-									href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
-							</c:otherwise>
-						</c:choose>
-					</div>
-					<div class="group-20">
+					<div class="text-wrapper-28"><a OnClick="location.href ='${pageContext.request.contextPath}/login/loginForm.do'" style="cursor: pointer;">로그인</a>
+					 | 
+					 <a OnClick="location.href ='${pageContext.request.contextPath}/register/registerType.do'" style="cursor: pointer;">회원가입</a></div>
+					<div class="group-20" OnClick="location.href ='${pageContext.request.contextPath}/wallet/basket.do'" style="cursor: pointer;">
 						<div class="header-overlap-group-3">
 							<img class="header-group-21"
 								src="${cpath}/resources/images/main/header-cart.png" />
@@ -138,6 +128,7 @@ function redirectToChallenge(challenge_no) {
 				</div>
 			</div>
 		</header>
+	<div class="screen">
 		<div id="event_menu">
 			<ul>
 				<li><a>챌린지 ZONE</a></li>
@@ -166,6 +157,7 @@ function redirectToChallenge(challenge_no) {
 					<tr>
 						<th>번호</th>
 						<th>제목</th>
+						<th>작성자</th>
 						<th>작성일</th>
 					</tr>
 				</thead>
@@ -175,6 +167,7 @@ function redirectToChallenge(challenge_no) {
 						<tr onclick="redirectToChallenge(${ch.challenge_no})">
 							<td>${ch.challenge_no}</td>
 							<td>${ch.challenge_name}</td>
+							<td>${ch.mem_id}</td>
 							<td>${ch.challenge_date}</td>
 						</tr>
 					</c:forEach>
@@ -188,7 +181,7 @@ function redirectToChallenge(challenge_no) {
 				</tbody>
 			</table>
 			<!-- 게시판 테스트 -->
-			<div>
+			<div class="table_number">
 				<c:if test="${pagingVO.currentRange ne 1 }">
 					<a href="#" onclick="fn_paging(1)">[처음]</a>
 				</c:if>
@@ -223,9 +216,9 @@ function redirectToChallenge(challenge_no) {
 			<ul class="pagination">
 			</ul>
 		</div>
-	</div>
-	<div id="button" style="text-align: right;">
+			<div id="button" style="text-align: right;">
 		<button type="button" class="right-aligned-button">챌린지 글쓰기</button>
+	</div>
 	</div>
 	<div class=e47_426>
 			<footer class="footer">

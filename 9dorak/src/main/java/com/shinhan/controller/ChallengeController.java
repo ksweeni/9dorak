@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.shinhan.dto.ChallengeVO;
+import com.shinhan.dto.ChalllikeVO;
+import com.shinhan.dto.MemVO;
 import com.shinhan.dto.PagingVO;
 import com.shinhan.model.ChallengeService;
 
@@ -55,16 +58,14 @@ public class ChallengeController {
 	}
 
 	@GetMapping("challengeDetail.do")
-	public String challenge2(Model model, ChallengeVO challenge) {
-//		System.out.println("challenge2.do");
-//		System.out.println(challenge.getChallenge_no());
+	public String challenge2(Model model, ChallengeVO challenge, HttpSession session) {
 		ChallengeVO chall = chService.selectByno(challenge.getChallenge_no());
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		int likeCnt = chService.getLike(challenge.getChallenge_no());
-
-//		System.out.println(likeCnt);
-//		System.out.println(chall);
 		model.addAttribute("chall", chall);
 		model.addAttribute("likeCnt", likeCnt);
+		model.addAttribute("mem", loginmem);
+		System.out.println(loginmem);
 		return "event/challengeDetail";
 	}
 
@@ -94,8 +95,6 @@ public class ChallengeController {
 		String mem_id = "aaa";
 		// 나중에 이거 세션에 값 가져와서 넣자
 		challenge.setMem_id(mem_id);
-
-
 		//// 파일업로드
 		// 2. 저장할 경로 가져오기
 		String path = request.getSession().getServletContext().getRealPath("resources");
@@ -152,7 +151,6 @@ public class ChallengeController {
 		}
 
 	}
-	
 	
 	// challengeLunchBox test
 	@GetMapping("challengeLunchBox.do")
