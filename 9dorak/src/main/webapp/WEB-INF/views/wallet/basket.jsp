@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -10,7 +10,8 @@ String contextPath = request.getContextPath();
 <html>
 <head>
 <meta charset="utf-8" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
@@ -90,6 +91,37 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 				<div class="text-wrapper-21">장바구니</div>
+			</div>
+
+
+			<div class="basketList">
+				<c:if test="${empty blist}">
+					<h1>장바구니가 텅 비었어요! 상품을 담아주세요!!</h1>
+				</c:if>
+
+				<br>
+				<span style="font-weight: bold">
+					<c:out value="${sessionScope.loginmem.mem_id}" /> 님의 도시락
+				</span>
+				
+				
+
+				<c:forEach var="items" items="${formattedDates}">
+					<div class="member">
+						<span class="e126_324">주문 날짜 형식</span>
+						<span class="e126_325">${items.formattedDate}</span>
+					</div>
+				</c:forEach>
+
+				<c:forEach var="items" items="${blist}">
+					<div class="member">
+					<!-- 일단 '내' 장바구니 회원 아이디는 숨겨
+						<span class="e126_321">회원 아이디</span> <span class="e126_322">${items.mem_id}</span>
+						 -->
+						<span class="e126_324">주문한 상품 번호</span> <span class="e126_325">${items.pro_no}</span>
+						<span class="e126_324">주문한 수량</span> <span class="e126_325">${items.basket_pro_count}</span>
+					</div>
+				</c:forEach>
 			</div>
 
 
@@ -190,44 +222,28 @@ String contextPath = request.getContextPath();
 					</div>
 					<div class="group-wrapper">
 						<div class="group">
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-			<div class="basketList">
-				<c:if test="${empty blist}">
-					<h1>장바구니가 텅 비었어요! 상품을 담아주세요!!</h1>
-				</c:if>
-				<c:forEach var="items" items="${blist}">
-							<div class="member">
-								<span class="e126_321">회원 아이디</span>
-								<span class="e126_322">${items.mem_id}</span>
-								<span class="e126_324">주문한 상품 번호</span>
-								<span class="e126_325">${items.pro_no}</span>
-								<span class="e126_324">주문한 수량</span>
-								<span class="e126_325">${items.basket_pro_count}</span>
-								<span class="e126_324">주문한 날짜</span>
-								<span class="e126_325">${items.basket_date}</span>
-							</div>
-				</c:forEach>
-			</div>
-					
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 							<div class="frame-13">
 								<div class="view-3">
 									<img class="checkbox" src="img/checkbox-2.svg" />
@@ -424,19 +440,17 @@ String contextPath = request.getContextPath();
 </body>
 
 <script>
-$(".e79_263").on("click", function() {
-	$.ajax({
+	$(".e79_263").on("click", function() {
+		$.ajax({
 
-		url : "${cpath}/my/myDelivery.do",
-		type : "get",
-		success : function(res) {
-			$("body").html(res);
-		}
+			url : "${cpath}/my/myDelivery.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
 
+		})
 	})
-})
-
-
 </script>
 
 </html>

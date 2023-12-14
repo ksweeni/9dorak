@@ -1,12 +1,14 @@
 package com.shinhan.controller;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,7 +58,6 @@ public class WalletController {
 	
 	
 	
-	
 
     // 회원이 담은 상품 목록
 	@GetMapping("basket.do")
@@ -64,12 +65,25 @@ public class WalletController {
 		MemVO loginmem = (MemVO)session.getAttribute("loginmem");
 		MemVO member = wService.checkMember(loginmem.getMem_id());
 		List<BasketVO> blist = wService.emptyBasket(loginmem.getMem_id());
+		
+		// 날짜 형식 변경
+		List<Map<String, String>> formattedDates = new ArrayList<>();
+		for (BasketVO basket : blist) {
+		    Timestamp basketDate = basket.getBasket_date();
+		    SimpleDateFormat dateFormat = new SimpleDateFormat("yy년 MM월 dd일");
+		    String formattedDate = dateFormat.format(new Date(basketDate.getTime()));
+		    
+		    Map<String, String> formattedDateMap = new HashMap<>();
+	        formattedDateMap.put("formattedDate", formattedDate);
+	        formattedDates.add(formattedDateMap);
+		}
+		
 		model.addAttribute("mem", member);
 		model.addAttribute("blist", blist);
+		model.addAttribute("formattedDates", formattedDates);
+		
 		return "wallet/basket";
 	}
-    
-    
     
     // 장바구니에 이미 해당 아이디-상품 존재 여부 
     @PostMapping("checkBasket.do")
