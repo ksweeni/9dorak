@@ -345,14 +345,14 @@
 		//검색하기
 		function searchBtnClick(allerCheckList) {
 
-			var allerListJson;
+			/* var allerListJson;
 			var allerArrList = [];
 			if (allerCheckList != null) {
 				allerListJson = JSON.stringify(allerCheckList);
 			} else {
 				allerListJson = JSON.stringify(allerArrList);
 			}
-
+ */
 			$.ajax({
 				url : "${cpath}/menu/searchPro.do",
 				type : 'GET',
@@ -423,6 +423,8 @@
 				url : "${cpath}/menu/searchAllergyCheck.do",
 				type : 'GET',
 				data : {
+					//키워드
+					pro_name : $('#searchTxt').val(),
 					//알러지타입 검색
 					pro_aller : $(this).val()
 				},

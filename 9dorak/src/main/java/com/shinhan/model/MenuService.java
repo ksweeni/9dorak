@@ -74,6 +74,10 @@ public class MenuService {
 	public int updateReserve(String pro_no) {
 		return dao.updateReserve(pro_no);
 	}
+
+	public List<ProVO> searchAllergyCheck(ProVO pro) {
+		return dao.searchAllergyCheck(pro);
+	}
 	
 
 //	public int insertMember(DoranVO doran) {

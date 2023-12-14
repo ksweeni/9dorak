@@ -102,6 +102,11 @@ public class MenuDAOMybatis {
 		int result = sqlSession.update(NAMESPACE + "updateProLike", pro_no);
 		return result;
 	}
+
+	public List<ProVO> searchAllergyCheck(ProVO pro) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck",pro);
+		return plist;
+	}
 	
 //	public BoardVO selectById(int bno) {
 //		BoardVO board = sqlSession.selectOne(NAMESPACE + "selectById", bno);
