@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -105,6 +106,8 @@ public class MyPageController {
 		model.addAttribute("paymentList",paymentList);
 		return "my/myPaymentList";
 	}
+	//결제상세보기
+	
 	
 	//마이페이지 -결제취소내역 페이지
 	@GetMapping("orderCancel.do")

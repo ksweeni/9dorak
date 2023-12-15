@@ -29,7 +29,6 @@
 			</div>
 			<div class="frame-4"></div>
 			<div class="primary-button">
-				<button class="cancel" data-order="${order.ORDERDETAIL_NO}" style="cursor: pointer; border: none; background-color: transparent;" >주문상세</button>
 			</div>
 			<div class="text-wrapper-13">${order.ORDERDETAIL_PRICE}</div>
 			<div class="text-wrapper-14">${order.PRO_NAME }</div>
@@ -46,27 +45,3 @@
 		</c:otherwise>
 	</c:choose>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
-  $(".cancel").click(function() {
-    var orderDetailNo = $(this).data("order");
-    $.ajax({
-      url: "${cpath}/getOrderDetail",  // 상세 정보를 가져올 서버의 URL. 수정이 필요할 수 있습니다.
-      type: "GET",
-      data: {
-        orderDetailNo: orderDetailNo
-      },
-      success: function(data) {
-        // data는 서버에서 받은 상세 정보입니다.
-        // 이 데이터를 이용해 팝업을 만들거나, 새 페이지에 정보를 표시하세요.
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        // 오류 발생 시 처리
-        console.error(textStatus, errorThrown);
-      }
-    });
-  });
-});
-</script>
