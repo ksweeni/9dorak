@@ -124,6 +124,7 @@
 		and(o.order_no = od.order_no )
 		and (od.pro_no =
 		p.pro_no )
+		ORDER BY o.order_date DESC
 	</select>
 
 	<!-- 결제내역보기 -->
@@ -131,6 +132,7 @@
 		SELECT od.pro_no, p.pro_name, od.orderdetail_price,
 		od.orderdetail_count,
 		py.pay_status, py.pay_date, od.orderdetail_no ,
+		py.pay_depo, py.pay_depoprice, py.pay_method,
 		(select proimage_image
 		from proimage
 		where pro_no = od.pro_no
@@ -141,22 +143,11 @@
 		WHERE o.mem_id
 		= #{mem_id}
 		and(o.order_no = od.order_no )
-		and (od.pro_no = p.pro_no )
+		and (od.pro_no
+		= p.pro_no )
 		and (p.pro_no = py.order_no )
-		and py.pay_status in ('결제 대기','결제 완료')
-	</select>
-
-	<!-- 결제상세내역보기 -->
-	<select id="detailList" parameterType="string" resultType="map">
-	SELECT od.pro_no, p.pro_name, od.orderdetail_count, py.pay_status,
-	py.pay_date,
-	py.pay_method, py.pay_price, py.pay_depo, py.pay_depobank
-	FROM orders o , orderdetail od , pro p ,pay py
-	WHERE o.mem_id = #{mem_id}
-	and(o.order_no = od.order_no )
-	and (od.pro_no = p.pro_no )
-	and (p.pro_no = py.order_no )
-	and py.pay_status in ('결제 대기','결제 완료');
+		and py.pay_status in ('결제
+		대기','결제 완료')
 	</select>
 
 	<!-- 결제취소내역보기 -->
@@ -174,7 +165,8 @@
 		WHERE o.mem_id
 		= #{mem_id}
 		and(o.order_no = od.order_no )
-		and (od.pro_no = p.pro_no )
+		and (od.pro_no
+		= p.pro_no )
 		and (p.pro_no = py.order_no )
 		and py.pay_status = '결제 취소'
 	</select>

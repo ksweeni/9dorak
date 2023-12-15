@@ -106,8 +106,6 @@ public class MyPageController {
 		model.addAttribute("paymentList",paymentList);
 		return "my/myPaymentList";
 	}
-	//결제상세보기
-	
 	
 	//마이페이지 -결제취소내역 페이지
 	@GetMapping("orderCancel.do")
