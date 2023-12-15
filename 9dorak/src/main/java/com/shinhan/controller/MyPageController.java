@@ -17,11 +17,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.DeliveryVO;
+import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.ProVO;
@@ -60,6 +62,9 @@ public class MyPageController {
 	@GetMapping("myDeliveryList.do")
 	public String myDeliveryList(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		if(loginmem == null) {
+			return "login/login";
+		}
 		String memId = loginmem.getMem_id();
 		List<DeliveryVO> dlist = mService.AllDeliveryHistory(memId);
 		model.addAttribute("dlist", dlist);
@@ -231,7 +236,10 @@ public class MyPageController {
 	@GetMapping("point_ajax.do")
 	public String pointPage(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		List<EarnpointVO> elist = mService.getPointList(loginmem.getMem_id());
 		model.addAttribute("loginmem", loginmem);
+		model.addAttribute("elist", elist);
+//		System.out.println(elist);
 		return "my/point_ajax";
 	}
 	

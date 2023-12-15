@@ -215,17 +215,17 @@
 }
 
 .element .date-earned-may {
-  position: absolute;
-  width: 271px;
-  top: 215px;
-  left: 28px;
-  font-family: "Inter-Bold", Helvetica;
-  font-weight: 400;
-  color: var(--base-shade-70);
-  font-size: 14px;
-  text-align: center;
-  letter-spacing: -0.15px;
-  line-height: 23.5px;
+    position: relative;
+    width: 190px;
+    top: 215px;
+    left: 67px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 400;
+    color: var(--base-shade-70);
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: -0.15px;
+    line-height: 23.5px;
 }
 
 .element .span {
@@ -342,9 +342,9 @@
 
 .element .gold-certified {
   position: absolute;
-  width: 83px;
+  width: 96px;
   top: 0;
-  left: 0;
+  left: -4px;
   font-family: var(--body-2-emphasized-font-family);
   font-weight: var(--body-2-emphasized-font-weight);
   color: #e8ae1a;
@@ -359,7 +359,7 @@
   position: absolute;
   width: 36px;
   height: 36px;
-  top: 409px;
+  top: 415px;
   left: 145px;
 }
 
@@ -405,25 +405,25 @@
 }
 
 .element .text-wrapper-5 {
-  position: absolute;
-  width: 92px;
-  top: 0;
-  left: 0;
-  font-family: var(--body-2-emphasized-font-family);
-  font-weight: var(--body-2-emphasized-font-weight);
-  color: #6e707f;
-  font-size: var(--body-2-emphasized-font-size);
-  text-align: center;
-  letter-spacing: var(--body-2-emphasized-letter-spacing);
-  line-height: var(--body-2-emphasized-line-height);
-  font-style: var(--body-2-emphasized-font-style);
+    position: absolute;
+    width: 101px;
+    top: 0;
+    left: -4px;
+    font-family: var(--body-2-emphasized-font-family);
+    font-weight: var(--body-2-emphasized-font-weight);
+    color: #6e707f;
+    font-size: var(--body-2-emphasized-font-size);
+    text-align: center;
+    letter-spacing: var(--body-2-emphasized-letter-spacing);
+    line-height: var(--body-2-emphasized-line-height);
+    font-style: var(--body-2-emphasized-font-style);
 }
 
 .element .star-3 {
   position: absolute;
   width: 37px;
   height: 37px;
-  top: 409px;
+  top: 415px;
   left: 144px;
 }
 
@@ -637,6 +637,7 @@
   background-color: #ffffff33;
   border-radius: 20px;
   overflow: hidden;
+  border: solid 1px gray;
 }
 
 .element .group-15 {
@@ -1550,7 +1551,7 @@
 }
 
 hr {
-	width: 80%;
+	width: 90%;
 	background: #a0a0a0;
 	margin: 0 auto;
 	height: 1px;

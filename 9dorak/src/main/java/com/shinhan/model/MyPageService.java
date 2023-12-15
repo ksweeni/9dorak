@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.DeliveryVO;
+import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.ProVO;
@@ -103,6 +104,11 @@ public class MyPageService {
 	// 배송 조회 내역
 	public List<DeliveryVO> AllDeliveryHistory(String mem_id){
 		return dao.AllDeliveryHistory(mem_id);
+	}
+
+	public List<EarnpointVO> getPointList(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.getPointList(mem_id);
 	}
 
 
