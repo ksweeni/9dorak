@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shinhan.dto.CouponVO;
+import com.shinhan.dto.DeliveryHistoryVO;
 import com.shinhan.dto.DeliveryVO;
 import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemDeliveryVO;
@@ -102,8 +103,12 @@ public class MyPageService {
 	}
 
 	// 배송 조회 내역
-	public List<DeliveryVO> AllDeliveryHistory(String mem_id){
+	public List<DeliveryHistoryVO> AllDeliveryHistory(String mem_id){
 		return dao.AllDeliveryHistory(mem_id);
+	}
+	
+	public List<DeliveryHistoryVO> getOrdersByMemberAndYear(String mem_id, int year) {
+		return dao.getOrdersByMemberAndYear(mem_id, year);
 	}
 
 	public List<EarnpointVO> getPointList(String mem_id) {
