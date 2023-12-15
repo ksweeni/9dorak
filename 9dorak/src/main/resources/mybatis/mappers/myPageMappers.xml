@@ -169,11 +169,26 @@
 		resultType="deliveryvo">
 		SELECT d.*, m.mem_name, o.order_date
 		FROM delivery d
-		JOIN orders o ON d.order_no = o.order_no
+		JOIN
+		orders o ON d.order_no = o.order_no
 		JOIN mem m ON o.mem_id = m.mem_id
 		WHERE o.mem_id = #{mem_id} AND o.order_status = '주문 완료'
 
 	</select>
+
+
+
+
+
+
+	<select id="getPointList" parameterType="String"
+		resultType="earnpointvo">
+		SELECT *
+		FROM EARNPOINTS
+		where mem_id = #{mem_id}
+	</select>
+
+
 
 
 

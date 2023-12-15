@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.DeliveryVO;
+import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.ProVO;
@@ -115,6 +116,11 @@ public class MyPageDAOMybatis {
 	public List<DeliveryVO> AllDeliveryHistory(String mem_id){
 		List<DeliveryVO> dlist = sqlSession.selectList(NAMESPACE + "AllDeliveryHistory", mem_id);
 		return dlist;
+	}
+
+	public List<EarnpointVO> getPointList(String mem_id) {
+		List<EarnpointVO> elist = sqlSession.selectList(NAMESPACE + "getPointList", mem_id);
+		return elist;
 	}
 
 
