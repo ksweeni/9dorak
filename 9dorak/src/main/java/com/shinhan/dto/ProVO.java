@@ -31,4 +31,5 @@ public class ProVO {
 	private String pro_sub19; //상품 배터지구 메뉴 여부
 	private String pro_free; //무료 상품 여부
 	private String order_type; //정렬
+	private String ingre_no; //카테고리
 }
