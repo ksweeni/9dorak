@@ -13,7 +13,6 @@ import lombok.ToString;
 public class MemVO {
 	private String mem_id; //회원아이디
 	private String mem_name; //회원이름
-//	private String mem_gender; //회원성별
 	private String mem_bd; //회원생년월일
 	private String mem_email; //회원이메일
 	private String mem_phone; //회원핸드폰번호
@@ -25,6 +24,5 @@ public class MemVO {
 	private String mem_aller; //회원고유알레르기
 	private int mem_quit; //회원탈퇴
 	private String mem_image ; // 회원 프로필 사진
-	
 
 }
