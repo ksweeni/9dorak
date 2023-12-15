@@ -53,7 +53,7 @@
 				<div class="group">
 					<div class="overlap">
 						<!--  action path 수정할 것! -->
-						<form action="${cpath}/event/insertChal.do" method="post"
+						<form action="${cpath}/event/insertrecipeChal.do" method="post"
 							enctype="multipart/form-data">
 							<div class="overlap-group-wrapper">
 								<div class="overlap-group">
@@ -105,7 +105,7 @@
 											<div class="text-wrapper">도시락을 설명하는 사진이나 그림을 올려주세요</div>
 										</div>
 										<label class="fileUpload" for="singleFile" onmousedown="handleMouseDown(event)">파일 선택</label> 
-										<input type="file" id="singleFile" style="display: none;" />
+										<input type="file" name="singleFile" id="singleFile" style="display: none;" />
 										<span id="selectedFileName"></span>
 									</div>
 								</div>

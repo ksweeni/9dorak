@@ -133,7 +133,7 @@
 					<div class="e1547_3755"></div>
 				</div>
 				<div class=e1547_3756>
-					<span class="e1547_3788">${sub9bllist[0].pro_name} X 4</span> <a
+					<span class="e1547_3788">${sub9bllist[0].pro_name} X 3</span> <a
 						href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub9bllist[0].pro_no}"
 						class=e1547_3758><span class="e1547_3731">자세히보기</span> </a>
 				</div>
@@ -175,7 +175,7 @@
 					<div class="e1547_3727"></div>
 				</div>
 				<div class=e1547_3728>
-					<span class="e1547_3729">${sub9allist[0].pro_name} X 4</span> <a
+					<span class="e1547_3729">${sub9allist[0].pro_name} X 3</span> <a
 						href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub9allist[0].pro_no}"
 						class=e1547_3730><span class="e1547_3731">자세히보기</span> </a>
 				</div>

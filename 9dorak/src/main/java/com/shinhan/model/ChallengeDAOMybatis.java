@@ -80,4 +80,9 @@ public class ChallengeDAOMybatis {
 		return result;
 	}
 
+	public List<ChallengeVO> selectByMakeAll() {
+		List<ChallengeVO> clist = sqlSession.selectList(NAMESPACE + "selectByMakeAll");
+		return clist;
+	}
+
 }

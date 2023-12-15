@@ -148,13 +148,9 @@ String contextPath = request.getContextPath();
 												<div class="overlap-4">
 													<div class="group-6">
 														<div class="overlap-group-2">
-															<img class="img" src="img/star-7-3.svg" /> <img
-																class="rectangle-2" src="img/rectangle-1485-2.svg" /> <img
-																class="icon-check" src="img/check.png" />
+															<img class="img" src="../resources/images/event/9make01.png" />
 														</div>
 													</div>
-													<img class="icon-navigation" src="img/check-24px-2.svg" />
-													<img class="ellipse" src="img/ellipse-10-3.svg" />
 												</div>
 											</div>
 											<div class="group-7">
@@ -167,7 +163,7 @@ String contextPath = request.getContextPath();
 											</div>
 										</div>
 									</div>
-									<img class="star-2" src="img/star.svg" />
+									<img class="star-2" src="../resources/images/event/9make04.png" />
 								</div>
 							</div>
 							<div class="overlap-wrapper">
@@ -183,7 +179,8 @@ String contextPath = request.getContextPath();
 																	<img class="rectangle" src="img/rectangle-1484.svg" />
 																</div>
 															</div>
-															<img class="icon-trophy" src="img/trophy-3.svg" /> <img
+															<img class="icon-trophy" src="img/trophy-3.svg" /> 
+															<img
 																class="star" src="img/star-1-3.svg" />
 														</div>
 													</div>
@@ -210,18 +207,14 @@ String contextPath = request.getContextPath();
 											</div>
 										</div>
 									</div>
-									<img class="star-3" src="img/star-2.svg" />
+									<img class="star-3" src="../resources/images/event/9make05.png" />
 									<div class="medallions">
 										<div class="overlap-4">
 											<div class="group-6">
 												<div class="overlap-group-3">
-													<img class="star-4" src="img/star-7.svg" /> <img
-														class="rectangle-5" src="img/rectangle-1485-3.svg" /> <img
-														class="icon-check-2" src="img/check-2.png" />
+													<img class="img" src="../resources/images/event/9make02.png" />
 												</div>
 											</div>
-											<img class="icon-navigation-2" src="img/check-24px.svg" /> <img
-												class="ellipse" src="img/ellipse-10-2.svg" />
 										</div>
 									</div>
 								</div>
@@ -252,25 +245,20 @@ String contextPath = request.getContextPath();
 																<span class="span">요리사 <br /></span> <span
 																	class="text-wrapper-4">ksween<br /></span> <span
 																	class="span"><br />레시피<br /></span> <span
-																	class="text-wrapper-4">양념 돼지 갈비가 들어간 양념만점 도시락<br />
-																	<br /></span> <span class="span"><br />추천합니다 <br /></span>
+																	class="text-wrapper-4">양념 돼지 갈비가 들어간 양념만점 도시락<br /></span> <span class="span"><br />추천합니다 <br /></span>
 															</p>
 														</div>
 													</div>
 												</div>
 											</div>
-											<img class="star-2" src="img/star-3.svg" />
+											<img class="star-2" src="../resources/images/event/9make06.png" />
 											<div class="medallions-2">
 												<div class="overlap-4">
 													<div class="group-6">
 														<div class="overlap-group-5">
-															<img class="star-4" src="img/star-7-2.svg" /> <img
-																class="rectangle-5" src="img/rectangle-1485.svg" /> <img
-																class="icon-check-2" src="img/check-3.png" />
+															<img class="img" src="../resources/images/event/9make03.png" />
 														</div>
 													</div>
-													<img class="icon-navigation-2" src="img/check-24px-3.svg" />
-													<img class="ellipse" src="img/ellipse-10.svg" />
 												</div>
 											</div>
 										</div>
@@ -298,17 +286,16 @@ String contextPath = request.getContextPath();
 									<div class="blur">
 										<div class="quiz-row-wrapper">
 											<div class="quiz-row">
-												<img class="blur" src="img/blur.svg" />
 											</div>
 										</div>
 									</div>
 									<div class="group-15">
 										<div class="frame-2">
-											<div class="text-wrapper-8">jongbumee</div>
-											<div class="text-wrapper-9">간장 곤드레밥</div>
+											<div class="text-wrapper-8">${clist[0].mem_id}</div>
+											<div class="text-wrapper-9">${clist[0].challenge_name}</div>
 										</div>
 										<div class="group-16">
-											<img class="vector" src="img/image.svg" />
+											<img class="vector" src="../resources/images/event/9make09.png" />
 											<div class="text-wrapper-10">25</div>
 										</div>
 									</div>
@@ -319,17 +306,16 @@ String contextPath = request.getContextPath();
 									<div class="blur">
 										<div class="quiz-row-wrapper">
 											<div class="quiz-row">
-												<img class="blur" src="img/blur-6.svg" />
 											</div>
 										</div>
 									</div>
 									<div class="group-15">
 										<div class="frame-2">
-											<div class="text-wrapper-8">jongbumee</div>
-											<div class="text-wrapper-9">간장 곤드레밥</div>
+											<div class="text-wrapper-8">${clist[1].mem_id}</div>
+											<div class="text-wrapper-9">${clist[1].challenge_name}</div>
 										</div>
 										<div class="group-16">
-											<img class="vector" src="img/vector-4.svg" />
+											<img class="vector" src="../resources/images/event/9make09.png" />
 											<div class="text-wrapper-10">25</div>
 										</div>
 									</div>
@@ -340,17 +326,16 @@ String contextPath = request.getContextPath();
 									<div class="blur">
 										<div class="quiz-row-wrapper">
 											<div class="quiz-row">
-												<img class="blur" src="img/blur-4.svg" />
 											</div>
 										</div>
 									</div>
 									<div class="group-15">
 										<div class="frame-2">
-											<div class="text-wrapper-8">jongbumee</div>
-											<div class="text-wrapper-9">간장 곤드레밥</div>
+											<div class="text-wrapper-8">${clist[2].mem_id}</div>
+											<div class="text-wrapper-9">${clist[2].challenge_name}</div>
 										</div>
 										<div class="group-16">
-											<img class="vector" src="img/vector-5.svg" />
+											<img class="vector" src="../resources/images/event/9make09.png" />
 											<div class="text-wrapper-10">25</div>
 										</div>
 									</div>
@@ -361,7 +346,6 @@ String contextPath = request.getContextPath();
 									<div class="blur">
 										<div class="quiz-row-wrapper">
 											<div class="quiz-row">
-												<img class="blur" src="img/blur-3.svg" />
 											</div>
 										</div>
 									</div>
@@ -371,7 +355,7 @@ String contextPath = request.getContextPath();
 											<div class="text-wrapper-9">간장 곤드레밥</div>
 										</div>
 										<div class="group-16">
-											<img class="vector" src="img/vector-6.svg" />
+											<img class="vector" src="../resources/images/event/9make09.png" />
 											<div class="text-wrapper-10">25</div>
 										</div>
 									</div>
@@ -382,7 +366,6 @@ String contextPath = request.getContextPath();
 									<div class="blur">
 										<div class="quiz-row-wrapper">
 											<div class="quiz-row">
-												<img class="blur" src="img/blur-5.svg" />
 											</div>
 										</div>
 									</div>
@@ -392,7 +375,7 @@ String contextPath = request.getContextPath();
 											<div class="text-wrapper-9">간장 곤드레밥</div>
 										</div>
 										<div class="group-16">
-											<img class="vector" src="img/vector-3.svg" />
+											<img class="vector" src="../resources/images/event/9make09.png" />
 											<div class="text-wrapper-10">25</div>
 										</div>
 									</div>
@@ -403,7 +386,6 @@ String contextPath = request.getContextPath();
 									<div class="blur">
 										<div class="quiz-row-wrapper">
 											<div class="quiz-row">
-												<img class="blur" src="img/blur-2.svg" />
 											</div>
 										</div>
 									</div>
@@ -413,7 +395,7 @@ String contextPath = request.getContextPath();
 											<div class="text-wrapper-9">간장 곤드레밥</div>
 										</div>
 										<div class="group-16">
-											<img class="vector" src="img/vector.svg" />
+											<img class="vector" src="../resources/images/event/9make09.png" />
 											<div class="text-wrapper-10">25</div>
 										</div>
 									</div>
@@ -463,13 +445,13 @@ String contextPath = request.getContextPath();
 								<div class="frame-5">
 									<div class="frame-6">
 										<div class="text-wrapper-13">최근 순</div>
-										<img class="filter" src="img/filter.svg" />
+										<img class="filter" src="../resources/images/event/9make07.png" />
 									</div>
 								</div>
 								<div class="frame-5">
 									<div class="frame-6">
 										<div class="text-wrapper-13">추천 순</div>
-										<img class="filter" src="img/filter.svg" />
+										<img class="filter" src="../resources/images/event/9make07.png" />
 									</div>
 								</div>
 							</div>
