@@ -48,10 +48,10 @@
 
 
 
-	<!-- 상품의 사진 이미지 1개만 가져오기 
+	<!-- 상품의 사진 이미지 1개만 가져오기 -->
 	<select id="getProImage" parameterType="String">
-		select proimage_image from proimage where pro_no=#{pro_no} and rownum <= 1
-	</select>-->
+		<![CDATA[ select proimage_image from proimage where pro_no=#{pro_no} and rownum <= 1 ]]>
+	</select>
 
 	<!-- 회원 아이디 정보 -->
 	<select id="checkMember" parameterType="String"
