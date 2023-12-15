@@ -238,7 +238,7 @@ public class MyPageController {
 	
 	@PostMapping("profileUplode.do")
 	public String profileUplode(Model model, HttpSession session, MultipartFile singleFile , HttpServletRequest request) {
-	
+		System.out.println("방은지");
 //		System.out.println(singleFile);
 		String path = request.getSession().getServletContext().getRealPath("resources");
 		System.out.println("path : " + path);
