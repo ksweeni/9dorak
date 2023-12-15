@@ -154,35 +154,97 @@ String contextPath = request.getContextPath();
 	top: 10px;
 }
 
+.e169_633 {
+	width: 335.1780090332031px;
+	height: 60.015625px;
+	position: absolute;
+	left: 385px;
+	top: 200px;
+}
+
+.e169_634 {
+	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
+	width: 152.17800903320312px;
+	height: 18px;
+	position: absolute;
+	left: 193.292969px;
+	top: 0px;
+	font-family: Roboto;
+	text-align: left;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: px;
+}
+
+.e169_635 {
+	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
+	width: 300px;
+	height: 41px;
+	position: absolute;
+	left: 0px;
+	top: 28.015625px;
+	font-family: Roboto;
+	text-align: left;
+	font-size: 32px;
+	letter-spacing: 0;
+	line-height: px;
+}
+
+.e169_636 {
+	width: 15.217805862426758px;
+	height: 23.37931px;
+	position: absolute;
+	left: 167.841797px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: -2px;
+	background-repeat: no-repeat;
+	background-image: url(${cpath}/resources/images/my/image_8.png);
+}
+
+.e169_637 {
+	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
+	width: 160.610756px;
+	height: 18px;
+	position: absolute;
+	left: 2.05078125px;
+	top: 0px;
+	font-family: Roboto;
+	text-align: left;
+	font-size: 14px;
+	letter-spacing: 0;
+}
+
 .e169_521 {
-	width: 1337px;
-	height: 760px;
+	width: 1326px;
+	height: 745px;
 	position: absolute;
 	left: 78px;
-	top: 346px;
+	top: 343px;
 }
 
 .e169_527 {
-	width: 950.1522827148438px;
-	height: 742px;
+	width: 1022px;
+	height: 745px;
 	position: absolute;
-	left: 386.84765625px;
-	top: 18px;
+	left: 304px;
+	top: 0px;
 }
 
 .e169_528 {
-	width: 950.1522827148438px;
+	width: 1022px;
 	height: 742px;
 	position: absolute;
 	left: 0px;
-	top: 0px;
+	top: 3px;
 }
 
 .e169_584 {
 	width: 347px;
 	height: 93px;
 	position: absolute;
-	left: 157.15234375px;
+	left: 0px;
 	top: 1.1368683772161603e-13px;
 }
 
@@ -231,6 +293,128 @@ String contextPath = request.getContextPath();
 	background-size: cover;
 }
 
+.e198_349 {
+	width: 596.1743774414062px;
+	height: 112px;
+	position: absolute;
+	left: 392px;
+	top: 54px;
+}
+
+.e198_350 {
+	background-color: rgba(255, 255, 255, 1);
+	width: 596.1743774414062px;
+	height: 112px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.198_350 {
+	border: 1px solid
+		rgba(215.04000663757324, 215.04000663757324, 224.000001847744, 1);
+}
+
+.e198_351 {
+	width: 600px;
+	height: 74px;
+	position: relative;
+	left: 17.886093139648438px;
+	top: 21px;
+	border: 1px solid gray;
+	border-radius: 30px;
+}
+
+.e198_352 {
+	width: 563px;
+	height: 74px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.e198_353 {
+	width: 563px;
+	height: 25px;
+	position: absolute;
+	left: 22px;
+	top: 7px;
+}
+
+.e198_354 {
+	color: rgba(255, 127.5, 0, 1);
+	width: 120.71916198730469px;
+	height: 25px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	font-family: Inter;
+	text-align: left;
+	font-size: 20px;
+	letter-spacing: 0;
+}
+
+.e198_355 {
+	color: rgba(126.21172472834587, 126.21172472834587, 126.21172472834587, 1);
+	width: 108.96774291992188px;
+	height: 24px;
+	position: absolute;
+	left: 454.0322570800781px;
+	top: 1px;
+	font-family: Inter;
+	text-align: left;
+	font-size: 20px;
+	letter-spacing: 0;
+}
+
+.e198_356 {
+	width: 563px;
+	height: 49px;
+	position: absolute;
+	left: 18px;
+	top: 32px;
+}
+
+.e198_357 {
+	color: rgba(255, 127.5, 0, 1);
+	width: 139px;
+	height: 49px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	font-family: Inter;
+	text-align: left;
+	font-size: 25px;
+	letter-spacing: 0;
+}
+
+.e198_358 {
+	color: rgba(0, 0, 0, 1);
+	width: 389px;
+	height: 43px;
+	position: absolute;
+	left: 174px;
+	top: 3px;
+	font-family: Inter;
+	text-align: right;
+	font-size: 20px;
+	letter-spacing: 0;
+}
+
+.e198_346 {
+	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
+	width: 322.68511962890625px;
+	height: 36px;
+	position: absolute;
+	left: 428.0955810546875px;
+	top: 0px;
+	font-family: Roboto;
+	text-align: left;
+	font-size: 32px;
+	letter-spacing: 0;
+	line-height: px;
+}
+
 .e169_532 {
 	background-color: rgba(255, 255, 255, 1);
 	width: 250px;
@@ -259,7 +443,7 @@ String contextPath = request.getContextPath();
 
 .e169_534 {
 	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 145px;
+	width: 83px;
 	height: 26px;
 	position: absolute;
 	left: 52px;
@@ -683,109 +867,6 @@ String contextPath = request.getContextPath();
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
-.e169_633 {
-	width: 335.1780090332031px;
-	height: 60.015625px;
-	position: absolute;
-	left: 385px;
-	top: 200px;
-}
-
-.e169_634 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 152.17800903320312px;
-	height: 18px;
-	position: absolute;
-	left: 193.292969px;
-	top: 0px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e169_635 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 300px;
-	height: 41px;
-	position: absolute;
-	left: 0px;
-	top: 28.015625px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 32px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e145_1496 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 300px;
-	height: 41px;
-	position: absolute;
-	left: 0px;
-	top: 28.015625px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 32px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e169_636 {
-	width: 15.217805862426758px;
-	height: 23.37931px;
-	position: absolute;
-	left: 167.841797px;
-	top: -2px;
-	background-image: url(/myapp/resources/images/my/image_8.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: absolute;
-	left: 167.841797px;
-	top: -2px;
-	background-image: url(/myapp/resources/images/my/image_8.png);
-	background-repeat: no-repeat;
-	left: 167.841797px;
-	top: -2px;
-	background-image: url(/myapp/resources/images/my/image_8.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: absolute;
-	left: 167.841797px;
-	top: -2px;
-	background-image: url(/myapp/resources/images/my/image_8.png);
-	top: -2px;
-	background-image: url(/myapp/resources/images/my/image_8.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: absolute;
-	left: 167.841797px;
-	top: -2px;
-	background-image: url(/myapp/resources/images/my/image_8.png);
-	background-image: url(/myapp/resources/images/my/image_8.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: absolute;
-	left: 167.841797px;
-	top: -2px;
-	background-image: url(/myapp/resources/images/my/image_8.png);
-}
-
-.e169_637 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 160.610756px;
-	height: 18px;
-	position: absolute;
-	left: 2.05078125px;
-	top: 0px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-}
 </style>
 </head>
 <body>
@@ -800,21 +881,56 @@ String contextPath = request.getContextPath();
 			<div class="e169_519"></div>
 			<div class="e169_520"></div>
 		</div>
+		<div class=e169_633>
+			<span class="e169_634">나의 포인트</span><span class="e169_635">나의
+				포인트</span>
+			<div class="e169_636"></div>
+			<span class="e169_637">보유한 포인트 및 쿠폰</span>
+		</div>
 		<div class=e169_521>
 			<div class=e169_527>
 				<div class=e169_528>
 					<div class=e169_584>
 						<div class=e169_586>
-							<span class="e169_587">현재 고객님의 포인트 </span><span class="e169_588">${loginmem.mem_point }점</span>
+							<span class="e169_587">현재 고객님의 포인트 </span><span class="e169_588">${ loginmem.mem_point}점</span>
 							<div class="e169_639"></div>
 						</div>
 					</div>
+					<div class=e198_349>
+						<div class="e198_350"></div>
+						<%-- 		<div class=e198_351>
+							<div class=e198_352>
+								<div class=e198_353>
+									<span class="e198_354">적립</span><span class="e198_355">${elist.point_date }</span>
+								</div>
+								<div class=e198_356>
+									<span class="e198_357">${elist.point }P</span><span class="e198_358">[구도락
+										챌린지] ${elist.point_name }</span>
+								</div>
+							</div>
+						</div> --%>
+						<c:forEach var="item" items="${elist}">
+							<div class="e198_351">
+								<div class="e198_352">
+									<div class="e198_353">
+										<span class="e198_354">적립</span><span class="e198_355">${item.point_date}</span>
+									</div>
+									<div class="e198_356">
+										<span class="e198_357">${item.point}P</span><span
+											class="e198_358">[구도락 챌린지] ${item.point_name}</span>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
+
+
+					</div>
 				</div>
+				<span class="e198_346">적립 및 사용 내역</span>
 			</div>
 			<div class=e169_532>
 				<div class=e169_533>
-					<span class="e169_534">${loginmem.mem_id }</span><span
-						class="e169_535">LV.${loginmem.mem_grade }</span>
+					<span class="e169_534">김수인</span><span class="e169_535">LV.낑깡</span>
 					<div class="e169_536"></div>
 				</div>
 				<div class=e169_537>
@@ -868,12 +984,6 @@ String contextPath = request.getContextPath();
 			</div>
 			<div class="e169_572"></div>
 			<div class="e169_573"></div>
-		</div>
-		<div class=e169_633>
-			<span class="e169_634">나의 포인트</span><span class="e169_635">나의
-				포인트</span>
-			<div class="e169_636"></div>
-			<span class="e169_637">찜 목록 / 포인트 및 쿠폰</span>
 		</div>
 	</div>
 </body>

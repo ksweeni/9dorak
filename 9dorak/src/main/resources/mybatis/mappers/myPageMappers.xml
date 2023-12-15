@@ -186,4 +186,18 @@
 
 
 
+
+
+	<select id="getPointList" parameterType="String"
+		resultType="earnpointvo">
+		SELECT *
+		FROM EARNPOINTS
+		where mem_id = #{mem_id}
+	</select>
+
+
+
+
+
+
 </mapper>

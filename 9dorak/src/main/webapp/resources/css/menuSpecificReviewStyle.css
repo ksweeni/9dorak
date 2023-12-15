@@ -633,7 +633,7 @@ div-wrapper {
 	align-items: flex-start;
 	gap: 24px;
 	position: relative;
-	top: 18rem;
+	top: 20rem;
 	left: 30%;
 }
 
@@ -1485,4 +1485,14 @@ div-wrapper {
 
 .top-nav{
 	left: 33.5%;
+}
+
+.menu-detail{
+	position: relative;
+    top: 300px;
+    font-weight: 700;
+    color: #172135;
+    font-size: 2rem;
+    left: 30%;
+    text-align: center;
 }

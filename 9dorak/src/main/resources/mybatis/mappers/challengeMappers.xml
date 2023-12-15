@@ -41,7 +41,8 @@
 		challenge_start,
 		challenge_end,
 		mem_id,
-		challenge_category
+		challenge_category,
+		challenge_recipe
 		) VALUES (
 		challenge_seq.NEXTVAL,
 		#{challenge_name},
@@ -51,7 +52,8 @@
 		#{challenge_start},
 		#{challenge_end},
 		#{mem_id},
-		'challenezone'
+		'challenge',
+		#{challenge_recipe}
 		)
 	</insert>
 	
@@ -113,7 +115,7 @@
 		FROM (
 		SELECT *
 		FROM challenge
-		WHERE 1=1
+		WHERE 1=1 AND challenge_recipe IS NULL
 		ORDER BY challenge_no
 		)
     <![CDATA[WHERE ROWNUM <= #{currentPage} + 10]]>
@@ -128,5 +130,9 @@
 		<result property="mem_id" column="MEM_ID" />
 		<!-- 나머지 필드에 대한 매핑 -->
 	</resultMap>
+	
+	<select id="selectByMakeAll" resultType="challengevo">
+		SELECT * FROM challenge WHERE challenge_recipe IS NOT NULL
+	</select>
 
 </mapper>

@@ -15,6 +15,7 @@
 		<typeAlias type="com.shinhan.dto.DoranlikeVO" alias="doranlikevo" />
 		<typeAlias type="com.shinhan.dto.DlikeVO" alias="dlikevo" />
 		<typeAlias type="com.shinhan.dto.ChallengeVO" alias="challengevo" />
+		<typeAlias type="com.shinhan.dto.ChalllikeVO" alias="challlikevo" />
 		<typeAlias type="com.shinhan.dto.EventVO" alias="eventvo" />
 		<typeAlias type="com.shinhan.dto.MemDeliveryVO" alias="MemDeliveryvo" />
 		<typeAlias type="com.shinhan.dto.MemreviewVO" alias="memreviewvo" />
@@ -27,6 +28,9 @@
 		<typeAlias type="com.shinhan.dto.PayVO" alias="payvo" />
 		<typeAlias type="com.shinhan.dto.CouponVO" alias="couponvo" />
 		<typeAlias type="com.shinhan.dto.OrderVO" alias="ordervo" />
+		<typeAlias type="com.shinhan.dto.ProimageVO" alias="proimagevo" />
+		<typeAlias type="com.shinhan.dto.DeliveryVO" alias="deliveryvo" />
+		<typeAlias type="com.shinhan.dto.EarnpointVO" alias="earnpointvo" />
 
 	</typeAliases>
 </configuration>

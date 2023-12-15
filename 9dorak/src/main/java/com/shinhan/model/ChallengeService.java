@@ -58,4 +58,8 @@ public class ChallengeService {
 		return dao.delelelikeChall(challlike);
 	}
 
+	public List<ChallengeVO> selectByMakeAll() {
+		return dao.selectByMakeAll();
+	}
+
 }
