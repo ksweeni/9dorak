@@ -74,10 +74,10 @@
 				<div id="main-group" class="group"></div>
 				<div class="sub-image">
 					<div class="overlap-group-wrapper"
-						onclick="changeBackground(this, '${cpath}/resources/images/menu/subtest-1.png')">
+						onclick="changeBackground(this, '${cpath}/resources/images/menu/${menudetail.pro_no }-1.jpg')">
 						<div class="overlap-group">
 							<img class="vector"
-								src="${cpath}/resources/images/menu/subtest-1.png" />
+								src="${cpath}/resources/images/menu/${menudetail.pro_no }-1.png" />
 						</div>
 					</div>
 					<div class="overlap-group-wrapper"
@@ -241,7 +241,7 @@
 				</div>
 			</div>
 
-			<div class="menu-selection-wrapper">
+			<!-- <div class="menu-selection-wrapper">
 				<div class="menu-selection">
 					<button class="common-button" onclick="selectButton(this)">
 						<div class="recipes">제품상세</div>
@@ -252,6 +252,10 @@
 						<div class="rectangle-4"></div>
 					</button>
 				</div>
+			</div> -->
+			
+			<div class="menu-detail">
+				<div><h1>${menudetail.pro_detail }</h1></div>
 			</div>
 
 			<div class="auto-layout">

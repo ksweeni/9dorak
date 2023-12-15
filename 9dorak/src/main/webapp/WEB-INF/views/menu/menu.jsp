@@ -79,7 +79,7 @@
 		</header>
 
 		<div class="div">
-			<div class="menu-and-pagenation">
+			<!-- <div class="menu-and-pagenation">
 				<div class="pagination">
 					<div class="page">
 						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
@@ -111,7 +111,7 @@
 						<img class="carat" src="img/carat.svg" />
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="menu-cards">
 				<div class="foods">
 					<c:forEach items="${mlist}" var="pro" varStatus="loop">
