@@ -1,8 +1,10 @@
 package com.shinhan.model;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -118,7 +120,18 @@ public class MyPageDAOMybatis {
 		List<DeliveryHistoryVO> dlist = sqlSession.selectList(NAMESPACE + "AllDeliveryHistory", mem_id);
 		return dlist;
 	}
+	
+	// 년도 별 배송 조회 내역 - map 테스트 하는 중 
+	public List<DeliveryHistoryVO> getOrdersByMemberAndYear(String mem_id, int year) {
+	    Map<String, Object> parameters = new HashMap<>();
+	    parameters.put("mem_id", mem_id); 
+	    parameters.put("year", year);
+	    
+	    List<DeliveryHistoryVO> dlist = sqlSession.selectList(NAMESPACE + "getOrdersByMemberAndYear", parameters);
+	    return dlist;
+	}
 
+	
 	public List<EarnpointVO> getPointList(String mem_id) {
 		List<EarnpointVO> elist = sqlSession.selectList(NAMESPACE + "getPointList", mem_id);
 		return elist;

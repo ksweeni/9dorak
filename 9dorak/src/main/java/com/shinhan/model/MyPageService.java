@@ -106,6 +106,10 @@ public class MyPageService {
 	public List<DeliveryHistoryVO> AllDeliveryHistory(String mem_id){
 		return dao.AllDeliveryHistory(mem_id);
 	}
+	
+	public List<DeliveryHistoryVO> getOrdersByMemberAndYear(String mem_id, int year) {
+		return dao.getOrdersByMemberAndYear(mem_id, year);
+	}
 
 	public List<EarnpointVO> getPointList(String mem_id) {
 		// TODO Auto-generated method stub

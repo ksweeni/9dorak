@@ -12,7 +12,7 @@ import lombok.ToString;
 @Getter @Setter
 @ToString
 
-public class DeliveryHistoryVO {
+public class DeliveryHistoryVO  {
 	private int order_no; // 주문 고유 번호
 	private Date order_date; //주문 날짜 
 	private String order_category; // 주문 구분

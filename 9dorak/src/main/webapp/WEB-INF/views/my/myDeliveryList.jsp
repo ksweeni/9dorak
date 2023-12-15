@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%
 request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
+
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -18,7 +20,30 @@ String contextPath = request.getContextPath();
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-console.log("${dlist}");
+	$(document).ready(function() {
+		console.log("${dlist}");
+
+		function addDaysToOrderDate(orderDate) {
+			var date = new Date(orderDate);
+			date.setDate(date.getDate() + 3);
+
+			var year = date.getFullYear();
+			var month = ('0' + (date.getMonth() + 1)).slice(-2);
+			var day = ('0' + date.getDate()).slice(-2);
+
+			return year + '-' + month + '-' + day;
+		}
+
+		// 도착 예정 날짜 바꾸는 함수
+		function updateDeliveryDate(orderDate) {
+			var formattedDate = addDaysToOrderDate(orderDate);
+			$('.text-wrapper-4').text(formattedDate + ' 도착예정');
+		}
+
+		<c:forEach var="delivery" items="${dlist}">
+		updateDeliveryDate("${delivery.order_date}");
+		</c:forEach>
+	});
 </script>
 </head>
 
@@ -85,100 +110,45 @@ console.log("${dlist}");
 				</div>
 			</header>
 			<div class="frame">
-				<button class="frame-2">
-					최근 6개월
-				</button>
-				<button class="frame-3">
-					2023
-				</button>
-				<button class="frame-3">
-					2022
-				</button>
-				<button class="frame-3">
-					2021
-				</button>
-				<button class="frame-3">
-					2020
-				</button>
+				<button class="frame-2">최근 6개월</button>
+				<button class="frame-3">2023</button>
+				<button class="frame-3">2022</button>
+				<button class="frame-3">2021</button>
+				<button class="frame-3">2020</button>
 			</div>
 			<div class="frame-4">
-					
-			
-				<div class="frame-5">
-					<div class="frame-6">
-						<div class="text-wrapper-3">2023. 11. 25 주문</div>
-						
-					</div>
-					<div class="frame-7">
+
+				<c:forEach var="delivery" items="${dlist}">
+					<div class="frame-5">
 						<div class="frame-6">
-							<p class="element">
-								<span class="span">결제완료ᆞ </span> <span class="text-wrapper-4">11.
-									27 (월) 도착예정</span>
-							</p>
+							<div class="text-wrapper-3">${delivery.order_date}주문</div>
 						</div>
-						<div class="group">
-							<div class="frame-8">
-								<img class="mask-group" src="img/mask-group-2.png" />
-								<div class="frame-9">
-									<p class="p">배부르9 | 9일 도시락 패키지, 1세트</p>
-									<div class="text-wrapper-5">59,000원</div>
+						<div class="frame-7">
+							<div class="frame-6">
+								<p class="element">
+									<span class="span">${delivery.delivery_status}ᆞ </span> <span
+										class="text-wrapper-4">${delivery.order_date} 도착예정</span>
+								</p>
+							</div>
+							<div class="group">
+								<div class="frame-8">
+									<img class="mask-group" src="img/mask-group-2.png" />
+									<div class="frame-9">
+										<p class="p">${delivery.pro_name}</p>
+										<div class="text-wrapper-5">${delivery.orderdetail_price}원</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="frame-5">
-					<div class="frame-6">
-						<div class="text-wrapper-3">2023. 11. 25 주문</div>
-					</div>
-					<div class="frame-7">
-						<div class="frame-6">
-							<p class="element">
-								<span class="span">결제완료ᆞ </span> <span class="text-wrapper-4">11.
-									27 (월) 도착예정</span>
-							</p>
-						</div>
-						<div class="group">
-							<div class="frame-8">
-								<img class="mask-group" src="img/mask-group-2.png" />
-								<div class="frame-9">
-									<p class="p">배부르9 | 9일 도시락 패키지, 1세트</p>
-									<div class="text-wrapper-5">59,000원</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="frame-5">
-					<div class="frame-6">
-						<div class="text-wrapper-3">2023. 11. 25 주문</div>
-					</div>
-					<div class="frame-7">
-						<div class="frame-6">
-							<p class="element">
-								<span class="span">도시락 준비 중ᆞ </span> <span class="text-wrapper-4">11.
-									27 (월) 도착예정</span>
-							</p>
-						</div>
-						<div class="group">
-							<div class="frame-8">
-								<img class="mask-group" src="img/mask-group-2.png" />
-								<div class="frame-9">
-									<p class="p">배부르9 | 9일 도시락 패키지, 1세트</p>
-									<div class="text-wrapper-5">59,000원</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
-			
+
 			<div class="view">
 				<div class="frame-11">
 					<div class="frame-12">
 						<div class="text-wrapper-7">배송 내역 정보</div>
-						<div class="text-wrapper-8">김수인님</div>
+						<div class="text-wrapper-8">${sessionScope.loginmem.mem_name}님</div>
 					</div>
 					<div class="frame-13">
 						<div class="frame-14">
@@ -306,6 +276,37 @@ console.log("${dlist}");
 			</div>
 
 		</div>
+
 	</div>
+	<script>
+		$(document).ready(function() {
+			
+			$(".frame-3").click(function() {
+				var year = $(this).text(); 
+				sendAjaxRequest(year);
+			});
+
+			
+			function sendAjaxRequest(year) {
+				$.ajax({
+					type : "POST", // 또는 "GET"
+					url : "${cpath}/my/myDeliveryListOrderBy.do",
+					data : {
+						selectedYear : year
+					},
+					success : function(response) {
+						
+						console.log(response);
+						
+					},
+					error : function(error) {
+						// Ajax 요청 실패 시 실행할 코드
+						console.log(error);
+					}
+				});
+			}
+		});
+	</script>
+
 </body>
 </html>

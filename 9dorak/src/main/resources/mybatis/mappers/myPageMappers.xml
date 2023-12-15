@@ -208,7 +208,28 @@
 		O.order_status = '주문 완료'
 	</select>
 
-
+	<!-- 년도 별 배송 조회 내역 -->
+	<select id="getOrdersByMemberAndYear" parameterType="map"
+		resultType="deliveryhistoryvo">
+		SELECT
+		O.*,
+		OD.orderdetail_price,
+		OD.orderdetail_count,
+		P.pro_name,
+		D.delivery_status
+		FROM
+		ORDERS O
+		JOIN
+		ORDERDETAIL OD ON O.order_no = OD.order_no
+		JOIN
+		PRO P ON OD.pro_no = P.pro_no
+		JOIN
+		DELIVERY D ON O.order_no = D.order_no
+		WHERE
+		O.mem_id = 'aaa'
+		AND O.order_status = '주문 완료'
+		AND SUBSTR(O.order_date, 1, 2) = 23
+	</select>
 
 
 
