@@ -64,11 +64,10 @@
 								</c:otherwise>
 							</c:choose>
 						</div>
-						<div class="group-20">
-							<div class="header-overlap-group-3">
+						<div class="group-20" id="lightsParent">
+							<div class="header-overlap-group-3" onclick="loginBasket()">
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
-								<div class="ellipse-light"></div>
 								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
@@ -272,5 +271,60 @@
 
 		</div><!-- div -->
 	</div><!-- div-wrapper -->
+	<script type="text/javascript">
+	  function loginBasket() {
+			var mem_id = "${sessionScope.loginmem.mem_id}";
+
+			// 로그인 여부 확인
+			if (mem_id == "") {
+				alert("로그인이 필요한 서비스입니다 !");
+				window.location.href="${cpath}/login/loginForm.do";
+				return;
+			} else {
+				window.location.href="${pageContext.request.contextPath}/wallet/basket.do";
+			}
+		}
+
+		window.onload = emptyBasket;
+
+		function emptyBasket() {
+			var mem_id = "${sessionScope.loginmem.mem_id}";
+
+					$.ajax({
+						type : "POST",
+						url : "${cpath}/wallet/emptyBasket.do",
+						data : {
+							mem_id : mem_id,
+						},
+						dataType : "json",
+						success : function(response) {
+							if (response.success) {
+								console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
+								//alert("상품이 이미 장바구니에 존재합니다! - 불키자");
+								lightsOn();
+							} else {
+								console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
+							}
+						},
+						error : function(xhr, status, error) {
+							console.error("콘솔 - Error during basket operation. Status: " + status);
+							console.error("콘솔 - Server response: " + xhr.responseText);
+							//alert("An error occurred during the checkBasket operation!");
+						}
+
+					});
+		}
+
+		function lightsOn() {
+			let lights = document.createElement("div");
+			lights.setAttribute("class","ellipse-light");
+			lights.setAttribute("id","lightsOnID");
+			document.querySelector("#lightsParent").append(lights);
+
+			console.log("장바구니 가득 차서 불 켜짐!");
+		}
+	
+	
+	</script>
 </body>
 </html>
