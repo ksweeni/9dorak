@@ -78,6 +78,8 @@ public class RegisterController {
 	public String codeCheck(String mem_code, HttpSession session) {
 		int result = rService.codeCheck(mem_code);
 		if (result == 1) {
+			int updateResult = rService.pointUpdate(mem_code);
+			System.out.println(updateResult);
 			return "true";
 		} else {
 			return "false";
@@ -87,7 +89,14 @@ public class RegisterController {
 
 	@PostMapping("register.do")
 	public String register(Model model, MemVO mem, HttpSession session) {
-		int result = rService.insertMember(mem);
+		int result =0; 
+		if( mem.getMem_code().equals("")) {
+			result = rService.insertMember(mem);	
+		} else {
+			mem.setMem_point(900);
+			result = rService.PointinsertMember(mem);	
+		}
+//		int result = rService.insertMember(mem);
 		String login_id = mem.getMem_id();
 		MemVO loginmem = mService.getMember(login_id);
 		session.setAttribute("loginmem", loginmem);

@@ -43,6 +43,18 @@ public class RegisterDAOMybatis {
 		
 	}
 
+	public int PointinsertMember(MemVO mem) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert(NAMESPACE + "PointinsertMember", mem);
+	}
+
+	public int pointUpdate(String mem_code) {
+		// TODO Auto-generated method stub
+		return sqlSession.update(NAMESPACE + "pointUpdate", mem_code);
+	}
+
+
+
 //	public BoardVO selectById(int bno) {
 //		BoardVO board = sqlSession.selectOne(NAMESPACE + "selectById", bno);
 //		logger.info("selectById :  {}", board.toString());
