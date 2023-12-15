@@ -62,6 +62,9 @@ public class MyPageController {
 	@GetMapping("myDeliveryList.do")
 	public String myDeliveryList(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		if(loginmem == null) {
+			return "login/login";
+		}
 		String memId = loginmem.getMem_id();
 		List<DeliveryVO> dlist = mService.AllDeliveryHistory(memId);
 		model.addAttribute("dlist", dlist);
