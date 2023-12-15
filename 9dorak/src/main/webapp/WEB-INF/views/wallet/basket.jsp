@@ -84,12 +84,8 @@ String contextPath = request.getContextPath();
 				</div>
 			</header>
 
-			<div class="account-navigation">
-				<div class="ol">
-					<div class="frame-22">
-						<div class="text-wrapper-20">회원등급</div>
-					</div>
-				</div>
+			<div class="smallMenu">
+				<div class="text-wrapper-20">회원등급</div>
 				<div class="text-wrapper-21">장바구니</div>
 			</div>
 
