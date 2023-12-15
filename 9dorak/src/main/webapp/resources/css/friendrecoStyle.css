@@ -950,3 +950,8 @@ hr {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#kakaotalk-sharing-btn {
+   position: relative;
+   left: 50%;
+}
