@@ -12,6 +12,13 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="코드공부방">
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.5.0/kakao.min.js"
+	integrity="sha384-kYPsUbBPlktXsY6/oNHSUDZoTX6+YI51f63jCPEIPFP09ttByAdxd2mEjKuhdqn4"
+	crossorigin="anonymous"></script>
+<script>
+	Kakao.init('744b3913b823c75012d64f9856fdc141'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
 </head>
 <body>
 	<header class="header">
@@ -60,8 +67,8 @@
 		<div id="event_menu">
 			<ul>
 				<li><a
-				href="${pageContext.request.contextPath}/event/challenge.do"
-				>챌린지 ZONE</a></li>
+					href="${pageContext.request.contextPath}/event/challenge.do">챌린지
+						ZONE</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/event/freelunchbox.do">도시락
 						무료 체험</a></li>
@@ -93,6 +100,10 @@
 		<div class=e63_173>
 			<span class="e62_373">가입한 친구</span><span class="e62_374">본인</span>
 		</div>
+		<a id="kakaotalk-sharing-btn" href="javascript:;"><img
+			src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+			alt="카카오톡 공유 보내기 버튼" />
+		</a>
 	</div>
 	<footer class="footer">
 		<div class="footer-company-loco">
@@ -158,6 +169,40 @@
 			</div>
 		</div>
 	</footer>
-
+	<script type='text/javascript'>
+		Kakao.Share
+				.createDefaultButton({
+					container : '#kakaotalk-sharing-btn',
+					objectType : 'feed',
+					content : {
+						title : '구도락',
+						description : '#맞벌이부모 #자녀 #도시락 #구독 #가족 #건강',
+						imageUrl : 'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+						link : {
+						// [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+						mobileWebUrl: 'https://developers.kakao.com',
+						webUrl: 'https://developers.kakao.com',
+						},
+					},
+					social : {
+						likeCount : 286,
+						commentCount : 45,
+						sharedCount : 845,
+					},
+					buttons : [ {
+						title : '웹으로 보기',
+						link : {
+						mobileWebUrl: 'https://developers.kakao.com',
+						webUrl: 'https://developers.kakao.com',
+						},
+					}, {
+						title : '앱으로 보기',
+						link : {
+						mobileWebUrl: 'https://developers.kakao.com',
+						webUrl: 'https://developers.kakao.com',
+						},
+					}, ],
+				});
+	</script>
 </body>
 </html>
