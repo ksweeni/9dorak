@@ -53,6 +53,8 @@ public class WalletController {
 	
 	
 	
+	// 지인 검색
+	
 	
 	
 	

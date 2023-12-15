@@ -1,11 +1,14 @@
 package com.shinhan.model;
 
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.shinhan.dto.BasketVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.PayVO;
+import com.shinhan.dto.PeopleVO;
 
 @Service
 public class WalletService {
@@ -44,10 +47,28 @@ public class WalletService {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	public PeopleVO peopleCheck(String mem_id) {
+    	return dao.peopleCheck(mem_id);
+    }
+    
+    public List<Map<String, Object>> peopleBasket(String mem_id) {
+    	return dao.peopleBasket(mem_id);
+    }
+    
+    public List<Map<String, Object>> noPeopleBasket(String mem_id) {
+    	return dao.noPeopleBasket(mem_id);
+    }
+	
 	public String getProImage(int pro_no) {
 		return dao.getProImage(pro_no);
 	}
-	
 	
 	public MemVO checkMember(String mem_id) {
 		return dao.checkMember(mem_id);

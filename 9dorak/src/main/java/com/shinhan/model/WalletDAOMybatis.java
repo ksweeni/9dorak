@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.shinhan.dto.BasketVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.PayVO;
+import com.shinhan.dto.PeopleVO;
 
 @Repository
 public class WalletDAOMybatis {
@@ -37,15 +38,6 @@ public class WalletDAOMybatis {
 		return plist;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-    
-
     // 장바구니 삭제
     public int deleteBasket(String mem_id, int pro_no) {
         int result = sqlSession.delete(NAMESPACE + "deleteBasket", Map.of("mem_id", mem_id, "pro_no", pro_no));
@@ -70,15 +62,36 @@ public class WalletDAOMybatis {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    // 지인 존재 여부 검색
+    public PeopleVO peopleCheck(String mem_id) {
+    	PeopleVO people = sqlSession.selectOne(NAMESPACE + "peopleCheck", mem_id);
+    	return people;
+    }
+    
+    // 지인이 있을 때 장바구니 검색
+    public List<Map<String, Object>> peopleBasket(String mem_id) {
+    	List<Map<String, Object>> blist = sqlSession.selectList(NAMESPACE + "peopleBasket", mem_id);
+    	return blist;
+    }
+    
+    // 지인이 없을 때 장바구니 검색
+    public List<Map<String, Object>> noPeopleBasket(String mem_id) {
+    	List<Map<String, Object>> blist = sqlSession.selectList(NAMESPACE + "noPeopleBasket", mem_id);
+    	return blist;
+    }
+    
     // 상품 이미지 1개만 가져오기
     public String getProImage(int pro_no) {
     	String image = sqlSession.selectOne(NAMESPACE + "getProImage", pro_no);
     	return image;
     }
-    
-    
-    
-    
     
     // 회원 아이디 정보
     public MemVO checkMember(String mem_id) {
