@@ -20,6 +20,7 @@
 		<div class="overlap-group">
 			<div class="frame-2"></div>
 			<div class="primary-button">
+			<button class="cancel" data-order="${payment.ORDER_NO}">결제상세</button>
 			</div>
 			<div class="cancel-wrapper">
 			</div>

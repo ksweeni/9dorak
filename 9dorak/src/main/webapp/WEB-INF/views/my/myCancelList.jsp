@@ -30,7 +30,7 @@
 					<div class="text-wrapper-2">${cancel.PRO_NAME }</div>
 					<div class="text-wrapper-3">${cancel.ORDERDETAIL_PRICE}</div>
 					<%-- <div class="text-wrapper-4">${payment.PAY_DATE }</div> --%>
-					<img class="rectangle" src="${cpath}/${payment.PROIMAGE_IMAGE}" />
+					<img class="rectangle" src="${cpath}/${cancel.PROIMAGE_IMAGE}" />
 				</div>
 			</c:forEach>
 		</c:when>
