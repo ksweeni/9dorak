@@ -30,6 +30,7 @@
 		<typeAlias type="com.shinhan.dto.OrderVO" alias="ordervo" />
 		<typeAlias type="com.shinhan.dto.ProimageVO" alias="proimagevo" />
 		<typeAlias type="com.shinhan.dto.DeliveryVO" alias="deliveryvo" />
+		<typeAlias type="com.shinhan.dto.PeopleVO" alias="peoplevo" />
 
 	</typeAliases>
 </configuration>

@@ -94,17 +94,20 @@ String contextPath = request.getContextPath();
 				<c:if test="${empty blist}">
 					<h1>장바구니가 텅 비었어요! 상품을 담아주세요!!</h1>
 				</c:if>
+				<!-- 
+				<c:if test="${}">
+				
+				</c:if>
+				 -->
 
 				<br>
 				<span style="font-weight: bold">
-					<c:out value="${sessionScope.loginmem.mem_id}" /> 님의 도시락
+					<c:out value="${sessionScope.loginmem.mem_name}" /> 님의 도시락
 				</span>
-				
-				
 
 				<c:forEach var="items" items="${formattedDates}">
 					<div class="member">
-						<span class="e126_324">주문 날짜 형식</span>
+						<span class="e126_324">주문 날짜</span>
 						<span class="e126_325">${items.formattedDate}</span>
 					</div>
 				</c:forEach>
@@ -116,6 +119,7 @@ String contextPath = request.getContextPath();
 						 -->
 						<span class="e126_324">주문한 상품 번호</span> <span class="e126_325">${items.pro_no}</span>
 						<span class="e126_324">주문한 수량</span> <span class="e126_325">${items.basket_pro_count}</span>
+						<span class="e126_324">주문한 날짜</span> <span class="e126_325">${items.basket_date}</span>
 					</div>
 				</c:forEach>
 			</div>
