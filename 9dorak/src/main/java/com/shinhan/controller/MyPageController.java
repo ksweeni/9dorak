@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.shinhan.dto.CouponVO;
+import com.shinhan.dto.DeliveryHistoryVO;
 import com.shinhan.dto.DeliveryVO;
 import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemDeliveryVO;
@@ -66,7 +67,7 @@ public class MyPageController {
 			return "login/login";
 		}
 		String memId = loginmem.getMem_id();
-		List<DeliveryVO> dlist = mService.AllDeliveryHistory(memId);
+		List<DeliveryHistoryVO> dlist = mService.AllDeliveryHistory(memId);
 		model.addAttribute("dlist", dlist);
 		return "my/myDeliveryList";
 	}

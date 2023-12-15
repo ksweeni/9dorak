@@ -31,6 +31,7 @@
 		<typeAlias type="com.shinhan.dto.ProimageVO" alias="proimagevo" />
 		<typeAlias type="com.shinhan.dto.DeliveryVO" alias="deliveryvo" />
 		<typeAlias type="com.shinhan.dto.EarnpointVO" alias="earnpointvo" />
+		<typeAlias type="com.shinhan.dto.DeliveryHistoryVO" alias="deliveryhistoryvo" />
 
 	</typeAliases>
 </configuration>
