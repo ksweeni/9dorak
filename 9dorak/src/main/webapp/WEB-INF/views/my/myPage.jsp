@@ -150,13 +150,15 @@ String contextPath = request.getContextPath();
 				</div>
 				<div class="e72_332"></div>
 			</a>
-			<div class=e69_195>
+			
+			<a class=e69_195 href="${cpath }/my/orderDetails.do">
 				<div class=e69_196>
 					<span class="e69_176">주문/결제 내역</span><span class="e69_198">Manage
 						taxpayer information and tax documents</span>
 				</div>
 				<div class="e72_330"></div>
-			</div>
+			</a>
+			
 			<div class=e69_201>
 				<div class=e69_202>
 					<span class="e69_176">배송 내역/조회</span><span class="e69_204">Check

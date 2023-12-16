@@ -139,16 +139,19 @@
 		and
 		rownum=1)
 		proimage_image
-		FROM orders o , orderdetail od , pro p ,pay py
+		FROM
+		orders o , orderdetail od , pro p ,pay py
 		WHERE o.mem_id
 		= #{mem_id}
 		and(o.order_no = od.order_no )
 		and (od.pro_no
 		= p.pro_no )
-		and (p.pro_no = py.order_no )
+		and (p.pro_no
+		= py.order_no )
 		and py.pay_status in ('결제
 		대기','결제 완료')
-		ORDER BY py.pay_date DESC
+		ORDER BY
+		py.pay_date DESC
 	</select>
 
 	<!-- 결제취소내역보기 -->
@@ -185,6 +188,19 @@
 
 	</select>
 
+	<!-- 가족등록 -->
+    <insert id="insertPeople" parameterType="peoplevo">
+        INSERT INTO PEOPLE (MEM_ID, MEM_ID2, PEOPLE_CATEGORY, PEOPLE_DATE)
+        SELECT
+            M2.MEM_ID AS MEM_ID,
+            M1.MEM_ID AS MEM_ID2,
+            #{categoryValue} AS PEOPLE_CATEGORY,
+            SYSTIMESTAMP AS PEOPLE_DATE
+        FROM
+            MEM M1
+        JOIN
+            MEM M2 ON M1.MEM_CODE = #{yourInputMEMCode} AND M2.MEM_ID = #{yourInputMEMId}
+    </insert>
 
 
 

@@ -120,7 +120,6 @@ request.setCharacterEncoding("UTF-8");
 	<a href="${pageContext.request.contextPath}/wallet/pay.do">결제</a>
 	<a href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
 	<a href="${pageContext.request.contextPath}/my/myDeliveryList.do">마이페이지-배송조회</a>
-	<a href="${pageContext.request.contextPath}/my/orderDetails.do">마이페이지-주문/결제내역</a>
 	<a href="${pageContext.request.contextPath}/my/myLevel.do">마이페이지-회원등급</a>
 
 
