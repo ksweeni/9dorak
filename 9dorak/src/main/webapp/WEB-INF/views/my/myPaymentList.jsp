@@ -3,8 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 <style>
@@ -15,33 +13,40 @@
 	text-align: center;
 }
 
-.btn-primary {
-	border: none;
-	cursor: pointer;
-	background-color: #feae64;
-	border-radius: 16px;
-	width: 150px;
-	height: 40px;
-	font-size: 15px;
-	margin-left: 250px;
-	text-shadow: 0px 4px 4px #00000040;
-	font-family: "Inter-Bold", Helvetica;
-	font-weight: 700;
-	color: #ffffff;
-}
-
-.btn-danger {
-	border: none;
-	cursor: pointer;
-	border-radius: 16px;
-	width: 150px;
-	height: 40px;
-	font-size: 16px;
+.modal {
+	display: none; 
+	position: fixed; 
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 10;
 }
 
 .modal-content {
-	margin-left: 255px;
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 30%;
 }
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
 </style>
 
 
@@ -51,9 +56,9 @@
 			<c:forEach items="${paymentList}" var="payment">
 				<div class="overlap-group">
 					<div class="frame-2"></div>
-					<div class="primary-button"></div>
+					<button class="primary-button" id="myBtn-${payment.ORDER_NO}">결제상세</button>
 					<div class="cancel-wrapper"></div>
-					<div class="text-wrapper-4">${payment.ORDERDETAIL_PRICE}</div>
+					<div class="text-wrapper-4">${payment.PAY_DEPOPRICE }</div>
 					<div class="text-wrapper-5">${payment.PRO_NAME }</div>
 					<div class="text-wrapper-6">${payment.PAY_DATE }</div>
 					<img class="rectangle" src="${cpath}/${payment.PROIMAGE_IMAGE}" />
@@ -66,34 +71,38 @@
 						</div>
 					</div>
 				</div>
-				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-					data-bs-target="#myModal-${payment.ORDERDETAIL_NO}">결제상세</button>
-				<!-- The Modal -->
-				<div class="modal" id="myModal-${payment.ORDERDETAIL_NO}">
-					<div class="modal-dialog">
-						<div class="modal-content">
-
-							<!-- Modal Header -->
-							<div class="modal-header">
-								<h4 class="modal-title">결제 내역 상세 정보</h4>
-							</div>
-
-							<!-- Modal body -->
-							<div class="modal-body">
-								<p>결제일: ${payment.PAY_DATE}</p>
-								<p>입금자명: ${payment.PAY_DEPO }</p>
-								<p>결제금액: ${payment.PAY_DEPOPRICE }</p>
-								<P>결제방법: ${payment.PAY_METHOD }
-							</div>
-
-							<!-- Modal footer -->
-							<div class="modal-footer">
-								<button type="button" class="btn btn-danger"
-									data-bs-dismiss="modal">Close</button>
-							</div>
-						</div>
+				<div id="myModal-${payment.ORDER_NO}" class="modal">
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<h4>결제 상세 정보</h4>
+						<p>결제일: ${payment.PAY_DATE}</p>
+						<p>입금자명: ${payment.PAY_DEFO}</p>
+						<p>결제금액: ${payment.PAY_DEPOPRICE}</p>
+						<P>결제방법: ${payment.PAY_METHOD}</P>
 					</div>
 				</div>
+
+				<script>
+					var modal = document
+							.getElementById("myModal-${payment.ORDER_NO}");
+					var btn = document
+							.getElementById("myBtn-${payment.ORDER_NO}");
+					var span = modal.getElementsByClassName("close")[0];
+
+					btn.onclick = function() {
+						modal.style.display = "block";
+					}
+
+					span.onclick = function() {
+						modal.style.display = "none";
+					}
+
+					window.onclick = function(event) {
+						if (event.target == modal) {
+							modal.style.display = "none";
+						}
+					}
+				</script>
 			</c:forEach>
 		</c:when>
 		<c:otherwise>
@@ -101,3 +110,4 @@
 		</c:otherwise>
 	</c:choose>
 </div>
+

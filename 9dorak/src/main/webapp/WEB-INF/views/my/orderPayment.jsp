@@ -125,8 +125,8 @@
 					</button>
 				</div> -->
 			</div>
-			<div class="menu-wrapper">
-				<div class="menu">
+			<div class="menu-wrapperr">
+				<div class="menuu">
 					<div class="username">
 						<div class="medium"></div>
 						<div class="text-wrapper-16">${loginmem.mem_id }</div>

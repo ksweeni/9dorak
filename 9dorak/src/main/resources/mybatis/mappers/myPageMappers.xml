@@ -131,7 +131,7 @@
 	<select id="paymentList" parameterType="string" resultType="map">
 		SELECT od.pro_no, p.pro_name, od.orderdetail_price,
 		od.orderdetail_count,
-		py.pay_status, py.pay_date, od.orderdetail_no ,
+		py.pay_status, py.pay_date, od.orderdetail_no,
 		py.pay_depo, py.pay_depoprice, py.pay_method,
 		(select proimage_image
 		from proimage
@@ -148,6 +148,7 @@
 		and (p.pro_no = py.order_no )
 		and py.pay_status in ('결제
 		대기','결제 완료')
+		ORDER BY py.pay_date DESC
 	</select>
 
 	<!-- 결제취소내역보기 -->
@@ -169,6 +170,7 @@
 		= p.pro_no )
 		and (p.pro_no = py.order_no )
 		and py.pay_status = '결제 취소'
+		ORDER BY py.pay_date DESC
 	</select>
 
 	<!-- 배송 조회 내역 -->

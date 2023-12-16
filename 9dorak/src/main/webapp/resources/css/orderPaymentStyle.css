@@ -127,18 +127,17 @@
 }
 
 .div-wrapper .primary-button {
-	display: flex;
-	width: 67px;
+	width: 97px;
 	height: 32px;
-	align-items: center;
-	justify-content: center;
-	gap: 6px;
-	padding: 13px 16px;
+	padding: 1px 1px;
 	position: absolute;
 	top: 184px;
 	left: 279px;
-	background-color: var(- -tangerine);
+	background-color: #feae64;
 	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+	z-index: 9;
 }
 
 .div-wrapper .cancel {
@@ -225,7 +224,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 700px;
-	height: 263px;
+	height: 250px;
 	align-items: flex-start;
 	gap: 24px;
 	position: absolute;
@@ -349,7 +348,7 @@
 	white-space: nowrap;
 }
 
-.div-wrapper .menu-wrapper {
+.div-wrapper .menu-wrapperr {
 	position: absolute;
 	width: 250px;
 	height: 300px;
@@ -357,7 +356,7 @@
 	left: 70px;
 }
 
-.div-wrapper .menu {
+.div-wrapper .menuu {
 	display: flex;
 	flex-direction: column;
 	width: 200px;
