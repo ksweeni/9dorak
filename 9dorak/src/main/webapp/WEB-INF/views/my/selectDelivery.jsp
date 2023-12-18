@@ -18,6 +18,19 @@ String contextPath = request.getContextPath();
 input {
 	width: 300px;
 }
+
+.modal_close_btn {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.modal_close_btn:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -146,7 +159,7 @@ input {
 					url : "${cpath}/my/insertDelivery.do",
 					data : param,
 					success : function(res) {
-						alert(res);
+						alert("배송지 등록완료 x눌러 나가주세요");
 						if (res == "false") {
 							alert("이미 등록된 배송지명입니다.")
 							return;
@@ -159,8 +172,30 @@ input {
 				})// ajx 
 
 			}) //// 배송지 입력
-
 </script>
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+
+
+<script type="text/javascript">
+	
+
+	// 모달을 닫는 함수를 추가합니다
+	$(".modal_close_btn").on("click", function() {
+		var modal = $("#my_modal");
+		modal.style.display = 'none';
+		$.ajax({
+
+			url : "${cpath}/my/myDelivery.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+
+		})
+	})
+
+
+</script>
 </html>

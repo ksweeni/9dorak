@@ -13,6 +13,9 @@ String contextPath = request.getContextPath();
 <title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -909,6 +912,44 @@ String contextPath = request.getContextPath();
 	letter-spacing: 0;
 	line-height: px;
 }
+
+#my_modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1300px;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 10;
+}
+
+#modal_content {
+	background-color: #fefefe;
+	margin: 20% 20%;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%;
+	height: 15%;
+}
+
+.modal_close_btn {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	position: relative;
+	top:300px;
+	left: -470px;
+}
+
+.modal_close_btn:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -935,9 +976,7 @@ String contextPath = request.getContextPath();
 						<div class="e126_327">
 							<div class="e126_320">
 								<span class="e126_321">배송지</span> <span class="e126_322">${item.mem_delname}</span>
-								<span
-									class="e126_324">주소	</span>
-								<span class="e126_325">${item.mem_addr}</span> 
+								<span class="e126_324">주소 </span> <span class="e126_325">${item.mem_addr}</span>
 							</div>
 							<div class="e128_274"
 								onclick="deleteItem('${item.mem_delname}');">
@@ -952,8 +991,11 @@ String contextPath = request.getContextPath();
 						<a class="e128_279" id="fulldlist">배송지 추가</a>
 					</c:if>
 					<c:if test="${dlist.size() != 3}">
-						<a class="e128_279" href="#none"
-							onclick="window.open('${cpath}/my/selectDelivery.do','new','scrollbars=yes,resizable=no width=700 height=200, left=0,top=0');return false">배송지추가</a>
+						<%-- 						<a class="e128_279" href="#none"
+							onclick="window.open('${cpath}/my/selectDelivery.do','new','scrollbars=yes,resizable=no width=700 height=200, left=0,top=0');return false">배송지추가</a> --%>
+						<a href="#"
+							onclick="openModal('my_modal', '${cpath}/my/selectDelivery.do')"
+							class="e128_279" style="position: relative;">배송지추가</a>
 					</c:if>
 
 				</div>
@@ -1025,6 +1067,16 @@ String contextPath = request.getContextPath();
 			<span class="e125_208">내 정보</span>
 		</div>
 	</div>
+
+
+
+
+	<div id="my_modal" class="modal"
+		style="position: relative; display: none">
+		<!-- 모달 내용 -->
+		<span class="modal_close_btn">×</span>
+		<iframe id="modal_content" frameborder="0" width="100%" height="200px"></iframe>
+	</div>
 </body>
 <script>
 	$(".e125_219").on("click", function() {
@@ -1062,5 +1114,39 @@ String contextPath = request.getContextPath();
 
 	})
 </script>
+
+
+<script type="text/javascript">
+	var modal = document.getElementById("my_modal");
+	function openModal(modalId, pageUrl) {
+		modal = document.getElementById(modalId);
+
+		// 모달 열기
+		modal.style.display = 'block';
+
+		// 모달 내용 로드 (AJAX 또는 iframe을 사용할 수 있습니다)
+		// iframe을 사용하는 예시:
+		var iframe = modal.querySelector('iframe');
+		iframe.src = pageUrl;
+	}
+
+	$(".modal_close_btn").on("click", function() {
+		var modal = $("#my_modal");
+		modal.hide();
+		
+		$.ajax({
+
+			url : "${cpath}/my/myDelivery.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+
+		})
+	
+	})
+</script>
+
+
 
 </html>

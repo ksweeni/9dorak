@@ -16,4 +16,6 @@ public class CouponVO {
 	private String mem_id ;  // 회원 아이디
 	
 	
+	
+	
 }

@@ -81,10 +81,27 @@
 			<div class="overlap-3">
 				<div class="group-6">
 					<div class="group-wrapper">
-						<div class="doran-upload-profilPhoto">
-							<img class="doran-upload-profilPhotoImg"
-								src="${cpath}/resources/images/main/sandwich_lunchbox01.png" />
-						</div>
+						<c:choose>
+							<c:when
+								test="${loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+								<div class="doran-upload-profilPhoto">
+									<img class="doran-upload-profilPhotoImg"
+										src="${cpath}/resources/images/my/baseProfile.png" />
+								</div>>
+							</c:when>
+							<c:when test="${empty loginmem }">
+								<div class="doran-upload-profilPhoto">
+									<img class="doran-upload-profilPhotoImg"
+										src="${cpath}/resources/images/my/baseProfile.png" />
+								</div>>
+							</c:when>
+							<c:otherwise>
+								<div class="doran-upload-profilPhoto">
+									<img class="doran-upload-profilPhotoImg"
+										src="${cpath}/resources/upload/${loginmem.mem_image}" />
+								</div>
+							</c:otherwise>
+						</c:choose>
 						<div class="doran-upload-contents">
 							<div class="doran-context">
 								<input class="doran-context-title" id="doran-quick-title"
@@ -171,10 +188,27 @@
 
 							<!-- 로그인 안되어 있으면 프로필 설정 안보이게 하기  -->
 							<div class="doran-profile">
-								<div class="doran-profile-photo">
-									<img class="doran-profile-photoImg"
-										src="${cpath }/resources/images/doran/test.png" />
-								</div>
+								<c:choose>
+									<c:when
+										test="${loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+										<div class="doran-profile-photo">
+											<img class="doran-profile-photoImg"
+												src="${cpath }/resources/images/my/baseProfile.png" />
+										</div>
+									</c:when>
+									<c:when test="${empty loginmem }">
+										<div class="doran-profile-photo">
+											<img class="doran-profile-photoImg"
+												src="${cpath }/resources/images/my/baseProfile.png" />
+										</div>
+									</c:when>
+									<c:otherwise>
+										<div class="doran-upload-profilPhoto">
+											<img class="doran-upload-profilPhotoImg"
+												src="${cpath}/resources/upload/${loginmem.mem_image}" />
+										</div>
+									</c:otherwise>
+								</c:choose>
 								<div class="doran-profile-info">
 									<div class="doran-profile-info-memname">${sessionScope.loginmem.mem_id}</div>
 									<div class="doran-profile-info-grade">
