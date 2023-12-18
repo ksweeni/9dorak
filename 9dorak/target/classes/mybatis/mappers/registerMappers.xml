@@ -18,6 +18,9 @@
 		SELECT
 		COUNT(*) FROM mem WHERE mem_code = #{mem_code}
 	</select>
+
+
+
 	<insert id="insertMember" parameterType="memvo">
 		<selectKey keyProperty="mem_code" resultType="String"
 			order="BEFORE">
@@ -25,12 +28,40 @@
 		</selectKey>
 		INSERT INTO mem (
 		mem_id, mem_name, mem_bd, mem_email,
-		mem_phone, mem_pw, mem_code, mem_addr, mem_image
+		mem_phone,
+		mem_pw, mem_code, mem_addr, mem_image
 		) VALUES (
-		#{mem_id}, #{mem_name} , #{mem_bd}, #{mem_email},
+		#{mem_id}, #{mem_name}
+		, #{mem_bd}, #{mem_email},
 		#{mem_phone}, #{mem_pw}, #{mem_code},
-		#{mem_addr},  'resources/images/my/baseProfile.png'
+		#{mem_addr}, 'resources/images/my/baseProfile.png'
 		)
 	</insert>
 
+
+	<insert id="PointinsertMember" parameterType="memvo">
+		<selectKey keyProperty="mem_code" resultType="String"
+			order="BEFORE">
+			SELECT 'ABISE' || code_seq.nextval AS mem_code FROM dual
+		</selectKey>
+		INSERT INTO mem (
+		mem_id, mem_name, mem_bd, mem_email,
+		mem_phone,
+		mem_pw, mem_code, mem_addr,mem_point, mem_image
+		) VALUES (
+		#{mem_id},
+		#{mem_name}
+		, #{mem_bd}, #{mem_email},
+		#{mem_phone}, #{mem_pw},
+		#{mem_code},
+		#{mem_addr},
+		#{mem_point},'resources/images/my/baseProfile.png'
+		)
+	</insert>
+
+	<update id="pointUpdate" parameterType="String">
+		UPDATE mem
+		SET mem_point = mem_point+900
+		WHERE mem_code = #{mem_code}
+	</update>
 </mapper>

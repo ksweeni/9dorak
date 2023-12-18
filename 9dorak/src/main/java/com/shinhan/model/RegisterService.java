@@ -34,6 +34,16 @@ public class RegisterService {
 		
 	}
 
+	public int PointinsertMember(MemVO mem) {
+		// TODO Auto-generated method stub
+		return dao.PointinsertMember(mem);
+	}
+
+	public int pointUpdate(String mem_code) {
+		// TODO Auto-generated method stub
+		return dao.pointUpdate(mem_code);
+	}
+
 	
 //
 //	@Transactional // ��� �����ϰų� ��� �����ϰų�
