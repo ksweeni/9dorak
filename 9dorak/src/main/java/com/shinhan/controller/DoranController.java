@@ -46,23 +46,25 @@ public class DoranController {
 	public String doran(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model,
 			HttpSession session) {
 		List<DoranVO> dlist;
-		System.out.println(orderBy);
+//		System.out.println(orderBy);
 		dlist = dService.selectAll();
 		model.addAttribute("dlist", dlist);
 
 		MemVO memId = (MemVO) session.getAttribute("loginmem");
 
 		if (memId == null) {
-			System.out.println("아이디가 없습니다");
+//			System.out.println("아이디가 없습니다");
 			model.addAttribute("memPoint", "로그인하고 포인트를 얻으세요");
 		} else {
-			System.out.println(memId);
+//			System.out.println(memId);
 		}
+//		System.out.println(memId);
+		model.addAttribute("loginmem", memId);
 		return "doran/doran";
 	}
 
 	@GetMapping("/doranFilter.do")
-	public String doran2(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model) {
+	public String doran2(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model,HttpSession session) {
 		List<DoranVO> dlist;
 		if ("views".equals(orderBy)) {
 			dlist = dService.selectAllByView();
@@ -72,6 +74,8 @@ public class DoranController {
 			dlist = dService.selectAllByDlike();
 		}
 		model.addAttribute("dlist", dlist);
+		MemVO memId = (MemVO) session.getAttribute("loginmem");
+		model.addAttribute("loginmem", memId);
 		return "doran/doran_ajax";
 	}
 

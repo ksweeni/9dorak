@@ -9,10 +9,41 @@
 			onclick="toFeedDetail(${doran.doran_no})">
 
 			<div class="doran-topInfo">
+				<c:choose>
+					<c:when
+						test="${loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+
+						<div>
+							<img class="doran-uploadInfo-profile"
+								src="${cpath }/resources/images/my/baseProfile.png" />
+						</div>
+					</c:when>
+					<c:when test="${empty loginmem }">
+
+
+						<div>
+							<img class="doran-uploadInfo-profile"
+								src="${cpath }/resources/images/my/baseProfile.png" />
+						</div>
+					</c:when>
+					<c:otherwise>
+
+						<div>
+							<img class="doran-uploadInfo-profile"
+								src="${cpath}/resources/upload/${loginmem.mem_image}" />
+						</div>
+					</c:otherwise>
+				</c:choose>
+<%-- 
+
+
 				<div>
 					<img class="doran-uploadInfo-profile"
 						src="${cpath }/resources/images/doran/test.png" />
 				</div>
+ --%>
+
+
 				<div class="doran-uploadInfo">
 					<div class="doran-uploadInfo-memid">${doran.mem_id }</div>
 					<div class="doran-uploadInfo-title">${doran.doran_title }</div>

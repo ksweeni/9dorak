@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemVO;
 
 @Repository 
@@ -52,6 +53,18 @@ public class RegisterDAOMybatis {
 		// TODO Auto-generated method stub
 		return sqlSession.update(NAMESPACE + "pointUpdate", mem_code);
 	}
+
+	public int insertEarn(EarnpointVO earn) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert(NAMESPACE + "insertEarn", earn);
+	}
+
+	public MemVO getCodeMem(String mem_code) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(NAMESPACE + "getCodeMem", mem_code);
+	}
+
+
 
 
 

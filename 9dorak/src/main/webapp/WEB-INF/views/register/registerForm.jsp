@@ -1206,22 +1206,8 @@ a {
 	}); // idcheck
 
 	$("#register").on("click",function(e) {
-						// e.preventDefault(); 
-						
-	
-
-	if ($('#mail-Check-Btn').prop('disabled')) {
-							// disabled 가 true 일 때의 처리
-							console.log('인증완료');
-							return ;
-						} else {
-							// disabled 가 false 일 때의 처리
-							alert("이메일 또는 인증번호를 확인하세요");
-							e.preventDefault();
-							return ;
-						}
-
-	
+		
+						e.preventDefault();
 
 						if ($("#idCheckValue").val() == "idUncheck") {
 							alert("아이디 중복 체크하세요 ");
@@ -1229,7 +1215,17 @@ a {
 							return;
 						}
 
-						e.preventDefault();
+						if ($('#mail-Check-Btn').prop('disabled')) {
+							// disabled 가 true 일 때의 처리
+							console.log('인증완료');
+						} else {
+							// disabled 가 false 일 때의 처리
+							alert("이메일 또는 인증번호를 확인하세요");
+							e.preventDefault();
+							return;
+						}
+
+						//e.preventDefault();
 
 						if ($("#mem_id").val().length == 0) {
 							alert("아이디를 입력해주세요");
@@ -1268,6 +1264,7 @@ a {
 										success : function(data) {
 											if (data === "false") {
 												alert("추천인 코드를 확인하세요");
+												e.preventDefault();
 											} else if (data == "true") {
 												$("form").submit();
 											}

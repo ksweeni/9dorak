@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.model.MailSendService;
 import com.shinhan.model.MyPageService;
@@ -79,7 +80,13 @@ public class RegisterController {
 		int result = rService.codeCheck(mem_code);
 		if (result == 1) {
 			int updateResult = rService.pointUpdate(mem_code);
-			System.out.println(updateResult);
+			MemVO codemem = rService.getCodeMem(mem_code);
+//			System.out.println(updateResult);
+			EarnpointVO earn  = new EarnpointVO();
+			earn.setMem_id(codemem.getMem_id());
+			earn.setPoint_name("회원가입 이벤트");
+			earn.setPoint(1000);
+			int EarnPoint = rService.insertEarn(earn);
 			return "true";
 		} else {
 			return "false";
@@ -90,11 +97,17 @@ public class RegisterController {
 	@PostMapping("register.do")
 	public String register(Model model, MemVO mem, HttpSession session) {
 		int result =0; 
+		EarnpointVO earn  = new EarnpointVO();
+		earn.setMem_id(mem.getMem_id());
+		earn.setPoint_name("회원가입 이벤트");
+		earn.setPoint(1000);
 		if( mem.getMem_code().equals("")) {
 			result = rService.insertMember(mem);	
 		} else {
-			mem.setMem_point(900);
+			mem.setMem_point(1000);
 			result = rService.PointinsertMember(mem);	
+			int EarnPoint = rService.insertEarn(earn);
+			
 		}
 //		int result = rService.insertMember(mem);
 		String login_id = mem.getMem_id();
