@@ -139,34 +139,38 @@ public class MenuController {
 //		return "menu/menu_ajax";
 //	}
 	
+	//리뷰페이지
     @GetMapping("menuSpecificReview.do")
     public String menuSpecificReview(Model model, ProVO pro, HttpSession session,@RequestParam(defaultValue = "0") int currentPage) {
         MemVO memVO = (MemVO) session.getAttribute("loginmem");
-        Map<String, Object> ReserveInputMap = new HashMap<String, Object>();
-        ReserveInputMap.put("pro_no", pro.getPro_no());
-        ReserveInputMap.put("currentPage", currentPage);
+        Map<String, Object> inputMap = new HashMap<String, Object>();
+        inputMap.put("pro_no", pro.getPro_no());
+        inputMap.put("currentPage", currentPage);
         if(memVO != null) {
             
             String memId = memVO.getMem_id();
-            ReserveInputMap.put("mem_id", memId);
+            inputMap.put("mem_id", memId);
             
-            model.addAttribute("reserveCnt", mService.selectReserveYn(ReserveInputMap));
+            model.addAttribute("reserveCnt", mService.selectReserveYn(inputMap));
         }
         
-        List<Map<String, Object>> rlist = mService.selectProReview(ReserveInputMap);
+        List<Map<String, Object>> txtrlist = mService.selectProReviewTxt(inputMap);
+        List<Map<String, Object>> phtrlist = mService.selectProReviewPth(inputMap);
+        
         Map<String, Object> revwCnt = mService.reviewCnt(pro.getPro_no());
-        PagingVO pagVO = new PagingVO((int)revwCnt.get("totCnt"),currentPage);
+        PagingVO pagVO = new PagingVO((int)revwCnt.get("txtCnt"),currentPage);
         
         ArrayList<Integer> pageList = new ArrayList<Integer>(); 
         
-        //System.out.println(pagVO.getTotalPage()); 
+        //System.out.println(pagVO.getTotalPage());
         for (int i= 0;i < pagVO.getTotalPage()+1;i++) {
             pageList.add(i, i+1);
         };
         
         model.addAttribute("pageList", pageList);
-            
-        model.addAttribute("rlist", rlist);
+             
+        model.addAttribute("txtrlist", txtrlist);
+        model.addAttribute("phtrlist", phtrlist);
         
         model.addAttribute("totCnt",revwCnt.get("totCnt"));
         model.addAttribute("phtCnt",revwCnt.get("phtCnt"));
@@ -175,6 +179,7 @@ public class MenuController {
                 
         return "menu/menuSpecificReview";
     }
+    
     @GetMapping("reviewPageBtnClick.do")
     public String reviewPageBtnClick(Model model, ProVO pro, HttpSession session,@RequestParam(defaultValue = "0") int currentPage) {
         MemVO memVO = (MemVO) session.getAttribute("loginmem");
@@ -189,15 +194,15 @@ public class MenuController {
             model.addAttribute("reserveCnt", mService.selectReserveYn(ReserveInputMap));
         }
         
-        List<Map<String, Object>> rlist = mService.selectProReview(ReserveInputMap);
+        List<Map<String, Object>> txtrlist = mService.selectProReviewTxt(ReserveInputMap);
         
-        
-        model.addAttribute("rlist", rlist);
+        model.addAttribute("txtrlist", txtrlist);
         model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
                 
         return "menu/review_ajax";
     }
 	
+    //찜목록
 	@GetMapping("reserve.do")
 	public String reserveCheck(Model model, ProVO pro, HttpSession session, @RequestParam Map<String, Object> map) {
 		MemVO memVO = (MemVO) session.getAttribute("loginmem");

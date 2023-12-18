@@ -78,39 +78,7 @@
 		</header>
 
 		<div class="div">
-			<!-- <div class="menu-and-pagenation">
-				<div class="pagination">
-					<div class="page">
-						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-							viewBox="0 0 30 30" fill="none">
-						<path
-								d="M18.95 9.2625L13.225 15L18.95 20.7375L17.1875 22.5L9.68745 15L17.1875 7.5L18.95 9.2625Z"
-								fill="#C4CDD5" />
-						</svg>
-					</div>
-
-					<div class="page-active-wrapper">
-						<div class="page-active">
-							<div class="num">1</div>
-						</div>
-					</div>
-					<div class="num-wrapper">
-						<div class="text-wrapper">2</div>
-					</div>
-					<div class="num-wrapper">
-						<div class="text-wrapper">3</div>
-					</div>
-					<div class="num-wrapper">
-						<div class="text-wrapper">4</div>
-					</div>
-					<div class="num-wrapper">
-						<div class="text-wrapper">5</div>
-					</div>
-					<div class="carat-wrapper">
-						<img class="carat" src="img/carat.svg" />
-					</div>
-				</div>
-			</div> -->
+			
 			<div class="menu-cards">
 				<div class="foods">
 					<c:forEach items="${mlist}" var="pro" varStatus="loop">
@@ -139,6 +107,7 @@
 				<!-- foods end -->
 			</div>
 			<!-- menu-cards -->
+			
 			<!-- allergy bar -->
 			<div class="menu-top-bar">
 				<div class="allergy-bar">
@@ -265,9 +234,8 @@
 							fill="#FFB673" />
 					</svg>
 				</div>
-			</div>
-
-		</div>
+			</div><!-- filter -->
+		</div><!-- div -->
 
 			<footer class="footer">
 				<div class="footer-company-loco">

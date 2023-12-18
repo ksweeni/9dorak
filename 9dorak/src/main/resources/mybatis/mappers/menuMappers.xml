@@ -95,20 +95,21 @@
     <!-- 상품리뷰 맵 -->
 	<resultMap type="HashMap" id="proreviewMap">
     	<id column="orderdetail_no" property="orderdetail_no"/>
-    	<id column="memreview_date" property="memreview_date"/>
+    	<id column="memreview_date" property="memreview_date" javaType="java.lang.String"/>
     	<id column="memreview_cont" property="memreview_cont"/>
     	<id column="memreview_starpoint" property="memreview_starpoint"/>
+    	<id column="memreview_image" property="memreview_imgage"/>
     	<id column="pro_no" property="pro_no"/>
     	<id column="mem_id" property="mem_id"/>
     </resultMap>
     
     <!-- 상품리뷰 -->
-    <select id="selectProReview" parameterType="HashMap" resultMap="proreviewMap">
+    <select id="selectProReviewTxt" parameterType="HashMap" resultMap="proreviewMap">
 		with base_t as
 	    (
 	    select 
 	           TA.orderdetail_no as orderdetail_no
-	         , TA.memreview_date as memreview_date
+	         , to_char(TA.memreview_date, 'yyyy"년 "mm"월 "dd"일"') memreview_date
 	         , TA.memreview_cont as memreview_cont
 	         , TA.memreview_starpoint as memreview_starpoint
 	         , TB.pro_no as pro_no
@@ -119,6 +120,7 @@
 	     where TB.pro_no = ${pro_no}
 	       and TB.orderdetail_no = TA.orderdetail_no
 	       and TB.order_no = TC.order_no
+	       and TA.memreview_image is null
 	     order by ta.memreview_date desc 
 	    )
 	    , one_page_t as
@@ -133,6 +135,21 @@
 	    from one_page_t
 	    where rnum > #{currentPage}
     </select> 
+    
+    <select id="selectProReviewPth" parameterType="HashMap" resultMap="proreviewMap">
+    	WITH RankedMemReviews AS (
+		    SELECT TA.*
+		    FROM memreview TA
+		    JOIN orderdetail TB ON TA.orderdetail_no = TB.orderdetail_no
+		    JOIN orders TC ON TB.order_no = TC.order_no
+		    WHERE TB.pro_no = #{pro_no}
+		        AND TA.memreview_image IS NOT NULL
+		    order by ta.memreview_date desc
+		)
+		SELECT *
+		FROM RankedMemReviews
+		<![CDATA[ WHERE ROWNUM <= 4 ]]>
+    </select>
 
 	<!-- 리뷰 토탈 카운트 -->
     <select id="proRevwTotCnt" parameterType="int" resultType="int">
@@ -188,29 +205,4 @@
 		where pro_no = #{pro_no}
     </update>
 
-	<!-- <insert id="insertDoran" parameterType="doranvo">
-		INSERT INTO DORAN (
-		doran_no,
-		doran_title, doran_cont, doran_date, doran_image, doran_view, mem_id
-		)
-		VALUES (
-		#{doranNo}, #{doranTitle}, #{doranCont}, #{doranDate},
-		#{doranImage}, #{doranView}, #{memId}
-		)
-	</insert> -->
-
-	<!-- <update id="empUpdate" parameterType="empvo"> update employees set 
-		first_name= #{first_name}, last_name=#{last_name}, email=#{email}, phone_number=#{phone_number}, 
-		hire_date=#{hire_date}, job_id=#{job_id}, salary=#{salary}, commission_pct=#{commission_pct}, 
-		manager_id=#{manager_id}, department_id=#{department_id} where employee_id=#{employee_id} 
-		</update> <delete id="empDelete" parameterType="int"> delete from employees 
-		where employee_id = #{employee_id} </delete> <insert id="empInsert" parameterType="empvo"> 
-		insert into employees (first_name, last_name, email, phone_number, hire_date, 
-		job_id, salary, commission_pct, pic, manager_id, department_id, employee_id) 
-		values (#{first_name}, #{last_name}, #{email}, #{phone_number}, #{hire_date}, 
-		#{job_id}, #{salary}, #{commission_pct},#{pic}, <if test="manager_id==0"> 
-		null, </if> <if test="manager_id!=0"> #{manager_id}, </if> <if test="department_id==0"> 
-		null, </if> <if test="department_id!=0"> #{department_id}, </if> #{employee_id}) 
-		</insert> -->
-		
 </mapper>

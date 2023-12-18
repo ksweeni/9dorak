@@ -77,7 +77,7 @@
 						onclick="changeBackground(this, '${cpath}/resources/images/menu/${menudetail.pro_no }-1.jpg')">
 						<div class="overlap-group">
 							<img class="vector"
-								src="${cpath}/resources/images/menu/${menudetail.pro_no }-1.png" />
+								src="${cpath}/resources/images/menu/${menudetail.pro_no }-1.jpg" />
 						</div>
 					</div>
 					<div class="overlap-group-wrapper"
@@ -176,7 +176,7 @@
 										max="${menudetail.pro_weight }"></progress>
 
 								</div>
-								<div class="text-wrapper-4">75%</div>
+								<div class="text-wrapper-4">${menudetail.pro_prot }%</div>
 							</div>
 							<div class="frame-6">
 								<div class="text-wrapper-5">단백질</div>
@@ -190,7 +190,7 @@
 										value="${menudetail.pro_prov }" min="0"
 										max="${menudetail.pro_weight }"></progress>
 								</div>
-								<div class="text-wrapper-4">75%</div>
+								<div class="text-wrapper-4">${menudetail.pro_prov }%</div>
 							</div>
 							<div class="frame-7">
 								<div class="text-wrapper-5">지방</div>
@@ -204,7 +204,7 @@
 										value="${menudetail.pro_nat }" min="0"
 										max="${menudetail.pro_weight }"></progress>
 								</div>
-								<div class="text-wrapper-4">75%</div>
+								<div class="text-wrapper-4">${menudetail.pro_nat }%</div>
 							</div>
 							<div class="frame-6">
 								<div class="text-wrapper-5">나트륨</div>
@@ -218,7 +218,7 @@
 										value="${menudetail.pro_sugar }" min="0"
 										max="${menudetail.pro_weight }"></progress>
 								</div>
-								<div class="text-wrapper-4">75%</div>
+								<div class="text-wrapper-4">${menudetail.pro_sugar }%</div>
 							</div>
 							<div class="frame-7">
 								<div class="text-wrapper-5">당류</div>
@@ -273,35 +273,18 @@
 				</div>
 			</div>
 			<div class="picture-reviews">
-				<div class="group-5">
-					<div class="group-7">
-						<div class="overlap-6">
-							<img class="rectangle-5"
-								src="${cpath}/resources/images/menu/cake.png" />
-							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
+				<div class="pic4review">
+					<c:forEach items="${phtrlist }" var="phtrlist" varStatus="loop">
+						<div class="group-5">
+							<div class="group-7">
+								<div class="overlap-6">
+									<img class="rectangle-5"
+										src="${cpath}/resources/images/menu/cake.png" />
+									<p class="p">${phtrlist.memreview_cont }</p>
+								</div>
+							</div>
 						</div>
-					</div>
-					<%-- <div class="group-7">
-						<div class="overlap-6">
-							<img class="rectangle-5"
-								src="${cpath}/resources/images/menu/cake.png" />
-							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
-						</div>
-					</div>
-					<div class="group-7">
-						<div class="overlap-6">
-							<img class="rectangle-5"
-								src="${cpath}/resources/images/menu/cake.png" />
-							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
-						</div>
-					</div>
-					<div class="group-7">
-						<div class="overlap-6">
-							<img class="rectangle-5"
-								src="${cpath}/resources/images/menu/cake.png" />
-							<p class="p">진짜 너무너무 맛있어요 눈물이 나올 지경이에요 다음에도 또 먹고 싶어요 ㅜㅡㅠㅠㅠ</p>
-						</div>
-					</div> --%>
+					</c:forEach>
 				</div>
 				<!-- group-5 -->
 
@@ -321,7 +304,7 @@
 			<div class="text-reviews-and">
 				<div class="frame-review">
 					<div class="text-wrapper-13">텍스트 리뷰</div>
-					<%-- <div class="frame-10">
+					<div class="frame-10">
 						<div class="frame-11">
 							<div class="text-wrapper-13">최근등록순</div>
 							<img class="img-2"
@@ -332,18 +315,18 @@
 							<img class="img-2"
 								src="${cpath}/resources/images/menu/filter.svg" />
 						</div>
-					</div> --%>
+					</div>
 				</div>
 				<div class="reviews-texts">
 					<div class="review">
-						<c:forEach items="${rlist }" var="review" varStatus="loop">
+						<c:forEach items="${txtrlist }" var="txtrlist" varStatus="loop">
 							<div class="view-3">
 								<div class="frame-13">
 									<div class="rectangle-6"></div>
 									<div class="group-9">
 										<div class="frame-2">
-											<div class="text-wrapper-14">${review.mem_id }</div>
-											<div class="text-wrapper-15">${review.memreview_date }</div>
+											<div class="text-wrapper-14">${txtrlist.mem_id }</div>
+											<div class="text-wrapper-15">${txtrlist.memreview_date }</div>
 										</div>
 										<div class="frame-14">
 											<div class="text-wrapper-14">주문메뉴</div>
@@ -362,7 +345,7 @@
 											<div class="text-wrapper-16">최고에요</div>
 										</div>
 									</div>
-									<p class="text-wrapper-17">${review.memreview_cont }</p>
+									<p class="text-wrapper-17">${txtrlist.memreview_cont }</p>
 									<div class="frame-19">
 										<img class="happy"
 											src="${cpath}/resources/images/menu/happy-unfill.svg" />
@@ -375,154 +358,6 @@
 						</c:forEach>
 					</div>
 					<!-- review -->
-					<%-- <div class="review">
-						<div class="view-3">
-							<div class="frame-13">
-								<div class="rectangle-6"></div>
-								<div class="group-9">
-									<div class="frame-2">
-										<div class="text-wrapper-14">ksween</div>
-										<div class="text-wrapper-15">2023.11.21</div>
-									</div>
-									<div class="frame-14">
-										<div class="text-wrapper-14">주문메뉴</div>
-										<div class="text-wrapper-15">[배부르9] 한종범 불고기 도시락</div>
-									</div>
-								</div>
-							</div>
-							<div class="frame-15">
-								<div class="frame-16">
-									<div class="frame-17">
-										<div class="text-wrapper-14">맛</div>
-										<div class="text-wrapper-16">최고에요</div>
-									</div>
-									<div class="frame-18">
-										<div class="text-wrapper-14">만족도</div>
-										<div class="text-wrapper-16">최고에요</div>
-									</div>
-								</div>
-								<p class="text-wrapper-17">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !!
-									데브옵스가 끝나고 허겁지겁 먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
-								<div class="frame-19">
-									<img class="happy"
-										src="${cpath}/resources/images/menu/happy-fill.svg" />
-									<div class="text-wrapper-18">유용해요</div>
-									<div class="text-wrapper-18">5</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="review">
-						<div class="view-3">
-							<div class="frame-13">
-								<div class="rectangle-6"></div>
-								<div class="group-9">
-									<div class="frame-2">
-										<div class="text-wrapper-14">ksween</div>
-										<div class="text-wrapper-15">2023.11.21</div>
-									</div>
-									<div class="frame-14">
-										<div class="text-wrapper-14">주문메뉴</div>
-										<div class="text-wrapper-15">[배부르9] 한종범 불고기 도시락</div>
-									</div>
-								</div>
-							</div>
-							<div class="frame-15">
-								<div class="frame-16">
-									<div class="frame-17">
-										<div class="text-wrapper-14">맛</div>
-										<div class="text-wrapper-16">최고에요</div>
-									</div>
-									<div class="frame-18">
-										<div class="text-wrapper-14">만족도</div>
-										<div class="text-wrapper-16">최고에요</div>
-									</div>
-								</div>
-								<p class="text-wrapper-17">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !!
-									데브옵스가 끝나고 허겁지겁 먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
-								<div class="frame-19">
-									<img class="happy"
-										src="${cpath}/resources/images/menu/happy-unfill.svg" />
-									<div class="text-wrapper-18">유용해요</div>
-									<div class="text-wrapper-18">5</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="review">
-						<div class="view-3">
-							<div class="frame-13">
-								<div class="rectangle-6"></div>
-								<div class="group-9">
-									<div class="frame-2">
-										<div class="text-wrapper-14">ksween</div>
-										<div class="text-wrapper-15">2023.11.21</div>
-									</div>
-									<div class="frame-14">
-										<div class="text-wrapper-14">주문메뉴</div>
-										<div class="text-wrapper-15">[배부르9] 한종범 불고기 도시락</div>
-									</div>
-								</div>
-							</div>
-							<div class="frame-15">
-								<div class="frame-16">
-									<div class="frame-17">
-										<div class="text-wrapper-14">맛</div>
-										<div class="text-wrapper-16">최고에요</div>
-									</div>
-									<div class="frame-18">
-										<div class="text-wrapper-14">만족도</div>
-										<div class="text-wrapper-16">최고에요</div>
-									</div>
-								</div>
-								<p class="text-wrapper-17">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !!
-									데브옵스가 끝나고 허겁지겁 먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
-								<div class="frame-19">
-									<img class="happy"
-										src="${cpath}/resources/images/menu/happy-unfill.svg" />
-									<div class="text-wrapper-18">유용해요</div>
-									<div class="text-wrapper-18">5</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="review">
-						<div class="view-3">
-							<div class="frame-13">
-								<div class="rectangle-6"></div>
-								<div class="group-9">
-									<div class="frame-2">
-										<div class="text-wrapper-14">ksween</div>
-										<div class="text-wrapper-15">2023.11.21</div>
-									</div>
-									<div class="frame-14">
-										<div class="text-wrapper-14">주문메뉴</div>
-										<div class="text-wrapper-15">[배부르9] 한종범 불고기 도시락</div>
-									</div>
-								</div>
-							</div>
-							<div class="frame-15">
-								<div class="frame-16">
-									<div class="frame-17">
-										<div class="text-wrapper-14">맛</div>
-										<div class="text-wrapper-16">최고에요</div>
-									</div>
-									<div class="frame-18">
-										<div class="text-wrapper-14">만족도</div>
-										<div class="text-wrapper-16">최고에요</div>
-									</div>
-								</div>
-								<p class="text-wrapper-17">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !!
-									데브옵스가 끝나고 허겁지겁 먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 !</p>
-								<div class="frame-19">
-									<img class="happy"
-										src="${cpath}/resources/images/menu/happy-unfill.svg" />
-									<div class="text-wrapper-18">유용해요</div>
-									<div class="text-wrapper-18">5</div>
-								</div>
-							</div>
-						</div>
-					</div> --%>
 				</div>
 				<!-- reviews-texts -->
 
@@ -531,11 +366,10 @@
 					<div class="page" id="prevPage">
 						<svg class="carat" xmlns="http://www.w3.org/2000/svg" width="31"
 							height="30" viewBox="0 0 31 30" fill="none">
-<path
+							<path
 								d="M19.7576 9.2625L14.0326 15L19.7576 20.7375L17.9951 22.5L10.4951 15L17.9951 7.5L19.7576 9.2625Z"
 								fill="#C4CDD5" />
-</svg>
-
+							</svg>
 					</div>
 				
 					<c:forEach  items="${pageList}" var="items" varStatus="loop"> 
@@ -625,6 +459,7 @@
 			  
 		</div><!-- div -->
 	</div><!-- div-wrapper -->
+	
 	<script>
 	$(document).ready(function() {
 		var heartImage = document.getElementById('heart');
@@ -651,7 +486,7 @@
 
     // 제품 이미지
     var cpathValue = '${cpath}';
-    var imageUrl = cpathValue + '/resources/images/menu/subtest-1.png';
+    var imageUrl = cpathValue + '/resources/images/menu/${menudetail.pro_no}-1.jpg';
     var groupDiv = document.querySelector('.div-wrapper .group');
   
     groupDiv.style.backgroundImage = 'url(' + imageUrl + ')';
@@ -798,7 +633,7 @@
         });
     });
     
-/*     // 최신 등록순, 추천 순 클릭 시 변화
+     // 최신 등록순, 추천 순 클릭 시 변화
    document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.frame-11, .frame-12').forEach(function (option) {
         option.addEventListener('click', function () {
@@ -809,7 +644,7 @@
             this.classList.add('selected-option');
         });
     });
-}); */
+});
 
     // 아이디+상품이 장바구니에 이미 있는지 확인
     function checkBasket() {
@@ -960,7 +795,7 @@
 	    });
 	};
 
-
 </script>
+
 </body>
 </html>
