@@ -20,7 +20,7 @@
 		IMP.request_pay({
 			pg : "inicis",
 			pay_method : "card",
-			merchant_uid : "ORD20180131-0000025",
+			merchant_uid : "ORD20180131-0000030",
 			name : "구도락 결제 테스트",
 			amount : 100,
 			buyer_email : "gildong@gmail.com",
@@ -43,6 +43,7 @@
 									+ '\n' + '상점 거래ID: ' + data.merchant_uid
 									+ '\n' + '결제 금액: ' + data.paid_amount
 									+ '\n' + '카드 승인번호: ' + data.apply_num;
+							alert("${resultMessage}");
 						} else {
 							msg = '결제에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;
 						}
@@ -56,7 +57,7 @@
 <body>
 	<button onclick="requestPay()">결제하기</button>
 
-	<p>${resultMessage}</p>
+
 	<!-- 결제하기 버튼 생성 -->
 </body>
 </html>
