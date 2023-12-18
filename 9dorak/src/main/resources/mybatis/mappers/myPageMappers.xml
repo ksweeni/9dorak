@@ -189,18 +189,11 @@
 	</select>
 
 	<!-- 가족등록 -->
-    <insert id="insertPeople" parameterType="peoplevo">
-        INSERT INTO PEOPLE (MEM_ID, MEM_ID2, PEOPLE_CATEGORY, PEOPLE_DATE)
-        SELECT
-            M2.MEM_ID AS MEM_ID,
-            M1.MEM_ID AS MEM_ID2,
-            #{categoryValue} AS PEOPLE_CATEGORY,
-            SYSTIMESTAMP AS PEOPLE_DATE
-        FROM
-            MEM M1
-        JOIN
-            MEM M2 ON M1.MEM_CODE = #{yourInputMEMCode} AND M2.MEM_ID = #{yourInputMEMId}
-    </insert>
+	<insert id="insertPeople" parameterType="map">
+		INSERT INTO PEOPLE (MEM_ID, MEM_ID2, PEOPLE_CATEGORY, PEOPLE_DATE)
+		values(#{mem_id}, (SELECT mem_id
+		from mem where MEM_CODE = #{mem_code} ), #{people_category}, sysdate)
+	</insert>
 
 
 

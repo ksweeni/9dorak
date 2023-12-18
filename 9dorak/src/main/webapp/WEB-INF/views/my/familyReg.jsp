@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -262,8 +262,8 @@ String contextPath = request.getContextPath();
 	width: 144px;
 	height: 18px;
 	position: absolute;
-	left: 28px;
-	top: 15px;
+	left: 57px;
+	top: 11px;
 	font-family: Roboto;
 	text-align: left;
 	font-size: 20px;
@@ -276,7 +276,7 @@ String contextPath = request.getContextPath();
 	width: 300px;
 	height: 200px;
 	position: absolute;
-	left: 147px;
+	left: 176px;
 	top: 24px;
 	background-image: url(${cpath}/resources/images/my/ellipse_1.png);
 	background-repeat: no-repeat;
@@ -292,7 +292,7 @@ String contextPath = request.getContextPath();
 	width: 185px;
 	height: 58px;
 	position: absolute;
-	left: 236px;
+	left: 265px;
 	top: 280px;
 	font-family: Inter;
 	text-align: left;
@@ -338,7 +338,7 @@ String contextPath = request.getContextPath();
 	width: 182.33592224121094px;
 	height: 29px;
 	position: absolute;
-	left: 67.42139434814453px;
+	left: 76px;
 	top: 65px;
 	font-family: Inter;
 	text-align: left;
@@ -364,7 +364,7 @@ String contextPath = request.getContextPath();
 	width: 223px;
 	height: 45px;
 	position: absolute;
-	left: 48.00144958496094px;
+	left: 82px;
 	top: 5px;
 	font-family: Inter;
 	text-align: left;
@@ -416,7 +416,7 @@ String contextPath = request.getContextPath();
 	width: 91px;
 	height: 35px;
 	position: absolute;
-	left: 0px;
+	left: 16px;
 	top: 0px;
 	font-family: Roboto;
 	text-align: left;
@@ -464,6 +464,7 @@ String contextPath = request.getContextPath();
 	border-radius: 16px;
 	border: 2px solid;
 	border-color: #e7e7e7;
+	cursor: pointer;
 }
 
 .178_719 {
@@ -515,10 +516,11 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 54.42787551879883px;
 	top: 64px;
-	background-color: #ffffff; border-radius : 16px; border : 2px solid;
-	border-color: #e7e7e7;
+	background-color: #ffffff;
 	border-radius: 16px;
-	border: 2px solid;
+	border: 2px solid; border-color : #e7e7e7;
+	cursor: pointer;
+	border-color: #e7e7e7;
 }
 
 .178_723 {
@@ -1029,18 +1031,29 @@ String contextPath = request.getContextPath();
 						<span class="e178_726">가족</span>
 					</div>
 					<span class="e178_717">지인</span>
+
+
+
+
 					<div class=e178_718>
 						<div class=e178_719>
-							<span class="e178_720">가족 코드 등록</span>
+							<span class="e178_720" onclick="registerPeople('가족')">가족
+								코드 등록</span>
 						</div>
-						<input class="e178_721" id= "people_code"></input>
+						<input type="text" class="e178_721" id="people_code1" />
 					</div>
 					<div class=e178_722>
 						<div class=e178_723>
-							<span class="e178_724">지인 코드 등록</span>
+							<span class="e178_724" onclick="registerPeople('지인')">지인
+								코드 등록</span>
 						</div>
-						<input class="e178_725"></input>
+						<input type="text" class="e178_725" id="people_code2" />
 					</div>
+
+					<!-- 				<input type="radio" name="category" value="가족">가족
+					  <input type="radio" name="category" value="지인">지인
+					 <input type="text"   id="people_code"/>
+					 <button onclick="registerPeople()">등록</button> -->
 				</div>
 			</div>
 			<div class=e178_629>
@@ -1058,6 +1071,7 @@ String contextPath = request.getContextPath();
 				</div>
 			</div>
 		</div>
+
 		<div class=e178_643>
 			<div class="e178_644"></div>
 			<div class=e178_645>
@@ -1098,9 +1112,31 @@ String contextPath = request.getContextPath();
 			<div class="e178_670"></div>
 		</div>
 	</div>
+
+
+
 </body>
 <script>
-	$(".e178_719").on("click",function(){
+    function registerPeople(category){
+    	var people_code;
+    	if(category=="가족"){
+    		people_code = $("#people_code1").val();
+    	}else{
+    		people_code = $("#people_code2").val();
+    	}
+    	 
+       	$.ajax({
+    		url:"${cpath}/my/insertPeople.do",
+    		data: {"mem_code": people_code, "category":category},
+    		success:function(responseData){
+    			alert(responseData);
+    		}
+    	});
+    	
+    }
+
+	/*
+	$(".e178_719").on("click", function() {
 		//alert(people_code);
 		$.ajax({
 			url : "${cpath}/register/codeCheck.do",
@@ -1110,11 +1146,12 @@ String contextPath = request.getContextPath();
 			success : function(data) {
 				if (data === "false") {
 					alert("추천인 코드를 확인하세요");
-				} 
+				}
 
 			}
 		}) // 추천인 코드 존재 확인
-		
-	})
+
+	})*/
 </script>
+
 </html>

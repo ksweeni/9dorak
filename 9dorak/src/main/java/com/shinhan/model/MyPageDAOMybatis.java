@@ -17,6 +17,7 @@ import com.shinhan.dto.DeliveryVO;
 import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
+import com.shinhan.dto.PeopleVO;
 import com.shinhan.dto.ProVO;
 
 @Repository
@@ -96,48 +97,53 @@ public class MyPageDAOMybatis {
 		int result = sqlSession.update(NAMESPACE + "profileDelete", memVO);
 		return result;
 	}
-	
-	
-	
-	//주문내역
-	public List<Map<String, Object>>  orderList(String mem_id) {
+
+	// 주문내역
+	public List<Map<String, Object>> orderList(String mem_id) {
 		List<Map<String, Object>> myOrderList = sqlSession.selectList(NAMESPACE + "orderList", mem_id);
 		return myOrderList;
 	}
-	//결제내역
-	public List<Map<String, Object>>  paymentList(String mem_id) {
+
+	// 결제내역
+	public List<Map<String, Object>> paymentList(String mem_id) {
 		List<Map<String, Object>> myPaymentList = sqlSession.selectList(NAMESPACE + "paymentList", mem_id);
 		return myPaymentList;
 	}
-	//결제취소내역
-	public List<Map<String, Object>>  cancelList(String mem_id) {
+
+	// 결제취소내역
+	public List<Map<String, Object>> cancelList(String mem_id) {
 		List<Map<String, Object>> myCancelList = sqlSession.selectList(NAMESPACE + "cancelList", mem_id);
 		return myCancelList;
 	}
+
+	// 가족등록
+
+	public int insertPeople(Map<String,String> peopleData) {
+		return sqlSession.insert(NAMESPACE + "insertPeople", peopleData);
+	}
+	
+
 	
 	// 배송 조회 내역
-	public List<DeliveryHistoryVO> AllDeliveryHistory(String mem_id){
+	public List<DeliveryHistoryVO> AllDeliveryHistory(String mem_id) {
 		List<DeliveryHistoryVO> dlist = sqlSession.selectList(NAMESPACE + "AllDeliveryHistory", mem_id);
 		return dlist;
 	}
-	
-	// 년도 별 배송 조회 내역 - map 테스트 하는 중 
+
+	// 년도 별 배송 조회 내역 - map 테스트 하는 중
 	public List<DeliveryHistoryVO> getOrdersByMemberAndYear(String mem_id, int year) {
-	    Map<String, Object> parameters = new HashMap<>();
-	    parameters.put("mem_id", mem_id); 
-	    parameters.put("year", year);
-	    
-	    List<DeliveryHistoryVO> dlist = sqlSession.selectList(NAMESPACE + "getOrdersByMemberAndYear", parameters);
-	    return dlist;
+		Map<String, Object> parameters = new HashMap<>();
+		parameters.put("mem_id", mem_id);
+		parameters.put("year", year);
+
+		List<DeliveryHistoryVO> dlist = sqlSession.selectList(NAMESPACE + "getOrdersByMemberAndYear", parameters);
+		return dlist;
 	}
 
-	
 	public List<EarnpointVO> getPointList(String mem_id) {
 		List<EarnpointVO> elist = sqlSession.selectList(NAMESPACE + "getPointList", mem_id);
 		return elist;
 	}
-
-
 
 //	public List<MemVO> selectAll() {
 //		List<MemVO> mlist = sqlSession.selectList(NAMESPACE + "selectAll");

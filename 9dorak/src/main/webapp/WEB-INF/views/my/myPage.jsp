@@ -16,7 +16,7 @@ String contextPath = request.getContextPath();
 	rel="stylesheet" />
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/myPageStyle.css?e"
+<link rel="stylesheet" href="${cpath}/resources/css/myPageStyle.css?d"
 	type="text/css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

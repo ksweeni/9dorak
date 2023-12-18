@@ -15,7 +15,7 @@ String contextPath = request.getContextPath();
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/registerTypeStyle.css" type="text/css" />
+	href="${cpath}/resources/css/registerTypeStyle.css?s" type="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
