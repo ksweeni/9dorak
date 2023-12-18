@@ -76,6 +76,11 @@ public class MyPageController {
 	public String myLevel() {
 		return "my/myLevel";
 	}
+	
+	@GetMapping("PayTest.do")
+	public String PayTest() {
+		return "my/payTest";
+	}
 
 	@GetMapping("myMenu.do")
 	public String myMenu(Model model, HttpSession session) {
