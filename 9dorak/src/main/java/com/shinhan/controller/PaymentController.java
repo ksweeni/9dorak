@@ -34,8 +34,9 @@ public class PaymentController {
 	 */
 
 	@ResponseBody
-	@RequestMapping("/verify/{imp_uid}")
+	@RequestMapping("verify/{imp_uid}")
 	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, Model model) {
+		System.out.println("asd");
 		try {
 			// Perform payment verification using iamportClient or your logic
 			IamportResponse<Payment> iamportResponse = iamportClient.paymentByImpUid(imp_uid);
