@@ -69,11 +69,11 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 	
-	public List<Map<String, Object>> selectProReview(int prono) {
-		List<Map<String, Object>> rlist = sqlSession.selectList(NAMESPACE + "selectProReview", prono);
-		//System.out.println("DAO rlist:" + rlist);
-		return rlist;
-	}
+	public List<Map<String, Object>> selectProReview(Map<String, Object> map) {
+        List<Map<String, Object>> rlist = sqlSession.selectList(NAMESPACE + "selectProReview", map);
+        //System.out.println("DAO rlist:" + rlist);
+        return rlist;
+    }
 	
 	public Map<String, Object> proRevwCnt(int prono) {
 		

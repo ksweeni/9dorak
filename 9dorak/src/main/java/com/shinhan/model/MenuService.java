@@ -51,9 +51,9 @@ public class MenuService {
 		return dao.searchCategoryCheck(ingre_no);
 	}
 	
-	public List<Map<String, Object>> selectProReview(int prono) {
-		return dao.selectProReview(prono);
-	}
+	public List<Map<String, Object>> selectProReview(Map<String, Object> map) {
+        return dao.selectProReview(map);
+    }
 	
 	public Map<String, Object> reviewCnt(int prono){
 		return dao.proRevwCnt(prono);
@@ -78,6 +78,7 @@ public class MenuService {
 	public List<ProVO> searchAllergyCheck(ProVO pro) {
 		return dao.searchAllergyCheck(pro);
 	}
+	
 	
 
 //	public int insertMember(DoranVO doran) {

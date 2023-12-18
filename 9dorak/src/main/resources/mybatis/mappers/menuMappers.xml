@@ -103,18 +103,35 @@
     </resultMap>
     
     <!-- 상품리뷰 -->
-    <select id="selectProReview" parameterType="int" resultMap="proreviewMap">
+    <select id="selectProReview" parameterType="HashMap" resultMap="proreviewMap">
+		with base_t as
+	    (
 	    select 
-	      memreview.orderdetail_no
-	    , memreview.memreview_date
-	    , memreview.memreview_cont
-	    , memreview.memreview_starpoint
-	    , orderdetail.pro_no
-	    , orders.mem_id 
-		from memreview, orderdetail, orders
-		where orderdetail.pro_no = #{pro_no}
-			and orderdetail.orderdetail_no = memreview.orderdetail_no
-			and orderdetail.order_no = orders.order_no
+	           TA.orderdetail_no as orderdetail_no
+	         , TA.memreview_date as memreview_date
+	         , TA.memreview_cont as memreview_cont
+	         , TA.memreview_starpoint as memreview_starpoint
+	         , TB.pro_no as pro_no
+	         , TC.mem_id as mem_id
+	      from memreview TA
+	         , orderdetail TB
+	    	 , orders TC
+	     where TB.pro_no = ${pro_no}
+	       and TB.orderdetail_no = TA.orderdetail_no
+	       and TB.order_no = TC.order_no
+	     order by ta.memreview_date desc 
+	    )
+	    , one_page_t as
+	    (
+	    select 
+	           base_t.*
+	         , ROWNUM AS rnum
+	      from base_t
+	    <![CDATA[ where ROWNUM <= #{currentPage}+4]]>
+	    )
+	    select *
+	    from one_page_t
+	    where rnum > #{currentPage}
     </select> 
 
 	<!-- 리뷰 토탈 카운트 -->

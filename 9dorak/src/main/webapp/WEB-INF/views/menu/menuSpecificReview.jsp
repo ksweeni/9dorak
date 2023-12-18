@@ -321,7 +321,7 @@
 			<div class="text-reviews-and">
 				<div class="frame-review">
 					<div class="text-wrapper-13">텍스트 리뷰</div>
-					<div class="frame-10">
+					<%-- <div class="frame-10">
 						<div class="frame-11">
 							<div class="text-wrapper-13">최근등록순</div>
 							<img class="img-2"
@@ -332,7 +332,7 @@
 							<img class="img-2"
 								src="${cpath}/resources/images/menu/filter.svg" />
 						</div>
-					</div>
+					</div> --%>
 				</div>
 				<div class="reviews-texts">
 					<div class="review">
@@ -537,21 +537,15 @@
 </svg>
 
 					</div>
-					<div class="num-wrapper">
-						<div class="num-2">1</div>
-					</div>
-					<div class="num-wrapper">
-						<div class="num-2">2</div>
-					</div>
-					<div class="num-wrapper">
-						<div class="num-2">3</div>
-					</div>
-					<div class="num-wrapper">
-						<div class="num-2">4</div>
-					</div>
-					<div class="num-wrapper">
-						<div class="num-2">5</div>
-					</div>
+				
+					<c:forEach  items="${pageList}" var="items" varStatus="loop"> 
+						<div class="num-wrapper">
+							<div class="num-2 page_btn" onclick="pageBtnClick(${items})">
+								${items}
+							</div>
+						</div>
+					</c:forEach>
+					
 					<div class="carat-wrapper" id="nextPage">
 						<svg class="carat" xmlns="http://www.w3.org/2000/svg" width="31"
 							height="30" viewBox="0 0 31 30" fill="none">
@@ -686,7 +680,6 @@
         console.log('showItemsForPage called with pageNumber:', pageNumber);
         const numElements = document.querySelectorAll('.num-2');
 
-        
         numElements.forEach(numElement => {
             numElement.classList.remove('page-active');
         });
@@ -699,7 +692,6 @@
         document.getElementById('nextPage').style.display = (pageNumber === numElements.length) ? 'none' : 'block';
     }
 
-
     showItemsForPage(currentPage);
 
     // Next Page Button
@@ -707,6 +699,7 @@
         if (currentPage < 5) {  
             currentPage++;
             showItemsForPage(currentPage);
+            pageBtnClick(currentPage);
         }
     });
 
@@ -715,6 +708,7 @@
         if (currentPage > 1) {
             currentPage--;
             showItemsForPage(currentPage);
+            pageBtnClick(currentPage);
         }
     });
 
@@ -804,7 +798,7 @@
         });
     });
     
-    // 최신 등록순, 추천 순 클릭 시 변화
+/*     // 최신 등록순, 추천 순 클릭 시 변화
    document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.frame-11, .frame-12').forEach(function (option) {
         option.addEventListener('click', function () {
@@ -815,9 +809,7 @@
             this.classList.add('selected-option');
         });
     });
-});
-    
-    
+}); */
 
     // 아이디+상품이 장바구니에 이미 있는지 확인
     function checkBasket() {
@@ -949,7 +941,25 @@
             alert("An error occurred during the addBasket operation!");
         }
     });
-}
+	}
+    
+	function pageBtnClick(currentPage){
+		var pro_no = ${menudetail.pro_no} ;
+		var pramPage = (currentPage-1) * 4;
+	  
+	    $.ajax({
+	        type: "GET",
+	        url: "${cpath}/menu/reviewPageBtnClick.do?pro_no="+pro_no+"&currentPage="+pramPage,
+	        success: function (data) {
+	        	$('.review').html(data);
+	           
+	        },
+	        error: function () {
+	        	alert("에러");	         
+	        }
+	    });
+	};
+
 
 </script>
 </body>
