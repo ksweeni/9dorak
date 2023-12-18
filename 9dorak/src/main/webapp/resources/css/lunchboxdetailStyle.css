@@ -53,7 +53,7 @@
   white-space: nowrap;
 }
 
-.element .group-2 {
+/* .element .group-2 {
   position: absolute;
   width: 1400px;
   height: 716px;
@@ -63,7 +63,7 @@
   border-radius: 20px;
   left: 50%;
   transform: translateX(-50%);
-}
+} */
 
 .element .frame {
   display: inline-flex;
@@ -627,11 +627,11 @@
   height: 150px;
   top: 0;
   left: 0;
-  cursor: pointer;
 }
 
 .element .quiz-row-wrapper {
   height: 150px;
+  cursor: pointer;
 }
 
 .element .quiz-row {
@@ -642,6 +642,7 @@
   border-radius: 20px;
   overflow: hidden;
   border: solid 1px gray;
+  cursor: pointer;
 }
 
 .element .group-15 {
@@ -693,7 +694,7 @@
   width: 156px;
   height: 50px;
   top: 10px;
-  left: 1010px;
+  left: 1136px;
 }
 
 .element .vector {
@@ -1563,4 +1564,95 @@ hr {
 	margin: 0 auto;
 	height: 1px;
 	border: 0;
+}
+
+/* 게시판 스타일 */
+.board {
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #f48e28;
+    background-color: #f9f9f9;
+    width: 1000px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 입력 필드 스타일 */
+.board input[type="text"] {
+  width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.board input[type="text"]#challenge_cont {
+  width: 800px; /* 원하는 너비로 수정해주세요 */
+  height: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.board input[type="text"]#challenge_recipe {
+  width: 800px; /* 원하는 너비로 수정해주세요 */
+  height: 50px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+/* 이미지 스타일 */
+.board img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* 숨겨진 필드 스타일 */
+.board input[type="hidden"] {
+  display: none;
+}
+
+.button_two {
+    position: relative;
+    top: 133px;
+    left: 610px;
+}
+.button1 {
+    position: relative;
+    margin: 0 300px;
+    width: 122px;
+    height: 50px;
+    left: -133px;
+    top: 59px;
+    font-size: 15px;
+    color: #f38820;
+    border: 2px solid #f38820;
+    border-radius: 60px;
+    background-color: white;
+    cursor: pointer;
+}
+.button2 {
+    position: relative;
+    margin: 0 300px;
+    width: 122px;
+    top: 8px;
+    height: 50px;
+    font-size: 15px;
+    color: #f38820;
+    border: 2px solid #f38820;
+    border-radius: 60px;
+    background-color: white;
+    cursor: pointer;
+}
+.button3 {
+    position: relative;
+    margin: 0 300px;
+    width: 122px;
+    top: 18px;
+    height: 50px;
+    font-size: 15px;
+    color: #f38820;
+    border: 2px solid #f38820;
+    border-radius: 60px;
+    background-color: white;
+    cursor: pointer;
 }

@@ -48,11 +48,24 @@ public class EventController {
 		model.addAttribute("clistlike", clistlike);
 		model.addAttribute("loginmem", loginmem);
 		model.addAttribute("clistmylike", clistmylike);
-		System.out.println("=============================================");
-		System.out.println(clistmylike);
-		System.out.println("=============================================");
 		System.out.println(clist);
 		return "event/makelunchbox";
+	}
+	
+	@GetMapping("lunchboxdetail.do")
+	public String lunchboxdetail(Model model, ChallengeVO challenge, HttpSession session) {
+		ChallengeVO chall = chService.selectByno(challenge.getChallenge_no());
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		int likeCnt = chService.getLike(challenge.getChallenge_no());
+		ChalllikeVO challlike = new ChalllikeVO(loginmem.getMem_id(), challenge.getChallenge_no());
+		int likeCheck = chService.getLikecheck(challlike);
+		model.addAttribute("chall", chall);
+		model.addAttribute("likeCnt", likeCnt);
+		model.addAttribute("mem", loginmem);
+		model.addAttribute("likeCheck", likeCheck);
+		System.out.println(chall);
+		System.out.println(loginmem);
+		return "event/lunchboxdetail";
 	}
 	
 	@GetMapping("friendreco.do")

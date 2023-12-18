@@ -21,6 +21,12 @@ String contextPath = request.getContextPath();
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
+<script>
+function redirectToChallenge(challenge_no) {
+		location.href = '${pageContext.request.contextPath}/event/lunchboxdetail.do?challenge_no=' + challenge_no;
+		alert('Redirect to challenge number ' + challenge_no);
+}
+</script>
 <title>9도락</title>
 </head>
 <body>
@@ -286,7 +292,7 @@ String contextPath = request.getContextPath();
 					<div class="desktop-quiz-rows">
 						<c:forEach items="${clist}" var="chall" varStatus="loop">
 							<div class="property-default">
-								<div class="overlap-group-6">
+								<a onclick="redirectToChallenge(${chall.challenge_no})" class="overlap-group-6">
 									<div class="blur">
 										<div class="quiz-row-wrapper">
 											<div class="quiz-row"></div>
@@ -309,10 +315,10 @@ String contextPath = request.getContextPath();
 												<!-- <img class="vector" src="../resources/images/event/9make09.png" /> -->
 											</c:if>
 											<!-- 가져온 인덱스에 해당하는 challlike 항목 사용 -->
-											<div class="text-wrapper-10">${clistlike[loop.index].challengelike_cnt}</div>
+											<div class="text-wrapper-10">좋아요 수 : ${clistlike[loop.index].challengelike_cnt}</div>
 										</div>
 									</div>
-								</div>
+								</a>
 							</div>
 						</c:forEach>
 						<%-- 							<div class="property-default">
