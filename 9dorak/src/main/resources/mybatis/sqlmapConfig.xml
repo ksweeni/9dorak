@@ -25,8 +25,7 @@
 		<typeAlias type="com.shinhan.dto.EventVO" alias="eventvo" />
 		<typeAlias type="com.shinhan.dto.FaqVO" alias="faqvo" />
 		<typeAlias type="com.shinhan.dto.IngreVO" alias="ingrevo" />
-		<!-- MemDeliveryvo 대문자 맞나 확인 필요 -->
-		<typeAlias type="com.shinhan.dto.MemDeliveryVO" alias="MemDeliveryvo" />
+		<typeAlias type="com.shinhan.dto.MemDeliveryVO" alias="memdeliveryvo" />
 		<typeAlias type="com.shinhan.dto.MemreviewVO" alias="memreviewvo" />
 		<typeAlias type="com.shinhan.dto.MemVO" alias="memvo" />
 		<typeAlias type="com.shinhan.dto.OneaskVO" alias="oneaskvo" />
