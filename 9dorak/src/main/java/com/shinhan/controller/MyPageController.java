@@ -2,6 +2,7 @@ package com.shinhan.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -17,19 +18,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.DeliveryHistoryVO;
-import com.shinhan.dto.DeliveryVO;
 import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.MyPageService;
-
 
 /**
  * Handles requests for the application home page.
@@ -57,13 +55,12 @@ public class MyPageController {
 		session.invalidate();
 		return "home";
 	}
-	
 
 	// 배송 내역 조회
 	@GetMapping("myDeliveryList.do")
 	public String myDeliveryList(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
-		if(loginmem == null) {
+		if (loginmem == null) {
 			return "login/login";
 		}
 		String memId = loginmem.getMem_id();
@@ -71,12 +68,12 @@ public class MyPageController {
 		model.addAttribute("dlist", dlist);
 		return "my/myDeliveryList";
 	}
-	
+
 	@GetMapping("myLevel.do")
 	public String myLevel() {
 		return "my/myLevel";
 	}
-	
+
 	@GetMapping("PayTest.do")
 	public String PayTest() {
 		return "my/payTest";
@@ -89,47 +86,73 @@ public class MyPageController {
 		model.addAttribute("mem", mem);
 		return "my/myMenu";
 	}
-	
-	
-	//마이페이지 -주문/결제내역 페이지
+
+	// 마이페이지 -주문/결제내역 페이지
 	@GetMapping("orderDetails.do")
 	public String orderDetails(Model model, HttpSession session) {
 		return "my/orderDetails";
-	}	
+	}
+
 	@GetMapping("orderList.do")
 	public String orderList(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<Map<String, Object>> orderList = mService.orderList(loginmem.getMem_id());
-		model.addAttribute("orderList",orderList);
+		model.addAttribute("orderList", orderList);
 		return "my/myOrderList";
 	}
-		
-	//마이페이지 -결제내역 페이지
+
+	// 마이페이지 -결제내역 페이지
 	@GetMapping("orderPayment.do")
 	public String orderPayment(Model model, HttpSession session) {
 		return "my/orderPayment";
 	}
+
 	@GetMapping("paymentList.do")
 	public String paymentList(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<Map<String, Object>> paymentList = mService.paymentList(loginmem.getMem_id());
-		model.addAttribute("paymentList",paymentList);
+		model.addAttribute("paymentList", paymentList);
 		return "my/myPaymentList";
 	}
-	
-	//마이페이지 -결제취소내역 페이지
+
+	// 마이페이지 -결제취소내역 페이지
 	@GetMapping("orderCancel.do")
 	public String orderCancel(Model model, HttpSession session) {
 		return "my/orderCancel";
 	}
+
 	@GetMapping("cancelList.do")
 	public String cancelList(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<Map<String, Object>> cancelList = mService.cancelList(loginmem.getMem_id());
-		model.addAttribute("cancelList",cancelList);
+		model.addAttribute("cancelList", cancelList);
 		return "my/myCancelList";
 	}
-	
+
+	// 가족등록
+	@RequestMapping(value = "/insertPeople.do", produces = "text/plain;charset=utf-8")
+	public @ResponseBody  String insertPeople(String mem_code, String category, HttpSession session) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		
+		try {
+		Map<String, String> mapData = new HashMap<>();
+		mapData.put("mem_id", loginmem.getMem_id());
+		mapData.put("mem_code", mem_code);
+		mapData.put("people_category", category);
+		int result = mService.insertPeople(mapData);
+		
+		if (result > 0) {
+		        return "등록되었습니다.";
+		    }else {
+		    	throw new Exception("등록에 실패했습니다. 이미 등록된 정보일 수 있습니다.");
+		    }
+		}catch (Exception e) {
+	        e.printStackTrace();
+	        return "등록에 실패했습니다. 이미 등록된 정보일 수 있습니다.";
+		}
+	}
+
+
 	@RequestMapping(value = "updateMember.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String updateMember(Model model, HttpSession session, MemVO mem) {
@@ -200,10 +223,8 @@ public class MyPageController {
 		return "my/myDelivery_ajax";
 	}
 
-
-	
 	//
-	
+
 	@GetMapping("pointAndCoupon.do")
 	public String pointAndCouponPage(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
@@ -214,6 +235,7 @@ public class MyPageController {
 		model.addAttribute("likeList", likeList);
 		return "my/pointAndCoupon";
 	}
+
 	@GetMapping("coupon_ajax.do")
 	public String couponPage(Model model, HttpSession session) {
 //		System.out.println("coupon_ajax.do");
@@ -224,9 +246,10 @@ public class MyPageController {
 		model.addAttribute("clist", clist);
 		return "my/coupon_ajax";
 	}
+
 	@RequestMapping(value = "couponReg.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
-	public String couponPage(Model model, HttpSession session, CouponVO coupon ){
+	public String couponPage(Model model, HttpSession session, CouponVO coupon) {
 //		System.out.println(coupon);
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		model.addAttribute("loginmem", loginmem);
@@ -238,7 +261,7 @@ public class MyPageController {
 			return "이미 등록되거나 잘못된 코드 입니다.";
 		}
 	}
-	
+
 	@GetMapping("point_ajax.do")
 	public String pointPage(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
@@ -248,10 +271,10 @@ public class MyPageController {
 //		System.out.println(elist);
 		return "my/point_ajax";
 	}
-	
-	
+
 	@PostMapping("profileUplode.do")
-	public String profileUplode(Model model, HttpSession session, MultipartFile singleFile , HttpServletRequest request) {
+	public String profileUplode(Model model, HttpSession session, MultipartFile singleFile,
+			HttpServletRequest request) {
 		System.out.println("방은지");
 //		System.out.println(singleFile);
 		String path = request.getSession().getServletContext().getRealPath("resources");
@@ -288,25 +311,25 @@ public class MyPageController {
 
 		MemVO memVO = (MemVO) session.getAttribute("loginmem");
 		memVO.setMem_image(ranFileName);
-		int result  = mService.profileUpdate(memVO);
+		int result = mService.profileUpdate(memVO);
 
 		return "redirect:/my/myMenu.do";
 	}
+
 	@PostMapping("profileDelete.do")
-	public String profileDelete(Model model, HttpSession session , HttpServletRequest request) {
+	public String profileDelete(Model model, HttpSession session, HttpServletRequest request) {
 		MemVO memVO = (MemVO) session.getAttribute("loginmem");
-		int result  = mService.profileDelete(memVO);
+		int result = mService.profileDelete(memVO);
 
 		return "redirect:/my/myMenu.do";
 	}
-	
-	
+
 	@GetMapping("familyReg.do")
 	public String familyReg(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
-		model.addAttribute("mem",loginmem);
-		
+		model.addAttribute("mem", loginmem);
+
 		return "my/familyReg";
 	}
-	
+
 }

@@ -12,6 +12,7 @@ import com.shinhan.dto.DeliveryVO;
 import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
+import com.shinhan.dto.PeopleVO;
 import com.shinhan.dto.ProVO;
 
 @Service
@@ -101,7 +102,16 @@ public class MyPageService {
 	public List<Map<String, Object>>  cancelList(String mem_id) {		
 		return dao.cancelList(mem_id);
 	}
+	
+	//가족등록
 
+	// 가족등록
+    
+	
+	public int insertPeople(Map<String,String> peopleData) {
+		return dao.insertPeople(peopleData);
+	}
+    
 	// 배송 조회 내역
 	public List<DeliveryHistoryVO> AllDeliveryHistory(String mem_id){
 		return dao.AllDeliveryHistory(mem_id);
