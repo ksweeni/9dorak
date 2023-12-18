@@ -2,13 +2,17 @@ package com.shinhan.controller;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shinhan.dto.PayVO;
+import com.shinhan.model.PayService;
 import com.siot.IamportRestClient.IamportClient;
 import com.siot.IamportRestClient.exception.IamportResponseException;
 import com.siot.IamportRestClient.response.IamportResponse;
@@ -17,6 +21,8 @@ import com.siot.IamportRestClient.response.Payment;
 @Controller
 public class PaymentController {
 
+	@Autowired
+	PayService pService;
 	private final IamportClient iamportClient;
 
 	public PaymentController() {
@@ -59,7 +65,10 @@ public class PaymentController {
 				String buyerAddr = payment.getBuyerAddr(); // buyer's buyer shop
 				String buyerPostcode = payment.getBuyerPostcode(); // 01181
 				System.out.println(productName);
-				System.out.println(paidAmount);
+				
+				
+				int roundedAmount = paidAmount.setScale(0, RoundingMode.HALF_UP).intValue();
+				System.out.println(roundedAmount);
 				System.out.println(currency);
 
 				paymethod = CurrentPayMethod(paymentMethod);
@@ -70,6 +79,24 @@ public class PaymentController {
 				System.out.println(buyerTel);
 				System.out.println(buyerAddr);
 				System.out.println(buyerPostcode);
+				
+				int index = pService.selectPayCount();
+				
+				PayVO pay = new PayVO();
+				pay.setOrder_no(index+1);
+				pay.setPay_date(null);
+				pay.setPay_status("결제 완료");
+				pay.setPay_depo(buyerName);
+				
+				pay.setPay_depobank(paymethod);
+				pay.setPay_method(paymethod);
+				
+				pay.setPay_depoprice(roundedAmount);
+				pay.setPay_price(roundedAmount);
+				
+				System.out.println(pay);
+				pService.insertPay(pay);
+				
 			} else {
 
 				model.addAttribute("resultMessage", "Payment verification failed");

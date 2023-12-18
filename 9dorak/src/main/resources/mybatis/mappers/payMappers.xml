@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.firstzone.pay">
+
+	<insert id="insertPay" parameterType="payvo">
+		INSERT INTO pay
+		VALUES
+		(#{order_no}, #{pay_status} , sysdate, #{pay_method} ,
+		#{pay_price},#{pay_depo},
+		#{pay_depoprice}, #{pay_depobank})
+	</insert>
+
+	<select id="selectPayCount" resultType="int">
+		select count(*) from pay
+	</select>
+</mapper>
