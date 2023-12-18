@@ -69,10 +69,15 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 	
-	public List<Map<String, Object>> selectProReview(int prono) {
-		List<Map<String, Object>> rlist = sqlSession.selectList(NAMESPACE + "selectProReview", prono);
-		//System.out.println("DAO rlist:" + rlist);
-		return rlist;
+	public List<Map<String, Object>> selectProReviewTxt(Map<String, Object> map) {
+        List<Map<String, Object>> txtrlist = sqlSession.selectList(NAMESPACE + "selectProReviewTxt", map);
+        //System.out.println("DAO rlist:" + rlist);
+        return txtrlist;
+    }
+	
+	public List<Map<String, Object>> selectProReviewPth(Map<String, Object> map) {
+		List<Map<String, Object>> phtrlist = sqlSession.selectList(NAMESPACE + "selectProReviewPth", map);
+		return phtrlist;
 	}
 	
 	public Map<String, Object> proRevwCnt(int prono) {
@@ -107,35 +112,7 @@ public class MenuDAOMybatis {
 		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck",pro);
 		return plist;
 	}
-	
-//	public BoardVO selectById(int bno) {
-//		BoardVO board = sqlSession.selectOne(NAMESPACE + "selectById", bno);
-//		logger.info("selectById :  {}", board.toString());
-//		return board;
-//	}
-//
-//	public int updateViewCount(int bno) {
-//		int result = sqlSession.update(NAMESPACE + "viewcntIncrement", bno);
-//		logger.info("updateViewCount :  {}�� ����", result);
-//		return result;
-//	}
-//
-//	public int insert(BoardVO board) {
-//		int result = sqlSession.insert(NAMESPACE + "insert", board);
-//		logger.info("insert :  {}�� �Է�", result);
-//		return result;
-//	}
-//
-//	public int update(BoardVO board) {
-//		int result = sqlSession.update(NAMESPACE + "update", board);
-//		logger.info("update :  {}�� updated", result);
-//		return result;
-//	}
-//
-//	public int delete(int bno) {
-//		int result = sqlSession.delete(NAMESPACE + "delete", bno);
-//		logger.info("delete :  {}�� ����", result);
-//		return result;
-//	}
+
+
 
 }

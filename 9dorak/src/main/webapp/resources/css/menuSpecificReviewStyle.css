@@ -51,6 +51,8 @@ div-wrapper {
 	width: 1140px;
 	height: 4889px;
 	position: relative;
+	left: 35%;
+	transform: translateX(-50%);
 }
 
 .div-wrapper .menu {
@@ -1031,6 +1033,7 @@ div-wrapper {
 	gap: 8px;
 	position: relative;
 	top: 10rem;
+	left: 12%;
 }
 
 .div-wrapper .page {
@@ -1120,7 +1123,7 @@ div-wrapper {
 	width: 1440px;
 	height: 429px;
 	top: 4460px;
-	left: 0;
+	left: 17%;
 	background-color: #f9f9ff;
 }
 
@@ -1484,7 +1487,7 @@ div-wrapper {
 }
 
 .top-nav{
-	left: 33.5%;
+	left: 33%;
 }
 
 .menu-detail{
@@ -1495,4 +1498,12 @@ div-wrapper {
     font-size: 2rem;
     left: 30%;
     text-align: center;
+}
+
+.pic4review{
+	position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

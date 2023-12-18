@@ -51,8 +51,12 @@ public class MenuService {
 		return dao.searchCategoryCheck(ingre_no);
 	}
 	
-	public List<Map<String, Object>> selectProReview(int prono) {
-		return dao.selectProReview(prono);
+	public List<Map<String, Object>> selectProReviewTxt(Map<String, Object> map) {
+        return dao.selectProReviewTxt(map);
+    }
+	
+	public List<Map<String, Object>> selectProReviewPth(Map<String, Object> map) {
+		return dao.selectProReviewPth(map);
 	}
 	
 	public Map<String, Object> reviewCnt(int prono){
@@ -78,31 +82,6 @@ public class MenuService {
 	public List<ProVO> searchAllergyCheck(ProVO pro) {
 		return dao.searchAllergyCheck(pro);
 	}
-	
 
-//	public int insertMember(DoranVO doran) {
-//		return dao.insertDoran(doran);
-//	}
-
-//
-//	@Transactional // ��� �����ϰų� ��� �����ϰų�
-//	public MemVO updateTransViewCount(int bno) {
-//		MemVO board = dao.selectById(bno);
-//		dao.updateViewCount(bno);
-//		return board;
-//	}
-//
-//	public int insert(BoardVO board) {
-//		System.out.println(board+ "service");
-//		return dao.insert(board);
-//	}
-//
-//	public int update(BoardVO board) {
-//		return dao.update(board);
-//	}
-//
-//	public int delete(int bno) {
-//		return dao.delete(bno);
-//	}
 
 }

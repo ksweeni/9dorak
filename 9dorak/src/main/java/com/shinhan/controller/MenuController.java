@@ -1,6 +1,7 @@
 package com.shinhan.controller;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.MemreviewVO;
+import com.shinhan.dto.PagingVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.MenuService;
 
@@ -137,32 +139,70 @@ public class MenuController {
 //		return "menu/menu_ajax";
 //	}
 	
-	@GetMapping("menuSpecificReview.do")
-	public String menuSpecificReview(Model model, ProVO pro, HttpSession session) {
-
-		MemVO memVO = (MemVO) session.getAttribute("loginmem");
-		if(memVO != null) {
-			Map<String, Object> ReserveInputMap = new HashMap<String, Object>();
-			String memId = memVO.getMem_id();
-			ReserveInputMap.put("mem_id", memId);
-			ReserveInputMap.put("pro_no", pro.getPro_no());
-			
-			model.addAttribute("reserveCnt", mService.selectReserveYn(ReserveInputMap));
-		}
-		
-		List<Map<String, Object>> rlist = mService.selectProReview(pro.getPro_no());
-		model.addAttribute("rlist", rlist);
-
-		Map<String, Object> revwCnt = mService.reviewCnt(pro.getPro_no());
-		model.addAttribute("totCnt",revwCnt.get("totCnt"));
-		model.addAttribute("phtCnt",revwCnt.get("phtCnt"));
-		model.addAttribute("txtCnt",revwCnt.get("txtCnt"));
-
-		model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
-			 	
-		return "menu/menuSpecificReview";
-	}
+	//리뷰페이지
+    @GetMapping("menuSpecificReview.do")
+    public String menuSpecificReview(Model model, ProVO pro, HttpSession session,@RequestParam(defaultValue = "0") int currentPage) {
+        MemVO memVO = (MemVO) session.getAttribute("loginmem");
+        Map<String, Object> inputMap = new HashMap<String, Object>();
+        inputMap.put("pro_no", pro.getPro_no());
+        inputMap.put("currentPage", currentPage);
+        if(memVO != null) {
+            
+            String memId = memVO.getMem_id();
+            inputMap.put("mem_id", memId);
+            
+            model.addAttribute("reserveCnt", mService.selectReserveYn(inputMap));
+        }
+        
+        List<Map<String, Object>> txtrlist = mService.selectProReviewTxt(inputMap);
+        List<Map<String, Object>> phtrlist = mService.selectProReviewPth(inputMap);
+        
+        Map<String, Object> revwCnt = mService.reviewCnt(pro.getPro_no());
+        PagingVO pagVO = new PagingVO((int)revwCnt.get("txtCnt"),currentPage);
+        
+        ArrayList<Integer> pageList = new ArrayList<Integer>(); 
+        
+        //System.out.println(pagVO.getTotalPage());
+        for (int i= 0;i < pagVO.getTotalPage()+1;i++) {
+            pageList.add(i, i+1);
+        };
+        
+        model.addAttribute("pageList", pageList);
+             
+        model.addAttribute("txtrlist", txtrlist);
+        model.addAttribute("phtrlist", phtrlist);
+        
+        model.addAttribute("totCnt",revwCnt.get("totCnt"));
+        model.addAttribute("phtCnt",revwCnt.get("phtCnt"));
+        model.addAttribute("txtCnt",revwCnt.get("txtCnt"));
+        model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
+                
+        return "menu/menuSpecificReview";
+    }
+    
+    @GetMapping("reviewPageBtnClick.do")
+    public String reviewPageBtnClick(Model model, ProVO pro, HttpSession session,@RequestParam(defaultValue = "0") int currentPage) {
+        MemVO memVO = (MemVO) session.getAttribute("loginmem");
+        Map<String, Object> ReserveInputMap = new HashMap<String, Object>();
+        ReserveInputMap.put("pro_no", pro.getPro_no());
+        ReserveInputMap.put("currentPage", currentPage);
+        if(memVO != null) {
+            
+            String memId = memVO.getMem_id();
+            ReserveInputMap.put("mem_id", memId);
+            
+            model.addAttribute("reserveCnt", mService.selectReserveYn(ReserveInputMap));
+        }
+        
+        List<Map<String, Object>> txtrlist = mService.selectProReviewTxt(ReserveInputMap);
+        
+        model.addAttribute("txtrlist", txtrlist);
+        model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
+                
+        return "menu/review_ajax";
+    }
 	
+    //찜목록
 	@GetMapping("reserve.do")
 	public String reserveCheck(Model model, ProVO pro, HttpSession session, @RequestParam Map<String, Object> map) {
 		MemVO memVO = (MemVO) session.getAttribute("loginmem");
