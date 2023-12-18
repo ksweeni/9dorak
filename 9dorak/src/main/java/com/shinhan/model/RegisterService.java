@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemVO;
 
 @Service
@@ -42,6 +43,16 @@ public class RegisterService {
 	public int pointUpdate(String mem_code) {
 		// TODO Auto-generated method stub
 		return dao.pointUpdate(mem_code);
+	}
+
+	public int insertEarn(EarnpointVO earn) {
+		// TODO Auto-generated method stub
+		return dao.insertEarn(earn);
+	}
+
+	public MemVO getCodeMem(String mem_code) {
+		// TODO Auto-generated method stub
+		return dao.getCodeMem(mem_code);
 	}
 
 	

@@ -61,7 +61,23 @@
 
 	<update id="pointUpdate" parameterType="String">
 		UPDATE mem
-		SET mem_point = mem_point+900
+		SET mem_point =
+		mem_point+1000
 		WHERE mem_code = #{mem_code}
 	</update>
+
+
+	<insert id="insertEarn" parameterType="earnpointvo">
+		insert into earnpoints (
+		point_no , point_name, point_date, point ,  mem_id)
+		values
+		(EARNPOINT_SEQ.nextval , #{point_name} , sysdate ,#{point}, #{mem_id} )
+	</insert>
+
+
+	<select id="getCodeMem" resultType="memvo">
+		select * from mem where
+		mem_code = #{mem_code}
+	</select>
+
 </mapper>
