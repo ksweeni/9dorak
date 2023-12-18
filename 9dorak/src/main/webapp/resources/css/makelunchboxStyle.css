@@ -56,7 +56,7 @@
 .element .group-2 {
   position: absolute;
   width: 1400px;
-  height: 788px;
+  height: 716px;
   top: 477px;
   left: 20px;
   background-color: #eaeaeafc;
@@ -191,7 +191,7 @@
 .element .group-5 {
   position: absolute;
   width: 327px;
-  height: 501px;
+  height: 423px;
   top: 0;
   left: 0;
   background-color: #ffffff;
@@ -599,18 +599,21 @@
   width: 1409px;
   height: 1097px;
   top: 0;
-  left: 0;
+  left: 55%;
   border-radius: 5px;
   overflow: hidden;
+  transform: translateX(-50%);
 }
 
 .element .property-default {
-  position: absolute;
-  width: 1367px;
-  height: 150px;
-  top: 20px;
-  left: 20px;
-  box-shadow: var(--perfect-dropshadow);
+    position: relative;
+    /* position: absolute; */
+    width: 1363px;
+    height: 150px;
+    margin-bottom: 30px;
+    top: 20px;
+    left: 29px;
+    box-shadow: var(--perfect-dropshadow);
 }
 
 .element .overlap-group-6 {
@@ -620,7 +623,7 @@
 
 .element .blur {
   position: absolute;
-  width: 1367px;
+  width: 1345px;
   height: 150px;
   top: 0;
   left: 0;
@@ -632,7 +635,7 @@
 
 .element .quiz-row {
   position: relative;
-  width: 1367px;
+  width: 1256px;
   height: 150px;
   background-color: #ffffff33;
   border-radius: 20px;
@@ -853,7 +856,8 @@
 
 .element .frame-wrapper {
   position: absolute;
-  width: 1348px;
+  width: 1230px;
+  /* width: 100%; */
   height: 69px;
   top: 1335px;
   left: 50%;
@@ -863,7 +867,8 @@
 .element .frame-3 {
   display: inline-flex;
   align-items: center;
-  gap: 700px;
+  width: 100%;
+  gap: 611px;
   position: relative;
 }
 

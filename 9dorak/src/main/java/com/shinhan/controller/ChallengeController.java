@@ -95,11 +95,11 @@ public class ChallengeController {
 
 	@PostMapping("insertChal.do")
 	public String insertChal(Model model, ChallengeVO challenge, @RequestParam MultipartFile singleFile,
-			HttpServletRequest request) {
+			HttpServletRequest request, HttpSession session) {
 //		System.out.println("insertChalpost");
-		String mem_id = "aaa";
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		// 나중에 이거 세션에 값 가져와서 넣자
-		challenge.setMem_id(mem_id);
+		challenge.setMem_id(loginmem.getMem_id());
 		//// 파일업로드
 		// 2. 저장할 경로 가져오기
 		String path = request.getSession().getServletContext().getRealPath("resources");
@@ -147,11 +147,11 @@ public class ChallengeController {
 
 	@PostMapping("insertrecipeChal.do")
 	public String insertrecipeChal(Model model, ChallengeVO challenge, @RequestParam MultipartFile singleFile,
-			HttpServletRequest request) {
+			HttpServletRequest request, HttpSession session) {
 //		System.out.println("insertChalpost");
-		String mem_id = "aaa";
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		// 나중에 이거 세션에 값 가져와서 넣자
-		challenge.setMem_id(mem_id);
+		challenge.setMem_id(loginmem.getMem_id());
 		//// 파일업로드
 		// 2. 저장할 경로 가져오기
 		String path = request.getSession().getServletContext().getRealPath("resources");

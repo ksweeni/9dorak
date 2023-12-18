@@ -62,4 +62,20 @@ public class ChallengeService {
 		return dao.selectByMakeAll();
 	}
 
+	public List<ChalllikeVO> selectByMakeLike() {
+		return dao.selectByMakeLike();
+	}
+
+	public List<ChallengeVO> selectByMakeAllTop3() {
+		return dao.selectByMakeAllTop3();
+	}
+
+	public List<ChallengeVO> selectByMakeAlllike() {
+		return dao.selectByMakeAlllike();
+	}
+
+	public List<ChalllikeVO> selectByMakemylike(String mem_id) {
+		return dao.selectByMakemylike(mem_id);
+	}
+
 }

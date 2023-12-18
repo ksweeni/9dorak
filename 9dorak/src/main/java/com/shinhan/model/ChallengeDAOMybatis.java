@@ -85,4 +85,24 @@ public class ChallengeDAOMybatis {
 		return clist;
 	}
 
+	public List<ChalllikeVO> selectByMakeLike() {
+		List<ChalllikeVO> clikelist = sqlSession.selectList(NAMESPACE + "selectByMakeLike");
+		return clikelist;
+	}
+
+	public List<ChallengeVO> selectByMakeAllTop3() {
+		List<ChallengeVO> clisttop3 = sqlSession.selectList(NAMESPACE + "selectByMakeAllTop3");
+		return clisttop3;
+	}
+
+	public List<ChallengeVO> selectByMakeAlllike() {
+		List<ChallengeVO> clistlike = sqlSession.selectList(NAMESPACE + "selectByMakeAlllike");
+		return clistlike;
+	}
+
+	public List<ChalllikeVO> selectByMakemylike(String mem_id) {
+		List<ChalllikeVO> clistmylike = sqlSession.selectList(NAMESPACE + "selectByMakemylike", mem_id);
+		return clistmylike;
+	}
+
 }

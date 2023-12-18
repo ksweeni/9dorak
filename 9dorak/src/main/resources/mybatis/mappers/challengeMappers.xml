@@ -132,7 +132,37 @@
 	</resultMap>
 	
 	<select id="selectByMakeAll" resultType="challengevo">
-		SELECT * FROM challenge WHERE challenge_recipe IS NOT NULL
+		SELECT * FROM challenge
+		WHERE challenge.challenge_recipe IS NOT NULL
+		ORDER BY challenge_date DESC
 	</select>
+
+	<select id="selectByMakeAllTop3" resultType="challengevo">
+		SELECT challenge.challenge_no, challenge.challenge_name, challenge.mem_id, challenge.challenge_recipe, COUNT(*) AS challengelike_cnt
+		FROM challenge
+		JOIN challlike ON challenge.challenge_no = challlike.challenge_no
+		WHERE challenge.challenge_recipe IS NOT NULL
+		GROUP BY challenge.challenge_no, challenge.challenge_name, challenge.mem_id, challenge.challenge_recipe
+		ORDER BY challengelike_cnt DESC
+	</select>
+
+	<select id="selectByMakeAlllike" resultType="challengevo">
+		SELECT challenge.challenge_no, NVL(COUNT(challlike.challenge_no), 0) AS challengelike_cnt
+		FROM challenge
+		LEFT JOIN challlike ON challenge.challenge_no = challlike.challenge_no
+		WHERE challenge.challenge_recipe IS NOT NULL
+		GROUP BY challenge.challenge_no, challenge.challenge_date
+		ORDER BY challenge_date DESC
+	</select>
+	
+	<select id="selectByMakemylike" parameterType="String" resultType="challlikevo">
+		SELECT *
+		FROM challenge
+		LEFT JOIN challlike ON challenge.challenge_no = challlike.challenge_no
+		WHERE challenge.challenge_recipe IS NOT NULL
+  		AND (challlike.mem_id = #{mem_id} OR challlike.mem_id IS NULL)
+		ORDER BY challenge.challenge_date DESC
+	</select>
+
 
 </mapper>
