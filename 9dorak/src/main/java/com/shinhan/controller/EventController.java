@@ -2,6 +2,8 @@ package com.shinhan.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.shinhan.dto.ChallengeVO;
+import com.shinhan.dto.ChalllikeVO;
 import com.shinhan.dto.EventVO;
+import com.shinhan.dto.MemVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.ChallengeService;
 import com.shinhan.model.EventService;
@@ -33,9 +37,21 @@ public class EventController {
 	 }
 	
 	@GetMapping("makelunchbox.do")
-	public String event2(Model model) {
+	public String makelunchbox(Model model, HttpSession session, ChallengeVO challenge) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<ChallengeVO> clist = chService.selectByMakeAll();
+		List<ChallengeVO> clisttop3 = chService.selectByMakeAllTop3();
+		List<ChallengeVO> clistlike = chService.selectByMakeAlllike();
+		List<ChalllikeVO> clistmylike = chService.selectByMakemylike(loginmem.getMem_id());
 		model.addAttribute("clist", clist);
+		model.addAttribute("clisttop3", clisttop3);
+		model.addAttribute("clistlike", clistlike);
+		model.addAttribute("loginmem", loginmem);
+		model.addAttribute("clistmylike", clistmylike);
+		System.out.println("=============================================");
+		System.out.println(clistmylike);
+		System.out.println("=============================================");
+		System.out.println(clist);
 		return "event/makelunchbox";
 	}
 	
