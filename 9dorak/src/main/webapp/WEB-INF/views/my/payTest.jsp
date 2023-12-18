@@ -14,7 +14,7 @@ IMP.init("imp40668838"); // 내 가맹점 식별 코드
 console.log(IMP);
 function requestPay() {
     IMP.request_pay({
-        pg: "kcp",
+        pg: "inicis",
         pay_method: "card",
         merchant_uid: "ORD20180131-0000011", // Default
         name: "Architectural Pictures",
