@@ -13,13 +13,21 @@ String contextPath = request.getContextPath();
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/basketStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/basketStyle.css?d"
 	type="text/css" />
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
+<style>
+.nullorder {
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 50px;
+	text-align: center;
+}
+</style>
 </head>
 <body>
 	<div class="screen">
@@ -89,59 +97,6 @@ String contextPath = request.getContextPath();
 				<div class="text-wrapper-21">장바구니</div>
 			</div>
 
-
-			<div class="basketList">
-				<c:if test="${empty blist}">
-					<h1>장바구니가 텅 비었어요! 상품을 담아주세요!!</h1>
-				</c:if>
-				<!-- 
-				<c:if test="${}">
-				
-				</c:if>
-				 -->
-
-				<br>
-				<span style="font-weight: bold">
-					<c:out value="${sessionScope.loginmem.mem_name}" /> 님의 도시락
-				</span>
-
-				<c:forEach var="items" items="${formattedDates}">
-					<div class="member">
-						<span class="e126_324">주문 날짜</span>
-						<span class="e126_325">${items.formattedDate}</span>
-					</div>
-				</c:forEach>
-
-				<c:forEach var="items" items="${blist}">
-					<div class="member">
-					<!-- 일단 '내' 장바구니 회원 아이디는 숨겨
-						<span class="e126_321">회원 아이디</span> <span class="e126_322">${items.mem_id}</span>
-						 -->
-						<span class="e126_324">주문한 상품 번호</span> <span class="e126_325">${items.pro_no}</span>
-						<span class="e126_324">주문한 수량</span> <span class="e126_325">${items.basket_pro_count}</span>
-						<span class="e126_324">주문한 날짜</span> <span class="e126_325">${items.basket_date}</span>
-					</div>
-				</c:forEach>
-			</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 			<div class="case">
 				<div class="div">
 					<div class="view">
@@ -170,11 +125,11 @@ String contextPath = request.getContextPath();
 										</div>
 										<div class="frame-wrapper">
 											<div class="frame-7">
-												<img class="img" src="img/image-4.svg" />
+												<img class="img" src="/myapp/resources/images/menu/plus.png">
 												<div class="frame-8">
 													<div class="text-wrapper-7">1</div>
 												</div>
-												<img class="img-2" src="img/image-3.svg" />
+												<img class="img" src="/myapp/resources/images/menu/minus.png">
 											</div>
 										</div>
 									</div>
@@ -220,150 +175,105 @@ String contextPath = request.getContextPath();
 							<div class="text-wrapper-11">결제하기</div>
 						</div>
 					</div>
+					
+					
+					
+					
+					
+					
+			
+					
+					
+					
+					
 					<div class="group-wrapper">
+						
 						<div class="group">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<div class="frame-13">
-								<div class="view-3">
-									<img class="checkbox" src="img/checkbox-2.svg" />
-									<div class="text-wrapper-12">선택해제</div>
-								</div>
-								<div class="text-wrapper-13">선택삭제</div>
-							</div>
+				<!-- 내 장바구니! -->
+				<c:if test="${empty blist}">
+				<div class="empty">
+					<p>장바구니가 텅 비었어요! 상품을 담아주세요!!</p>
+					</div>
+				</c:if>
+			</div>
+							
+							
+					<c:forEach items="${basket}" var="basket" varStatus="status">
 							<div class="cart-menus-wrapper">
 								<div class="cart-menus">
 									<div class="frame-14">
 										<div class="frame-15">
-											<div class="text-wrapper-14">2023-11-21 (화)</div>
+											 <!-- 
+											<div class="text-wrapper-14" style="display:${basket[status.index].basket_date==basket[(status.index-1)].basket_date?'none':'block' }">${basket.basket_date}</div>
+											-->
+											
+											
+											
+									<!--		
+                    <div class="text-wrapper-14" style="display:${basket[status.index].basket_date == basket[(status.index-1)].basket_date?'none':'show'}">${basket.basket_date}</div>
+											-->
+											
+											
+											  
+											<div class="text-wrapper-14">${basket.basket_date}</div>
 											<div class="group-2">
 												<div class="frame-16">
 													<div class="frame-17">
-														<img class="rectangle" src="img/rectangle-76.png" />
+														<img class="rectangle" src="${cpath}/${basket.proimage_image}" />
 														<div class="frame-18">
-															<div class="text-wrapper-15">스팸마요 도시락</div>
-															<div class="text-wrapper-16">7,000원</div>
+															<div class="text-wrapper-15">${basket.pro_name}</div>
+															
+															
+															<input class="text-wrapper-16" id="proPrice" type="number" min="7000" value="${basket.pro_price}" readOnly />
+															
+															<div class="text-wrapper-3" id="total-amount">
+									총 금액 <span id="totalAmount">${basket.pro_price}</span>
+									원
+								</div>
 														</div>
 													</div>
+													
 													<div class="button-product-add">
-														<div class="text-wrapper-17">1</div>
-														<div class="entypo-plus-wrapper">
-															<img class="img-3" src="img/entypo-plus-3.svg" />
+													<input class="text-wrapper-17" id="countNumb" type="number" min="1" value="${basket.basket_pro_count}" readOnly />
+													
+													<!-- 
+														<div class="text-wrapper-17" id="countNumb">${basket.basket_pro_count}</div>  -->
+														<div class="entypo-plus-wrapper" onclick="increaseBasketProCount()">
+															<img class="img-3" src="/myapp/resources/images/menu/plus.png">
 														</div>
-														<div class="entypo-minus-wrapper">
-															<img class="img-3" src="img/entypo-minus.svg" />
+														<div class="entypo-minus-wrapper" onclick="decreaseBasketProCount()">
+															<img class="img-3" src="/myapp/resources/images/menu/minus.png">
 														</div>
 													</div>
+													
 												</div>
 												<img class="close"
 													src="${cpath}/resources/images/wallet/delete_btn.svg" />
+													
 												<div class="frame-19">
-													<img class="checkbox-2" src="img/checkbox.svg" />
-													<div class="text-wrapper-18">ksweeni</div>
+													<input type="checkbox" class="checkbox-2" name="selection" value="${basket.pro_no}" onchange="logCheckboxValue(this)">
+													<div class="text-wrapper-18">${basket.mem_name}</div>
 												</div>
-											</div>
-										</div>
-										<div class="group-2">
-											<div class="frame-16">
-												<div class="frame-17">
-													<img class="rectangle" src="img/rectangle-76-3.png" />
-													<div class="frame-18">
-														<div class="text-wrapper-15">스팸마요 도시락</div>
-														<div class="text-wrapper-16">7,000원</div>
-													</div>
-												</div>
-												<div class="button-product-add">
-													<div class="text-wrapper-17">1</div>
-													<div class="entypo-plus-wrapper">
-														<img class="img-3" src="img/entypo-plus-2.svg" />
-													</div>
-													<div class="entypo-minus-wrapper">
-														<img class="img-3" src="img/entypo-minus-2.svg" />
-													</div>
-												</div>
-											</div>
-											<img class="close" src="img/close-2.svg" />
-											<div class="frame-19">
-												<img class="checkbox-2" src="img/checkbox.svg" />
-												<div class="text-wrapper-18">ksweeni</div>
-											</div>
-										</div>
-										<div class="frame-20">
-											<div class="text-wrapper-14">2023-11-22 (수)</div>
-											<div class="group-2">
-												<div class="frame-16">
-													<div class="frame-17">
-														<img class="rectangle" src="img/rectangle-76-2.png" />
-														<div class="frame-18">
-															<div class="text-wrapper-15">스팸마요 도시락</div>
-															<div class="text-wrapper-16">7,000원</div>
-														</div>
-													</div>
-													<div class="button-product-add">
-														<div class="text-wrapper-17">1</div>
-														<div class="entypo-plus-wrapper">
-															<img class="img-3" src="img/entypo-plus-4.svg" />
-														</div>
-														<div class="entypo-minus-wrapper">
-															<img class="img-3" src="img/entypo-minus-3.svg" />
-														</div>
-													</div>
-												</div>
-												<img class="close" src="img/close-2.svg" />
-												<div class="frame-21">
-													<img class="checkbox-2" src="img/checkbox.svg" />
-													<div class="text-wrapper-19">jongbumee</div>
-												</div>
-											</div>
-										</div>
-										<div class="group-2">
-											<div class="frame-16">
-												<div class="frame-17">
-													<img class="rectangle" src="img/image.png" />
-													<div class="frame-18">
-														<div class="text-wrapper-15">스팸마요 도시락</div>
-														<div class="text-wrapper-16">7,000원</div>
-													</div>
-												</div>
-												<div class="button-product-add">
-													<div class="text-wrapper-17">1</div>
-													<div class="entypo-plus-wrapper">
-														<img class="img-3" src="img/entypo-plus.svg" />
-													</div>
-													<div class="entypo-minus-wrapper">
-														<img class="img-3" src="img/entypo-minus-4.svg" />
-													</div>
-												</div>
-											</div>
-											<img class="close" src="img/close.svg" />
-											<div class="frame-19">
-												<img class="checkbox-2" src="img/checkbox.svg" />
-												<div class="text-wrapper-18">ksweeni</div>
 											</div>
 										</div>
 									</div>
 								</div>
+								
+								
+								<div class="frame-13">
+								
+								
+								<div class="view-3">
+									<input type="checkbox" class="checkbox" name="selection" onclick="checkBoxSelector()">
+									<div class="text-wrapper-12">선택해제</div>
+								</div>
+								<div class="text-wrapper-13">선택삭제</div>
 							</div>
+								
+								
+							</div>
+							</c:forEach>
+							
 						</div>
 					</div>
 				</div>
@@ -440,6 +350,65 @@ String contextPath = request.getContextPath();
 </body>
 
 <script>
+function logCheckboxValue(checkbox) {
+    console.log("Checkbox value: ", checkbox.value);
+}
+
+// 체크 박스 선택
+var isChecked = false;
+
+function checkBoxSelector() {
+    if (isChecked) {
+    	selectAll();
+    	unselectAll();
+    } else {
+    	selectAll();
+    }
+    isChecked = !isChecked;
+}
+
+function selectAll() {
+	var checkboxes = document.getElementsByName('selection');
+    
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = true;
+    }
+}
+
+function unselectAll() {
+var checkboxes = document.getElementsByName('selection');
+    
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = false;
+    }
+}
+
+// 장바구니 상품 수량 변화
+var proCountElement = document.getElementById('countNumb'); // 최소값 설정
+var proPriceElement = document.getElementById('proPrice'); // 상품 가격
+
+var proCount = parseInt(proCountElement.value); // 최소값 설정
+var proPrice = parseFloat(proPriceElement.value); // 상품 가격
+
+function increaseBasketProCount() {
+	proCount++;
+  updateBasketProCount();
+}
+
+function decreaseBasketProCount() {
+	proCount = Math.max(1, proCount-1);
+  updateBasketProCount();
+}
+
+function updateBasketProCount() {
+    var totalAmount = proCount * proPrice;
+    console.log("Total Amount:", totalAmount);
+    console.log("Total count:", proCount);
+    proCountElement.value = proCount;
+    document.getElementById('totalAmount').value = totalAmount;
+}
+
+
 	$(".e79_263").on("click", function() {
 		$.ajax({
 

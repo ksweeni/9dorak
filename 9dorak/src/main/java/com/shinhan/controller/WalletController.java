@@ -1,9 +1,5 @@
 package com.shinhan.controller;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.shinhan.dto.BasketVO;
-import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.PayVO;
+import com.shinhan.dto.PeopleVO;
 import com.shinhan.model.WalletService;
 
 @Controller
@@ -60,29 +56,60 @@ public class WalletController {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+//	@GetMapping("basket.do")
+//    public List<PeopleVO> peopleCheck(Model model, HttpSession session) {
+//    	MemVO loginmem = (MemVO)session.getAttribute("loginmem");
+//		MemVO member = wService.checkMember(loginmem.getMem_id());
+//		List<PeopleVO> people = wService.peopleCheck(loginmem.getMem_id());
+//    	return people;
+//    }
+    
+	
+
+
+    
+    
+	
 
     // 회원이 담은 상품 목록
-	@GetMapping("basket.do")
+    @GetMapping("basket.do")
 	public String basket(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO)session.getAttribute("loginmem");
 		MemVO member = wService.checkMember(loginmem.getMem_id());
 		List<BasketVO> blist = wService.emptyBasket(loginmem.getMem_id());
 		
-		// 날짜 형식 변경
-		List<Map<String, String>> formattedDates = new ArrayList<>();
-		for (BasketVO basket : blist) {
-		    Timestamp basketDate = basket.getBasket_date();
-		    SimpleDateFormat dateFormat = new SimpleDateFormat("yy년 MM월 dd일");
-		    String formattedDate = dateFormat.format(new Date(basketDate.getTime()));
-		    
-		    Map<String, String> formattedDateMap = new HashMap<>();
-	        formattedDateMap.put("formattedDate", formattedDate);
-	        formattedDates.add(formattedDateMap);
+		List<PeopleVO> people = wService.peopleCheck(loginmem.getMem_id());
+		List<Map<String, Object>> basket;
+		if(people == null || people.isEmpty()) {
+			basket = wService.noPeopleBasket(loginmem.getMem_id());
+		} else {
+			basket = wService.allPeopleBasket(loginmem.getMem_id());
 		}
+		
+//		// timestamp 날짜 형식 변경 -> yy년 MM월 dd일
+//		List<Map<String, String>> formattedDates = new ArrayList<>();
+//		for (BasketVO basket : blist) {
+//		    Timestamp basketDate = basket.getBasket_date();
+//		    SimpleDateFormat dateFormat = new SimpleDateFormat("yy년 MM월 dd일");
+//		    String formattedDate = dateFormat.format(new Date(basketDate.getTime()));
+//		    
+//		    Map<String, String> formattedDateMap = new HashMap<>();
+//	        formattedDateMap.put("formattedDate", formattedDate);
+//	        formattedDates.add(formattedDateMap);
+//		}
 		
 		model.addAttribute("mem", member);
 		model.addAttribute("blist", blist);
-		model.addAttribute("formattedDates", formattedDates);
+		model.addAttribute("people", people);
+		model.addAttribute("basket", basket);
+//		model.addAttribute("formattedDates", formattedDates);
 		
 		return "wallet/basket";
 	}

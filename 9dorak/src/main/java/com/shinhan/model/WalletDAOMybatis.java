@@ -64,15 +64,15 @@ public class WalletDAOMybatis {
     
     
     
+    public List<PeopleVO> peopleCheck(String mem_id) {
+        List<PeopleVO> people = sqlSession.selectList(NAMESPACE + "peopleCheck", mem_id);
+        return people;
+    }
     
-    
-    
-    
-    
-    // 지인 존재 여부 검색
-    public PeopleVO peopleCheck(String mem_id) {
-    	PeopleVO people = sqlSession.selectOne(NAMESPACE + "peopleCheck", mem_id);
-    	return people;
+    // 나 + 지인 장바구니 검색
+    public List<Map<String, Object>> allPeopleBasket(String mem_id) {
+    	List<Map<String, Object>> blist = sqlSession.selectList(NAMESPACE + "allPeopleBasket", mem_id);
+    	return blist;
     }
     
     // 지인이 있을 때 장바구니 검색

@@ -51,10 +51,12 @@ public class WalletService {
 	
 	
 	
+	public List<Map<String, Object>> allPeopleBasket(String mem_id) {
+		return dao.allPeopleBasket(mem_id);
+	}
 	
 	
-	
-	public PeopleVO peopleCheck(String mem_id) {
+	public List<PeopleVO> peopleCheck(String mem_id) {
     	return dao.peopleCheck(mem_id);
     }
     
