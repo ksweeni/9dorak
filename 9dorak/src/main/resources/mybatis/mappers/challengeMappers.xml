@@ -19,6 +19,7 @@
 		set
 		challenge_name=#{challenge_name},
 		challenge_cont=#{challenge_cont},
+		challenge_recipe=#{challenge_recipe},
 		challenge_date=sysdate
 		where
 		challenge_no=#{challenge_no}
@@ -163,6 +164,5 @@
   		AND (challlike.mem_id = #{mem_id} OR challlike.mem_id IS NULL)
 		ORDER BY challenge.challenge_date DESC
 	</select>
-
 
 </mapper>
