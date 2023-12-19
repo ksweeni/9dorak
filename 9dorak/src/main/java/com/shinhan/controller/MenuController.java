@@ -234,4 +234,9 @@ public class MenuController {
 		return "menu/menuSpecificReview";
 	}
 	
+	@GetMapping("menuReviewUpload.do")
+	public String menuReviewUpload() {
+		return "menu/menuReviewUpload";
+	}
+	
 }

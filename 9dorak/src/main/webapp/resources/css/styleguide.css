@@ -343,6 +343,8 @@
 }
 
 .div-3 .text-wrapper-28 {
+	width: fit-content !important;
+    left: -15px !important;
 	position: relative !important;
 }
 
