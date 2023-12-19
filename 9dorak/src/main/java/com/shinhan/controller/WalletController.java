@@ -63,53 +63,44 @@ public class WalletController {
 	
 	
 	
-//	@GetMapping("basket.do")
-//    public List<PeopleVO> peopleCheck(Model model, HttpSession session) {
-//    	MemVO loginmem = (MemVO)session.getAttribute("loginmem");
-//		MemVO member = wService.checkMember(loginmem.getMem_id());
-//		List<PeopleVO> people = wService.peopleCheck(loginmem.getMem_id());
-//    	return people;
-//    }
     
+
+
+    // 장바구니 수량 변경
+    @PostMapping("updateBasket.do")
+    @ResponseBody
+    public String updateBasket(Model model, HttpSession session, BasketVO basket) {
+    	System.out.println(basket);
+    	int result = wService.updateBasket(basket);
+    	String flag;
+    	
+    	if (result > 0) {
+        	flag="성공!";
+        } else {
+        	flag="실패!";
+        }
+        return flag;
+    }
 	
-
-
-    
-    
-	
-
     // 회원이 담은 상품 목록
     @GetMapping("basket.do")
 	public String basket(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO)session.getAttribute("loginmem");
 		MemVO member = wService.checkMember(loginmem.getMem_id());
 		List<BasketVO> blist = wService.emptyBasket(loginmem.getMem_id());
-		
 		List<PeopleVO> people = wService.peopleCheck(loginmem.getMem_id());
 		List<Map<String, Object>> basket;
+		
 		if(people == null || people.isEmpty()) {
 			basket = wService.noPeopleBasket(loginmem.getMem_id());
 		} else {
 			basket = wService.allPeopleBasket(loginmem.getMem_id());
 		}
 		
-//		// timestamp 날짜 형식 변경 -> yy년 MM월 dd일
-//		List<Map<String, String>> formattedDates = new ArrayList<>();
-//		for (BasketVO basket : blist) {
-//		    Timestamp basketDate = basket.getBasket_date();
-//		    SimpleDateFormat dateFormat = new SimpleDateFormat("yy년 MM월 dd일");
-//		    String formattedDate = dateFormat.format(new Date(basketDate.getTime()));
-//		    
-//		    Map<String, String> formattedDateMap = new HashMap<>();
-//	        formattedDateMap.put("formattedDate", formattedDate);
-//	        formattedDates.add(formattedDateMap);
-//		}
-		
 		model.addAttribute("mem", member);
 		model.addAttribute("blist", blist);
 		model.addAttribute("people", people);
 		model.addAttribute("basket", basket);
-//		model.addAttribute("formattedDates", formattedDates);
 		
 		return "wallet/basket";
 	}

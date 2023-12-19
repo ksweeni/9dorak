@@ -1,6 +1,5 @@
 package com.shinhan.model;
 
-import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,12 +43,6 @@ public class WalletDAOMybatis {
         return result;
     }
 
-    // 장바구니 수량 수정
-    public int modifyCount(BasketVO basket) {
-        int result = sqlSession.update(NAMESPACE + "modifyCount", basket);
-        return result;
-    }
-
     // mem_id의 장바구니 목록
     public List<BasketVO> getBasket(String mem_id) {
         return sqlSession.selectList(NAMESPACE + "getBasket", mem_id);
@@ -62,7 +55,11 @@ public class WalletDAOMybatis {
     
     
     
-    
+    // 장바구니 수량 수정
+    public int updateBasket(BasketVO basket) {
+        int result = sqlSession.update(NAMESPACE + "updateBasket", basket);
+        return result;
+    }
     
     public List<PeopleVO> peopleCheck(String mem_id) {
         List<PeopleVO> people = sqlSession.selectList(NAMESPACE + "peopleCheck", mem_id);

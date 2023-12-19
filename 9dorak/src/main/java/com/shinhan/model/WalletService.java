@@ -2,7 +2,6 @@ package com.shinhan.model;
 
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.shinhan.dto.BasketVO;
@@ -33,10 +32,6 @@ public class WalletService {
 	
 	public int deleteBasket(String mem_id, int pro_no) {
 		return dao.deleteBasket(mem_id, pro_no);
-	}
-	
-	public int modifyCount(BasketVO basket) {
-		return dao.modifyCount(basket);
 	}
 	
 	public List<BasketVO> getBasket(String mem_id) {
@@ -86,5 +81,9 @@ public class WalletService {
 	
 	public List<BasketVO> emptyBasket(String mem_id) {
 		return dao.emptyBasket(mem_id);
+	}
+
+	public int updateBasket(BasketVO basket) {
+		return dao.updateBasket(basket);
 	}
 }

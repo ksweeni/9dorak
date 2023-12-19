@@ -20,14 +20,6 @@ String contextPath = request.getContextPath();
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
-<style>
-.nullorder {
-	font-size: 30px;
-	font-weight: bold;
-	margin-top: 50px;
-	text-align: center;
-}
-</style>
 </head>
 <body>
 	<div class="screen">
@@ -153,15 +145,16 @@ String contextPath = request.getContextPath();
 													
 													<div class="buttonCount">
 														<div class="entypo-minus-wrapper">
-															<input type='hidden' value='${basket.pro_no}'
-																class='pro_no' /> <input type='hidden'
-																value='${basket.pro_price}' class='pro_price' /> <input
-																type='hidden' value='${status.count}' class='index-num' />
+															<input type='hidden' value='${basket.pro_no}' class='pro_no' />
+															<input type='hidden' value='${basket.pro_price}' class='pro_price' />
+															<input type='hidden' value='${status.count}' class='index-num' />
+															<input type='hidden' value='${basket.mem_id}' class='mem_id' />
 															<img class="img-3"
 																src="/myapp/resources/images/menu/minus.png">
 														</div>
 														<span id="result${status.count}" class="text-wrapper-17">${basket.basket_pro_count}</span>
 														<div class="entypo-plus-wrapper">
+																<input type='hidden' value='${basket.mem_id}' class='mem_id' />
 															    <input type='hidden' value='${basket.pro_no}' class='pro_no' />
 																<input type='hidden' value='${basket.pro_price}' class='pro_price' />
 																<input type='hidden' value='${status.count}' class='index-num' />
@@ -187,12 +180,15 @@ String contextPath = request.getContextPath();
 							<div class="frame-3">
 								<div class="text-wrapper-2">결제정보</div>
 								<div class="text-wrapper-3">2 Items</div>
+								
+								<div class="text-wrapper-3" id="total-items">
+				총 <span id="totalAmount${status.count}"> ${basket.pro_price*basket.basket_pro_count}</span>Items</div>
+								
+								
+								
 							</div>
 							<div class="frame-4">
 								<div class="frame-5">
-									<p class="p">
-										<span class="span">from</span> <span class="text-wrapper-4">${sessionScope.loginmem.mem_name}</span>
-									</p>
 									<div class="frame-3">
 										<div class="frame-6">
 											<div class="text-wrapper-5">스팸마요 도시락</div>
@@ -351,25 +347,61 @@ String contextPath = request.getContextPath();
 	$(".entypo-plus-wrapper").on("click", function() {
 		var price = parseFloat($(this).find(".pro_price").val());
 	    var index = $(this).find(".index-num").val();
-	    var pro_num = $(this).find(".pro_no").val();
+	    var pro_no = $(this).find(".pro_no").val();
+	    var mem_id = $(this).find(".mem_id").val();
 	    var quantity = Number($("#result" + index).html()) + 1;
 	    $('#result' + index).html(quantity);
 	    updateCounter(quantity,price,index);
+	    
+	    $.ajax({
+	    	type: "POST",
+			url:"${cpath}/wallet/updateBasket.do",
+			data : {
+				mem_id: mem_id,
+	            pro_no: pro_no,
+	            basket_pro_count: quantity,
+			},
+			success : function(response){
+				if(response === "성공!"){
+					console.log("콘솔 - 업데이트 성공!!");
+				}
+			}
+		});
 	});
 	
 	$(".entypo-minus-wrapper").on("click", function() {
 	    var price = parseFloat($(this).find(".pro_price").val());
 	    var index = $(this).find(".index-num").val();
-	    var pro_num = $(this).find(".pro_no").val();
+	    var pro_no = $(this).find(".pro_no").val();
+	    var mem_id = $(this).find(".mem_id").val();
 	    var quantity = Number($("#result" + index).html()) - 1;
 	    $('#result' + index).html(quantity);
 	    updateCounter(quantity,price,index);
+	    
+	    $.ajax({
+	    	type: "POST",
+			url:"${cpath}/wallet/updateBasket.do",
+			data : {
+				mem_id: mem_id,
+	            pro_no: pro_no,
+	            basket_pro_count: quantity,
+			},
+			success : function(response){
+				if(response === "성공!"){
+					console.log("콘솔 - 업데이트 성공!!");
+				}
+			}
+		});
 	});
-	
 	function updateCounter(quantity,price,index) {
     	var totalAmount = quantity*price;
     	$('#totalAmount' + index).html(totalAmount);
     }
+	
+	function totalItems() {
+		
+	}
+	
 	
 	// 날짜 중복 검사
 	$(document).ready(function() {
@@ -387,9 +419,6 @@ String contextPath = request.getContextPath();
 	        }
 	    });
 	}
-
-
-
 	
 </script>
 
