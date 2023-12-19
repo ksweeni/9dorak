@@ -16,7 +16,6 @@
 </head>
 <body>
 	<div class=e815_534>
-		<div class=e1140_2927>
 			<header class="header">
 			<div class="top-nav">
 				<div class="navbar">
@@ -53,7 +52,6 @@
 				</div>
 			</div>
 		</header>
-		</div>
 		<div class="e844_606"></div>
 	</div>
 	<div class="e844_9999"></div>
