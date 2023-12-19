@@ -32,37 +32,37 @@ public class PaymentController {
 				"e3h05uZuutCJFe3JxCpFkqH5Qp90bvbNdPUC9j6Szr9uKb79mewNzS74gQgDVgI39qIUajRB58SQ6BTj");
 	}
 
-    @ResponseBody
+	@ResponseBody
 	@PostMapping("/cancelPay")
-    public String cancelPay(@RequestParam String imp_uid) throws Exception {
-    	try {
-    		String token = pService.getUserToken();
-    		System.out.println("받아온 토큰"  + token);
-           pService.paymentCancel(token,imp_uid, 100, "맘에 안 들어요");
-           pService.updatePayStatus(imp_uid);
-            return "Payment canceled successfully!";
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "Failed to cancel payment. Check logs for details.";
-        }
-    }
-	
+	public String cancelPay(@RequestParam String imp_uid) throws Exception {
+		try {
+			String token = pService.getUserToken();
+			System.out.println("받아온 토큰" + token);
+			pService.paymentCancel(token, imp_uid, 100, "맘에 안 들어요");
+			pService.updatePayStatus(imp_uid);
+			return "Payment canceled successfully!";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Failed to cancel payment. Check logs for details.";
+		}
+	}
+
 	@ResponseBody
 	@RequestMapping("verify/{imp_uid}")
 	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, Model model) {
-		
+
 		try {
 			IamportResponse<Payment> iamportResponse = iamportClient.paymentByImpUid(imp_uid);
 
 			if ("paid".equals(iamportResponse.getResponse().getStatus())) {
 				System.out.println("paid");
-				String paymethod="";
+				String paymethod = "";
 
 				try {
 					String token = pService.getUserToken();
-					//System.out.println("토큰입니다 : " + token);
-					//int amounts = pService.paymentInfo(imp_uid, token);
-					System.out.println("결제한 금액 : "+pService.paymentInfo(imp_uid, token));
+					// System.out.println("토큰입니다 : " + token);
+					// int amounts = pService.paymentInfo(imp_uid, token);
+					System.out.println("결제한 금액 : " + pService.paymentInfo(imp_uid, token));
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -73,7 +73,7 @@ public class PaymentController {
 				BigDecimal paidAmount = payment.getAmount(); // 가격
 				String currency = payment.getCurrency(); // Currency
 				String paymentMethod = payment.getPayMethod(); // point로 했다는데
-				
+
 				String impuid = payment.getImpUid(); // 영수증 정보 무조건 필요 ( 환불 시 )
 
 				// Buyer information
@@ -82,12 +82,11 @@ public class PaymentController {
 				String buyerTel = payment.getBuyerTel(); // Buyer's phone number
 				String buyerAddr = payment.getBuyerAddr(); // buyer's buyer shop
 				String buyerPostcode = payment.getBuyerPostcode(); // 01181
-				System.out.println(productName);
+			//	System.out.println(productName);
+
+			  int roundedAmount = paidAmount.setScale(0, RoundingMode.HALF_UP).intValue();
 				
 				
-				int roundedAmount = paidAmount.setScale(0, RoundingMode.HALF_UP).intValue();
-				System.out.println(roundedAmount);
-				System.out.println(currency);
 
 				paymethod = CurrentPayMethod(paymentMethod);
 
@@ -98,25 +97,25 @@ public class PaymentController {
 				System.out.println(buyerAddr);
 				System.out.println(buyerPostcode);
 				System.out.println(impuid);
-				
+
 				int index = pService.selectPayCount();
-				
+
 				PayVO pay = new PayVO();
-				pay.setOrder_no(index+1);
+				pay.setOrder_no(index + 1);
 				pay.setPay_date(null);
 				pay.setPay_status("결제 완료");
 				pay.setPay_depo(buyerName);
 				pay.setImp_uid(impuid);
-				
+
 				pay.setPay_depobank(paymethod);
 				pay.setPay_method(paymethod);
 				
 				pay.setPay_depoprice(roundedAmount);
 				pay.setPay_price(roundedAmount);
-				
+
 				System.out.println(pay);
 				pService.insertPay(pay);
-				
+
 			} else {
 
 				model.addAttribute("resultMessage", "Payment verification failed");
