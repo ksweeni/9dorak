@@ -47,8 +47,8 @@
             IMP.request_pay({
                 pg: "inicis",
                 pay_method: "card",
-                merchant_uid: "ORD20180131-0000043",
-                name: "구도락 결제 테스트",
+                merchant_uid: "ORD20180131-0000044",
+                name: "구도락 결제 테스트 2일차",
                 amount: 100,
                 buyer_email: "gildong@gmail.com",
                 buyer_name: "buyer_name",

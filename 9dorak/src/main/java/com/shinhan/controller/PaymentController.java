@@ -54,6 +54,8 @@ public class PaymentController {
 				try {
 					String token = pService.getUserToken();
 					System.out.println("토큰입니다 : " + token);
+					//int amounts = pService.paymentInfo(imp_uid, token);
+					System.out.println("결제한 금액 : "+pService.paymentInfo(imp_uid, token));
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
