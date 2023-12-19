@@ -105,17 +105,6 @@ public class PayService {
 		bw.flush();
 		bw.close();
 
-		/*
-		 * BufferedReader br = new BufferedReader(new
-		 * InputStreamReader(conn.getInputStream(), "utf-8")); Gson gson = new Gson();
-		 * String response = ""; response = gson.fromJson(response,
-		 * Map.class).get("response").toString(); System.out.println("Response : "
-		 * +response);
-		 * 
-		 * String token = gson.fromJson(response,
-		 * Map.class).get("access_token").toString(); System.out.println("token : " +
-		 * token);
-		 */
 		BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
 		StringBuilder responseStringBuilder = new StringBuilder();
 		String inputLine;
@@ -136,6 +125,37 @@ public class PayService {
 		br.close();
 		conn.disconnect();
 		return token;
+	}
+	
+	public void paymentCancel(String accessToken, String impUid, int amount, String reason)  throws IOException {
+		HttpsURLConnection conn = null;
+		URL url = new URL("https://api.iamport.kr/payments/cancel");
+		conn = (HttpsURLConnection) url.openConnection();
+		
+		conn.setRequestMethod("POST");
+		conn.setRequestProperty("Content-type", "application/json");
+		conn.setRequestProperty("Accept", "application/json");
+		conn.setRequestProperty("Authorization", accessToken);
+		conn.setDoOutput(true);
+		
+		JsonObject json = new JsonObject();
+		json.addProperty("reason", reason);
+		json.addProperty("imp_uid",  impUid);
+		json.addProperty("amount", amount);
+		json.addProperty("checksum", amount);
+		
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
+		bw.write(json.toString());
+		
+		System.out.println("결제 취소 : " +json.toString());
+		
+		bw.flush();
+		bw.close();
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+		br.close();
+		conn.disconnect();
+		
 	}
 
 }

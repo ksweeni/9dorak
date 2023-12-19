@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shinhan.dto.PayVO;
@@ -40,10 +42,22 @@ public class PaymentController {
 	 * return iamportClient.paymentByImpUid(imp_uid); }
 	 */
 
+    @ResponseBody
+	@PostMapping("/cancelPay")
+    public String cancelPay(@RequestParam String imp_uid) {
+    	try {
+           pService.paymentCancel("f7714d9763df0037c0422b9cc3518028615a40ea",imp_uid, 100, "맘에 안들어요");
+            return "Payment canceled successfully!";
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Failed to cancel payment. Check logs for details.";
+        }
+    }
+	
 	@ResponseBody
 	@RequestMapping("verify/{imp_uid}")
 	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, Model model) {
-		System.out.println("asd");
+		
 		try {
 			IamportResponse<Payment> iamportResponse = iamportClient.paymentByImpUid(imp_uid);
 

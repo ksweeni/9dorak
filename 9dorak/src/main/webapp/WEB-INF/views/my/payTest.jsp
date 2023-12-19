@@ -28,6 +28,7 @@
 </head>
 <body>
     <button onclick="requestPay()">결제하기</button>
+     <button onclick="cancelPay()">결제취소</button>
 
     <!-- Modal -->
     <div id="successModal" class="modal">
@@ -85,6 +86,30 @@
             $('#successModal').hide();
             
         }
+        
+        function cancelPay() {
+            var imp_uid = "imp_787087684484"; // Replace this with the actual imp_uid of the payment you want to cancel
+
+            // Perform AJAX request to cancel the payment
+            $.ajax({
+                type: 'POST',
+                url: '${cpath}/cancelPay', // Replace with the actual URL for canceling payment on the server
+                data: {
+                    imp_uid: imp_uid
+                }
+            }).done(function (data) {
+                console.log(data);
+
+                if (data) {
+                	alert(data);
+                    alert('결제가 취소되었습니다.');
+                } else {
+                    var msg = '결제 취소에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;
+                    alert(msg);
+                }
+            });
+        }
+
     </script>
 </body>
 </html>
