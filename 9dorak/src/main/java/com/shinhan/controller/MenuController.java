@@ -231,43 +231,6 @@ public class MenuController {
 		return "menu/menuSpecificReview";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	// 리뷰 사진 및 동영상 모아보기
 	@GetMapping("menuMediaReview.do")
 	public String menuMediaReview(Model model, ProVO pro) {
@@ -299,4 +262,10 @@ public class MenuController {
 		
 		return "menu/mediareview_ajax";
 	}
+	
+	@GetMapping("menuReviewUpload.do")
+	public String menuReviewUpload() {
+		return "menu/menuReviewUpload";
+	}
+	
 }
