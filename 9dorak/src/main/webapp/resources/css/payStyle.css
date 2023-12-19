@@ -1,5 +1,38 @@
 @charset "UTF-8";
 
+.my-del-button {
+	margin-top: 3%;
+    position: relative;
+    left: 79%;
+}
+
+.my-del {
+	cursor:pointer;
+	border: 1px solid #fc8019;
+	padding: 10px 20px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #fc8019;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+.my-del:hover {
+	background: white;
+}
+input {
+	accent-color:orange;
+}
+
+.checkbox+label {
+	color: black; 
+}
+
+.checkbox:checked+label {
+	color: orange; 
+}
+
 .screen {
 	background-color: #ffffff;
 	display: flex;
@@ -95,7 +128,7 @@
 .screen .text-wrapper {
 	width: 237px;
 	height: 49px;
-	font-family: "Poppins-SemiBold", Helvetica;
+	/**/
 	font-weight: 600;
 	color: #f38820;
 	font-size: 30px;
@@ -106,6 +139,7 @@
 }
 
 .screen .div-wrapper {
+	margin-top: 10px;
 	position: relative;
 	width: 700px;
 	height: 235px;
@@ -118,7 +152,7 @@
 	position: relative;
 	width: 627px;
 	height: 150px;
-	top: 63px;
+	top: 50px;
 	left: 36px;
 }
 
@@ -126,7 +160,6 @@
 	position: absolute;
 	top: 67px;
 	left: 200px;
-	font-family: "Montserrat-SemiBold", Helvetica;
 	font-weight: 600;
 	color: #000000;
 	font-size: 25px;
@@ -167,7 +200,7 @@
 	width: 284px;
 	top: 125px;
 	left: 13px;
-	font-family: "Montserrat-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: transparent;
 	font-size: 20px;
@@ -192,9 +225,10 @@
 }
 
 .screen .frame-4 {
+	cursor:pointer;
 	display: flex;
-	width: 153px;
-	height: 60px;
+	width: 130px;
+	height: 35px;
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
@@ -211,7 +245,7 @@
 	width: fit-content;
 	margin-top: -2.5px;
 	margin-bottom: -0.5px;
-	font-family: "Poppins-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: #ffffff;
 	font-size: 22px;
@@ -241,7 +275,7 @@
 	width: 284px;
 	top: 16px;
 	left: 34px;
-	font-family: "Montserrat-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: #7a7a7a;
 	font-size: 22px;
@@ -254,7 +288,7 @@
 	width: 237px;
 	top: 0;
 	left: 0;
-	font-family: "Poppins-SemiBold", Helvetica;
+	/**/
 	font-weight: 600;
 	color: #f38820;
 	font-size: 30px;
@@ -277,7 +311,7 @@
 	margin-bottom: -0.5px;
 	margin-left: -2px;
 	margin-right: -2px;
-	font-family: "Poppins-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: #ffffff;
 	font-size: 22px;
@@ -321,7 +355,7 @@
 .screen .text-wrapper-8 {
 	position: relative;
 	width: fit-content;
-	font-family: "Poppins-Regular", Helvetica;
+	/**/
 	font-weight: 400;
 	color: #000000;
 	font-size: 25px;
@@ -395,7 +429,7 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: #202020;
 	font-size: 24px;
@@ -406,7 +440,7 @@
 .screen .text-wrapper-10 {
 	position: relative;
 	width: fit-content;
-	font-family: "Poppins-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: #202020;
 	font-size: 16px;
@@ -428,7 +462,7 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: #000000;
 	font-size: 14px;
@@ -458,7 +492,7 @@
 	position: relative;
 	width: 61px;
 	margin-top: -1px;
-	font-family: "Poppins-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: #808080;
 	font-size: 14px;
@@ -471,7 +505,7 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: #f38820;
 	font-size: 14px;
@@ -490,8 +524,9 @@
 }
 
 .screen .frame-12 {
+	width: 315px;
 	display: flex;
-	width: 365px;
+	cursor:pointer;
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
@@ -507,7 +542,7 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Poppins-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: #ffffff;
 	font-size: 20px;
@@ -534,7 +569,7 @@
 
 .screen .text-wrapper-15 {
 	width: fit-content;
-	font-family: "Poppins-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: #000000;
 	font-size: 24px;
@@ -557,7 +592,7 @@
 	width: 137px;
 	top: 0;
 	left: 17px;
-	font-family: "Poppins-Medium", Helvetica;
+	/**/
 	font-weight: 500;
 	color: transparent;
 	font-size: 14px;
@@ -589,22 +624,20 @@
 
 .screen .account-navigation {
 	position: absolute;
-	width: 700px;
+	width: fit-content;
 	height: 68px;
-	top: 141px;
-	left: 370px;
+	top: 130px;
+	left: 50%;
 }
 
 .screen .text-wrapper-17 {
 	position: absolute;
-	width: 197px;
+	width: fit-content;
 	height: 41px;
 	top: 28px;
-	left: 0;
-	font-family: "Roboto-ExtraBold", Helvetica;
 	font-weight: 800;
 	color: #484848;
-	font-size: 32px;
+	font-size: 2.5rem;
 	letter-spacing: 0;
 	line-height: 36px;
 	white-space: nowrap;
@@ -645,7 +678,7 @@
 	position: absolute;
 	top: 0;
 	left: 359px;
-	font-family: var(- -h5-font-family);
+	/**/
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -658,7 +691,7 @@
 	position: absolute;
 	top: 115px;
 	left: 0;
-	font-family: var(- -h5-font-family);
+	/**/
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -671,7 +704,7 @@
 	position: absolute;
 	top: 115px;
 	left: 84px;
-	font-family: var(- -h5-font-family);
+	/**/
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -684,7 +717,7 @@
 	position: absolute;
 	top: 115px;
 	left: 167px;
-	font-family: var(- -h5-font-family);
+	/**/
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -697,7 +730,7 @@
 	position: absolute;
 	top: 115px;
 	left: 259px;
-	font-family: var(- -h5-font-family);
+	/**/
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -719,7 +752,7 @@
 	position: absolute;
 	top: 9px;
 	left: 0;
-	font-family: var(- -h5-font-family);
+	/**/
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -765,14 +798,7 @@
 .screen .text-wrapper-24 {
 	top: 0;
 	left: 18px;
-	font-family: var(- -p2-font-family);
-	font-weight: var(- -p2-font-weight);
-	color: var(- -white);
-	font-size: var(- -p2-font-size);
 	position: absolute;
-	letter-spacing: var(- -p2-letter-spacing);
-	line-height: var(- -p2-line-height);
-	font-style: var(- -p2-font-style);
 }
 
 .screen .black-linear {
@@ -814,13 +840,6 @@
 	width: 375px;
 	top: 0;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .screen .social-icon {
@@ -906,14 +925,7 @@
 .screen .text-wrapper-26 {
 	top: 0;
 	left: 10px;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
-	color: #000000;
-	font-size: var(- -h4-font-size);
 	position: absolute;
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
 }
 
 .screen .group-8 {
@@ -928,39 +940,12 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
-}
-
-.screen .text-wrapper-28 {
-	position: absolute;
-	top: 34px;
-	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .screen .text-wrapper-29 {
 	position: absolute;
 	top: 68px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .screen .group-9 {
@@ -975,7 +960,6 @@
 	position: relative;
 	width: 259px;
 	height: 58px;
-	background-color: var(- -white);
 	border-radius: 32.5px;
 	box-shadow: 0px 0px 15px #0000000d;
 }
@@ -1003,13 +987,6 @@
 	width: 177px;
 	top: 21px;
 	left: 21px;
-	font-family: var(- -p2-font-family);
-	font-weight: var(- -p2-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p2-font-size);
-	letter-spacing: var(- -p2-letter-spacing);
-	line-height: var(- -p2-line-height);
-	font-style: var(- -p2-font-style);
 }
 
 .screen .user-link {
@@ -1024,13 +1001,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: var(- -h4-font-family);
-	font-weight: var(- -h4-font-weight);
 	color: #000000;
-	font-size: var(- -h4-font-size);
-	letter-spacing: var(- -h4-letter-spacing);
-	line-height: var(- -h4-line-height);
-	font-style: var(- -h4-font-style);
 }
 
 .screen .group-10 {
@@ -1045,26 +1016,12 @@
 	position: absolute;
 	top: 102px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .screen .text-wrapper-32 {
 	position: absolute;
 	top: 136px;
 	left: 0;
-	font-family: var(- -p1-font-family);
-	font-weight: var(- -p1-font-weight);
-	color: var(- -gray);
-	font-size: var(- -p1-font-size);
-	letter-spacing: var(- -p1-letter-spacing);
-	line-height: var(- -p1-line-height);
-	font-style: var(- -p1-font-style);
 }
 
 .screen .opening-restaurant {
