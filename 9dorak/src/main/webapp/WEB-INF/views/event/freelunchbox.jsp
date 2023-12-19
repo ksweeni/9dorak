@@ -16,42 +16,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-			<header class="header">
-			<div class="top-nav">
-				<div class="navbar">
-					<div class="text-event"
-					OnClick="location.href ='${pageContext.request.contextPath}/event/challenge.do'" style="cursor: pointer;">
-					이벤트</div>
-					<div class="text-menu"
-					OnClick="location.href ='${pageContext.request.contextPath}/menu/menu.do'" style="cursor: pointer;">
-					메뉴보기</div>
-					<div class="text-subscribe"
-					OnClick="location.href ='${pageContext.request.contextPath}/sub/sub.do'" style="cursor: pointer;">
-					구독하기</div>
-					<div class="text-yomo"
-					OnClick="location.href ='${pageContext.request.contextPath}/yomo/notice.do'" style="cursor: pointer;">
-					요모조모</div>
-					<div class="text-doran"
-					OnClick="location.href ='${pageContext.request.contextPath}/doran/doran.do'" style="cursor: pointer;">
-					도란도란</div>
+	<header class="header">
+		<div class="top-nav">
+			<div class="navbar">
+				<div class="text-event">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
 				</div>
-				<img class="untitled-2"
-					src="${cpath}/resources/images/main/header-logo.png" />
-				<div class="div-3">
-					<div class="text-wrapper-28"><a OnClick="location.href ='${pageContext.request.contextPath}/login/loginForm.do'" style="cursor: pointer;">로그인</a>
-					 | 
-					 <a OnClick="location.href ='${pageContext.request.contextPath}/register/registerType.do'" style="cursor: pointer;">회원가입</a></div>
-					<div class="group-20" OnClick="location.href ='${pageContext.request.contextPath}/wallet/basket.do'" style="cursor: pointer;">
-						<div class="header-overlap-group-3">
-							<img class="header-group-21"
-								src="${cpath}/resources/images/main/header-cart.png" />
-							<div class="ellipse-light"></div>
-							<!-- <div class="text-wrapper-29">2</div> -->
-						</div>
+				<div class="text-menu">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+				</div>
+				<div class="text-subscribe">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+				</div>
+				<div class="text-yomo">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+				</div>
+				<div class="text-doran">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+				</div>
+			</div>
+			<a href="${pageContext.request.contextPath}/main.do"> <img
+				class="untitled-2"
+				src="${cpath}/resources/images/main/header-logo.png" />
+			</a>
+			<div class="div-3">
+				<div class="text-wrapper-28">
+					<c:choose>
+						<c:when test="${not empty sessionScope.loginmem.mem_id}">
+							<span style="font-weight: bold; left: -1rem; position: relative;">
+								<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+							</span>
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/my/logout.do"
+								style="position: relative; left: -1rem">로그아웃</a>
+						</c:when>
+						<c:otherwise>
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+								href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<div class="group-20" id="lightsParent">
+					<div class="header-overlap-group-3" onclick="loginBasket()">
+						<img class="header-group-21"
+							src="${cpath}/resources/images/main/header-cart.png" />
+						<!-- <div class="text-wrapper-29">2</div> -->
 					</div>
 				</div>
 			</div>
-		</header>
+		</div>
+	</header>
 	<div class="screen">
 		<div id="event_menu">
 			<ul>
