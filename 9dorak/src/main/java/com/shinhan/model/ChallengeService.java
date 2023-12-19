@@ -78,4 +78,16 @@ public class ChallengeService {
 		return dao.selectByMakemylike(mem_id);
 	}
 
+	public List<ChallengeVO> selectOrderbyNew() {
+		return dao.selectOrderbyNew();
+	}
+
+	public List<ChallengeVO> selectOrderbyLike() {
+		return dao.selectOrderbyLike();
+	}
+
+	public List<ChallengeVO> selectByMakeAllOrderlike() {
+		return dao.selectByMakeAllOrderlike();
+	}
+
 }

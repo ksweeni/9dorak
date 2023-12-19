@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.ChalllikeVO;
 
@@ -103,6 +105,21 @@ public class ChallengeDAOMybatis {
 	public List<ChalllikeVO> selectByMakemylike(String mem_id) {
 		List<ChalllikeVO> clistmylike = sqlSession.selectList(NAMESPACE + "selectByMakemylike", mem_id);
 		return clistmylike;
+	}
+
+	public List<ChallengeVO> selectOrderbyNew() {
+		List<ChallengeVO> mlist = sqlSession.selectList(NAMESPACE + "selectOrderbyNew");
+		return mlist;
+	}
+
+	public List<ChallengeVO> selectOrderbyLike() {
+		List<ChallengeVO> mlist = sqlSession.selectList(NAMESPACE + "selectOrderbyLike");
+		return mlist;
+	}
+
+	public List<ChallengeVO> selectByMakeAllOrderlike() {
+		List<ChallengeVO> clistlike = sqlSession.selectList(NAMESPACE + "selectByMakeAllOrderlike");
+		return clistlike;
 	}
 
 }

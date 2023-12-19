@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.ChalllikeVO;
 import com.shinhan.dto.EventVO;
@@ -50,6 +51,24 @@ public class EventController {
 		model.addAttribute("clistmylike", clistmylike);
 		System.out.println(clist);
 		return "event/makelunchbox";
+	}
+	
+	@GetMapping("lunchboxOrderby.do")
+	public String lunchboxOrderby(Model model, ChallengeVO challenge) {
+		if(challenge.getOrder_type().equals("최근 순")) {
+			/* System.out.println(anno.getOrder_type()); */
+			List<ChallengeVO> mlist = chService.selectOrderbyNew();
+			List<ChallengeVO> clistlike = chService.selectByMakeAlllike();
+			model.addAttribute("mlist", mlist);
+			model.addAttribute("clistlike", clistlike);
+		} 	else if(challenge.getOrder_type().equals("좋아요 순")) { 
+			List<ChallengeVO> mlist = chService.selectOrderbyLike(); 
+			List<ChallengeVO> clistlike = chService.selectByMakeAllOrderlike();
+			model.addAttribute("mlist", mlist); 
+			model.addAttribute("clistlike", clistlike);
+		}
+			 
+		return "event/makelunchbox_search";
 	}
 	
 	@GetMapping("lunchboxdetail.do")
