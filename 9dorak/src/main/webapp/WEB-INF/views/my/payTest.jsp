@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Test</title>
     <style>
-        /* Styles for the modal */
+
         .modal {
             display: none;
             position: fixed;
@@ -30,14 +30,12 @@
     <button onclick="requestPay()">결제하기</button>
      <button onclick="cancelPay()">결제취소</button>
 
-    <!-- Modal -->
     <div id="successModal" class="modal">
         <p>결제가 성공하였습니다.</p>
-        <!-- You can customize the content of the modal as needed -->
         <button onclick="closeModal()">홈으로 이동하기</button>
     </div>
 
-    <!-- jQuery -->
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
     <script>
@@ -48,7 +46,7 @@
             IMP.request_pay({
                 pg: "inicis",
                 pay_method: "card",
-                merchant_uid: "ORD20180131-0000044",
+                merchant_uid: "ORD20180131-0000048", // 매번 새로워야 함
                 name: "구도락 결제 테스트 2일차",
                 amount: 100,
                 buyer_email: "gildong@gmail.com",
@@ -75,12 +73,11 @@
             });
         }
 
-        // Function to open the modal
+
         function openModal() {
             $('#successModal').show();
         }
 
-        // Function to close the modal
         function closeModal() {
         	window.location.href = "${cpath}/main.do";
             $('#successModal').hide();
@@ -88,12 +85,12 @@
         }
         
         function cancelPay() {
-            var imp_uid = "imp_787087684484"; // Replace this with the actual imp_uid of the payment you want to cancel
+        	// 이 부분 동적 데이터로 변환 필요
+            var imp_uid = "imp_058961954580";
 
-            // Perform AJAX request to cancel the payment
             $.ajax({
                 type: 'POST',
-                url: '${cpath}/cancelPay', // Replace with the actual URL for canceling payment on the server
+                url: '${cpath}/cancelPay', 
                 data: {
                     imp_uid: imp_uid
                 }

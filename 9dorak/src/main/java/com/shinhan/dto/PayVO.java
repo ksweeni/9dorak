@@ -21,4 +21,5 @@ public class PayVO {
 	private String pay_depo; // 입금자명
 	private int pay_depoprice; // 입금액
 	private String pay_depobank; // 입금은행
+	private String imp_uid; // 영수증 
 }

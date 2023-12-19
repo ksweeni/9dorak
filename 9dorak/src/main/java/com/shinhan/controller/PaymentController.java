@@ -32,21 +32,13 @@ public class PaymentController {
 				"e3h05uZuutCJFe3JxCpFkqH5Qp90bvbNdPUC9j6Szr9uKb79mewNzS74gQgDVgI39qIUajRB58SQ6BTj");
 	}
 
-	/*
-	 * @ResponseBody
-	 * 
-	 * @RequestMapping("/verify/{imp_uid}") public IamportResponse<Payment>
-	 * paymentByImpUid(@PathVariable("imp_uid") String imp_uid) throws
-	 * IamportResponseException, IOException {
-	 * 
-	 * return iamportClient.paymentByImpUid(imp_uid); }
-	 */
-
     @ResponseBody
 	@PostMapping("/cancelPay")
-    public String cancelPay(@RequestParam String imp_uid) {
+    public String cancelPay(@RequestParam String imp_uid) throws Exception {
     	try {
-           pService.paymentCancel("f7714d9763df0037c0422b9cc3518028615a40ea",imp_uid, 100, "맘에 안들어요");
+    		String token = pService.getUserToken();
+    		System.out.println("받아온 토큰"  + token);
+           pService.paymentCancel(token,imp_uid, 100, "맘에 안 들어요");
             return "Payment canceled successfully!";
         } catch (IOException e) {
             e.printStackTrace();
@@ -67,7 +59,7 @@ public class PaymentController {
 
 				try {
 					String token = pService.getUserToken();
-					System.out.println("토큰입니다 : " + token);
+					//System.out.println("토큰입니다 : " + token);
 					//int amounts = pService.paymentInfo(imp_uid, token);
 					System.out.println("결제한 금액 : "+pService.paymentInfo(imp_uid, token));
 				} catch (Exception e) {
@@ -80,6 +72,8 @@ public class PaymentController {
 				BigDecimal paidAmount = payment.getAmount(); // 가격
 				String currency = payment.getCurrency(); // Currency
 				String paymentMethod = payment.getPayMethod(); // point로 했다는데
+				
+				String impuid = payment.getImpUid(); // 영수증 정보 무조건 필요 ( 환불 시 )
 
 				// Buyer information
 				String buyerName = payment.getBuyerName(); // 산 사람 이름
@@ -102,6 +96,7 @@ public class PaymentController {
 				System.out.println(buyerTel);
 				System.out.println(buyerAddr);
 				System.out.println(buyerPostcode);
+				System.out.println(impuid);
 				
 				int index = pService.selectPayCount();
 				
@@ -110,6 +105,7 @@ public class PaymentController {
 				pay.setPay_date(null);
 				pay.setPay_status("결제 완료");
 				pay.setPay_depo(buyerName);
+				pay.setImp_uid(impuid);
 				
 				pay.setPay_depobank(paymethod);
 				pay.setPay_method(paymethod);
