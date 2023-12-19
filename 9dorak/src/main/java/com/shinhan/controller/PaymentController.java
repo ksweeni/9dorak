@@ -51,6 +51,13 @@ public class PaymentController {
 				System.out.println("paid");
 				String paymethod="";
 
+				try {
+					String token = pService.getUserToken();
+					System.out.println("토큰입니다 : " + token);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				// Extract information from the payment response
 				Payment payment = iamportResponse.getResponse();
 				String productName = payment.getName(); // 상품명
