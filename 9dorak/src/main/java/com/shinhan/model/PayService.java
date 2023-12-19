@@ -55,6 +55,10 @@ public class PayService {
 	public int selectPayCount() {
 		return dao.selectPayCount();
 	}
+	
+	public int updatePayStatus(String impUid) {
+		return dao.updatePayStatus(impUid);
+	}
 
 	public int paymentInfo(String impUid, String accessToken) throws IOException {
 		HttpsURLConnection conn = null;

@@ -32,4 +32,8 @@ public class PayDAOMybatis {
 		return sqlSession.selectOne(NAMESPACE + "selectPayCount");
 	}
 
+	public int updatePayStatus(String impUid) {
+		return sqlSession.update(NAMESPACE + "updatePayStatus", impUid);
+	}
+
 }
