@@ -74,24 +74,24 @@
 				<div id="main-group" class="group"></div>
 				<div class="sub-image">
 					<div class="overlap-group-wrapper"
-						onclick="changeBackground(this, '${cpath}/resources/images/menu/${menudetail.pro_no }-1.jpg')">
+						onclick="changeBackground(this, '${cpath}/resources/images/menu/proimage/${menudetail.pro_no }-1.jpg')">
 						<div class="overlap-group">
 							<img class="vector"
-								src="${cpath}/resources/images/menu/${menudetail.pro_no }-1.jpg" />
+								src="${cpath}/resources/images/menu/proimage/${menudetail.pro_no }-1.jpg" />
 						</div>
 					</div>
 					<div class="overlap-group-wrapper"
-						onclick="changeBackground(this, '${cpath}/resources/images/menu/subtest-2.png')">
+						onclick="changeBackground(this, '${cpath}/resources/images/menu/proimage/${menudetail.pro_no }-2.jpg')">
 						<div class="overlap">
 							<img class="vector"
-								src="${cpath}/resources/images/menu/subtest-2.png" />
+								src="${cpath}/resources/images/menu/proimage/${menudetail.pro_no }-2.jpg" />
 						</div>
 					</div>
 					<div class="overlap-group-wrapper"
-						onclick="changeBackground(this, '${cpath}/resources/images/menu/subtest-3.png')">
+						onclick="changeBackground(this, '${cpath}/resources/images/menu/proimage/${menudetail.pro_no }-3.jpg')">
 						<div class="vector-wrapper">
 							<img class="vector"
-								src="${cpath}/resources/images/menu/subtest-3.png" />
+								src="${cpath}/resources/images/menu/proimage/${menudetail.pro_no }-3.jpg" />
 						</div>
 					</div>
 				</div>
@@ -303,8 +303,8 @@
 
 			<div class="text-reviews-and">
 				<div class="frame-review">
-					<div class="text-wrapper-13">텍스트 리뷰</div>
-					<div class="frame-10">
+					<div class="text-review">텍스트 리뷰</div>
+					<%-- <div class="frame-10">
 						<div class="frame-11">
 							<div class="text-wrapper-13">최근등록순</div>
 							<img class="img-2"
@@ -315,47 +315,60 @@
 							<img class="img-2"
 								src="${cpath}/resources/images/menu/filter.svg" />
 						</div>
-					</div>
+					</div> --%>
 				</div>
 				<div class="reviews-texts">
 					<div class="review">
-						<c:forEach items="${txtrlist }" var="txtrlist" varStatus="loop">
-							<div class="view-3">
-								<div class="frame-13">
-									<div class="rectangle-6"></div>
-									<div class="group-9">
-										<div class="frame-2">
-											<div class="text-wrapper-14">${txtrlist.mem_id }</div>
-											<div class="text-wrapper-15">${txtrlist.memreview_date }</div>
+					
+						<c:choose>
+							<c:when test="${not empty txtrlist}">
+
+								<c:forEach items="${txtrlist }" var="txtrlist" varStatus="loop">
+									<div class="view-3">
+										<div class="frame-13">
+											<div class="rectangle-6"></div>
+											<div class="group-9">
+												<div class="frame-2">
+													<div class="text-wrapper-14">${txtrlist.mem_id }</div>
+													<div class="text-wrapper-15">${txtrlist.memreview_date }</div>
+												</div>
+												<div class="frame-14">
+													<div class="text-wrapper-14">주문메뉴</div>
+													<div class="text-wrapper-15">${menudetail.pro_name }</div>
+												</div>
+											</div>
 										</div>
-										<div class="frame-14">
-											<div class="text-wrapper-14">주문메뉴</div>
-											<div class="text-wrapper-15">${menudetail.pro_name }</div>
+										<div class="frame-15">
+											<!-- <div class="frame-16">
+                                        <div class="frame-17">
+                                            <div class="text-wrapper-14">맛</div>
+                                            <div class="text-wrapper-16">최고에요</div>
+                                        </div>
+                                        <div class="frame-18">
+                                            <div class="text-wrapper-14">만족도</div>
+                                            <div class="text-wrapper-16">최고에요</div>
+                                        </div>
+                                    </div> -->
+											<div class="starpiont">별점
+												${txtrlist.memreview_starpoint }</div>
+											<p class="text-wrapper-17">${txtrlist.memreview_cont }</p>
+											<%-- <div class="frame-19">
+                                        <img class="happy"
+                                            src="${cpath}/resources/images/menu/happy-unfill.svg" />
+                                        <div class="text-wrapper-18">유용해요</div>
+                                        <div class="text-wrapper-18">0</div>
+                                    </div> --%>
 										</div>
 									</div>
-								</div>
-								<div class="frame-15">
-									<div class="frame-16">
-										<div class="frame-17">
-											<div class="text-wrapper-14">맛</div>
-											<div class="text-wrapper-16">최고에요</div>
-										</div>
-										<div class="frame-18">
-											<div class="text-wrapper-14">만족도</div>
-											<div class="text-wrapper-16">최고에요</div>
-										</div>
-									</div>
-									<p class="text-wrapper-17">${txtrlist.memreview_cont }</p>
-									<div class="frame-19">
-										<img class="happy"
-											src="${cpath}/resources/images/menu/happy-unfill.svg" />
-										<div class="text-wrapper-18">유용해요</div>
-										<div class="text-wrapper-18">0</div>
-									</div>
-								</div>
-							</div>
-							<!-- view-3 -->
-						</c:forEach>
+									<!-- view-3 -->
+								</c:forEach>
+
+							</c:when>
+							<c:otherwise>
+								<div class="nonTxtreview">아직 내역이 존재하지않습니다. 리뷰를 작성해주세요</div>
+							</c:otherwise>
+						</c:choose>
+						
 					</div>
 					<!-- review -->
 				</div>
@@ -486,7 +499,7 @@
 
     // 제품 이미지
     var cpathValue = '${cpath}';
-    var imageUrl = cpathValue + '/resources/images/menu/${menudetail.pro_no}-1.jpg';
+    var imageUrl = cpathValue + '/resources/images/menu/proimage/${menudetail.pro_no}-2.jpg';
     var groupDiv = document.querySelector('.div-wrapper .group');
   
     groupDiv.style.backgroundImage = 'url(' + imageUrl + ')';
@@ -608,7 +621,7 @@
 	};
 
     // 유용해요 클릭 및 유용 수 증가 
-    document.addEventListener('DOMContentLoaded', function () {
+/*     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.happy').forEach(function (element) {
             element.addEventListener('click', function () {
                 console.log("clicked");
@@ -631,10 +644,10 @@
                 }
             });
         });
-    });
+    }); */
     
      // 최신 등록순, 추천 순 클릭 시 변화
-   document.addEventListener('DOMContentLoaded', function () {
+/*    document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.frame-11, .frame-12').forEach(function (option) {
         option.addEventListener('click', function () {
             document.querySelectorAll('.frame-11, .frame-12').forEach(function (otherOption) {
@@ -645,7 +658,8 @@
         });
     });
 });
-
+ */
+ 
     // 아이디+상품이 장바구니에 이미 있는지 확인
     function checkBasket() {
 	    var mem_id = "${sessionScope.loginmem.mem_id}";

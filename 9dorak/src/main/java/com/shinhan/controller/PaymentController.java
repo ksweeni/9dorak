@@ -39,6 +39,7 @@ public class PaymentController {
     		String token = pService.getUserToken();
     		System.out.println("받아온 토큰"  + token);
            pService.paymentCancel(token,imp_uid, 100, "맘에 안 들어요");
+           pService.updatePayStatus(imp_uid);
             return "Payment canceled successfully!";
         } catch (IOException e) {
             e.printStackTrace();

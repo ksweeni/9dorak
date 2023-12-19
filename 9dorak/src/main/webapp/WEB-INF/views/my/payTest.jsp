@@ -46,7 +46,7 @@
             IMP.request_pay({
                 pg: "inicis",
                 pay_method: "card",
-                merchant_uid: "ORD20180131-0000049", // 매번 새로워야 함
+                merchant_uid: "ORD20180131-0000053", // 매번 새로워야 함
                 name: "구도락 결제 테스트 2일차",
                 amount: 100,
                 buyer_email: "gildong@gmail.com",
@@ -86,7 +86,7 @@
         
         function cancelPay() {
         	// 이 부분 동적 데이터로 변환 필요
-            var imp_uid = "imp_292954303223";
+            var imp_uid = "imp_680772644621";
 
             $.ajax({
                 type: 'POST',

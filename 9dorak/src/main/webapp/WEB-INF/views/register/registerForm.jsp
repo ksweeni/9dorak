@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -183,69 +183,71 @@ String contextPath = request.getContextPath();
 }
 
 .e106_348 {
-	width: 607px;
-	height: 360px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 313px;
+    width: 607px;
+    height: 360px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 285px;
 }
 
 .e106_291 {
-	width: 607px;
-	height: 163px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	background-image: url(${cpath}/resources/images/register/image_26.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    width: 607px;
+    height: 163px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px;
+    background-image: url(
+	/myapp/resources/images/register/image_26.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .e106_193 {
-	color: rgba(0, 0, 0, 1);
-	width: 203px;
-	height: 72px;
-	position: absolute;
-	left: 32px;
-	top: 214px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 48px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 203px;
+    height: 72px;
+    position: absolute;
+    left: 40px;
+    top: 208px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 48px;
+    letter-spacing: 0;
 }
 
 .e106_454 {
-	width: 106px;
-	height: 37px;
-	position: absolute;
-	left: 28px;
-	top: 323px;
-	background-image: url(${cpath}/resources/images/register/image_30.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    width: 106px;
+    height: 37px;
+    position: absolute;
+    left: 38px;
+    top: 270px;
+    background-image: url(/myapp/resources/images/register/image_30.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .e106_455 {
-	color: rgba(0, 0, 0, 1);
-	width: 382px;
-	height: 26px;
-	position: absolute;
-	left: 148px;
-	top: 328px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 16px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 382px;
+    height: 26px;
+    position: absolute;
+    left: 148px;
+    top: 277px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 16px;
+    letter-spacing: 0;
 }
 
 .e106_393 {
-	width: 617px;
-	height: 928.960205078125px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 700px;
+    width: 617px;
+    height: 928.960205078125px;
+    position: absolute;
+    left: 53%;
+    transform: translateX(-50%);
+    top: 610px;
 }
 
 .e106_421 {
@@ -257,40 +259,42 @@ String contextPath = request.getContextPath();
 }
 
 .e106_400 {
-	width: 163px;
-	height: 48px;
-	position: absolute;
-	left: 389px;
-	top: 25px;
+    width: 163px;
+    height: 48px;
+    position: absolute;
+    left: 389px;
+    top: 25px;
 }
 
 .e106_401 {
-	box-shadow: 0px 10px 30px
+    box-shadow: 0px 10px 30px
 		rgba(196.00000351667404, 80.00000283122063, 17.00000088661909,
 		0.5099999904632568);
-	background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 163px;
-	height: 48px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
-	border-bottom-left-radius: 35px;
-	border-bottom-right-radius: 35px;
+    background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 130px;
+    height: 48px;
+    position: absolute;
+    left: 0px;
+    top: 2px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    border: none;
+    cursor: pointer;
 }
 
 .e106_402 {
-	color: rgba(255, 255, 255, 1);
-	width: 131px;
-	height: 23px;
-	position: absolute;
-	left: 16px;
-	top: 13px;
-	font-family: Poppins;
-	text-align: center;
-	font-size: 20px;
-	letter-spacing: 3;
+    color: rgba(255, 255, 255, 1);
+    width: 99px;
+    height: 23px;
+    position: absolute;
+    left: 16px;
+    top: 12px;
+    /* font-family: Poppins; */
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3;
 }
 
 .e106_422 {
@@ -312,16 +316,16 @@ String contextPath = request.getContextPath();
 }
 
 .e106_423 {
-	color: rgba(0, 0, 0, 1);
-	width: 58.38211441040039px;
-	height: 25px;
-	position: absolute;
-	left: 8px;
-	top: 0px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 58.38211441040039px;
+    height: 25px;
+    position: absolute;
+    left: 8px;
+    top: 0px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0;
 }
 
 .e106_418 {
@@ -351,16 +355,16 @@ String contextPath = request.getContextPath();
 }
 
 .e106_420 {
-	color: rgba(0, 0, 0, 1);
-	width: 58.38211441040039px;
-	height: 25px;
-	position: absolute;
-	left: 8px;
-	top: -0.33349609375px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 58.38211441040039px;
+    height: 25px;
+    position: absolute;
+    left: 8px;
+    top: -0.33349609375px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0;
 }
 
 .e106_415 {
@@ -389,17 +393,17 @@ String contextPath = request.getContextPath();
 		rgba(231.62500709295273, 231.62500709295273, 231.62500709295273, 1);
 }
 
-.e106_417 {
-	color: rgba(0, 0, 0, 1);
-	width: 58.38211441040039px;
-	height: 25px;
-	position: absolute;
-	left: 8px;
-	top: -0.31201171875px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
+.e106_420 {
+    color: rgba(0, 0, 0, 1);
+    width: 58.38211441040039px;
+    height: 25px;
+    position: absolute;
+    left: 8px;
+    top: -0.33349609375px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0;
 }
 
 .e106_412 {
@@ -429,53 +433,55 @@ String contextPath = request.getContextPath();
 }
 
 .e106_414 {
-	color: rgba(0, 0, 0, 1);
-	width: 58.38211441040039px;
-	height: 25px;
-	position: absolute;
-	left: 8px;
-	top: 0.296875px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 58.38211441040039px;
+    height: 25px;
+    position: absolute;
+    left: 8px;
+    top: 0.296875px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0;
 }
 
 .e106_397 {
-	width: 163px;
-	height: 48px;
-	position: absolute;
-	left: 390.15625px;
-	top: -5px;
+    width: 163px;
+    height: 58px;
+    position: absolute;
+    left: 390.15625px;
+    top: 2px;
 }
 
 .e106_398 {
-	box-shadow: 0px 10px 30px
+    box-shadow: 0px 10px 30px
 		rgba(196.00000351667404, 80.00000283122063, 17.00000088661909,
 		0.5099999904632568);
-	background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 163px;
-	height: 48px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
-	border-bottom-left-radius: 35px;
-	border-bottom-right-radius: 35px;
+    background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 137px;
+    height: 48px;
+    position: absolute;
+    left: 0px;
+    top: 4px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    cursor: pointer;
 }
 
 .e106_399 {
-	color: rgba(255, 255, 255, 1);
-	width: 131px;
-	height: 23px;
-	position: absolute;
-	left: 16px;
-	top: 13px;
-	font-family: Poppins;
-	text-align: center;
-	font-size: 20px;
-	letter-spacing: 3;
+    color: rgba(255, 255, 255, 1);
+    width: 131px;
+    height: 23px;
+    position: absolute;
+    left: 6px;
+    top: 15px;
+    /* font-family: Poppins; */
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3;
+    cursor: pointer;
 }
 
 .e106_409 {
@@ -505,16 +511,16 @@ String contextPath = request.getContextPath();
 }
 
 .e106_411 {
-	color: rgba(0, 0, 0, 1);
-	width: 58.38211441040039px;
-	height: 25px;
-	position: absolute;
-	left: 8px;
-	top: 0px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 58.38211441040039px;
+    height: 25px;
+    position: absolute;
+    left: 8px;
+    top: 0px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0;
 }
 
 .e106_406 {
@@ -544,49 +550,49 @@ String contextPath = request.getContextPath();
 }
 
 .e106_408 {
-	color: rgba(0, 0, 0, 1);
-	width: 58.38211441040039px;
-	height: 25px;
-	position: absolute;
-	left: 8px;
-	top: 0px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 58.38211441040039px;
+    height: 25px;
+    position: absolute;
+    left: 8px;
+    top: 0px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0;
 }
 
 .e106_403 {
-	width: 616px;
-	height: 198px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 633px;
+    width: 616px;
+    height: 198px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 633px;
 }
 
 .e106_386 {
-	color: rgba(0, 0, 0, 1);
-	width: 412px;
-	height: 76px;
-	position: absolute;
-	left: -6px;
-	top: -13px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 48px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 412px;
+    height: 76px;
+    position: absolute;
+    left: -6px;
+    top: 3px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 48px;
+    letter-spacing: 0;
 }
 
 .e106_456 {
-	width: 106px;
-	height: 37px;
-	position: absolute;
-	left: 0px;
-	top: 63px;
-	background-image: url(${cpath}/resources/images/register/image_30.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    width: 106px;
+    height: 37px;
+    position: absolute;
+    left: 0px;
+    top: 63px;
+    background-image: url(/myapp/resources/images/register/image_30.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .e106_457 {
@@ -605,54 +611,55 @@ String contextPath = request.getContextPath();
 }
 
 .e106_458 {
-	color: rgba(0, 0, 0, 1);
-	width: 382px;
-	height: 26px;
-	position: absolute;
-	left: 121px;
-	top: 68px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 16px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 382px;
+    height: 26px;
+    position: absolute;
+    left: 105px;
+    top: 71px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 16px;
+    letter-spacing: 0;
 }
 
 .e106_459 {
-	color: rgba(0, 0, 0, 1);
-	width: 58.38211441040039px;
-	height: 25px;
-	position: absolute;
-	left: 8px;
-	top: 109px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
+    color: rgba(0, 0, 0, 1);
+    width: 58.38211441040039px;
+    height: 25px;
+    position: absolute;
+    left: 8px;
+    top: 109px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0;
 }
 
 .e106_394 {
-	width: 300px;
-	height: 77.960205078125px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 880px;
+    width: 300px;
+    height: 77.960205078125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 880px;
 }
 
 .e106_395 {
-	box-shadow: 0px 10px 30px
+    box-shadow: 0px 10px 30px
 		rgba(196.00000351667404, 80.00000283122063, 17.00000088661909,
 		0.5099999904632568);
-	background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 300px;
-	height: 77.960205078125px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
-	border-bottom-left-radius: 35px;
-	border-bottom-right-radius: 35px;
+    background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+    width: 300px;
+    height: 77.960205078125px;
+    position: absolute;
+    left: -50px;
+    top: -7px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    cursor: pointer;
 }
 
 .e106_396 {
@@ -669,37 +676,37 @@ String contextPath = request.getContextPath();
 }
 
 .e108_189 {
-	width: 300px;
-	height: 30px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	top: 1700px;
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    left: 52%;
+    transform: translateX(-50%);
+    top: 1594px;
 }
 
 .e108_188 {
-	color: rgba(0, 0, 0, 1);
-	width: 166.46177673339844px;
-	height: 30px;
-	position: absolute;
-	left: 180px;
-	top: 0px;
-	font-family: Poppins;
-	text-align: left;
-	font-size: 16px;
-	letter-spacing: 3;
+    color: rgba(0, 0, 0, 1);
+    width: 166.46177673339844px;
+    height: 30px;
+    position: absolute;
+    left: 167px;
+    top: 2px;
+    /* font-family: Poppins; */
+    text-align: left;
+    font-size: 16px;
+    letter-spacing: 3;
 }
 
 .e108_187 {
-	color: rgba(0, 0, 0, 1);
-	width: 208px;
-	height: 23px;
-	position: absolute;
-	left: 27px;
-	top: 1px;
-	text-align: left;
-	font-size: 16px;
-	letter-spacing: 3;
+    color: rgba(0, 0, 0, 1);
+    width: 208px;
+    height: 23px;
+    position: absolute;
+    left: 27px;
+    top: 3px;
+    text-align: left;
+    font-size: 16px;
+    letter-spacing: 3;
 }
 
 .e106_461 {
@@ -1015,16 +1022,17 @@ String contextPath = request.getContextPath();
 }
 
 .v39_199 {
-	color: rgba(255, 255, 255, 1);
-	width: 131px;
-	height: 23px;
-	position: absolute;
-	left: 84px;
-	top: 24px;
-	font-family: Poppins;
-	text-align: center;
-	font-size: 20px;
-	letter-spacing: 3;
+    color: rgba(255, 255, 255, 1);
+    width: 131px;
+    height: 23px;
+    position: absolute;
+    left: 86px;
+    top: 24px;
+    /* font-family: Poppins; */
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 3;
+    font-weight: bold;
 }
 
 a {
@@ -1034,19 +1042,64 @@ a {
 </head>
 <body>
 	<div class=e106_187>
-		<div class=e106_320>
-			<div class=e106_321>
-				<a href="${cpath }" class="e106_322"></a>
+		<header class="header">
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-event">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+					</div>
+					<div class="text-menu">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+					</div>
+					<div class="text-subscribe">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+					</div>
+					<div class="text-yomo">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+					</div>
+					<div class="text-doran">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+					</div>
+				</div>
+				<a href="${pageContext.request.contextPath}/main.do"> <img
+					class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				</a>
+				<div class="div-3">
+					<div class="text-wrapper-28">
+						<c:choose>
+							<c:when test="${not empty sessionScope.loginmem.mem_id}">
+								<span
+									style="font-weight: bold; left: -1rem; position: relative;">
+									<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+								</span>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/my/logout.do"
+									style="position: relative; left: -1rem">로그아웃</a>
+							</c:when>
+							<c:otherwise>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+									href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<div class="group-20" id="lightsParent">
+						<div class="header-overlap-group-3" onclick="loginBasket()">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<!-- <div class="text-wrapper-29">2</div> -->
+						</div>
+					</div>
+				</div>
 			</div>
-			<a class="e106_323" href="${cpath }/menu/menu.do">메뉴보기</a><span
-				class="e106_324">구독하기</span><span class="e106_325">요모조모</span><a
-				href="${cpath }/doran/doran.do" class="e106_326">도란도란</a><a
-				href="${cpath }/event/challenge.do" class="e106_327">이벤트</a>
-			<div class=e106_492>
-				<a class="e106_493" href="${cpath }/login/loginForm.do">로그인 |</a><a
-					href="${cpath}/register/registerType.do" class="e106_494">회원가입</a>
-			</div>
-		</div>
+		</header>
 
 
 		<!-- <div class=e106_334>
@@ -1059,7 +1112,7 @@ a {
 			<span class="e106_455">구도락에 가입하고 다양한 도시락을 체험해보세요!</span>
 		</div>
 		<form
-			action="${pageContext.request.contextPath }/register/register.do"
+			action="${pageContext.request.contextPath }/register/registerFinish.do"
 			method="post">
 			<div class=e106_393>
 				<div class=e106_421>
@@ -1068,10 +1121,9 @@ a {
 							<div class="e106_402">중복확인</div>
 						</button>
 					</div>
-					<input class="e106_422" type="text" id="mem_id" 
-					name="mem_id"
-					value="${id }" ${kakao==1?"readonly":"" }
-						placeholder="hcghcg17" /> <span class="e106_423">아이디</span>
+					<input class="e106_422" type="text" id="mem_id" name="mem_id"
+						value="${id }" ${kakao==1?"readonly":"" } placeholder="hcghcg17" />
+					<span class="e106_423">아이디</span>
 				</div>
 				<div class=e106_418>
 					<input class="e106_419" type="password" id="mem_pw" name="mem_pw"
@@ -1083,19 +1135,18 @@ a {
 				</div>
 				<div class=e106_412>
 					<input class="e106_413" type="email" name="mem_email"
-					    value="${email }" ${kakao==1?"readonly":"" }
-						id="mem_email" placeholder="hcghcg17@naver.com" /> <span
-						class="e106_414">이메일</span>
+						value="${email }" ${kakao==1?"readonly":"" } id="mem_email"
+						placeholder="hcghcg17@naver.com" /> <span class="e106_414">이메일</span>
 					<div class=e106_397 id="emailCheck">
 						<div class="e106_398"></div>
 						<div class="e106_399">이메일인증</div>
-						<input type="hidden" id= "mail-Check-Btn"/>
+						<input type="hidden" id="mail-Check-Btn" />
 						<%-- 						<a class="e106_399" href="#none"
 							onclick="window.open('${cpath}/register/emailCheckPage.do','new','scrollbars=yes,resizable=no width=700 height=200, left=0,top=0');return false">이메일인증</a> --%>
 					</div>
 					<input class="form-control mail-check-input" id="numInput"
 						placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6"
-						style="left: 373px; position: relative; top:63px; display: none;">
+						style="left: 373px; position: relative; top: 63px; display: none;">
 
 					<span id="mail-check-warn"
 						style="position: relative; left: 156px; top: 95px;"></span>
@@ -1135,46 +1186,71 @@ a {
 				class="e108_187">이미 계정이 있나요? </span>
 		</div>
 
-		<div class=e106_461>
-			<div class="e106_462"></div>
-
-			<div class=e106_463>
-				<div class=e106_464>
-					<span class="e106_465">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Commodo libero viverra dapibus odio
-						sit malesuada in quis. Arcu tristique elementum viverra integer
-						id.</span>
-					<div class="e106_466"></div>
+			<footer class="footer">
+				<div class="footer-company-loco">
+					<div class="footer-company">
+						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+						<img class="footer-logo"
+							src="${cpath}/resources/images/main/footer-logo.png" />
+					</div>
+					<div class="footer-social-icon">
+						<div class="footer-facebook">
+							<img class="footer-mask-group"
+								src="${cpath}/resources/images/main/footer-facebook.png" />
+						</div>
+						<div class="footer-instagram">
+							<img class="footer-img"
+								src="${cpath}/resources/images/main/footer-insta.png" />
+						</div>
+						<div class="footer-twitter">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-twitter.png" />
+						</div>
+						<div class="footer-linkind">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-linkedin.png" />
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class=e106_467>
-				<span class="e106_468">Contact Us</span>
-				<div class=e106_469>
-					<span class="e106_470">1234 Country Club Ave</span><span
-						class="e106_471">NC 123456, London, UK</span><span
-						class="e106_472">+0123 456 7891</span>
+				<div class="footer-contact-us">
+					<div class="footer-text-wrapper-2">Contact Us</div>
+					<div class="footer-group">
+						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+						<div class="footer-text-wrapper-3">+0123 456 7891</div>
+					</div>
+					<div class="footer-overlap-group-wrapper">
+						<div class="footer-overlap-group">
+							<div class="footer-vector-wrapper">
+								<img class="footer-vector"
+									src="${cpath}/resources/images/main/footer-email-button.png" />
+							</div>
+							<input class="footer-enter-email"
+								placeholder="Enter your email....">
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class=e106_473>
-				<span class="e106_474">User Link</span>
-				<div class=e106_475>
-					<span class="e106_476">About Us</span><span class="e106_477">Contact
-						Us</span><span class="e106_478">Order Delivery</span><span
-						class="e106_479">Payment & Tex</span><span class="e106_480">Terms
-						of Services</span>
+				<div class="footer-user-link">
+					<div class="footer-text-wrapper-7">User Link</div>
+					<div class="footer-group-2">
+						<div class="footer-text-wrapper-3">About Us</div>
+						<div class="footer-text-wrapper-3">Contact Us</div>
+						<div class="footer-text-wrapper-3">Order Delivery</div>
+						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+						<div class="footer-text-wrapper-3">Terms of Services</div>
+					</div>
 				</div>
-			</div>
-			<div class=e106_481>
-				<span class="e106_482">Opening Restaurant</span>
-				<div class=e106_483>
-					<span class="e106_484">Sat-Wet: 09:00am-10:00PM</span><span
-						class="e106_485">Thursdayt: 09:00am-11:00PM</span><span
-						class="e106_486">Friday: 09:00am-8:00PM</span>
+				<div class="footer-opening-restaurant">
+					<div class="footer-text-wrapper-7">Opening Restaurant</div>
+					<div class="footer-group-3">
+						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+						<div class="footer-text-wrapper-3">Thursdayt:
+							09:00am-11:00PM</div>
+						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+					</div>
 				</div>
-			</div>
-			<div class="e106_487"></div>
-			<div class="e106_488"></div>
-		</div>
+			</footer>
 	</div>
 
 </body>
@@ -1205,8 +1281,11 @@ a {
 
 	}); // idcheck
 
-	$("#register").on("click",function(e) {
-		
+	$("#register")
+			.on(
+					"click",
+					function(e) {
+
 						e.preventDefault();
 
 						if ($("#idCheckValue").val() == "idUncheck") {

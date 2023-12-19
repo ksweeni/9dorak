@@ -952,6 +952,7 @@ hr {
 }
 
 #kakaotalk-sharing-btn {
-   position: relative;
-   left: 50%;
+    position: relative;
+    left: 50%;
+    top: -20px;
 }

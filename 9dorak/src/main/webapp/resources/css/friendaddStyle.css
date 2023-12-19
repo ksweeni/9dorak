@@ -996,3 +996,23 @@ hr {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+.add_friend {
+    display: inline-block;
+    border-radius: 10px;
+    width: 115px;
+    height: 50px;
+    position: relative;
+    border-radius: 10px;
+    background-color: rgb(233 228 228 / 50%);
+    left: 50%;
+    transform: translateX(-50%);
+    top: -18px;
+    border: 2px solid orange;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: 0 -webkit-auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

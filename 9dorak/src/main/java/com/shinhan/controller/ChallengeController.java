@@ -61,6 +61,9 @@ public class ChallengeController {
 	@GetMapping("challengeDetail.do")
 	public String challenge2(Model model, ChallengeVO challenge, HttpSession session) {
 		ChallengeVO chall = chService.selectByno(challenge.getChallenge_no());
+		if (session.getAttribute("loginmem")==null) {
+			return "redirect:/login/loginForm.do";
+		}
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		int likeCnt = chService.getLike(challenge.getChallenge_no());
 		ChalllikeVO challlike = new ChalllikeVO(loginmem.getMem_id(), challenge.getChallenge_no());

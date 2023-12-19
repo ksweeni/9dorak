@@ -9,10 +9,17 @@
 		VALUES
 		(#{order_no}, #{pay_status} , sysdate, #{pay_method} ,
 		#{pay_price},#{pay_depo},
-		#{pay_depoprice}, #{pay_depobank}, #{imp_uid})
+		#{pay_depoprice}, #{pay_depobank},
+		#{imp_uid})
 	</insert>
 
 	<select id="selectPayCount" resultType="int">
 		select count(*) from pay
 	</select>
+
+	<update id="updatePayStatus" parameterType="String">
+		UPDATE pay
+		SET pay_status = '결제 취소'
+		WHERE imp_uid = #{imp_uid}
+	</update>
 </mapper>
