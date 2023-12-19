@@ -30,13 +30,6 @@ public class WalletController {
 
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
-//	@GetMapping("basket.do")
-//	public String basket(Model model) {
-//		List<BasketVO> blist = wService.selectAllBasket();
-//		model.addAttribute("blist", blist);
-//		return "wallet/basket";
-//	}
-	
 	@GetMapping("pay.do")
 	public String pay(Model model) {
 		List<PayVO> plist = wService.selectAllPay();
@@ -49,7 +42,6 @@ public class WalletController {
 	
 	
 	
-	// 지인 검색
 	
 	
 	
@@ -58,18 +50,26 @@ public class WalletController {
 	
 	
 	
-	
-	
-	
-	
-	
-    
-
+	// 장바구니 삭제
+	@PostMapping("deleteBasket.do")
+	@ResponseBody
+	public String deleteBasket(BasketVO basket) {
+		System.out.println(basket);
+		int result = wService.deleteBasket(basket);
+		String flag;
+		
+		if (result > 0) {
+        	flag="성공!";
+        } else {
+        	flag="실패!";
+        }
+        return flag;
+	}
 
     // 장바구니 수량 변경
     @PostMapping("updateBasket.do")
     @ResponseBody
-    public String updateBasket(Model model, HttpSession session, BasketVO basket) {
+    public String updateBasket(BasketVO basket) {
     	System.out.println(basket);
     	int result = wService.updateBasket(basket);
     	String flag;
@@ -134,7 +134,7 @@ public class WalletController {
         return response;
     }
     
-    // 장바구니 비어있는지 여부 판별하여, 불 켜기
+    // 장바구니 비어있는지 여부 판별하여 header 장바구니 불 켜기
     @PostMapping("emptyBasket.do")
     @ResponseBody
     public Map<String, Object> emptyBasket(@RequestParam("mem_id") String mem_id) {

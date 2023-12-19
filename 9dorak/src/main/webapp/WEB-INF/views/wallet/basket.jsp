@@ -20,6 +20,49 @@ String contextPath = request.getContextPath();
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
+<style type="text/css">
+/* Modal Styling */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+/* Button Styling */
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-cancel {
+    background-color: #ccc;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: #fff;
+}
+</style>
+
 </head>
 <body>
 	<div class="screen">
@@ -162,11 +205,11 @@ String contextPath = request.getContextPath();
 																src="/myapp/resources/images/menu/plus.png">
 														</div>
 													</div>
-													
-													
 												</div>
-												<img class="close"
-													src="${cpath}/resources/images/wallet/delete_btn.svg" />
+																<input type='hidden' value='${basket.mem_id}' class='mem_id' />
+															    <input type='hidden' value='${basket.pro_no}' class='pro_no' />
+																<input type='hidden' value='${status.count}' class='index-num' />
+												<img id="deleteItemModal" src="${cpath}/resources/images/wallet/delete_btn.svg" />
 
 											</div>
 										</div>
@@ -182,7 +225,7 @@ String contextPath = request.getContextPath();
 								<div class="text-wrapper-3">2 Items</div>
 								
 								<div class="text-wrapper-3" id="total-items">
-				총 <span id="totalAmount${status.count}"> ${basket.pro_price*basket.basket_pro_count}</span>Items</div>
+				총 <span id="totalAmount"> </span>Items</div>
 								
 								
 								
@@ -226,6 +269,55 @@ String contextPath = request.getContextPath();
 				</div>
 			</div>
 		</div>
+
+<!-- 삭제 modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <p>정말로 삭제하시겠습니까?</p>
+        <button class="btn btn-cancel" onclick="closeModal()">취소</button>
+        <button id="deleteItemModal" class="btn btn-delete">삭제</button>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById('modal');
+    var btn = document.getElementById("deleteItemModal");
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+    $(".btn-delete").on("click", function() {
+        var index = $(this).find("index").val();
+        var mem_id = $(this).find("mem_id").val();
+        var pro_no = $(this).find("pro_no").val();
+        console.log(index);
+
+        $.ajax({
+            type: "POST",
+            url: "${cpath}/wallet/deleteBasket.do",
+            data: {
+                mem_id: mem_id,
+                pro_no: pro_no
+            },
+            success: function(response) {
+                if (response === "성공!") {
+                    console.log("콘솔 - 삭제 성공!!");
+                    closeModal();
+                }
+            }
+        });
+    });
+</script>
 
 		<footer class="footer">
 			<div class="footer-company-loco">
@@ -293,22 +385,10 @@ String contextPath = request.getContextPath();
 		</footer>
 		<!-- div -->
 	</div>
-	</div>
 	<!-- screen -->
 </body>
 
 <script>
-
-
-
-
-
-
-
-
-
-
-
 
 	function logCheckboxValue(checkbox) {
 		console.log("Checkbox value: ", checkbox.value);
@@ -393,15 +473,11 @@ String contextPath = request.getContextPath();
 			}
 		});
 	});
+	
 	function updateCounter(quantity,price,index) {
     	var totalAmount = quantity*price;
     	$('#totalAmount' + index).html(totalAmount);
     }
-	
-	function totalItems() {
-		
-	}
-	
 	
 	// 날짜 중복 검사
 	$(document).ready(function() {

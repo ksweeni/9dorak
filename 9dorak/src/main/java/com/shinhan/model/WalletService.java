@@ -30,9 +30,7 @@ public class WalletService {
 	
 	
 	
-	public int deleteBasket(String mem_id, int pro_no) {
-		return dao.deleteBasket(mem_id, pro_no);
-	}
+	
 	
 	public List<BasketVO> getBasket(String mem_id) {
 		return dao.getBasket(mem_id);
@@ -45,11 +43,13 @@ public class WalletService {
 	
 	
 	
+	public int deleteBasket(BasketVO basket) {
+		return dao.deleteBasket(basket);
+	}
 	
 	public List<Map<String, Object>> allPeopleBasket(String mem_id) {
 		return dao.allPeopleBasket(mem_id);
 	}
-	
 	
 	public List<PeopleVO> peopleCheck(String mem_id) {
     	return dao.peopleCheck(mem_id);

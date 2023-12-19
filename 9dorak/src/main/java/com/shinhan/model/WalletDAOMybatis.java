@@ -36,12 +36,6 @@ public class WalletDAOMybatis {
 		logger.info("selectAllPay : {}", plist.size());
 		return plist;
 	}
-	
-    // 장바구니 삭제
-    public int deleteBasket(String mem_id, int pro_no) {
-        int result = sqlSession.delete(NAMESPACE + "deleteBasket", Map.of("mem_id", mem_id, "pro_no", pro_no));
-        return result;
-    }
 
     // mem_id의 장바구니 목록
     public List<BasketVO> getBasket(String mem_id) {
@@ -54,6 +48,13 @@ public class WalletDAOMybatis {
     
     
     
+    
+    
+    // 장바구니 삭제
+    public int deleteBasket(BasketVO basket) {
+        int result = sqlSession.delete(NAMESPACE + "deleteBasket", basket);
+        return result;
+    }
     
     // 장바구니 수량 수정
     public int updateBasket(BasketVO basket) {
