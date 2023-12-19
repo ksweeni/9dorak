@@ -112,6 +112,8 @@ public class MyPageController {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<Map<String, Object>> paymentList = mService.paymentList(loginmem.getMem_id());
 		model.addAttribute("paymentList", paymentList);
+		
+		System.out.println(paymentList);
 		return "my/myPaymentList";
 	}
 

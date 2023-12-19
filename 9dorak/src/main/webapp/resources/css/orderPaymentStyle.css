@@ -166,10 +166,13 @@
 	gap: 6px;
 	padding: 13px 16px;
 	position: absolute;
-	top: 184px;
-	left: 197px;
+	top: 171px;
+	left: 175px;
 	background-color: var(- -gray);
 	border-radius: 8px;
+	font-size: 14px;
+	cursor: pointer;
+	z-index: 9;
 }
 
 .div-wrapper .text-wrapper-4 {

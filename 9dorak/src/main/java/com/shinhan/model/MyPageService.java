@@ -103,11 +103,7 @@ public class MyPageService {
 		return dao.cancelList(mem_id);
 	}
 	
-	//가족등록
-
-	// 가족등록
-    
-	
+	// 가족등록	
 	public int insertPeople(Map<String,String> peopleData) {
 		return dao.insertPeople(peopleData);
 	}

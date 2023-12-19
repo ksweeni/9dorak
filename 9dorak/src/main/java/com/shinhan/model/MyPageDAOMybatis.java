@@ -117,7 +117,6 @@ public class MyPageDAOMybatis {
 	}
 
 	// 가족등록
-
 	public int insertPeople(Map<String,String> peopleData) {
 		return sqlSession.insert(NAMESPACE + "insertPeople", peopleData);
 	}

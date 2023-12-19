@@ -254,18 +254,19 @@
 }
 
 .div-wrapper .primary-button {
-	display: flex;
-	width: 67px;
-	height: 32px;
-	align-items: center;
-	justify-content: center;
-	gap: 6px;
-	padding: 13px 16px;
+	width: 97px;
+	height: 31px;
+	padding: 1px 1px;
 	position: absolute;
-	top: 181px;
-	left: 197px;
-	background-color: var(- -tangerine);
+	top: 184px;
+	left: 279px;
+	background-color: #feae64;
 	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
+	text-align: center;
+	line-height: 31px;
 }
 
 .div-wrapper .cancel {

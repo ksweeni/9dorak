@@ -27,7 +27,7 @@
 						</div>
 					</div>
 					<div class="frame-4"></div>
-					<div class="primary-button">
+					<div class="primary-button">리뷰작성
 					</div>
 					<div class="text-wrapper-13">${order.ORDERDETAIL_PRICE}</div>
 					<div class="text-wrapper-14">${order.PRO_NAME }</div>

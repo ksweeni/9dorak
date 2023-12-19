@@ -14,13 +14,13 @@
 }
 
 .modal {
-	display: none; 
-	position: fixed; 
-	z-index: 1; 
+	display: none;
+	position: fixed;
+	z-index: 1;
 	left: 0;
 	top: 0;
-	width: 100%; 
-	height: 100%; 
+	width: 100%;
+	height: 100%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.4);
 	z-index: 10;
@@ -32,6 +32,29 @@
 	padding: 20px;
 	border: 1px solid #888;
 	width: 30%;
+}
+
+.modal-content2 {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 20%;
+	height: 20%;
+}
+
+#refundReason {
+	width: 77%;
+	padding: 10px;
+	font-size: 16px;
+	margin-left: 7px;
+}
+
+#refundForm button {
+	margin-top: 36px;
+	padding: 4px 13px;
+	font-size: 15px;
+	margin-left: 130px;
 }
 
 .close {
@@ -46,9 +69,56 @@
 	text-decoration: none;
 	cursor: pointer;
 }
-
 </style>
 
+<script>
+	function cancelPayment(orderDetailNo, payDate) {
+		var paymentDate = new Date(payDate);
+		var currentDate = new Date();
+
+		var diffTime = Math.abs(currentDate - paymentDate);
+		var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+		if (diffDays <= 3) {
+			var confirmCancel = confirm("결제를 취소하시겠습니까?");
+			if (confirmCancel) {
+				// 환불사유 모달창
+				openRefundModal();
+
+				if (refundReason !== null && refundReason.trim() !== "") {
+					alert("결제를 취소하겠습니다. 환불 사유: " + refundReason);
+					
+				} else {
+					alert("취소가 취소되었습니다.");
+				}
+			}
+		} else {
+			alert("결제일로부터 3일이 지나 결제 취소가 불가능합니다.");
+		}
+	}
+
+	function openRefundModal() {
+		var refundModal = document.getElementById("refundModal");
+		refundModal.style.display = "block";
+	}
+
+	function closeRefundModal() {
+		var refundModal = document.getElementById("refundModal");
+		refundModal.style.display = "none";
+	}
+
+	function submitRefund() {
+		var refundReason = document.getElementById("refundReason").value;
+
+		if (refundReason.trim() !== "") {
+			alert("결제를 취소하겠습니다. 환불 사유: " + refundReason);
+
+			closeRefundModal();
+		} else {
+			alert("환불 사유를 입력해주세요.");
+		}
+	}
+</script>
 
 <div class="overlap-group-wrapper">
 	<c:choose>
@@ -57,7 +127,8 @@
 				<div class="overlap-group">
 					<div class="frame-2"></div>
 					<button class="primary-button" id="myBtn-${payment.ORDERDETAIL_NO}">결제상세</button>
-					<div class="cancel-wrapper"></div>
+					<div class="cancel-wrapper"
+						onclick="cancelPayment('${payment.ORDERDETAIL_NO}', '${payment.PAY_DATE}')">결제취소</div>
 					<div class="text-wrapper-4">${payment.PAY_DEPOPRICE }</div>
 					<div class="text-wrapper-5">${payment.PRO_NAME }</div>
 					<div class="text-wrapper-6">${payment.PAY_DATE }</div>
@@ -76,7 +147,7 @@
 						<span class="close">&times;</span>
 						<h4>결제 상세 정보</h4>
 						<p>결제일: ${payment.PAY_DATE}</p>
-						<p>입금자명: ${payment.PAY_DEFO}</p>
+						<p>결제자: ${payment.PAY_DEPO}</p>
 						<p>결제금액: ${payment.PAY_DEPOPRICE}</p>
 						<P>결제방법: ${payment.PAY_METHOD}</P>
 					</div>
@@ -109,5 +180,22 @@
 			<div class="nullpayment">결제내역이 존재하지 않습니다.</div>
 		</c:otherwise>
 	</c:choose>
+</div>
+
+<!-- 환불사유 모달 창 -->
+<div id="refundModal" class="modal">
+	<div class="modal-content2">
+		<span class="close" onclick="closeRefundModal()">&times;</span>
+		<h4>환불 사유 선택</h4>
+		<form id="refundForm">
+			<label for="refundReason">환불 사유:</label> <select
+				id="refundReason" name="refundReason" required>
+				<option value="상품 불만족">상품 불만족</option>
+				<option value="배송 지연">배송 지연</option>
+				<option value="상품 불량">상품 불량</option>
+			</select> <br>
+			<button type="button" onclick="submitRefund()">확인</button>
+		</form>
+	</div>
 </div>
 
