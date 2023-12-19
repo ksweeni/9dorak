@@ -94,7 +94,7 @@
 								</a>
 								<div class="mask-group-wrapper">
 									<img class="mask-group"
-										src="${cpath}/resources/images/menu/menu-heart-unfill.png" />
+										src="${cpath}/resources/images/menu/proimage/${pro.pro_no}-2.jpg" />
 								</div>
 								<div class="like-text">${pro.pro_like }</div>
 								<img class="vector"
