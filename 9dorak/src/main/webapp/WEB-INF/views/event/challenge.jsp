@@ -87,7 +87,6 @@
 	}); */
 function redirectToChallenge(challenge_no) {
 		location.href = '${pageContext.request.contextPath}/event/challengeDetail.do?challenge_no=' + challenge_no;
-		alert('Redirect to challenge number ' + challenge_no);
 }
 </script>
 

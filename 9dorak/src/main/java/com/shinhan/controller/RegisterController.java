@@ -94,7 +94,7 @@ public class RegisterController {
 
 	}
 
-	@PostMapping("register.do")
+	@PostMapping("registerFinish.do")
 	public String register(Model model, MemVO mem, HttpSession session) {
 		int result =0; 
 		EarnpointVO earn  = new EarnpointVO();
@@ -113,7 +113,7 @@ public class RegisterController {
 		String login_id = mem.getMem_id();
 		MemVO loginmem = mService.getMember(login_id);
 		session.setAttribute("loginmem", loginmem);
-		return "home";
+		return "register/registerFinish";
 	}
 	
 	@GetMapping("emailCheckPage.do")
