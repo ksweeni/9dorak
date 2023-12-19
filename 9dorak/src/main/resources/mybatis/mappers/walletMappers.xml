@@ -18,12 +18,7 @@
 		mem_id=#{mem_id} and pro_no=#{pro_no}
 	</delete>
 
-	<!-- 장바구니 수량 수정 -->
-	<update id="modifyCount">
-		update basket set
-		basket_pro_count=#{basket_pro_count} where mem_id=#{mem_id} and
-		pro_no=#{pro_no}
-	</update>
+	
 
 	<!-- 장바구니 목록 -->
 	<select id="getBasket" resultType="basketvo">
@@ -44,7 +39,11 @@
 	
 	
 	
-	
+	<!-- 장바구니 수량 수정 -->
+	<update id="modifyCount">
+		update basket set basket_pro_count=#{basket_pro_count}, basket_date=sysdate
+		where mem_id=#{mem_id} and pro_no=#{pro_no};
+	</update>
 	
 	<!-- 상품리뷰 맵 -->
 	<resultMap type="HashMap" id="basketMap">
@@ -110,13 +109,6 @@ from ranked_proimages
 where image_rank=1
 order by basket_date desc
 	</select>
-
-
-
-
-
-
-
 
 	<!-- 회원 아이디 정보 -->
 	<select id="checkMember" parameterType="String"

@@ -67,7 +67,7 @@ String contextPath = request.getContextPath();
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
 									<span
 										style="font-weight: bold; left: -1rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
 									</span>
 									<a class="header-a"
 										href="${pageContext.request.contextPath}/my/logout.do"
@@ -92,19 +92,95 @@ String contextPath = request.getContextPath();
 				</div>
 			</header>
 
-			<div class="smallMenu">
-				<div class="text-wrapper-20">회원등급</div>
-				<div class="text-wrapper-21">장바구니</div>
-			</div>
+
 
 			<div class="case">
-				<div class="div">
-					<div class="view">
-						<div class="frame">
-							<div class="div-wrapper">
-								<div class="text-wrapper">가족등록 인증</div>
-							</div>
+				<div class="smallMenu">
+					<div class="text-wrapper-21">장바구니</div>
+				</div>
+				<div class="div cart-wrapper">
+					<%-- group-wrapper --%>
+					<div class="group-wrapper">
+						<div class="group">
+							<!-- 내 장바구니! -->
+							<c:if test="${empty blist}">
+								<div class="empty">
+									<span id="emptyComment">${sessionScope.loginmem.mem_name}님의
+										장바구니가 텅 비었어요!</span>
+								</div>
+							</c:if>
 						</div>
+						<div class="frame-13">
+							<div class="view-3">
+								<input type="checkbox" class="checkbox" name="selection"
+									onclick="checkBoxSelector()">
+								<div class="text-wrapper-12">선택해제</div>
+								<div class="text-wrapper-13">선택삭제</div>
+							</div>
+							
+						</div>
+						<c:forEach items="${basket}" var="basket" varStatus="status">
+							<div class="cart-menus-wrapper">
+								<div class="cart-menus">
+									<div class="frame-14">
+										<div class="frame-15">
+											<!-- 날짜 -->
+ 	                    					<input type='hidden' value='${status.count}' class='dateIndex' />
+                    						<div class="text-wrapper-14" id="dateIndex${status.count}">${basket.basket_date}</div>
+                    						
+											<div class="group-2">
+												<div class="frame-19">
+													<input type="checkbox" class="checkbox-2" name="selection"
+														value="${basket.pro_no}" onchange="logCheckboxValue(this)">
+													<div class="text-wrapper-18">${basket.mem_name}</div>
+												</div>
+												<div class="frame-16">
+													<div class="frame-17">
+														<img class="rectangle"
+															src="${cpath}/${basket.proimage_image}" />
+														<div class="frame-18">
+															<div class="text-wrapper-15">${basket.pro_name}</div>
+															<input class="text-wrapper-16" id="proPrice"
+																type="number" value="${basket.pro_price}"
+																readOnly />
+
+															<div class="text-wrapper-3" id="total-amount">
+																총 금액 <span id="totalAmount${status.count}"> ${basket.pro_price*basket.basket_pro_count}</span>원
+															</div>
+														</div>
+													</div>
+													
+													
+													<div class="buttonCount">
+														<div class="entypo-minus-wrapper">
+															<input type='hidden' value='${basket.pro_no}'
+																class='pro_no' /> <input type='hidden'
+																value='${basket.pro_price}' class='pro_price' /> <input
+																type='hidden' value='${status.count}' class='index-num' />
+															<img class="img-3"
+																src="/myapp/resources/images/menu/minus.png">
+														</div>
+														<span id="result${status.count}" class="text-wrapper-17">${basket.basket_pro_count}</span>
+														<div class="entypo-plus-wrapper">
+															    <input type='hidden' value='${basket.pro_no}' class='pro_no' />
+																<input type='hidden' value='${basket.pro_price}' class='pro_price' />
+																<input type='hidden' value='${status.count}' class='index-num' />
+															<img class="img-3"
+																src="/myapp/resources/images/menu/plus.png">
+														</div>
+													</div>
+													
+													
+												</div>
+												<img class="close"
+													src="${cpath}/resources/images/wallet/delete_btn.svg" />
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
 					</div>
 					<div class="view-2">
 						<div class="frame-2">
@@ -115,8 +191,7 @@ String contextPath = request.getContextPath();
 							<div class="frame-4">
 								<div class="frame-5">
 									<p class="p">
-										<span class="span">from</span> <span class="text-wrapper-4">
-											ksweeni</span>
+										<span class="span">from</span> <span class="text-wrapper-4">${sessionScope.loginmem.mem_name}</span>
 									</p>
 									<div class="frame-3">
 										<div class="frame-6">
@@ -125,39 +200,15 @@ String contextPath = request.getContextPath();
 										</div>
 										<div class="frame-wrapper">
 											<div class="frame-7">
-												<img class="img" src="/myapp/resources/images/menu/plus.png">
 												<div class="frame-8">
 													<div class="text-wrapper-7">1</div>
 												</div>
-												<img class="img" src="/myapp/resources/images/menu/minus.png">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="frame-5">
-									<p class="p">
-										<span class="span">from</span> <span class="text-wrapper-4">
-											jongbumee</span>
-									</p>
-									<div class="frame-3">
-										<div class="frame-9">
-											<div class="text-wrapper-8">불고기 햄치즈 도시락</div>
-											<div class="text-wrapper-6">8000원</div>
-										</div>
-										<div class="frame-wrapper">
-											<div class="frame-7">
-												<img class="img" src="img/image.svg" />
-												<div class="frame-8">
-													<div class="text-wrapper-7">1</div>
-												</div>
-												<img class="img-2" src="img/image-2.svg" />
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="frame-10">
+							<div class="frame-10">
 							<div class="frame-11">
 								<div class="text-wrapper-9">총 합계</div>
 								<div class="text-wrapper-9">₹11,400.00</div>
@@ -174,252 +225,172 @@ String contextPath = request.getContextPath();
 						<div class="frame-12">
 							<div class="text-wrapper-11">결제하기</div>
 						</div>
-					</div>
-					
-					
-					
-					
-					
-					
-			
-					
-					
-					
-					
-					<div class="group-wrapper">
-						
-						<div class="group">
-				<!-- 내 장바구니! -->
-				<c:if test="${empty blist}">
-				<div class="empty">
-					<p>장바구니가 텅 비었어요! 상품을 담아주세요!!</p>
-					</div>
-				</c:if>
-			</div>
-							
-							
-					<c:forEach items="${basket}" var="basket" varStatus="status">
-							<div class="cart-menus-wrapper">
-								<div class="cart-menus">
-									<div class="frame-14">
-										<div class="frame-15">
-											 <!-- 
-											<div class="text-wrapper-14" style="display:${basket[status.index].basket_date==basket[(status.index-1)].basket_date?'none':'block' }">${basket.basket_date}</div>
-											-->
-											
-											
-											
-									<!--		
-                    <div class="text-wrapper-14" style="display:${basket[status.index].basket_date == basket[(status.index-1)].basket_date?'none':'show'}">${basket.basket_date}</div>
-											-->
-											
-											
-											  
-											<div class="text-wrapper-14">${basket.basket_date}</div>
-											<div class="group-2">
-												<div class="frame-16">
-													<div class="frame-17">
-														<img class="rectangle" src="${cpath}/${basket.proimage_image}" />
-														<div class="frame-18">
-															<div class="text-wrapper-15">${basket.pro_name}</div>
-															
-															
-															<input class="text-wrapper-16" id="proPrice" type="number" min="7000" value="${basket.pro_price}" readOnly />
-															
-															<div class="text-wrapper-3" id="total-amount">
-									총 금액 <span id="totalAmount">${basket.pro_price}</span>
-									원
-								</div>
-														</div>
-													</div>
-													
-													<div class="button-product-add">
-													<input class="text-wrapper-17" id="countNumb" type="number" min="1" value="${basket.basket_pro_count}" readOnly />
-													
-													<!-- 
-														<div class="text-wrapper-17" id="countNumb">${basket.basket_pro_count}</div>  -->
-														<div class="entypo-plus-wrapper" onclick="increaseBasketProCount()">
-															<img class="img-3" src="/myapp/resources/images/menu/plus.png">
-														</div>
-														<div class="entypo-minus-wrapper" onclick="decreaseBasketProCount()">
-															<img class="img-3" src="/myapp/resources/images/menu/minus.png">
-														</div>
-													</div>
-													
-												</div>
-												<img class="close"
-													src="${cpath}/resources/images/wallet/delete_btn.svg" />
-													
-												<div class="frame-19">
-													<input type="checkbox" class="checkbox-2" name="selection" value="${basket.pro_no}" onchange="logCheckboxValue(this)">
-													<div class="text-wrapper-18">${basket.mem_name}</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								
-								<div class="frame-13">
-								
-								
-								<div class="view-3">
-									<input type="checkbox" class="checkbox" name="selection" onclick="checkBoxSelector()">
-									<div class="text-wrapper-12">선택해제</div>
-								</div>
-								<div class="text-wrapper-13">선택삭제</div>
-							</div>
-								
-								
-							</div>
-							</c:forEach>
-							
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<footer class="footer">
-				<div class="footer-company-loco">
-					<div class="footer-company">
-						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
-							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
-						<img class="footer-logo"
-							src="${cpath}/resources/images/main/footer-logo.png" />
-					</div>
-					<div class="footer-social-icon">
-						<div class="footer-facebook">
-							<img class="footer-mask-group"
-								src="${cpath}/resources/images/main/footer-facebook.png" />
-						</div>
-						<div class="footer-instagram">
-							<img class="footer-img"
-								src="${cpath}/resources/images/main/footer-insta.png" />
-						</div>
-						<div class="footer-twitter">
-							<img class="footer-mask-group-2"
-								src="${cpath}/resources/images/main/footer-twitter.png" />
-						</div>
-						<div class="footer-linkind">
-							<img class="footer-mask-group-2"
-								src="${cpath}/resources/images/main/footer-linkedin.png" />
-						</div>
-					</div>
-				</div>
-				<div class="footer-contact-us">
-					<div class="footer-text-wrapper-2">Contact Us</div>
-					<div class="footer-group">
-						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
-						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
-						<div class="footer-text-wrapper-3">+0123 456 7891</div>
-					</div>
-					<div class="footer-overlap-group-wrapper">
-						<div class="footer-overlap-group">
-							<div class="footer-vector-wrapper">
-								<img class="footer-vector"
-									src="${cpath}/resources/images/main/footer-email-button.png" />
-							</div>
-							<input class="footer-enter-email"
-								placeholder="Enter your email....">
-						</div>
-					</div>
-				</div>
-				<div class="footer-user-link">
-					<div class="footer-text-wrapper-7">User Link</div>
-					<div class="footer-group-2">
-						<div class="footer-text-wrapper-3">About Us</div>
-						<div class="footer-text-wrapper-3">Contact Us</div>
-						<div class="footer-text-wrapper-3">Order Delivery</div>
-						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
-						<div class="footer-text-wrapper-3">Terms of Services</div>
-					</div>
-				</div>
-				<div class="footer-opening-restaurant">
-					<div class="footer-text-wrapper-7">Opening Restaurant</div>
-					<div class="footer-group-3">
-						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
-						<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
-						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
-					</div>
-				</div>
-			</footer>
-			<!-- div -->
 		</div>
+
+		<footer class="footer">
+			<div class="footer-company-loco">
+				<div class="footer-company">
+					<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+						우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+					<img class="footer-logo"
+						src="${cpath}/resources/images/main/footer-logo.png" />
+				</div>
+				<div class="footer-social-icon">
+					<div class="footer-facebook">
+						<img class="footer-mask-group"
+							src="${cpath}/resources/images/main/footer-facebook.png" />
+					</div>
+					<div class="footer-instagram">
+						<img class="footer-img"
+							src="${cpath}/resources/images/main/footer-insta.png" />
+					</div>
+					<div class="footer-twitter">
+						<img class="footer-mask-group-2"
+							src="${cpath}/resources/images/main/footer-twitter.png" />
+					</div>
+					<div class="footer-linkind">
+						<img class="footer-mask-group-2"
+							src="${cpath}/resources/images/main/footer-linkedin.png" />
+					</div>
+				</div>
+			</div>
+			<div class="footer-contact-us">
+				<div class="footer-text-wrapper-2">Contact Us</div>
+				<div class="footer-group">
+					<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+					<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+					<div class="footer-text-wrapper-3">+0123 456 7891</div>
+				</div>
+				<div class="footer-overlap-group-wrapper">
+					<div class="footer-overlap-group">
+						<div class="footer-vector-wrapper">
+							<img class="footer-vector"
+								src="${cpath}/resources/images/main/footer-email-button.png" />
+						</div>
+						<input class="footer-enter-email"
+							placeholder="Enter your email....">
+					</div>
+				</div>
+			</div>
+			<div class="footer-user-link">
+				<div class="footer-text-wrapper-7">User Link</div>
+				<div class="footer-group-2">
+					<div class="footer-text-wrapper-3">About Us</div>
+					<div class="footer-text-wrapper-3">Contact Us</div>
+					<div class="footer-text-wrapper-3">Order Delivery</div>
+					<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+					<div class="footer-text-wrapper-3">Terms of Services</div>
+				</div>
+			</div>
+			<div class="footer-opening-restaurant">
+				<div class="footer-text-wrapper-7">Opening Restaurant</div>
+				<div class="footer-group-3">
+					<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+					<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
+					<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+				</div>
+			</div>
+		</footer>
+		<!-- div -->
+	</div>
 	</div>
 	<!-- screen -->
 </body>
 
 <script>
-function logCheckboxValue(checkbox) {
-    console.log("Checkbox value: ", checkbox.value);
-}
 
-// 체크 박스 선택
-var isChecked = false;
 
-function checkBoxSelector() {
-    if (isChecked) {
-    	selectAll();
-    	unselectAll();
-    } else {
-    	selectAll();
+
+
+
+
+
+
+
+
+
+
+	function logCheckboxValue(checkbox) {
+		console.log("Checkbox value: ", checkbox.value);
+	}
+
+	// 체크 박스 선택
+	var isChecked = false;
+
+	function checkBoxSelector() {
+		if (isChecked) {
+			selectAll();
+			unselectAll();
+		} else {
+			selectAll();
+		}
+		isChecked = !isChecked;
+	}
+
+	function selectAll() {
+		var checkboxes = document.getElementsByName('selection');
+
+		for (var i = 0; i < checkboxes.length; i++) {
+			checkboxes[i].checked = true;
+		}
+	}
+
+	function unselectAll() {
+		var checkboxes = document.getElementsByName('selection');
+
+		for (var i = 0; i < checkboxes.length; i++) {
+			checkboxes[i].checked = false;
+		}
+	}
+
+	// 수량 및 총 가격 변화
+	$(".entypo-plus-wrapper").on("click", function() {
+		var price = parseFloat($(this).find(".pro_price").val());
+	    var index = $(this).find(".index-num").val();
+	    var pro_num = $(this).find(".pro_no").val();
+	    var quantity = Number($("#result" + index).html()) + 1;
+	    $('#result' + index).html(quantity);
+	    updateCounter(quantity,price,index);
+	});
+	
+	$(".entypo-minus-wrapper").on("click", function() {
+	    var price = parseFloat($(this).find(".pro_price").val());
+	    var index = $(this).find(".index-num").val();
+	    var pro_num = $(this).find(".pro_no").val();
+	    var quantity = Number($("#result" + index).html()) - 1;
+	    $('#result' + index).html(quantity);
+	    updateCounter(quantity,price,index);
+	});
+	
+	function updateCounter(quantity,price,index) {
+    	var totalAmount = quantity*price;
+    	$('#totalAmount' + index).html(totalAmount);
     }
-    isChecked = !isChecked;
-}
+	
+	// 날짜 중복 검사
+	$(document).ready(function() {
+    	checkDuplicateDates();
+	});
 
-function selectAll() {
-	var checkboxes = document.getElementsByName('selection');
-    
-    for (var i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].checked = true;
-    }
-}
+	function checkDuplicateDates() {
+	    $(".dateIndex").each(function() {
+	        var index = $(this).val();
+	        var currentDateHTML = $('#dateIndex' + index).text();
+	        var nextDateHTML = $('#dateIndex' + (parseInt(index, 10) + 1)).text();
 
-function unselectAll() {
-var checkboxes = document.getElementsByName('selection');
-    
-    for (var i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].checked = false;
-    }
-}
-
-// 장바구니 상품 수량 변화
-var proCountElement = document.getElementById('countNumb'); // 최소값 설정
-var proPriceElement = document.getElementById('proPrice'); // 상품 가격
-
-var proCount = parseInt(proCountElement.value); // 최소값 설정
-var proPrice = parseFloat(proPriceElement.value); // 상품 가격
-
-function increaseBasketProCount() {
-	proCount++;
-  updateBasketProCount();
-}
-
-function decreaseBasketProCount() {
-	proCount = Math.max(1, proCount-1);
-  updateBasketProCount();
-}
-
-function updateBasketProCount() {
-    var totalAmount = proCount * proPrice;
-    console.log("Total Amount:", totalAmount);
-    console.log("Total count:", proCount);
-    proCountElement.value = proCount;
-    document.getElementById('totalAmount').value = totalAmount;
-}
+	        if (currentDateHTML === nextDateHTML) {
+	            $('#dateIndex' + (parseInt(index, 10) + 1)).hide();
+	        }
+	    });
+	}
 
 
-	$(".e79_263").on("click", function() {
-		$.ajax({
 
-			url : "${cpath}/my/myDelivery.do",
-			type : "get",
-			success : function(res) {
-				$("body").html(res);
-			}
-
-		})
-	})
+	
 </script>
 
 </html>
