@@ -88,7 +88,8 @@
 				<div class="feeds">
 					<div class="group-3">
 						<div class="overlap-group-2">
-							<button class="detailfeed_deleteBtn" onclick="deleteDoran(${doran.doran_no})">
+							<button class="detailfeed_deleteBtn"
+								onclick="deleteDoran(${doran.doran_no})">
 								<img class="detailfeed_deleteBtnImg"
 									src="${cpath}/resources/images/doran/detailfeed_deleteBtn.png" />
 							</button>
@@ -123,7 +124,7 @@
 
 							<div class="group-4">
 								<img class="unsplash-ykc-qhmjk"
-									src="img/unsplash-y3kc-7qhmjk.svg" />
+									src="${cpath}/resources/upload/${doran.doran_profile}" />
 								<div class="frame-2">
 									<div class="frame-3">
 										<div class="text-wrapper-10">${doran.mem_id}</div>
@@ -203,13 +204,29 @@
 				<div class="group-9">
 					<div class="group-10">
 						<div class="div-2">
-
 							<!-- 로그인 안되어 있으면 프로필 설정 안보이게 하기  -->
 							<div class="doran-profile">
-								<div class="doran-profile-photo">
-									<img class="doran-profile-photoImg"
-										src="${cpath }/resources/images/doran/test.png" />
-								</div>
+								<c:choose>
+									<c:when
+										test="${doran.doran_profile eq 'resources/images/my/baseProfile.png'}">
+										<div class="doran-profile-photo">
+											<img class="doran-profile-photoImg"
+												src="${cpath }/resources/images/my/baseProfile.png" />
+										</div>
+									</c:when>
+									<c:when test="${doran.doran_profile == null}">
+										<div class="doran-profile-photo">
+											<img class="doran-profile-photoImg"
+												src="${cpath }/resources/images/my/baseProfile.png" />
+										</div>
+									</c:when>
+									<c:otherwise>
+										<div class="doran-upload-profilPhoto">
+											<img class="doran-profile-photoImg"
+												src="${cpath}/resources/upload/${doran.doran_profile}" />
+										</div>
+									</c:otherwise>
+								</c:choose>
 								<div class="doran-profile-info">
 									<div class="doran-profile-info-memname">${sessionScope.loginmem.mem_id}</div>
 									<div class="doran-profile-info-grade">

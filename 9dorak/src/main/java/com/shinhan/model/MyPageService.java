@@ -126,6 +126,11 @@ public class MyPageService {
 		return dao.getPointList(mem_id);
 	}
 
+	public int updateDoranProfile(MemVO memVO) {
+		// TODO Auto-generated method stub
+		return dao.updateDoranProfile(memVO);
+	}
+
 
 
 

@@ -22,4 +22,5 @@ public class DoranVO {
 	private String mem_id; // 회원 아이디
 	private int dlike; // 좋아요 수
 	private int dcomment; // 댓글 수
+	private String doran_profile; // 프로필 이미지
 }
