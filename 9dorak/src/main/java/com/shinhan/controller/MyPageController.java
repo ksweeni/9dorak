@@ -144,11 +144,11 @@ public class MyPageController {
 		if (result > 0) {
 		        return "등록되었습니다.";
 		    }else {
-		    	throw new Exception("등록에 실패했습니다. 이미 등록된 정보일 수 있습니다.");
+		    	throw new Exception("등록에 실패했습니다. 이미 등록된 코드인지 확인하세요.");
 		    }
 		}catch (Exception e) {
 	        e.printStackTrace();
-	        return "등록에 실패했습니다. 이미 등록된 정보일 수 있습니다.";
+	        return "등록에 실패했습니다. 이미 등록된 코드인지 확인하세요.";
 		}
 	}
 

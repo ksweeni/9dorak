@@ -244,12 +244,13 @@ String contextPath = request.getContextPath();
 	width: 200px;
 	height: 48px;
 	position: absolute;
-	left: 244px;
+	left: 233px;
 	top: 500px;
 	background-color: #ffffff;
 	border-radius: 16px;
 	border: 2px solid;
 	border-color: #e7e7e7;
+	cursor: pointer;
 }
 
 .178_739 {
@@ -477,8 +478,8 @@ String contextPath = request.getContextPath();
 	width: 144px;
 	height: 18px;
 	position: absolute;
-	left: 28px;
-	top: 15px;
+	left: 32px;
+	top: 11px;
 	font-family: Roboto;
 	text-align: left;
 	font-size: 20px;
@@ -533,8 +534,8 @@ String contextPath = request.getContextPath();
 	width: 138px;
 	height: 18px;
 	position: absolute;
-	left: 31px;
-	top: 15px;
+	left: 34px;
+	top: 11px;
 	font-family: Roboto;
 	text-align: left;
 	font-size: 20px;
@@ -1014,15 +1015,15 @@ String contextPath = request.getContextPath();
 			<div class=e178_614>
 				<div class=e178_615>
 					<div class=e178_739>
-						<span class="e178_740">코드 복사</span>
+						<span class="e178_740" onclick="copyCode()">코드 복사</span>
 					</div>
 					<div class="e178_728"></div>
 					<span class="e178_729">${mem.mem_name }</span>
 					<div class="e178_738"></div>
 					<span class="e178_737">LV.${mem.mem_grade }</span>
 					<div class=e178_731>
-						<span class="e178_732">추천인 코드</span><span class="e178_733">내정보</span><span
-							class="e178_734">${mem.mem_code }</span>
+						<span class="e178_732">추천인 코드</span><span class="e178_733">내정보</span>
+						<span class="e178_734" id="codeToCopy">${mem.mem_code }</span>
 						<div class="e178_735"></div>
 						<div class="e178_736"></div>
 						<a class="e178_741" href="${cpath}/my/myMenu.do"></a>
@@ -1031,8 +1032,6 @@ String contextPath = request.getContextPath();
 						<span class="e178_726">가족</span>
 					</div>
 					<span class="e178_717">지인</span>
-
-
 
 
 					<div class=e178_718>
@@ -1134,7 +1133,25 @@ String contextPath = request.getContextPath();
     	});
     	
     }
+    
+    function copyCode() {
+        var codeElement = document.getElementById("codeToCopy");
+        var range = document.createRange();
+        range.selectNode(codeElement);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        
+        try {
+            document.execCommand('copy');
+            console.log('코드가 복사되었습니다.');
+            alert("코드가 복사되었습니다.")
+        } catch (err) {
+            console.error('코드 복사 실패:', err);
+        }
 
+        window.getSelection().removeAllRanges();
+    }
+    
 	/*
 	$(".e178_719").on("click", function() {
 		//alert(people_code);
