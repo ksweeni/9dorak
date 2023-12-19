@@ -9,11 +9,11 @@ String contextPath = request.getContextPath();
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?e"
+	type="text/css" />
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <style>
 .178_596 {
 	overflow: hidden;
@@ -519,7 +519,8 @@ String contextPath = request.getContextPath();
 	top: 64px;
 	background-color: #ffffff;
 	border-radius: 16px;
-	border: 2px solid; border-color : #e7e7e7;
+	border: 2px solid;
+	border-color: #e7e7e7;
 	cursor: pointer;
 	border-color: #e7e7e7;
 }
@@ -680,7 +681,7 @@ String contextPath = request.getContextPath();
 	text-align: left;
 	font-size: 14px;
 	letter-spacing: 0;
-	line-height: px;
+	text-decoration: none;
 }
 
 .e178_643 {
@@ -995,16 +996,68 @@ String contextPath = request.getContextPath();
 </head>
 <body>
 	<div class=e178_596>
-		<div class=e178_597>
-			<div class=e178_598>
-				<div class="e178_599"></div>
+
+		<header class="header">
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-event">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+					</div>
+					<div class="text-menu">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+					</div>
+					<div class="text-subscribe">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+					</div>
+					<div class="text-yomo">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+					</div>
+					<div class="text-doran">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+					</div>
+				</div>
+				<a href="${pageContext.request.contextPath}/main.do"> <img
+					class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				</a>
+				<div class="div-3">
+					<div class="text-wrapper-28">
+						<c:choose>
+							<c:when test="${not empty sessionScope.loginmem.mem_id}">
+								<span
+									style="font-weight: bold; left: -1rem; position: relative;">
+									<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+								</span>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/my/logout.do"
+									style="position: relative; left: -1rem">로그아웃</a>
+							</c:when>
+							<c:otherwise>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+									href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<div class="group-20">
+						<div class="header-overlap-group-3">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<div class="ellipse-light"></div>
+							<!-- <div class="text-wrapper-29">2</div> -->
+						</div>
+					</div>
+				</div>
 			</div>
-			<span class="e178_600">메뉴보기</span><span class="e178_601">구독하기</span><span
-				class="e178_602">요모조모</span><span class="e178_603">도란도란</span><span
-				class="e178_604">이벤트</span><span class="e178_605">로그아웃</span>
-			<div class="e178_606"></div>
-			<div class="e178_607"></div>
-		</div>
+		</header>
+
+
 		<div class=e178_608>
 			<div class=e178_609>
 				<span class="e178_610">지인 등록</span><span class="e178_611">지인
@@ -1065,93 +1118,123 @@ String contextPath = request.getContextPath();
 						<span class="e178_640">지인 등록</span>
 					</div>
 					<div class=e178_635>
-						<span class="e178_636">지인 목록 조회</span>
+						<a class="e178_636"
+							href="${pageContext.request.contextPath}/my/familyList.do">지인
+							목록 조회</a>
 					</div>
 				</div>
 			</div>
 		</div>
+		<footer class="footer">
+			<div class="footer-company-loco">
+				<div class="footer-company">
+					<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+						우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+					<img class="footer-logo"
+						src="${cpath}/resources/images/main/footer-logo.png" />
+				</div>
+				<div class="footer-social-icon">
+					<div class="footer-facebook">
+						<img class="footer-mask-group"
+							src="${cpath}/resources/images/main/footer-facebook.png" />
+					</div>
+					<div class="footer-instagram">
+						<img class="footer-img"
+							src="${cpath}/resources/images/main/footer-insta.png" />
+					</div>
+					<div class="footer-twitter">
+						<img class="footer-mask-group-2"
+							src="${cpath}/resources/images/main/footer-twitter.png" />
+					</div>
+					<div class="footer-linkind">
+						<img class="footer-mask-group-2"
+							src="${cpath}/resources/images/main/footer-linkedin.png" />
+					</div>
+				</div>
+			</div>
+			<div class="footer-contact-us">
+				<div class="footer-text-wrapper-2">Contact Us</div>
+				<div class="footer-group">
+					<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+					<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+					<div class="footer-text-wrapper-3">+0123 456 7891</div>
+				</div>
+				<div class="footer-overlap-group-wrapper">
+					<div class="footer-overlap-group">
+						<div class="footer-vector-wrapper">
+							<img class="footer-vector"
+								src="${cpath}/resources/images/main/footer-email-button.png" />
+						</div>
+						<input class="footer-enter-email"
+							placeholder="Enter your email....">
+					</div>
+				</div>
+			</div>
+			<div class="footer-user-link">
+				<div class="footer-text-wrapper-7">User Link</div>
+				<div class="footer-group-2">
+					<div class="footer-text-wrapper-3">About Us</div>
+					<div class="footer-text-wrapper-3">Contact Us</div>
+					<div class="footer-text-wrapper-3">Order Delivery</div>
+					<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+					<div class="footer-text-wrapper-3">Terms of Services</div>
+				</div>
+			</div>
+			<div class="footer-opening-restaurant">
+				<div class="footer-text-wrapper-7">Opening Restaurant</div>
+				<div class="footer-group-3">
+					<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+					<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
+					<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+				</div>
+			</div>
+		</footer>
 
-		<div class=e178_643>
-			<div class="e178_644"></div>
-			<div class=e178_645>
-				<div class=e178_646>
-					<span class="e178_647">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Commodo libero viverra dapibus odio
-						sit malesuada in quis. Arcu tristique elementum viverra integer
-						id.</span>
-					<div class="e178_648"></div>
-				</div>
-			</div>
-			<div class=e178_649>
-				<span class="e178_650">Contact Us</span>
-				<div class=e178_651>
-					<span class="e178_652">1234 Country Club Ave</span><span
-						class="e178_653">NC 123456, London, UK</span><span
-						class="e178_654">+0123 456 7891</span>
-				</div>
-			</div>
-			<div class=e178_655>
-				<span class="e178_656">User Link</span>
-				<div class=e178_657>
-					<span class="e178_658">About Us</span><span class="e178_659">Contact
-						Us</span><span class="e178_660">Order Delivery</span><span
-						class="e178_661">Payment & Tex</span><span class="e178_662">Terms
-						of Services</span>
-				</div>
-			</div>
-			<div class=e178_663>
-				<span class="e178_664">Opening Restaurant</span>
-				<div class=e178_665>
-					<span class="e178_666">Sat-Wet: 09:00am-10:00PM</span><span
-						class="e178_667">Thursdayt: 09:00am-11:00PM</span><span
-						class="e178_668">Friday: 09:00am-8:00PM</span>
-				</div>
-			</div>
-			<div class="e178_669"></div>
-			<div class="e178_670"></div>
-		</div>
 	</div>
 
 
 
 </body>
 <script>
-    function registerPeople(category){
-    	var people_code;
-    	if(category=="가족"){
-    		people_code = $("#people_code1").val();
-    	}else{
-    		people_code = $("#people_code2").val();
-    	}
-    	 
-       	$.ajax({
-    		url:"${cpath}/my/insertPeople.do",
-    		data: {"mem_code": people_code, "category":category},
-    		success:function(responseData){
-    			alert(responseData);
-    		}
-    	});
-    	
-    }
-    
-    function copyCode() {
-        var codeElement = document.getElementById("codeToCopy");
-        var range = document.createRange();
-        range.selectNode(codeElement);
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(range);
-        
-        try {
-            document.execCommand('copy');
-            console.log('코드가 복사되었습니다.');
-            alert("코드가 복사되었습니다.")
-        } catch (err) {
-            console.error('코드 복사 실패:', err);
-        }
+	function registerPeople(category) {
+		var people_code;
+		if (category == "가족") {
+			people_code = $("#people_code1").val();
+		} else {
+			people_code = $("#people_code2").val();
+		}
 
-        window.getSelection().removeAllRanges();
-    }
-    
+		$.ajax({
+			url : "${cpath}/my/insertPeople.do",
+			data : {
+				"mem_code" : people_code,
+				"category" : category
+			},
+			success : function(responseData) {
+				alert(responseData);
+			}
+		});
+
+	}
+
+	function copyCode() {
+		var codeElement = document.getElementById("codeToCopy");
+		var range = document.createRange();
+		range.selectNode(codeElement);
+		window.getSelection().removeAllRanges();
+		window.getSelection().addRange(range);
+
+		try {
+			document.execCommand('copy');
+			console.log('코드가 복사되었습니다.');
+			alert("코드가 복사되었습니다.")
+		} catch (err) {
+			console.error('코드 복사 실패:', err);
+		}
+
+		window.getSelection().removeAllRanges();
+	}
+
 	/*
 	$(".e178_719").on("click", function() {
 		//alert(people_code);

@@ -153,6 +153,12 @@ public class MyPageController {
 	        return "등록에 실패했습니다. 이미 등록된 코드인지 확인하세요.";
 		}
 	}
+	
+	//가족목록
+	@GetMapping("familyList.do")
+	public String familyList(Model model, HttpSession session) {
+		return "my/familyList";
+	}
 
 
 	@RequestMapping(value = "updateMember.do", produces = "text/plain;charset=utf-8")
