@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shinhan.dto.PayVO;
@@ -30,20 +32,24 @@ public class PaymentController {
 				"e3h05uZuutCJFe3JxCpFkqH5Qp90bvbNdPUC9j6Szr9uKb79mewNzS74gQgDVgI39qIUajRB58SQ6BTj");
 	}
 
-	/*
-	 * @ResponseBody
-	 * 
-	 * @RequestMapping("/verify/{imp_uid}") public IamportResponse<Payment>
-	 * paymentByImpUid(@PathVariable("imp_uid") String imp_uid) throws
-	 * IamportResponseException, IOException {
-	 * 
-	 * return iamportClient.paymentByImpUid(imp_uid); }
-	 */
-
+    @ResponseBody
+	@PostMapping("/cancelPay")
+    public String cancelPay(@RequestParam String imp_uid) throws Exception {
+    	try {
+    		String token = pService.getUserToken();
+    		System.out.println("받아온 토큰"  + token);
+           pService.paymentCancel(token,imp_uid, 100, "맘에 안 들어요");
+            return "Payment canceled successfully!";
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Failed to cancel payment. Check logs for details.";
+        }
+    }
+	
 	@ResponseBody
 	@RequestMapping("verify/{imp_uid}")
 	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, Model model) {
-		System.out.println("asd");
+		
 		try {
 			IamportResponse<Payment> iamportResponse = iamportClient.paymentByImpUid(imp_uid);
 
@@ -51,12 +57,23 @@ public class PaymentController {
 				System.out.println("paid");
 				String paymethod="";
 
+				try {
+					String token = pService.getUserToken();
+					//System.out.println("토큰입니다 : " + token);
+					//int amounts = pService.paymentInfo(imp_uid, token);
+					System.out.println("결제한 금액 : "+pService.paymentInfo(imp_uid, token));
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				// Extract information from the payment response
 				Payment payment = iamportResponse.getResponse();
 				String productName = payment.getName(); // 상품명
 				BigDecimal paidAmount = payment.getAmount(); // 가격
 				String currency = payment.getCurrency(); // Currency
 				String paymentMethod = payment.getPayMethod(); // point로 했다는데
+				
+				String impuid = payment.getImpUid(); // 영수증 정보 무조건 필요 ( 환불 시 )
 
 				// Buyer information
 				String buyerName = payment.getBuyerName(); // 산 사람 이름
@@ -79,6 +96,7 @@ public class PaymentController {
 				System.out.println(buyerTel);
 				System.out.println(buyerAddr);
 				System.out.println(buyerPostcode);
+				System.out.println(impuid);
 				
 				int index = pService.selectPayCount();
 				
@@ -87,6 +105,7 @@ public class PaymentController {
 				pay.setPay_date(null);
 				pay.setPay_status("결제 완료");
 				pay.setPay_depo(buyerName);
+				pay.setImp_uid(impuid);
 				
 				pay.setPay_depobank(paymethod);
 				pay.setPay_method(paymethod);
