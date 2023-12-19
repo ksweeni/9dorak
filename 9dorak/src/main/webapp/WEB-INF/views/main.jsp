@@ -275,12 +275,14 @@ String contextPath = request.getContextPath();
 							</a>
 						</div>
 						<div class="carousel-item">
-							<img src="${cpath}/resources/images/main/main_family.png"
+							<a href="${cpath}/menu/menu.do"> <img
+								src="${cpath}/resources/images/main/main_menu.png"
 								class="d-block w-100" alt="...">
+							</a>
 						</div>
 						<div class="carousel-item">
-							<a href="${cpath}/event/challenge.do"> <img
-								src="${cpath}/resources/images/main/main_event.png"
+							<a href="${cpath}/my/familyReg.do"> <img
+								src="${cpath}/resources/images/main/main_friend.png"
 								class="d-block w-100" alt="...">
 							</a>
 						</div>
