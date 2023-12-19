@@ -24,39 +24,54 @@
 	<header class="header">
 		<div class="top-nav">
 			<div class="navbar">
-				<div class="text-event"
-					OnClick="location.href ='${pageContext.request.contextPath}/event/challenge.do'"
-					style="cursor: pointer;">이벤트</div>
-				<div class="text-menu"
-					OnClick="location.href ='${pageContext.request.contextPath}/menu/menu.do'"
-					style="cursor: pointer;">메뉴보기</div>
-				<div class="text-subscribe"
-					OnClick="location.href ='${pageContext.request.contextPath}/sub/sub.do'"
-					style="cursor: pointer;">구독하기</div>
-				<div class="text-yomo"
-					OnClick="location.href ='${pageContext.request.contextPath}/yomo/notice.do'"
-					style="cursor: pointer;">요모조모</div>
-				<div class="text-doran"
-					OnClick="location.href ='${pageContext.request.contextPath}/doran/doran.do'"
-					style="cursor: pointer;">도란도란</div>
+				<div class="text-event">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+				</div>
+				<div class="text-menu">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+				</div>
+				<div class="text-subscribe">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+				</div>
+				<div class="text-yomo">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+				</div>
+				<div class="text-doran">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+				</div>
 			</div>
-			<img class="untitled-2"
+			<a href="${pageContext.request.contextPath}/main.do"> <img
+				class="untitled-2"
 				src="${cpath}/resources/images/main/header-logo.png" />
+			</a>
 			<div class="div-3">
 				<div class="text-wrapper-28">
-					<a
-						OnClick="location.href ='${pageContext.request.contextPath}/login/loginForm.do'"
-						style="cursor: pointer;">로그인</a> | <a
-						OnClick="location.href ='${pageContext.request.contextPath}/register/registerType.do'"
-						style="cursor: pointer;">회원가입</a>
+					<c:choose>
+						<c:when test="${not empty sessionScope.loginmem.mem_id}">
+							<span style="font-weight: bold; left: -1rem; position: relative;">
+								<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+							</span>
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/my/logout.do"
+								style="position: relative; left: -1rem">로그아웃</a>
+						</c:when>
+						<c:otherwise>
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+								href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+						</c:otherwise>
+					</c:choose>
 				</div>
-				<div class="group-20"
-					OnClick="location.href ='${pageContext.request.contextPath}/wallet/basket.do'"
-					style="cursor: pointer;">
-					<div class="header-overlap-group-3">
+				<div class="group-20" id="lightsParent">
+					<div class="header-overlap-group-3" onclick="loginBasket()">
 						<img class="header-group-21"
 							src="${cpath}/resources/images/main/header-cart.png" />
-						<div class="ellipse-light"></div>
 						<!-- <div class="text-wrapper-29">2</div> -->
 					</div>
 				</div>
@@ -176,8 +191,8 @@
 					objectType : 'feed',
 					content : {
 						title : '구도락',
-						description : '#맞벌이부모 #자녀 #도시락 #구독 #가족 #건강',
-						imageUrl : 'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+						description : '#맞벌이부모 #자녀 #도시락 #가족등록 #친구추가',
+						imageUrl : 'https://img.freepik.com/premium-vector/healthy-bento-lunch-box-illustration_477760-123.jpg?w=1060',
 						link : {
 						// [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
 						mobileWebUrl: 'https://developers.kakao.com',
@@ -185,9 +200,9 @@
 						},
 					},
 					social : {
-						likeCount : 286,
-						commentCount : 45,
-						sharedCount : 845,
+						likeCount : 300,
+						commentCount : 31,
+						sharedCount : 235,
 					},
 					buttons : [ {
 						title : '웹으로 보기',

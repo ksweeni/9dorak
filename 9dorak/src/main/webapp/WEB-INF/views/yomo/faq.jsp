@@ -16,42 +16,63 @@
 </head>
 <body>
 	<div class=e815_534>
-			<header class="header">
-			<div class="top-nav">
-				<div class="navbar">
-					<div class="text-event"
-					OnClick="location.href ='${pageContext.request.contextPath}/event/challenge.do'" style="cursor: pointer;">
-					이벤트</div>
-					<div class="text-menu"
-					OnClick="location.href ='${pageContext.request.contextPath}/menu/menu.do'" style="cursor: pointer;">
-					메뉴보기</div>
-					<div class="text-subscribe"
-					OnClick="location.href ='${pageContext.request.contextPath}/sub/sub.do'" style="cursor: pointer;">
-					구독하기</div>
-					<div class="text-yomo"
-					OnClick="location.href ='${pageContext.request.contextPath}/yomo/notice.do'" style="cursor: pointer;">
-					요모조모</div>
-					<div class="text-doran"
-					OnClick="location.href ='${pageContext.request.contextPath}/doran/doran.do'" style="cursor: pointer;">
-					도란도란</div>
+	<header class="header">
+		<div class="top-nav">
+			<div class="navbar">
+				<div class="text-event">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
 				</div>
-				<img class="untitled-2"
-					src="${cpath}/resources/images/main/header-logo.png" />
-				<div class="div-3">
-					<div class="text-wrapper-28"><a OnClick="location.href ='${pageContext.request.contextPath}/login/loginForm.do'" style="cursor: pointer;">로그인</a>
-					 | 
-					 <a OnClick="location.href ='${pageContext.request.contextPath}/register/registerType.do'" style="cursor: pointer;">회원가입</a></div>
-					<div class="group-20" OnClick="location.href ='${pageContext.request.contextPath}/wallet/basket.do'" style="cursor: pointer;">
-						<div class="header-overlap-group-3">
-							<img class="header-group-21"
-								src="${cpath}/resources/images/main/header-cart.png" />
-							<div class="ellipse-light"></div>
-							<!-- <div class="text-wrapper-29">2</div> -->
-						</div>
+				<div class="text-menu">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+				</div>
+				<div class="text-subscribe">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+				</div>
+				<div class="text-yomo">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+				</div>
+				<div class="text-doran">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+				</div>
+			</div>
+			<a href="${pageContext.request.contextPath}/main.do"> <img
+				class="untitled-2"
+				src="${cpath}/resources/images/main/header-logo.png" />
+			</a>
+			<div class="div-3">
+				<div class="text-wrapper-28">
+					<c:choose>
+						<c:when test="${not empty sessionScope.loginmem.mem_id}">
+							<span style="font-weight: bold; left: -1rem; position: relative;">
+								<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+							</span>
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/my/logout.do"
+								style="position: relative; left: -1rem">로그아웃</a>
+						</c:when>
+						<c:otherwise>
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+								href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<div class="group-20" id="lightsParent">
+					<div class="header-overlap-group-3" onclick="loginBasket()">
+						<img class="header-group-21"
+							src="${cpath}/resources/images/main/header-cart.png" />
+						<!-- <div class="text-wrapper-29">2</div> -->
 					</div>
 				</div>
 			</div>
-		</header>
+		</div>
+	</header>
 		<div class="e844_606"></div>
 	</div>
 	<div class="e844_9999"></div>
@@ -63,6 +84,79 @@
 			<span class="faq_cont">${faq.faq_cont}</span>
 			<br><br><br><br><br>
 		</c:forEach>
+		<table id="products" border="1">
+  <caption>product list
+    <form action="" id="setRows">
+      <p>
+        showing
+        <input type="text" name="rowPerPage" value="3">
+        item per page
+      </p>
+    </form>
+
+  </caption>
+
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Category</th>
+      <th>Product</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Clothing</td>
+      <td>Jacket</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>life</td>
+      <td>dish</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>Clothing</td>
+      <td>shocks</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>Clothing</td>
+      <td>sports</td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>shoes</td>
+      <td>nike</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>shoes</td>
+      <td>addidas</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Bags</td>
+      <td>backpack</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Clothing</td>
+      <td>Jacket</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>shoes</td>
+      <td>bonie</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Clothing</td>
+      <td>Jacket</td>
+    </tr>
+  </tbody>
+
+</table>
 	</div>
 	<div class=e1081_4450>
 		<div class=e1081_4451>
@@ -158,5 +252,78 @@
 				</div>
 			</footer>
 	<div class="e1558_2333"></div>
+	<script>
+	var $setRows = $('#setRows');
+
+	$setRows.submit(function (e) {
+	  e.preventDefault();
+	  var rowPerPage = $('[name="rowPerPage"]').val() * 1;// 1 을  곱하여 문자열을 숫자형로 변환
+
+//	    console.log(typeof rowPerPage);
+
+	  var zeroWarning = 'Sorry, but we cat\'t display "0" rows page. + \nPlease try again.'
+	  if (!rowPerPage) {
+	    alert(zeroWarning);
+	    return;
+	  }
+	  $('#nav').remove();
+	  var $products = $('#products');
+
+	  $products.after('<div id="nav">');
+
+
+	  var $tr = $($products).find('tbody tr');
+	  var rowTotals = $tr.length;
+	//  console.log(rowTotals);
+
+	  var pageTotal = Math.ceil(rowTotals/ rowPerPage);
+	  var i = 0;
+
+	  for (; i < pageTotal; i++) {
+	    $('<a href="#"></a>')
+	        .attr('rel', i)
+	        .html(i + 1)
+	        .appendTo('#nav');
+	  }
+
+	  $tr.addClass('off-screen')
+	      .slice(0, rowPerPage)
+	      .removeClass('off-screen');
+
+	  var $pagingLink = $('#nav a');
+	  $pagingLink.on('click', function (evt) {
+	    evt.preventDefault();
+	    var $this = $(this);
+	    if ($this.hasClass('active')) {
+	      return;
+	    }
+	    $pagingLink.removeClass('active');
+	    $this.addClass('active');
+
+	    // 0 => 0(0*4), 4(0*4+4)
+	    // 1 => 4(1*4), 8(1*4+4)
+	    // 2 => 8(2*4), 12(2*4+4)
+	    // 시작 행 = 페이지 번호 * 페이지당 행수
+	    // 끝 행 = 시작 행 + 페이지당 행수
+
+	    var currPage = $this.attr('rel');
+	    var startItem = currPage * rowPerPage;
+	    var endItem = startItem + rowPerPage;
+
+	    $tr.css('opacity', '0.0')
+	        .addClass('off-screen')
+	        .slice(startItem, endItem)
+	        .removeClass('off-screen')
+	        .animate({opacity: 1}, 300);
+
+	  });
+
+	  $pagingLink.filter(':first').addClass('active');
+
+	});
+
+
+	$setRows.submit();
+	</script>
 </body>
 </html>
