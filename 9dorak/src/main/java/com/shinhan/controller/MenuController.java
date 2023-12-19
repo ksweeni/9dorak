@@ -231,6 +231,43 @@ public class MenuController {
 		return "menu/menuSpecificReview";
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// 리뷰 사진 및 동영상 모아보기
 	@GetMapping("menuMediaReview.do")
 	public String menuMediaReview(Model model, ProVO pro) {
