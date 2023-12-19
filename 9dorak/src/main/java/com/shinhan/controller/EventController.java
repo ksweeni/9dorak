@@ -39,6 +39,11 @@ public class EventController {
 	
 	@GetMapping("makelunchbox.do")
 	public String makelunchbox(Model model, HttpSession session, ChallengeVO challenge) {
+		
+		if (session.getAttribute("loginmem")==null) {
+			return "redirect:/login/loginForm.do";
+		}
+		
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<ChallengeVO> clist = chService.selectByMakeAll();
 		List<ChallengeVO> clisttop3 = chService.selectByMakeAllTop3();
