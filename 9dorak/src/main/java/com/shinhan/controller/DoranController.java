@@ -32,6 +32,7 @@ import com.shinhan.dto.DoranVO;
 import com.shinhan.dto.DoranlikeVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.model.DoranService;
+import com.shinhan.model.MyPageService;
 
 @Controller
 @RequestMapping("doran")
@@ -60,6 +61,7 @@ public class DoranController {
 		}
 //		System.out.println(memId);
 		model.addAttribute("loginmem", memId);
+		System.out.println(dlist);
 		return "doran/doran";
 	}
 
@@ -74,6 +76,8 @@ public class DoranController {
 			dlist = dService.selectAllByDlike();
 		}
 		model.addAttribute("dlist", dlist);
+		
+
 		MemVO memId = (MemVO) session.getAttribute("loginmem");
 		model.addAttribute("loginmem", memId);
 		return "doran/doran_ajax";
@@ -138,6 +142,7 @@ public class DoranController {
 		doran.setDoran_view(0);
 		doran.setMem_id(memId);
 		doran.setDoran_image(null);
+		doran.setDoran_profile(memVO.getMem_image());
 		dService.insertDoran(doran);
 		return "redirect:/doran/doran.do";
 	}
@@ -219,6 +224,8 @@ public class DoranController {
 		doran.setDoran_view(0);
 		doran.setMem_id(memId);
 		doran.setDoran_image(ranFileName);
+		System.out.println(memVO);
+		doran.setDoran_profile(memVO.getMem_image());
 		dService.insertDoran(doran);
 		return "redirect:/doran/doran.do";
 	}

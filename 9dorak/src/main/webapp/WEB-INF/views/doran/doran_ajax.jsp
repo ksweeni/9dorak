@@ -11,14 +11,14 @@
 			<div class="doran-topInfo">
 				<c:choose>
 					<c:when
-						test="${loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+						test="${doran.doran_profile eq 'resources/images/my/baseProfile.png'}">
 
 						<div>
 							<img class="doran-uploadInfo-profile"
 								src="${cpath }/resources/images/my/baseProfile.png" />
 						</div>
 					</c:when>
-					<c:when test="${empty loginmem }">
+					<c:when test="${doran.doran_profile == null }">
 
 
 						<div>
@@ -30,19 +30,10 @@
 
 						<div>
 							<img class="doran-uploadInfo-profile"
-								src="${cpath}/resources/upload/${loginmem.mem_image}" />
+								src="${cpath}/resources/upload/${doran.doran_profile}" />
 						</div>
 					</c:otherwise>
 				</c:choose>
-<%-- 
-
-
-				<div>
-					<img class="doran-uploadInfo-profile"
-						src="${cpath }/resources/images/doran/test.png" />
-				</div>
- --%>
-
 
 				<div class="doran-uploadInfo">
 					<div class="doran-uploadInfo-memid">${doran.mem_id }</div>

@@ -314,7 +314,7 @@ public class MyPageController {
 		MemVO memVO = (MemVO) session.getAttribute("loginmem");
 		memVO.setMem_image(ranFileName);
 		int result = mService.profileUpdate(memVO);
-
+		int updateResult = mService.updateDoranProfile(memVO);
 		return "redirect:/my/myMenu.do";
 	}
 

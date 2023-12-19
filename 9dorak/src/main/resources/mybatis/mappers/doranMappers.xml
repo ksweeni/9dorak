@@ -102,12 +102,12 @@
 		INSERT INTO DORAN (
 		doran_no,
 		doran_title, doran_cont, doran_date, doran_image, doran_view,
-		mem_id
+		mem_id , doran_profile
 		)
 		VALUES (
 		#{doran_no}, #{doran_title}, #{doran_cont},
 		sysdate,
-		#{doran_image}, #{doran_view}, #{mem_id}
+		#{doran_image}, #{doran_view}, #{mem_id} , #{doran_profile}
 		)
 	</insert>
 

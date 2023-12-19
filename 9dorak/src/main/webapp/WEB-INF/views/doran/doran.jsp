@@ -229,6 +229,7 @@
 								<button class="doran-button-frofile-setting">
 									<span>프로필 설정하기</span>
 								</button>
+
 							</div>
 
 						</div>
@@ -498,4 +499,10 @@
 	</div>
 	<!-- screen -->
 </body>
+
+<script type="text/javascript">
+	$(".doran-button-frofile-setting").on("click", function() {
+		location.href = "${cpath}/my/myMenu.do";
+	})
+</script>
 </html>
