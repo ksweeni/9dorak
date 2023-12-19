@@ -81,11 +81,11 @@
 						<div class="frame-2">
 							<div class="group-2">
 								<div class="frame-3">
-									<div class="text-wrapper">ksween</div>
-									<div class="text-wrapper-2">2023.11.21</div>
+									<div class="text-wrapper">${moafrist.mem_id }</div>
+									<div class="text-wrapper-2">${moafrist.memreview_date }</div>
 								</div>
 								<div class="frame-4">
-									<div class="text-wrapper-2">[배부르9] 한종범 불고기 도시락</div>
+									<div class="text-wrapper-2">${moadetail.pro_name }</div>
 								</div>
 							</div>
 							<div class="frame-5">
@@ -93,115 +93,33 @@
 									<div class="menu"
 										style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
 									<div class="view">
-										<div class="frame-7">
-											<div class="frame-5">
-												<div class="text-wrapper">맛</div>
-												<div class="text-wrapper-3">최고에요</div>
-											</div>
-											<div class="frame-8">
-												<div class="text-wrapper">만족도</div>
-												<div class="text-wrapper-3">최고에요</div>
-											</div>
+										<div class="">
+											<div class="starpiont">별점 ${moafrist.memreview_starpoint }</div>
 										</div>
-										<p class="p">배부르게 잘 먹었습니다 다음에도 또 먹고싶어요 !! 데브옵스가 끝나고 허겁지겁
-											먹고싶은 맛이네요 쌍둥이 육아중인데 막내도 좋다고 합니다 ~ 최고 흐르르루룳 또 머고시퍼요 다이어ㅡ 실패 ~</p>
-										<div class="frame-9">
-											<img class="happy"
-												src="${cpath}/resources/images/menu/happy-unfill.svg" />
-											<div class="text-wrapper-4">유용해요</div>
-											<div class="text-wrapper-4">0</div>
+										<div>
+											<p class="p">${moafrist.memreview_cont }</p>
 										</div>
 									</div>
 								</div>
 
 								<div class="doran-card">
-
 									<div class="frame-10">
+									<c:forEach items="${moalist }" var="moalist" varStatus="loop">
 										<div class="frame-pic">
-											<div class="menu-2"
+											<div class="menu-2" onclick="mediaReview(${moalist.memreview_no })"
 												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-											<div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
+											<%-- <div class="menu-2"
+												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div> --%>
 										</div>
-
-										<div class="frame-pic">
-											<div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-											<div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-										</div>
-
-										<div class="frame-pic">
-											<div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-											<div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-										</div>
-
-										<div class="frame-pic">
-											<div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-											<div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-										</div>
-
-										<div class="frame-pic">
-											<div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-											<div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-										</div>
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<script>
-				// 유용해요 클릭 및 유용 수 증가 
-				document
-						.addEventListener(
-								'DOMContentLoaded',
-								function() {
-									document
-											.querySelectorAll('.happy')
-											.forEach(
-													function(element) {
-														element
-																.addEventListener(
-																		'click',
-																		function() {
-																			console
-																					.log("clicked");
-																			this.classList
-																					.toggle('happy-unfill');
-																			this.classList
-																					.toggle('happy-fill');
-
-																			// 이미지 변경
-																			const imageSrc = this.classList
-																					.contains('happy-fill') ? `${cpath}/resources/images/menu/happy-fill.svg`
-																					: `${cpath}/resources/images/menu/happy-unfill.svg`;
-																			this.src = imageSrc;
-
-																			// 유용해요 옆의 숫자 count up
-																			const countElement = this.nextElementSibling.nextElementSibling;
-																			let count = parseInt(countElement.textContent);
-
-																			// Check if count is a valid number before updating
-																			if (!isNaN(count)) {
-																				countElement.textContent = this.classList
-																						.contains('happy-fill') ? count + 1
-																						: count - 1;
-																			}
-																		});
-													});
-								});
-			</script>
+									</c:forEach>
+									</div><!-- frame-10 -->
+								</div><!-- doran-card -->
+								
+							</div><!-- frame-5 -->
+						</div><!-- frame-2 -->
+					</div><!-- frame -->
+				</div><!-- overlap-group -->
+			</div><!-- group -->
 
 			<footer class="footer">
 				<div class="footer-company-loco">
@@ -324,6 +242,26 @@
 			console.log("장바구니 가득 차서 불 켜짐!");
 		}
 	
+		//사진클릭시 디테일보기 변경
+		function mediaReview(rNo){
+			alert(rNo);
+			
+			$.ajax({
+				url : "${cpath}/menu/mediaReviewDetail.do",
+				type : 'POST',
+				data : {
+					memreview_no : rNo
+				},
+				success : function(data) {
+					//alert("완료!");
+					$('.group').html(data);
+				},
+				error : function() {
+					alert("에러");
+				}
+			});
+			
+		}
 	
 	</script>
 </body>

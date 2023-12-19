@@ -15,6 +15,7 @@ import org.springframework.core.type.filter.AbstractClassTestingTypeFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -44,12 +45,6 @@ public class MenuController {
 		List<ProVO> plist = mService.selectAll();
 		model.addAttribute("mlist", plist);
 		return "menu/menu";
-	}
-	
-	// 리뷰 사진 및 동영상 모아보기
-	@GetMapping("menuMediaReview.do")
-	public String menuMediaReview(Model model) {
-		return "menu/menuMediaReviews";
 	}
 	
 	//카테고리+검색
@@ -119,8 +114,8 @@ public class MenuController {
 	   
 	   pro.setPro_name((String)map.get("pro_name"));
 	   pro.setPro_aller((String)map.get("pro_aller"));
-	   System.out.println(pro.getPro_aller());
-	   System.out.println(pro.getPro_name());
+	   //System.out.println(pro.getPro_aller());
+	   //System.out.println(pro.getPro_name());
 	      
 	   List<ProVO> slist = mService.searchAllergyCheck(pro);
 	   model.addAttribute("slist", slist);
@@ -163,6 +158,8 @@ public class MenuController {
         ArrayList<Integer> pageList = new ArrayList<Integer>(); 
         
         //System.out.println(pagVO.getTotalPage());
+        
+        //페이지 숫자표시
         for (int i= 0;i < pagVO.getTotalPage()+1;i++) {
             pageList.add(i, i+1);
         };
@@ -183,18 +180,18 @@ public class MenuController {
     @GetMapping("reviewPageBtnClick.do")
     public String reviewPageBtnClick(Model model, ProVO pro, HttpSession session,@RequestParam(defaultValue = "0") int currentPage) {
         MemVO memVO = (MemVO) session.getAttribute("loginmem");
-        Map<String, Object> ReserveInputMap = new HashMap<String, Object>();
-        ReserveInputMap.put("pro_no", pro.getPro_no());
-        ReserveInputMap.put("currentPage", currentPage);
+        Map<String, Object> inputMap = new HashMap<String, Object>();
+        inputMap.put("pro_no", pro.getPro_no());
+        inputMap.put("currentPage", currentPage);
         if(memVO != null) {
             
             String memId = memVO.getMem_id();
-            ReserveInputMap.put("mem_id", memId);
+            inputMap.put("mem_id", memId);
             
-            model.addAttribute("reserveCnt", mService.selectReserveYn(ReserveInputMap));
+            model.addAttribute("reserveCnt", mService.selectReserveYn(inputMap));
         }
         
-        List<Map<String, Object>> txtrlist = mService.selectProReviewTxt(ReserveInputMap);
+        List<Map<String, Object>> txtrlist = mService.selectProReviewTxt(inputMap);
         
         model.addAttribute("txtrlist", txtrlist);
         model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
@@ -232,6 +229,38 @@ public class MenuController {
 		}
 		
 		return "menu/menuSpecificReview";
+	}
+	
+	// 리뷰 사진 및 동영상 모아보기
+	@GetMapping("menuMediaReview.do")
+	public String menuMediaReview(Model model, ProVO pro) {
+		
+		List<Map<String, Object>> moalist = mService.selectMoaview(pro.getPro_no());
+		model.addAttribute("moalist", moalist);
+		
+        model.addAttribute("moadetail", mService.selectByNo(pro.getPro_no()));
+		model.addAttribute("moafrist", mService.selectMoaFrist(pro.getPro_no()));
+		
+		System.out.println(moalist);
+		System.out.println(mService.selectMoaFrist(pro.getPro_no()));
+		
+		return "menu/menuMediaReviews";
+	}
+	
+	@PostMapping("mediaReviewDetail.do")
+	public String mediaReviewDetail(Model model, ProVO pro, MemreviewVO rev) {
+		System.out.println("mediaReviewDetail");
+		System.out.println(rev.getMemreview_no());
+		System.out.println(pro.getPro_no());
+		
+		List<Map<String, Object>> moalist = mService.selectMoaview(pro.getPro_no());
+		model.addAttribute("moalist", moalist);
+		System.out.println(moalist);
+		
+		model.addAttribute("moadetail", mService.selectByNo(pro.getPro_no()));
+		model.addAttribute("moaSelected", mService.selectMoaSelected(rev.getMemreview_no()));
+		
+		return "menu/mediareview_ajax";
 	}
 	
 	@GetMapping("menuReviewUpload.do")

@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.ProVO;
 
 
@@ -113,6 +114,20 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 
+	public List<Map<String, Object>> selectMoaview(int prono) {
+		List<Map<String, Object>> moalist = sqlSession.selectList(NAMESPACE + "selectMoaview", prono);
+		return moalist;
+	}
+
+	public MemreviewVO selectMoaFrist(int prono) {
+		MemreviewVO rev = sqlSession.selectOne(NAMESPACE + "selectMoaFrist", prono);
+		return rev;
+	}
+
+	public MemreviewVO selectMoaSelected(int revno) {
+		MemreviewVO rev = sqlSession.selectOne(NAMESPACE + "selectMoaSelected", revno);
+		return rev;
+	}
 
 
 }

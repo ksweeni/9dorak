@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.ProVO;
 
 
@@ -81,6 +82,18 @@ public class MenuService {
 
 	public List<ProVO> searchAllergyCheck(ProVO pro) {
 		return dao.searchAllergyCheck(pro);
+	}
+
+	public List<Map<String, Object>> selectMoaview(int prono) {
+		return dao.selectMoaview(prono);
+	}
+
+	public MemreviewVO selectMoaFrist(int prono) {
+		return dao.selectMoaFrist(prono);
+	}
+
+	public MemreviewVO selectMoaSelected(int revno) {
+		return dao.selectMoaSelected(revno);
 	}
 
 

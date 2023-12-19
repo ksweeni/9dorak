@@ -40,6 +40,7 @@
 
 </body>
 <script type="text/javascript">
+
 /* $(".filter button").on("click", function() {
 
     var a = $("button.selected");

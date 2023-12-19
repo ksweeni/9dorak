@@ -63,7 +63,6 @@
 							<div class="header-overlap-group-3" onclick="loginBasket()">
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
-								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
 			        </div>
@@ -119,8 +118,6 @@
 									</button>
 								</div>
 
-
-								<!--  <div id="total-amount" class="text-wrapper-3">총 금액 ${menudetail.pro_price} 원</div>-->
 								<div class="text-wrapper-3" id="total-amount">
 									총 금액 <span id="total-amount-value">${menudetail.pro_price}</span>
 									원
@@ -141,14 +138,6 @@
 										src="${cpath}/resources/images/menu/Cart.png" />
 								</div>
 							</button>
-
-
-							<!-- <div class="frame-2">
-								<button class="label-wrapper">
-									<div class="label-2">결제하기</div>
-								</button>
-
-							</div> -->
 						</div>
 					</div>
 					<div class="frame-3">
@@ -240,19 +229,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- <div class="menu-selection-wrapper">
-				<div class="menu-selection">
-					<button class="common-button" onclick="selectButton(this)">
-						<div class="recipes">제품상세</div>
-						<div class="rectangle-4"></div>
-					</button>
-					<button class="common-button" onclick="selectButton(this)">
-						<div class="recipes">제품리뷰</div>
-						<div class="rectangle-4"></div>
-					</button>
-				</div>
-			</div> -->
 			
 			<div class="menu-detail">
 				<div><h1>${menudetail.pro_detail }</h1></div>
@@ -274,24 +250,35 @@
 			</div>
 			<div class="picture-reviews">
 				<div class="pic4review">
-					<c:forEach items="${phtrlist }" var="phtrlist" varStatus="loop">
-						<div class="group-5">
-							<div class="group-7">
-								<div class="overlap-6">
-									<img class="rectangle-5"
-										src="${cpath}/resources/images/menu/cake.png" />
-									<p class="p">${phtrlist.memreview_cont }</p>
+				
+					<c:choose>
+						<c:when test="${not empty phtrlist}">
+						
+							<c:forEach items="${phtrlist }" var="phtrlist" varStatus="loop">
+								<div class="group-5">
+									<div class="group-7">
+										<div class="overlap-6">
+											<img class="rectangle-5"
+												src="${cpath}/resources/images/menu/cake.png" />
+											<p class="p">${phtrlist.memreview_cont }</p>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-					</c:forEach>
+							</c:forEach>
+
+						</c:when>
+						<c:otherwise>
+							<div class="nonePhtreview">아직 내역이 존재하지않습니다. 리뷰를 작성해주세요!</div>
+						</c:otherwise>
+					</c:choose>
+					
 				</div>
 				<!-- group-5 -->
 
 				<div class="frame-8">
 					<div class="text-wrapper-13">사진 및 동영상 후기</div>
 					<a
-						href="${cpath }/menu/menuMediaReview.do?reviewdetail=${menudetail.pro_no}"
+						href="${cpath }/menu/menuMediaReview.do?pro_no=${menudetail.pro_no}"
 						class="view-2">
 						<div class="text-wrapper-13">모아보기</div> <img class="img-2"
 						src="${cpath}/resources/images/menu/right-forward.svg" />
@@ -304,18 +291,6 @@
 			<div class="text-reviews-and">
 				<div class="frame-review">
 					<div class="text-review">텍스트 리뷰</div>
-					<%-- <div class="frame-10">
-						<div class="frame-11">
-							<div class="text-wrapper-13">최근등록순</div>
-							<img class="img-2"
-								src="${cpath}/resources/images/menu/filter.svg" />
-						</div>
-						<div class="frame-12">
-							<div class="text-wrapper-13">추천순</div>
-							<img class="img-2"
-								src="${cpath}/resources/images/menu/filter.svg" />
-						</div>
-					</div> --%>
 				</div>
 				<div class="reviews-texts">
 					<div class="review">
@@ -339,25 +314,9 @@
 											</div>
 										</div>
 										<div class="frame-15">
-											<!-- <div class="frame-16">
-                                        <div class="frame-17">
-                                            <div class="text-wrapper-14">맛</div>
-                                            <div class="text-wrapper-16">최고에요</div>
-                                        </div>
-                                        <div class="frame-18">
-                                            <div class="text-wrapper-14">만족도</div>
-                                            <div class="text-wrapper-16">최고에요</div>
-                                        </div>
-                                    </div> -->
 											<div class="starpiont">별점
 												${txtrlist.memreview_starpoint }</div>
 											<p class="text-wrapper-17">${txtrlist.memreview_cont }</p>
-											<%-- <div class="frame-19">
-                                        <img class="happy"
-                                            src="${cpath}/resources/images/menu/happy-unfill.svg" />
-                                        <div class="text-wrapper-18">유용해요</div>
-                                        <div class="text-wrapper-18">0</div>
-                                    </div> --%>
 										</div>
 									</div>
 									<!-- view-3 -->
@@ -365,7 +324,7 @@
 
 							</c:when>
 							<c:otherwise>
-								<div class="nonTxtreview">아직 내역이 존재하지않습니다. 리뷰를 작성해주세요</div>
+								<div class="noneTxtreview">아직 내역이 존재하지않습니다. 리뷰를 작성해주세요!</div>
 							</c:otherwise>
 						</c:choose>
 						
@@ -568,6 +527,18 @@
         });
     });
     
+    //리뷰없는경우 페이지숨기기
+    var txtrlistIsEmpty = ${empty txtrlist};
+    if (txtrlistIsEmpty) {
+      hidePagination();
+    }
+    
+    function hidePagination() {
+        var paginationElement = document.querySelector('.pagination');
+        if (paginationElement) {
+          paginationElement.style.display = 'none';
+        }
+      }
     
     // 상품 수량 변화
     var counterValue = 1; // 최소값 설정
@@ -620,46 +591,6 @@
 		});
 	};
 
-    // 유용해요 클릭 및 유용 수 증가 
-/*     document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.happy').forEach(function (element) {
-            element.addEventListener('click', function () {
-                console.log("clicked");
-                this.classList.toggle('happy-unfill');
-                this.classList.toggle('happy-fill');
-
-                // 이미지 변경
-                const imageSrc = this.classList.contains('happy-fill')
-                    ? `${cpath}/resources/images/menu/happy-fill.svg`
-                    : `${cpath}/resources/images/menu/happy-unfill.svg`;
-                this.src = imageSrc;
-
-                // 유용해요 옆의 숫자 count up
-                const countElement = this.nextElementSibling.nextElementSibling;
-                let count = parseInt(countElement.textContent);
-
-                // Check if count is a valid number before updating
-                if (!isNaN(count)) {
-                    countElement.textContent = this.classList.contains('happy-fill') ? count + 1 : count - 1;
-                }
-            });
-        });
-    }); */
-    
-     // 최신 등록순, 추천 순 클릭 시 변화
-/*    document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.frame-11, .frame-12').forEach(function (option) {
-        option.addEventListener('click', function () {
-            document.querySelectorAll('.frame-11, .frame-12').forEach(function (otherOption) {
-                otherOption.classList.remove('selected-option');
-            });
-
-            this.classList.add('selected-option');
-        });
-    });
-});
- */
- 
     // 아이디+상품이 장바구니에 이미 있는지 확인
     function checkBasket() {
 	    var mem_id = "${sessionScope.loginmem.mem_id}";
