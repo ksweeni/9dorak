@@ -1527,6 +1527,18 @@ div-wrapper {
     font-size: 20px;
 }
 
-.nonTxtreview{
-	
+.noneTxtreview{
+	position: relative;
+    left: 37%;
+    top: 100%;
+    font-size: 1.1rem;
+}
+
+.nonePhtreview{
+	position: relative; */
+    /* top: 300%; */
+    position: relative;
+    /* left: 37%; */
+    top: 300%;
+    font-size: 1.1rem;
 }

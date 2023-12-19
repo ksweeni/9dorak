@@ -70,7 +70,6 @@
 							<div class="header-overlap-group-3" onclick="loginBasket()">
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
-								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
 				</div>
@@ -85,9 +84,6 @@
 						<div class="green-beans">
 							<div class="overlap-group">
 								<div class="text-wrapper-2">${pro.pro_name }</div>
-								<!-- <div class="frame">
-									<button class="view-details-btn">자세히 볼게요</button>
-								</div> -->
 								<a class="frame"
 									href="${cpath }/menu/menuSpecificReview.do?pro_no=${pro.pro_no }">
 									<button class="view-details-btn">자세히 볼게요</button>
@@ -312,14 +308,6 @@
 		//카테고리+검색
 		function searchBtnClick(allerCheckList) {
 
-			/* var allerListJson;
-			var allerArrList = [];
-			if (allerCheckList != null) {
-				allerListJson = JSON.stringify(allerCheckList);
-			} else {
-				allerListJson = JSON.stringify(allerArrList);
-			}*/
-			
 			$.ajax({
 				url : "${cpath}/menu/searchPro.do",
 				type : 'GET',

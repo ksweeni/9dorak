@@ -99,11 +99,12 @@
     	<id column="memreview_cont" property="memreview_cont"/>
     	<id column="memreview_starpoint" property="memreview_starpoint"/>
     	<id column="memreview_image" property="memreview_imgage"/>
+    	<id column="memreview_no" property="memreview_no"/>
     	<id column="pro_no" property="pro_no"/>
     	<id column="mem_id" property="mem_id"/>
     </resultMap>
     
-    <!-- 상품리뷰 -->
+    <!-- 상품리뷰 텍스트 -->
     <select id="selectProReviewTxt" parameterType="HashMap" resultMap="proreviewMap">
 		with base_t as
 	    (
@@ -136,6 +137,7 @@
 	    where rnum > #{currentPage}
     </select> 
     
+    <!-- 상품리뷰 사진 -->
     <select id="selectProReviewPth" parameterType="HashMap" resultMap="proreviewMap">
     	WITH RankedMemReviews AS (
 		    SELECT TA.*
@@ -149,6 +151,42 @@
 		SELECT *
 		FROM RankedMemReviews
 		<![CDATA[ WHERE ROWNUM <= 4 ]]>
+    </select>
+    
+    <!-- 사진리뷰 모아보기 리스트 -->
+    <select id="selectMoaview" parameterType="HashMap" resultMap="proreviewMap">
+    	SELECT TA.*, TC.mem_id
+		    FROM memreview TA
+		    JOIN orderdetail TB ON TA.orderdetail_no = TB.orderdetail_no
+		    JOIN orders TC ON TB.order_no = TC.order_no
+		    WHERE TB.pro_no = ${pro_no}
+		        AND TA.memreview_image IS NOT NULL
+		    order by ta.memreview_date desc
+    </select>
+    
+    <!-- 사진리뷰 모아보기 첫 큰화면 -->
+    <select id="selectMoaFrist" parameterType="int" resultType="memreviewvo">
+    	WITH RankedMoaFrist AS (
+	    	SELECT TA.*, TC.mem_id
+			    FROM memreview TA
+			    JOIN orderdetail TB ON TA.orderdetail_no = TB.orderdetail_no
+			    JOIN orders TC ON TB.order_no = TC.order_no
+			    WHERE TB.pro_no = ${pro_no}
+			        AND TA.memreview_image IS NOT NULL
+			    order by ta.memreview_date desc
+		 )
+		SELECT *
+		FROM RankedMoaFrist
+		<![CDATA[ WHERE ROWNUM <= 1 ]]>
+    </select>
+    
+    <!-- 사진리뷰 모아보기 선택 큰화면 -->
+    <select id="selectMoaSelected" parameterType="int" resultType="memreviewvo">
+    	SELECT TA.*, TC.mem_id
+		    FROM memreview TA
+		    JOIN orderdetail TB ON TA.orderdetail_no = TB.orderdetail_no
+		    JOIN orders TC ON TB.order_no = TC.order_no
+		    WHERE TA.memreview_no = ${memreview_no}
     </select>
 
 	<!-- 리뷰 토탈 카운트 -->
