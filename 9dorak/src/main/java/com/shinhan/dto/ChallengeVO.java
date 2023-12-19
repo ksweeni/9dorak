@@ -25,6 +25,7 @@ public class ChallengeVO {
 	private String  challenge_recipe;//챌린지 레시피
 	private String  mem_id; //회원 아이디
 	private int challengelike_cnt;
+	private String order_type;
 	
 
 

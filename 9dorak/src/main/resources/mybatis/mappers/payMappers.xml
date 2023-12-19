@@ -9,7 +9,7 @@
 		VALUES
 		(#{order_no}, #{pay_status} , sysdate, #{pay_method} ,
 		#{pay_price},#{pay_depo},
-		#{pay_depoprice}, #{pay_depobank})
+		#{pay_depoprice}, #{pay_depobank}, #{imp_uid})
 	</insert>
 
 	<select id="selectPayCount" resultType="int">

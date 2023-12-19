@@ -57,7 +57,7 @@
 		#{challenge_recipe}
 		)
 	</insert>
-	
+
 	<select id="getLike" resultType="int" parameterType="int">
 		SELECT
 		COUNT(*)
@@ -77,19 +77,21 @@
 		FROM
 		challenge
 	</select>
-	
-	<select id="getLikecheck" resultType="int" parameterType="challlikevo">
+
+	<select id="getLikecheck" resultType="int"
+		parameterType="challlikevo">
 		SELECT
 		COUNT(*)
 		FROM
 		challlike
-		where 
+		where
 		mem_id = #{mem_id} and
 		challenge_no = #{challenge_no}
 	</select>
-	
+
 	<insert id="insertlikeChall" parameterType="challlikevo">
-		INSERT INTO challlike (
+		INSERT INTO challlike
+		(
 		challenge_no,
 		mem_id
 		) VALUES (
@@ -97,7 +99,7 @@
 		#{mem_id}
 		)
 	</insert>
-	
+
 	<delete id="delelelikeChall" parameterType="challlikevo">
 		DELETE FROM challlike
 		where challenge_no = #{challenge_no}
@@ -131,38 +133,87 @@
 		<result property="mem_id" column="MEM_ID" />
 		<!-- 나머지 필드에 대한 매핑 -->
 	</resultMap>
-	
+
 	<select id="selectByMakeAll" resultType="challengevo">
 		SELECT * FROM challenge
 		WHERE challenge.challenge_recipe IS NOT NULL
-		ORDER BY challenge_date DESC
+		ORDER BY challenge_date
+		DESC
 	</select>
 
 	<select id="selectByMakeAllTop3" resultType="challengevo">
-		SELECT challenge.challenge_no, challenge.challenge_name, challenge.mem_id, challenge.challenge_recipe, COUNT(*) AS challengelike_cnt
-		FROM challenge
-		JOIN challlike ON challenge.challenge_no = challlike.challenge_no
+		SELECT
+		challenge.challenge_no, challenge.challenge_name, challenge.mem_id,
+		challenge.challenge_recipe, COUNT(*) AS challengelike_cnt
+		FROM
+		challenge
+		JOIN challlike ON challenge.challenge_no =
+		challlike.challenge_no
 		WHERE challenge.challenge_recipe IS NOT NULL
-		GROUP BY challenge.challenge_no, challenge.challenge_name, challenge.mem_id, challenge.challenge_recipe
-		ORDER BY challengelike_cnt DESC
+		GROUP BY challenge.challenge_no, challenge.challenge_name,
+		challenge.mem_id, challenge.challenge_recipe
+		ORDER BY challengelike_cnt
+		DESC
 	</select>
 
 	<select id="selectByMakeAlllike" resultType="challengevo">
-		SELECT challenge.challenge_no, NVL(COUNT(challlike.challenge_no), 0) AS challengelike_cnt
+		SELECT
+		challenge.challenge_no, NVL(COUNT(challlike.challenge_no), 0) AS
+		challengelike_cnt
 		FROM challenge
-		LEFT JOIN challlike ON challenge.challenge_no = challlike.challenge_no
-		WHERE challenge.challenge_recipe IS NOT NULL
-		GROUP BY challenge.challenge_no, challenge.challenge_date
+		LEFT JOIN challlike ON
+		challenge.challenge_no = challlike.challenge_no
+		WHERE
+		challenge.challenge_recipe IS NOT NULL
+		GROUP BY challenge.challenge_no,
+		challenge.challenge_date
 		ORDER BY challenge_date DESC
 	</select>
-	
-	<select id="selectByMakemylike" parameterType="String" resultType="challlikevo">
+
+	<select id="selectByMakemylike" parameterType="String"
+		resultType="challlikevo">
 		SELECT *
+		FROM challenge
+		LEFT JOIN challlike ON
+		challenge.challenge_no = challlike.challenge_no
+		WHERE
+		challenge.challenge_recipe IS NOT NULL
+		AND (challlike.mem_id = #{mem_id} OR challlike.mem_id IS NULL)
+		ORDER BY
+		challenge.challenge_date DESC
+	</select>
+
+	<select id="selectOrderbyNew" resultType="challengevo"> 
+		select * from challenge 
+		WHERE challenge.challenge_recipe IS NOT NULL
+		order by challenge_date desc
+	</select>
+
+	<select id="selectOrderbyLike" resultType="challengevo"> 
+		SELECT
+    	challenge.challenge_no,
+    	challenge.challenge_name,
+    	challenge.mem_id,
+    	NVL(COUNT(challlike.challenge_no), 0) AS challengelike_cnt
 		FROM challenge
 		LEFT JOIN challlike ON challenge.challenge_no = challlike.challenge_no
 		WHERE challenge.challenge_recipe IS NOT NULL
-  		AND (challlike.mem_id = #{mem_id} OR challlike.mem_id IS NULL)
-		ORDER BY challenge.challenge_date DESC
+		GROUP BY challenge.challenge_no, challenge.challenge_name, challenge.mem_id
+		ORDER BY challengelike_cnt DESC
+	</select>
+
+	<select id="selectByMakeAllOrderlike" resultType="challengevo"> 
+		SELECT
+		challenge.challenge_no, NVL(COUNT(challlike.challenge_no), 0) AS
+		challengelike_cnt
+		FROM challenge
+		LEFT JOIN challlike ON
+		challenge.challenge_no = challlike.challenge_no
+		WHERE
+		challenge.challenge_recipe IS NOT NULL
+		GROUP BY challenge.challenge_no,
+		challenge.challenge_date
+		ORDER BY challengelike_cnt DESC
 	</select>
 
 </mapper>

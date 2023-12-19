@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Test</title>
     <style>
-        /* Styles for the modal */
+
         .modal {
             display: none;
             position: fixed;
@@ -28,15 +28,14 @@
 </head>
 <body>
     <button onclick="requestPay()">결제하기</button>
+     <button onclick="cancelPay()">결제취소</button>
 
-    <!-- Modal -->
     <div id="successModal" class="modal">
         <p>결제가 성공하였습니다.</p>
-        <!-- You can customize the content of the modal as needed -->
         <button onclick="closeModal()">홈으로 이동하기</button>
     </div>
 
-    <!-- jQuery -->
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
     <script>
@@ -47,8 +46,8 @@
             IMP.request_pay({
                 pg: "inicis",
                 pay_method: "card",
-                merchant_uid: "ORD20180131-0000040",
-                name: "구도락 결제 테스트",
+                merchant_uid: "ORD20180131-0000048", // 매번 새로워야 함
+                name: "구도락 결제 테스트 2일차",
                 amount: 100,
                 buyer_email: "gildong@gmail.com",
                 buyer_name: "buyer_name",
@@ -74,17 +73,40 @@
             });
         }
 
-        // Function to open the modal
+
         function openModal() {
             $('#successModal').show();
         }
 
-        // Function to close the modal
         function closeModal() {
         	window.location.href = "${cpath}/main.do";
             $('#successModal').hide();
             
         }
+        
+        function cancelPay() {
+        	// 이 부분 동적 데이터로 변환 필요
+            var imp_uid = "imp_058961954580";
+
+            $.ajax({
+                type: 'POST',
+                url: '${cpath}/cancelPay', 
+                data: {
+                    imp_uid: imp_uid
+                }
+            }).done(function (data) {
+                console.log(data);
+
+                if (data) {
+                	alert(data);
+                    alert('결제가 취소되었습니다.');
+                } else {
+                    var msg = '결제 취소에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;
+                    alert(msg);
+                }
+            });
+        }
+
     </script>
 </body>
 </html>

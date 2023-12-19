@@ -300,7 +300,7 @@ function redirectToChallenge(challenge_no) {
 									</div>
 									<div class="group-15">
 										<div class="frame-2">
-											<div class="text-wrapper-8">${chall.mem_id}</div>
+											<div class="text-wrapper-8">요리사 : ${chall.mem_id}</div>
 											<div class="text-wrapper-9">${chall.challenge_name}</div>
 										</div>
 										<div class="group-16">
@@ -315,7 +315,7 @@ function redirectToChallenge(challenge_no) {
 												<!-- <img class="vector" src="../resources/images/event/9make09.png" /> -->
 											</c:if>
 											<!-- 가져온 인덱스에 해당하는 challlike 항목 사용 -->
-											<div class="text-wrapper-10">좋아요 수 : ${clistlike[loop.index].challengelike_cnt}</div>
+											<div class="text-wrapper-10">좋아요 : ${clistlike[loop.index].challengelike_cnt}</div>
 										</div>
 									</div>
 								</a>
@@ -484,13 +484,13 @@ function redirectToChallenge(challenge_no) {
 						<div class="frame-4">
 							<div class="frame-5">
 								<div class="frame-6">
-									<div class="text-wrapper-13">최근 순</div>
+									<button class="text-wrapper-13">최근 순</button>
 									<img class="filter" src="../resources/images/event/9make07.png" />
 								</div>
 							</div>
 							<div class="frame-5">
 								<div class="frame-6">
-									<div class="text-wrapper-13">추천 순</div>
+									<button class="text-wrapper-13">좋아요 순</button>
 									<img class="filter" src="../resources/images/event/9make07.png" />
 								</div>
 							</div>
@@ -564,7 +564,23 @@ function redirectToChallenge(challenge_no) {
 			</div>
 		</footer>
 	</div>
-	<!-- screen -->
+
+	<script>
+	//정렬
+	$(".frame-4 button").on("click", function() {
+		
+		$.ajax({
+			url : "${cpath}/event/lunchboxOrderby.do",
+			type : 'GET',
+			data : {
+				order_type : $(this).text()
+			},
+			success : function(data) {
+				$('.desktop-quiz-rows').html(data);
+			}
+		});
+	})
+	</script>
 
 </body>
 

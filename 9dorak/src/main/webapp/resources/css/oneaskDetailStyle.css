@@ -625,7 +625,7 @@
     width: 915px;
     height: 282px;
     position: absolute;
-    left: 385px;
+    left: 525px;
     top: 262px;
     border-radius: 8px;
 }
@@ -819,11 +819,11 @@
 	left:378px;
 	top:351px;
 }
-.e1081_4450 { 
+.e1081_4450 {
 	width:700px;
 	height:68px;
 	position:absolute;
-	left:370px;
+	left: 531px;
 	top:141px;
 }
 .e1081_4451 { 
@@ -864,12 +864,12 @@
 	letter-spacing:0;
 	line-height:px;
 }
-.e1081_4455 { 
+.e1081_4455 {
 	background-color:rgba(255, 255, 255, 1);
 	width:250px;
 	height:334px;
 	position:absolute;
-	left:70px;
+	left: 235px;
 	top:260px;
 	border-top-left-radius:16px;
 	border-top-right-radius:16px;
