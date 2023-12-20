@@ -13,13 +13,56 @@ String contextPath = request.getContextPath();
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/basketStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/basketStyle.css?d"
 	type="text/css" />
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
+<style type="text/css">
+/* Modal Styling */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+/* Button Styling */
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-cancel {
+    background-color: #ccc;
+}
+
+.btn-delete {
+    background-color: #fc8019;
+    color: #fff;
+}
+</style>
+
 </head>
 <body>
 	<div class="screen">
@@ -59,7 +102,7 @@ String contextPath = request.getContextPath();
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
 									<span
 										style="font-weight: bold; left: -1rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
 									</span>
 									<a class="header-a"
 										href="${pageContext.request.contextPath}/my/logout.do"
@@ -84,85 +127,112 @@ String contextPath = request.getContextPath();
 				</div>
 			</header>
 
-			<div class="smallMenu">
-				<div class="text-wrapper-20">회원등급</div>
-				<div class="text-wrapper-21">장바구니</div>
-			</div>
-
-
-			<div class="basketList">
-				<c:if test="${empty blist}">
-					<h1>장바구니가 텅 비었어요! 상품을 담아주세요!!</h1>
-				</c:if>
-				<!-- 
-				<c:if test="${}">
-				
-				</c:if>
-				 -->
-
-				<br>
-				<span style="font-weight: bold">
-					<c:out value="${sessionScope.loginmem.mem_name}" /> 님의 도시락
-				</span>
-
-				<c:forEach var="items" items="${formattedDates}">
-					<div class="member">
-						<span class="e126_324">주문 날짜</span>
-						<span class="e126_325">${items.formattedDate}</span>
-					</div>
-				</c:forEach>
-
-				<c:forEach var="items" items="${blist}">
-					<div class="member">
-					<!-- 일단 '내' 장바구니 회원 아이디는 숨겨
-						<span class="e126_321">회원 아이디</span> <span class="e126_322">${items.mem_id}</span>
-						 -->
-						<span class="e126_324">주문한 상품 번호</span> <span class="e126_325">${items.pro_no}</span>
-						<span class="e126_324">주문한 수량</span> <span class="e126_325">${items.basket_pro_count}</span>
-						<span class="e126_324">주문한 날짜</span> <span class="e126_325">${items.basket_date}</span>
-					</div>
-				</c:forEach>
-			</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 			<div class="case">
-				<div class="div">
-					<div class="view">
-						<div class="frame">
-							<div class="div-wrapper">
-								<div class="text-wrapper">가족등록 인증</div>
-							</div>
+				<div class="smallMenu">
+					<div class="text-wrapper-21">장바구니</div>
+				</div>
+				<div class="div cart-wrapper">
+					<%-- group-wrapper --%>
+					<div class="group-wrapper">
+						<div class="group">
+							<!-- 내 장바구니! -->
+							<c:if test="${empty blist}">
+								<div class="empty">
+									<span id="emptyComment">${sessionScope.loginmem.mem_name}님의
+										장바구니가 텅 비었어요!</span>
+								</div>
+							</c:if>
 						</div>
+						<div class="frame-13">
+							<div class="view-3">
+								<input type="checkbox" class="checkbox" name="selection"
+									onclick="checkBoxSelector()">
+								<div class="text-wrapper-12">선택해제</div>
+								<div class="text-wrapper-13">선택삭제</div>
+							</div>
+							
+						</div>
+						<c:forEach items="${basket}" var="basket" varStatus="status">
+							<div class="cart-menus-wrapper">
+								<div class="cart-menus">
+									<div class="frame-14">
+										<div class="frame-15">
+											<!-- 날짜 -->
+ 	                    					<input type='hidden' value='${status.count}' class='dateIndex' />
+                    						<div class="text-wrapper-14" id="dateIndex${status.count}">${basket.basket_date}</div>
+                    						
+											<div class="group-2">
+												<div class="frame-19">
+													<input type="checkbox" class="checkbox-2" name="selection"
+														value="${basket.pro_no}" onchange="logCheckboxValue(this)">
+													<div class="text-wrapper-18">${basket.mem_name}</div>
+												</div>
+												<div class="frame-16">
+													<div class="frame-17">
+														<img class="rectangle"
+															src="${cpath}/${basket.proimage_image}" />
+														<div class="frame-18">
+															<div class="text-wrapper-15">${basket.pro_name}</div>
+															<input class="text-wrapper-16" id="proPrice"
+																type="number" value="${basket.pro_price}"
+																readOnly />
+
+															<div class="text-wrapper-3" id="total-amount">
+																총 금액 <span id="totalAmount${status.count}"> ${basket.pro_price*basket.basket_pro_count}</span>원
+															</div>
+														</div>
+													</div>
+													
+													
+													<div class="buttonCount">
+														<div class="entypo-minus-wrapper">
+															<input type='hidden' value='${basket.pro_no}' class='pro_no' />
+															<input type='hidden' value='${basket.pro_price}' class='pro_price' />
+															<input type='hidden' value='${status.count}' class='index-num' />
+															<input type='hidden' value='${basket.mem_id}' class='mem_id' />
+															<img class="img-3"
+																src="/myapp/resources/images/menu/minus.png">
+														</div>
+														<span id="result${status.count}" class="text-wrapper-17">${basket.basket_pro_count}</span>
+														<div class="entypo-plus-wrapper">
+																<input type='hidden' value='${basket.mem_id}' class='mem_id' />
+															    <input type='hidden' value='${basket.pro_no}' class='pro_no' />
+																<input type='hidden' value='${basket.pro_price}' class='pro_price' />
+																<input type='hidden' value='${status.count}' class='index-num' />
+															<img class="img-3"
+																src="/myapp/resources/images/menu/plus.png">
+														</div>
+													</div>
+												</div>
+																	<div class="deleteButton">
+																<input type='hidden' value='${basket.mem_id}' class='mem_id' />
+															    <input type='hidden' value='${basket.pro_no}' class='pro_no' />
+																<input type='hidden' value='${status.count}' class='index-num' />
+												<img class="deleteItemModalButton${status.count}" src="${cpath}/resources/images/wallet/delete_btn.svg" />
+																		</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
 					</div>
 					<div class="view-2">
 						<div class="frame-2">
 							<div class="frame-3">
 								<div class="text-wrapper-2">결제정보</div>
 								<div class="text-wrapper-3">2 Items</div>
+								
+								<div class="text-wrapper-3" id="total-items">
+				총 <span id="totalAmount"> </span>Items</div>
+								
+								
+								
 							</div>
 							<div class="frame-4">
 								<div class="frame-5">
-									<p class="p">
-										<span class="span">from</span> <span class="text-wrapper-4">
-											ksweeni</span>
-									</p>
 									<div class="frame-3">
 										<div class="frame-6">
 											<div class="text-wrapper-5">스팸마요 도시락</div>
@@ -170,39 +240,15 @@ String contextPath = request.getContextPath();
 										</div>
 										<div class="frame-wrapper">
 											<div class="frame-7">
-												<img class="img" src="img/image-4.svg" />
 												<div class="frame-8">
 													<div class="text-wrapper-7">1</div>
 												</div>
-												<img class="img-2" src="img/image-3.svg" />
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="frame-5">
-									<p class="p">
-										<span class="span">from</span> <span class="text-wrapper-4">
-											jongbumee</span>
-									</p>
-									<div class="frame-3">
-										<div class="frame-9">
-											<div class="text-wrapper-8">불고기 햄치즈 도시락</div>
-											<div class="text-wrapper-6">8000원</div>
-										</div>
-										<div class="frame-wrapper">
-											<div class="frame-7">
-												<img class="img" src="img/image.svg" />
-												<div class="frame-8">
-													<div class="text-wrapper-7">1</div>
-												</div>
-												<img class="img-2" src="img/image-2.svg" />
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="frame-10">
+							<div class="frame-10">
 							<div class="frame-11">
 								<div class="text-wrapper-9">총 합계</div>
 								<div class="text-wrapper-9">₹11,400.00</div>
@@ -219,238 +265,237 @@ String contextPath = request.getContextPath();
 						<div class="frame-12">
 							<div class="text-wrapper-11">결제하기</div>
 						</div>
-					</div>
-					<div class="group-wrapper">
-						<div class="group">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<div class="frame-13">
-								<div class="view-3">
-									<img class="checkbox" src="img/checkbox-2.svg" />
-									<div class="text-wrapper-12">선택해제</div>
-								</div>
-								<div class="text-wrapper-13">선택삭제</div>
-							</div>
-							<div class="cart-menus-wrapper">
-								<div class="cart-menus">
-									<div class="frame-14">
-										<div class="frame-15">
-											<div class="text-wrapper-14">2023-11-21 (화)</div>
-											<div class="group-2">
-												<div class="frame-16">
-													<div class="frame-17">
-														<img class="rectangle" src="img/rectangle-76.png" />
-														<div class="frame-18">
-															<div class="text-wrapper-15">스팸마요 도시락</div>
-															<div class="text-wrapper-16">7,000원</div>
-														</div>
-													</div>
-													<div class="button-product-add">
-														<div class="text-wrapper-17">1</div>
-														<div class="entypo-plus-wrapper">
-															<img class="img-3" src="img/entypo-plus-3.svg" />
-														</div>
-														<div class="entypo-minus-wrapper">
-															<img class="img-3" src="img/entypo-minus.svg" />
-														</div>
-													</div>
-												</div>
-												<img class="close"
-													src="${cpath}/resources/images/wallet/delete_btn.svg" />
-												<div class="frame-19">
-													<img class="checkbox-2" src="img/checkbox.svg" />
-													<div class="text-wrapper-18">ksweeni</div>
-												</div>
-											</div>
-										</div>
-										<div class="group-2">
-											<div class="frame-16">
-												<div class="frame-17">
-													<img class="rectangle" src="img/rectangle-76-3.png" />
-													<div class="frame-18">
-														<div class="text-wrapper-15">스팸마요 도시락</div>
-														<div class="text-wrapper-16">7,000원</div>
-													</div>
-												</div>
-												<div class="button-product-add">
-													<div class="text-wrapper-17">1</div>
-													<div class="entypo-plus-wrapper">
-														<img class="img-3" src="img/entypo-plus-2.svg" />
-													</div>
-													<div class="entypo-minus-wrapper">
-														<img class="img-3" src="img/entypo-minus-2.svg" />
-													</div>
-												</div>
-											</div>
-											<img class="close" src="img/close-2.svg" />
-											<div class="frame-19">
-												<img class="checkbox-2" src="img/checkbox.svg" />
-												<div class="text-wrapper-18">ksweeni</div>
-											</div>
-										</div>
-										<div class="frame-20">
-											<div class="text-wrapper-14">2023-11-22 (수)</div>
-											<div class="group-2">
-												<div class="frame-16">
-													<div class="frame-17">
-														<img class="rectangle" src="img/rectangle-76-2.png" />
-														<div class="frame-18">
-															<div class="text-wrapper-15">스팸마요 도시락</div>
-															<div class="text-wrapper-16">7,000원</div>
-														</div>
-													</div>
-													<div class="button-product-add">
-														<div class="text-wrapper-17">1</div>
-														<div class="entypo-plus-wrapper">
-															<img class="img-3" src="img/entypo-plus-4.svg" />
-														</div>
-														<div class="entypo-minus-wrapper">
-															<img class="img-3" src="img/entypo-minus-3.svg" />
-														</div>
-													</div>
-												</div>
-												<img class="close" src="img/close-2.svg" />
-												<div class="frame-21">
-													<img class="checkbox-2" src="img/checkbox.svg" />
-													<div class="text-wrapper-19">jongbumee</div>
-												</div>
-											</div>
-										</div>
-										<div class="group-2">
-											<div class="frame-16">
-												<div class="frame-17">
-													<img class="rectangle" src="img/image.png" />
-													<div class="frame-18">
-														<div class="text-wrapper-15">스팸마요 도시락</div>
-														<div class="text-wrapper-16">7,000원</div>
-													</div>
-												</div>
-												<div class="button-product-add">
-													<div class="text-wrapper-17">1</div>
-													<div class="entypo-plus-wrapper">
-														<img class="img-3" src="img/entypo-plus.svg" />
-													</div>
-													<div class="entypo-minus-wrapper">
-														<img class="img-3" src="img/entypo-minus-4.svg" />
-													</div>
-												</div>
-											</div>
-											<img class="close" src="img/close.svg" />
-											<div class="frame-19">
-												<img class="checkbox-2" src="img/checkbox.svg" />
-												<div class="text-wrapper-18">ksweeni</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<footer class="footer">
-				<div class="footer-company-loco">
-					<div class="footer-company">
-						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
-							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
-						<img class="footer-logo"
-							src="${cpath}/resources/images/main/footer-logo.png" />
-					</div>
-					<div class="footer-social-icon">
-						<div class="footer-facebook">
-							<img class="footer-mask-group"
-								src="${cpath}/resources/images/main/footer-facebook.png" />
-						</div>
-						<div class="footer-instagram">
-							<img class="footer-img"
-								src="${cpath}/resources/images/main/footer-insta.png" />
-						</div>
-						<div class="footer-twitter">
-							<img class="footer-mask-group-2"
-								src="${cpath}/resources/images/main/footer-twitter.png" />
-						</div>
-						<div class="footer-linkind">
-							<img class="footer-mask-group-2"
-								src="${cpath}/resources/images/main/footer-linkedin.png" />
-						</div>
-					</div>
-				</div>
-				<div class="footer-contact-us">
-					<div class="footer-text-wrapper-2">Contact Us</div>
-					<div class="footer-group">
-						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
-						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
-						<div class="footer-text-wrapper-3">+0123 456 7891</div>
-					</div>
-					<div class="footer-overlap-group-wrapper">
-						<div class="footer-overlap-group">
-							<div class="footer-vector-wrapper">
-								<img class="footer-vector"
-									src="${cpath}/resources/images/main/footer-email-button.png" />
-							</div>
-							<input class="footer-enter-email"
-								placeholder="Enter your email....">
-						</div>
-					</div>
-				</div>
-				<div class="footer-user-link">
-					<div class="footer-text-wrapper-7">User Link</div>
-					<div class="footer-group-2">
-						<div class="footer-text-wrapper-3">About Us</div>
-						<div class="footer-text-wrapper-3">Contact Us</div>
-						<div class="footer-text-wrapper-3">Order Delivery</div>
-						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
-						<div class="footer-text-wrapper-3">Terms of Services</div>
-					</div>
-				</div>
-				<div class="footer-opening-restaurant">
-					<div class="footer-text-wrapper-7">Opening Restaurant</div>
-					<div class="footer-group-3">
-						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
-						<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
-						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
-					</div>
-				</div>
-			</footer>
-			<!-- div -->
 		</div>
+
+<!-- 삭제 modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <p>정말로 삭제하시겠습니까?</p>
+        <button class="btn btn-cancel" onclick="closeModal()">취소</button>
+        <button class="btn btn-delete">삭제</button>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById('modal');
+    var btn = document.querySelector(".deleteItemModalButton");
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+    $(".btn-delete").on("click", function() {
+    	var mem_id = $(this).closest(".deleteButton").find(".mem_id").val();
+        var pro_no = $(this).closest(".deleteButton").find(".pro_no").val();
+        console.log(mem_id, pro_no);
+
+        $.ajax({
+            type: "POST",
+            url: "${cpath}/wallet/deleteBasket.do",
+            data: {
+                mem_id: mem_id,
+                pro_no: pro_no
+            },
+            success: function(response) {
+                if (response === "성공!") {
+                    console.log("콘솔 - 삭제 성공!!");
+                    closeModal();
+                }
+            }
+        });
+    });
+</script>
+
+		<footer class="footer">
+			<div class="footer-company-loco">
+				<div class="footer-company">
+					<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+						우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+					<img class="footer-logo"
+						src="${cpath}/resources/images/main/footer-logo.png" />
+				</div>
+				<div class="footer-social-icon">
+					<div class="footer-facebook">
+						<img class="footer-mask-group"
+							src="${cpath}/resources/images/main/footer-facebook.png" />
+					</div>
+					<div class="footer-instagram">
+						<img class="footer-img"
+							src="${cpath}/resources/images/main/footer-insta.png" />
+					</div>
+					<div class="footer-twitter">
+						<img class="footer-mask-group-2"
+							src="${cpath}/resources/images/main/footer-twitter.png" />
+					</div>
+					<div class="footer-linkind">
+						<img class="footer-mask-group-2"
+							src="${cpath}/resources/images/main/footer-linkedin.png" />
+					</div>
+				</div>
+			</div>
+			<div class="footer-contact-us">
+				<div class="footer-text-wrapper-2">Contact Us</div>
+				<div class="footer-group">
+					<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+					<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+					<div class="footer-text-wrapper-3">+0123 456 7891</div>
+				</div>
+				<div class="footer-overlap-group-wrapper">
+					<div class="footer-overlap-group">
+						<div class="footer-vector-wrapper">
+							<img class="footer-vector"
+								src="${cpath}/resources/images/main/footer-email-button.png" />
+						</div>
+						<input class="footer-enter-email"
+							placeholder="Enter your email....">
+					</div>
+				</div>
+			</div>
+			<div class="footer-user-link">
+				<div class="footer-text-wrapper-7">User Link</div>
+				<div class="footer-group-2">
+					<div class="footer-text-wrapper-3">About Us</div>
+					<div class="footer-text-wrapper-3">Contact Us</div>
+					<div class="footer-text-wrapper-3">Order Delivery</div>
+					<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+					<div class="footer-text-wrapper-3">Terms of Services</div>
+				</div>
+			</div>
+			<div class="footer-opening-restaurant">
+				<div class="footer-text-wrapper-7">Opening Restaurant</div>
+				<div class="footer-group-3">
+					<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+					<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
+					<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+				</div>
+			</div>
+		</footer>
+		<!-- div -->
 	</div>
 	<!-- screen -->
 </body>
 
 <script>
-	$(".e79_263").on("click", function() {
-		$.ajax({
 
-			url : "${cpath}/my/myDelivery.do",
-			type : "get",
-			success : function(res) {
-				$("body").html(res);
+	function logCheckboxValue(checkbox) {
+		console.log("Checkbox value: ", checkbox.value);
+	}
+
+	// 체크 박스 선택
+	var isChecked = false;
+
+	function checkBoxSelector() {
+		if (isChecked) {
+			selectAll();
+			unselectAll();
+		} else {
+			selectAll();
+		}
+		isChecked = !isChecked;
+	}
+
+	function selectAll() {
+		var checkboxes = document.getElementsByName('selection');
+
+		for (var i = 0; i < checkboxes.length; i++) {
+			checkboxes[i].checked = true;
+		}
+	}
+
+	function unselectAll() {
+		var checkboxes = document.getElementsByName('selection');
+
+		for (var i = 0; i < checkboxes.length; i++) {
+			checkboxes[i].checked = false;
+		}
+	}
+
+	// 수량 및 총 가격 변화
+	$(".entypo-plus-wrapper").on("click", function() {
+		var price = parseFloat($(this).find(".pro_price").val());
+	    var index = $(this).find(".index-num").val();
+	    var pro_no = $(this).find(".pro_no").val();
+	    var mem_id = $(this).find(".mem_id").val();
+	    var quantity = Number($("#result" + index).html()) + 1;
+	    $('#result' + index).html(quantity);
+	    updateCounter(quantity,price,index);
+	    
+	    $.ajax({
+	    	type: "POST",
+			url:"${cpath}/wallet/updateBasket.do",
+			data : {
+				mem_id: mem_id,
+	            pro_no: pro_no,
+	            basket_pro_count: quantity,
+			},
+			success : function(response){
+				if(response === "성공!"){
+					console.log("콘솔 - 업데이트 성공!!");
+				}
 			}
+		});
+	});
+	
+	$(".entypo-minus-wrapper").on("click", function() {
+	    var price = parseFloat($(this).find(".pro_price").val());
+	    var index = $(this).find(".index-num").val();
+	    var pro_no = $(this).find(".pro_no").val();
+	    var mem_id = $(this).find(".mem_id").val();
+	    var quantity = Number($("#result" + index).html()) - 1;
+	    $('#result' + index).html(quantity);
+	    updateCounter(quantity,price,index);
+	    
+	    $.ajax({
+	    	type: "POST",
+			url:"${cpath}/wallet/updateBasket.do",
+			data : {
+				mem_id: mem_id,
+	            pro_no: pro_no,
+	            basket_pro_count: quantity,
+			},
+			success : function(response){
+				if(response === "성공!"){
+					console.log("콘솔 - 업데이트 성공!!");
+				}
+			}
+		});
+	});
+	
+	function updateCounter(quantity,price,index) {
+    	var totalAmount = quantity*price;
+    	$('#totalAmount' + index).html(totalAmount);
+    }
+	
+	// 날짜 중복 검사
+	$(document).ready(function() {
+    	checkDuplicateDates();
+	});
 
-		})
-	})
+	function checkDuplicateDates() {
+	    $(".dateIndex").each(function() {
+	        var index = $(this).val();
+	        var currentDateHTML = $('#dateIndex' + index).text();
+	        var nextDateHTML = $('#dateIndex' + (parseInt(index, 10) + 1)).text();
+
+	        if (currentDateHTML === nextDateHTML) {
+	            $('#dateIndex' + (parseInt(index, 10) + 1)).hide();
+	        }
+	    });
+	}
+	
 </script>
 
 </html>

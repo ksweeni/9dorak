@@ -1,6 +1,5 @@
 package com.shinhan.model;
 
-import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,18 +36,6 @@ public class WalletDAOMybatis {
 		logger.info("selectAllPay : {}", plist.size());
 		return plist;
 	}
-	
-    // 장바구니 삭제
-    public int deleteBasket(String mem_id, int pro_no) {
-        int result = sqlSession.delete(NAMESPACE + "deleteBasket", Map.of("mem_id", mem_id, "pro_no", pro_no));
-        return result;
-    }
-
-    // 장바구니 수량 수정
-    public int modifyCount(BasketVO basket) {
-        int result = sqlSession.update(NAMESPACE + "modifyCount", basket);
-        return result;
-    }
 
     // mem_id의 장바구니 목록
     public List<BasketVO> getBasket(String mem_id) {
@@ -63,16 +50,27 @@ public class WalletDAOMybatis {
     
     
     
+    // 장바구니 삭제
+    public int deleteBasket(BasketVO basket) {
+        int result = sqlSession.delete(NAMESPACE + "deleteBasket", basket);
+        return result;
+    }
     
+    // 장바구니 수량 수정
+    public int updateBasket(BasketVO basket) {
+        int result = sqlSession.update(NAMESPACE + "updateBasket", basket);
+        return result;
+    }
     
+    public List<PeopleVO> peopleCheck(String mem_id) {
+        List<PeopleVO> people = sqlSession.selectList(NAMESPACE + "peopleCheck", mem_id);
+        return people;
+    }
     
-    
-    
-    
-    // 지인 존재 여부 검색
-    public PeopleVO peopleCheck(String mem_id) {
-    	PeopleVO people = sqlSession.selectOne(NAMESPACE + "peopleCheck", mem_id);
-    	return people;
+    // 나 + 지인 장바구니 검색
+    public List<Map<String, Object>> allPeopleBasket(String mem_id) {
+    	List<Map<String, Object>> blist = sqlSession.selectList(NAMESPACE + "allPeopleBasket", mem_id);
+    	return blist;
     }
     
     // 지인이 있을 때 장바구니 검색
