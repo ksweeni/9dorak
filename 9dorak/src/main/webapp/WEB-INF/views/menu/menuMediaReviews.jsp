@@ -52,9 +52,12 @@
 							<c:choose>
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
 									<span
-										style="font-weight: bold; left: 2.5rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_id}" /> 님
+										style="font-weight: bold; left: -1rem; position: relative;">
+										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
 									</span>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/logout.do"
+										style="position: relative; left: -1rem">로그아웃</a>
 								</c:when>
 								<c:otherwise>
 									<a class="header-a"
@@ -64,10 +67,11 @@
 								</c:otherwise>
 							</c:choose>
 						</div>
-						<div class="group-20" id="lightsParent">
-							<div class="header-overlap-group-3" onclick="loginBasket()">
+						<div class="group-20">
+							<div class="header-overlap-group-3">
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
+								<div class="ellipse-light"></div>
 								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
