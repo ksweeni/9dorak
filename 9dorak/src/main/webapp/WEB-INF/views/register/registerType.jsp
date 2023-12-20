@@ -56,6 +56,8 @@ String contextPath = request.getContextPath();
 		</div>
 		<span class="v49_2130"><span style="color: orange;">가입
 				유형</span>을 선택해주세요</span>
+				
+				<div class="goto-login">이미 계정이 있나요?  <a class="to-login" href="${cpath}/login/loginForm.do"> 로그인하기</a></div>
 	</div>
 </body>
 </html>
