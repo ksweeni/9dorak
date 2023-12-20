@@ -132,7 +132,7 @@
 		SELECT od.pro_no, p.pro_name, od.orderdetail_price,
 		od.orderdetail_count, o.order_no,
 		py.pay_status, py.pay_date, od.orderdetail_no,
-		py.pay_depo, py.pay_depoprice, py.pay_method,
+		py.pay_depo, py.pay_depoprice, py.pay_method, py.imp_uid,
 		(select proimage_image
 		from proimage
 		where pro_no = od.pro_no
@@ -193,6 +193,8 @@
 		values(#{mem_id}, (SELECT mem_id
 		from mem where MEM_CODE = #{mem_code} ), #{people_category}, sysdate)
 	</insert>
+	
+	<!-- 가족목록 -->
 
 
 
