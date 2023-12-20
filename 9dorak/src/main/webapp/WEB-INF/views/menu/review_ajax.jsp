@@ -30,7 +30,7 @@
 						</div>
 					</div>
 					<div class="frame-15">
-						<div class="starpiont">별점 ${txtrlist.memreview_starpoint }</div>
+						<div class="starpiont">${txtrlist.memreview_starpoint }</div>
 						<p class="text-wrapper-17">${txtrlist.memreview_cont }</p>
 					</div>
 				</div>

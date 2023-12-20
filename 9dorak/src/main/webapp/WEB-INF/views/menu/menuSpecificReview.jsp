@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -237,11 +238,11 @@
 			<div class="auto-layout">
 				<div class="auto-layout-vertical">
 					<div class="text-wrapper-9">${phtCnt}+</div>
-					<div class="text-wrapper-10">사진 및 동영상 후기</div>
+					<div class="text-wrapper-10">사진 리뷰</div>
 				</div>
 				<div class="auto-layout-vertical">
 					<div class="text-wrapper-11">${totCnt}개의리뷰</div>
-					<div class="text-wrapper-10">Burger eaters and counting</div>
+					<div class="text-wrapper-10">Food & Nutrition for KIDS</div>
 				</div>
 				<div class="auto-layout-vertical">
 					<div class="text-wrapper-9">+${txtCnt}</div>
@@ -276,7 +277,7 @@
 				<!-- group-5 -->
 
 				<div class="frame-8">
-					<div class="text-wrapper-13">사진 및 동영상 후기</div>
+					<div class="text-wrapper-13">사진 리뷰</div>
 					<a
 						href="${cpath }/menu/menuMediaReview.do?pro_no=${menudetail.pro_no}"
 						class="view-2">
@@ -314,7 +315,7 @@
 											</div>
 										</div>
 										<div class="frame-15">
-											<div class="starpiont">별점
+											<div class="starpiont" id="starRating${loop.index}">
 												${txtrlist.memreview_starpoint }</div>
 											<p class="text-wrapper-17">${txtrlist.memreview_cont }</p>
 										</div>
@@ -739,7 +740,28 @@
 	        }
 	    });
 	};
+	
+	//사진리뷰 없는경우 모아보기 클릭방지
+	document.addEventListener('DOMContentLoaded', function () {
 
+	    // 모아보기 링크 가져오기
+	    var viewLink = document.querySelector('.view-2');
+
+	    // 모아보기 링크 클릭 이벤트 설정
+	    viewLink.addEventListener('click', function (event) {
+	      // phtrlist가 비어있을 때
+	      if (${empty phtrlist}) {
+	        // 기본 동작 취소
+	        event.preventDefault();
+	        
+	        // 알림창 띄우기
+	        alert('안되지롱!');
+	      }
+	    });
+	  });
+	
+
+	
 </script>
 
 </body>

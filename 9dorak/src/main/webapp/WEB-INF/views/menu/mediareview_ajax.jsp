@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<div class="group">
+	<div class="group-ajax">
 				<div class="overlap-group">
 					<div class="frame">
 						<div class="frame-2">
@@ -34,7 +34,7 @@
 										style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
 									<div class="view">
 										<div class="">
-											<div class="starpiont">별점 ${moaSelected.memreview_starpoint }</div>
+											<div class="starpiont">${moaSelected.memreview_starpoint }</div>
 										</div>
 										<div>
 											<p class="p">${moaSelected.memreview_cont }</p>

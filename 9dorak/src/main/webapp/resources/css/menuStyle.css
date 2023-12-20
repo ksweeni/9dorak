@@ -224,13 +224,13 @@
 
 .screen .text-wrapper-2 {
 	position: absolute;
-	width: 155px;
-	top: 349px;
-	left: 35px;
-	color: #000000;
-	text-align: center;
-	font-size: 1.2rem;
-	font-weight: 600;
+    width: 200px;
+    top: 349px;
+    left: 10px;
+    color: #000000;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .screen .frame {

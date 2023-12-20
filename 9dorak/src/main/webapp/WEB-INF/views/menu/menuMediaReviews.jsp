@@ -81,7 +81,7 @@
 						<div class="frame-2">
 							<div class="group-2">
 								<div class="frame-3">
-									<div class="text-wrapper">${moafrist.mem_id }</div>
+									<div class="text-wrapper">${moafrist.mem_id}</div>
 									<div class="text-wrapper-2">${moafrist.memreview_date }</div>
 								</div>
 								<div class="frame-4">
@@ -104,14 +104,12 @@
 
 								<div class="doran-card">
 									<div class="frame-10">
-									<c:forEach items="${moalist }" var="moalist" varStatus="loop">
-										<div class="frame-pic">
-											<div class="menu-2" onclick="mediaReview(${moalist.memreview_no })"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-											<%-- <div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div> --%>
-										</div>
-									</c:forEach>
+										<c:forEach items="${moalist }" var="moalist" varStatus="loop">
+											<div class="frame-pic">
+												<div class="menu-2" onclick="mediaReview(${moalist.memreview_no })"
+													style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
+											</div>
+										</c:forEach>
 									</div><!-- frame-10 -->
 								</div><!-- doran-card -->
 								
@@ -250,7 +248,8 @@
 				url : "${cpath}/menu/mediaReviewDetail.do",
 				type : 'POST',
 				data : {
-					memreview_no : rNo
+					memreview_no : rNo,
+					pro_no : ${moadetail.pro_no}
 				},
 				success : function(data) {
 					//alert("완료!");
