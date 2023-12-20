@@ -104,14 +104,12 @@
 
 								<div class="doran-card">
 									<div class="frame-10">
-									<c:forEach items="${moalist }" var="moalist" varStatus="loop">
-										<div class="frame-pic">
-											<div class="menu-2" onclick="mediaReview(${moalist.memreview_no })"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
-											<%-- <div class="menu-2"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div> --%>
-										</div>
-									</c:forEach>
+										<c:forEach items="${moalist }" var="moalist" varStatus="loop">
+											<div class="frame-pic">
+												<div class="menu-2" onclick="mediaReview(${moalist.memreview_no })"
+													style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
+											</div>
+										</c:forEach>
 									</div><!-- frame-10 -->
 								</div><!-- doran-card -->
 								

@@ -87,13 +87,13 @@
 								<div class="doran-upload-profilPhoto">
 									<img class="doran-upload-profilPhotoImg"
 										src="${cpath}/resources/images/my/baseProfile.png" />
-								</div>>
+								</div>
 							</c:when>
 							<c:when test="${empty loginmem }">
 								<div class="doran-upload-profilPhoto">
 									<img class="doran-upload-profilPhotoImg"
 										src="${cpath}/resources/images/my/baseProfile.png" />
-								</div>>
+								</div>
 							</c:when>
 							<c:otherwise>
 								<div class="doran-upload-profilPhoto">
