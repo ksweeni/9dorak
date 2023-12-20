@@ -123,6 +123,7 @@ request.setCharacterEncoding("UTF-8");
 	<a href="${pageContext.request.contextPath}/my/myLevel.do">마이페이지-회원등급</a>
 	<a href="${pageContext.request.contextPath}/my/PayTest.do">결제 api 테스트 중</a>
     <a href="${pageContext.request.contextPath}/menu/menuReviewUpload.do">제품 리뷰 업로드 페이지</a>
+    <a href="${pageContext.request.contextPath}/admin/admin.do">관리자 페이지</a>
 
 <!-- 로그인 하면 로그아웃 버튼 로그인 안하면 로그아웃 버튼도 이거 수정해서 하면 될거에요  -->
 <!-- 동지현누님 로그인하면 로그인 버튼 안보이는 게 맞으니까 놀라지말 것 !!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
