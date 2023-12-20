@@ -272,7 +272,7 @@
 
 .screen .mask-group {
 	position: absolute;
-	border-radius: 35px;
+	border-radius: 35px 35px 0px 0px;
 	width: 400px;
 	height: 333px;
 	top: 0;
