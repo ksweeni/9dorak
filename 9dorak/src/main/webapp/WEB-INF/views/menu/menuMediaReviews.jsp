@@ -51,10 +51,11 @@
 						<div class="text-wrapper-28">
 							<c:choose>
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
-									<span
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/myPage.do"
 										style="font-weight: bold; left: -1rem; position: relative;">
 										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
-									</span>
+									</a>
 									<a class="header-a"
 										href="${pageContext.request.contextPath}/my/logout.do"
 										style="position: relative; left: -1rem">로그아웃</a>
