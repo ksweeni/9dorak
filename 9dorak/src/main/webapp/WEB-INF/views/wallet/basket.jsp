@@ -134,7 +134,6 @@ String contextPath = request.getContextPath();
 					<div class="text-wrapper-21">장바구니</div>
 				</div>
 				<div class="div cart-wrapper">
-					<%-- group-wrapper --%>
 					<div class="group-wrapper">
 						<div class="group">
 							<!-- 내 장바구니! -->
@@ -210,7 +209,7 @@ String contextPath = request.getContextPath();
 																<input type='hidden' value='${basket.mem_id}' class='mem_id' />
 															    <input type='hidden' value='${basket.pro_no}' class='pro_no' />
 																<input type='hidden' value='${status.count}' class='index-num' />
-												<img class="deleteItemModalButton${status.count}" src="${cpath}/resources/images/wallet/delete_btn.svg" />
+												<img class="deleteItemModalButton" id="deleteItem${status.count}" src="${cpath}/resources/images/wallet/delete_btn.svg" />
 																		</div>
 											</div>
 										</div>
@@ -282,11 +281,14 @@ String contextPath = request.getContextPath();
 
 <script>
     var modal = document.getElementById('modal');
-    var btn = document.querySelector(".deleteItemModalButton");
-
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
+    
+    
+    var btns = document.querySelectorAll(".deleteItemModalButton");
+    btns.forEach(function(btn) {
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    });
 
     function closeModal() {
         modal.style.display = "none";
@@ -298,10 +300,11 @@ String contextPath = request.getContextPath();
         }
     }
     $(".btn-delete").on("click", function() {
-    	var mem_id = $(this).closest(".deleteButton").find(".mem_id").val();
-        var pro_no = $(this).closest(".deleteButton").find(".pro_no").val();
+        var btnClicked = $(this).closest(".deleteButton").find(".deleteItemModalButton");
+        var mem_id = btnClicked.closest(".deleteButton").find(".mem_id").val();
+        var pro_no = btnClicked.closest(".deleteButton").find(".pro_no").val();
         console.log(mem_id, pro_no);
-
+        
         $.ajax({
             type: "POST",
             url: "${cpath}/wallet/deleteBasket.do",
