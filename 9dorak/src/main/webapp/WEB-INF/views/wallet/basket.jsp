@@ -137,7 +137,7 @@ String contextPath = request.getContextPath();
 					<div class="group-wrapper">
 						<div class="group">
 							<!-- 내 장바구니! -->
-							<c:if test="${empty blist}">
+							<c:if test="${empty basket}">
 								<div class="empty">
 									<span id="emptyComment">${sessionScope.loginmem.mem_name}님의
 										장바구니가 텅 비었어요!</span>
@@ -205,12 +205,17 @@ String contextPath = request.getContextPath();
 														</div>
 													</div>
 												</div>
-																	<div class="deleteButton">
-																<input type='hidden' value='${basket.mem_id}' class='mem_id' />
-															    <input type='hidden' value='${basket.pro_no}' class='pro_no' />
-																<input type='hidden' value='${status.count}' class='index-num' />
-												<img class="deleteItemModalButton" id="deleteItem${status.count}" src="${cpath}/resources/images/wallet/delete_btn.svg" />
-																		</div>
+														<div class="deleteButton">
+													<img class="deleteItemModalButton" src="${cpath}/resources/images/wallet/delete_btn.svg" />	
+														<!-- 삭제 modal -->
+													<div id="modal" class="modal">
+														<div class="modal-content">
+															<p>정말로 삭제하시겠습니까?</p>
+															<button class="btn btn-cancel" onclick="closeModal()">취소</button>
+															<button class="btn btn-delete" onclick="deleteBasket('${basket.mem_id}',${basket.pro_no},${status.count})">삭제</button>
+														</div>
+													</div>
+													</div>
 											</div>
 										</div>
 									</div>
@@ -270,20 +275,10 @@ String contextPath = request.getContextPath();
 			</div>
 		</div>
 
-<!-- 삭제 modal -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <p>정말로 삭제하시겠습니까?</p>
-        <button class="btn btn-cancel" onclick="closeModal()">취소</button>
-        <button class="btn btn-delete">삭제</button>
-    </div>
-</div>
-
 <script>
     var modal = document.getElementById('modal');
-    
-    
     var btns = document.querySelectorAll(".deleteItemModalButton");
+    
     btns.forEach(function(btn) {
         btn.onclick = function() {
             modal.style.display = "block";
@@ -299,27 +294,32 @@ String contextPath = request.getContextPath();
             closeModal();
         }
     }
-    $(".btn-delete").on("click", function() {
-        var btnClicked = $(this).closest(".deleteButton").find(".deleteItemModalButton");
-        var mem_id = btnClicked.closest(".deleteButton").find(".mem_id").val();
-        var pro_no = btnClicked.closest(".deleteButton").find(".pro_no").val();
-        console.log(mem_id, pro_no);
-        
-        $.ajax({
-            type: "POST",
-            url: "${cpath}/wallet/deleteBasket.do",
-            data: {
-                mem_id: mem_id,
-                pro_no: pro_no
-            },
-            success: function(response) {
-                if (response === "성공!") {
-                    console.log("콘솔 - 삭제 성공!!");
-                    closeModal();
-                }
-            }
-        });
-    });
+    
+    function deleteBasket(mem_id, pro_no, index) {
+    	        console.log(mem_id, pro_no);
+
+    	        $.ajax({
+    	            type: "POST",
+    	            url: "${cpath}/wallet/deleteBasket.do",
+    	            data: {
+    	                mem_id: mem_id,
+    	                pro_no: pro_no
+    	            },
+    	            success: function(response) {
+    	                if (response === "성공!") {
+    	                    console.log("콘솔 - 삭제 성공!!");
+    	                    closeModal();
+    	                } else {
+    	                    console.log("콘솔 - 삭제 실패:", response);
+    	                }
+    	            },
+    	            error: function(error) {
+    	                console.log("콘솔 - AJAX 오류:", error);
+    	            }
+    	        });
+    	 }
+    
+    
 </script>
 
 		<footer class="footer">
