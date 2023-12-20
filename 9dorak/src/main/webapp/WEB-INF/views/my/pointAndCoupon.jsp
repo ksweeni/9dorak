@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -11,8 +11,7 @@ String contextPath = request.getContextPath();
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/pointAndCouponStyle.css"
-	type="text/css" />
+<link rel="stylesheet" href="${cpath}/resources/css/pointAndCouponStyle.css" type="text/css" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script
@@ -21,16 +20,67 @@ String contextPath = request.getContextPath();
 </head>
 <body>
 	<div class=e145_1481>
-		<div class=e145_1482>
-			<div class=e145_1483>
-				<div class="e145_1484"></div>
+
+		<header class="header">
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-event">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+					</div>
+					<div class="text-menu">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+					</div>
+					<div class="text-subscribe">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+					</div>
+					<div class="text-yomo">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+					</div>
+					<div class="text-doran">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+					</div>
+				</div>
+				<a href="${pageContext.request.contextPath}/main.do"> <img
+					class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				</a>
+				<div class="div-3">
+					<div class="text-wrapper-28">
+						<c:choose>
+							<c:when test="${not empty sessionScope.loginmem.mem_id}">
+								<span
+									style="font-weight: bold; left: -1rem; position: relative;">
+									<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+								</span>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/my/logout.do"
+									style="position: relative; left: -1rem">로그아웃</a>
+							</c:when>
+							<c:otherwise>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+									href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<div class="group-20">
+						<div class="header-overlap-group-3">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<div class="ellipse-light"></div>
+							<!-- <div class="text-wrapper-29">2</div> -->
+						</div>
+					</div>
+				</div>
 			</div>
-			<span class="e145_1485">메뉴보기</span><span class="e145_1486">구독하기</span><span
-				class="e145_1487">요모조모</span><span class="e145_1488">도란도란</span><span
-				class="e145_1489">이벤트</span><span class="e145_1490">로그아웃</span>
-			<div class="e145_1491"></div>
-			<div class="e145_1492"></div>
-		</div>
+		</header>
+
 		<div class=e145_1493>
 			<div class=e145_1494>
 				<span class="e145_1495">찜 목록</span><span class="e145_1496">찜
@@ -85,45 +135,70 @@ String contextPath = request.getContextPath();
 				</div>
 			</div>
 		</div>
-		<div class=e145_1528>
-			<div class="e145_1529"></div>
-			<div class=e145_1530>
-				<div class=e145_1531>
-					<span class="e145_1532">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Commodo libero viverra dapibus odio
-						sit malesuada in quis. Arcu tristique elementum viverra integer
-						id.</span>
-					<div class="e145_1533"></div>
+		<footer class="footer" style="top: 90rem;">
+			<div class="footer-company-loco">
+				<div class="footer-company">
+					<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+						우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+					<img class="footer-logo"
+						src="${cpath}/resources/images/main/footer-logo.png" />
+				</div>
+				<div class="footer-social-icon">
+					<div class="footer-facebook">
+						<img class="footer-mask-group"
+							src="${cpath}/resources/images/main/footer-facebook.png" />
+					</div>
+					<div class="footer-instagram">
+						<img class="footer-img"
+							src="${cpath}/resources/images/main/footer-insta.png" />
+					</div>
+					<div class="footer-twitter">
+						<img class="footer-mask-group-2"
+							src="${cpath}/resources/images/main/footer-twitter.png" />
+					</div>
+					<div class="footer-linkind">
+						<img class="footer-mask-group-2"
+							src="${cpath}/resources/images/main/footer-linkedin.png" />
+					</div>
 				</div>
 			</div>
-			<div class=e145_1534>
-				<span class="e145_1535">Contact Us</span>
-				<div class=e145_1536>
-					<span class="e145_1537">1234 Country Club Ave</span><span
-						class="e145_1538">NC 123456, London, UK</span><span
-						class="e145_1539">+0123 456 7891</span>
+			<div class="footer-contact-us">
+				<div class="footer-text-wrapper-2">Contact Us</div>
+				<div class="footer-group">
+					<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+					<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+					<div class="footer-text-wrapper-3">+0123 456 7891</div>
+				</div>
+				<div class="footer-overlap-group-wrapper">
+					<div class="footer-overlap-group">
+						<div class="footer-vector-wrapper">
+							<img class="footer-vector"
+								src="${cpath}/resources/images/main/footer-email-button.png" />
+						</div>
+						<input class="footer-enter-email"
+							placeholder="Enter your email....">
+					</div>
 				</div>
 			</div>
-			<div class=e145_1540>
-				<span class="e145_1541">User Link</span>
-				<div class=e145_1542>
-					<span class="e145_1543">About Us</span><span class="e145_1544">Contact
-						Us</span><span class="e145_1545">Order Delivery</span><span
-						class="e145_1546">Payment & Tex</span><span class="e145_1547">Terms
-						of Services</span>
+			<div class="footer-user-link">
+				<div class="footer-text-wrapper-7">User Link</div>
+				<div class="footer-group-2">
+					<div class="footer-text-wrapper-3">About Us</div>
+					<div class="footer-text-wrapper-3">Contact Us</div>
+					<div class="footer-text-wrapper-3">Order Delivery</div>
+					<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+					<div class="footer-text-wrapper-3">Terms of Services</div>
 				</div>
 			</div>
-			<div class=e145_1548>
-				<span class="e145_1549">Opening Restaurant</span>
-				<div class=e145_1550>
-					<span class="e145_1551">Sat-Wet: 09:00am-10:00PM</span><span
-						class="e145_1552">Thursdayt: 09:00am-11:00PM</span><span
-						class="e145_1553">Friday: 09:00am-8:00PM</span>
+			<div class="footer-opening-restaurant">
+				<div class="footer-text-wrapper-7">Opening Restaurant</div>
+				<div class="footer-group-3">
+					<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+					<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
+					<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
 				</div>
 			</div>
-			<div class="e145_1554"></div>
-			<div class="e145_1555"></div>
-		</div>
+		</footer>
 	</div>
 </body>
 <script>
