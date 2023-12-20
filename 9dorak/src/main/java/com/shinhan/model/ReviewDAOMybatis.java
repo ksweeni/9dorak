@@ -17,7 +17,7 @@ public class ReviewDAOMybatis {
 	@Autowired
 	SqlSession sqlSession; 
 	Logger logger = LoggerFactory.getLogger(ReviewDAOMybatis.class);
-	String NAMESPACE = "net.firstzone.menu.";
+	String NAMESPACE = "net.firstzone.review.";
 
 	public List<ProVO> selectAll() {
 		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectAll");
