@@ -10,7 +10,7 @@
 
 .div-wrapper .div {
 	background-color: var(- -white);
-	width: 1440px;
+	width: 100%;
 	height: 1699px;
 	position: relative;
 }
@@ -132,7 +132,7 @@
 	padding: 1px 1px;
 	position: absolute;
 	top: 184px;
-	left: 295px;
+	left: 326px;
 	background-color: #feae64;
 	border-radius: 8px;
 	border: none;
@@ -170,7 +170,7 @@
 	padding: 13px 16px;
 	position: absolute;
 	top: 184px;
-	left: 190px;
+	left: 225px;
 	background-color: #feae64;
 	border-radius: 8px;
 	font-size: 14px;
