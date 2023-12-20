@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.shinhan.dto.BasketVO;
+import com.shinhan.dto.CouponVO;
+import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.PayVO;
 import com.shinhan.dto.PeopleVO;
+import com.shinhan.model.MyPageService;
 import com.shinhan.model.WalletService;
 
 @Controller
@@ -28,12 +31,25 @@ public class WalletController {
 	@Autowired
 	WalletService wService;
 
+
+	@Autowired
+	MyPageService mService;
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
 	@GetMapping("pay.do")
-	public String pay(Model model) {
+	public String pay(Model model , HttpSession session) {
 		List<PayVO> plist = wService.selectAllPay();
 		model.addAttribute("plist", plist);
+		if (session.getAttribute("loginmem") == null) {
+			return "redirect:/login/loginForm.do";
+		}
+		MemVO mem = (MemVO) session.getAttribute("loginmem");
+		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
+		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
+		System.out.println(dlist);
+		model.addAttribute("clist", clist);
+		model.addAttribute("mem", mem);
+		model.addAttribute("dlist", dlist);
 		return "wallet/pay";
 	}
 	
