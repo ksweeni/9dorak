@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta charset="utf-8" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/payStyle.css"
@@ -13,6 +15,45 @@
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
+<style type="text/css">
+/* #my_modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1300px;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 10;
+}
+
+#modal_content {
+	background-color: #fefefe;
+	margin: 20% 20%;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%;
+	height: 15%;
+}
+
+.modal_close_btn {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	position: relative;
+	top: 300px;
+	left: -470px;
+}
+
+.modal_close_btn:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+} */
+</style>
 </head>
 <body>
 	<div class="screen">
@@ -28,17 +69,42 @@
 											<div class="text-wrapper">배송정보</div>
 											<div class="div-wrapper">
 												<div class="frame-3">
-													<div class="text-wrapper-2">배송지를 추가하세요</div>
-													<div class="entypo-plus-wrapper">
-														<img class="entypo-plus" src="${cpath}/resources/images/wallet/plus.png" />
-													</div>
+													<!-- 	<div class="text-wrapper-2">배송지를 추가하세요</div> -->
+
+													<!--  -->
+													배송지명 : <input type="text" id="mem_delname"
+														placeholder="배송지명" value="${dlist[0].mem_delname }">
+													<br> 우편번호 : <input type="text" id="sample4_postcode"
+														placeholder="우편번호" value="${dlist[0].mem_zipcode}" /> <br>
+													<input type="hidden" id="sample4_roadAddress"
+														placeholder="도로명주소" /> 주소 : <input type="text"
+														id="sample4_jibunAddress" placeholder="지번주소"
+														value="${dlist[0].mem_addr} ${dlist[0].mem_detail}" /> <span
+														id="guide" style="color: #999; display: none"></span> <br />
+													상세주소 : <input type="text" id="sample4_detailAddress"
+														placeholder="상세주소" value="${dlist[0].mem_detail}">
+													<input type="hidden" id="sample4_extraAddress"
+														placeholder="참고항목" /> <br />
+													<!--  -->
+													<a class="entypo-plus-wrapper"
+														onclick="sample4_execDaumPostcode()"> <img
+														class="entypo-plus"
+														src="${cpath}/resources/images/wallet/plus.png" />
+													</a>
+													<%-- 				<a class="entypo-plus-wrapper"
+														onclick="openModal('my_modal', '${cpath}/my/selectDelivery.do')"
+													>
+													</a> --%>
+													<!--  -->
 												</div>
 											</div>
 											<div class="my-del-button">
-										<button class="my-del">나의 배송지 확인</button>
+												<button class="my-del"
+													onclick="openModal('my_modal'">나의
+													배송지 확인</button>
+											</div>
 										</div>
-										</div>
-										
+
 									</div>
 								</div>
 							</div>
@@ -46,7 +112,7 @@
 					</div>
 					<div class="coupons">
 						<p class="p">
-							<span class="span">보유 쿠폰 </span> <span class="text-wrapper-3">0장</span>
+							<span class="span">보유 쿠폰 </span> <span class="text-wrapper-3">${clist.size()}장</span>
 						</p>
 						<div class="group-2">
 							<div class="frame-4">
@@ -54,7 +120,17 @@
 							</div>
 							<div class="overlap-group-wrapper">
 								<div class="overlap-group">
-									<div class="text-wrapper-5">보유한 쿠폰이 없습니다.</div>
+									<!--  -->
+									<c:choose>
+										<c:when test="${clist.size() !=0 }">
+											<div class="text-wrapper-5">보유 쿠폰 확인하기</div>
+										</c:when>
+										<c:when test="${clist.size() ==0 }">
+											<div class="text-wrapper-5">보유한 쿠폰이 없습니다.</div>
+										</c:when>
+									</c:choose>
+
+									<!--  -->
 								</div>
 							</div>
 							<div class="text-wrapper-6">쿠폰</div>
@@ -62,7 +138,7 @@
 					</div>
 					<div class="points">
 						<p class="p">
-							<span class="span">보유 포인트 </span> <span class="text-wrapper-3">50
+							<span class="span">보유 포인트 </span> <span class="text-wrapper-3">${mem.mem_point }
 								P</span>
 						</p>
 						<div class="group-2">
@@ -274,5 +350,115 @@
 			</footer>
 		</div>
 	</div>
+
+	<!-- 	<div id="my_modal" class="modal"
+		style="position: relative; display: none">
+		모달 내용 <span class="modal_close_btn">×</span>
+		<iframe id="modal_content" frameborder="0" width="100%" height="200px"></iframe>
+	</div> -->
+
+	<div id="myModal-" class="modal" style="display: none">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h4>결제 상세 정보</h4>
+			<p>결제일: </p>
+			<p>결제자:</p>
+			<p>결제금액: </p>
+			<P>결제방법:</P>
+		</div>
+	</div>
+
+	<script>
+		var modal = document
+				.getElementById("myModal-");
+	//	var btn = document.getElementById("myBtn-");
+		var span = modal.getElementsByClassName("close")[0];
+
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
 </body>
+
+
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+	function sample4_execDaumPostcode() {
+		new daum.Postcode(
+				{
+					oncomplete : function(data) {
+						// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+						// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+						// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+						var roadAddr = data.roadAddress; // 도로명 주소 변수
+						var extraRoadAddr = ''; // 참고 항목 변수
+
+						// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+						// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+						if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+							extraRoadAddr += data.bname;
+						}
+						// 건물명이 있고, 공동주택일 경우 추가한다.
+						if (data.buildingName !== '' && data.apartment === 'Y') {
+							extraRoadAddr += (extraRoadAddr !== '' ? ', '
+									+ data.buildingName : data.buildingName);
+						}
+						// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+						if (extraRoadAddr !== '') {
+							extraRoadAddr = ' (' + extraRoadAddr + ')';
+						}
+
+						// 우편번호와 주소 정보를 해당 필드에 넣는다.
+						document.getElementById('sample4_postcode').value = data.zonecode;
+						document.getElementById("sample4_roadAddress").value = roadAddr;
+						document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+
+						// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+						if (roadAddr !== '') {
+							document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+						} else {
+							document.getElementById("sample4_extraAddress").value = '';
+						}
+
+						var guideTextBox = document.getElementById("guide");
+						// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+						if (data.autoRoadAddress) {
+							var expRoadAddr = data.autoRoadAddress
+									+ extraRoadAddr;
+							guideTextBox.innerHTML = '(예상 도로명 주소 : '
+									+ expRoadAddr + ')';
+							guideTextBox.style.display = 'block';
+
+						} else if (data.autoJibunAddress) {
+							var expJibunAddr = data.autoJibunAddress;
+							guideTextBox.innerHTML = '(예상 지번 주소 : '
+									+ expJibunAddr + ')';
+							guideTextBox.style.display = 'block';
+						} else {
+							guideTextBox.innerHTML = '';
+							guideTextBox.style.display = 'none';
+						}
+					}
+				}).open();
+	}
+</script>
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<script type="text/javascript">
+	
+</script>
 </html>

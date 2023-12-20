@@ -997,7 +997,6 @@ String contextPath = request.getContextPath();
 							onclick="openModal('my_modal', '${cpath}/my/selectDelivery.do')"
 							class="e128_279" style="position: relative;">배송지추가</a>
 					</c:if>
-
 				</div>
 			</div>
 		</div>

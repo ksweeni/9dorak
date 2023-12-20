@@ -122,10 +122,14 @@ input {
 	</script>
 </body>
 <script>
+
 	$("#success").on(
 			"click",
 			function() {
-
+				
+				
+				
+				
 				if ($("#mem_delname").val() == "") {
 					alert("배송지명을 입력해주세요 ( 필수 )");
 					return;
@@ -146,6 +150,7 @@ input {
 				var mem_refer = $("#sample4_extraAddress").val();
 				var mem_delname = $("#mem_delname").val();
 
+				window.parent.postMessage(mem_addr, "*");
 				var param = {
 					"mem_addr" : mem_addr,
 					"mem_zipcode" : mem_zipcode,
@@ -179,8 +184,6 @@ input {
 
 
 <script type="text/javascript">
-	
-
 	// 모달을 닫는 함수를 추가합니다
 	$(".modal_close_btn").on("click", function() {
 		var modal = $("#my_modal");
@@ -195,7 +198,5 @@ input {
 
 		})
 	})
-
-
 </script>
 </html>
