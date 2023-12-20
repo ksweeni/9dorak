@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?e"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/familyListStyle.css?e" type="text/css" />
+	href="${cpath}/resources/css/familyListStyle.css?s" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -90,17 +90,13 @@
 							d="M0.38408 0.949976C0.332645 0.898177 0.291917 0.836754 0.264221 0.769215C0.236524 0.701676 0.222402 0.629342 0.22266 0.556345C0.222918 0.483348 0.237551 0.411116 0.265724 0.343775C0.293897 0.276433 0.335058 0.215299 0.386858 0.163865C0.438657 0.112431 0.50008 0.0717024 0.567619 0.0440059C0.635158 0.0163094 0.707491 0.00218694 0.780489 0.00244488C0.853486 0.00270282 0.925717 0.0173361 0.993059 0.0455092C1.0604 0.0736823 1.12153 0.114844 1.17297 0.166643L5.61741 4.61109C5.72089 4.71518 5.77896 4.85598 5.77896 5.00275C5.77896 5.14952 5.72089 5.29033 5.61741 5.39442L1.17297 9.83886C1.12153 9.89066 1.0604 9.93182 0.993059 9.96C0.925717 9.98817 0.853486 10.0028 0.780489 10.0031C0.707491 10.0033 0.635158 9.9892 0.567619 9.9615C0.50008 9.93381 0.438657 9.89308 0.386858 9.84164C0.335058 9.79021 0.293897 9.72908 0.265724 9.66173C0.237551 9.59439 0.222918 9.52216 0.22266 9.44916C0.222402 9.37617 0.236524 9.30383 0.264221 9.23629C0.291917 9.16875 0.332645 9.10733 0.38408 9.05553L4.43408 5.00553L0.38408 0.949976Z"
 							fill="#767676" />
 </svg>
-					<div class="text-8 valign-text-middle roboto-semi-bold-gravel-14px">
+					<div class="text-8 valign-text-middle">
 						지인 목록 조회</div>
 				</div>
 			</div>
-			<h1 class="text-9 valign-text-middle">지인 목록 조회</h1>
+			<h1 class="text-9 valign-text-middle" style="margin-top: 52px;">지인 목록 조회</h1>
 		</div>
 		<div class="overlap-group2">
-			<div class="privacy">
-				<div class="text-2 valign-text-middle inter-bold-black-14px">
-					지인 목록 조회</div>
-			</div>
 			<div class="menu">
 				<div class="username">
 					<div class="medium"></div>
@@ -113,7 +109,7 @@
 					<div class="links-1">
 						<div class="privacy-1 privacy-3">
 							<a class="text-4 valign-text-middle inter-bold-black-14px"
-							href="${pageContext.request.contextPath}/my/familyReg.do">
+								href="${pageContext.request.contextPath}/my/familyReg.do">
 								지인 등록</a>
 						</div>
 					</div>
@@ -123,7 +119,34 @@
 				</div>
 			</div>
 		</div>
-	
+		<div class="familyList">
+			<h2>지인 목록</h2>
+
+			<c:if test="${empty familyList}">
+				<p class="empty-message">조회 가능한 목록이 비어있습니다.</p>
+			</c:if>
+
+			<c:if test="${not empty familyList}">
+				<table>
+					<thead>
+						<tr>
+							<th>지인 아이디</th>
+							<th>가족/지인</th>
+							<th>등록날짜</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="member" items="${familyList}">
+							<tr>
+								<td>${member.mem_id2}</td>
+								<td>${member.people_category}</td>
+								<td>${member.people_date}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</c:if>
+		</div>
 		<footer class="footer">
 			<div class="footer-company-loco">
 				<div class="footer-company">

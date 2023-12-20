@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.DeliveryHistoryVO;
 import com.shinhan.dto.DeliveryVO;
+import com.shinhan.dto.DoranVO;
 import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
@@ -121,7 +122,11 @@ public class MyPageDAOMybatis {
 		return sqlSession.insert(NAMESPACE + "insertPeople", peopleData);
 	}
 	
-
+	// 가족목록
+	public List<PeopleVO> familyList(String mem_id) {
+	List<PeopleVO> flist = sqlSession.selectList(NAMESPACE + "familyList", mem_id);
+	return flist;
+	}
 	
 	// 배송 조회 내역
 	public List<DeliveryHistoryVO> AllDeliveryHistory(String mem_id) {
