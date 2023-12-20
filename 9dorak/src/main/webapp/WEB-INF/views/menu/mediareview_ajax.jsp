@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<div class="group">
+	<div class="group-ajax">
 				<div class="overlap-group">
 					<div class="frame">
 						<div class="frame-2">

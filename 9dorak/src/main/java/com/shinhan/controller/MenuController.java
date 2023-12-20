@@ -238,11 +238,11 @@ public class MenuController {
 		List<Map<String, Object>> moalist = mService.selectMoaview(pro.getPro_no());
 		model.addAttribute("moalist", moalist);
 		
+		//System.out.println(moalist);
+		//System.out.println(mService.selectMoaFrist(pro.getPro_no()));
+		
         model.addAttribute("moadetail", mService.selectByNo(pro.getPro_no()));
 		model.addAttribute("moafrist", mService.selectMoaFrist(pro.getPro_no()));
-		
-		System.out.println(moalist);
-		System.out.println(mService.selectMoaFrist(pro.getPro_no()));
 		
 		return "menu/menuMediaReviews";
 	}
@@ -252,6 +252,8 @@ public class MenuController {
 		System.out.println("mediaReviewDetail");
 		System.out.println(rev.getMemreview_no());
 		System.out.println(pro.getPro_no());
+		//System.out.println(map.get("memreview_no"));
+		//System.out.println(map.get("pro_no"));
 		
 		List<Map<String, Object>> moalist = mService.selectMoaview(pro.getPro_no());
 		model.addAttribute("moalist", moalist);

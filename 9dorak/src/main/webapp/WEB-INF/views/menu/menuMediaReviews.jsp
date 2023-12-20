@@ -81,7 +81,7 @@
 						<div class="frame-2">
 							<div class="group-2">
 								<div class="frame-3">
-									<div class="text-wrapper">${moafrist.mem_id }</div>
+									<div class="text-wrapper">${moafrist.mem_id}</div>
 									<div class="text-wrapper-2">${moafrist.memreview_date }</div>
 								</div>
 								<div class="frame-4">
@@ -250,7 +250,8 @@
 				url : "${cpath}/menu/mediaReviewDetail.do",
 				type : 'POST',
 				data : {
-					memreview_no : rNo
+					memreview_no : rNo,
+					pro_no : ${moadetail.pro_no}
 				},
 				success : function(data) {
 					//alert("완료!");
