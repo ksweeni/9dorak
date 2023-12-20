@@ -2,885 +2,85 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
+	type="text/css" />
+<link rel="stylesheet" href="${cpath}/resources/css/myPointStyle.css"
+	type="text/css" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.169_509 {
-	overflow: hidden;
-}
-
-.e169_509 {
-	background-color: rgba(255, 255, 255, 1);
-	width: 1440px;
-	height: 1788px;
-	position: absolute;
-}
-
-.e169_510 {
-	width: 1073px;
-	height: 56px;
-	position: absolute;
-	left: 166px;
-	top: 37px;
-}
-
-.e169_511 {
-	width: 94px;
-	height: 56px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.e169_512 {
-	width: 94px;
-	height: 56px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	background-image: url(${cpath}/resources/images/my/untitled_1_1.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e169_513 {
-	color: rgba(0, 0, 0, 1);
-	width: 80px;
-	height: 22px;
-	position: absolute;
-	left: 314px;
-	top: 18px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_514 {
-	color: rgba(0, 0, 0, 1);
-	width: 93px;
-	height: 22px;
-	position: absolute;
-	left: 421px;
-	top: 17px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_515 {
-	color: rgba(0, 0, 0, 1);
-	width: 80px;
-	height: 22px;
-	position: absolute;
-	left: 541px;
-	top: 17px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_516 {
-	color: rgba(0, 0, 0, 1);
-	width: 80px;
-	height: 22px;
-	position: absolute;
-	left: 648px;
-	top: 18px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_517 {
-	color: rgba(0, 0, 0, 1);
-	width: 80px;
-	height: 22px;
-	position: absolute;
-	left: 755px;
-	top: 18px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_518 {
-	color: rgba(0, 0, 0, 1);
-	width: 89px;
-	height: 22px;
-	position: absolute;
-	left: 951px;
-	top: 18px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_519 {
-	width: 33px;
-	height: 36px;
-	position: absolute;
-	left: 1040px;
-	top: 10px;
-	background-image: url(${cpath}/resources/images/my/basketimage.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e169_520 {
-	box-shadow: 0px 0px 22px
-		rgba(204.00000303983688, 0, 0, 0.800000011920929);
-	border-radius: 500px;
-	background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 15px;
-	height: 15px;
-	position: absolute;
-	left: 1057px;
-	top: 10px;
-}
-
-.e169_633 {
-	width: 335.1780090332031px;
-	height: 60.015625px;
-	position: absolute;
-	left: 385px;
-	top: 200px;
-}
-
-.e169_634 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 152.17800903320312px;
-	height: 18px;
-	position: absolute;
-	left: 193.292969px;
-	top: 0px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e169_635 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 300px;
-	height: 41px;
-	position: absolute;
-	left: 0px;
-	top: 28.015625px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 32px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e169_636 {
-	width: 15.217805862426758px;
-	height: 23.37931px;
-	position: absolute;
-	left: 167.841797px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: absolute;
-	top: -2px;
-	background-repeat: no-repeat;
-	background-image: url(${cpath}/resources/images/my/image_8.png);
-}
-
-.e169_637 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 160.610756px;
-	height: 18px;
-	position: absolute;
-	left: 2.05078125px;
-	top: 0px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-}
-
-.e169_521 {
-	width: 1326px;
-	height: 745px;
-	position: absolute;
-	left: 78px;
-	top: 343px;
-}
-
-.e169_527 {
-	width: 1022px;
-	height: 745px;
-	position: absolute;
-	left: 304px;
-	top: 0px;
-}
-
-.e169_528 {
-	width: 1022px;
-	height: 742px;
-	position: absolute;
-	left: 0px;
-	top: 3px;
-}
-
-.e169_584 {
-	width: 347px;
-	height: 93px;
-	position: absolute;
-	left: 0px;
-	top: 1.1368683772161603e-13px;
-}
-
-.e169_586 {
-	width: 347px;
-	height: 93px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.e169_587 {
-	color: rgba(0, 0, 0, 1);
-	width: 245px;
-	height: 30px;
-	position: absolute;
-	left: 52.5px;
-	top: 0px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 25px;
-	letter-spacing: 0;
-}
-
-.e169_588 {
-	color: rgba(255, 127.5, 0, 1);
-	width: 89px;
-	height: 36px;
-	position: absolute;
-	left: 129px;
-	top: 54px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 30px;
-	letter-spacing: 0;
-}
-
-.e169_639 {
-	width: 327px;
-	height: 310px;
-	position: absolute;
-	left: 10px;
-	top: 114px;
-	background-image: url(${cpath}/resources/images/my/image_34.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e198_349 {
-	width: 596.1743774414062px;
-	height: 112px;
-	position: absolute;
-	left: 392px;
-	top: 54px;
-}
-
-.e198_350 {
-	background-color: rgba(255, 255, 255, 1);
-	width: 596.1743774414062px;
-	height: 112px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.198_350 {
-	border: 1px solid
-		rgba(215.04000663757324, 215.04000663757324, 224.000001847744, 1);
-}
-
-.e198_351 {
-	width: 600px;
-	height: 74px;
-	position: relative;
-	left: 17.886093139648438px;
-	top: 21px;
-	border: 1px solid gray;
-	border-radius: 30px;
-}
-
-.e198_352 {
-	width: 563px;
-	height: 74px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.e198_353 {
-	width: 563px;
-	height: 25px;
-	position: absolute;
-	left: 22px;
-	top: 7px;
-}
-
-.e198_354 {
-	color: rgba(255, 127.5, 0, 1);
-	width: 120.71916198730469px;
-	height: 25px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 20px;
-	letter-spacing: 0;
-}
-
-.e198_355 {
-	color: rgba(126.21172472834587, 126.21172472834587, 126.21172472834587, 1);
-	width: 108.96774291992188px;
-	height: 24px;
-	position: absolute;
-	left: 454.0322570800781px;
-	top: 1px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 20px;
-	letter-spacing: 0;
-}
-
-.e198_356 {
-	width: 563px;
-	height: 49px;
-	position: absolute;
-	left: 18px;
-	top: 32px;
-}
-
-.e198_357 {
-	color: rgba(255, 127.5, 0, 1);
-	width: 139px;
-	height: 49px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 25px;
-	letter-spacing: 0;
-}
-
-.e198_358 {
-	color: rgba(0, 0, 0, 1);
-	width: 389px;
-	height: 43px;
-	position: absolute;
-	left: 174px;
-	top: 3px;
-	font-family: Inter;
-	text-align: right;
-	font-size: 20px;
-	letter-spacing: 0;
-}
-
-.e198_346 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 322.68511962890625px;
-	height: 36px;
-	position: absolute;
-	left: 428.0955810546875px;
-	top: 0px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 32px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e169_532 {
-	background-color: rgba(255, 255, 255, 1);
-	width: 250px;
-	height: 262px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	background-color: #ffffff;
-	border-radius: 16px;
-	border: 2px solid;
-	border-color: #e7e7e7;
-}
-
-.169_532 {
-	border: 2px solid
-		rgba(231.62500709295273, 231.62500709295273, 231.62500709295273, 1);
-}
-
-.e169_533 {
-	width: 198px;
-	height: 47px;
-	position: absolute;
-	left: 26px;
-	top: 26px;
-}
-
-.e169_534 {
-	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 83px;
-	height: 26px;
-	position: absolute;
-	left: 52px;
-	top: 0px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 21px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e169_535 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 71px;
-	height: 20px;
-	position: absolute;
-	left: 53px;
-	top: 27px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 13px;
-	letter-spacing: 0.800000011920929;
-	line-height: px;
-}
-
-.e169_536 {
-	width: 52px;
-	height: 43px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	background-image: url(${cpath}/resources/images/my/profile.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e169_537 {
-	width: 198px;
-	height: 154px;
-	position: absolute;
-	left: 26px;
-	top: 98px;
-}
-
-.e169_538 {
-	width: 198px;
-	height: 50px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.e169_539 {
-	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 135px;
-	height: 20px;
-	position: absolute;
-	left: 20px;
-	top: 15px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e169_626 {
-	width: 198px;
-	height: 50px;
-	position: absolute;
-	left: 0px;
-	top: 52px;
-}
-
-.e169_627 {
-	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 135px;
-	height: 20px;
-	position: absolute;
-	left: 20px;
-	top: 15px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e169_624 {
-	background-color: rgba(254.99996960163116, 174.5559909939766, 100.30001074075699, 1);
-	width: 198px;
-	height: 50px;
-	position: absolute;
-	left: 0px;
-	top: 104px;
-	border-top-left-radius: 16px;
-	border-top-right-radius: 16px;
-	border-bottom-left-radius: 16px;
-	border-bottom-right-radius: 16px;
-}
-
-.e169_625 {
-	color: rgba(255, 255, 255, 1);
-	width: 135px;
-	height: 20px;
-	position: absolute;
-	left: 20px;
-	top: 15px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e169_546 {
-	width: 1440px;
-	height: 429px;
-	position: absolute;
-	left: 0px;
-	top: 1359px;
-}
-
-.e169_547 {
-	background-color: rgba(249.6875050663948, 249.900004863739, 255, 1);
-	width: 1440px;
-	height: 429px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.e169_548 {
-	width: 393px;
-	height: 227px;
-	position: absolute;
-	left: 118px;
-	top: 76px;
-}
-
-.e169_549 {
-	width: 393px;
-	height: 227px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.e169_550 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 393px;
-	height: 89px;
-	position: absolute;
-	left: 0px;
-	top: 138px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_551 {
-	width: 189.68800354003906px;
-	height: 108px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	background-image: url(${cpath}/resources/images/my/untitled_1_2.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e169_552 {
-	width: 234px;
-	height: 190px;
-	position: absolute;
-	left: 1098px;
-	top: 107px;
-}
-
-.e169_553 {
-	color: rgba(0, 0, 0, 1);
-	width: 167.9425811767578px;
-	height: 32px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 26px;
-	letter-spacing: 0;
-}
-
-.e169_554 {
-	width: 234px;
-	height: 90px;
-	position: absolute;
-	left: 0px;
-	top: 100px;
-}
-
-.e169_555 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 228.40191650390625px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_556 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 234px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 34px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_557 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 148.90908813476562px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 68px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_558 {
-	width: 194px;
-	height: 258px;
-	position: absolute;
-	left: 865px;
-	top: 107px;
-}
-
-.e169_559 {
-	color: rgba(0, 0, 0, 1);
-	width: 156.1761016845703px;
-	height: 32px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 26px;
-	letter-spacing: 0;
-}
-
-.e169_560 {
-	width: 194px;
-	height: 158px;
-	position: absolute;
-	left: 0px;
-	top: 100px;
-}
-
-.e169_561 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 103.710693359375px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_562 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 123.23270416259766px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 34px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_563 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 162.2767333984375px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 68px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_564 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 165.93710327148438px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 102px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_565 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 194px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 136px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_566 {
-	width: 295px;
-	height: 190px;
-	position: absolute;
-	left: 523px;
-	top: 107px;
-}
-
-.e169_567 {
-	color: rgba(0, 0, 0, 1);
-	width: 295px;
-	height: 32px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 26px;
-	letter-spacing: 0;
-}
-
-.e169_568 {
-	width: 277.8985595703125px;
-	height: 90px;
-	position: absolute;
-	left: 8.550724983215332px;
-	top: 100px;
-}
-
-.e169_569 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 264.0036315917969px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_570 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 277.8985595703125px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 34px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_571 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 239.4202880859375px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 68px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e169_572 {
-	width: 147px;
-	height: 47px;
-	position: absolute;
-	left: 118px;
-	top: 313px;
-	background-image: url(${cpath}/resources/images/my/snsicon.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e169_573 {
-	width: 223px;
-	height: 67px;
-	position: absolute;
-	left: 1091px;
-	top: 320px;
-	background-image: url(${cpath}/resources/images/my/image_7.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-</style>
 </head>
 <body>
 	<div class=e169_509>
-		<div class=e169_510>
-			<div class=e169_511>
-				<div class="e169_512"></div>
+		<header class="header">
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-event">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+					</div>
+					<div class="text-menu">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+					</div>
+					<div class="text-subscribe">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+					</div>
+					<div class="text-yomo">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+					</div>
+					<div class="text-doran">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+					</div>
+				</div>
+				<a href="${pageContext.request.contextPath}/main.do"> <img
+					class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				</a>
+				<div class="div-3">
+					<div class="text-wrapper-28">
+						<c:choose>
+							<c:when test="${not empty sessionScope.loginmem.mem_id}">
+								<span
+									style="font-weight: bold; left: -1rem; position: relative;">
+									<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+								</span>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/my/logout.do"
+									style="position: relative; left: -1rem">로그아웃</a>
+							</c:when>
+							<c:otherwise>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+									href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<div class="group-20">
+						<div class="header-overlap-group-3">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<div class="ellipse-light"></div>
+							<!-- <div class="text-wrapper-29">2</div> -->
+						</div>
+					</div>
+				</div>
 			</div>
-			<span class="e169_513">메뉴보기</span><span class="e169_514">구독하기</span><span
-				class="e169_515">요모조모</span><span class="e169_516">도란도란</span><span
-				class="e169_517">이벤트</span><span class="e169_518">로그아웃</span>
-			<div class="e169_519"></div>
-			<div class="e169_520"></div>
-		</div>
+		</header>
+
 		<div class=e169_633>
 			<span class="e169_634">나의 포인트</span><span class="e169_635">나의
 				포인트</span>
@@ -896,19 +96,10 @@ String contextPath = request.getContextPath();
 							<div class="e169_639"></div>
 						</div>
 					</div>
+					
 					<div class=e198_349>
-						<div class="e198_350"></div>
-						<%-- 		<div class=e198_351>
-							<div class=e198_352>
-								<div class=e198_353>
-									<span class="e198_354">적립</span><span class="e198_355">${elist.point_date }</span>
-								</div>
-								<div class=e198_356>
-									<span class="e198_357">${elist.point }P</span><span class="e198_358">[구도락
-										챌린지] ${elist.point_name }</span>
-								</div>
-							</div>
-						</div> --%>
+						
+		
 						<c:forEach var="item" items="${elist}">
 							<div class="e198_351">
 								<div class="e198_352">
@@ -946,45 +137,71 @@ String contextPath = request.getContextPath();
 				</div>
 			</div>
 		</div>
-		<div class=e169_546>
-			<div class="e169_547"></div>
-			<div class=e169_548>
-				<div class=e169_549>
-					<span class="e169_550">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Commodo libero viverra dapibus odio
-						sit malesuada in quis. Arcu tristique elementum viverra integer
-						id.</span>
-					<div class="e169_551"></div>
+		
+		<footer class="footer" style="top:90rem;">
+				<div class="footer-company-loco">
+					<div class="footer-company">
+						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+						<img class="footer-logo"
+							src="${cpath}/resources/images/main/footer-logo.png" />
+					</div>
+					<div class="footer-social-icon">
+						<div class="footer-facebook">
+							<img class="footer-mask-group"
+								src="${cpath}/resources/images/main/footer-facebook.png" />
+						</div>
+						<div class="footer-instagram">
+							<img class="footer-img"
+								src="${cpath}/resources/images/main/footer-insta.png" />
+						</div>
+						<div class="footer-twitter">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-twitter.png" />
+						</div>
+						<div class="footer-linkind">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-linkedin.png" />
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class=e169_552>
-				<span class="e169_553">Contact Us</span>
-				<div class=e169_554>
-					<span class="e169_555">1234 Country Club Ave</span><span
-						class="e169_556">NC 123456, London, UK</span><span
-						class="e169_557">+0123 456 7891</span>
+				<div class="footer-contact-us">
+					<div class="footer-text-wrapper-2">Contact Us</div>
+					<div class="footer-group">
+						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+						<div class="footer-text-wrapper-3">+0123 456 7891</div>
+					</div>
+					<div class="footer-overlap-group-wrapper">
+						<div class="footer-overlap-group">
+							<div class="footer-vector-wrapper">
+								<img class="footer-vector"
+									src="${cpath}/resources/images/main/footer-email-button.png" />
+							</div>
+							<input class="footer-enter-email"
+								placeholder="Enter your email....">
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class=e169_558>
-				<span class="e169_559">User Link</span>
-				<div class=e169_560>
-					<span class="e169_561">About Us</span><span class="e169_562">Contact
-						Us</span><span class="e169_563">Order Delivery</span><span
-						class="e169_564">Payment & Tex</span><span class="e169_565">Terms
-						of Services</span>
+				<div class="footer-user-link">
+					<div class="footer-text-wrapper-7">User Link</div>
+					<div class="footer-group-2">
+						<div class="footer-text-wrapper-3">About Us</div>
+						<div class="footer-text-wrapper-3">Contact Us</div>
+						<div class="footer-text-wrapper-3">Order Delivery</div>
+						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+						<div class="footer-text-wrapper-3">Terms of Services</div>
+					</div>
 				</div>
-			</div>
-			<div class=e169_566>
-				<span class="e169_567">Opening Restaurant</span>
-				<div class=e169_568>
-					<span class="e169_569">Sat-Wet: 09:00am-10:00PM</span><span
-						class="e169_570">Thursdayt: 09:00am-11:00PM</span><span
-						class="e169_571">Friday: 09:00am-8:00PM</span>
+				<div class="footer-opening-restaurant">
+					<div class="footer-text-wrapper-7">Opening Restaurant</div>
+					<div class="footer-group-3">
+						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+						<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
+						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+					</div>
 				</div>
-			</div>
-			<div class="e169_572"></div>
-			<div class="e169_573"></div>
-		</div>
+			</footer>
 	</div>
 </body>
 <script>

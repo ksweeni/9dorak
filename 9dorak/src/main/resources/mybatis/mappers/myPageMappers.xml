@@ -68,7 +68,7 @@
 	</select>
 	<select id="getCoupon" resultType="couponvo"
 		parameterType="String">
-		SELECt *
+		SELECT *
 		FROM coupon where mem_id = #{mem_id} and
 		coupon_reg = '등록'
 	</select>
