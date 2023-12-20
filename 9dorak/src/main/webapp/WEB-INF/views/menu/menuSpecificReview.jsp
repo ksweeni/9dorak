@@ -276,7 +276,7 @@
 				<!-- group-5 -->
 
 				<div class="frame-8">
-					<div class="text-wrapper-13">사진 및 동영상 후기</div>
+					<div class="text-wrapper-13">사진 리뷰</div>
 					<a
 						href="${cpath }/menu/menuMediaReview.do?pro_no=${menudetail.pro_no}"
 						class="view-2">
@@ -739,6 +739,25 @@
 	        }
 	    });
 	};
+	
+	//사진리뷰 없는경우 모아보기 클릭방지
+	document.addEventListener('DOMContentLoaded', function () {
+
+	    // 모아보기 링크 가져오기
+	    var viewLink = document.querySelector('.view-2');
+
+	    // 모아보기 링크 클릭 이벤트 설정
+	    viewLink.addEventListener('click', function (event) {
+	      // phtrlist가 비어있을 때
+	      if (${empty phtrlist}) {
+	        // 기본 동작 취소
+	        event.preventDefault();
+	        
+	        // 알림창 띄우기
+	        alert('안되지롱!');
+	      }
+	    });
+	  });
 
 </script>
 
