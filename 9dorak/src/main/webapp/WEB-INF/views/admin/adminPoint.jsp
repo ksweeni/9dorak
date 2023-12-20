@@ -27,11 +27,15 @@
 		<span class="e2099_2473">게시판관리</span>
 		<span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span>
-		<div class="e2099_2476"><hr></div>
+		<div class="admin_login">
+		<div class="e2099_2476">
+			<hr>
+		</div>
 		<div class="e2099_2478"></div>
 		<span class="e2099_2477">관리자</span>
 		<div class="e2101_2491"></div>
 		<span class="e2101_2490">로그아웃</span>
+		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
 		</div>
