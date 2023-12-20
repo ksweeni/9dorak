@@ -36,6 +36,19 @@
 	border: 1px solid #888;
 	width: 30%;
 }
+
+.changi {
+	position: relative;
+	width: 200px;
+	height: 20px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	border-color: lightgray;
+}
+
+.close{
+	float: right;
+}
 </style>
 </head>
 <body>
@@ -52,20 +65,60 @@
 											<div class="text-wrapper">배송정보</div>
 											<div class="div-wrapper">
 												<div class="frame-3">
+													<c:choose>
+														<c:when test="${empty dlist }">
+														<span id = "regnodel">등록된 배송지가 없습니다.</span>
+														
+														
+														<!--  -->
+														<div id="nodel" style="display: none">
+														우편번호 : <input type="text" id="sample4_postcode"
+																class="changi" placeholder="우편번호"
+																value="${dlist[0].mem_zipcode}" />
+															<br>
+															<input type="hidden" id="sample4_roadAddress"
+																class="changi" placeholder="도로명주소" /> 주소 : <input
+																type="text" id="sample4_jibunAddress" placeholder="지번주소"
+																class="changi"
+																value="${dlist[0].mem_addr} ${dlist[0].mem_detail}" />
+															<span class="changi" id="guide"
+																style="color: #999; display: none"></span>
+															<br /> 상세주소 :
+													<input type="text" id="sample4_detailAddress"
+																class="changi" placeholder="상세주소"
+																value="${dlist[0].mem_detail}">
+															<input type="hidden" id="sample4_extraAddress"
+																class="changi" placeholder="참고항목" />
+															<br />
+														</div>
+															<!--  -->
 
-													배송지명 : <input type="text" id="mem_delname"
-														placeholder="배송지명" value="${dlist[0].mem_delname }">
-													<br> 우편번호 : <input type="text" id="sample4_postcode"
-														placeholder="우편번호" value="${dlist[0].mem_zipcode}" /> <br>
-													<input type="hidden" id="sample4_roadAddress"
-														placeholder="도로명주소" /> 주소 : <input type="text"
-														id="sample4_jibunAddress" placeholder="지번주소"
-														value="${dlist[0].mem_addr} ${dlist[0].mem_detail}" /> <span
-														id="guide" style="color: #999; display: none"></span> <br />
-													상세주소 : <input type="text" id="sample4_detailAddress"
-														placeholder="상세주소" value="${dlist[0].mem_detail}">
-													<input type="hidden" id="sample4_extraAddress"
-														placeholder="참고항목" /> <br />
+
+														</c:when>
+														<c:when test="${not empty dlist }">
+															배송지명 : <input type="text" id="mem_delname" class="changi"
+																placeholder="배송지명" value="${dlist[0].mem_delname }">
+															<br> 우편번호 : <input type="text" id="sample4_postcode"
+																class="changi" placeholder="우편번호"
+																value="${dlist[0].mem_zipcode}" />
+															<br>
+															<input type="hidden" id="sample4_roadAddress"
+																class="changi" placeholder="도로명주소" /> 주소 : <input
+																type="text" id="sample4_jibunAddress" placeholder="지번주소"
+																class="changi"
+																value="${dlist[0].mem_addr} ${dlist[0].mem_detail}" />
+															<span class="changi" id="guide"
+																style="color: #999; display: none"></span>
+															<br /> 상세주소 :
+													<input type="text" id="sample4_detailAddress"
+																class="changi" placeholder="상세주소"
+																value="${dlist[0].mem_detail}">
+															<input type="hidden" id="sample4_extraAddress"
+																class="changi" placeholder="참고항목" />
+															<br />
+														</c:when>
+													</c:choose>
+											
 													<!--  -->
 													<a class="entypo-plus-wrapper"
 														onclick="sample4_execDaumPostcode()"> <img
@@ -75,9 +128,14 @@
 
 												</div>
 											</div>
-											<div class="my-del-button">
-												<button class="my-del">나의 배송지 확인</button>
-											</div>
+											<c:choose>
+												<c:when test="${not empty dlist }">
+													<div class="my-del-button">
+														<button class="my-del">나의 배송지 확인</button>
+													</div>
+												</c:when>
+											</c:choose>
+									
 										</div>
 
 									</div>
@@ -98,7 +156,7 @@
 									<!--  -->
 									<c:choose>
 										<c:when test="${clist.size() !=0 }">
-											<div class="text-wrapper-5" id = "coupon">보유 쿠폰 확인하기</div>
+											<div class="text-wrapper-5" id="coupon">보유 쿠폰 확인하기</div>
 										</c:when>
 										<c:when test="${clist.size() ==0 }">
 											<div class="text-wrapper-5">보유한 쿠폰이 없습니다.</div>
@@ -122,7 +180,7 @@
 							</div>
 							<div class="overlap-group-wrapper">
 								<input class="overlap-group" value="0">
-									<!-- <div class="text-wrapper-5">0</div> -->
+								<!-- <div class="text-wrapper-5">0</div> -->
 								</input>
 							</div>
 							<div class="text-wrapper-6">포인트</div>
@@ -352,8 +410,8 @@
 					<c:if test="${coupon.coupon_check == '미사용' }">
 				쿠폰명 : ${coupon.coupon_name }
 				</c:if>
-					<button class="selectCoupon-button" data-coupon_name="${coupon.coupon_name}"
-						>선택</button>
+					<button class="selectCoupon-button"
+						data-coupon_name="${coupon.coupon_name}">선택</button>
 				</div>
 			</c:forEach>
 		</div>
@@ -367,12 +425,13 @@
 	$(".close").on("click", function() {
 		$(".delmodal").hide();
 		$(".couponmodal").hide();
+
 	})
 	$("#coupon").on("click", function() {
 		$(".couponmodal").show();
 	})
 </script>
-
+		
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".selectdel-button").on("click", function() {
@@ -390,8 +449,7 @@
 			$(".delmodal").css("display", "none");
 
 		});
-		
-		
+
 		$(".selectCoupon-button").on("click", function() {
 			var coupon_name = $(this).data("coupon_name");
 			$("#coupon").text(coupon_name);
@@ -405,6 +463,8 @@
 <script>
 	//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 	function sample4_execDaumPostcode() {
+		$("#regnodel").hide();
+		$("#nodel").show();
 		new daum.Postcode(
 				{
 					oncomplete : function(data) {
@@ -461,6 +521,7 @@
 							guideTextBox.style.display = 'none';
 						}
 					}
+			
 				}).open();
 	}
 </script>
