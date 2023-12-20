@@ -46,10 +46,11 @@ public class WalletController {
 		MemVO mem = (MemVO) session.getAttribute("loginmem");
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
-		System.out.println(dlist);
+		System.out.println(clist);
 		model.addAttribute("clist", clist);
 		model.addAttribute("mem", mem);
 		model.addAttribute("dlist", dlist);
+		
 		return "wallet/pay";
 	}
 	

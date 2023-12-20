@@ -16,43 +16,26 @@
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 <style type="text/css">
-/* #my_modal {
+#myModal- {
 	display: none;
 	position: fixed;
 	z-index: 1;
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 1300px;
+	height: 100%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.4);
 	z-index: 10;
 }
 
-#modal_content {
+.modal-content {
 	background-color: #fefefe;
-	margin: 20% 20%;
+	margin: 15% auto;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 50%;
-	height: 15%;
+	width: 30%;
 }
-
-.modal_close_btn {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-	position: relative;
-	top: 300px;
-	left: -470px;
-}
-
-.modal_close_btn:hover, .close:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
-} */
 </style>
 </head>
 <body>
@@ -69,9 +52,7 @@
 											<div class="text-wrapper">배송정보</div>
 											<div class="div-wrapper">
 												<div class="frame-3">
-													<!-- 	<div class="text-wrapper-2">배송지를 추가하세요</div> -->
 
-													<!--  -->
 													배송지명 : <input type="text" id="mem_delname"
 														placeholder="배송지명" value="${dlist[0].mem_delname }">
 													<br> 우편번호 : <input type="text" id="sample4_postcode"
@@ -91,17 +72,11 @@
 														class="entypo-plus"
 														src="${cpath}/resources/images/wallet/plus.png" />
 													</a>
-													<%-- 				<a class="entypo-plus-wrapper"
-														onclick="openModal('my_modal', '${cpath}/my/selectDelivery.do')"
-													>
-													</a> --%>
-													<!--  -->
+
 												</div>
 											</div>
 											<div class="my-del-button">
-												<button class="my-del"
-													onclick="openModal('my_modal'">나의
-													배송지 확인</button>
+												<button class="my-del">나의 배송지 확인</button>
 											</div>
 										</div>
 
@@ -123,7 +98,7 @@
 									<!--  -->
 									<c:choose>
 										<c:when test="${clist.size() !=0 }">
-											<div class="text-wrapper-5">보유 쿠폰 확인하기</div>
+											<div class="text-wrapper-5" id = "coupon">보유 쿠폰 확인하기</div>
 										</c:when>
 										<c:when test="${clist.size() ==0 }">
 											<div class="text-wrapper-5">보유한 쿠폰이 없습니다.</div>
@@ -146,9 +121,9 @@
 								<div class="text-wrapper-7">포인트 적용</div>
 							</div>
 							<div class="overlap-group-wrapper">
-								<div class="overlap-group">
-									<div class="text-wrapper-5">0</div>
-								</div>
+								<input class="overlap-group" value="0">
+									<!-- <div class="text-wrapper-5">0</div> -->
+								</input>
 							</div>
 							<div class="text-wrapper-6">포인트</div>
 						</div>
@@ -351,46 +326,80 @@
 		</div>
 	</div>
 
-	<!-- 	<div id="my_modal" class="modal"
-		style="position: relative; display: none">
-		모달 내용 <span class="modal_close_btn">×</span>
-		<iframe id="modal_content" frameborder="0" width="100%" height="200px"></iframe>
-	</div> -->
 
-	<div id="myModal-" class="modal" style="display: none">
+	<div id="myModal-" class="delmodal" style="display: none">
 		<div class="modal-content">
-			<span class="close">&times;</span>
-			<h4>결제 상세 정보</h4>
-			<p>결제일: </p>
-			<p>결제자:</p>
-			<p>결제금액: </p>
-			<P>결제방법:</P>
+			<span class="close">&times;</span> <br />
+
+			<c:forEach items="${dlist }" var="del" varStatus="1">
+				<div style="border: 1px solid gray; border-radius: 30px;">
+					배송지명: ${del.mem_delname}<br> 우편번호: ${del.mem_zipcode}<br>
+					주소: ${del.mem_addr}<br> 상세주소: ${del.mem_detail}<br> <br>
+					<!-- 선택 버튼 -->
+					<button class="selectdel-button" data-delname="${del.mem_delname}"
+						data-zipcode="${del.mem_zipcode}" data-addr="${del.mem_addr}"
+						data-detail="${del.mem_detail}">선택</button>
+				</div>
+			</c:forEach>
 		</div>
 	</div>
 
-	<script>
-		var modal = document
-				.getElementById("myModal-");
-	//	var btn = document.getElementById("myBtn-");
-		var span = modal.getElementsByClassName("close")[0];
-
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
-
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
-	</script>
+	<div id="myModal-" class="couponmodal" style="display: none">
+		<div class="modal-content">
+			<span class="close">&times;</span> <br />
+			<c:forEach items="${clist }" var="coupon" varStatus="1">
+				<div style="border: 1px solid gray; border-radius: 30px;">
+					<c:if test="${coupon.coupon_check == '미사용' }">
+				쿠폰명 : ${coupon.coupon_name }
+				</c:if>
+					<button class="selectCoupon-button" data-coupon_name="${coupon.coupon_name}"
+						>선택</button>
+				</div>
+			</c:forEach>
+		</div>
+	</div>
 </body>
 
+<script type="text/javascript">
+	$(".my-del").on("click", function() {
+		$(".delmodal").show();
+	})
+	$(".close").on("click", function() {
+		$(".delmodal").hide();
+		$(".couponmodal").hide();
+	})
+	$("#coupon").on("click", function() {
+		$(".couponmodal").show();
+	})
+</script>
 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".selectdel-button").on("click", function() {
+
+			// 선택된 배송지 정보 가져오기
+			var selectedDelName = $(this).data("delname");
+			var selectedZipcode = $(this).data("zipcode");
+			var selectedAddr = $(this).data("addr");
+			var selectedDetail = $(this).data("detail");
+			$("#mem_delname").val(selectedDelName);
+			$("#sample4_postcode").val(selectedZipcode);
+			$("#sample4_jibunAddress").val(selectedAddr);
+			$("#sample4_detailAddress").val(selectedDetail);
+
+			$(".delmodal").css("display", "none");
+
+		});
+		
+		
+		$(".selectCoupon-button").on("click", function() {
+			var coupon_name = $(this).data("coupon_name");
+			$("#coupon").text(coupon_name);
+			$(".couponmodal").css("display", "none");
+
+		});
+	});
+</script>
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
@@ -458,7 +467,5 @@
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-<script type="text/javascript">
-	
-</script>
+
 </html>

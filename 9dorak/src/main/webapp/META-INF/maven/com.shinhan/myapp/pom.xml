@@ -16,11 +16,20 @@
 	</properties>
 	<!-- 원격 저장소를 추가 -->
 	<repositories>
+		<!-- 아임포트 결제 -->
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+
 		<repository>
 			<id>oracle</id>
 			<url>http://maven.jahia.org/maven2</url>
 		</repository>
 	</repositories>
+
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -201,12 +210,19 @@
 
 
 
-<!--이메일인증부분  -->
+		<!--이메일인증부분 -->
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4.7</version>
+		</dependency>
+
+		<!-- iamport -->
+		<dependency>
+			<groupId>com.github.iamport</groupId>
+			<artifactId>iamport-rest-client-java</artifactId>
+			<version>0.2.14</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
