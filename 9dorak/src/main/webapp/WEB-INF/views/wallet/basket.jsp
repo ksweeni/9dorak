@@ -20,49 +20,6 @@ String contextPath = request.getContextPath();
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
-<style type="text/css">
-/* Modal Styling */
-.modal {
-    display: none; /* Initially hidden */
-    position: fixed; /* Fixed position */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 1000; /* Ensure it's on top */
-}
-
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
-}
-
-/* Button Styling */
-.btn {
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.btn-cancel {
-    background-color: #ccc;
-}
-
-.btn-delete {
-    background-color: #fc8019;
-    color: #fff;
-}
-</style>
-
 </head>
 <body>
 	<div class="screen">
@@ -127,8 +84,6 @@ String contextPath = request.getContextPath();
 				</div>
 			</header>
 
-
-
 			<div class="case">
 				<div class="smallMenu">
 					<div class="text-wrapper-21">장바구니</div>
@@ -163,11 +118,13 @@ String contextPath = request.getContextPath();
                     						<div class="text-wrapper-14" id="dateIndex${status.count}">${basket.basket_date}</div>
                     						
 											<div class="group-2">
+											<!-- 체크 박스 -->
 												<div class="frame-19">
-													<input type="checkbox" class="checkbox-2" name="selection"
-														value="${basket.pro_no}" onchange="logCheckboxValue(this)">
+												
+													<input type="checkbox" class="checkbox-2" name="selection" onchange="logCheckboxValue(this)" onclick="basketList(${basket.basket_pro_count},'${basket.pro_name}',${basket.pro_price*basket.basket_pro_count},${status.count})">
 													<div class="text-wrapper-18">${basket.mem_name}</div>
 												</div>
+												
 												<div class="frame-16">
 													<div class="frame-17">
 														<img class="rectangle"
@@ -227,7 +184,6 @@ String contextPath = request.getContextPath();
 						<div class="frame-2">
 							<div class="frame-3">
 								<div class="text-wrapper-2">결제정보</div>
-								<div class="text-wrapper-3">2 Items</div>
 								
 								<div class="text-wrapper-3" id="total-items">
 				총 <span id="totalAmount"> </span>Items</div>
@@ -238,15 +194,10 @@ String contextPath = request.getContextPath();
 							<div class="frame-4">
 								<div class="frame-5">
 									<div class="frame-3">
-										<div class="frame-6">
-											<div class="text-wrapper-5">스팸마요 도시락</div>
-											<div class="text-wrapper-6">8000원</div>
-										</div>
+										<div class="frame-6" id="listParent1"></div>
 										<div class="frame-wrapper">
 											<div class="frame-7">
-												<div class="frame-8">
-													<div class="text-wrapper-7">1</div>
-												</div>
+												<div class="frame-8" id="listParent2"></div>
 											</div>
 										</div>
 									</div>
@@ -267,60 +218,14 @@ String contextPath = request.getContextPath();
 							<div class="text-wrapper-10">₹7,400.00</div>
 						</div>
 						<div class="frame-12">
-							<div class="text-wrapper-11">결제하기</div>
+							<div class="text-wrapper-11">주문하기</div>
 						</div>
 						</div>
 					</div>
+					
 				</div>
 			</div>
 		</div>
-
-<script>
-    var modal = document.getElementById('modal');
-    var btns = document.querySelectorAll(".deleteItemModalButton");
-    
-    btns.forEach(function(btn) {
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-    });
-
-    function closeModal() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
-    
-    function deleteBasket(mem_id, pro_no, index) {
-    	        console.log(mem_id, pro_no);
-
-    	        $.ajax({
-    	            type: "POST",
-    	            url: "${cpath}/wallet/deleteBasket.do",
-    	            data: {
-    	                mem_id: mem_id,
-    	                pro_no: pro_no
-    	            },
-    	            success: function(response) {
-    	                if (response === "성공!") {
-    	                    console.log("콘솔 - 삭제 성공!!");
-    	                    closeModal();
-    	                } else {
-    	                    console.log("콘솔 - 삭제 실패:", response);
-    	                }
-    	            },
-    	            error: function(error) {
-    	                console.log("콘솔 - AJAX 오류:", error);
-    	            }
-    	        });
-    	 }
-    
-    
-</script>
 
 		<footer class="footer">
 			<div class="footer-company-loco">
@@ -393,40 +298,46 @@ String contextPath = request.getContextPath();
 
 <script>
 
-	function logCheckboxValue(checkbox) {
-		console.log("Checkbox value: ", checkbox.value);
+function logCheckboxValue(checkbox) {
+	console.log("Checkbox value: ", checkbox.value);
+	
+	// 클릭된 체크박스의 값으로 새로운 div 요소를 생성하여 화면에 추가
+	var displayDiv = document.createElement('div');
+	displayDiv.textContent = checkbox.value;
+	
+	// 생성된 div를 어디에 표시할지 결정합니다. 예를 들면, body의 끝에 추가합니다.
+	document.body.appendChild(displayDiv);
+}
+
+var isChecked = false;
+
+function checkBoxSelector() {
+	if (isChecked) {
+		selectAll();
+		unselectAll();
+	} else {
+		selectAll();
 	}
+	isChecked = !isChecked;
+}
 
-	// 체크 박스 선택
-	var isChecked = false;
+function selectAll() {
+	var checkboxes = document.getElementsByName('selection');
 
-	function checkBoxSelector() {
-		if (isChecked) {
-			selectAll();
-			unselectAll();
-		} else {
-			selectAll();
-		}
-		isChecked = !isChecked;
+	for (var i = 0; i < checkboxes.length; i++) {
+		checkboxes[i].checked = true;
 	}
+}
 
-	function selectAll() {
-		var checkboxes = document.getElementsByName('selection');
+function unselectAll() {
+	var checkboxes = document.getElementsByName('selection');
 
-		for (var i = 0; i < checkboxes.length; i++) {
-			checkboxes[i].checked = true;
-		}
+	for (var i = 0; i < checkboxes.length; i++) {
+		checkboxes[i].checked = false;
 	}
+}
 
-	function unselectAll() {
-		var checkboxes = document.getElementsByName('selection');
-
-		for (var i = 0; i < checkboxes.length; i++) {
-			checkboxes[i].checked = false;
-		}
-	}
-
-	// 수량 및 총 가격 변화
+	// 장바구니 수량 증가
 	$(".entypo-plus-wrapper").on("click", function() {
 		var price = parseFloat($(this).find(".pro_price").val());
 	    var index = $(this).find(".index-num").val();
@@ -452,6 +363,7 @@ String contextPath = request.getContextPath();
 		});
 	});
 	
+	// 장바구니 수량 감소
 	$(".entypo-minus-wrapper").on("click", function() {
 	    var price = parseFloat($(this).find(".pro_price").val());
 	    var index = $(this).find(".index-num").val();
@@ -477,12 +389,13 @@ String contextPath = request.getContextPath();
 		});
 	});
 	
+	// 장바구니 수량 업데이트
 	function updateCounter(quantity,price,index) {
     	var totalAmount = quantity*price;
     	$('#totalAmount' + index).html(totalAmount);
     }
 	
-	// 날짜 중복 검사
+	// 날짜 중복 검사 .. 똑같은 날짜는 장바구니 목록에서 숨기기
 	$(document).ready(function() {
     	checkDuplicateDates();
 	});
@@ -499,6 +412,115 @@ String contextPath = request.getContextPath();
 	    });
 	}
 	
+	// 삭제 기능 모달 버튼
+	var modal = document.getElementById('modal');
+    var btns = document.querySelectorAll(".deleteItemModalButton");
+    
+    btns.forEach(function(btn) {
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    });
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+    
+    // 장바구니 삭제
+    function deleteBasket(mem_id, pro_no, index) {
+    	        console.log(mem_id, pro_no);
+
+    	        $.ajax({
+    	            type: "POST",
+    	            url: "${cpath}/wallet/deleteBasket.do",
+    	            data: {
+    	                mem_id: mem_id,
+    	                pro_no: pro_no
+    	            },
+    	            success: function(response) {
+    	                if (response === "성공!") {
+    	                    console.log("콘솔 - 삭제 성공!!");
+    	                    closeModal();
+    	                } else {
+    	                    console.log("콘솔 - 삭제 실패:", response);
+    	                }
+    	            },
+    	            error: function(error) {
+    	                console.log("콘솔 - AJAX 오류:", error);
+    	            }
+    	        });
+    	 }
+    
+	
+	// 선택 항목 장바구니 목록으로 합치기
+let updatedCount = {};
+
+function basketList(basket_pro_count, pro_name, totalAmount, index) {
+    console.log(basket_pro_count, pro_name, totalAmount, "index numb: "+index);
+
+    if (updatedCount[pro_name]) {
+    	console.log("이미 있는 상품의 갯수: "+updatedCount[pro_name]);
+    	updatedCount[pro_name] += basket_pro_count;
+    	console.log("새로 들어오는 상품 수: "+basket_pro_count);
+    	console.log("수정된 상품 수: "+updatedCount[pro_name]);
+        updateProCount(pro_name, updatedCount[pro_name]);
+    } else {
+    	updatedCount[pro_name] = basket_pro_count;
+        proName(pro_name);
+        proPrice(totalAmount);
+        proCount(basket_pro_count);
+    }
+}
+
+function updateProCount(pro_name, newCount) {
+    let proCountElements = document.querySelectorAll(".listProName");
+    console.log("updateProCount 함수 시작: "+proCountElements);
+    
+    for (let element of proCountElements) {
+        if (element.nextSibling && element.nextSibling.textContent === pro_name) {
+            console.log("이미 존재하는 상품 이름: " + pro_name);
+            
+            element.textContent = newCount;
+            return;  // 반복문을 종료하기 위해 return 문을 사용합니다.
+        }
+    }
+}
+
+
+
+function proName(pro_name) {
+    let items = document.createElement("div");
+    items.setAttribute("class", "listProName");
+    <%--
+    items.setAttribute("id", ${status.count});
+    --%>
+    items.textContent = pro_name;
+    document.querySelector("#listParent1").append(items);
+}
+
+function proPrice(totalAmount) {
+    let items = document.createElement("div");
+    items.setAttribute("class", "listProPrice");
+    items.textContent = totalAmount;
+    document.querySelector("#listParent1").append(items);
+}
+
+function proCount(basket_pro_count) {
+    let items = document.createElement("div");
+    items.setAttribute("class", "listProCount");
+    items.textContent = basket_pro_count;
+    document.querySelector("#listParent2").append(items);
+}
+
+
+
 </script>
+
 
 </html>
