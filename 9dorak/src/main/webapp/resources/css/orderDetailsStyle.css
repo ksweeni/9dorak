@@ -259,7 +259,7 @@
 	padding: 1px 1px;
 	position: absolute;
 	top: 184px;
-	left: 279px;
+	left: 337px;
 	background-color: #feae64;
 	border-radius: 8px;
 	border: none;
@@ -267,6 +267,9 @@
 	font-size: 14px;
 	text-align: center;
 	line-height: 31px;
+	text-shadow: 0px 4px 4px #00000040;
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .div-wrapper .cancel {

@@ -8,7 +8,7 @@ body {
 .familyList {
 	margin: -169px;
 	width: 55%;
-	margin-left: 100px;
+	margin-left: 480px;
 }
 
 .empty-message {
@@ -22,15 +22,25 @@ table {
 	width: 100%;
 	border-collapse: collapse;
 	margin-top: 10px;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
 	border: 1px solid #ddd;
 	padding: 8px;
+	text-align: center;
+	background-color: #FFF8F1;
 }
 
 th {
 	background-color: #f2f2f2;
+}
+
+th {
+    background-color: #feae64;
+    color: white;
 }
 
 * {
@@ -39,12 +49,8 @@ th {
 
 .u4358u4449u4363u4469u4369u4454u4363u4469u4364u4469-u4364u4469u4363u4469u4523-u4358u4457u4520u4357u4457u4520-u4364u4457u4370u4460
 	{
-	align-items: center;
-	background-color: var(- -white);
-	display: flex;
-	flex-direction: column;
 	height: 2000px;
-	width: 1440px;
+	width: 100%;
 }
 
 .hidden, .hidden * {
@@ -75,7 +81,7 @@ th {
 	left: 70px;
 	padding: 26px;
 	position: absolute;
-	top: 47px;
+	top: 41px;
 	width: 250px;
 }
 
@@ -167,7 +173,7 @@ th {
 	background-size: cover;
 	border-radius: 20px;
 	height: 40px;
-	left: 0;
+	left: 3px;
 	position: absolute;
 	top: 0;
 	width: 40px;
@@ -755,9 +761,15 @@ th {
 	margin-top: 70px;
 	min-height: 68px;
 	width: 700px;
-	margin-left: 175px;
+	margin-left: 475px;
 }
+
+.account-navigation, element.style {
+    position: relative;
+    top: 30px;
+    left: -32px;
 }
+
 
 .text-9 {
 	color: var(- -gravel);
