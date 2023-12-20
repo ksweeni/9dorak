@@ -72,9 +72,12 @@
 </style>
 
 <script>
-	function cancelPayment(orderDetailNo, payDate) {
+var imp_uid = "";
+	function cancelPayment(orderDetailNo, payDate, impUid) {
 		var paymentDate = new Date(payDate);
 		var currentDate = new Date();
+		
+		imp_uid = impUid;
 
 		var diffTime = Math.abs(currentDate - paymentDate);
 		var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -112,6 +115,7 @@
 
 		if (refundReason.trim() !== "") {
 			alert("결제를 취소하겠습니다. 환불 사유: " + refundReason);
+			alert(imp_uid);
 
 			closeRefundModal();
 		} else {
@@ -128,7 +132,7 @@
 					<div class="frame-2"></div>
 					<button class="primary-button" id="myBtn-${payment.ORDERDETAIL_NO}">결제상세</button>
 					<div class="cancel-wrapper"
-						onclick="cancelPayment('${payment.ORDERDETAIL_NO}', '${payment.PAY_DATE}')">결제취소</div>
+						onclick="cancelPayment('${payment.ORDERDETAIL_NO}', '${payment.PAY_DATE}','${payment.IMP_UID}')">결제취소</div>
 					<div class="text-wrapper-4">${payment.PAY_DEPOPRICE }</div>
 					<div class="text-wrapper-5">${payment.PRO_NAME }</div>
 					<div class="text-wrapper-6">${payment.PAY_DATE }</div>
