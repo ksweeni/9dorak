@@ -5,18 +5,18 @@
 }
 
 .e2099_2373 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .e2099_2463 {
     background-color: rgba(254.2806226015091, 137.48113721609116, 29.666072130203247,
 		0.6100000143051147);
     width: 214px;
-    height: 100%;
+    height: 150%;
     position: absolute;
     left: -1px;
     top: 0px;
@@ -50,10 +50,10 @@
 	transform: rotate(89.9999998114392deg);
 	width: 16px;
 	height: 1px;
-	position: absolute;
-	left: 115px;
-	top: 895px;
+	left: 112px;
+	top: -14px;
 	background-image: url(../images/admin/admin03.png);
+	position: relative;
 }
 
 .2101_2491 {
@@ -61,12 +61,12 @@
 }
 
 .e2099_2477 {
+	position: relative;
 	color: rgba(255, 255, 255, 1);
 	width: 51px;
 	height: 16px;
-	position: absolute;
-	left: 66px;
-	top: 887px;
+	left: 73px;
+	top: -4px;
 	/* font-family: Poppins; */
 	text-align: center;
 	font-size: 15px;
@@ -75,11 +75,11 @@
 }
 
 .e2099_2478 {
+    position: relative;
     width: 40px;
     height: 40px;
-    position: absolute;
-    left: 17px;
-    top: 875px;
+    left: 25px;
+    top: 25px;
     /* border: solid 1px black; */
     background-image: url(../images/admin/admin02.png);
 }
@@ -158,14 +158,14 @@
 	color: rgba(255, 255, 255, 1);
 	width: 62px;
 	height: 16px;
-	position: absolute;
-	left: 132px;
-	top: 887px;
+	left: 129px;
+	top: -24px;
 	/* font-family: Poppins; */
 	text-align: center;
 	font-size: 15px;
 	letter-spacing: 2;
 	cursor: pointer;
+	position: relative;
 }
 
 .e2099_2471 {
@@ -188,11 +188,11 @@
 }
 
 .e2099_2476 {
-	width: 214.00001525878906px;
-	height: 0px;
-	position: absolute;
-	left: -1px;
-	top: 854px;
+    width: 214.00001525878906px;
+    height: 0px;
+    /* position: absolute; */
+    left: -1px;
+    top: 854px;
 }
 
 .e2099_2483 {
@@ -224,7 +224,7 @@
 
 .e2099_2485 {
     background-color: rgba(254.00000005960464, 183.00000429153442, 117.00000062584877, 1);
-    width: 100%;
+    width: 150%;
     height: 52px;
     position: absolute;
     left: 203px;
@@ -233,8 +233,8 @@
 
 .e2099_2486 {
     background-color: rgba(255, 255, 255, 1);
-    width: 99%;
-    height: 100%;
+    width: 150%;
+    height: 150%;
     position: absolute;
     left: 208px;
     top: 43px;
@@ -250,4 +250,14 @@
 .e2099_2476 hr {
     border-color: white; /* 회색 색상 */
     width: 240px; /* 원하는 너비 */
+}
+
+.admin_login {
+    position: absolute;
+    width: 205px;
+    height: 100px;
+    left: 0%;
+    margin-top: 43%;
+    /* bottom: 100%; */
+    /* border: solid 1px black; */
 }

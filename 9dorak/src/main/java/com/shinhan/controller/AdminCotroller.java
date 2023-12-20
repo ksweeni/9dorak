@@ -10,8 +10,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.shinhan.dto.EventVO;
+import com.shinhan.dto.MemVO;
+import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.ProVO;
+import com.shinhan.dto.SubVO;
+import com.shinhan.model.EventService;
+import com.shinhan.model.MemService;
 import com.shinhan.model.MenuService;
+import com.shinhan.model.OrderService;
+import com.shinhan.model.SubService;
 
 @Controller
 @RequestMapping("admin")
@@ -19,6 +27,14 @@ public class AdminCotroller {
 	
 	@Autowired
 	MenuService mService;
+	@Autowired
+	MemService memService;
+	@Autowired
+	OrderService orderService;
+	@Autowired
+	SubService subService;
+	@Autowired
+	EventService eService;
 
 	private static final Logger logger = LoggerFactory.getLogger(AdminCotroller.class);
 	
@@ -30,17 +46,23 @@ public class AdminCotroller {
 	}
 	
 	@GetMapping("adminMember.do")
-	public String adminMember() {
+	public String adminMember(Model model) {
+		List<MemVO> memlist = memService.selectAll();
+		model.addAttribute("memlist", memlist);
 		return "admin/adminMember";
 	}
 	
 	@GetMapping("adminOrder.do")
-	public String adminOrder() {
+	public String adminOrder(Model model) {
+		List<OrderVO> orderlist = orderService.selectAll();
+		model.addAttribute("orderlist", orderlist);
 		return "admin/adminOrder";
 	}
 	
 	@GetMapping("adminSub.do")
-	public String adminSub() {
+	public String adminSub(Model model) {
+		List<SubVO> sublist = subService.selectAll();
+		model.addAttribute("sublist", sublist);
 		return "admin/adminSub";
 	}
 	
@@ -50,7 +72,9 @@ public class AdminCotroller {
 	}
 	
 	@GetMapping("adminEvent.do")
-	public String adminEvent() {
+	public String adminEvent(Model model) {
+		List<EventVO> elist = eService.selectAll();
+		model.addAttribute("elist", elist);
 		return "admin/adminEvent";
 	}
 	
