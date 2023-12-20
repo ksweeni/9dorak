@@ -407,7 +407,7 @@ String contextPath = request.getContextPath();
 	width: 88px;
 	height: 35px;
 	position: absolute;
-	left: 101px;
+	left: 116px;
 	top: 577px;
 }
 
@@ -417,7 +417,7 @@ String contextPath = request.getContextPath();
 	height: 35px;
 	position: absolute;
 	left: 16px;
-	top: 0px;
+	top: 10px;
 	/**/
 	text-align: left;
 	font-size: 30px;
@@ -437,8 +437,8 @@ String contextPath = request.getContextPath();
 	width: 78px;
 	height: 35px;
 	position: absolute;
-	left: 463px;
-	top: 577px;
+	left: 469px;
+	top: 588px;
 	/**/
 	text-align: left;
 	font-size: 30px;
@@ -458,9 +458,9 @@ String contextPath = request.getContextPath();
 	width: 200px;
 	height: 48px;
 	position: absolute;
-	left: 34.77336502075195px;
+	left: 50.77336502075195px;
 	top: 64px;
-	background-color: #ffffff;
+	background-color: #FFF8F1;
 	border-radius: 16px;
 	border: 2px solid;
 	border-color: #e7e7e7;
@@ -491,7 +491,7 @@ String contextPath = request.getContextPath();
 	width: 280px;
 	height: 42.3828125px;
 	position: absolute;
-	left: 0px;
+	left: 10px;
 	top: 0px;
 	border-radius: 8px;
 }
@@ -514,9 +514,9 @@ String contextPath = request.getContextPath();
 	width: 200px;
 	height: 48px;
 	position: absolute;
-	left: 54.42787551879883px;
+	left: 42.42787551879883px;
 	top: 64px;
-	background-color: #ffffff;
+	background-color: #FFF8F1;
 	border-radius: 16px;
 	border: 2px solid;
 	border-color: #e7e7e7;
@@ -1100,11 +1100,6 @@ String contextPath = request.getContextPath();
 						</div>
 						<input type="text" class="e178_725" id="people_code2" />
 					</div>
-
-					<!-- 				<input type="radio" name="category" value="가족">가족
-					  <input type="radio" name="category" value="지인">지인
-					 <input type="text"   id="people_code"/>
-					 <button onclick="registerPeople()">등록</button> -->
 				</div>
 			</div>
 			<div class=e178_629>
@@ -1226,7 +1221,7 @@ String contextPath = request.getContextPath();
 		try {
 			document.execCommand('copy');
 			console.log('코드가 복사되었습니다.');
-			alert("추천인 코드가 복사되었습니다.")
+			alert("추천인코드가 복사되었습니다.")
 		} catch (err) {
 			console.error('코드 복사 실패:', err);
 		}
