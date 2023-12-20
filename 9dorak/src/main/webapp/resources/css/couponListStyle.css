@@ -1,5 +1,46 @@
 @charset "UTF-8";
 
+.register-coupon {
+	display: none;
+	cursor: pointer;
+	color: white;
+	background: #FF8000;
+	text-align: center;
+	padding: 13px 16px;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+	position: relative;
+	width: 100px;
+	left: 290px;
+	border-radius: 30px;
+	top: 20px;
+}
+
+.register-coupon:hover {
+	background: white;
+	color: #FF8000;
+	border: 1px solid #FF8000;
+}
+
+.coupon-code {
+	display: none; padding-left : 20px;
+	border-radius: 16px;
+	border: 1px solid #D7D7E0;
+	background: #FFF;
+	width: 680px;
+	height: 57px;
+	top: 0px;
+	left: 0.15234375px;
+	position: relative;
+	padding-left: 20px;
+}
+
+.coupon-code:focus-visible {
+	outline: none;
+	box-shadow: 3px 2px 3px 0px lightgray;
+}
+
 .154_564 {
 	overflow: hidden;
 }
@@ -216,8 +257,8 @@
 
 .e154_583 {
 	display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+	flex-direction: column;
+	row-gap: 20px;
 	width: 950.1522827148438px;
 	height: 742px;
 	position: absolute;
@@ -227,8 +268,8 @@
 
 .e156_637 {
 	border-radius: 16px;
-    border: 1px solid var(--carbon-300, #D7D7E0);
-    background: #FFF;
+	border: 1px solid #D7D7E0;
+	background: #FFF;
 	width: 700px;
 	height: 57px;
 	position: relative;
@@ -319,17 +360,17 @@
 
 .e156_689 {
 	text-align: center;
-    background: #EFEFF4;
-    padding: 4px 8px;
-    border-radius: 4px;
-    color: rgba(0, 0, 0, 1);
-    width: fit-content;
-    height: 22px;
-    position: absolute;
-    left: 580.15234375px;
-    top: 15px;
-    font-size: 18px;
-    letter-spacing: 0;
+	background: #EFEFF4;
+	padding: 4px 8px;
+	border-radius: 4px;
+	color: rgba(0, 0, 0, 1);
+	width: fit-content;
+	height: 22px;
+	position: absolute;
+	left: 580.15234375px;
+	top: 15px;
+	font-size: 18px;
+	letter-spacing: 0;
 }
 
 .e156_688 {
@@ -346,7 +387,7 @@
 }
 
 .e154_591 {
-	cursor:pointer;
+	cursor: pointer;
 	width: 250px;
 	height: 270px;
 	position: absolute;
@@ -357,7 +398,6 @@
 	border: 2px solid;
 	border-color: #e7e7e7;
 }
-
 
 .154_591 {
 	border: 2px solid
@@ -383,8 +423,8 @@
 	top: 0px;
 	text-align: left;
 	letter-spacing: 0;
-
 }
+
 .e154_594 {
 	color: #F48E28;
 	font-size: 13px;
@@ -413,6 +453,11 @@
 }
 
 .e154_596 {
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
 	width: 198px;
 	height: 206px;
 	position: absolute;

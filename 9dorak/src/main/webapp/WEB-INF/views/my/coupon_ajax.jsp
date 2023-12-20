@@ -107,11 +107,9 @@ String contextPath = request.getContextPath();
 							<span class="e156_689">${item.coupon_check}</span>
 						</div>
 					</c:forEach>
-					<input type="text" id="coupon_code" name="coupon"
-						style="display: none; width: 200px; height: 50px; border: 1px solid gray; border-radius: 30px; position: relative; left: 246px; top: 20px"
+					<input type="text" id="coupon_code" class ="coupon-code" name="coupon"
 						placeholder="쿠폰번호를 입력해주세요!" />
-					<div
-						style="display: none; position: relative; width: 100px; left: 310px; top: 17px; border: 1px solid gray; border-radius: 30px; top: 40px"
+					<div class="register-coupon"
 						id="couponRegister">등록하기</div>
 
 					<div class="e156_688"></div>
