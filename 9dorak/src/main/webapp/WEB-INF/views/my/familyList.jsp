@@ -127,12 +127,14 @@
 			</c:if>
 
 			<c:if test="${not empty familyList}">
-				<table>
+				<button class="deleteButton" onclick="deleteSelect()">지인 삭제</button>
+				<table id="familyTable">
 					<thead>
 						<tr>
 							<th>지인 아이디</th>
 							<th>가족/지인</th>
 							<th>등록날짜</th>
+							<th>삭제</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -141,6 +143,7 @@
 								<td>${member.mem_id2}</td>
 								<td>${member.people_category}</td>
 								<td>${member.people_date}</td>
+								<td><input type="checkbox" class="rowCheckbox"></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -212,6 +215,17 @@
 			</div>
 		</footer>
 	</div>
-
 </body>
+<script>
+	function deleteSelect() {
+		var table = document.getElementById('familyTable');
+		var checkboxes = table.getElementsByClassName('rowCheckbox');
+
+		for (var i = checkboxes.length - 1; i >= 0; i--) {
+			if (checkboxes[i].checked) {
+				table.deleteRow(i + 1); // 체크된 행 삭제 (i + 1은 헤더 행을 무시하기 위한 값)
+			}
+		}
+	}
+</script>
 </html>
