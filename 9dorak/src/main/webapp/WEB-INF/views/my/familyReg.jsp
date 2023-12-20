@@ -21,7 +21,7 @@ String contextPath = request.getContextPath();
 
 .e178_596 {
 	background-color: rgba(255, 255, 255, 1);
-	width: 1440px;
+	width: 100%;
 	height: 1788px;
 	position: absolute;
 }
@@ -60,7 +60,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 314px;
 	top: 18px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -73,7 +73,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 421px;
 	top: 17px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -86,7 +86,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 541px;
 	top: 17px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -99,7 +99,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 648px;
 	top: 18px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -112,7 +112,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 755px;
 	top: 18px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -125,7 +125,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 951px;
 	top: 18px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -158,7 +158,7 @@ String contextPath = request.getContextPath();
 	width: 1298px;
 	height: 906px;
 	position: absolute;
-	left: 78px;
+	left: 130px;
 	top: 200px;
 }
 
@@ -177,7 +177,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 125.29296875px;
 	top: -9.094947017729282e-13px;
-	font-family: Roboto;
+	/**/
 	text-align: left;
 	font-size: 14px;
 	letter-spacing: 0;
@@ -191,7 +191,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 28.015625px;
-	font-family: Roboto;
+	/**/
 	text-align: left;
 	font-size: 32px;
 	letter-spacing: 0;
@@ -210,21 +210,21 @@ String contextPath = request.getContextPath();
 }
 
 .e178_613 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
 	width: 77.61075592041016px;
 	height: 18px;
 	position: absolute;
 	left: 2.05078125px;
 	top: -9.094947017729282e-13px;
-	font-family: Roboto;
+	/**/
 	text-align: left;
 	font-size: 14px;
 	letter-spacing: 0;
-	line-height: px;
+	font-weight: 600;
+    color: #484848;
 }
 
 .e178_614 {
-	width: 950px;
+	width: 750px;
 	height: 799px;
 	position: absolute;
 	left: 348px;
@@ -263,13 +263,12 @@ String contextPath = request.getContextPath();
 	width: 144px;
 	height: 18px;
 	position: absolute;
-	left: 57px;
+	left: 62px;
 	top: 11px;
-	font-family: Roboto;
+	/**/
 	text-align: left;
 	font-size: 20px;
 	letter-spacing: 0;
-	line-height: px;
 }
 
 .e178_728 {
@@ -295,7 +294,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 265px;
 	top: 280px;
-	font-family: Inter;
+	/**/
 	text-align: left;
 	font-size: 48px;
 	letter-spacing: 0;
@@ -319,7 +318,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 44px;
 	top: 423px;
-	font-family: Inter;
+	/**/
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0.800000011920929;
@@ -341,7 +340,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 76px;
 	top: 65px;
-	font-family: Inter;
+	/**/
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
@@ -354,7 +353,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 324px;
 	top: 65px;
-	font-family: Inter;
+	/**/
 	text-align: left;
 	font-size: 24px;
 	letter-spacing: 0;
@@ -367,7 +366,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 82px;
 	top: 5px;
-	font-family: Inter;
+	/**/
 	text-align: left;
 	font-size: 37px;
 	letter-spacing: 0;
@@ -419,7 +418,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 16px;
 	top: 0px;
-	font-family: Roboto;
+	/**/
 	text-align: left;
 	font-size: 30px;
 	letter-spacing: 0;
@@ -440,7 +439,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 463px;
 	top: 577px;
-	font-family: Roboto;
+	/**/
 	text-align: left;
 	font-size: 30px;
 	letter-spacing: 0;
@@ -478,9 +477,9 @@ String contextPath = request.getContextPath();
 	width: 144px;
 	height: 18px;
 	position: absolute;
-	left: 32px;
+	left: 41px;
 	top: 11px;
-	font-family: Roboto;
+	/**/
 	text-align: left;
 	font-size: 20px;
 	letter-spacing: 0;
@@ -535,9 +534,9 @@ String contextPath = request.getContextPath();
 	width: 138px;
 	height: 18px;
 	position: absolute;
-	left: 34px;
+	left: 41px;
 	top: 11px;
-	font-family: Roboto;
+	/**/
 	text-align: left;
 	font-size: 20px;
 	letter-spacing: 0;
@@ -595,11 +594,10 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 52px;
 	top: 0px;
-	font-family: Inter;
+	/**/
 	text-align: left;
 	font-size: 21px;
 	letter-spacing: 0;
-	line-height: px;
 }
 
 .e178_632 {
@@ -609,11 +607,10 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 53px;
 	top: 27px;
-	font-family: Inter;
+	/**/
 	text-align: left;
 	font-size: 13px;
 	letter-spacing: 0.800000011920929;
-	line-height: px;
 }
 
 .e178_633 {
@@ -655,11 +652,12 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 20px;
 	top: 15px;
-	font-family: Inter;
+	/**/
 	text-align: left;
-	font-size: 14px;
+	font-size: 15px;
 	letter-spacing: 0;
-	line-height: px;
+	text-shadow: 0px 4px 4px #00000040;
+	font-weight: 700;
 }
 
 .e178_635 {
@@ -677,15 +675,16 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 20px;
 	top: 15px;
-	font-family: Inter;
+	/**/
 	text-align: left;
-	font-size: 14px;
+	font-size: 15px;
 	letter-spacing: 0;
 	text-decoration: none;
+	text-shadow: 0px 4px 4px #00000040;
 }
 
 .e178_643 {
-	width: 1440px;
+	width: 100%;
 	height: 429px;
 	position: absolute;
 	left: 0px;
@@ -694,7 +693,7 @@ String contextPath = request.getContextPath();
 
 .e178_644 {
 	background-color: rgba(249.6875050663948, 249.900004863739, 255, 1);
-	width: 1440px;
+	width: 100%;
 	height: 429px;
 	position: absolute;
 	left: 0px;
@@ -724,7 +723,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 138px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -756,7 +755,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 26px;
 	letter-spacing: 0;
@@ -777,7 +776,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -790,7 +789,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 34px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -803,7 +802,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 68px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -824,7 +823,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 26px;
 	letter-spacing: 0;
@@ -845,7 +844,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -858,7 +857,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 34px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -871,7 +870,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 68px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -884,7 +883,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 102px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -897,7 +896,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 136px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -918,7 +917,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 26px;
 	letter-spacing: 0;
@@ -939,7 +938,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -952,7 +951,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 34px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -965,7 +964,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 68px;
-	font-family: Montserrat;
+	/**/
 	text-align: left;
 	font-size: 18px;
 	letter-spacing: 0;
@@ -1227,7 +1226,7 @@ String contextPath = request.getContextPath();
 		try {
 			document.execCommand('copy');
 			console.log('코드가 복사되었습니다.');
-			alert("코드가 복사되었습니다.")
+			alert("추천인 코드가 복사되었습니다.")
 		} catch (err) {
 			console.error('코드 복사 실패:', err);
 		}

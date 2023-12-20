@@ -26,6 +26,7 @@ import com.shinhan.dto.DeliveryHistoryVO;
 import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
+import com.shinhan.dto.PeopleVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.MyPageService;
 
@@ -156,11 +157,18 @@ public class MyPageController {
 	
 	//가족목록
 	@GetMapping("familyList.do")
-	public String familyList(Model model, HttpSession session) {
-		return "my/familyList";
+    public String familyList(Model model, HttpSession session) {
+        MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+        String mem_id = loginmem.getMem_id();
+
+        List<PeopleVO> familyList = mService.familyList(mem_id);
+        model.addAttribute("familyList", familyList);
+
+        return "my/familyList";
 	}
 
-
+	
+	
 	@RequestMapping(value = "updateMember.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String updateMember(Model model, HttpSession session, MemVO mem) {

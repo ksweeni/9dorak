@@ -72,11 +72,11 @@
 </style>
 
 <script>
-var imp_uid = "";
+	var imp_uid = "";
 	function cancelPayment(orderDetailNo, payDate, impUid) {
 		var paymentDate = new Date(payDate);
 		var currentDate = new Date();
-		
+
 		imp_uid = impUid;
 
 		var diffTime = Math.abs(currentDate - paymentDate);
@@ -90,7 +90,7 @@ var imp_uid = "";
 
 				if (refundReason !== null && refundReason.trim() !== "") {
 					alert("결제를 취소하겠습니다. 환불 사유: " + refundReason);
-					
+
 				} else {
 					alert("취소가 취소되었습니다.");
 				}
@@ -192,8 +192,8 @@ var imp_uid = "";
 		<span class="close" onclick="closeRefundModal()">&times;</span>
 		<h4>환불 사유 선택</h4>
 		<form id="refundForm">
-			<label for="refundReason">환불 사유:</label> <select
-				id="refundReason" name="refundReason" required>
+			<label for="refundReason">환불 사유:</label> <select id="refundReason"
+				name="refundReason" required>
 				<option value="상품 불만족">상품 불만족</option>
 				<option value="배송 지연">배송 지연</option>
 				<option value="상품 불량">상품 불량</option>

@@ -34,7 +34,7 @@ public class MyPageService {
 	public int deleteMember(String mem_id) {
 		// TODO Auto-generated method stub
 		return dao.deleteMember(mem_id);
-		
+
 	}
 
 	public List<MemDeliveryVO> getDelivery(String mem_id) {
@@ -44,7 +44,7 @@ public class MyPageService {
 
 	public int deleteDelivery(MemDeliveryVO memdel) {
 		// TODO Auto-generated method stub
-	
+
 		return dao.deleteDelivery(memdel);
 	}
 
@@ -58,22 +58,23 @@ public class MyPageService {
 		return dao.selectDelivery(memDel);
 	}
 
-
-	
 	//
-	
+
 	public List<ProVO> getLikeList(String mem_id) {
 		// TODO Auto-generated method stub
 		return dao.getLikeList(mem_id);
 	}
+
 	public List<CouponVO> getCoupon(String mem_id) {
 		// TODO Auto-generated method stub
 		return dao.getCoupon(mem_id);
 	}
+
 	public int couponCheck(CouponVO coupon) {
 		// TODO Auto-generated method stub
 		return dao.couponCheck(coupon);
 	}
+
 	public int couponRegUpdate(CouponVO coupon) {
 		// TODO Auto-generated method stub
 		return dao.couponRegUpdate(coupon);
@@ -88,31 +89,38 @@ public class MyPageService {
 		// TODO Auto-generated method stub
 		return dao.profileDelete(memVO);
 	}
-	
-	
-	//주문내역
-	public List<Map<String, Object>>  orderList(String mem_id) {		
+
+	// 주문내역
+	public List<Map<String, Object>> orderList(String mem_id) {
 		return dao.orderList(mem_id);
 	}
-	//결제내역
-	public List<Map<String, Object>>  paymentList(String mem_id) {		
+
+	// 결제내역
+	public List<Map<String, Object>> paymentList(String mem_id) {
 		return dao.paymentList(mem_id);
 	}
-	//결제취소내역
-	public List<Map<String, Object>>  cancelList(String mem_id) {		
+
+	// 결제취소내역
+	public List<Map<String, Object>> cancelList(String mem_id) {
 		return dao.cancelList(mem_id);
 	}
-	
-	// 가족등록	
-	public int insertPeople(Map<String,String> peopleData) {
+
+	// 가족등록
+	public int insertPeople(Map<String, String> peopleData) {
 		return dao.insertPeople(peopleData);
 	}
-    
-	// 배송 조회 내역
-	public List<DeliveryHistoryVO> AllDeliveryHistory(String mem_id){
-		return dao.AllDeliveryHistory(mem_id);
+
+	// 가족목록
+	public List<PeopleVO> familyList(String mem_id) {
+		return dao.familyList(mem_id);
 	}
 	
+
+	// 배송 조회 내역
+	public List<DeliveryHistoryVO> AllDeliveryHistory(String mem_id) {
+		return dao.AllDeliveryHistory(mem_id);
+	}
+
 	public List<DeliveryHistoryVO> getOrdersByMemberAndYear(String mem_id, int year) {
 		return dao.getOrdersByMemberAndYear(mem_id, year);
 	}
@@ -126,13 +134,5 @@ public class MyPageService {
 		// TODO Auto-generated method stub
 		return dao.updateDoranProfile(memVO);
 	}
-
-
-
-
-
-	
-
-
 
 }
