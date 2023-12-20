@@ -17,6 +17,12 @@ public class ProVO {
 	private String pro_name; //상품 이름
 	private int pro_price; //상품 가격
 	private int pro_like; //상품 좋아요 수
+	private String pro_nut; //상품 영양소
+	private int pro_sub; //상품 구독 여부
+	private Date pro_ed; //상품 유통 기한
+	private int pro_sc; //상품 재고 수
+	private int pro_view; //상품 조회 수
+	private int pro_delete; //상품 삭제 여부
 	private Date pro_rd; //상품 등록 날짜
 	private String pro_aller; //상품알레르기
 	private int pro_prot; //단백질

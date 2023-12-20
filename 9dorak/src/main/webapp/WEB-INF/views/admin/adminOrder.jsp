@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/adminStyle.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/adminOrderStyle.css?d"
 	type="text/css" />
 <meta charset="UTF-8">
 <script
@@ -37,4 +37,77 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+$(".e2099_2468").on("click", function() {
+	$.ajax({
+
+		url : "${cpath}/admin/adminMenu.do",
+		type : "get",
+		success : function(res) {
+			$("body").html(res);
+		}
+
+	})
+})
+
+$(".e2099_2469").on("click", function() {
+	$.ajax({
+
+		url : "${cpath}/admin/adminMember.do",
+		type : "get",
+		success : function(res) {
+			$("body").html(res);
+		}
+
+	})
+})
+
+$(".e2099_2472").on("click", function() {
+	$.ajax({
+
+		url : "${cpath}/admin/adminSub.do",
+		type : "get",
+		success : function(res) {
+			$("body").html(res);
+		}
+
+	})
+})
+
+$(".e2099_2473").on("click", function() {
+	$.ajax({
+
+		url : "${cpath}/admin/adminNotice.do",
+		type : "get",
+		success : function(res) {
+			$("body").html(res);
+		}
+
+	})
+})
+
+$(".e2099_2474").on("click", function() {
+	$.ajax({
+
+		url : "${cpath}/admin/adminEvent.do",
+		type : "get",
+		success : function(res) {
+			$("body").html(res);
+		}
+
+	})
+})
+
+$(".e2099_2475").on("click", function() {
+	$.ajax({
+
+		url : "${cpath}/admin/adminPoint.do",
+		type : "get",
+		success : function(res) {
+			$("body").html(res);
+		}
+
+	})
+})
+</script>
 </html>
