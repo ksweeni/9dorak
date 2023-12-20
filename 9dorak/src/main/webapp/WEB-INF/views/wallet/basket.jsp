@@ -58,7 +58,7 @@ String contextPath = request.getContextPath();
 }
 
 .btn-delete {
-    background-color: #f44336;
+    background-color: #fc8019;
     color: #fff;
 }
 </style>
@@ -206,11 +206,12 @@ String contextPath = request.getContextPath();
 														</div>
 													</div>
 												</div>
+																	<div class="deleteButton">
 																<input type='hidden' value='${basket.mem_id}' class='mem_id' />
 															    <input type='hidden' value='${basket.pro_no}' class='pro_no' />
 																<input type='hidden' value='${status.count}' class='index-num' />
-												<img id="deleteItemModal" src="${cpath}/resources/images/wallet/delete_btn.svg" />
-
+												<img class="deleteItemModalButton${status.count}" src="${cpath}/resources/images/wallet/delete_btn.svg" />
+																		</div>
 											</div>
 										</div>
 									</div>
@@ -275,13 +276,13 @@ String contextPath = request.getContextPath();
     <div class="modal-content">
         <p>정말로 삭제하시겠습니까?</p>
         <button class="btn btn-cancel" onclick="closeModal()">취소</button>
-        <button id="deleteItemModal" class="btn btn-delete">삭제</button>
+        <button class="btn btn-delete">삭제</button>
     </div>
 </div>
 
 <script>
     var modal = document.getElementById('modal');
-    var btn = document.getElementById("deleteItemModal");
+    var btn = document.querySelector(".deleteItemModalButton");
 
     btn.onclick = function() {
         modal.style.display = "block";
@@ -297,10 +298,9 @@ String contextPath = request.getContextPath();
         }
     }
     $(".btn-delete").on("click", function() {
-        var index = $(this).find("index").val();
-        var mem_id = $(this).find("mem_id").val();
-        var pro_no = $(this).find("pro_no").val();
-        console.log(index);
+    	var mem_id = $(this).closest(".deleteButton").find(".mem_id").val();
+        var pro_no = $(this).closest(".deleteButton").find(".pro_no").val();
+        console.log(mem_id, pro_no);
 
         $.ajax({
             type: "POST",
