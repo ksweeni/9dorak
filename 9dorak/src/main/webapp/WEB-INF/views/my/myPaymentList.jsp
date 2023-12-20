@@ -115,12 +115,32 @@ var imp_uid = "";
 
 		if (refundReason.trim() !== "") {
 			alert("결제를 취소하겠습니다. 환불 사유: " + refundReason);
-			alert(imp_uid);
-
+			cancelPay(imp_uid,refundReason);
 			closeRefundModal();
 		} else {
 			alert("환불 사유를 입력해주세요.");
 		}
+	}
+	
+	
+	function cancelPay(impUid, reason) {
+		$.ajax({
+			type : 'POST',
+			url : '${cpath}/cancelPay',
+			data : {
+				imp_uid : impUid,
+				refundReason : reason
+			}
+		}).done(function(data) {
+			console.log(data);
+
+			if (data) {
+				alert('결제가  성공적으로 취소되었습니다 ! ');
+			} else {
+				var msg = '결제 취소에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;
+				alert(msg);
+			}
+		});
 	}
 </script>
 
