@@ -77,7 +77,6 @@
 			</header>
 
 
-
 			<div class="overlap">
 				<div class="group">
 					<div class="overlap-group">
