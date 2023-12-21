@@ -30,7 +30,7 @@
 					<a href="${cpath }/review/reviewUpload.do">
 					<button class="primary-button">리뷰작성
 					</button></a>
-					<div class="text-wrapper-13">${order.ORDERDETAIL_PRICE}</div>
+					<div class="text-wrapper-13">${order.ORDER_PRICE}</div>
 					<div class="text-wrapper-14">${order.PRO_NAME }</div>
 					<div class="text-wrapper-15">${order.ORDER_DATE }</div>
 					<img class="rectangle" src="${cpath}/${order.PROIMAGE_IMAGE}" />

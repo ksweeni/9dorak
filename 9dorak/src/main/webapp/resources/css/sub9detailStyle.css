@@ -906,17 +906,18 @@
 }
 
 .e1547_3755 {
-	width: 400px;
-	height: 264.630859375px;
-	position: absolute;
-	left: 0.499969482421875px;
-	top: 0px;
-	border-radius: Symbol(figma.mixed) px;
-	background-image: url(../images/menu/food.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
+    width: 401px;
+    height: 263.630859px;
+    position: absolute;
+    left: -0.500031px;
+    top: -2px;
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-image: url(../images/main/sandwich_lunchbox01.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
 }
 
 .e1547_3756 {
@@ -1012,17 +1013,18 @@
 }
 
 .e1547_3764 {
-	width: 400px;
-	height: 264.630859375px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	border-radius: Symbol(figma.mixed) px;
-	background-image: url(../images/menu/food.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
+    width: 401px;
+    height: 263.630859px;
+    position: absolute;
+    left: -0.500031px;
+    top: -2px;
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-image: url(../images/main/sandwich_lunchbox01.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
 }
 
 .e1547_3765 {
@@ -1118,17 +1120,18 @@
 }
 
 .e1547_3773 {
-	width: 400px;
-	height: 264.630859375px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	border-radius: Symbol(figma.mixed) px;
-	background-image: url(../images/menu/food.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
+    width: 401px;
+    height: 263.630859px;
+    position: absolute;
+    left: -0.500031px;
+    top: -2px;
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-image: url(../images/main/sandwich_lunchbox01.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
 }
 
 .e1547_3774 {
@@ -1293,17 +1296,17 @@
 }
 
 .e1547_3727 {
-	width: 400px;
-	height: 264.630859375px;
-	position: absolute;
-	left: 0.499969482421875px;
-	top: 0px;
-	border-radius: Symbol(figma.mixed) px;
-	background-image: url(../images/menu/food.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
+    width: 401px;
+    height: 263.630859px;
+    position: absolute;
+    left: -0.500031px;
+    top: -2px;
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
 }
 
 .e1547_3728 {
@@ -1450,18 +1453,18 @@
 }
 
 .e1547_3790 {
-	font-weight: 700;
-	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-	width: auto;
-	max-width: 100%;
-	height: 29px;
-	position: absolute;
-	left: 65px;
-	top: 5px;
-	/* font-family: Montserrat; */
-	text-align: left;
-	font-size: 20px;
-	letter-spacing: 0;
+    font-weight: 700;
+    color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
+    width: auto;
+    max-width: 100%;
+    height: 29px;
+    position: absolute;
+    left: 27px;
+    top: 5px;
+    /* font-family: Montserrat; */
+    text-align: left;
+    font-size: 20px;
+    letter-spacing: 0;
 }
 
 .e1547_3739 {
