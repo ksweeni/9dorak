@@ -44,16 +44,16 @@ String contextPath = request.getContextPath();
 						</button>
 					</div>
 					<input class="e106_422" type="text" id="mem_id" name="mem_id"
-						value="${id }" ${kakao==1?"readonly":"" } placeholder="hcghcg17" />
-					<span class="e106_423">아이디</span>
+						value="${id }" ${kakao==1?"readonly":"" } placeholder="10자리 이하의 아이디를 입력하세요" />
+					<span class="e106_423" >아이디</span>
 				</div>
 				<div class=e106_418>
 					<input class="e106_419" type="password" id="mem_pw" name="mem_pw"
-						placeholder="1234" /> <span class="e106_420">비밀번호</span>
+						placeholder="비밀번호는 대소문자 및 특수문자를 입력하세요" /> <span class="e106_420">비밀번호</span>
 				</div>
 				<div class=e106_415>
 					<input class="e106_416" type="text" id="mem_name" name="mem_name"
-						placeholder="홍찬기" /> <span class="e106_417">이름</span>
+						placeholder="이름을 입력해주세요" /> <span class="e106_417">이름</span>
 				</div>
 				<div class=e106_412>
 					<input class="e106_413" type="email" name="mem_email"
@@ -68,10 +68,9 @@ String contextPath = request.getContextPath();
 					</div>
 					<input class="form-control mail-check-input" id="numInput"
 						placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6"
-						style="left: 373px; position: relative; top: 63px; display: none;">
+						style="display: none;">
 
-					<span id="mail-check-warn"
-						style="position: relative; left: 156px; top: 95px;"></span>
+					<span id="mail-check-warn" class="mail-check-warn"></span>
 
 				</div>
 
@@ -84,9 +83,9 @@ String contextPath = request.getContextPath();
 						placeholder="01096681635" /> <span class="e106_408">휴대폰</span>
 				</div>
 				<div class=e106_403>
-					<span class="e106_386">추천인 입력 <span style="color: orange;">(선택)</span></span>
+					<span class="e106_386">추천인 입력 <span class="choice">(선택)</span></span>
 					<div class="e106_456"></div>
-					<!-- 					<div class="e106_457"></div> -->
+				
 					<input class="e106_457" type="text" placeholder="추천인 코드 입력"
 						name="mem_code" id="mem_code" /> <span class="e106_458">고객님과
 						추천인 모두에게 구도락 포인트를 드려요!</span><span class="e106_459">추천인</span>
@@ -95,9 +94,7 @@ String contextPath = request.getContextPath();
 					<button class="e106_395" id="register">
 						<div class="v39_199">회원가입</div>
 					</button>
-					<!-- 
-					<div class="e106_395"></div>
-					<span class="e106_396">회원가입</span> -->
+			
 				</div>
 			</div>
 			<input type="hidden" value="idUncheck" id="idCheckValue" />
@@ -248,7 +245,7 @@ String contextPath = request.getContextPath();
 					$('#userEmail2').attr('onChange',
 							'this.selectedIndex = this.initialSelect');
 				} else {
-					$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
+					$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!');
 					$resultMsg.css('color', 'red');
 				}
 			});
