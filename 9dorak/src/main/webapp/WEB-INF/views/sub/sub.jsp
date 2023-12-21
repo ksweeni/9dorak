@@ -75,7 +75,7 @@
 	</header>
 	</div>
 		<div class="e1543_9999">
-		<span class="e1543_3020">원하는 구독 서비스를 선택하세요.</span><span
+		<span class="e1543_3020">원하는 구독 서비스를 선택하세요</span><span
 			class="e1543_3021">1) 한 달에 한 번 도시락이 배송됩니다.</span><span
 			class="e1567_2322">3) 구독은 언제든지 변경 또는 해지 가능합니다.</span><span
 			class="e1567_2321">2) 취향에 맞는 메뉴를 선택하시면 됩니다.</span>
