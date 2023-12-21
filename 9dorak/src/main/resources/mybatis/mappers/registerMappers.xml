@@ -29,12 +29,12 @@
 		INSERT INTO mem (
 		mem_id, mem_name, mem_bd, mem_email,
 		mem_phone,
-		mem_pw, mem_code, mem_addr, mem_image
+		mem_pw, mem_code, mem_image
 		) VALUES (
 		#{mem_id}, #{mem_name}
 		, #{mem_bd}, #{mem_email},
 		#{mem_phone}, #{mem_pw}, #{mem_code},
-		#{mem_addr}, 'resources/images/my/baseProfile.png'
+		'resources/images/my/baseProfile.png'
 		)
 	</insert>
 
