@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div

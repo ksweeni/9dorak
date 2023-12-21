@@ -41,7 +41,7 @@ progress {
 
 .screen .div {
 	background-color: white;
-	width: 1440px;
+	width: 100%;
 	height: fit-content;
 	position: relative;
 }
@@ -1249,4 +1249,11 @@ progress {
     height: 45px;
     top: 30px;
     left: 25px;
+}
+
+.body {
+    position: relative;
+    left: 49%;
+    transform: translateX(-39%);
+    top: -49px;
 }

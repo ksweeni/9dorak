@@ -17,7 +17,8 @@ String contextPath = request.getContextPath();
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<title>registerForm</title>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class=e106_187>

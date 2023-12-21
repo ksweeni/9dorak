@@ -238,8 +238,9 @@
 				</div>
 			</div><!-- filter -->
 		</div><!-- div -->
-
-			<footer class="footer">
+		</div>
+	</div><!-- screen -->
+			<footer class="footer" style="top:0rem;">
 				<div class="footer-company-loco">
 					<div class="footer-company">
 						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
@@ -304,9 +305,6 @@
 					</div>
 				</div>
 			</footer>
-
-		</div>
-	</div><!-- screen -->
 
 	<script type="text/javascript">
 		var chkCtgr = null;

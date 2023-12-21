@@ -9,11 +9,11 @@
 }
 
 .element .div {
-  background-color: var(--white);
-  overflow: hidden;
-  width: 1440px;
-  height: 3150px;
-/*   position: relative; */
+    background-color: var(--white);
+    overflow: hidden;
+    width: 1440px;
+    height: 2595px;
+    /* position: relative; */
 }
 
 .element .group {

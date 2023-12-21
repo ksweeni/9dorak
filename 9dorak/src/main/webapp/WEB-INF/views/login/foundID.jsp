@@ -11,6 +11,8 @@
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class="screen">

@@ -17,40 +17,57 @@ String contextPath = request.getContextPath();
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class="div-wrapper">
 		<div class="div">
-			<header class="header">
+<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
-						<div class="text-event">이벤트</div>
+						<div class="text-event">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+						</div>
 						<div class="text-menu">
 							<a class="header-a"
 								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
 						</div>
-						<div class="text-subscribe">구독하기</div>
-						<div class="text-yomo">요모조모</div>
+						<div class="text-subscribe">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+						</div>
+						<div class="text-yomo">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+						</div>
 						<div class="text-doran">
 							<a class="header-a"
 								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
 						</div>
 					</div>
-					<img class="untitled-2"
+					<a href="${pageContext.request.contextPath}/main.do"> <img
+						class="untitled-2"
 						src="${cpath}/resources/images/main/header-logo.png" />
+					</a>
 					<div class="div-3">
 						<div class="text-wrapper-28">
 							<c:choose>
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
-									<span
-										style="font-weight: bold; left: 2.5rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_id}" /> 님
-									</span>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/myPage.do"
+										style="font-weight: bold; left: -1rem; position: relative;">
+										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+									</a>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/logout.do"
+										style="position: relative; left: -1rem">로그아웃</a>
 								</c:when>
 								<c:otherwise>
 									<a class="header-a"
-										href="${pageContext.request.contextPath}/login/login.do">로그인</a> |
-            <a class="header-a"
+										href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
 										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
 								</c:otherwise>
 							</c:choose>
@@ -211,7 +228,10 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</div>
-			<footer class="footer">
+		</div>
+		<!-- div -->
+	</div>
+				<footer class="footer" style="top:30rem;">
 				<div class="footer-company-loco">
 					<div class="footer-company">
 						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
@@ -275,10 +295,6 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</footer>
-
-		</div>
-		<!-- div -->
-	</div>
 	<!-- div-wrapper -->
 </body>
 <script type="text/javascript">
