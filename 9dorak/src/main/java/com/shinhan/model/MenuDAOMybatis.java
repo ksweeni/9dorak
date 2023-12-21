@@ -70,25 +70,25 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 	
-	public List<Map<String, Object>> selectProReviewTxt(Map<String, Object> map) {
-        List<Map<String, Object>> txtrlist = sqlSession.selectList(NAMESPACE + "selectProReviewTxt", map);
-        //System.out.println("DAO rlist:" + rlist);
-        return txtrlist;
-    }
-	
-	public List<Map<String, Object>> selectProReviewPth(Map<String, Object> map) {
-		List<Map<String, Object>> phtrlist = sqlSession.selectList(NAMESPACE + "selectProReviewPth", map);
-		return phtrlist;
-	}
-	
-	public Map<String, Object> proRevwCnt(int prono) {
-		
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("totCnt", sqlSession.selectOne(NAMESPACE+ "proRevwTotCnt", prono));
-		map.put("phtCnt", sqlSession.selectOne(NAMESPACE+ "proRevwPhtCnt", prono));
-		map.put("txtCnt", sqlSession.selectOne(NAMESPACE+ "proRevwTxtCnt", prono));
-		return map;
-	}
+//	public List<Map<String, Object>> selectProReviewTxt(Map<String, Object> map) {
+//        List<Map<String, Object>> txtrlist = sqlSession.selectList(NAMESPACE + "selectProReviewTxt", map);
+//        //System.out.println("DAO rlist:" + rlist);
+//        return txtrlist;
+//    }
+//	
+//	public List<Map<String, Object>> selectProReviewPth(Map<String, Object> map) {
+//		List<Map<String, Object>> phtrlist = sqlSession.selectList(NAMESPACE + "selectProReviewPth", map);
+//		return phtrlist;
+//	}
+//	
+//	public Map<String, Object> proRevwCnt(int prono) {
+//		
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		map.put("totCnt", sqlSession.selectOne(NAMESPACE+ "proRevwTotCnt", prono));
+//		map.put("phtCnt", sqlSession.selectOne(NAMESPACE+ "proRevwPhtCnt", prono));
+//		map.put("txtCnt", sqlSession.selectOne(NAMESPACE+ "proRevwTxtCnt", prono));
+//		return map;
+//	}
 		
 	public int selectReserveYn(Map<String, Object> map) {
 		return sqlSession.selectOne(NAMESPACE + "selectReserveYn", map);
@@ -114,20 +114,20 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 
-	public List<Map<String, Object>> selectMoaview(int prono) {
-		List<Map<String, Object>> moalist = sqlSession.selectList(NAMESPACE + "selectMoaview", prono);
-		return moalist;
-	}
-
-	public MemreviewVO selectMoaFrist(int prono) {
-		MemreviewVO rev = sqlSession.selectOne(NAMESPACE + "selectMoaFrist", prono);
-		return rev;
-	}
-
-	public MemreviewVO selectMoaSelected(int revno) {
-		MemreviewVO rev = sqlSession.selectOne(NAMESPACE + "selectMoaSelected", revno);
-		return rev;
-	}
+//	public List<Map<String, Object>> selectMoaview(int prono) {
+//		List<Map<String, Object>> moalist = sqlSession.selectList(NAMESPACE + "selectMoaview", prono);
+//		return moalist;
+//	}
+//
+//	public MemreviewVO selectMoaFrist(int prono) {
+//		MemreviewVO rev = sqlSession.selectOne(NAMESPACE + "selectMoaFrist", prono);
+//		return rev;
+//	}
+//
+//	public MemreviewVO selectMoaSelected(int revno) {
+//		MemreviewVO rev = sqlSession.selectOne(NAMESPACE + "selectMoaSelected", revno);
+//		return rev;
+//	}
 
 
 }
