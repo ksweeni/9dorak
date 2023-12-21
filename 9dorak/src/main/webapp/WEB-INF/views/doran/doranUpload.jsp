@@ -58,7 +58,7 @@ String contextPath = request.getContextPath();
 									<a class="header-a"
 										href="${pageContext.request.contextPath}/my/myPage.do"
 										style="font-weight: bold; left: -1rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
 									</a>
 									<a class="header-a"
 										href="${pageContext.request.contextPath}/my/logout.do"
