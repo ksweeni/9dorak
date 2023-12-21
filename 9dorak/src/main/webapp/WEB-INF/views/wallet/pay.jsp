@@ -16,39 +16,6 @@
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 <style type="text/css">
-#myModal- {
-	display: none;
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.4);
-	z-index: 10;
-}
-
-.modal-content {
-	background-color: #fefefe;
-	margin: 15% auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 30%;
-}
-
-.changi {
-	position: relative;
-	width: 200px;
-	height: 20px;
-	background-color: #ffffff;
-	border-radius: 5px;
-	border-color: lightgray;
-}
-
-.close{
-	float: right;
-}
 </style>
 </head>
 <body>
@@ -67,45 +34,43 @@
 												<div class="frame-3">
 													<c:choose>
 														<c:when test="${empty dlist }">
-														<span id = "regnodel">등록된 배송지가 없습니다.</span>
-														
-														
-														<!--  -->
-														<div id="nodel" style="display: none">
-														우편번호 : <input type="text" id="sample4_postcode"
-																class="changi" placeholder="우편번호"
-																value="${dlist[0].mem_zipcode}" />
-															<br>
-															<input type="hidden" id="sample4_roadAddress"
-																class="changi" placeholder="도로명주소" /> 주소 : <input
-																type="text" id="sample4_jibunAddress" placeholder="지번주소"
-																class="changi"
-																value="${dlist[0].mem_addr} ${dlist[0].mem_detail}" />
-															<span class="changi" id="guide"
-																style="color: #999; display: none"></span>
-															<br /> 상세주소 :
-													<input type="text" id="sample4_detailAddress"
-																class="changi" placeholder="상세주소"
-																value="${dlist[0].mem_detail}">
-															<input type="hidden" id="sample4_extraAddress"
-																class="changi" placeholder="참고항목" />
-															<br />
-														</div>
+															<span id="regnodel">등록된 배송지가 없습니다.</span>
+
+
+															<!--  -->
+															<div id="nodel" style="display: none">
+																우편번호 : <input type="text" id="sample4_postcode"
+																	class="changi" placeholder="우편번호"
+																	value="${dlist[0].mem_zipcode}" readonly="readonly" />
+																<br> <input type="hidden" id="sample4_roadAddress"
+																	class="changi" placeholder="도로명주소" readonly="readonly" />
+																주소 : <input type="text" id="sample4_jibunAddress"
+																	placeholder="지번주소" class="changi" readonly="readonly"
+																	value="${dlist[0].mem_addr} ${dlist[0].mem_detail}" />
+																<span class="changi" id="guide"
+																	style="color: #999; display: none"></span> <br /> 상세주소
+																: <input type="text" id="sample4_detailAddress"
+																	class="changi" placeholder="상세주소"
+																	value="${dlist[0].mem_detail}"> <input
+																	type="hidden" id="sample4_extraAddress" class="changi"
+																	readonly="readonly" placeholder="참고항목" /> <br />
+															</div>
 															<!--  -->
 
 
 														</c:when>
 														<c:when test="${not empty dlist }">
 															배송지명 : <input type="text" id="mem_delname" class="changi"
-																placeholder="배송지명" value="${dlist[0].mem_delname }">
+																readonly="readonly" placeholder="배송지명"
+																value="${dlist[0].mem_delname }">
 															<br> 우편번호 : <input type="text" id="sample4_postcode"
 																class="changi" placeholder="우편번호"
-																value="${dlist[0].mem_zipcode}" />
+																value="${dlist[0].mem_zipcode}" readonly="readonly" />
 															<br>
 															<input type="hidden" id="sample4_roadAddress"
-																class="changi" placeholder="도로명주소" /> 주소 : <input
+																class="changi" placeholder="도로명주소" readonly="readonly" /> 주소 : <input
 																type="text" id="sample4_jibunAddress" placeholder="지번주소"
-																class="changi"
+																class="changi" readonly="readonly"
 																value="${dlist[0].mem_addr} ${dlist[0].mem_detail}" />
 															<span class="changi" id="guide"
 																style="color: #999; display: none"></span>
@@ -114,11 +79,11 @@
 																class="changi" placeholder="상세주소"
 																value="${dlist[0].mem_detail}">
 															<input type="hidden" id="sample4_extraAddress"
-																class="changi" placeholder="참고항목" />
+																readonly="readonly" class="changi" placeholder="참고항목" />
 															<br />
 														</c:when>
 													</c:choose>
-											
+
 													<!--  -->
 													<a class="entypo-plus-wrapper"
 														onclick="sample4_execDaumPostcode()"> <img
@@ -135,7 +100,7 @@
 													</div>
 												</c:when>
 											</c:choose>
-									
+
 										</div>
 
 									</div>
@@ -153,7 +118,6 @@
 							</div>
 							<div class="overlap-group-wrapper">
 								<div class="overlap-group">
-									<!--  -->
 									<c:choose>
 										<c:when test="${clist.size() !=0 }">
 											<div class="text-wrapper-5" id="coupon">보유 쿠폰 확인하기</div>
@@ -162,8 +126,6 @@
 											<div class="text-wrapper-5">보유한 쿠폰이 없습니다.</div>
 										</c:when>
 									</c:choose>
-
-									<!--  -->
 								</div>
 							</div>
 							<div class="text-wrapper-6">쿠폰</div>
@@ -179,49 +141,47 @@
 								<div class="text-wrapper-7">포인트 적용</div>
 							</div>
 							<div class="overlap-group-wrapper">
-								<input class="overlap-group" value="0">
-								<!-- <div class="text-wrapper-5">0</div> -->
-								</input>
+								<input class="overlap-group" placeholder="포인트를 입력해주세요">
+
 							</div>
 							<div class="text-wrapper-6">포인트</div>
 						</div>
 					</div>
-					<div class="payment">
-						<div class="view-wrapper">
-							<div class="view">
-								<input type="checkbox" class="checkbox" id="creditCard"
-									name="paymentMethod" value="creditCard"> <label
-									for="creditCard" class="text-wrapper-8">신용카드</label>
-							</div>
-						</div>
-						<div class="frame-5">
-							<div class="view-2">
-								<input type="checkbox" class="checkbox" id="bankTransfer1"
-									name="paymentMethod" value="bankTransfer1"> <label
-									for="bankTransfer1" class="text-wrapper-8">계좌 이체</label>
-							</div>
-						</div>
-						<div class="frame-6">
-							<div class="view-2">
-								<input type="checkbox" class="checkbox" id="bankTransfer2"
-									name="paymentMethod" value="bankTransfer2"> <label
-									for="bankTransfer2" class="text-wrapper-8">계좌 이체</label>
-							</div>
-						</div>
-						<div class="text-wrapper-6">결제수단</div>
-					</div>
+
 
 				</div>
 				<div class="info">
 					<div class="frame-7">
 						<div class="frame-8">
-							<div class="text-wrapper-9">결제정보</div>
-							<div class="text-wrapper-10">total 2 Items</div>
+							<div class="text-wrapper-9"
+								style="position: relative; left: 69px;">결제정보</div>
+							<div class="text-wrapper-10">total ${ olist.size()} Items</div>
 						</div>
 					</div>
 					<div class="frame-9">
-						<div class="text-wrapper-11">주문 금액</div>
-						<div class="text-wrapper-11">83,400 원</div>
+						<div class="text-wrapper-11">
+
+							<table style="bottom: 40px; position: relative;">
+								<tr>
+									<th>상품명</th>
+									<th>주문 가격</th>
+									<th>주문 수량</th>
+								</tr>
+								<c:forEach items="${olist}" var="ol">
+									<tr style="text-align: center;">
+										<td>${ol.pro_name}</td>
+										<td>${ol.order_price}</td>
+										<td>${ol.orderdetail_count}</td>
+									</tr>
+								</c:forEach>
+							</table>
+
+
+						</div>
+						<div class="text-wrapper-11"
+							style="position: relative; bottom: 39px; left: 60px;">주문 금액</div>
+						<div class="text-wrapper-11" style="right: 15px; bottom: 17px">${total }
+							원</div>
 					</div>
 					<div class="group-3">
 						<div class="frame-10">
@@ -241,7 +201,7 @@
 					<div class="group-4">
 						<div class="frame-10">
 							<div class="text-wrapper-15">총 결제금액</div>
-							<div class="text-wrapper-15">81,900 원</div>
+							<div class="text-wrapper-15">${total }원</div>
 						</div>
 						<div class="group-5">
 							<p class="element-p">
@@ -311,7 +271,6 @@
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
 								<div class="ellipse-light"></div>
-								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
 					</div>
@@ -385,12 +344,11 @@
 	</div>
 
 
-	<div id="myModal-" class="delmodal" style="display: none">
+	<div id="myModal-" class="delmodal">
 		<div class="modal-content">
 			<span class="close">&times;</span> <br />
-
-			<c:forEach items="${dlist }" var="del" varStatus="1">
-				<div style="border: 1px solid gray; border-radius: 30px;">
+			<c:forEach items="${dlist}" var="del" varStatus="1">
+				<div class="inp">
 					배송지명: ${del.mem_delname}<br> 우편번호: ${del.mem_zipcode}<br>
 					주소: ${del.mem_addr}<br> 상세주소: ${del.mem_detail}<br> <br>
 					<!-- 선택 버튼 -->
@@ -401,23 +359,36 @@
 			</c:forEach>
 		</div>
 	</div>
-
-	<div id="myModal-" class="couponmodal" style="display: none">
+	<div id="myModal-" class="couponmodal">
 		<div class="modal-content">
 			<span class="close">&times;</span> <br />
-			<c:forEach items="${clist }" var="coupon" varStatus="1">
-				<div style="border: 1px solid gray; border-radius: 30px;">
-					<c:if test="${coupon.coupon_check == '미사용' }">
-				쿠폰명 : ${coupon.coupon_name }
-				</c:if>
+			<c:forEach items="${clist}" var="coupon" varStatus="1">
+				<div class="inp">
+					<c:if test="${coupon.coupon_check == '미사용'}">
+                    쿠폰명: ${coupon.coupon_name}
+                </c:if>
 					<button class="selectCoupon-button"
 						data-coupon_name="${coupon.coupon_name}">선택</button>
 				</div>
 			</c:forEach>
 		</div>
 	</div>
-</body>
 
+
+</body>
+<script type="text/javascript">
+
+ 	$(".frame-4").on("click",function(){
+ 		var text = $(".text-wrapper-5").text();
+ 		if( text === "보유 쿠폰 확인하기" || text==="보유한 쿠폰이 없습니다."){
+ 			return ;
+ 		} 
+ 		
+ 		alert(text.substring(4));
+ 		
+ 	})//
+
+</script>
 <script type="text/javascript">
 	$(".my-del").on("click", function() {
 		$(".delmodal").show();
@@ -431,7 +402,7 @@
 		$(".couponmodal").show();
 	})
 </script>
-		
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".selectdel-button").on("click", function() {
@@ -521,7 +492,7 @@
 							guideTextBox.style.display = 'none';
 						}
 					}
-			
+
 				}).open();
 	}
 </script>

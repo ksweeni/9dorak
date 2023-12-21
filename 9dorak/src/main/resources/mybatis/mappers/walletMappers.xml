@@ -14,7 +14,8 @@
 
 	<!-- 장바구니 목록 -->
 	<select id="getBasket" resultType="basketvo">
-		select b.basket_pro_count, p.pro_name, p.pro_price
+		select b.basket_pro_count,
+		p.pro_name, p.pro_price
 		from basket b join pro p on p.pro_no = b.pro_no
 		where mem_id=#{mem_id} order by b.pro_no
 	</select>
@@ -23,87 +24,137 @@
 	<select id="getProImage" parameterType="String">
 		<![CDATA[ select proimage_image from proimage where pro_no=#{pro_no} and rownum <= 1 ]]>
 	</select>
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	<!-- 장바구니 삭제 -->
 	<delete id="deleteBasket" parameterType="basketvo">
-		delete from basket where mem_id=#{mem_id} and pro_no=#{pro_no}
+		delete from basket where
+		mem_id=#{mem_id} and pro_no=#{pro_no}
 	</delete>
-	
+
 	<!-- 장바구니 수량 수정 -->
 	<update id="updateBasket" parameterType="basketvo">
-		update basket set basket_pro_count=#{basket_pro_count}, basket_date=sysdate
-		where mem_id=#{mem_id} and pro_no=#{pro_no}
+		update basket set
+		basket_pro_count=#{basket_pro_count}, basket_date=sysdate
+		where
+		mem_id=#{mem_id} and pro_no=#{pro_no}
 	</update>
-	
+
 	<!-- 상품리뷰 맵 -->
 	<resultMap type="HashMap" id="basketMap">
-    	<id column="mem_name" property="mem_name"/>
-    	<id column="pro_no" property="pro_no"/>
-    	<id column="pro_name" property="pro_name"/>
-    	<id column="basket_pro_count" property="basket_pro_count"/>
-    	<id column="pro_price" property="pro_price"/>
-    	<id column="basket_date" property="basket_date" javaType="java.lang.String"/>
-    	<id column="proimage_image" property="proimage_image"/>
-    	<id column="mem_id" property="mem_id"/>
-    </resultMap>
-	
+		<id column="mem_name" property="mem_name" />
+		<id column="pro_no" property="pro_no" />
+		<id column="pro_name" property="pro_name" />
+		<id column="basket_pro_count" property="basket_pro_count" />
+		<id column="pro_price" property="pro_price" />
+		<id column="basket_date" property="basket_date"
+			javaType="java.lang.String" />
+		<id column="proimage_image" property="proimage_image" />
+		<id column="mem_id" property="mem_id" />
+	</resultMap>
+
 	<!-- 지인 존재 여부 검색 -->
-	<select id="peopleCheck" parameterType="String" resultType="peoplevo">
+	<select id="peopleCheck" parameterType="String"
+		resultType="peoplevo">
 		select mem_id2 from people where mem_id=#{mem_id}
 	</select>
-	
+
 	<!-- 지인 있을 때 장바구니 목록 조회 -->
-	<select id="peopleBasket" parameterType="String" resultMap="basketMap">
-with ranked_proimages as (
-select m.mem_id m.mem_name, b.pro_no, p.pro_name, b.basket_pro_count, p.pro_price, to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"') basket_date, i.proimage_image, row_number() over (partition by m.mem_name, b.pro_no order by i.proimage_image) as image_rank
-from mem m
-join basket b on m.mem_id = b.mem_id
-join pro p on b.pro_no = p.pro_no
-join proimage i on p.pro_no = i.pro_no
-where m.mem_id in (select pe.mem_id2 from people pe join mem m on pe.mem_id=m.mem_id where m.mem_id=#{mem_id})
-)
-select mem_name, pro_no, pro_name, basket_pro_count, pro_price, basket_date, proimage_image, mem_id
-from ranked_proimages
-where image_rank=1
-order by basket_date desc
+	<select id="peopleBasket" parameterType="String"
+		resultMap="basketMap">
+		with ranked_proimages as (
+		select m.mem_id m.mem_name,
+		b.pro_no, p.pro_name, b.basket_pro_count,
+		p.pro_price,
+		to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"')
+		basket_date,
+		i.proimage_image, row_number() over (partition by
+		m.mem_name, b.pro_no
+		order by i.proimage_image) as image_rank
+		from mem m
+		join basket b on
+		m.mem_id = b.mem_id
+		join pro p on b.pro_no = p.pro_no
+		join proimage i on
+		p.pro_no = i.pro_no
+		where m.mem_id in (select pe.mem_id2 from people pe
+		join mem m on
+		pe.mem_id=m.mem_id where m.mem_id=#{mem_id})
+		)
+		select
+		mem_name, pro_no, pro_name, basket_pro_count, pro_price, basket_date,
+		proimage_image, mem_id
+		from ranked_proimages
+		where image_rank=1
+		order by
+		basket_date desc
 	</select>
-	
+
 	<!-- 지인 없을 때 장바구니 목록 조회 -->
-	<select id="noPeopleBasket" parameterType="String" resultMap="basketMap">
-with ranked_proimages as (
-select m.mem_id, m.mem_name, b.pro_no, p.pro_name, b.basket_pro_count, p.pro_price, to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"') basket_date, i.proimage_image, row_number() over (partition by m.mem_name, b.pro_no order by i.proimage_image) as image_rank
-from mem m
-join basket b on m.mem_id = b.mem_id
-join pro p on b.pro_no = p.pro_no
-join proimage i on p.pro_no = i.pro_no
-where m.mem_id=#{mem_id}
-)
-select mem_name, pro_no, pro_name, basket_pro_count, pro_price, basket_date, proimage_image, mem_id
-from ranked_proimages
-where image_rank = 1
-order by basket_date desc
+	<select id="noPeopleBasket" parameterType="String"
+		resultMap="basketMap">
+		with ranked_proimages as (
+		select m.mem_id, m.mem_name,
+		b.pro_no, p.pro_name, b.basket_pro_count,
+		p.pro_price,
+		to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"')
+		basket_date,
+		i.proimage_image, row_number() over (partition by
+		m.mem_name, b.pro_no
+		order by i.proimage_image) as image_rank
+		from mem m
+		join basket b on
+		m.mem_id = b.mem_id
+		join pro p on b.pro_no = p.pro_no
+		join proimage i on
+		p.pro_no = i.pro_no
+		where m.mem_id=#{mem_id}
+		)
+		select mem_name, pro_no,
+		pro_name, basket_pro_count, pro_price, basket_date,
+		proimage_image,
+		mem_id
+		from ranked_proimages
+		where image_rank = 1
+		order by basket_date
+		desc
 	</select>
-	
+
 	<!-- 나랑 지인 전부 합친 장바구니 목록 -->
-	<select id="allPeopleBasket" parameterType="String" resultMap="basketMap">
-with ranked_proimages as (
-select m.mem_id, m.mem_name, b.pro_no, p.pro_name, b.basket_pro_count, p.pro_price, to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"') basket_date, i.proimage_image, row_number() over (partition by m.mem_name, b.pro_no order by i.proimage_image) as image_rank
-from mem m
-join basket b on m.mem_id = b.mem_id
-join pro p on b.pro_no = p.pro_no
-join proimage i on p.pro_no = i.pro_no
-where m.mem_id in (select pe.mem_id2 from people pe join mem m on pe.mem_id=m.mem_id where m.mem_id=#{mem_id})
-or m.mem_id=#{mem_id}
-)
-select mem_name, pro_no, pro_name, basket_pro_count, pro_price, basket_date, proimage_image, mem_id
-from ranked_proimages
-where image_rank=1
-order by basket_date desc
+	<select id="allPeopleBasket" parameterType="String"
+		resultMap="basketMap">
+		with ranked_proimages as (
+		select m.mem_id, m.mem_name,
+		b.pro_no, p.pro_name, b.basket_pro_count,
+		p.pro_price,
+		to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"')
+		basket_date,
+		i.proimage_image, row_number() over (partition by
+		m.mem_name, b.pro_no
+		order by i.proimage_image) as image_rank
+		from mem m
+		join basket b on
+		m.mem_id = b.mem_id
+		join pro p on b.pro_no = p.pro_no
+		join proimage i on
+		p.pro_no = i.pro_no
+		where m.mem_id in (select pe.mem_id2 from people pe
+		join mem m on
+		pe.mem_id=m.mem_id where m.mem_id=#{mem_id})
+		or
+		m.mem_id=#{mem_id}
+		)
+		select mem_name, pro_no, pro_name,
+		basket_pro_count, pro_price, basket_date,
+		proimage_image, mem_id
+		from
+		ranked_proimages
+		where image_rank=1
+		order by basket_date desc
 	</select>
 
 	<!-- 회원 아이디 정보 -->
@@ -132,4 +183,34 @@ order by basket_date desc
 		mem_id=#{mem_id}
 	</select>
 
+
+	<select id="getOrderList" resultType="ordervo" parameterType="int">
+		SELECT
+		O.ORDER_NO,
+		O.ORDER_DATE,
+		SUM(P.PRO_PRICE * OD.ORDERDETAIL_COUNT) AS ORDER_PRICE,
+		O.ORDER_STATUS,
+		O.ORDER_REFUND,
+		O.MEM_ID,
+		OD.PRO_NO,
+		OD.ORDERDETAIL_COUNT,
+		P.PRO_NAME
+		FROM
+		ORDERS O
+		INNER JOIN
+		ORDERDETAIL OD ON O.ORDER_NO = OD.ORDER_NO
+		INNER JOIN
+		PRO P ON OD.PRO_NO = P.PRO_NO
+		WHERE
+		O.ORDER_NO = #{order_no}
+		GROUP BY
+		O.ORDER_NO,
+		O.ORDER_DATE,
+		O.ORDER_STATUS,
+		O.ORDER_REFUND,
+		O.MEM_ID,
+		OD.PRO_NO,
+		OD.ORDERDETAIL_COUNT,
+		P.PRO_NAME
+	</select>
 </mapper>

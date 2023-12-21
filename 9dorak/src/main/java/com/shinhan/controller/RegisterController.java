@@ -81,6 +81,7 @@ public class RegisterController {
 		if (result == 1) {
 			int updateResult = rService.pointUpdate(mem_code);
 			MemVO codemem = rService.getCodeMem(mem_code);
+			System.out.println(mem_code);
 //			System.out.println(updateResult);
 			EarnpointVO earn  = new EarnpointVO();
 			earn.setMem_id(codemem.getMem_id());
