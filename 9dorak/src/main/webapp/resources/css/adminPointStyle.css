@@ -261,3 +261,53 @@
     /* bottom: 100%; */
     /* border: solid 1px black; */
 }
+form {
+  width: 500px;
+}
+table {
+    position: relative;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    left: 30%;
+    transform: translateX(-50%);
+    top: 100px;
+}
+th, td {
+  padding: 3px 8px;
+}
+th {
+  background-color: rgb(255 125 51);
+  color: white; /* 원하는 색상 값 */
+  padding: 3px 8px;
+}
+td {
+  padding: 3px 8px;
+  text-align: center; /* 가운데 정렬 */
+}
+.off-screen {
+  display: none;
+}
+#nav {
+    position: relative;
+    width: 500px;
+    text-align: center;
+    left: 30%;
+    transform: translateX(-100%);
+    top: 100px;
+}
+#nav a {
+    position: relative;
+    display: inline-block;
+    padding: 3px 5px;
+    margin-right: 10px;
+    font-family: Tahoma;
+    background: #ccc;
+    color: #000;
+    text-decoration: none;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#nav a.active {
+  background: #333;
+  color: #fff;
+}

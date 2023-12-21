@@ -5,7 +5,7 @@
 <mapper namespace="net.firstzone.challenge">
 
 	<select id="selectAll" resultType="challengevo">
-		select * from challenge
+		select * from challenge order by 1
 	</select>
 
 	<select id="selectByno" resultType="challengevo"

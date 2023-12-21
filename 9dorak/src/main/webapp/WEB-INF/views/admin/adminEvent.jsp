@@ -12,7 +12,8 @@
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<title>Insert title here</title>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락 관리자페이지</title>
 </head>
 <body>
 	<div class=e2099_2373>
@@ -40,7 +41,7 @@
 		<div class="e2099_2486">
 			<table id="products" border="1">
 				<caption>
-					이벤트 list
+					챌린지 list
 					<form action="" id="setRows">
 						<p>
 							한 페이지당 데이터 수 :  <input type="text" name="rowPerPage" value="5">
@@ -51,20 +52,32 @@
 
 				<thead>
 					<tr>
-						<th>이벤트번호</th>
-						<th>이벤트제목</th>
-						<th>이벤트내용</th>
-						<th>이벤트이미지</th>
+						<th>챌린지번호</th>
+						<th>챌린지명/도시락만들9명</th>
+						<th>챌린지내용/도시락만들9소개</th>
+						<th>챌린지이미지/도시락만들9이미지</th>
+						<th>챌린지날짜</th>
+						<th>챌린지시작날짜</th>
+						<th>챌린지종료날짜</th>
+						<th>챌린지구분</th>
+						<th>만들9레시피</th>
+						<th>회원ID</th>
 					</tr>
 				</thead>
 				<tbody>
 
-					<c:forEach var="event" items="${elist}" varStatus="rowStatus">
+					<c:forEach var="chall" items="${chlist}" varStatus="rowStatus">
 						<tr>
-							<td>${event.event_no}</td>
-							<td>${event.event_title}</td>
-							<td>${event.event_cont}</td>
-							<td>${event.event_image}</td>
+							<td>${chall.challenge_no}</td>
+							<td>${chall.challenge_name}</td>
+							<td>${chall.challenge_cont}</td>
+							<td>${chall.challenge_image}</td>
+							<td>${chall.challenge_date}</td>
+							<td>${chall.challenge_start}</td>
+							<td>${chall.challenge_end}</td>
+							<td>${chall.challenge_category}</td>
+							<td>${chall.challenge_recipe}</td>
+							<td>${chall.mem_id}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
