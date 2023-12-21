@@ -150,9 +150,9 @@
 			<c:forEach items="${paymentList}" var="payment">
 				<div class="overlap-group">
 					<div class="frame-2"></div>
-					<button class="primary-button" id="myBtn-${payment.ORDERDETAIL_NO}">결제상세</button>
+					<button class="primary-button" id="myBtn-${payment.ORDER_NO}">결제상세</button>
 					<div class="cancel-wrapper"
-						onclick="cancelPayment('${payment.ORDERDETAIL_NO}', '${payment.PAY_DATE}','${payment.IMP_UID}')">결제취소</div>
+						onclick="cancelPayment('${payment.ORDER_NO}', '${payment.PAY_DATE}','${payment.IMP_UID}')">결제취소</div>
 					<div class="text-wrapper-4">${payment.PAY_DEPOPRICE }</div>
 					<div class="text-wrapper-5">${payment.PRO_NAME }</div>
 					<div class="text-wrapper-6">${payment.PAY_DATE }</div>
@@ -166,7 +166,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="myModal-${payment.ORDERDETAIL_NO}" class="modal">
+				<div id="myModal-${payment.ORDER_NO}" class="modal">
 					<div class="modal-content">
 						<span class="close">&times;</span>
 						<h4>결제 상세 정보</h4>
@@ -179,9 +179,9 @@
 
 				<script>
 					var modal = document
-							.getElementById("myModal-${payment.ORDERDETAIL_NO}");
+							.getElementById("myModal-${payment.ORDER_NO}");
 					var btn = document
-							.getElementById("myBtn-${payment.ORDERDETAIL_NO}");
+							.getElementById("myBtn-${payment.ORDER_NO}");
 					var span = modal.getElementsByClassName("close")[0];
 
 					btn.onclick = function() {
