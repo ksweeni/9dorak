@@ -4,12 +4,12 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.firstzone.menu">
 
-	메뉴 전체보기
+	<!-- 메뉴 전체보기  -->
 	<select id="selectAll" resultType="provo">
 		select * from pro
 	</select>
 	
-	카테고리 + 검색
+	<!-- 카테고리 + 검색 -->
 	<select id="selectSearchPro" resultType="provo" parameterType="provo">
 		select *
 		  from pro t1,
@@ -23,17 +23,17 @@
 		</if>
 	</select>
 	
-	신상품순 정렬
+	<!-- 신상품순 정렬 -->
 	<select id="selectOrderbyNew" resultType="provo">
 		select * from pro order by pro_rd desc
 	</select>
 	
-	인기순 정렬
+	<!-- 인기순 정렬 -->
 	<select id="selectOrderbyLike" resultType="provo">
 		select * from pro order by pro_like desc
 	</select>
 	
-	알러지 + 검색
+	<!-- 알러지 + 검색 -->
 	<select id="searchAllergyCheck" resultType="provo" parameterType="provo">
 		select *
 		  from pro
@@ -43,14 +43,15 @@
 			and pro_name like '%'||#{pro_name}||'%'
 		</if>
 	</select>
-	<select id="searchAllergyCheck" resultType="provo" parameterType="String">
+	
+<!-- 	<select id="searchAllergyCheck" resultType="provo" parameterType="String">
 		select *
 		from pro
 		where pro_aller not in #{pro_aller}
 		or pro_aller is null
-	</select>
+	</select> -->
 	
-	알러지 + 정렬
+	<!-- 알러지 + 정렬 -->
 	<select id="selectAllOrder" resultType="provo" parameterType="provo">
 		select *
 		from pro
@@ -63,7 +64,7 @@
 			</if>
 	</select>
 	
-	카테고리 + 정렬
+	<!-- 카테고리 + 정렬 -->
 	<select id="selectCtgrOrder" resultType="provo" parameterType="provo">
 		select *
 		  from pro t1,
@@ -78,20 +79,45 @@
 			</if>
 	</select>
 	
-	카테고리
+	<!-- 카테고리 -->
 	<select id="searchCategoryCheck" resultType="provo" parameterType="String">
 		SELECT pro.*, category.ingre_no
 		FROM pro
 		LEFT JOIN category ON pro.pro_no = category.pro_no where ingre_no = #{ingre_no}
 	</select>
 	
-	상품상세보기
+	<!-- 상품상세보기 -->
 	<select id="selectByNo" resultType="provo" parameterType="provo">
 		select *
 		from pro
 		where pro_no = #{pro_no}
 	</select>
     
+    <!-- 찜여부 구분 -->
+    <select id="selectReserveYn" parameterType="HashMap" resultType="int">
+	    select 
+	           count(*)
+		  from reserve
+	     where mem_id = #{mem_id}
+		   and pro_no = #{pro_no}
+    </select>
+    
+    <!-- 찜목록 추가 -->
+    <insert id="insertReserve" parameterType="HashMap" >
+		insert into reserve (mem_id, pro_no) values (#{mem_id},#{pro_no})
+    </insert>
+    
+    <!-- 찜목록 삭제 -->
+    <delete id="deleteReserve"  parameterType="HashMap">
+    	delete reserve where mem_id = #{mem_id} and pro_no = #{pro_no}
+    </delete>
+    
+    <!-- 찜목록 추가에 따른 상품좋아요 업데이트 -->
+    <update id="updateProLike" parameterType="String">
+    	update pro set pro_like = (select count(*) from reserve where pro_no = #{pro_no})
+		where pro_no = #{pro_no}
+    </update>
+
 <!--     상품리뷰 맵
 	<resultMap type="HashMap" id="proreviewMap">
     	<id column="orderdetail_no" property="orderdetail_no"/>
@@ -217,30 +243,5 @@
 		   and orderdetail.orderdetail_no = memreview.orderdetail_no
 		   and memreview.memreview_image is null
     </select> -->
-   
-   찜여부 구분
-    <select id="selectReserveYn" parameterType="HashMap" resultType="int">
-	    select 
-	           count(*)
-		  from reserve
-	     where mem_id = #{mem_id}
-		   and pro_no = #{pro_no}
-    </select>
     
-    찜목록 추가
-    <insert id="insertReserve" parameterType="HashMap" >
-		insert into reserve (mem_id, pro_no) values (#{mem_id},#{pro_no})
-    </insert>
-    
-    찜목록 삭제
-    <delete id="deleteReserve"  parameterType="HashMap">
-    	delete reserve where mem_id = #{mem_id} and pro_no = #{pro_no}
-    </delete>
-    
-    찜목록 추가에 따른 상품좋아요 업데이트
-    <update id="updateProLike" parameterType="String">
-    	update pro set pro_like = (select count(*) from reserve where pro_no = #{pro_no})
-		where pro_no = #{pro_no}
-    </update>
-
 </mapper>
