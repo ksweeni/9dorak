@@ -112,12 +112,10 @@ String contextPath = request.getContextPath();
 								</c:otherwise>
 							</c:choose>
 						</div>
-						<div class="group-20">
-							<div class="header-overlap-group-3">
+						<div class="group-20" id="lightsParent">
+							<div class="header-overlap-group-3" onclick="loginBasket()">
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
-								<div class="ellipse-light"></div>
-								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
 					</div>
@@ -619,7 +617,8 @@ String contextPath = request.getContextPath();
 				}
 				/* allerCheck(); */
 			}
-
+			
+			// 장바구니 로그인
 			function loginBasket() {
 				var mem_id = "${sessionScope.loginmem.mem_id}";
 
