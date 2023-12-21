@@ -12,7 +12,8 @@
 		<div class=e1433_2752>
 			<div class=e1433_2753>
 				<div class="e1433_2754"></div>
-				<div class="e1433_2756"></div>
+				<img class="e1433_2756"
+				src="${cpath}/resources/images/menu/proimage/${clist[0].pro_no}-2.jpg"></img>
 			</div>
 			<div class=e1433_2757>
 				<span class="e1433_2758">${clist[0].pro_price}원</span>
@@ -25,7 +26,8 @@
 		<div class=e1433_2762>
 			<div class=e1433_2763>
 				<div class="e1433_2764"></div>
-				<div class="e1433_2766"></div>
+				<img class="e1433_2766"
+				src="${cpath}/resources/images/menu/proimage/${clist[1].pro_no}-2.jpg"></img>
 			</div>
 			<div class=e1433_2767>
 				<span class="e1433_2768">${clist[1].pro_price}원</span>
@@ -38,7 +40,8 @@
 		<div class=e1433_2772>
 			<div class=e1433_2773>
 				<div class="e1433_2774"></div>
-				<div class="e1433_2776"></div>
+				<img class="e1433_2776"
+				src="${cpath}/resources/images/menu/proimage/${clist[2].pro_no}-2.jpg"></img>
 			</div>
 			<div class=e1433_2777>
 				<span class="e1433_2778">${clist[2].pro_price}원</span>
