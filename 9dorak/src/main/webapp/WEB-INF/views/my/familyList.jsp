@@ -119,11 +119,11 @@
 				</div>
 			</div>
 		</div>
- 
-			<div class="familyList">
-				<jsp:include page="familyList_ajax.jsp"></jsp:include>
-			</div>
-		 
+
+		<div class="familyList">
+			<jsp:include page="familyList_ajax.jsp"></jsp:include>
+		</div>
+
 		<footer class="footer">
 			<div class="footer-company-loco">
 				<div class="footer-company">

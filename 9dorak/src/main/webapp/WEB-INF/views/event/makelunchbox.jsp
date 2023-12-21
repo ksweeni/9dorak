@@ -24,7 +24,7 @@ String contextPath = request.getContextPath();
 <script>
 function redirectToChallenge(challenge_no) {
 		location.href = '${pageContext.request.contextPath}/event/lunchboxdetail.do?challenge_no=' + challenge_no;
-		alert('Redirect to challenge number ' + challenge_no);
+	/* 	alert('Redirect to challenge number ' + challenge_no); */
 }
 </script>
 <link rel="shortcut icon"

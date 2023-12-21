@@ -58,7 +58,7 @@ public class MyPageController {
 	@GetMapping("logout.do")
 	public String logut(Model model, HttpSession session) {
 		session.invalidate();
-		return "home";
+		return "main";
 	}
 
 	// 배송 내역 조회

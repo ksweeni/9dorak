@@ -130,7 +130,7 @@
 									src="${cpath}/resources/upload/${doran.doran_profile}" />
 								<div class="frame-2">
 									<div class="frame-3">
-										<div class="text-wrapper-10">${doran.mem_name}</div>
+										<div class="text-wrapper-10">${doran.mem_id}</div>
 									</div>
 									<div class="group-5">
 										<div class="text-wrapper-12">${doran.doran_title}</div>
