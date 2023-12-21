@@ -75,7 +75,7 @@
 	</insert>
 
 
-	<select id="getCodeMem" resultType="memvo">
+	<select id="getCodeMem" resultType="memvo" parameterType="String">
 		select * from mem where
 		mem_code = #{mem_code}
 	</select>

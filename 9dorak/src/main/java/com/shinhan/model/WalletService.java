@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.shinhan.dto.BasketVO;
 import com.shinhan.dto.MemVO;
+import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.PayVO;
 import com.shinhan.dto.PeopleVO;
 
@@ -86,4 +87,11 @@ public class WalletService {
 	public int updateBasket(BasketVO basket) {
 		return dao.updateBasket(basket);
 	}
+
+	public List<OrderVO> getOrderList(int order_no) {
+		// TODO Auto-generated method stub
+		return dao.getOrderList(order_no);
+	}
+
+
 }
