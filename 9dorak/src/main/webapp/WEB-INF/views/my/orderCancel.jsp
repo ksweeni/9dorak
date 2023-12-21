@@ -65,7 +65,7 @@
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
 									<span
 										style="font-weight: bold; left: 2.5rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_id}" /> 님
+										<c:out value="${sessionScope.loginmem.mem_name}" /> 님
 									</span>
 								</c:when>
 								<c:otherwise>

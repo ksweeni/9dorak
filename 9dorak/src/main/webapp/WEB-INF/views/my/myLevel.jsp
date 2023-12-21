@@ -158,7 +158,7 @@ String contextPath = request.getContextPath();
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
 									<span
 										style="font-weight: bold; left: -1rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
 									</span>
 									<a class="header-a"
 										href="${pageContext.request.contextPath}/my/logout.do"
