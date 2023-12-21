@@ -142,11 +142,10 @@ public class YomoController {
 	
 	@PostMapping("insertOneask.do")
 	public String insertOneask(Model model, OneaskVO oneask, 
-			@RequestParam MultipartFile singleFile, HttpServletRequest request) {
-		String mem_id = "aaa";
+			@RequestParam MultipartFile singleFile, HttpServletRequest request, HttpSession session) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		// 나중에 이거 세션에 값 가져와서 넣자
-		oneask.setMem_id(mem_id);
-
+		oneask.setMem_id(loginmem.getMem_id());
 
 		//// 파일업로드
 		// 2. 저장할 경로 가져오기

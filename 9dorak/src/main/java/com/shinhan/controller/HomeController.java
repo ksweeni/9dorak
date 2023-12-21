@@ -29,12 +29,11 @@ public class HomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		String formattedDate = dateFormat.format(date);
-		model.addAttribute("serverTime", formattedDate);
-		return "home";
+		List<ProVO> prolist = menuService.selectAll();
+		List<ProVO> likelist = menuService.selectOrderbyLike();
+		model.addAttribute("prolist", prolist);
+		model.addAttribute("likelist", likelist);
+		return "main";
 	}
 
 	@GetMapping("/main.do")

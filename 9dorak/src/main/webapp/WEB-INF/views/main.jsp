@@ -95,10 +95,11 @@ String contextPath = request.getContextPath();
 						<div class="text-wrapper-28">
 							<c:choose>
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
-									<span
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/myPage.do"
 										style="font-weight: bold; left: -1rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
-									</span>
+										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
+									</a>
 									<a class="header-a"
 										href="${pageContext.request.contextPath}/my/logout.do"
 										style="position: relative; left: -1rem">로그아웃</a>
@@ -111,10 +112,11 @@ String contextPath = request.getContextPath();
 								</c:otherwise>
 							</c:choose>
 						</div>
-						<div class="group-20" id="lightsParent">
-							<div class="header-overlap-group-3" onclick="loginBasket()">
+						<div class="group-20">
+							<div class="header-overlap-group-3">
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
+								<div class="ellipse-light"></div>
 								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
