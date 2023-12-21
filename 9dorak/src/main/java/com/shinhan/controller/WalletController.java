@@ -1,10 +1,6 @@
 package com.shinhan.controller;
 
-<<<<<<< HEAD
-import java.util.Arrays;
-=======
 import java.text.DecimalFormat;
->>>>>>> main
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,74 +40,6 @@ public class WalletController {
 	MyPageService mService;
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
-<<<<<<< HEAD
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	@GetMapping("pay.do")
-//	public String pay(Integer[] pro_no, String[] pro_name, Integer[] total_amount, Integer[] quantity,  
-//			Model model , HttpSession session) {
-//		System.out.println(Arrays.toString(pro_name));
-//		System.out.println(Arrays.toString(total_amount));
-//		System.out.println(Arrays.toString(quantity));
-//		
-//		MemVO mem = (MemVO) session.getAttribute("loginmem");
-//	
-//		List<PayVO> plist = wService.selectAllPay(pro_no, quantity, mem);
-//		
-//		
-//		model.addAttribute("plist", plist);
-//		if (session.getAttribute("loginmem") == null) {
-//			return "redirect:/login/loginForm.do";
-//		}
-//		
-//		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
-//		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
-//		System.out.println(clist);
-//		model.addAttribute("clist", clist);
-//		model.addAttribute("mem", mem);
-//		model.addAttribute("dlist", dlist);
-//		return "wallet/pay";
-//	}
-//	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-=======
 	@GetMapping("pay.do")
 	public String pay(Model model, HttpSession session) {
 		List<PayVO> plist = wService.selectAllPay();
@@ -139,7 +67,20 @@ public class WalletController {
 		return "wallet/pay";
 	}
 
->>>>>>> main
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// 장바구니 삭제
 	@PostMapping("deleteBasket.do")
 	@ResponseBody
