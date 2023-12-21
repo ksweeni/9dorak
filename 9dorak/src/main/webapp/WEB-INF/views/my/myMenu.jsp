@@ -16,1092 +16,87 @@ String contextPath = request.getContextPath();
 	rel="stylesheet" />
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/myPageStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/myMenuStyle.css"
 	type="text/css" />
+<title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<style type="text/css">
-.79_160 {
-	overflow: hidden;
-}
-
-.e79_160 {
-	background-color: rgba(255, 255, 255, 1);
-	width: 1440px;
-	height: 1788px;
-	position: absolute;
-}
-
-.e81_146 {
-	width: 1073px;
-	height: 56px;
-	position: absolute;
-	left: 166px;
-	top: 37px;
-}
-
-.e81_147 {
-	width: 94px;
-	height: 56px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.e81_148 {
-	width: 94px;
-	height: 56px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	background-image: url(${cpath}/resources/images/my/untitled_1_1.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e81_149 {
-	color: rgba(0, 0, 0, 1);
-	width: 80px;
-	height: 22px;
-	position: absolute;
-	left: 314px;
-	top: 18px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e81_150 {
-	color: rgba(0, 0, 0, 1);
-	width: 93px;
-	height: 22px;
-	position: absolute;
-	left: 421px;
-	top: 17px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e81_151 {
-	color: rgba(0, 0, 0, 1);
-	width: 80px;
-	height: 22px;
-	position: absolute;
-	left: 541px;
-	top: 17px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e81_152 {
-	color: rgba(0, 0, 0, 1);
-	width: 80px;
-	height: 22px;
-	position: absolute;
-	left: 648px;
-	top: 18px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e81_153 {
-	color: rgba(0, 0, 0, 1);
-	width: 80px;
-	height: 22px;
-	position: absolute;
-	left: 755px;
-	top: 18px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e81_154 {
-	color: rgba(0, 0, 0, 1);
-	width: 89px;
-	height: 22px;
-	position: absolute;
-	left: 951px;
-	top: 18px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e81_155 {
-	width: 33px;
-	height: 36px;
-	position: absolute;
-	left: 1040px;
-	top: 10px;
-	background-image: url(${cpath}/resources/images/my/basketimage.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e81_156 {
-	box-shadow: 0px 0px 22px
-		rgba(204.00000303983688, 0, 0, 0.800000011920929);
-	border-radius: 500px;
-	background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 15px;
-	height: 15px;
-	position: absolute;
-	left: 1057px;
-	top: 10px;
-}
-
-.e122_194 {
-	width: 1337px;
-	height: 906px;
-	position: absolute;
-	left: 78px;
-	top: 200px;
-}
-
-.e81_183 {
-	width: 300px;
-	height: 69.015625px;
-	position: absolute;
-	left: 307px;
-	top: 0px;
-}
-
-.e79_330 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 152.17800903320312px;
-	height: 18px;
-	position: absolute;
-	left: 126.29237365722656px;
-	top: 0px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_405 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 300px;
-	height: 41px;
-	position: absolute;
-	left: 0px;
-	top: 28.015625px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 32px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_385 {
-	width: 15.217805862426758px;
-	height: 11.37930965423584px;
-	position: absolute;
-	left: 92.8423080444336px;
-	top: 3px;
-	background-image: url(${cpath}/resources/images/my/image_8.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e79_325 {
-	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 77.61075592041016px;
-	height: 18px;
-	position: absolute;
-	left: 3.050457000732422px;
-	top: 0px;
-	font-family: Roboto;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_253 {
-	background-color: rgba(255, 255, 255, 1);
-	width: 250px;
-	height: 324px;
-	position: absolute;
-	left: 0px;
-	top: 146px;
-	border: 1px solid gray;
-	border-top-left-radius: 16px;
-	border-top-right-radius: 16px;
-	border-bottom-left-radius: 16px;
-	border-bottom-right-radius: 16px;
-}
-
-.79_253 {
-	border: 2px solid
-		rgba(231.62500709295273, 231.62500709295273, 231.62500709295273, 1);
-}
-
-.e79_254 {
-	width: 198px;
-	height: 47px;
-	position: absolute;
-	left: 26px;
-	top: 26px;
-}
-
-.e79_256 {
-	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 145px;
-	height: 26px;
-	position: absolute;
-	left: 52px;
-	top: 0px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 21px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_257 {
-	color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-	width: 71px;
-	height: 20px;
-	position: absolute;
-	left: 53px;
-	top: 27px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 13px;
-	letter-spacing: 0.800000011920929;
-	line-height: px;
-}
-
-.e79_424 {
-	width: 52px;
-	height: 43px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	background-image: url(${cpath}/resources/images/my/profile.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e79_258 {
-	width: 198px;
-	height: 206px;
-	position: absolute;
-	left: 26px;
-	top: 98px;
-}
-
-.e79_259 {
-	background-color: rgba(254.99996960163116, 174.5559909939766, 100.30001074075699, 1);
-	width: 198px;
-	height: 50px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	border-top-left-radius: 16px;
-	border-top-right-radius: 16px;
-	border-bottom-left-radius: 16px;
-	border-bottom-right-radius: 16px;
-}
-
-.e79_260 {
-	color: rgba(255, 255, 255, 1);
-	width: 135px;
-	height: 20px;
-	position: absolute;
-	left: 20px;
-	top: 15px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_261 {
-	width: 198px;
-	height: 50px;
-	position: absolute;
-	left: 0px;
-	top: 52px;
-}
-
-.e79_262 {
-	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 135px;
-	height: 20px;
-	position: absolute;
-	left: 20px;
-	top: 15px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_263 {
-	width: 198px;
-	height: 50px;
-	position: absolute;
-	left: 0px;
-	top: 104px;
-}
-
-.e79_264 {
-	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 135px;
-	height: 20px;
-	position: absolute;
-	left: 20px;
-	top: 15px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_265 {
-	width: 198px;
-	height: 50px;
-	position: absolute;
-	left: 0px;
-	top: 156px;
-	border-top-left-radius: 16px;
-	border-top-right-radius: 16px;
-	border-bottom-left-radius: 16px;
-	border-bottom-right-radius: 16px;
-}
-
-.e79_266 {
-	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
-	width: 135px;
-	height: 20px;
-	position: absolute;
-	left: 20px;
-	top: 15px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_162 {
-	width: 950.1522827148438px;
-	height: 742px;
-	position: absolute;
-	left: 386.84771728515625px;
-	top: 164px;
-}
-
-.e79_388 {
-	width: 118px;
-	height: 98px;
-	position: absolute;
-	left: 128px;
-	top: 0px;
-	/* 	background-image: url(${cpath}/resources/images/my/snsicon.png); */
-	/*  	background-image: url(${cpath}/resources/upload/${mem.mem_image});  */
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: 30px;
-}
-
-.79_425 {
-	border: 1px solid
-		rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-}
-
-.e79_425 {
-	width: 74.265625px;
-	height: 32px;
-	position: absolute;
-	left: 252px;
-	top: 32px;
-	border-top-left-radius: 40px;
-	border-top-right-radius: 40px;
-	border-bottom-left-radius: 40px;
-	border-bottom-right-radius: 40px;
-}
-
-.e79_426 {
-	color: rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-	width: 49px;
-	height: 20px;
-	position: absolute;
-	left: 12px;
-	top: 6px;
-	font-family: Inter;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_427 {
-	width: 91px;
-	height: 32px;
-	position: absolute;
-	left: 375.15234375px;
-	top: 33px;
-}
-
-.e82_185 {
-	width: 33px;
-	height: 32px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	background-image: url(${cpath}/resources/images/my/image_9.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e79_430 {
-	color: rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-	width: 64px;
-	height: 20px;
-	position: absolute;
-	left: 27px;
-	top: 6px;
-	font-family: Inter;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_410 {
-	width: 400px;
-	height: 75px;
-	position: absolute;
-	left: 133px;
-	top: 111px;
-}
-
-.e79_244 {
-	color: rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-	width: 67.8787841796875px;
-	height: 16px;
-	position: absolute;
-	left: 6.059966087341309px;
-	top: 9.094947017729282e-13px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_409 {
-	background-color: rgba(249.6875050663948, 252.87500202655792, 255, 1);
-	width: 400px;
-	height: 48px;
-	position: absolute;
-	left: 0px;
-	top: 27px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.79_409 {
-	border: 1px solid rgba(0, 0, 0, 1);
-}
-
-.e79_411 {
-	width: 400px;
-	height: 75px;
-	position: absolute;
-	left: 133px;
-	top: 210px;
-}
-
-.e79_412 {
-	color: rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-	width: 89.69696807861328px;
-	height: 16px;
-	position: absolute;
-	left: 6.060606002807617px;
-	top: 0px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_413 {
-	background-color: rgba(249.6875050663948, 252.87500202655792, 255, 1);
-	width: 400px;
-	height: 48px;
-	position: absolute;
-	left: 0px;
-	top: 27px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.79_413 {
-	border: 1px solid rgba(0, 0, 0, 1);
-}
-
-.e79_415 {
-	width: 400px;
-	height: 75px;
-	position: absolute;
-	left: 133px;
-	top: 309px;
-}
-
-.e79_416 {
-	color: rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-	width: 67.8787841796875px;
-	height: 16px;
-	position: absolute;
-	left: 6.060606002807617px;
-	top: 0px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_417 {
-	background-color: rgba(249.6875050663948, 252.87500202655792, 255, 1);
-	width: 400px;
-	height: 48px;
-	position: absolute;
-	left: 0px;
-	top: 27px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.79_417 {
-	border: 1px solid rgba(0, 0, 0, 1);
-}
-
-.e79_418 {
-	width: 400px;
-	height: 75px;
-	position: absolute;
-	left: 133px;
-	top: 408px;
-}
-
-.e79_419 {
-	color: rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-	width: 67.8787841796875px;
-	height: 16px;
-	position: absolute;
-	left: 6.060606002807617px;
-	top: 0px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_420 {
-	background-color: rgba(249.6875050663948, 252.87500202655792, 255, 1);
-	width: 400px;
-	height: 48px;
-	position: absolute;
-	left: 0px;
-	top: 27px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.79_420 {
-	border: 1px solid rgba(0, 0, 0, 1);
-}
-
-.e79_421 {
-	width: 400px;
-	height: 75px;
-	position: absolute;
-	left: 133px;
-	top: 507px;
-}
-
-.e79_422 {
-	color: rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-	width: 101.81818389892578px;
-	height: 16px;
-	position: absolute;
-	left: 6.060606002807617px;
-	top: 0px;
-	font-family: Inter;
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_423 {
-	background-color: rgba(249.6875050663948, 252.87500202655792, 255, 1);
-	width: 400px;
-	height: 48px;
-	position: absolute;
-	left: 0px;
-	top: 27px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.79_423 {
-	border: 1px solid rgba(0, 0, 0, 1);
-}
-
-.e79_168 {
-	background-color: rgba(172.33757883310318, 206.37504279613495, 255, 1);
-	width: 135.578125px;
-	height: 44px;
-	position: absolute;
-	left: 126px;
-	top: 626px;
-	border-top-left-radius: 40px;
-	border-top-right-radius: 40px;
-	border-bottom-left-radius: 40px;
-	border-bottom-right-radius: 40px;
-}
-
-.e79_169 {
-	color: rgba(255, 255, 255, 1);
-	width: 100px;
-	height: 22px;
-	position: absolute;
-	left: 18px;
-	top: 11px;
-	font-family: Inter;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.79_166 {
-	border: 1px solid
-		rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-}
-
-.e79_166 {
-	width: 103.53125px;
-	height: 44px;
-	position: absolute;
-	left: 277px;
-	top: 626px;
-	border-top-left-radius: 40px;
-	border-top-right-radius: 40px;
-	border-bottom-left-radius: 40px;
-	border-bottom-right-radius: 40px;
-}
-
-.e79_167 {
-	color: rgba(26.000000350177288, 26.000000350177288, 26.000000350177288, 1);
-	width: 70px;
-	height: 20px;
-	position: absolute;
-	left: 17px;
-	top: 12px;
-	font-family: Inter;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e79_164 {
-	background-color: rgba(200.00000327825546, 69.00000348687172, 69.00000348687172, 1);
-	width: 105.671875px;
-	height: 44px;
-	position: absolute;
-	left: 406.15234375px;
-	top: 626px;
-	border-top-left-radius: 40px;
-	border-top-right-radius: 40px;
-	border-bottom-left-radius: 40px;
-	border-bottom-right-radius: 40px;
-}
-
-.79_164 {
-	border: 1px solid
-		rgba(200.00000327825546, 69.00000348687172, 69.00000348687172, 1);
-}
-
-.e79_165 {
-	color: rgba(255, 255, 255, 1);
-	width: 70px;
-	height: 20px;
-	position: absolute;
-	left: 17px;
-	top: 12px;
-	font-family: Inter;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 0;
-	line-height: px;
-}
-
-.e122_197 {
-	width: 1440px;
-	height: 429px;
-	position: absolute;
-	left: 0px;
-	top: 1359px;
-}
-
-.e122_198 {
-	background-color: rgba(249.6875050663948, 249.900004863739, 255, 1);
-	width: 1440px;
-	height: 429px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.e122_199 {
-	width: 393px;
-	height: 227px;
-	position: absolute;
-	left: 118px;
-	top: 76px;
-}
-
-.e122_200 {
-	width: 393px;
-	height: 227px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.e122_201 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 393px;
-	height: 89px;
-	position: absolute;
-	left: 0px;
-	top: 138px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_202 {
-	width: 189.68800354003906px;
-	height: 108px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	background-image: url(${cpath}/resources/images/my/untitled_1_2.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e122_203 {
-	width: 234px;
-	height: 190px;
-	position: absolute;
-	left: 1098px;
-	top: 107px;
-}
-
-.e122_204 {
-	color: rgba(0, 0, 0, 1);
-	width: 167.9425811767578px;
-	height: 32px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 26px;
-	letter-spacing: 0;
-}
-
-.e122_205 {
-	width: 234px;
-	height: 90px;
-	position: absolute;
-	left: 0px;
-	top: 100px;
-}
-
-.e122_206 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 228.40191650390625px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_207 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 234px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 34px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_208 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 148.90908813476562px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 68px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_209 {
-	width: 194px;
-	height: 258px;
-	position: absolute;
-	left: 865px;
-	top: 107px;
-}
-
-.e122_210 {
-	color: rgba(0, 0, 0, 1);
-	width: 156.1761016845703px;
-	height: 32px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 26px;
-	letter-spacing: 0;
-}
-
-.e122_211 {
-	width: 194px;
-	height: 158px;
-	position: absolute;
-	left: 0px;
-	top: 100px;
-}
-
-.e122_212 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 103.710693359375px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_213 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 123.23270416259766px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 34px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_214 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 162.2767333984375px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 68px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_215 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 165.93710327148438px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 102px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_216 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 194px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 136px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_217 {
-	width: 295px;
-	height: 190px;
-	position: absolute;
-	left: 523px;
-	top: 107px;
-}
-
-.e122_218 {
-	color: rgba(0, 0, 0, 1);
-	width: 295px;
-	height: 32px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 26px;
-	letter-spacing: 0;
-}
-
-.e122_219 {
-	width: 277.8985595703125px;
-	height: 90px;
-	position: absolute;
-	left: 8.550724983215332px;
-	top: 100px;
-}
-
-.e122_220 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 264.0036315917969px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_221 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 277.8985595703125px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 34px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_222 {
-	color: rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
-	width: 239.4202880859375px;
-	height: 22px;
-	position: absolute;
-	left: 0px;
-	top: 68px;
-	font-family: Montserrat;
-	text-align: left;
-	font-size: 18px;
-	letter-spacing: 0;
-}
-
-.e122_223 {
-	width: 147px;
-	height: 47px;
-	position: absolute;
-	left: 118px;
-	top: 313px;
-	background-image: url(${cpath}/resources/images/my/snsicon.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.e122_224 {
-	width: 223px;
-	height: 67px;
-	position: absolute;
-	left: 1091px;
-	top: 320px;
-	background-image: url(${cpath}/resources/images/my/image_7.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-</style>
 </head>
 <body style="width: 100%">
-	<div class=e79_160>
-		<div class=e81_146>
-			<a href="${cpath }" class=e81_147>
-				<div class="e81_148"></div>
-			</a> <a href="${cpath }/menu/menu.do" class="e81_149">메뉴보기</a><span
-				class="e81_150">구독하기</span><span class="e81_151">요모조모</span><a
-				href="${cpath }/doran/doran.do" class="e81_152">도란도란</a><a
-				href="${cpath }/event/challenge.do" class="e81_153">이벤트</a><a
-				href="${cpath }/my/logout.do" class="e81_154">로그아웃</a>
-			<div class="e81_155"></div>
-			<div class="e81_156"></div>
-		</div>
+
+	<div class="e79_160">
+	
+		<header class="header">
+				<div class="top-nav">
+					<div class="navbar">
+						<div class="text-event">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+						</div>
+						<div class="text-menu">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+						</div>
+						<div class="text-subscribe">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+						</div>
+						<div class="text-yomo">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+						</div>
+						<div class="text-doran">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+						</div>
+					</div>
+					<a href="${pageContext.request.contextPath}/main.do"> <img
+						class="untitled-2"
+						src="${cpath}/resources/images/main/header-logo.png" />
+					</a>
+					<div class="div-3">
+						<div class="text-wrapper-28">
+							<c:choose>
+								<c:when test="${not empty sessionScope.loginmem.mem_id}">
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/myPage.do"
+										style="font-weight: bold; left: -1rem; position: relative;">
+										<c:out value="${sessionScope.loginmem.mem_id}" /> 님 |
+									</a>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/logout.do"
+										style="position: relative; left: -1rem">로그아웃</a>
+								</c:when>
+								<c:otherwise>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+								</c:otherwise>
+							</c:choose>
+						</div>
+						<div class="group-20">
+							<div class="header-overlap-group-3">
+								<img class="header-group-21"
+									src="${cpath}/resources/images/main/header-cart.png" />
+								<div class="ellipse-light"></div>
+								<!-- <div class="text-wrapper-29">2</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
 
 		<!-- ajax 처리할 부분 -->
 		<div class=e122_194>
+		
 			<div class=e81_183>
-				<span class="e79_330">내 정보 수정</span><span class="e79_405">내
-					정보 수정</span>
+				<span class="e79_330">내 정보 수정</span>
+				<span class="e79_405">내 정보 수정</span>
 				<div class="e79_385"></div>
 				<span class="e79_325">내 정보</span>
-			</div>
+			</div><!-- e81_183 -->
+			
 			<div class=e79_253>
 				<div class=e79_254>
 					<span class="e79_256">${mem.mem_id }</span><span class="e79_257">LV.${mem.mem_grade }</span>
@@ -1111,18 +106,18 @@ String contextPath = request.getContextPath();
 					<div class=e79_259>
 						<span class="e79_260">내 정보 수정</span>
 					</div>
-					<div class=e79_261>
+					<!-- <div class=e79_261>
 						<span class="e79_262">환불 계좌 관리</span>
-					</div>
+					</div> -->
 					<div class=e79_263>
 						<span class="e79_264">배송지 관리</span>
 					</div>
-					<div class=e79_265>
+					<!-- <div class=e79_265>
 						<span class="e79_266">알림 수신 관리</span>
-					</div>
+					</div> -->
 				</div>
-			</div>
-			<div class=e79_161>
+			</div><!-- e79_253 -->
+		
 				<div class=e79_162>
 					<form action="#" enctype="multipart/form-data">
 						<c:choose>
@@ -1143,7 +138,11 @@ String contextPath = request.getContextPath();
 								style="display: none" onchange="uploadFile()" />
 						</div>
 						<div class="e79_427">
-							<div class="e82_185"></div>
+							<div class="e82_185">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+									<path d="M1.46582 4.00639H15.0658M5.39862 3.99999V3.63359C5.39862 2.88207 5.69716 2.16133 6.22856 1.62993C6.75997 1.09853 7.4807 0.799988 8.23222 0.799988C8.98374 0.799988 9.70448 1.09853 10.2359 1.62993C10.7673 2.16133 11.0658 2.88207 11.0658 3.63359V3.99999M6.64822 7.19999V12M9.88982 7.19999V12M11.8658 15.2H4.66582C4.24147 15.2 3.83451 15.0314 3.53445 14.7314C3.23439 14.4313 3.06582 14.0243 3.06582 13.6V3.99999H13.4658V13.6C13.4658 14.0243 13.2972 14.4313 12.9972 14.7314C12.6971 15.0314 12.2902 15.2 11.8658 15.2Z" stroke="#1A1A1A" stroke-width="1.28" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</div>
 							<span class="e79_430">Remove</span>
 						</div>
 					</form>
@@ -1183,57 +182,84 @@ String contextPath = request.getContextPath();
 						<div class=e79_168>
 							<span class="e79_169">Save Changes</span>
 						</div>
-						<div class=e79_166>
+						<!-- <div class=e79_166>
 							<span class="e79_167">Cancel</span>
-						</div>
+						</div> -->
 						<div class=e79_164>
 							<span class="e79_165">회원탈퇴</span>
 						</div>
 					</form>
+				</div><!-- e79_162 -->
+				
+		</div><!-- e122_194 -->
+	</div><!-- e79_160 -->
+	
+	<footer class="footer">
+				<div class="footer-company-loco">
+					<div class="footer-company">
+						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
+							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+						<img class="footer-logo"
+							src="${cpath}/resources/images/main/footer-logo.png" />
+					</div>
+					<div class="footer-social-icon">
+						<div class="footer-facebook">
+							<img class="footer-mask-group"
+								src="${cpath}/resources/images/main/footer-facebook.png" />
+						</div>
+						<div class="footer-instagram">
+							<img class="footer-img"
+								src="${cpath}/resources/images/main/footer-insta.png" />
+						</div>
+						<div class="footer-twitter">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-twitter.png" />
+						</div>
+						<div class="footer-linkind">
+							<img class="footer-mask-group-2"
+								src="${cpath}/resources/images/main/footer-linkedin.png" />
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-
-	</div>
-	<div class=e122_197>
-		<div class="e122_198"></div>
-		<div class=e122_199>
-			<div class=e122_200>
-				<span class="e122_201">Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit. Commodo libero viverra dapibus odio
-					sit malesuada in quis. Arcu tristique elementum viverra integer id.</span>
-				<div class="e122_202"></div>
-			</div>
-		</div>
-		<div class=e122_203>
-			<span class="e122_204">Contact Us</span>
-			<div class=e122_205>
-				<span class="e122_206">1234 Country Club Ave</span><span
-					class="e122_207">NC 123456, London, UK</span><span class="e122_208">+0123
-					456 7891</span>
-			</div>
-		</div>
-		<div class=e122_209>
-			<span class="e122_210">User Link</span>
-			<div class=e122_211>
-				<span class="e122_212">About Us</span><span class="e122_213">Contact
-					Us</span><span class="e122_214">Order Delivery</span><span
-					class="e122_215">Payment & Tex</span><span class="e122_216">Terms
-					of Services</span>
-			</div>
-		</div>
-		<div class=e122_217>
-			<span class="e122_218">Opening Restaurant</span>
-			<div class=e122_219>
-				<span class="e122_220">Sat-Wet: 09:00am-10:00PM</span><span
-					class="e122_221">Thursdayt: 09:00am-11:00PM</span><span
-					class="e122_222">Friday: 09:00am-8:00PM</span>
-			</div>
-		</div>
-		<div class="e122_223"></div>
-		<div class="e122_224"></div>
-	</div>
-
+				<div class="footer-contact-us">
+					<div class="footer-text-wrapper-2">Contact Us</div>
+					<div class="footer-group">
+						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+						<div class="footer-text-wrapper-3">+0123 456 7891</div>
+					</div>
+					<div class="footer-overlap-group-wrapper">
+						<div class="footer-overlap-group">
+							<div class="footer-vector-wrapper">
+								<img class="footer-vector"
+									src="${cpath}/resources/images/main/footer-email-button.png" />
+							</div>
+							<input class="footer-enter-email"
+								placeholder="Enter your email....">
+						</div>
+					</div>
+				</div>
+				<div class="footer-user-link">
+					<div class="footer-text-wrapper-7">User Link</div>
+					<div class="footer-group-2">
+						<div class="footer-text-wrapper-3">About Us</div>
+						<div class="footer-text-wrapper-3">Contact Us</div>
+						<div class="footer-text-wrapper-3">Order Delivery</div>
+						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+						<div class="footer-text-wrapper-3">Terms of Services</div>
+					</div>
+				</div>
+				<div class="footer-opening-restaurant">
+					<div class="footer-text-wrapper-7">Opening Restaurant</div>
+					<div class="footer-group-3">
+						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+						<div class="footer-text-wrapper-3">Thursdayt:
+							09:00am-11:00PM</div>
+						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+					</div>
+				</div>
+			</footer>
+			
 
 </body>
 <script type="text/javascript">
