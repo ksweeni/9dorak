@@ -260,9 +260,7 @@ body {
 	color: #000000;
 	font-size: 24px;
 	position: relative;
-	width: fit-content;
 	margin-top: -1px;
-	letter-spacing: 0;
 	line-height: normal;
 }
 
@@ -274,10 +272,11 @@ body {
 	padding: 15px 25px;
 	position: relative;
 	align-self: stretch;
-	width: 88%;
+	width: 86%;
 	flex: 0 0 auto;
 	background-color: #fc8019;
 	border-radius: 10px;
+	cursor: pointer
 }
 
 .case .text-wrapper-11 {
@@ -917,7 +916,7 @@ body {
 input {
 	border: none;
 	text-align: justify;
-	width: 20px;
+	width: 100px;
 }
 
 #emptyComment {
@@ -928,13 +927,12 @@ input {
 	top: 30%;
 }
 
-
-
-
-
-
-
-
+.submitButton {
+	padding: 6px 25px;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+}
 
 /* Modal Styling */
 .modal {

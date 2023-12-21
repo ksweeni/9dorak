@@ -77,7 +77,6 @@ String contextPath = request.getContextPath();
 							<div class="header-overlap-group-3" onclick="loginBasket()">
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
-								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
 					</div>
@@ -121,9 +120,8 @@ String contextPath = request.getContextPath();
 											<!-- 체크 박스 -->
 												<div class="frame-19">
 												
-													<input type="checkbox" id="checkbox-2-${status.count}"  
-													name="selection"  
-				onchange="basketList(${basket.basket_pro_count},'${basket.pro_name}',${basket.pro_price},${status.count})">
+													<input type="checkbox" id="checkbox-2-${status.count}" name="selection"
+				onchange="basketList(${basket.pro_no},'${basket.pro_name}',${basket.pro_price},${status.count})">
 													<div class="text-wrapper-18">${basket.mem_name}</div>
 												</div>
 												
@@ -181,45 +179,31 @@ String contextPath = request.getContextPath();
 					<div class="view-2">
 						<div class="frame-2">
 							<div class="frame-3">
-								<div class="text-wrapper-2">결제정보</div>
+								<div class="text-wrapper-2">주문정보</div>
 								
 								<div class="text-wrapper-3" id="total-items">
-				총 <span id="totalAmount"> </span>Items</div>
-								
-								
+				총 <span id="total_count"> </span>Items</div>
 								
 							</div>
 							
-							
-							
-							
+							  <form action="pay.do">
 							<div class="frame-4">
-							    <table border="1" id="cartRow">
-							     <tr>
-							       <td>a</td><td>b</td><td>c</td>
-							     </tr>
-							    </table>
+								    <table id="cartRow">
+								    </table>
 							</div>
 							
-							
-							
-							<div class="frame-10">
-							<div class="frame-11">
-								<div class="text-wrapper-9">총 합계</div>
-								<div class="text-wrapper-9">₹11,400.00</div>
-							</div>
-							<div class="frame-11">
-								<div class="text-wrapper-9">배송비</div>
-								<div class="text-wrapper-9">₹11,400.00</div>
-							</div>
-						</div>
 						<div class="frame-11">
 							<div class="text-wrapper-10">총 결제 예상 금액</div>
-							<div class="text-wrapper-10">₹7,400.00</div>
+							<input class="text-wrapper-10" type="number" name="order_price" value="">
+							
+							총 금액 <span id="totalAmount${status.count}"> ${basket.pro_price*basket.basket_pro_count}</span>원
 						</div>
-						<div class="frame-12">
-							<div class="text-wrapper-11">주문하기</div>
+						<div class="frame-12" onclick="submitOrder()">
+							<label class="submitButton">주문하기</label>
+							<input class="text-wrapper-11" type="submit" value="주문하기" style="display: none;">
 						</div>
+						</form>
+						
 						</div>
 					</div>
 					
@@ -346,36 +330,29 @@ function unselectAll() {
 	function updateCount() {
 		var myaction = $(this).attr("data-action");
 		var count = $(this).attr("data-count");
-		var price = parseFloat($(".pro_price"+count).val());
+		var price = Number($(".pro_price"+count).val());
 	    var index = $(".index-num"+count).val();
-	    console.log(index);
 	    var pro_no = $(".pro_no"+count).val();
 	    var pro_name = $(".pro_name"+count).val();
 	    var mem_id = $(".mem_id"+count).val();
-	    var quantity = 0;
-	    if(myaction=="minus")  
-	        quantity = Number($("#result" + index).html()) - 1;
-	    else
-	    	quantity = Number($("#result" + index).html()) + 1;
+	    var quantity = Number($("#result" + index).html());
+	    
+	    var changedNumb = count;
+	    if(myaction=="minus") {
+	    		quantity -= 1;
+	    	} else {
+	    		quantity += 1;
+	    	}
 	    
 	    $('#result' + index).html(quantity);
-	    //오른쪽 목록에 반영하기 
-	    $("#cartRow tr td:nth-child(1)").each(function(index, item){
-			  if(pro_name==$(item).text()){
-				 
-				 var basket_pro_count = Number($(this).parent().find(":nth-child(3)").text());
-				 if(myaction=="minus")
-				      $(this).parent().find(":nth-child(3)").text(quantity-1);
-				 else 
-					  $(this).parent().find(":nth-child(3)").text(quantity+1);
-			  } 
-		 });
+	    updateTotalAmount(quantity,price,index);
+
 	    var obj = {
 				mem_id: mem_id,
 	            pro_no: pro_no,
 	            basket_pro_count: quantity,
-			}; 
-	    console.log(obj);
+			};
+	    
 	    $.ajax({
 	    	type: "POST",
 			url:"${cpath}/wallet/updateBasket.do",
@@ -386,12 +363,32 @@ function unselectAll() {
 				}
 			}
 		});
+	    
+	    //오른쪽 목록에 반영하기 
+	    $("#cartRow tr td:nth-child(1)").each(function(index, item){
+	    	  var myName = "#checkbox-2-" + (index+1);
+	    	  var checkOk = $(myName).prop("checked");
+	    	  var cartProName = $(item).find("input").val();
+			  if(checkOk && pro_name==cartProName){
+				 var basket_pro_count = Number($(this).parent().find(":nth-child(2)").find("input").val());
+				 if(myaction=="minus") {
+				      $(this).parent().find(":nth-child(2)").find("input").val(basket_pro_count-1);
+				 } else { 
+					  $(this).parent().find(":nth-child(2)").find("input").val(basket_pro_count+1);
+					  
+				 }
+			  } 
+		 });
+		 
+			// 선택 항목 장바구니 목록으로 합치기
+		 let updatedCount = {};
+
+		 //나의 체크에 의해 계산합계가 수정되어야한다. 
+		basketList(quantity, pro_name, price, index+1);
 	}
 	
-	
-	
 	// 장바구니 수량 업데이트
-	function updateCounter(quantity,price,index) {
+	function updateTotalAmount(quantity,price,index) {
     	var totalAmount = quantity*price;
     	$('#totalAmount' + index).html(totalAmount);
     }
@@ -431,8 +428,6 @@ function unselectAll() {
     
     // 장바구니 삭제
     function deleteBasket(mem_id, pro_no, index) {
-    	        console.log(mem_id, pro_no);
-
     	        $.ajax({
     	            type: "POST",
     	            url: "${cpath}/wallet/deleteBasket.do",
@@ -447,57 +442,62 @@ function unselectAll() {
     	                } else {
     	                    console.log("콘솔 - 삭제 실패:", response);
     	                }
-    	            },
-    	            error: function(error) {
-    	                console.log("콘솔 - AJAX 오류:", error);
     	            }
     	        });
     	 }
-    
-	
+
 	// 선택 항목 장바구니 목록으로 합치기
 let updatedCount = {};
 
 //나의 체크에 의해 계산합계가 수정되어야한다. 
-function basketList(basket_pro_count, pro_name, price, index) {
+function basketList(pro_no, pro_name, price, index) {
+	var quantity = Number($('#result' + index).text());
 	var myName = "#checkbox-2-" + index;
 	var checkOk = $(myName).prop("checked");
-	var totalAmount = basket_pro_count*price;
+	var totalAmount = quantity*price;
     var search = false;
 	//checkbox가 선택이되면 목록에 추가(이미있으면 수정, 없으면 추가), 풀리면 지우기 
 	 if(checkOk) {
 		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
-			 console.log(pro_name==$(item).text() );
-			  if (pro_name==$(item).text()) {
-				 var a =  Number($(this).parent().find(":nth-child(3)").text());
-				 $(this).parent().find(":nth-child(3)").text(a+basket_pro_count);
+			 var cartProName = $(item).find("input").val();
+			 console.log(cartProName );
+			  if (pro_name==cartProName) {
+				 var a =  Number($(this).parent().find(":nth-child(2)").find("input").val());
+				 $(this).parent().find(":nth-child(2)").find("input").val(a+quantity);
 				 search=true;
 			  } 
 		 });
+		 
          if (search==false) {
         	 var str = `
-		    		<tr><td>\${pro_name}</td><td>\${price*basket_pro_count}</td><td>\${basket_pro_count}</td></tr>
+		    		<tr>
+	        	 	    <td><input type="text" name="pro_name" value="\${pro_name}"></td>
+			    		<td><input type="number" name="orderdetail_count" value="\${quantity}"></td>
+			    		<td><input type="number" name="total_amount" value="\${price*quantity}"></td>
+			    		<td><input type="number" type='hidden' name="pro_no" value="\${pro_no}" style="display: none;"></td>
+		    		</tr>
 		    	`;
 		     $("#cartRow").html($("#cartRow").html() + str);
          }
 		 
 	 } else {
 		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
-			  if(pro_name==$(item).text()){
-				 var a =  Number($(this).parent().find(":nth-child(3)").text());
-				 if(a-basket_pro_count<=0) {					  
+			  var cartProName = $(item).find("input").val();
+			  if(pro_name==cartProName){
+				 var a =  Number($(this).parent().find(":nth-child(2)").find("input").val());
+				 if(a-quantity<=0) {					  
 					 $(this).parent().remove();
 				 } else {  
-				      $(this).parent().find(":nth-child(3)").text(a-basket_pro_count);
+				      $(this).parent().find(":nth-child(2)").find("input").val(a-quantity);
 				 }
 			  } 
 		 });	
 	 }
- 
 }
 
- 
-
+function submitOrder() {
+    document.querySelector('.text-wrapper-11').click();
+}
 
 </script>
 
