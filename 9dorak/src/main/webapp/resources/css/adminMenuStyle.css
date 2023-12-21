@@ -16,7 +16,7 @@
     background-color: rgba(254.2806226015091, 137.48113721609116, 29.666072130203247,
 		0.6100000143051147);
     width: 214px;
-    height: 1000%;
+    height: 150%;
     position: absolute;
     left: -1px;
     top: 0px;
@@ -224,7 +224,7 @@
 
 .e2099_2485 {
     background-color: rgba(254.00000005960464, 183.00000429153442, 117.00000062584877, 1);
-    width: 1000%;
+    width: 150%;
     height: 52px;
     position: absolute;
     left: 203px;
@@ -233,8 +233,8 @@
 
 .e2099_2486 {
     background-color: rgba(255, 255, 255, 1);
-    width: 99%;
-    height: 1000%;
+    width: 150%;
+    height: 150%;
     position: absolute;
     left: 208px;
     top: 43px;
@@ -269,7 +269,7 @@ table {
     position: relative;
     border-collapse: collapse;
     margin-bottom: 10px;
-    left: 50%;
+    left: 38%;
     transform: translateX(-50%);
     top: 100px;
 }
@@ -292,7 +292,7 @@ td {
     position: relative;
     width: 500px;
     text-align: center;
-    left: 50%;
+    left: 38%;
     transform: translateX(-100%);
     top: 100px;
 }

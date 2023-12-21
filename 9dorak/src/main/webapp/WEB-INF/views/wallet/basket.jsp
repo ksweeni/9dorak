@@ -101,7 +101,7 @@ String contextPath = request.getContextPath();
 						</div>
 						<div class="frame-13">
 							<div class="view-3">
-								<input type="checkbox" class="checkbox" name="selection"
+								<input type="checkbox" class="checkboxAll" name="selection"
 									onclick="checkBoxSelector()">
 								<div class="text-wrapper-12">선택해제</div>
 								<div class="text-wrapper-13">선택삭제</div>
@@ -121,7 +121,9 @@ String contextPath = request.getContextPath();
 											<!-- 체크 박스 -->
 												<div class="frame-19">
 												
-													<input type="checkbox" class="checkbox-2" name="selection" onchange="logCheckboxValue(this)" onclick="basketList(${basket.basket_pro_count},'${basket.pro_name}',${basket.pro_price*basket.basket_pro_count},${status.count})">
+													<input type="checkbox" id="checkbox-2-${status.count}"  
+													name="selection"  
+				onchange="basketList(${basket.basket_pro_count},'${basket.pro_name}',${basket.pro_price},${status.count})">
 													<div class="text-wrapper-18">${basket.mem_name}</div>
 												</div>
 												
@@ -143,22 +145,18 @@ String contextPath = request.getContextPath();
 													
 													
 													<div class="buttonCount">
-														<div class="entypo-minus-wrapper">
-															<input type='hidden' value='${basket.pro_no}' class='pro_no' />
-															<input type='hidden' value='${basket.pro_price}' class='pro_price' />
-															<input type='hidden' value='${status.count}' class='index-num' />
-															<input type='hidden' value='${basket.mem_id}' class='mem_id' />
-															<img class="img-3"
-																src="/myapp/resources/images/menu/minus.png">
+													        <input type='hidden' value='${basket.pro_no}' class='pro_no${status.count}' />
+															<input type='hidden' value='${basket.pro_name}' class='pro_name${status.count}' />
+															<input type='hidden' value='${basket.pro_price}' class='pro_price${status.count}' />
+															<input type='hidden' value='${status.count}' class='index-num${status.count}' />
+															<input type='hidden' value='${basket.mem_id}' class='mem_id${status.count}' />
+															
+								<div class="entypo-minus-wrapper" data-action="minus" data-count="${status.count}">
+															<img class="img-3" src="/myapp/resources/images/menu/minus.png">
 														</div>
-														<span id="result${status.count}" class="text-wrapper-17">${basket.basket_pro_count}</span>
-														<div class="entypo-plus-wrapper">
-																<input type='hidden' value='${basket.mem_id}' class='mem_id' />
-															    <input type='hidden' value='${basket.pro_no}' class='pro_no' />
-																<input type='hidden' value='${basket.pro_price}' class='pro_price' />
-																<input type='hidden' value='${status.count}' class='index-num' />
-															<img class="img-3"
-																src="/myapp/resources/images/menu/plus.png">
+								<span id="result${status.count}" class="text-wrapper-17">${basket.basket_pro_count}</span>
+							<div class="entypo-plus-wrapper" data-action="plus" data-count="${status.count}">
+															<img class="img-3" src="/myapp/resources/images/menu/plus.png">
 														</div>
 													</div>
 												</div>
@@ -191,18 +189,20 @@ String contextPath = request.getContextPath();
 								
 								
 							</div>
+							
+							
+							
+							
 							<div class="frame-4">
-								<div class="frame-5">
-									<div class="frame-3">
-										<div class="frame-6" id="listParent1"></div>
-										<div class="frame-wrapper">
-											<div class="frame-7">
-												<div class="frame-8" id="listParent2"></div>
-											</div>
-										</div>
-									</div>
-								</div>
+							    <table border="1" id="cartRow">
+							     <tr>
+							       <td>a</td><td>b</td><td>c</td>
+							     </tr>
+							    </table>
 							</div>
+							
+							
+							
 							<div class="frame-10">
 							<div class="frame-11">
 								<div class="text-wrapper-9">총 합계</div>
@@ -338,56 +338,57 @@ function unselectAll() {
 }
 
 	// 장바구니 수량 증가
-	$(".entypo-plus-wrapper").on("click", function() {
-		var price = parseFloat($(this).find(".pro_price").val());
-	    var index = $(this).find(".index-num").val();
-	    var pro_no = $(this).find(".pro_no").val();
-	    var mem_id = $(this).find(".mem_id").val();
-	    var quantity = Number($("#result" + index).html()) + 1;
-	    $('#result' + index).html(quantity);
-	    updateCounter(quantity,price,index);
-	    
-	    $.ajax({
-	    	type: "POST",
-			url:"${cpath}/wallet/updateBasket.do",
-			data : {
-				mem_id: mem_id,
-	            pro_no: pro_no,
-	            basket_pro_count: quantity,
-			},
-			success : function(response){
-				if(response === "성공!"){
-					console.log("콘솔 - 업데이트 성공!!");
-				}
-			}
-		});
-	});
-	
+	$(".entypo-plus-wrapper").on("click", updateCount);	
 	// 장바구니 수량 감소
-	$(".entypo-minus-wrapper").on("click", function() {
-	    var price = parseFloat($(this).find(".pro_price").val());
-	    var index = $(this).find(".index-num").val();
-	    var pro_no = $(this).find(".pro_no").val();
-	    var mem_id = $(this).find(".mem_id").val();
-	    var quantity = Number($("#result" + index).html()) - 1;
-	    $('#result' + index).html(quantity);
-	    updateCounter(quantity,price,index);
+	$(".entypo-minus-wrapper").on("click", updateCount);
+	
+	// 수량 변경
+	function updateCount() {
+		var myaction = $(this).attr("data-action");
+		var count = $(this).attr("data-count");
+		var price = parseFloat($(".pro_price"+count).val());
+	    var index = $(".index-num"+count).val();
+	    console.log(index);
+	    var pro_no = $(".pro_no"+count).val();
+	    var pro_name = $(".pro_name"+count).val();
+	    var mem_id = $(".mem_id"+count).val();
+	    var quantity = 0;
+	    if(myaction=="minus")  
+	        quantity = Number($("#result" + index).html()) - 1;
+	    else
+	    	quantity = Number($("#result" + index).html()) + 1;
 	    
-	    $.ajax({
-	    	type: "POST",
-			url:"${cpath}/wallet/updateBasket.do",
-			data : {
+	    $('#result' + index).html(quantity);
+	    //오른쪽 목록에 반영하기 
+	    $("#cartRow tr td:nth-child(1)").each(function(index, item){
+			  if(pro_name==$(item).text()){
+				 
+				 var basket_pro_count = Number($(this).parent().find(":nth-child(3)").text());
+				 if(myaction=="minus")
+				      $(this).parent().find(":nth-child(3)").text(quantity-1);
+				 else 
+					  $(this).parent().find(":nth-child(3)").text(quantity+1);
+			  } 
+		 });
+	    var obj = {
 				mem_id: mem_id,
 	            pro_no: pro_no,
 	            basket_pro_count: quantity,
-			},
+			}; 
+	    console.log(obj);
+	    $.ajax({
+	    	type: "POST",
+			url:"${cpath}/wallet/updateBasket.do",
+			data :  obj,
 			success : function(response){
 				if(response === "성공!"){
 					console.log("콘솔 - 업데이트 성공!!");
 				}
 			}
 		});
-	});
+	}
+	
+	
 	
 	// 장바구니 수량 업데이트
 	function updateCounter(quantity,price,index) {
@@ -397,11 +398,7 @@ function unselectAll() {
 	
 	// 날짜 중복 검사 .. 똑같은 날짜는 장바구니 목록에서 숨기기
 	$(document).ready(function() {
-    	checkDuplicateDates();
-	});
-
-	function checkDuplicateDates() {
-	    $(".dateIndex").each(function() {
+		$(".dateIndex").each(function() {
 	        var index = $(this).val();
 	        var currentDateHTML = $('#dateIndex' + index).text();
 	        var nextDateHTML = $('#dateIndex' + (parseInt(index, 10) + 1)).text();
@@ -410,8 +407,8 @@ function unselectAll() {
 	            $('#dateIndex' + (parseInt(index, 10) + 1)).hide();
 	        }
 	    });
-	}
-	
+	});
+
 	// 삭제 기능 모달 버튼
 	var modal = document.getElementById('modal');
     var btns = document.querySelectorAll(".deleteItemModalButton");
@@ -461,63 +458,45 @@ function unselectAll() {
 	// 선택 항목 장바구니 목록으로 합치기
 let updatedCount = {};
 
-function basketList(basket_pro_count, pro_name, totalAmount, index) {
-    console.log(basket_pro_count, pro_name, totalAmount, "index numb: "+index);
-
-    if (updatedCount[pro_name]) {
-    	console.log("이미 있는 상품의 갯수: "+updatedCount[pro_name]);
-    	updatedCount[pro_name] += basket_pro_count;
-    	console.log("새로 들어오는 상품 수: "+basket_pro_count);
-    	console.log("수정된 상품 수: "+updatedCount[pro_name]);
-        updateProCount(pro_name, updatedCount[pro_name]);
-    } else {
-    	updatedCount[pro_name] = basket_pro_count;
-        proName(pro_name);
-        proPrice(totalAmount);
-        proCount(basket_pro_count);
-    }
+//나의 체크에 의해 계산합계가 수정되어야한다. 
+function basketList(basket_pro_count, pro_name, price, index) {
+	var myName = "#checkbox-2-" + index;
+	var checkOk = $(myName).prop("checked");
+	var totalAmount = basket_pro_count*price;
+    var search = false;
+	//checkbox가 선택이되면 목록에 추가(이미있으면 수정, 없으면 추가), 풀리면 지우기 
+	 if(checkOk) {
+		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
+			 console.log(pro_name==$(item).text() );
+			  if (pro_name==$(item).text()) {
+				 var a =  Number($(this).parent().find(":nth-child(3)").text());
+				 $(this).parent().find(":nth-child(3)").text(a+basket_pro_count);
+				 search=true;
+			  } 
+		 });
+         if (search==false) {
+        	 var str = `
+		    		<tr><td>\${pro_name}</td><td>\${price*basket_pro_count}</td><td>\${basket_pro_count}</td></tr>
+		    	`;
+		     $("#cartRow").html($("#cartRow").html() + str);
+         }
+		 
+	 } else {
+		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
+			  if(pro_name==$(item).text()){
+				 var a =  Number($(this).parent().find(":nth-child(3)").text());
+				 if(a-basket_pro_count<=0) {					  
+					 $(this).parent().remove();
+				 } else {  
+				      $(this).parent().find(":nth-child(3)").text(a-basket_pro_count);
+				 }
+			  } 
+		 });	
+	 }
+ 
 }
 
-function updateProCount(pro_name, newCount) {
-    let proCountElements = document.querySelectorAll(".listProName");
-    console.log("updateProCount 함수 시작: "+proCountElements);
-    
-    for (let element of proCountElements) {
-        if (element.nextSibling && element.nextSibling.textContent === pro_name) {
-            console.log("이미 존재하는 상품 이름: " + pro_name);
-            
-            element.textContent = newCount;
-            return;  // 반복문을 종료하기 위해 return 문을 사용합니다.
-        }
-    }
-}
-
-
-
-function proName(pro_name) {
-    let items = document.createElement("div");
-    items.setAttribute("class", "listProName");
-    <%--
-    items.setAttribute("id", ${status.count});
-    --%>
-    items.textContent = pro_name;
-    document.querySelector("#listParent1").append(items);
-}
-
-function proPrice(totalAmount) {
-    let items = document.createElement("div");
-    items.setAttribute("class", "listProPrice");
-    items.textContent = totalAmount;
-    document.querySelector("#listParent1").append(items);
-}
-
-function proCount(basket_pro_count) {
-    let items = document.createElement("div");
-    items.setAttribute("class", "listProCount");
-    items.textContent = basket_pro_count;
-    document.querySelector("#listParent2").append(items);
-}
-
+ 
 
 
 </script>

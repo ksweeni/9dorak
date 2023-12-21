@@ -249,9 +249,9 @@ public class MenuController {
 	
 	@PostMapping("mediaReviewDetail.do")
 	public String mediaReviewDetail(Model model, ProVO pro, MemreviewVO rev) {
-		System.out.println("mediaReviewDetail");
-		System.out.println(rev.getMemreview_no());
-		System.out.println(pro.getPro_no());
+		//System.out.println("mediaReviewDetail");
+		//System.out.println(rev.getMemreview_no());
+		//System.out.println(pro.getPro_no());
 		//System.out.println(map.get("memreview_no"));
 		//System.out.println(map.get("pro_no"));
 		
@@ -263,11 +263,6 @@ public class MenuController {
 		model.addAttribute("moaSelected", mService.selectMoaSelected(rev.getMemreview_no()));
 		
 		return "menu/mediareview_ajax";
-	}
-	
-	@GetMapping("menuReviewUpload.do")
-	public String menuReviewUpload() {
-		return "menu/menuReviewUpload";
 	}
 	
 }

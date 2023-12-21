@@ -40,11 +40,10 @@
 		<div class="e2099_2486">
 			<table id="products" border="1">
 				<caption>
-					product list
+					메뉴 list
 					<form action="" id="setRows">
 						<p>
-							showing <input type="text" name="rowPerPage" value="3">
-							item per page
+							한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
 						</p>
 					</form>
 
