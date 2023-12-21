@@ -40,7 +40,7 @@ String contextPath = request.getContextPath();
 
 
 			<div class=e69_168>
-				<span class="e69_170">${mem.mem_id }</span>
+				<span class="e69_170">${mem.mem_name }</span>
 			</div>
 			<div class=e69_219>
 				<div class=e69_220>

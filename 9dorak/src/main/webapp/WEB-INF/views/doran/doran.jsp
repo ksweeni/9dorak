@@ -212,7 +212,7 @@
 									</c:otherwise>
 								</c:choose>
 								<div class="doran-profile-info">
-									<div class="doran-profile-info-memname">${sessionScope.loginmem.mem_id}</div>
+									<div class="doran-profile-info-memname">${sessionScope.loginmem.mem_name}</div>
 									<div class="doran-profile-info-grade">
 										<div class="doran-profile-info-lv">LV.</div>
 										<div class="doran-profile-info-memgrade">${sessionScope.loginmem.mem_grade}</div>

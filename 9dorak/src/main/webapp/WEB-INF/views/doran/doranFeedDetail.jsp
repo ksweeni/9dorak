@@ -81,7 +81,6 @@
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
 								<div class="ellipse-light"></div>
-								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
 					</div>
@@ -131,7 +130,7 @@
 									src="${cpath}/resources/upload/${doran.doran_profile}" />
 								<div class="frame-2">
 									<div class="frame-3">
-										<div class="text-wrapper-10">${doran.mem_id}</div>
+										<div class="text-wrapper-10">${doran.mem_name}</div>
 									</div>
 									<div class="group-5">
 										<div class="text-wrapper-12">${doran.doran_title}</div>

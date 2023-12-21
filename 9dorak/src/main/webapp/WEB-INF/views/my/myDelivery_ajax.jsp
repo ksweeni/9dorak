@@ -125,7 +125,7 @@ String contextPath = request.getContextPath();
 	
 		<div class=e125_209>
 			<div class=e125_210>
-				<span class="e125_211">${mem.mem_id }</span><span class="e125_212">LV.${mem.mem_grade }</span>
+				<span class="e125_211">${mem.mem_name }</span><span class="e125_212">LV.${mem.mem_grade }</span>
 				<div class="e125_213"></div>
 			</div>
 			<div class=e125_214>
