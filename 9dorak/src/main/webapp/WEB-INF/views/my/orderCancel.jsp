@@ -31,7 +31,7 @@
 	<div class="div-wrapper">
 		<div class="div">
 
-			<header class="header">
+					<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
 						<div class="text-event">
@@ -63,10 +63,14 @@
 						<div class="text-wrapper-28">
 							<c:choose>
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
-									<span
-										style="font-weight: bold; left: 2.5rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_name}" /> 님
-									</span>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/myPage.do"
+										style="font-weight: bold; left: -1rem; position: relative;">
+										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
+									</a>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/logout.do"
+										style="position: relative; left: -1rem">로그아웃</a>
 								</c:when>
 								<c:otherwise>
 									<a class="header-a"
