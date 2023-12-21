@@ -119,37 +119,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="familyList">
-			<h2>지인 목록</h2>
-
-			<c:if test="${empty familyList}">
-				<p class="empty-message">조회 가능한 목록이 비어있습니다.</p>
-			</c:if>
-
-			<c:if test="${not empty familyList}">
-				<button class="deleteButton" onclick="deleteSelect()">지인 삭제</button>
-				<table id="familyTable">
-					<thead>
-						<tr>
-							<th>지인 아이디</th>
-							<th>가족/지인</th>
-							<th>등록날짜</th>
-							<th>삭제</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="member" items="${familyList}">
-							<tr>
-								<td>${member.mem_id2}</td>
-								<td>${member.people_category}</td>
-								<td>${member.people_date}</td>
-								<td><input type="checkbox" class="rowCheckbox"></td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</c:if>
-		</div>
+ 
+			<div class="familyList">
+				<jsp:include page="familyList_ajax.jsp"></jsp:include>
+			</div>
+		 
 		<footer class="footer">
 			<div class="footer-company-loco">
 				<div class="footer-company">
@@ -217,15 +191,41 @@
 	</div>
 </body>
 <script>
-	function deleteSelect() {
-		var table = document.getElementById('familyTable');
-		var checkboxes = table.getElementsByClassName('rowCheckbox');
+function deleteSelect() {
+    var form = document.getElementById('deleteForm');
+    var checkboxes = document.querySelectorAll('.rowCheckbox');
+    var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
 
-		for (var i = checkboxes.length - 1; i >= 0; i--) {
-			if (checkboxes[i].checked) {
-				table.deleteRow(i + 1); // 체크된 행 삭제 (i + 1은 헤더 행을 무시하기 위한 값)
-			}
-		}
-	}
+    if (!checkedOne) {
+        alert('삭제할 지인을 선택해주세요.');
+        return false;
+    }
+
+    if (confirm('선택한 지인을 정말 삭제하시겠습니까?')) {
+    	var arr = [];
+    	$(".rowCheckbox").each(function(index, item){
+    		if($(this).prop("checked")){
+    			arr.push($(item).val());
+    		}
+    		
+    	});
+    	console.log(arr);
+	    var obj = {"selectedIds":arr};
+	    $.ajax({
+	 	   url:"${pageContext.request.contextPath}/my/deleteFamilyMembers",
+	 	   data:obj,
+	 	   type: "post",
+	 	   success: function(responsData){
+	 		   $(".familyList").html(responsData);
+	 	   }
+	    });
+    }
+}
 </script>
 </html>
+
+
+
+
+
+

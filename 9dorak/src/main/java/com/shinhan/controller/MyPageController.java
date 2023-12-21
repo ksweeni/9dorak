@@ -2,6 +2,7 @@ package com.shinhan.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +18,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -113,7 +117,7 @@ public class MyPageController {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<Map<String, Object>> paymentList = mService.paymentList(loginmem.getMem_id());
 		model.addAttribute("paymentList", paymentList);
-		
+
 		System.out.println(paymentList);
 		return "my/myPaymentList";
 	}
@@ -134,41 +138,58 @@ public class MyPageController {
 
 	// 가족등록
 	@RequestMapping(value = "/insertPeople.do", produces = "text/plain;charset=utf-8")
-	public @ResponseBody  String insertPeople(String mem_code, String category, HttpSession session) {
+	public @ResponseBody String insertPeople(String mem_code, String category, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
-		
+
 		try {
-		Map<String, String> mapData = new HashMap<>();
-		mapData.put("mem_id", loginmem.getMem_id());
-		mapData.put("mem_code", mem_code);
-		mapData.put("people_category", category);
-		int result = mService.insertPeople(mapData);
-		
-		if (result > 0) {
-		        return "등록되었습니다.";
-		    }else {
-		    	throw new Exception("등록에 실패했습니다. 이미 등록된 코드인지 확인하세요.");
-		    }
-		}catch (Exception e) {
-	        e.printStackTrace();
-	        return "등록에 실패했습니다. 이미 등록된 코드인지 확인하세요.";
+			Map<String, String> mapData = new HashMap<>();
+			mapData.put("mem_id", loginmem.getMem_id());
+			mapData.put("mem_code", mem_code);
+			mapData.put("people_category", category);
+			int result = mService.insertPeople(mapData);
+
+			if (result > 0) {
+				return "등록되었습니다.";
+			} else {
+				throw new Exception("등록에 실패했습니다. 이미 등록된 코드인지 확인하세요.");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "등록에 실패했습니다. 이미 등록된 코드인지 확인하세요.";
+		}
+	}
+
+	// 가족목록
+	@RequestMapping("familyList.do")
+	public String familyList(Model model, HttpSession session) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		if (loginmem != null) {
+			String mem_id = loginmem.getMem_id();
+			List<Map<String, Object>> familyList = mService.selectFamilyList(mem_id);
+			model.addAttribute("familyList", familyList);
+			return "my/familyList";
+		} else {
+			// 로그인하지 않은 사용자 처리
+			return "login/login";
 		}
 	}
 	
-	//가족목록
-	@GetMapping("familyList.do")
-    public String familyList(Model model, HttpSession session) {
-        MemVO loginmem = (MemVO) session.getAttribute("loginmem");
-        String mem_id = loginmem.getMem_id();
+	
 
-        List<PeopleVO> familyList = mService.familyList(mem_id);
-        model.addAttribute("familyList", familyList);
-
-        return "my/familyList";
+	// 가족목록삭제
+	@PostMapping(value = "deleteFamilyMembers" )
+	public String deleteFamilyMembers(@RequestParam("selectedIds[]") String[] selectedIds,Model model, HttpSession session) {
+		System.out.println(Arrays.toString(selectedIds));
+		 
+		mService.deleteFamilyMember(selectedIds);
+		
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");		 
+		String mem_id = loginmem.getMem_id();
+		List<Map<String, Object>> familyList = mService.selectFamilyList(mem_id);
+		model.addAttribute("familyList", familyList);
+		return "my/familyList_ajax";
 	}
 
-	
-	
 	@RequestMapping(value = "updateMember.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String updateMember(Model model, HttpSession session, MemVO mem) {
