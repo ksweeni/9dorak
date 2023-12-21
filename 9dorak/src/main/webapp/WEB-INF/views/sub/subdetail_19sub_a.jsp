@@ -79,12 +79,12 @@
 				</div>
 			</header>
 		<div class=e1537_3167>
-			<span class="e1537_3168"><b>이번달 배터지9 메뉴</b></span>
+			<span class="e1537_3168"><b>이번달 배터지9 메뉴</b><div class="batug"></div></span>
 		</div>
 		<span class="e1543_3047">A 메뉴</span>
 		<span class="e1543_3294"><a href="${pageContext.request.contextPath}/sub/subdetail_19sub_b.do">B 메뉴</a></span>
-		<span class="e1543_3414">|</span>
-		<div class="e1543_3351"><hr></div>
+		
+		
 		<div class=e1543_3353>
 			<div class=e1543_3354>
 				<div class="e1543_3355"></div>

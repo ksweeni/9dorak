@@ -80,12 +80,10 @@
 				</div>
 			</header>
 		<div class=e1547_3717>
-			<span class="e1547_3718"><b>이번달 배부르9 메뉴</b></span>
+			<span class="e1547_3718"><b>이번달 배부르9 메뉴</b><div class="babul"></div></span>
 		</div>
 		<span class="e1547_3780">B 메뉴</span>
-		<div class="e1547_3783">
-			<hr>
-		</div>
+		
 		<div class=e1547_3750>
 			<div class=e1547_3751>
 				<div class=e1547_3752>
@@ -126,9 +124,7 @@
 		</a>
 		<div class=e1547_3786>
 			<span class="e1547_3719">A 메뉴</span>
-			<div class="e1547_3722">
-				<hr>
-			</div>
+			
 			<div class=e1547_3723>
 				<div class=e1547_3724>
 					<div class="e1547_3725"></div>

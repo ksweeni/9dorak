@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+.e1567_23215 {
+	color: rgba(0, 0, 0, 1);
+    width: 929px;
+    height: 23px;
+    position: absolute;
+    left: 347px;
+    top: 470px;
+
+    text-align: left;
+    font-size: 20px;
+    letter-spacing: 0;
+}
 .screen {
 	background-color: #ffffff;
 	display: flex;
@@ -826,7 +838,7 @@
 	height: 21px;
 	position: absolute;
 	left: 348px;
-	top: 431px;
+	top: 429px;
 	/* font-family:Inter; */
 	text-align: left;
 	font-size: 20px;
@@ -857,13 +869,17 @@
 	height: 153px;
 	position: absolute;
 	left: 840px;
-	top: 500px;
+	top: 530px;
 }
 
 .e1543_3028 {
-	font-weight: 600;
+	transition: text-shadow 0.5s ease;
+
+    color: gray;
+    font-weight: 600;
+
 	cursor: pointer;
-	color: rgba(250.73893904685974, 188.22255045175552, 127.45896220207214, 1);
+	/*color: rgba(250.73893904685974, 188.22255045175552, 127.45896220207214, 1);*/
     width: fit-content;
     height: 30px;
     position: absolute;
@@ -872,7 +888,12 @@
     text-align: center;
     font-size: 24px;
     letter-spacing: 0;
-    top: 820px;
+    top: 720px;
+}
+
+.e1543_3028:hover {
+		text-shadow: 2px 7px 10px;
+	
 }
 
 .e1543_3032 {
@@ -896,17 +917,23 @@
 }
 
 .e1543_3031 {
-	color: rgba(255, 255, 255, 1);
-	width: 102px;
-	height: 74px;
-	position: absolute;
-	left: 259px;
-	top: 67px;
-	/* font-family:Montserrat; */
-	text-align: center;
-	font-size: 24px;
-	letter-spacing: 0;
+	transition: text-shadow 0.5s ease; 
+	font-weight: 600;
+	color: mediumseagreen;
+    width: 102px;
+    height: 74px;
+    position: relative;
+    left: 210px;
+    top: 220px;
+    /* font-family: Montserrat; */
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 0;
 }
+.e1543_3031:hover {
+	text-shadow: 2px 7px 10px;
+}
+
 
 .e1543_3033 {
 	color: rgba(0, 0, 0, 1);
@@ -914,7 +941,7 @@
 	height: 94px;
 	position: absolute;
 	left: 365px;
-	top: 881px;
+	top: 850px;
 	/* font-family: Montserrat; */
 	text-align: center;
 	font-size: 24px;
@@ -922,12 +949,13 @@
 }
 
 .e1543_3041 {
-	color: rgba(0, 0, 0, 1);
+	font-weight: 600;
+	color: gray;
 	width: 238px;
 	height: 94px;
 	position: absolute;
 	left: 819px;
-	top: 881px;
+	top: 850px;
 	/* font-family: Montserrat; */
 	text-align: center;
 	font-size: 22px;
@@ -935,12 +963,13 @@
 }
 
 .e1543_3043 {
-	color: rgba(0, 0, 0, 1);
+	font-weight: 600;
+	color: gray;
 	width: 205px;
 	height: 94px;
 	position: absolute;
 	left: 835px;
-	top: 1048px;
+	top: 1020px;
 	/* font-family:Montserrat; */
 	text-align: center;
 	font-size: 24px;
@@ -948,12 +977,13 @@
 }
 
 .e1543_3045 {
-	color: rgba(0, 0, 0, 1);
+	font-weight: 600;
+	color: gray;
 	width: 205px;
 	height: 94px;
 	position: absolute;
 	left: 834px;
-	top: 1222px;
+	top: 1195px;
 	/* font-family:Montserrat; */
 	text-align: center;
 	font-size: 24px;
@@ -961,12 +991,13 @@
 }
 
 .e1543_3042 {
-	color: rgba(0, 0, 0, 1);
+	font-weight: 600;
+	color: mediumseagreen;
 	width: 244px;
 	height: 94px;
 	position: absolute;
 	left: 1195px;
-	top: 881px;
+	top: 850px;
 	/* font-family: Montserrat; */
 	text-align: center;
 	font-size: 22px;
@@ -974,25 +1005,26 @@
 }
 
 .e1543_3044 {
-	color: rgba(0, 0, 0, 1);
+	color: mediumseagreen;
 	width: 205px;
 	height: 94px;
 	position: absolute;
 	left: 1224px;
-	top: 1048px;
-	/* font-family:Montserrat; */
+	top: 1020px;
 	text-align: center;
+	font-weight: 600;
 	font-size: 24px;
 	letter-spacing: 0;
 }
 
 .e1543_3046 {
-	color: rgba(0, 0, 0, 1);
+	font-weight: 600;
+	color: mediumseagreen;
 	width: 205px;
 	height: 94px;
 	position: absolute;
 	left: 1227px;
-	top: 1222px;
+	top: 1195px;
 	/* font-family:Montserrat; */
 	text-align: center;
 	font-size: 24px;
@@ -1005,7 +1037,7 @@
 	height: 94px;
 	position: absolute;
 	left: 374px;
-	top: 1048px;
+	top: 1020px;
 	/* font-family:Montserrat; */
 	text-align: center;
 	font-size: 24px;
@@ -1018,7 +1050,7 @@
 	height: 94px;
 	position: absolute;
 	left: 365px;
-	top: 1222px;
+	top: 1195px;
 	/* font-family:Montserrat; */
 	text-align: center;
 	font-size: 24px;
@@ -1035,7 +1067,7 @@
 	height: 0px;
 	position: absolute;
 	left: 300px;
-	top: 940px;
+	top: 930px;
 }
 
 .1543_3038 {
