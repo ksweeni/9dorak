@@ -16,7 +16,7 @@ public class MemreviewVO {
 	private int orderdetail_no; //주문상세 고유 번호
 	private Date memreview_date; //리뷰 작성날짜
 	private String memreview_cont; //리뷰 작성 내용
-	private String memreview_starpoint; //리뷰 별점
+//	private String memreview_starpoint; //리뷰 별점
 	private String memreview_image; //리뷰 이미지 
 	private int memreview_no; //리뷰 고유번호
 	private String mem_id; //멤버 아이디

@@ -12,7 +12,8 @@
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<title>Insert title here</title>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락 관리자페이지</title>
 </head>
 <body>
 	<div class=e2099_2373>
@@ -61,7 +62,6 @@
 						<th>회원주소</th>
 						<th>회원포인트</th>
 						<th>회원등급</th>
-						<th>회원알러지</th>
 						<th>회원탈퇴여부</th>
 						<th>회원이미지</th>
 					</tr>
@@ -80,7 +80,6 @@
 							<td>${mem.mem_addr}</td>
 							<td>${mem.mem_point}</td>
 							<td>${mem.mem_grade}</td>
-							<td>${mem.mem_aller}</td>
 							<td>${mem.mem_quit}</td>
 							<td>${mem.mem_image}</td>
 						</tr>

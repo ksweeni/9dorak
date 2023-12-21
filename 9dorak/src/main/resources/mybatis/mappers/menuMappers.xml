@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.firstzone.menu">
 
-	<!-- 메뉴 전체보기 -->
+	<!-- 메뉴 전체보기  -->
 	<select id="selectAll" resultType="provo">
 		select * from pro
 	</select>
@@ -43,7 +43,8 @@
 			and pro_name like '%'||#{pro_name}||'%'
 		</if>
 	</select>
-	<!-- <select id="searchAllergyCheck" resultType="provo" parameterType="String">
+	
+<!-- 	<select id="searchAllergyCheck" resultType="provo" parameterType="String">
 		select *
 		from pro
 		where pro_aller not in #{pro_aller}
@@ -92,7 +93,32 @@
 		where pro_no = #{pro_no}
 	</select>
     
-    <!-- 상품리뷰 맵 -->
+    <!-- 찜여부 구분 -->
+    <select id="selectReserveYn" parameterType="HashMap" resultType="int">
+	    select 
+	           count(*)
+		  from reserve
+	     where mem_id = #{mem_id}
+		   and pro_no = #{pro_no}
+    </select>
+    
+    <!-- 찜목록 추가 -->
+    <insert id="insertReserve" parameterType="HashMap" >
+		insert into reserve (mem_id, pro_no) values (#{mem_id},#{pro_no})
+    </insert>
+    
+    <!-- 찜목록 삭제 -->
+    <delete id="deleteReserve"  parameterType="HashMap">
+    	delete reserve where mem_id = #{mem_id} and pro_no = #{pro_no}
+    </delete>
+    
+    <!-- 찜목록 추가에 따른 상품좋아요 업데이트 -->
+    <update id="updateProLike" parameterType="String">
+    	update pro set pro_like = (select count(*) from reserve where pro_no = #{pro_no})
+		where pro_no = #{pro_no}
+    </update>
+
+<!--     상품리뷰 맵
 	<resultMap type="HashMap" id="proreviewMap">
     	<id column="orderdetail_no" property="orderdetail_no"/>
     	<id column="memreview_date" property="memreview_date" javaType="java.lang.String"/>
@@ -104,7 +130,7 @@
     	<id column="mem_id" property="mem_id"/>
     </resultMap>
     
-    <!-- 상품리뷰 텍스트 -->
+    상품리뷰 텍스트
     <select id="selectProReviewTxt" parameterType="HashMap" resultMap="proreviewMap">
 		with base_t as
 	    (
@@ -137,7 +163,7 @@
 	    where rnum > #{currentPage}
     </select> 
     
-    <!-- 상품리뷰 사진 -->
+    상품리뷰 사진
     <select id="selectProReviewPth" parameterType="HashMap" resultMap="proreviewMap">
     	WITH RankedMemReviews AS (
 		    SELECT TA.*
@@ -153,7 +179,7 @@
 		<![CDATA[ WHERE ROWNUM <= 4 ]]>
     </select>
     
-    <!-- 사진리뷰 모아보기 리스트 -->
+    사진리뷰 모아보기 리스트
     <select id="selectMoaview" parameterType="HashMap" resultMap="proreviewMap">
     	SELECT TA.*, TC.mem_id
 		    FROM memreview TA
@@ -164,7 +190,7 @@
 		    order by ta.memreview_date desc
     </select>
     
-    <!-- 사진리뷰 모아보기 첫 큰화면 -->
+    사진리뷰 모아보기 첫 큰화면
     <select id="selectMoaFrist" parameterType="int" resultType="memreviewvo">
     	WITH RankedMoaFrist AS (
 	    	SELECT TA.*, TC.mem_id
@@ -180,7 +206,7 @@
 		<![CDATA[ WHERE ROWNUM <= 1 ]]>
     </select>
     
-    <!-- 사진리뷰 모아보기 선택 큰화면 -->
+    사진리뷰 모아보기 선택 큰화면
     <select id="selectMoaSelected" parameterType="int" resultType="memreviewvo">
     	SELECT TA.*, TC.mem_id
 		    FROM memreview TA
@@ -189,7 +215,7 @@
 		    WHERE TA.memreview_no = ${memreview_no}
     </select>
 
-	<!-- 리뷰 토탈 카운트 -->
+	리뷰 토탈 카운트
     <select id="proRevwTotCnt" parameterType="int" resultType="int">
 	    select 
 	           count(*)
@@ -198,7 +224,7 @@
 		   and orderdetail.orderdetail_no = memreview.orderdetail_no
     </select>
     
-    <!-- 사진 리뷰 카운트 -->
+    사진 리뷰 카운트
     <select id="proRevwPhtCnt" parameterType="int" resultType="int">
 	    select 
 	           count(*)
@@ -208,7 +234,7 @@
 		   and memreview.memreview_image is not null
     </select>
     
-    <!-- 텍스트 리뷰 카운트 -->
+    텍스트 리뷰 카운트
     <select id="proRevwTxtCnt" parameterType="int" resultType="int">
 	    select 
 	           count(*)
@@ -216,31 +242,6 @@
 		 where orderdetail.pro_no = #{pro_no}
 		   and orderdetail.orderdetail_no = memreview.orderdetail_no
 		   and memreview.memreview_image is null
-    </select>
-   
-   <!-- 찜여부 구분 -->
-    <select id="selectReserveYn" parameterType="HashMap" resultType="int">
-	    select 
-	           count(*)
-		  from reserve
-	     where mem_id = #{mem_id}
-		   and pro_no = #{pro_no}
-    </select>
+    </select> -->
     
-    <!-- 찜목록 추가 -->
-    <insert id="insertReserve" parameterType="HashMap" >
-		insert into reserve (mem_id, pro_no) values (#{mem_id},#{pro_no})
-    </insert>
-    
-    <!-- 찜목록 삭제 -->
-    <delete id="deleteReserve"  parameterType="HashMap">
-    	delete reserve where mem_id = #{mem_id} and pro_no = #{pro_no}
-    </delete>
-    
-    <!-- 찜목록 추가에 따른 상품좋아요 업데이트 -->
-    <update id="updateProLike" parameterType="String">
-    	update pro set pro_like = (select count(*) from reserve where pro_no = #{pro_no})
-		where pro_no = #{pro_no}
-    </update>
-
 </mapper>

@@ -203,11 +203,30 @@
 	</insert>
 
 	<!-- 가족목록 -->
-	<select id="familyList" resultType="peoplevo">
-		SELECT mem_id2, people_category, people_date
-		FROM people
-		where mem_id = #{mem_id}
+	<select id="selectFamilyList" parameterType="string"
+		resultType="map">
+		SELECT p.mem_id2,
+		p.people_category,
+		p.people_date,
+		m.mem_name
+		FROM people p
+		JOIN mem m ON p.mem_id2 = m.mem_id
+		WHERE
+		p.mem_id = #{mem_id}
 	</select>
+
+	<!-- 가족목록삭제 -->
+	<delete id="deleteFamilyMember" parameterType="string">
+		DELETE FROM people
+		WHERE mem_id2 in (
+		  <foreach collection="array" item="mid" separator=",">
+		      #{mid}
+		  </foreach>
+		  
+		 )
+	</delete>
+
+
 
 
 
@@ -222,7 +241,8 @@
 
 	<update id="updateDoranProfile" parameterType="memvo">
 		UPDATE doran
-		SET doran_profile = #{mem_image}
+		SET
+		doran_profile = #{mem_image}
 		WHERE mem_id = #{mem_id}
 	</update>
 

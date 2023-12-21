@@ -29,7 +29,8 @@
 
     window.onload = showLoginMessages;
 </script>
-
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class="screen">

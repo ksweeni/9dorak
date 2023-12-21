@@ -13,7 +13,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class="div-wrapper">
@@ -123,8 +124,9 @@
 					</div><!-- frame -->
 				</div><!-- overlap-group -->
 			</div><!-- group -->
-
-			<footer class="footer">
+		</div><!-- div -->
+	</div><!-- div-wrapper -->
+				<footer class="footer" style="top:30rem;">
 				<div class="footer-company-loco">
 					<div class="footer-company">
 						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
@@ -189,9 +191,6 @@
 					</div>
 				</div>
 			</footer>
-
-		</div><!-- div -->
-	</div><!-- div-wrapper -->
 	<script type="text/javascript">
 	  function loginBasket() {
 			var mem_id = "${sessionScope.loginmem.mem_id}";

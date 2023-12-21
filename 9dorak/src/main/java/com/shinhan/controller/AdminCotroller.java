@@ -8,18 +8,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.shinhan.dto.EventVO;
+import com.shinhan.dto.AnnoVO;
+import com.shinhan.dto.ChallengeVO;
+import com.shinhan.dto.CouponVO;
+import com.shinhan.dto.FaqVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.dto.SubVO;
-import com.shinhan.model.EventService;
+import com.shinhan.model.ChallengeService;
+import com.shinhan.model.CouponService;
 import com.shinhan.model.MemService;
 import com.shinhan.model.MenuService;
 import com.shinhan.model.OrderService;
 import com.shinhan.model.SubService;
+import com.shinhan.model.YomoService;
 
 @Controller
 @RequestMapping("admin")
@@ -34,7 +41,11 @@ public class AdminCotroller {
 	@Autowired
 	SubService subService;
 	@Autowired
-	EventService eService;
+	ChallengeService chService;
+	@Autowired
+	CouponService couponService;
+	@Autowired
+	YomoService yservice;
 
 	private static final Logger logger = LoggerFactory.getLogger(AdminCotroller.class);
 	
@@ -43,6 +54,14 @@ public class AdminCotroller {
 		List<ProVO> mlist = mService.selectAll();
 		model.addAttribute("mlist", mlist);
 		return "admin/adminMenu";
+	}
+
+	@PostMapping("adminMenu.do")
+	public String adminMenuDetail(Model model, ProVO menu) {
+		ProVO detailmenu = mService.selectByNo(menu.getPro_no());
+		model.addAttribute("detailmenu", detailmenu);
+		System.out.println(detailmenu);
+		return "admin/adminMenuDetail";
 	}
 	
 	@GetMapping("adminMember.do")
@@ -67,19 +86,25 @@ public class AdminCotroller {
 	}
 	
 	@GetMapping("adminNotice.do")
-	public String adminNotice() {
+	public String adminNotice(Model model) {
+		List<AnnoVO> ylist = yservice.selectAll();
+		List<FaqVO> flist = yservice.selectFaqAll();
+		model.addAttribute("ylist", ylist);
+		model.addAttribute("flist", flist);
 		return "admin/adminNotice";
 	}
 	
 	@GetMapping("adminEvent.do")
 	public String adminEvent(Model model) {
-		List<EventVO> elist = eService.selectAll();
-		model.addAttribute("elist", elist);
+		List<ChallengeVO> chlist = chService.selectAll();
+		model.addAttribute("chlist", chlist);
 		return "admin/adminEvent";
 	}
 	
 	@GetMapping("adminPoint.do")
-	public String adminPoint() {
+	public String adminPoint(Model model) {
+		List<CouponVO> clist = couponService.selectAll();
+		model.addAttribute("clist", clist);
 		return "admin/adminPoint";
 	}
 }

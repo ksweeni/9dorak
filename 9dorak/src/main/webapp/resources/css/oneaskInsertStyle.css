@@ -6,7 +6,7 @@
 .e815_534 {
     background-color: rgba(255, 255, 255, 1);
     width: 100%;
-    height: 2500px;
+/*     height: 2500px; */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -793,7 +793,7 @@
 	width:700px;
 	height:68px;
 	position:absolute;
-	left:370px;
+	left:531px;
 	top:141px;
 }
 .e1081_4451 { 
@@ -839,7 +839,7 @@
 	width:250px;
 	height:334px;
 	position:absolute;
-	left:70px;
+	left:235px;
 	top:260px;
 	border-top-left-radius:16px;
 	border-top-right-radius:16px;
@@ -1587,7 +1587,7 @@ th:nth-child(2) {
     width: 1200px;
     height: 1038px;
     top: 300px;
-    left: -120px;
+    left: -60px;
 }
 
 .div-wrapper .group {
@@ -1607,7 +1607,7 @@ th:nth-child(2) {
 	position: relative;
 	width: 1220px;
 	height: 1058px;
-	left: -5px;
+	left: 25px;
 	background-image: url(./img/group-13.png);
 	background-size: 100% 100%;
 }

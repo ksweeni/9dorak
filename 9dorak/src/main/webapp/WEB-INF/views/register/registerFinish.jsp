@@ -12,7 +12,8 @@ String contextPath = request.getContextPath();
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <meta charset="UTF-8">
-<title>registerForm</title>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 <style type="text/css">
 .e106_348 {
 	width: 607px;

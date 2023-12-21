@@ -118,16 +118,21 @@ public class MyPageDAOMybatis {
 	}
 
 	// 가족등록
-	public int insertPeople(Map<String,String> peopleData) {
+	public int insertPeople(Map<String, String> peopleData) {
 		return sqlSession.insert(NAMESPACE + "insertPeople", peopleData);
 	}
-	
+
 	// 가족목록
-	public List<PeopleVO> familyList(String mem_id) {
-	List<PeopleVO> flist = sqlSession.selectList(NAMESPACE + "familyList", mem_id);
-	return flist;
+	public List<Map<String, Object>> selectFamilyList(String mem_id) {
+		return sqlSession.selectList( NAMESPACE + "selectFamilyList", mem_id);
 	}
 	
+	// 가족목록삭제
+    public void deleteFamilyMember(String[] selected_mem_id2) {
+        sqlSession.delete("deleteFamilyMember", selected_mem_id2);
+    }
+	
+
 	// 배송 조회 내역
 	public List<DeliveryHistoryVO> AllDeliveryHistory(String mem_id) {
 		List<DeliveryHistoryVO> dlist = sqlSession.selectList(NAMESPACE + "AllDeliveryHistory", mem_id);
@@ -153,6 +158,5 @@ public class MyPageDAOMybatis {
 		int result = sqlSession.update(NAMESPACE + "updateDoranProfile", memVO);
 		return result;
 	}
-
 
 }

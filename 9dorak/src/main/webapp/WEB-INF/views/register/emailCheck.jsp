@@ -16,6 +16,8 @@ String contextPath = request.getContextPath();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 </style>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<!-- 	<span>이메일</span><br />

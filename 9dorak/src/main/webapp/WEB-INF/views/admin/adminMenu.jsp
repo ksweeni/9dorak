@@ -13,7 +13,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락 관리자페이지</title>
 </head>
 <body>
 	<div class=e2099_2373>
@@ -28,13 +30,13 @@
 		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span>
 		<div class="admin_login">
-		<div class="e2099_2476">
-			<hr>
-		</div>
-		<div class="e2099_2478"></div>
-		<span class="e2099_2477">관리자</span>
-		<div class="e2101_2491"></div>
-		<span class="e2101_2490">로그아웃</span>
+			<div class="e2099_2476">
+				<hr>
+			</div>
+			<div class="e2099_2478"></div>
+			<span class="e2099_2477">관리자</span>
+			<div class="e2101_2491"></div>
+			<span class="e2101_2490">로그아웃</span>
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
@@ -181,6 +183,31 @@
 
 		})
 	})
+	
+    $(document).ready(function () {
+        // 테이블의 각 행을 클릭했을 때 이벤트 핸들러
+        $('#products tbody').on('click', 'tr', function () {
+            // 클릭한 행의 메뉴 번호 가져오기
+            var pro_no = $(this).find('td:first').text();
+
+            // Ajax 호출
+            $.ajax({
+                type: 'POST',
+                url: '${cpath}/admin/adminMenu.do',
+                data: { pro_no: pro_no },
+                success: function (response) {
+                    // 서버에서의 응답 처리
+                    $("body").html(response);
+                    console.log(pro_no);
+
+                    // 추가적인 동작 수행 가능
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    });
 	
 	//페이징 처리 함수
 	var $setRows = $('#setRows');

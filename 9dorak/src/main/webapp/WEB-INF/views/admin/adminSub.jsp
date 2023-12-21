@@ -12,7 +12,8 @@
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<title>Insert title here</title>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락 관리자페이지</title>
 </head>
 <body>
 	<div class=e2099_2373>
@@ -40,7 +41,7 @@
 		<div class="e2099_2486">
 			<table id="products" border="1">
 				<caption>
-					주문 list
+					구독 list
 					<form action="" id="setRows">
 						<p>
 							한 페이지당 데이터 수 :  <input type="text" name="rowPerPage" value="5">
