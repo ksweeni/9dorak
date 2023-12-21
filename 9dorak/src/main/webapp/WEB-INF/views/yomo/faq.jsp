@@ -100,7 +100,7 @@
 	<div class=e1081_4455>
 		<div class=e1081_4456>
 		<div class="profile_photo"></div>
-			<span class="e1081_4458">김수인</span><span class="e1081_4459">LV.낑깡</span>
+			<span class="e1081_4458">${sessionScope.loginmem.mem_name}</span><span class="e1081_4459">LV.${sessionScope.loginmem.mem_grade}</span>
 		</div>
 		<div class=e1081_4460>
 			<a href="${pageContext.request.contextPath}/yomo/notice.do" class=e1081_4461>
