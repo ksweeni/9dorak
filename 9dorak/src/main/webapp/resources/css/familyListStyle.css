@@ -5,17 +5,35 @@ body {
 	/**/
 }
 
+.deleteButton {
+	position: relative;
+	top: 20px;
+	left: 810px;
+	width: 85px;
+    height: 40px;
+    background-color: #FFF8F1;
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: #e7e7e7;
+    cursor: pointer;
+}
+
+.deleteButton:hover{
+	background-color: #feae64;
+	color: white;
+}
+
 .familyList {
 	margin: -169px;
-	width: 55%;
+	width: 53%;
 	margin-left: 480px;
 }
 
 .empty-message {
-    font-size: 26px;
-    color: #666;
-    margin-top: 40px;
-    margin-left: 87px;
+	font-size: 26px;
+	color: #666;
+	margin-top: 40px;
+	margin-left: 87px;
 }
 
 table {
@@ -39,8 +57,9 @@ th {
 }
 
 th {
-    background-color: #feae64;
-    color: white;
+	background-color: #feae64;
+	color: white;
+	height: 40px;
 }
 
 * {
@@ -594,7 +613,6 @@ th {
 	min-height: 22px;
 }
 
-
 .u4358u4449u4363u4469u4369u4454u4363u4469u4364u4469-u4364u4469u4363u4469u4523-u4358u4457u4520u4357u4457u4520-u4364u4457u4370u4460
   .navbar-link-text {
 	color: var(- -black);
@@ -765,11 +783,10 @@ th {
 }
 
 .account-navigation, element.style {
-    position: relative;
-    top: 30px;
-    left: -32px;
+	position: relative;
+	top: 30px;
+	left: -32px;
 }
-
 
 .text-9 {
 	color: var(- -gravel);
@@ -795,12 +812,12 @@ th {
 .text-7 {
 	position: relative;
 	width: 77.61075592041016px;
-    height: 18px;
-    text-align: left;
-    font-size: 14px;
-    letter-spacing: 0;
-    font-weight: 600;
-    color: #484848;
+	height: 18px;
+	text-align: left;
+	font-size: 14px;
+	letter-spacing: 0;
+	font-weight: 600;
+	color: #484848;
 }
 
 .li {

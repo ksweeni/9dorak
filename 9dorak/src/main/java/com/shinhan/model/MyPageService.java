@@ -111,9 +111,14 @@ public class MyPageService {
 	}
 
 	// 가족목록
-	public List<PeopleVO> familyList(String mem_id) {
-		return dao.familyList(mem_id);
-	}
+    public List<Map<String, Object>> selectFamilyList(String mem_id) {
+        return dao.selectFamilyList(mem_id);
+    }
+    
+    // 가족목록삭제
+    public void deleteFamilyMember(String[] selected_mem_id2) {
+    	dao.deleteFamilyMember(selected_mem_id2);
+    }
 	
 
 	// 배송 조회 내역
