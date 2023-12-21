@@ -878,11 +878,11 @@
 
 #modal_content {
 	background-color: #fefefe;
-	margin: 20% 20%;
+	margin: 14% 26%;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 50%;
-	height: 15%;
+	width: 40%;
+	height: 37%;
 }
 
 .modal_close_btn {
@@ -891,8 +891,8 @@
 	font-size: 28px;
 	font-weight: bold;
 	position: relative;
-	top:300px;
-	left: -470px;
+	top: 253px;
+	left: -556px;
 }
 
 .modal_close_btn:hover, .close:focus {

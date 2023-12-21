@@ -17,6 +17,9 @@ String contextPath = request.getContextPath();
 <style>
 input {
 	width: 300px;
+	height: 30px;
+	order-radius: 7px;
+	margin: 10px;
 }
 
 .modal_close_btn {
