@@ -1,6 +1,4 @@
-t "UTF-8 ";
-
-.2099_2373 {
+t "UTF-8 "; .2099_2373 {
 	overflow: hidden;
 }
 
@@ -273,17 +271,17 @@ t "UTF-8 ";
 	background-color: white;
 	border-radius: 10px;
 	font-size: 13px;
-    margin-right: 15px;
+	margin-right: 15px;
 	cursor: pointer;
-    width: 92px;
-    height: 40px;
+	width: 92px;
+	height: 40px;
 }
 
 .e2099_2487 {
-    left: 55%;
-    top: 74px;
-    position: relative;
-    transform: translateX(-48%);
+	left: 55%;
+	top: 74px;
+	position: relative;
+	transform: translateX(-48%);
 }
 
 form {
@@ -291,12 +289,12 @@ form {
 }
 
 table {
-    position: relative;
-    border-collapse: collapse;
-    margin-bottom: 10px;
-    left: 25%;
-    transform: translateX(-70%);
-    top: 100px;
+	position: relative;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+	left: 25%;
+	transform: translateX(-70%);
+	top: 100px;
 }
 
 th, td {
@@ -351,4 +349,20 @@ td {
 
 #faqTable {
 	display: none; /* 초기에는 FAQ 테이블 숨기기 */
+}
+
+.insertAnno {
+	position: relative;
+	left: 664px;
+	top: 120px;
+}
+
+.insertAnno button {
+	border: 2px solid orange;
+	background-color: white;
+	border-radius: 10px;
+	font-size: 13px;
+	cursor: pointer;
+	width: 92px;
+	height: 40px;
 }

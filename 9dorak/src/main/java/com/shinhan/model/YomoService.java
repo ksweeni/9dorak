@@ -117,9 +117,20 @@ public class YomoService {
 	
 	
 	public int adminNoticeUpdate(AnnoVO anno) {
-		// TODO Auto-generated method stub
-		System.out.println(anno);
+
 		return dao.adminNoticeUpdate(anno);
 	}
+
+	public int adminNoticeDelete(int anno_no) {
+		// TODO Auto-generated method stub
+		return dao.adminNoticeDelete(anno_no);
+	}
+
+	/*
+	 * public int adminNoticeInsert(AnnoVO anno) { // TODO Auto-generated method
+	 * stub return dao.adminNoticeInsert(anno); }
+	 */
+
+
 
 }
