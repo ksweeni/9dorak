@@ -96,5 +96,9 @@ public class MenuService {
 		return dao.selectMoaSelected(revno);
 	}
 
+	public int deleteMenu(int pro_no) {
+		return dao.deleteMenu(pro_no);
+	}
+
 
 }

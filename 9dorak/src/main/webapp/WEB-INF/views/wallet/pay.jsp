@@ -395,7 +395,7 @@
 		var IMP = window.IMP;
 		IMP.init("imp40668838"); // 내 가맹점 식별 코드
 
-		var amount = 2000; // 원가
+		var amount = 7000; // 원가
 		var coupon = 0;
 
 		function requestPay() {
@@ -403,7 +403,7 @@
 			IMP.request_pay({
 				pg : "inicis",
 				pay_method : "card",
-				merchant_uid : "ORD20180131-0000061", // 매번 새로워야 함
+				merchant_uid : "ORD20180131-0000067", // 매번 새로워야 함
 				name : "구도락 결제 테스트 입니다",
 				amount : discountedAmount,
 				buyer_email : "gildong@gmail.com",
