@@ -19,7 +19,9 @@ String contextPath = request.getContextPath();
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 </head>
 <body>
@@ -57,8 +59,13 @@ String contextPath = request.getContextPath();
 		</div>
 		<span class="v49_2130"><span style="color: orange;">가입
 				유형</span>을 선택해주세요</span>
-				
-				<div class="goto-login">이미 계정이 있나요?  <a class="to-login" href="${cpath}/login/loginForm.do"> 로그인하기</a></div>
+
+		<div class="goto-login">
+			이미 계정이 있나요? <a class="to-login" href="${cpath}/login/loginForm.do">
+				로그인하기</a>
+		</div>
 	</div>
+
 </body>
+	
 </html>
