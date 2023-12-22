@@ -166,6 +166,7 @@
 	letter-spacing: 2;
 	cursor: pointer;
 	position: relative;
+	text-decoration: none;
 }
 
 .e2099_2471 {
@@ -312,4 +313,17 @@ td {
 #nav a.active {
   background: #333;
   color: #fff;
+}
+.insert_memu {
+    position: relative;
+    border: 2px solid orange;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-right: 15px;
+    cursor: pointer;
+    left: 35px;
+    top: 98px;
+    width: 80px;
+    height: 40px;
 }

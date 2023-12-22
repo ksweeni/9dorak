@@ -33,7 +33,7 @@ String contextPath = request.getContextPath();
 	top: -30px;
 	background-image:
 		url(
-	/myapp/resources/images/register/ProgressBar.png);
+	/myapp/resources/images/register/ProgressBar_3.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }

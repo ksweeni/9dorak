@@ -167,6 +167,7 @@ t "UTF-8 ";
 	letter-spacing: 2;
 	cursor: pointer;
 	position: relative;
+	text-decoration: none;
 }
 
 .e2099_2471 {
@@ -271,8 +272,11 @@ t "UTF-8 ";
 	border: 2px solid orange;
 	background-color: white;
 	border-radius: 10px;
-	font-size: 16px;
+	font-size: 13px;
+    margin-right: 15px;
 	cursor: pointer;
+    width: 92px;
+    height: 40px;
 }
 
 .e2099_2487 {

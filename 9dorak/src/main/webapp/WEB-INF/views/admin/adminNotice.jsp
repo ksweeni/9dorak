@@ -35,7 +35,7 @@
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
-			<span class="e2101_2490">로그아웃</span>
+			<a href="${pageContext.request.contextPath}/my/logout.do" class="e2101_2490">로그아웃</a>
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">

@@ -35,7 +35,7 @@
 		<div class="e2099_2478"></div>
 		<span class="e2099_2477">관리자</span>
 		<div class="e2101_2491"></div>
-		<span class="e2101_2490">로그아웃</span>
+		<a href="${pageContext.request.contextPath}/my/logout.do" class="e2101_2490">로그아웃</a>
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
@@ -59,7 +59,6 @@
 						<th>회원핸드폰번호</th>
 						<th>회원패스워드</th>
 						<th>회원코드</th>
-						<th>회원주소</th>
 						<th>회원포인트</th>
 						<th>회원등급</th>
 						<th>회원탈퇴여부</th>
@@ -77,7 +76,6 @@
 							<td>${mem.mem_phone}</td>
 							<td>${mem.mem_pw}</td>
 							<td>${mem.mem_code}</td>
-							<td>${mem.mem_addr}</td>
 							<td>${mem.mem_point}</td>
 							<td>${mem.mem_grade}</td>
 							<td>${mem.mem_quit}</td>
