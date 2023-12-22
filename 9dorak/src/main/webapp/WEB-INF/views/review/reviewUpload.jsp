@@ -12,10 +12,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class="screen">
 		<div class="div">
+		
 			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
@@ -76,7 +79,7 @@
 					</div>
 				</div>
 			</header>
-
+			
 
 			<div class="overlap">
 				<div class="group">
@@ -127,7 +130,7 @@
 					style="background-image: url('${cpath}/resources/images/menu/Salad.png');"></div>
 				<div class="text-wrapper-2">참치 계란 도시락, 어떠셨나요?</div>
 				<p class="p">이 상품에 대해 어느 정도 만족하셨나요?</p>
-			</div>
+			</div><!-- overlap -->
 
 
 			<div class="upload-field">
@@ -149,10 +152,7 @@
 					<!-- bottom-content -->
 				</div>
 				<!-- type-n -->
-			</div>
-
-
-
+			</div><!-- upload-field -->
 
 
 			<footer class="footer">
@@ -220,12 +220,9 @@
 				</div>
 			</footer>
 
-
-
-
-
-		</div>
-	</div>
+		</div><!-- div -->
+	</div><!-- screen -->
+	
 <script>
     function toggleStar(starCount) {
         let stars = document.querySelectorAll('.rating-star');
