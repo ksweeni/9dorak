@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.coupon-create {
+	position: relative;
+    top: 1.5rem;
+    left: 20rem;
+}
+
 .2099_2373 {
 	overflow: hidden;
 }

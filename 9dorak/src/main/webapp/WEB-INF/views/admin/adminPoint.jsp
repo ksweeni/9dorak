@@ -72,6 +72,8 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			
+			<button class="coupon-create" >쿠폰 등록</button>
 		</div>
 	</div>
 </body>
@@ -220,5 +222,17 @@ $(".e2099_2474").on("click", function() {
 
 
 	$setRows.submit();
+	
+	$(".coupon-create").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminCouponCreate.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+
+		})
+	})
 </script>
 </html>
