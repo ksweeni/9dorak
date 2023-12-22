@@ -43,3 +43,8 @@
 		</c:otherwise>
 	</c:choose>
 </div>
+<script>
+	function review() {
+		arler("리뷰");
+	}
+</script>

@@ -5,8 +5,13 @@
 <mapper namespace="net.firstzone.review">
 
 	<!-- 메뉴 전체보기 -->
-	<select id="selectAll" resultType="provo">
-		select * from pro
-	</select>
+<!--  	<select id="selectByOrderdetail" parameterType="HashMap" resultType="orderdetailvo">
+		SELECT TA.*, TB.*, TC.*
+		FROM ORDERDETAIL TA
+		JOIN ORDERS TB ON TA.ORDER_NO = TB.ORDER_NO
+		JOIN PRO TC ON TA.PRO_NO = TC.PRO_NO
+		WHERE TB.MEM_ID = '${mem_id}'
+		  AND TA.PRO_NO = ${pro_no}
+	</select> -->
 
 </mapper>

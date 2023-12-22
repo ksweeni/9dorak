@@ -110,7 +110,7 @@
 	<select id="orderList" parameterType="string" resultType="map">
 		SELECT
 		od.pro_no, p.pro_name, od.orderdetail_count,
-		o.order_status, o.order_date, o.order_price,
+		o.order_status, o.order_date, o.order_price, od.order_no,
 		(select
 		proimage_image
 		from proimage
