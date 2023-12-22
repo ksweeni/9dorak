@@ -97,7 +97,7 @@
 										style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
 									<div class="view">
 										<div class="">
-											<div class="starpiont">별점 ${moafrist.memreview_starpoint }</div>
+											<%-- <div class="starpiont">별점 ${moafrist.memreview_starpoint }</div> --%>
 										</div>
 										<div>
 											<p class="p">${moafrist.memreview_cont }</p>
@@ -242,7 +242,7 @@
 	
 		//사진클릭시 디테일보기 변경
 		function mediaReview(rNo){
-			alert(rNo);
+			//alert(rNo);
 			
 			$.ajax({
 				url : "${cpath}/menu/mediaReviewDetail.do",
