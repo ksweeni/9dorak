@@ -135,69 +135,69 @@ public class MenuController {
 //	}
 	
 	//리뷰페이지
-//    @GetMapping("menuSpecificReview.do")
-//    public String menuSpecificReview(Model model, ProVO pro, HttpSession session,@RequestParam(defaultValue = "0") int currentPage) {
-//        MemVO memVO = (MemVO) session.getAttribute("loginmem");
-//        Map<String, Object> inputMap = new HashMap<String, Object>();
-//        inputMap.put("pro_no", pro.getPro_no());
-//        inputMap.put("currentPage", currentPage);
-//        if(memVO != null) {
-//            
-//            String memId = memVO.getMem_id();
-//            inputMap.put("mem_id", memId);
-//            
-//            model.addAttribute("reserveCnt", mService.selectReserveYn(inputMap));
-//        }
-//        
-//        List<Map<String, Object>> txtrlist = mService.selectProReviewTxt(inputMap);
-//        List<Map<String, Object>> phtrlist = mService.selectProReviewPth(inputMap);
-//        
-//        Map<String, Object> revwCnt = mService.reviewCnt(pro.getPro_no());
-//        PagingVO pagVO = new PagingVO((int)revwCnt.get("txtCnt"),currentPage);
-//        
-//        ArrayList<Integer> pageList = new ArrayList<Integer>(); 
-//        
-//        //System.out.println(pagVO.getTotalPage());
-//        
-//        //페이지 숫자표시
-//        for (int i= 0;i < pagVO.getTotalPage()+1;i++) {
-//            pageList.add(i, i+1);
-//        };
-//        
-//        model.addAttribute("pageList", pageList);
-//             
-//        model.addAttribute("txtrlist", txtrlist);
-//        model.addAttribute("phtrlist", phtrlist);
-//        
-//        model.addAttribute("totCnt",revwCnt.get("totCnt"));
-//        model.addAttribute("phtCnt",revwCnt.get("phtCnt"));
-//        model.addAttribute("txtCnt",revwCnt.get("txtCnt"));
-//        model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
-//                
-//        return "menu/menuSpecificReview";
-//    }
-//    
-//    @GetMapping("reviewPageBtnClick.do")
-//    public String reviewPageBtnClick(Model model, ProVO pro, HttpSession session,@RequestParam(defaultValue = "0") int currentPage) {
-//        MemVO memVO = (MemVO) session.getAttribute("loginmem");
-//        Map<String, Object> inputMap = new HashMap<String, Object>();
-//        inputMap.put("pro_no", pro.getPro_no());
-//        inputMap.put("currentPage", currentPage);
-//        if(memVO != null) {
-//            
-//            String memId = memVO.getMem_id();
-//            inputMap.put("mem_id", memId);
-//            
-//            model.addAttribute("reserveCnt", mService.selectReserveYn(inputMap));
-//        }
-//        
-//        List<Map<String, Object>> txtrlist = mService.selectProReviewTxt(inputMap);
-//        
-//        model.addAttribute("txtrlist", txtrlist);
-//        model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
-//                
-//        return "menu/review_ajax";
-//    }
+    @GetMapping("menuSpecificReview.do")
+    public String menuSpecificReview(Model model, ProVO pro, HttpSession session,@RequestParam(defaultValue = "0") int currentPage) {
+        MemVO memVO = (MemVO) session.getAttribute("loginmem");
+        Map<String, Object> inputMap = new HashMap<String, Object>();
+        inputMap.put("pro_no", pro.getPro_no());
+        inputMap.put("currentPage", currentPage);
+        if(memVO != null) {
+            
+            String memId = memVO.getMem_id();
+            inputMap.put("mem_id", memId);
+            
+            model.addAttribute("reserveCnt", mService.selectReserveYn(inputMap));
+        }
+        
+        List<Map<String, Object>> txtrlist = mService.selectProReviewTxt(inputMap);
+        List<Map<String, Object>> phtrlist = mService.selectProReviewPth(inputMap);
+        
+        Map<String, Object> revwCnt = mService.reviewCnt(pro.getPro_no());
+        PagingVO pagVO = new PagingVO((int)revwCnt.get("txtCnt"),currentPage);
+        
+        ArrayList<Integer> pageList = new ArrayList<Integer>(); 
+        
+        //System.out.println(pagVO.getTotalPage());
+        
+        //페이지 숫자표시
+        for (int i= 0;i < pagVO.getTotalPage()+1;i++) {
+            pageList.add(i, i+1);
+        };
+        
+        model.addAttribute("pageList", pageList);
+             
+        model.addAttribute("txtrlist", txtrlist);
+        model.addAttribute("phtrlist", phtrlist);
+        
+        model.addAttribute("totCnt",revwCnt.get("totCnt"));
+        model.addAttribute("phtCnt",revwCnt.get("phtCnt"));
+        model.addAttribute("txtCnt",revwCnt.get("txtCnt"));
+        model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
+                
+        return "menu/menuSpecificReview";
+    }
+    
+    @GetMapping("reviewPageBtnClick.do")
+    public String reviewPageBtnClick(Model model, ProVO pro, HttpSession session,@RequestParam(defaultValue = "0") int currentPage) {
+        MemVO memVO = (MemVO) session.getAttribute("loginmem");
+        Map<String, Object> inputMap = new HashMap<String, Object>();
+        inputMap.put("pro_no", pro.getPro_no());
+        inputMap.put("currentPage", currentPage);
+        if(memVO != null) {
+            
+            String memId = memVO.getMem_id();
+            inputMap.put("mem_id", memId);
+            
+            model.addAttribute("reserveCnt", mService.selectReserveYn(inputMap));
+        }
+        
+        List<Map<String, Object>> txtrlist = mService.selectProReviewTxt(inputMap);
+        
+        model.addAttribute("txtrlist", txtrlist);
+        model.addAttribute("menudetail", mService.selectByNo(pro.getPro_no()));
+                
+        return "menu/review_ajax";
+    }
 	
     //찜목록
 	@GetMapping("reserve.do")
@@ -232,37 +232,37 @@ public class MenuController {
 	}
 	
 //	// 리뷰 사진 및 동영상 모아보기
-//	@GetMapping("menuMediaReview.do")
-//	public String menuMediaReview(Model model, ProVO pro) {
-//		
-//		List<Map<String, Object>> moalist = mService.selectMoaview(pro.getPro_no());
-//		model.addAttribute("moalist", moalist);
-//		
-//		//System.out.println(moalist);
-//		//System.out.println(mService.selectMoaFrist(pro.getPro_no()));
-//		
-//        model.addAttribute("moadetail", mService.selectByNo(pro.getPro_no()));
-//		model.addAttribute("moafrist", mService.selectMoaFrist(pro.getPro_no()));
-//		
-//		return "menu/menuMediaReviews";
-//	}
-//	
-//	@PostMapping("mediaReviewDetail.do")
-//	public String mediaReviewDetail(Model model, ProVO pro, MemreviewVO rev) {
-//		//System.out.println("mediaReviewDetail");
-//		//System.out.println(rev.getMemreview_no());
-//		//System.out.println(pro.getPro_no());
-//		//System.out.println(map.get("memreview_no"));
-//		//System.out.println(map.get("pro_no"));
-//		
-//		List<Map<String, Object>> moalist = mService.selectMoaview(pro.getPro_no());
-//		model.addAttribute("moalist", moalist);
-//		System.out.println(moalist);
-//		
-//		model.addAttribute("moadetail", mService.selectByNo(pro.getPro_no()));
-//		model.addAttribute("moaSelected", mService.selectMoaSelected(rev.getMemreview_no()));
-//		
-//		return "menu/mediareview_ajax";
-//	}
+	@GetMapping("menuMediaReview.do")
+	public String menuMediaReview(Model model, ProVO pro) {
+		
+		List<Map<String, Object>> moalist = mService.selectMoaview(pro.getPro_no());
+		model.addAttribute("moalist", moalist);
+		
+		//System.out.println(moalist);
+		//System.out.println(mService.selectMoaFrist(pro.getPro_no()));
+		
+        model.addAttribute("moadetail", mService.selectByNo(pro.getPro_no()));
+		model.addAttribute("moafrist", mService.selectMoaFrist(pro.getPro_no()));
+		
+		return "menu/menuMediaReviews";
+	}
+	
+	@PostMapping("mediaReviewDetail.do")
+	public String mediaReviewDetail(Model model, ProVO pro, MemreviewVO rev) {
+		//System.out.println("mediaReviewDetail");
+		//System.out.println(rev.getMemreview_no());
+		//System.out.println(pro.getPro_no());
+		//System.out.println(map.get("memreview_no"));
+		//System.out.println(map.get("pro_no"));
+		
+		List<Map<String, Object>> moalist = mService.selectMoaview(pro.getPro_no());
+		model.addAttribute("moalist", moalist);
+		System.out.println(moalist);
+		
+		model.addAttribute("moadetail", mService.selectByNo(pro.getPro_no()));
+		model.addAttribute("moaSelected", mService.selectMoaSelected(rev.getMemreview_no()));
+		
+		return "menu/mediareview_ajax";
+	}
 	
 }

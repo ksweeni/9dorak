@@ -118,44 +118,45 @@
 		where pro_no = #{pro_no}
     </update>
 
-<!--     상품리뷰 맵
+    <!-- 상품리뷰 맵 -->
 	<resultMap type="HashMap" id="proreviewMap">
-    	<id column="orderdetail_no" property="orderdetail_no"/>
     	<id column="memreview_date" property="memreview_date" javaType="java.lang.String"/>
     	<id column="memreview_cont" property="memreview_cont"/>
-    	<id column="memreview_starpoint" property="memreview_starpoint"/>
     	<id column="memreview_image" property="memreview_imgage"/>
     	<id column="memreview_no" property="memreview_no"/>
     	<id column="pro_no" property="pro_no"/>
+    	<id column="order_no" property="order_no"/>
     	<id column="mem_id" property="mem_id"/>
     </resultMap>
     
-    상품리뷰 텍스트
+    <!-- 상품리뷰 텍스트 -->
     <select id="selectProReviewTxt" parameterType="HashMap" resultMap="proreviewMap">
-		with base_t as
-	    (
-	    select 
-	           TA.orderdetail_no as orderdetail_no
-	         , to_char(TA.memreview_date, 'yyyy"년 "mm"월 "dd"일"') memreview_date
-	         , TA.memreview_cont as memreview_cont
-	         , TA.memreview_starpoint as memreview_starpoint
-	         , TB.pro_no as pro_no
-	         , TC.mem_id as mem_id
-	      from memreview TA
-	         , orderdetail TB
-	    	 , orders TC
-	     where TB.pro_no = ${pro_no}
-	       and TB.orderdetail_no = TA.orderdetail_no
-	       and TB.order_no = TC.order_no
-	       and TA.memreview_image is null
-	     order by ta.memreview_date desc 
-	    )
-	    , one_page_t as
-	    (
-	    select 
-	           base_t.*
-	         , ROWNUM AS rnum
-	      from base_t
+	with base_t as
+		(
+			SELECT
+				TO_CHAR(TA.memreview_date, 'yyyy"년 "mm"월 "dd"일"') AS memreview_date,
+				TA.memreview_cont AS memreview_cont,
+				TA.order_no AS order_no,
+				TB.pro_no AS pro_no,
+				TC.mem_id AS mem_id
+			FROM
+				MEMREVIEW TA
+			JOIN
+				ORDERDETAIL TB ON TA.ORDER_NO = TB.ORDER_NO AND TA.PRO_NO = TB.PRO_NO
+			JOIN
+				ORDERS TC ON TB.ORDER_NO = TC.ORDER_NO
+			WHERE
+				TB.PRO_NO = ${pro_no}
+				AND TA.memreview_image IS NULL
+			ORDER BY
+				TA.memreview_date DESC
+		)
+	, one_page_t as
+	(
+	select
+	base_t.*
+	, ROWNUM AS rnum
+	from base_t
 	    <![CDATA[ where ROWNUM <= #{currentPage}+4]]>
 	    )
 	    select *
@@ -163,12 +164,12 @@
 	    where rnum > #{currentPage}
     </select> 
     
-    상품리뷰 사진
+    <!-- 상품리뷰 사진 -->
     <select id="selectProReviewPth" parameterType="HashMap" resultMap="proreviewMap">
     	WITH RankedMemReviews AS (
 		    SELECT TA.*
 		    FROM memreview TA
-		    JOIN orderdetail TB ON TA.orderdetail_no = TB.orderdetail_no
+		    JOIN orderdetail TB ON TA.order_no = TB.order_no
 		    JOIN orders TC ON TB.order_no = TC.order_no
 		    WHERE TB.pro_no = #{pro_no}
 		        AND TA.memreview_image IS NOT NULL
@@ -179,23 +180,23 @@
 		<![CDATA[ WHERE ROWNUM <= 4 ]]>
     </select>
     
-    사진리뷰 모아보기 리스트
+	<!-- 사진리뷰 모아보기 리스트 -->
     <select id="selectMoaview" parameterType="HashMap" resultMap="proreviewMap">
     	SELECT TA.*, TC.mem_id
 		    FROM memreview TA
-		    JOIN orderdetail TB ON TA.orderdetail_no = TB.orderdetail_no
+		    JOIN orderdetail TB ON TA.order_no = TB.order_no
 		    JOIN orders TC ON TB.order_no = TC.order_no
 		    WHERE TB.pro_no = ${pro_no}
 		        AND TA.memreview_image IS NOT NULL
 		    order by ta.memreview_date desc
     </select>
     
-    사진리뷰 모아보기 첫 큰화면
+	<!--     사진리뷰 모아보기 첫 큰화면 -->
     <select id="selectMoaFrist" parameterType="int" resultType="memreviewvo">
     	WITH RankedMoaFrist AS (
 	    	SELECT TA.*, TC.mem_id
 			    FROM memreview TA
-			    JOIN orderdetail TB ON TA.orderdetail_no = TB.orderdetail_no
+			    JOIN orderdetail TB ON TA.order_no = TB.order_no
 			    JOIN orders TC ON TB.order_no = TC.order_no
 			    WHERE TB.pro_no = ${pro_no}
 			        AND TA.memreview_image IS NOT NULL
@@ -206,42 +207,42 @@
 		<![CDATA[ WHERE ROWNUM <= 1 ]]>
     </select>
     
-    사진리뷰 모아보기 선택 큰화면
+	<!-- 사진리뷰 모아보기 선택 큰화면 -->
     <select id="selectMoaSelected" parameterType="int" resultType="memreviewvo">
     	SELECT TA.*, TC.mem_id
 		    FROM memreview TA
-		    JOIN orderdetail TB ON TA.orderdetail_no = TB.orderdetail_no
+		    JOIN orderdetail TB ON TA.order_no = TB.order_no
 		    JOIN orders TC ON TB.order_no = TC.order_no
 		    WHERE TA.memreview_no = ${memreview_no}
     </select>
 
-	리뷰 토탈 카운트
+	<!-- 리뷰 토탈 카운트 -->
     <select id="proRevwTotCnt" parameterType="int" resultType="int">
 	    select 
 	           count(*)
 	  	  from memreview, orderdetail
 		 where orderdetail.pro_no = #{pro_no}
-		   and orderdetail.orderdetail_no = memreview.orderdetail_no
+		   and orderdetail.order_no = memreview.order_no
     </select>
     
-    사진 리뷰 카운트
+    <!-- 사진 리뷰 카운트 -->
     <select id="proRevwPhtCnt" parameterType="int" resultType="int">
 	    select 
 	           count(*)
 	  	  from memreview, orderdetail
 		 where orderdetail.pro_no = #{pro_no}
-		   and orderdetail.orderdetail_no = memreview.orderdetail_no
+		   and orderdetail.order_no = memreview.order_no
 		   and memreview.memreview_image is not null
     </select>
     
-    텍스트 리뷰 카운트
+   <!-- 텍스트 리뷰 카운트 -->
     <select id="proRevwTxtCnt" parameterType="int" resultType="int">
 	    select 
 	           count(*)
 	  	  from memreview, orderdetail
 		 where orderdetail.pro_no = #{pro_no}
-		   and orderdetail.orderdetail_no = memreview.orderdetail_no
+		   and orderdetail.order_no = memreview.order_no
 		   and memreview.memreview_image is null
-    </select> -->
+    </select>
     
 </mapper>

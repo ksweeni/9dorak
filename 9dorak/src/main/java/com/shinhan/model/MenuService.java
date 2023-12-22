@@ -52,17 +52,17 @@ public class MenuService {
 		return dao.searchCategoryCheck(ingre_no);
 	}
 	
-//	public List<Map<String, Object>> selectProReviewTxt(Map<String, Object> map) {
-//        return dao.selectProReviewTxt(map);
-//    }
-//	
-//	public List<Map<String, Object>> selectProReviewPth(Map<String, Object> map) {
-//		return dao.selectProReviewPth(map);
-//	}
-//	
-//	public Map<String, Object> reviewCnt(int prono){
-//		return dao.proRevwCnt(prono);
-//	}
+	public List<Map<String, Object>> selectProReviewTxt(Map<String, Object> map) {
+        return dao.selectProReviewTxt(map);
+    }
+	
+	public List<Map<String, Object>> selectProReviewPth(Map<String, Object> map) {
+		return dao.selectProReviewPth(map);
+	}
+	
+	public Map<String, Object> reviewCnt(int prono){
+		return dao.proRevwCnt(prono);
+	}
 	
 	public int selectReserveYn (Map<String, Object> map) {
 		return dao.selectReserveYn(map);
@@ -84,17 +84,17 @@ public class MenuService {
 		return dao.searchAllergyCheck(pro);
 	}
 
-//	public List<Map<String, Object>> selectMoaview(int prono) {
-//		return dao.selectMoaview(prono);
-//	}
-//
-//	public MemreviewVO selectMoaFrist(int prono) {
-//		return dao.selectMoaFrist(prono);
-//	}
-//
-//	public MemreviewVO selectMoaSelected(int revno) {
-//		return dao.selectMoaSelected(revno);
-//	}
+	public List<Map<String, Object>> selectMoaview(int prono) {
+		return dao.selectMoaview(prono);
+	}
+
+	public MemreviewVO selectMoaFrist(int prono) {
+		return dao.selectMoaFrist(prono);
+	}
+
+	public MemreviewVO selectMoaSelected(int revno) {
+		return dao.selectMoaSelected(revno);
+	}
 
 
 }
