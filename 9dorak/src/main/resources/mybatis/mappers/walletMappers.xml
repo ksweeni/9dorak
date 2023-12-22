@@ -67,7 +67,7 @@
 	<select id="peopleBasket" parameterType="String"
 		resultMap="basketMap">
 		with ranked_proimages as (
-		select m.mem_id m.mem_name,
+		select m.mem_id, m.mem_name,
 		b.pro_no, p.pro_name, b.basket_pro_count,
 		p.pro_price,
 		to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"')

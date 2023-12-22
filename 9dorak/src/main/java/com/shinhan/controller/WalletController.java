@@ -120,12 +120,15 @@ public class WalletController {
 		MemVO member = wService.checkMember(loginmem.getMem_id());
 		List<BasketVO> blist = wService.emptyBasket(loginmem.getMem_id());
 		List<PeopleVO> people = wService.peopleCheck(loginmem.getMem_id());
+		
 		List<Map<String, Object>> basket;
-
+		
 		if (people == null || people.isEmpty()) {
 			basket = wService.noPeopleBasket(loginmem.getMem_id());
+			System.out.println(basket);
 		} else {
 			basket = wService.allPeopleBasket(loginmem.getMem_id());
+			System.out.println(basket);
 		}
 
 		model.addAttribute("mem", member);
