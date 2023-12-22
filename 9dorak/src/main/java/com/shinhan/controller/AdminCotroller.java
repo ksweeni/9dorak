@@ -28,10 +28,12 @@ import com.shinhan.model.OrderService;
 import com.shinhan.model.SubService;
 import com.shinhan.model.YomoService;
 
+import oracle.jdbc.proxy.annotation.Post;
+
 @Controller
 @RequestMapping("admin")
 public class AdminCotroller {
-	
+
 	@Autowired
 	MenuService mService;
 	@Autowired
@@ -48,7 +50,7 @@ public class AdminCotroller {
 	YomoService yservice;
 
 	private static final Logger logger = LoggerFactory.getLogger(AdminCotroller.class);
-	
+
 	@GetMapping("adminMenu.do")
 	public String adminMenu(Model model) {
 		List<ProVO> mlist = mService.selectAll();
@@ -63,28 +65,28 @@ public class AdminCotroller {
 		System.out.println(detailmenu);
 		return "admin/adminMenuDetail";
 	}
-	
+
 	@GetMapping("adminMember.do")
 	public String adminMember(Model model) {
 		List<MemVO> memlist = memService.selectAll();
 		model.addAttribute("memlist", memlist);
 		return "admin/adminMember";
 	}
-	
+
 	@GetMapping("adminOrder.do")
 	public String adminOrder(Model model) {
 		List<OrderVO> orderlist = orderService.selectAll();
 		model.addAttribute("orderlist", orderlist);
 		return "admin/adminOrder";
 	}
-	
+
 	@GetMapping("adminSub.do")
 	public String adminSub(Model model) {
 		List<SubVO> sublist = subService.selectAll();
 		model.addAttribute("sublist", sublist);
 		return "admin/adminSub";
 	}
-	
+
 	@GetMapping("adminNotice.do")
 	public String adminNotice(Model model) {
 		List<AnnoVO> ylist = yservice.selectAll();
@@ -93,18 +95,39 @@ public class AdminCotroller {
 		model.addAttribute("flist", flist);
 		return "admin/adminNotice";
 	}
-	
+
 	@GetMapping("adminEvent.do")
 	public String adminEvent(Model model) {
 		List<ChallengeVO> chlist = chService.selectAll();
 		model.addAttribute("chlist", chlist);
 		return "admin/adminEvent";
 	}
-	
+
 	@GetMapping("adminPoint.do")
 	public String adminPoint(Model model) {
 		List<CouponVO> clist = couponService.selectAll();
 		model.addAttribute("clist", clist);
 		return "admin/adminPoint";
+	}
+
+	@GetMapping("adminNoticeDetail.do")
+	public String adminNoticeDetail(Model model, AnnoVO anno) {
+		anno = yservice.selectByno(anno.getAnno_no());
+		model.addAttribute("anno", anno);
+		return "admin/adminNoticeDetail";
+	}
+
+	@PostMapping("adminNoticeUpdate.do")
+	@ResponseBody
+	public String adminNoticeUpdate(Model model, AnnoVO anno) {
+//		System.out.println(anno);
+		int result = yservice.adminNoticeUpdate(anno);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+
+		}
+
 	}
 }

@@ -65,4 +65,61 @@ public class YomoService {
 		return dao.updateOneask(oneask);
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public int adminNoticeUpdate(AnnoVO anno) {
+		// TODO Auto-generated method stub
+		System.out.println(anno);
+		return dao.adminNoticeUpdate(anno);
+	}
+
 }

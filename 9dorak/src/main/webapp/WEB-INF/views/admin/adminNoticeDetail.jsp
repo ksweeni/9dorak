@@ -40,78 +40,22 @@
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
 			<div class="e2099_2487">
-				<button class="notice-btn" onclick="toggleTable('notice')">공지사항</button>
+				<!-- 	<button class="notice-btn" onclick="toggleTable('notice')">공지사항</button>
 				<button class="faq-btn" onclick="toggleTable('faq')">자주 묻는
-					질문</button>
+					질문</button> -->
 			</div>
 			<div id="noticeTable" class="table-container">
-				<table id="notice" border="1">
-					<!-- 공지사항 테이블 내용 -->
-					<caption>
-						공지사항 list
-						<form action="" id="setRows">
-							<p>
-								한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
-							</p>
-						</form>
-
-					</caption>
-
-					<thead>
-						<tr>
-							<th>공지사항번호</th>
-							<th>공지사항제목</th>
-							<th>공지사항조회수</th>
-							<th>공지사항작성날짜</th>
-							<th>공지사항작성자</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="anno" items="${ylist}" varStatus="rowStatus">
-							<tr>
-								<td><a href="${cpath }/admin/adminNoticeDetail.do?anno_no=${anno.anno_no}">${anno.anno_no}</a></td>
-								<td><a href="#">${anno.anno_title}</a></td>
-								<td><a href="#">${anno.anno_view}</a></td>
-								<td><a href="#">${anno.anno_date}</a></td>
-								<td><a href="#">${anno.anno_writer}</a></td>
-							</tr>
-						</c:forEach>
-
-
-
-					</tbody>
-				</table>
+				
+				<form action="">
+				공지사항 번호 : <input type="text" value="${anno.anno_no }" id="anno_no"/> <br />
+				공지사항 제목 : <input type="text" value="${anno.anno_title }" id="anno_title"/> <br />
+				공지사항 내용 : <textarea id="anno_cont">${anno.anno_cont}</textarea><br />
+				공지사항  조회수 :<input type="text" value="${anno.anno_view }"/> <br />
+				공지사항 등록날짜 : <input type="text" value="${anno.anno_date}"/> <br />
+				</form>
 			</div>
-
-			<div id="faqTable" class="table-container">
-				<table id="faq" border="1">
-					<!-- FAQ 테이블 내용 -->
-					<caption>
-						자주 묻는 질문 list
-						<form action="" id="setRows">
-							<p>
-								한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
-							</p>
-						</form>
-
-					</caption>
-
-					<thead>
-						<tr>
-							<th>FAQ번호</th>
-							<th>FAQ제목</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="faq" items="${flist}" varStatus="rowStatus">
-							<tr>
-								<td>${faq.faq_no}</td>
-								<td>${faq.faq_title}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</div>
+			<button id="noticeUpdate">수정</button><button id="noticeDelete">삭제</button>
+			<div id="faqTable" class="table-container"></div>
 		</div>
 	</div>
 </body>
@@ -200,5 +144,25 @@
 			faqTable.style.display = "block";
 		}
 	}
+	
+	$("#noticeUpdate").on("click",function(){
+ 
+
+	 	var param ={
+			anno_no : $("#anno_no").val(),
+			anno_title : $("#anno_title").val(),
+			anno_cont : $("anno_cont").val()
+		} 
+	
+		$.ajax({
+			url : "${cpath}/admin/adminNoticeUpdate.do",
+			data : param,
+			type : "post",
+			success: function(res){
+				alert(res);
+			}
+		})
+		
+	})
 </script>
 </html>
