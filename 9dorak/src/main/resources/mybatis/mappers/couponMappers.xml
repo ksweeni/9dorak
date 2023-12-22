@@ -8,4 +8,17 @@
 		select * from coupon
 	</select>
 
+	<select id="selectDistinctCoupon" resultType="couponvo">
+		select distinct coupon_name from coupon
+	</select>
+
+	<insert id="insertCoupon" parameterType="couponvo">
+		insert into
+		coupon values
+		(coupon_seq.nextval,
+		#{coupon_check}, #{coupon_name},
+		#{coupon_reg},
+		#{mem_id})
+	</insert>
+
 </mapper>

@@ -17,4 +17,7 @@ public class CouponService {
 		return dao.selectAll();
 	}
 
+	public int insertCoupon(CouponVO coupon){
+		return dao.insertCoupon(coupon);
+	}
 }

@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shinhan.dto.AnnoVO;
@@ -31,7 +32,7 @@ import com.shinhan.model.YomoService;
 @Controller
 @RequestMapping("admin")
 public class AdminController {
-	
+
 	@Autowired
 	MenuService mService;
 	@Autowired
@@ -48,7 +49,7 @@ public class AdminController {
 	YomoService yservice;
 
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
-	
+
 	@GetMapping("adminMenu.do")
 	public String adminMenu(Model model) {
 		List<ProVO> mlist = mService.selectAll();
@@ -63,28 +64,28 @@ public class AdminController {
 		System.out.println(detailmenu);
 		return "admin/adminMenuDetail";
 	}
-	
+
 	@GetMapping("adminMember.do")
 	public String adminMember(Model model) {
 		List<MemVO> memlist = memService.selectAll();
 		model.addAttribute("memlist", memlist);
 		return "admin/adminMember";
 	}
-	
+
 	@GetMapping("adminOrder.do")
 	public String adminOrder(Model model) {
 		List<OrderVO> orderlist = orderService.selectAll();
 		model.addAttribute("orderlist", orderlist);
 		return "admin/adminOrder";
 	}
-	
+
 	@GetMapping("adminSub.do")
 	public String adminSub(Model model) {
 		List<SubVO> sublist = subService.selectAll();
 		model.addAttribute("sublist", sublist);
 		return "admin/adminSub";
 	}
-	
+
 	@GetMapping("adminNotice.do")
 	public String adminNotice(Model model) {
 		List<AnnoVO> ylist = yservice.selectAll();
@@ -93,38 +94,47 @@ public class AdminController {
 		model.addAttribute("flist", flist);
 		return "admin/adminNotice";
 	}
-	
+
 	@GetMapping("adminEvent.do")
 	public String adminEvent(Model model) {
 		List<ChallengeVO> chlist = chService.selectAll();
 		model.addAttribute("chlist", chlist);
 		return "admin/adminEvent";
 	}
-	
+
 	@GetMapping("adminPoint.do")
 	public String adminPoint(Model model) {
 		List<CouponVO> clist = couponService.selectAll();
 		model.addAttribute("clist", clist);
 		return "admin/adminPoint";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@GetMapping("adminCouponCreate.do")
 	public String adminCouponCreate(Model model) {
-		List<MemVO> memlist = memService.selectAll();
-		model.addAttribute("memlist", memlist);
+		List<CouponVO> clist = couponService.selectAll();
+		model.addAttribute("clist", clist);
 		return "admin/adminCouponCreate";
+	}
+
+	@PostMapping("adminCouponInsert.do")
+	@ResponseBody
+	public String adminCouponInsert(
+	    @RequestParam String couponName,
+	    @RequestParam List<String> selectedMembers) {
+	   
+	    for (String memberId : selectedMembers) {
+	     
+	        CouponVO coupon = new CouponVO();
+	        coupon.setCoupon_code(null);
+	        coupon.setCoupon_name(couponName);
+	        coupon.setCoupon_reg("미등록");
+	        coupon.setCoupon_check("미사용");
+	        coupon.setMem_id(memberId); 
+	        
+	        int result = couponService.insertCoupon(coupon);
+	        System.out.println(coupon);
+	    }
+
+	    return "coupon insert Success !";
 	}
 }
