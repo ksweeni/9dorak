@@ -129,6 +129,7 @@ public class LoginController {
 		}
 	}
 	
+	//카카오로그인
 	@RequestMapping(value="kakaoLoginPro.do", method=RequestMethod.POST)
 	public @ResponseBody Map<String, Object> kakaoLoginPro(@RequestParam Map<String,Object> paramMap,HttpSession session) throws SQLException, Exception {
 	    System.out.println("paramMap:" + paramMap);

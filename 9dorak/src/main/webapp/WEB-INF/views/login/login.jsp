@@ -24,98 +24,102 @@
 
 <script type="text/javascript">
 	Kakao.init('5441b1f53765881e55f0aca5e80b8b62');
-	console.log( Kakao.isInitialized() ); // 초기화 판단여부
-	  
- 	 //카카오 로그인 후 토큰 값 저장.
-    function loginWithKakao() {
-        Kakao.Auth.loginForm({
-            success: function (authObj) {
-                console.log(authObj); // access토큰 값
-                Kakao.Auth.setAccessToken(authObj.access_token); // access토큰값 저장
-                
-             	// 쿠키에 access_token 저장
-                document.cookie = 'authorize-access-token=' + authObj.access_token + '; Path=/;';
+	console.log(Kakao.isInitialized()); // 초기화 판단여부
 
-                getInfo();
-            },
-            fail: function (err) {
-                console.log(err);
-            }
-        });
-    }
- 	 
-    // 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
-    function getInfo() {
-        Kakao.API.request({
-            url: '/v2/user/me',
-            success: function (res) {
-                console.log(res);            
-                
-               // 이메일, 닉네임, id
-               var account_email = res.kakao_account.email;
-               var profile_nickname = res.properties.nickname;
-               var id = res.id;
+	//카카오 로그인 후 토큰 값 저장.
+	function loginWithKakao() {
+		Kakao.Auth.loginForm({
+			success : function(authObj) {
+				console.log(authObj); // access토큰 값
+				Kakao.Auth.setAccessToken(authObj.access_token); // access토큰값 저장
 
-               console.log(account_email, profile_nickname, id);
-               
-               // 받아온 정보를 kakaoLoginPro 함수에 전달
-               kakaoLoginPro(res);
-            },
-               fail: function (error) {
-                   alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
-               }
-           });
-       } 
-       
-       // Ajax를 이용하여 백엔드로 전송
-       function kakaoLoginPro(response){
-    		var data = {name:response.properties.nickname,email:response.kakao_account.email,id:response.id}
-    		$.ajax({
-    			type : 'POST',
-    			url : 'kakaoLoginPro.do',
-    			data : data,
-    			dataType : 'json',
-    			success : function(data){
-    				console.log(data)
-    				if(data.JavaData == "YES"){
-    					alert("로그인 되었습니다.");
-    					location.href = '${cpath}'; // 메인 테스트 페이지로
-    				}else if(data.JavaData == "register"){
-    					$("#kakaoEmail").val(response.kakao_account.email);
-    					$("#kakaoName").val(response.properties.nickname);
-    					$("#kakaoId").val(response.id);
-    					$("#kakaoForm").submit();
-    					alert("회원가입이 필요합니다.");
-    				}else{
-    					alert("로그인에 실패했습니다");
-    				}
-    				
-    			},
-    			error: function(xhr, status, error){
-    				alert("로그인에 실패했습니다."+error);
-    			}
-    		});  
-       }
-       
-       function kakaoLogout() {			
-			//토큰이 있는지 확인
-			if(!Kakao.Auth.getAccessToken()) {
-				console.log('Not logged in.');
-				return;
+				// 쿠키에 access_token 저장
+				document.cookie = 'authorize-access-token='
+						+ authObj.access_token + '; Path=/;';
+
+				getInfo();
+			},
+			fail : function(err) {
+				console.log(err);
 			}
-			//카카오 로그아웃
-			Kakao.Auth.logout(function() {
-				console.log(Kakao.Auth.getAccessToken()); //null
-				
-				deleteCookie();
-				alert("로그아웃 되었습니다.");
-				window.location.href = '${cpath}/my/logout.do';
-			});
-       }
-       function deleteCookie() {
-    	    document.cookie = 'authorize-access-token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    	  }
-       
+		});
+	}
+
+	// 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
+	function getInfo() {
+		Kakao.API.request({
+			url : '/v2/user/me',
+			success : function(res) {
+				console.log(res);
+
+				// 이메일, 닉네임, id
+				var account_email = res.kakao_account.email;
+				var profile_nickname = res.properties.nickname;
+				var id = res.id;
+
+				console.log(account_email, profile_nickname, id);
+
+				// 받아온 정보를 kakaoLoginPro 함수에 전달
+				kakaoLoginPro(res);
+			},
+			fail : function(error) {
+				alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
+			}
+		});
+	}
+
+	// Ajax를 이용하여 백엔드로 전송
+	function kakaoLoginPro(response) {
+		var data = {
+			name : response.properties.nickname,
+			email : response.kakao_account.email,
+			id : response.id
+		}
+		$.ajax({
+			type : 'POST',
+			url : 'kakaoLoginPro.do',
+			data : data,
+			dataType : 'json',
+			success : function(data) {
+				console.log(data)
+				if (data.JavaData == "YES") {
+					alert("로그인 되었습니다.");
+					location.href = '${cpath}'; // 메인 테스트 페이지로
+				} else if (data.JavaData == "register") {
+					$("#kakaoEmail").val(response.kakao_account.email);
+					$("#kakaoName").val(response.properties.nickname);
+					$("#kakaoId").val(response.id);
+					$("#kakaoForm").submit();
+					alert("회원가입이 필요합니다.");
+				} else {
+					alert("로그인에 실패했습니다");
+				}
+
+			},
+			error : function(xhr, status, error) {
+				alert("로그인에 실패했습니다." + error);
+			}
+		});
+	}
+
+	function kakaoLogout() {
+		//토큰이 있는지 확인
+		if (!Kakao.Auth.getAccessToken()) {
+			console.log('Not logged in.');
+			return;
+		}
+		//카카오 로그아웃
+		Kakao.Auth.logout(function() {
+			console.log(Kakao.Auth.getAccessToken()); //null
+
+			deleteCookie();
+			alert("로그아웃 되었습니다.");
+			window.location.href = '${cpath}/my/logout.do';
+		});
+	}
+	function deleteCookie() {
+		document.cookie = 'authorize-access-token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+	}
 </script>
 
 <script>
@@ -128,7 +132,9 @@
 	}
 	window.onload = showLoginError;
 </script>
-<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 </head>
 <body>
@@ -191,18 +197,16 @@
 								onclick="location.href='${pageContext.request.contextPath}/login/findIdForm.do'"
 								type="submit" class="text-wrapper-9">아이디 / 비밀번호 찾기</button>
 						<p id="token-result"></p>
-						<!-- <a href="http://developers.kakao.com/logout">카카오 로그아웃</a>
-						<button class="api-btn" onclick="kakaoLogout()">로그아웃</button> -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-<form name="kakaoForm" id="kakaoForm" method = "post" action="../register/registerType.do">
-<input type="hidden" name="email" id="kakaoEmail" />
-<input type="hidden" name="name" id="kakaoName" />
-<input type="hidden" name="id" id="kakaoId" />
-</form>
+	<form name="kakaoForm" id="kakaoForm" method="post"
+		action="../register/registerType.do">
+		<input type="hidden" name="email" id="kakaoEmail" /> <input
+			type="hidden" name="name" id="kakaoName" /> <input type="hidden"
+			name="id" id="kakaoId" />
+	</form>
 </body>
 </html>
-
