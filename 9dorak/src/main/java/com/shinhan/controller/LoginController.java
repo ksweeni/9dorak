@@ -2,6 +2,7 @@ package com.shinhan.controller;
 
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -24,7 +25,9 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shinhan.dto.MemVO;
+import com.shinhan.dto.ProVO;
 import com.shinhan.model.LoginService;
+import com.shinhan.model.MenuService;
 
 @Controller
 @RequestMapping("login")
@@ -48,7 +51,7 @@ public class LoginController {
 		if (loginmem != null) {
 			session.setAttribute("loginmem", loginmem);
 			if(loginmem.getMem_id().equals("admin")) {
-				return "admin/adminMenu";
+				return "redirect:/admin/adminMenu.do";
 			} else {
 								return "redirect:/"; // 로그인 성공 시 메인 페이지로 리다이렉트
 			}
