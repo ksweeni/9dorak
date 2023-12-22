@@ -47,7 +47,11 @@ public class LoginController {
 
 		if (loginmem != null) {
 			session.setAttribute("loginmem", loginmem);
-			return "redirect:/"; // 로그인 성공 시 메인 페이지로 리다이렉트
+			if(loginmem.getMem_id().equals("admin")) {
+				return "admin/adminMenu";
+			} else {
+								return "redirect:/"; // 로그인 성공 시 메인 페이지로 리다이렉트
+			}
 		} else {
 			// 로그인 실패 시 처리
 			model.addAttribute("loginErrorMessage", "아이디 또는 비밀번호가 잘못되었습니다.");
