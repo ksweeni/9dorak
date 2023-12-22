@@ -30,7 +30,7 @@ import com.shinhan.model.YomoService;
 
 @Controller
 @RequestMapping("admin")
-public class AdminCotroller {
+public class AdminController {
 	
 	@Autowired
 	MenuService mService;
@@ -47,7 +47,7 @@ public class AdminCotroller {
 	@Autowired
 	YomoService yservice;
 
-	private static final Logger logger = LoggerFactory.getLogger(AdminCotroller.class);
+	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
 	@GetMapping("adminMenu.do")
 	public String adminMenu(Model model) {
@@ -106,5 +106,25 @@ public class AdminCotroller {
 		List<CouponVO> clist = couponService.selectAll();
 		model.addAttribute("clist", clist);
 		return "admin/adminPoint";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@GetMapping("adminCouponCreate.do")
+	public String adminCouponCreate(Model model) {
+		List<MemVO> memlist = memService.selectAll();
+		model.addAttribute("memlist", memlist);
+		return "admin/adminCouponCreate";
 	}
 }
