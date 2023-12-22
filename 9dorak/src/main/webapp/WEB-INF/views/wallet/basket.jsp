@@ -115,7 +115,7 @@
 												<div class="frame-19">
 												
 													<input type="checkbox" id="checkbox-2-${status.count}" name="selection"
-				onchange="basketList(${basket.pro_no},'${basket.pro_name}',${basket.pro_price},${status.count})">
+				onchange="basketList(${basket.basket_pro_count},${basket.pro_no},'${basket.pro_name}',${basket.pro_price},${status.count})">
 													<div class="text-wrapper-18">${basket.mem_name}</div>
 												</div>
 												
@@ -367,8 +367,7 @@ function unselectAll() {
 	function updateCount() {
 		var myaction = $(this).attr("data-action");
 		var count = $(this).attr("data-count");
-		//var price = Number($(".pro_price"+count).val());
-		//var price = parseInt($(".pro_price" + count).val(), 10);
+		var price = Number($(".pro_price"+count).val());
 	    var index = $(".index-num"+count).val();
 	    var pro_no = $(".pro_no"+count).val();
 	    var pro_name = $(".pro_name"+count).val();
@@ -420,9 +419,9 @@ function unselectAll() {
 		 
 			// 선택 항목 장바구니 목록으로 합치기
 		 let updatedCount = {};
-
+			
 		 //나의 체크에 의해 계산합계가 수정되어야한다. 
-		basketList(quantity, pro_name, price, index+1);
+		basketList(quantity, pro_no, pro_name, price, index+1);
 	}
 	
 	// 장바구니 수량 업데이트
@@ -488,12 +487,16 @@ function unselectAll() {
 let updatedCount = {};
 
 //나의 체크에 의해 계산합계가 수정되어야한다. 
-function basketList(pro_no, pro_name, price, index) {
+function basketList(quantity, pro_no, pro_name, price, index) {
 	var quantity = Number($('#result' + index).text());
+	var pro_no = $(".pro_no"+count).val();
+	var pro_name = $(".pro_name"+count).val();
+	var price = Number($(".pro_price"+count).val());
 	var myName = "#checkbox-2-" + index;
 	var checkOk = $(myName).prop("checked");
 	var totalAmount = quantity*price;
     var search = false;
+    
 	//checkbox가 선택이되면 목록에 추가(이미있으면 수정, 없으면 추가), 풀리면 지우기 
 	 if(checkOk) {
 		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
