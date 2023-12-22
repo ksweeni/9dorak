@@ -51,7 +51,7 @@ String contextPath = request.getContextPath();
 	transform: translateX(-50%);
 	top: -30px;
 	background-image:
-		url(${cpath}/resources/images/register/ProgressBar.png);
+		url(${cpath}/resources/images/register/ProgressBar_3.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
