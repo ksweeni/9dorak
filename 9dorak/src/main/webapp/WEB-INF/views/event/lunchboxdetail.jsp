@@ -230,7 +230,7 @@ $("#update").on("click", function() {
 		type : "post",
 		data : param,
 		success : function(res) {
-			alert(res);
+			/* alert(res); */
 			location.href = "${cpath}/event/makelunchbox.do";
 		}
 	})
@@ -247,7 +247,7 @@ $("#delete").on("click", function() {
 		type : "post",
 		data : param,
 		success : function(res) {
-			alert(res);
+			/* alert(res); */
 			location.href = "${cpath}/event/makelunchbox.do";
 		}
 	})
@@ -255,7 +255,7 @@ $("#delete").on("click", function() {
 
 $("#like").on("click", function() {
 	/*  alert($("#challenge_no").val());*/
-	alert($("#check").val())
+	/* alert($("#check").val()) */
 	
 		var challenge_no = $("#challenge_no").val();
 	var param = {
@@ -267,7 +267,7 @@ $("#like").on("click", function() {
 		type : "post",
 		data : param,
 		success : function(res) {
-			alert(res);
+			/* alert(res); */
 			if(res=="좋아요 성공"){
 			      var likeCntInput = $("#likeCnt");
 			      var currentLikeCnt = parseInt(likeCntInput.val());

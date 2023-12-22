@@ -158,13 +158,13 @@ public class DoranController {
 			List<CommentVO> clist = dService.selectComment();
 			MemVO memVO = (MemVO) session.getAttribute("loginmem");
 			String memId = memVO.getMem_id();
+			System.out.println(memId);
 			CommentVO comment = new CommentVO();
 			comment.setComment_cont(newComment);
 			comment.setDoran_no(doranNo);
 			comment.setComment_no(clist.size() + 1);
 			comment.setMem_id(memId);
 			dService.insertComment(comment);
-
 			List<CommentVO> updatedComments = dService.selectAllCommentAbout(doranNo);
 
 			// 업데이트된 댓글 목록을 응답에 추가
