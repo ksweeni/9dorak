@@ -125,14 +125,28 @@ public class YomoDAOMybatis {
 	
 	
 	
-	
-	
-	
-	
 	public int adminNoticeUpdate(AnnoVO anno) {
 		int result = sqlSession.update(NAMESPACE + "adminNoticeUpdate", anno);
-		System.out.println(anno);
 		return result;
 	}
+
+
+	public int adminNoticeDelete(int anno_no) {
+		int result = sqlSession.delete(NAMESPACE + "adminNoticeDelete", anno_no);
+		return result;
+	}
+
+
+	/*
+	 * public int adminNoticeInsert(AnnoVO anno) { int result =
+	 * sqlSession.insert(NAMESPACE + "adminNoticeInsert", anno); return result; }
+	 */
+
+
+	
+
+	
+	
+	
 
 }

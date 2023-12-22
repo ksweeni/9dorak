@@ -93,12 +93,28 @@
 
 	<update id="adminNoticeUpdate" parameterType="annovo">
 		UPDATE anno
-		SET anno_title = #{anno_title},
+		SET
+		anno_title = #{anno_title},
 		anno_cont = #{anno_cont},
-		anno_date = sysdate
+		anno_date =
+		sysdate
 		WHERE anno_no = #{anno_no}
 
 	</update>
 
+
+
+	<delete id="adminNoticeDelete" parameterType="int">
+		DELETE FROM anno
+		where anno_no = #{anno_no}
+	</delete>
+
+<!-- 	<insert id="adminNoticeInsert" parameterType="annovo">
+		INSERT INTO anno (
+		ANNO_TITLE, ANNO_CONT, ANNO_VIEW, ANNO_DATE, ANNO_WRITER, ANNO_IMAGE
+		) VALUES (
+		#{anno_title}, #{anno_cont}, 0, sysdate, '관리자', null
+		)
+	</insert> -->
 
 </mapper>

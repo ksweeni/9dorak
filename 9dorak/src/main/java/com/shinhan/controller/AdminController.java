@@ -129,6 +129,7 @@ public class AdminController {
 		return "admin/adminCouponCreate";
 	}
 
+
 	@PostMapping("adminCouponInsert.do")
 	@ResponseBody
 	public String adminCouponInsert(
@@ -150,4 +151,155 @@ public class AdminController {
 
 	    return "coupon insert Success !";
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@GetMapping("adminNoticeDetail.do")
+	public String adminNoticeDetail(Model model, AnnoVO anno) {
+		anno = yservice.selectByno(anno.getAnno_no());
+		model.addAttribute("anno", anno);
+		return "admin/adminNoticeDetail";
+	}
+
+	@RequestMapping(value = "adminNoticeUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminNoticeUpdate(Model model, AnnoVO anno) {
+		int result = yservice.adminNoticeUpdate(anno);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+
+		}
+	}
+	@RequestMapping(value = "adminNoticeDelete.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminNoticeDelete(Model model, AnnoVO anno) {
+		int result = yservice.adminNoticeDelete(anno.getAnno_no());
+		if (result > 0) {
+			return "삭제 성공";
+		} else {
+			return "삭제 실패";
+			
+		}
+	}
+	
+	
+	@GetMapping("adminNoticeInsert.do")
+	public String adminNoticeInsert() {
+		
+		return "admin/adminNoticeInsert";
+	}
+	
+	
+	/*
+	 * @RequestMapping(value = "adminNoticeInsert.do", produces =
+	 * "text/plain;charset=utf-8")
+	 * 
+	 * @ResponseBody public String adminNoticeInsert(Model model, AnnoVO anno) {
+	 * 
+	 * int result = yservice.adminNoticeInsert(anno); if (result > 0) { return
+	 * "등록 성공"; } else { return "등록 실패";
+	 * 
+	 * } }
+	 */
+	
+	
+	
+	
+
 }

@@ -35,7 +35,8 @@
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
-			<a href="${pageContext.request.contextPath}/my/logout.do" class="e2101_2490">로그아웃</a>
+			<a href="${pageContext.request.contextPath}/my/logout.do"
+				class="e2101_2490">로그아웃</a>
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
@@ -69,7 +70,8 @@
 					<tbody>
 						<c:forEach var="anno" items="${ylist}" varStatus="rowStatus">
 							<tr>
-								<td><a href="${cpath }/admin/adminNoticeDetail.do?anno_no=${anno.anno_no}">${anno.anno_no}</a></td>
+								<td><a
+									href="${cpath }/admin/adminNoticeDetail.do?anno_no=${anno.anno_no}">${anno.anno_no}</a></td>
 								<td><a href="#">${anno.anno_title}</a></td>
 								<td><a href="#">${anno.anno_view}</a></td>
 								<td><a href="#">${anno.anno_date}</a></td>
@@ -80,8 +82,13 @@
 
 
 					</tbody>
+
 				</table>
+				<div class="insertAnno">
+					<button id="AnnoInsert">글쓰기</button>
+				</div>
 			</div>
+
 
 			<div id="faqTable" class="table-container">
 				<table id="faq" border="1">
@@ -200,5 +207,17 @@
 			faqTable.style.display = "block";
 		}
 	}
+
+	$("#AnnoInsert").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminNoticeInsert.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+
+		})
+	})
 </script>
 </html>
