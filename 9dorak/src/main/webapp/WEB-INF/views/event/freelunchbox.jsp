@@ -110,13 +110,16 @@
 			<div class=e50_22>
 				<div class=e50_23>
 					<div class=e50_24>
-						<div class="e50_25"></div>
+						<img class="e50_25"
+						src="${cpath}/resources/images/menu/proimage/${freelist[0].pro_no}-2.jpg"></img>
 					</div>
 					<div class=e50_26>
-						<div class="e50_27"></div>
+						<img class="e50_27"
+						src="${cpath}/resources/images/menu/proimage/${freelist[1].pro_no}-2.jpg"></img>
 					</div>
 					<div class=e50_28>
-						<div class="e50_29"></div>
+						<img class="e50_29"
+						src="${cpath}/resources/images/menu/proimage/${freelist[2].pro_no}-2.jpg"></img>
 					</div>
 				</div>
 				<div class=e50_30>

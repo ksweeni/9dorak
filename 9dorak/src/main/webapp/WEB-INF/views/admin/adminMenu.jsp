@@ -36,10 +36,11 @@
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
-			<span class="e2101_2490">로그아웃</span>
+			<a href="${pageContext.request.contextPath}/my/logout.do" class="e2101_2490">로그아웃</a>
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
+		<button class="insert_memu" onclick="">추가하기</button>
 			<table id="products" border="1">
 				<caption>
 					메뉴 list
@@ -57,9 +58,7 @@
 						<th>메뉴이름</th>
 						<th>메뉴가격</th>
 						<th>메뉴좋아요수</th>
-						<th>메뉴영양소</th>
 						<th>메뉴구독수</th>
-						<th>메뉴유통기한</th>
 						<th>메뉴재고수</th>
 						<th>메뉴조회수</th>
 						<th>메뉴등록날짜</th>
@@ -86,9 +85,7 @@
 							<td>${menu.pro_name}</td>
 							<td>${menu.pro_price}</td>
 							<td>${menu.pro_like}</td>
-							<td>${menu.pro_nut}</td>
 							<td>${menu.pro_sub}</td>
-							<td>${menu.pro_ed}</td>
 							<td>${menu.pro_sc}</td>
 							<td>${menu.pro_view}</td>
 							<td>${menu.pro_rd}</td>

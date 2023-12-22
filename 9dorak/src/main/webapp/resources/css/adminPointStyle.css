@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.coupon-create {
+	position: relative;
+    top: 1.5rem;
+    left: 20rem;
+}
+
 .2099_2373 {
 	overflow: hidden;
 }
@@ -166,6 +172,7 @@
 	letter-spacing: 2;
 	cursor: pointer;
 	position: relative;
+	text-decoration: none;
 }
 
 .e2099_2471 {

@@ -6,14 +6,33 @@ request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<meta charset="UTF-8">
-<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+	<script>
+        $(document).ready(function() {
+            const body = $('body')[0];
+            const bodyRect = body.getBoundingClientRect();
+            confetti({
+                particleCount: 100,
+                spread: 180,
+                origin: {
+                    x: (bodyRect.left + bodyRect.width / 2) / window.innerWidth,
+                    y: (bodyRect.top + bodyRect.height / 2) / window.innerHeight
+                }
+            });
+        });
+    </script>
 <style type="text/css">
 .e106_348 {
 	width: 607px;
@@ -32,61 +51,62 @@ String contextPath = request.getContextPath();
 	transform: translateX(-50%);
 	top: -30px;
 	background-image:
-		url(
-	/myapp/resources/images/register/ProgressBar.png);
+		url(${cpath}/resources/images/register/ProgressBar_3.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 .e106_193 {
-    color: rgba(0, 0, 0, 1);
-    width: 467px;
-    height: 72px;
-    position: absolute;
-    left: 132px;
-    top: 150px;
-    /* font-family: Poppins; */
-    text-align: left;
-    font-size: 40px;
-    letter-spacing: 0;
+	color: rgba(0, 0, 0, 1);
+	width: 467px;
+	height: 72px;
+	position: absolute;
+	left: 132px;
+	top: 150px;
+	text-align: left;
+	font-size: 40px;
+	letter-spacing: 0;
 }
+
 .e106_394 {
-    width: 300px;
-    height: 77.960205078125px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 880px;
+	width: 300px;
+	height: 77.960205078125px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 880px;
 }
+
 .e106_395 {
-    box-shadow: 0px 10px 30px
+	box-shadow: 0px 10px 30px
 		rgba(196.00000351667404, 80.00000283122063, 17.00000088661909,
 		0.5099999904632568);
-    background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-    width: 202px;
-    height: 73.960205078125px;
-    position: absolute;
-    left: 56px;
-    top: -363px;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;
-    border-bottom-left-radius: 35px;
-    border-bottom-right-radius: 35px;
-    cursor: pointer;
+	background-color: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+	width: 202px;
+	height: 73.960205078125px;
+	position: absolute;
+	left: 56px;
+	top: -363px;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
+	border-bottom-left-radius: 35px;
+	border-bottom-right-radius: 35px;
+	cursor: pointer;
 }
+
 .v39_199 {
-    color: rgba(255, 255, 255, 1);
-    width: 131px;
-    height: 23px;
-    position: absolute;
-    left: 40px;
-    top: 24px;
-    /* font-family: Poppins; */
-    text-align: center;
-    font-size: 22px;
-    letter-spacing: 3;
-    font-weight: bold;
+	color: rgba(255, 255, 255, 1);
+	width: 131px;
+	height: 23px;
+	position: absolute;
+	left: 40px;
+	top: 24px;
+	text-align: center;
+	font-size: 22px;
+	letter-spacing: 3;
+	font-weight: bold;
 }
+
 </style>
 </head>
 <body>
@@ -132,7 +152,7 @@ String contextPath = request.getContextPath();
 						<c:otherwise>
 							<a class="header-a"
 								href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
-			                        <a class="header-a"
+                            <a class="header-a"
 								href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
 						</c:otherwise>
 					</c:choose>
@@ -141,21 +161,24 @@ String contextPath = request.getContextPath();
 					<div class="header-overlap-group-3" onclick="loginBasket()">
 						<img class="header-group-21"
 							src="${cpath}/resources/images/main/header-cart.png" />
-						<!-- <div class="text-wrapper-29">2</div> -->
+						
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
+
 	<div class=e106_348>
 		<div class="e106_291"></div>
 		<span class="e106_193">회원가입을 환영합니다!</span>
 	</div>
+
 	<div class=e106_394>
 		<a href="${pageContext.request.contextPath}/main.do" class="e106_395">
 			<div class="v39_199">홈으로 이동</div>
 		</a>
 	</div>
+
 	<footer class="footer">
 		<div class="footer-company-loco">
 			<div class="footer-company">
@@ -207,7 +230,7 @@ String contextPath = request.getContextPath();
 				<div class="footer-text-wrapper-3">About Us</div>
 				<div class="footer-text-wrapper-3">Contact Us</div>
 				<div class="footer-text-wrapper-3">Order Delivery</div>
-				<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+				<div class="footer-text-wrapper-3">Payment & Tex</div>
 				<div class="footer-text-wrapper-3">Terms of Services</div>
 			</div>
 		</div>

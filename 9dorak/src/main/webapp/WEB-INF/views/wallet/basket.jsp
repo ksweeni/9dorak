@@ -1,22 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%
-request.setCharacterEncoding("UTF-8");
-String contextPath = request.getContextPath();
-%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/basketStyle.css?d"
 	type="text/css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 </head>
@@ -307,7 +303,6 @@ function emptyBasket() {
 				success : function(response) {
 					if (response.success) {
 						console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
-						//alert("상품이 이미 장바구니에 존재합니다! - 불키자");
 						lightsOn();
 					} else {
 						console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
@@ -316,9 +311,7 @@ function emptyBasket() {
 				error : function(xhr, status, error) {
 					console.error("콘솔 - Error during basket operation. Status: " + status);
 					console.error("콘솔 - Server response: " + xhr.responseText);
-					//alert("An error occurred during the checkBasket operation!");
 				}
-
 			});
 }
 
@@ -327,18 +320,13 @@ function lightsOn() {
 	lights.setAttribute("class","ellipse-light");
 	lights.setAttribute("id","lightsOnID");
 	document.querySelector("#lightsParent").append(lights);
-
 	console.log("장바구니 가득 차서 불 켜짐!");
 }
 
 function logCheckboxValue(checkbox) {
 	console.log("Checkbox value: ", checkbox.value);
-	
-	// 클릭된 체크박스의 값으로 새로운 div 요소를 생성하여 화면에 추가
 	var displayDiv = document.createElement('div');
 	displayDiv.textContent = checkbox.value;
-	
-	// 생성된 div를 어디에 표시할지 결정합니다. 예를 들면, body의 끝에 추가합니다.
 	document.body.appendChild(displayDiv);
 }
 
@@ -379,12 +367,14 @@ function unselectAll() {
 	function updateCount() {
 		var myaction = $(this).attr("data-action");
 		var count = $(this).attr("data-count");
-		var price = Number($(".pro_price"+count).val());
+		//var price = Number($(".pro_price"+count).val());
+		//var price = parseInt($(".pro_price" + count).val(), 10);
 	    var index = $(".index-num"+count).val();
 	    var pro_no = $(".pro_no"+count).val();
 	    var pro_name = $(".pro_name"+count).val();
 	    var mem_id = $(".mem_id"+count).val();
 	    var quantity = Number($("#result" + index).html());
+	    console.log(count,price,index,pro_no,pro_name,mem_id,quantity);
 	    
 	    var changedNumb = count;
 	    if(myaction=="minus") {
