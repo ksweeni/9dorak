@@ -93,4 +93,46 @@ public class YomoDAOMybatis {
 		return result;
 	}
 
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public int adminNoticeUpdate(AnnoVO anno) {
+		int result = sqlSession.update(NAMESPACE + "adminNoticeUpdate", anno);
+		System.out.println(anno);
+		return result;
+	}
+
 }
