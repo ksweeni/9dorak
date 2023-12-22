@@ -17,8 +17,7 @@ String contextPath = request.getContextPath();
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/basketStyle.css?d"
 	type="text/css" />
-<link rel="shortcut icon"
-	href="${cpath}/resources/images/favicon/favicon.ico">
+<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 </head>
 <body>
@@ -280,10 +279,10 @@ String contextPath = request.getContextPath();
 </body>
 
 <script>
+//로그인 여부 확인
 function loginBasket() {
 	var mem_id = "${sessionScope.loginmem.mem_id}";
-
-	// 로그인 여부 확인
+	
 	if (mem_id == "") {
 		alert("로그인이 필요한 서비스입니다 !");
 		window.location.href="${cpath}/login/loginForm.do";

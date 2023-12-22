@@ -72,12 +72,9 @@
 								</c:otherwise>
 							</c:choose>
 						</div>
-						<div class="group-20">
-							<div class="header-overlap-group-3">
-								<img class="header-group-21"
-									src="${cpath}/resources/images/main/header-cart.png" />
-								<div class="ellipse-light"></div>
-								<!-- <div class="text-wrapper-29">2</div> -->
+					<div class="group-20" id="lightsParent">
+							<div class="header-overlap-group-3" onclick="loginBasket()">
+								<img class="header-group-21" src="${cpath}/resources/images/main/header-cart.png" />
 							</div>
 						</div>
 					</div>
