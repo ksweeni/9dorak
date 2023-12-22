@@ -316,7 +316,7 @@
 	height: 44px;
 	position: relative;
 	/* 	position: absolute; */
-	left: 647.15234375px;
+	left: 533.152344px;
 	top: 34px;
 	border: 1px solid gray;
 	border-top-left-radius: 40px;
@@ -331,7 +331,7 @@
 	width: 97px;
 	height: 20px;
 	position: absolute;
-	left: 17px;
+	left: 36px;
 	top: 12px;
 	text-align: center;
 	font-size: 14px;
@@ -878,10 +878,10 @@
 
 #modal_content {
 	background-color: #fefefe;
-	margin: 14% 26%;
+	margin: 14% 36%;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 40%;
+	width: 21%;
 	height: 37%;
 }
 
@@ -891,8 +891,8 @@
 	font-size: 28px;
 	font-weight: bold;
 	position: relative;
-	top: 253px;
-	left: -556px;
+	top: 242px;
+	left: -703px;
 }
 
 .modal_close_btn:hover, .close:focus {

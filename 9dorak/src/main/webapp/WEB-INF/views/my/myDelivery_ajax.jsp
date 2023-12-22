@@ -13,7 +13,7 @@ String contextPath = request.getContextPath();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/myDelivery_ajaxStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/myDelivery_ajaxStyle.css?d"
 	type="text/css" />
 <title>Insert title here</title>
 <script
