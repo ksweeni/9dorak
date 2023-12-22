@@ -244,5 +244,10 @@
 		   and orderdetail.order_no = memreview.order_no
 		   and memreview.memreview_image is null
     </select>
+
+	<delete id="deleteMenu" parameterType="int">
+		DELETE FROM pro
+		where pro_no = #{pro_no}
+	</delete>
     
 </mapper>

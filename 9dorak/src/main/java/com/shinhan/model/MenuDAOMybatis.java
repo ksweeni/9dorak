@@ -129,5 +129,10 @@ public class MenuDAOMybatis {
 		return rev;
 	}
 
+	public int deleteMenu(int pro_no) {
+		int result = sqlSession.delete(NAMESPACE + "deleteMenu", pro_no);
+		return result;
+	}
+
 
 }
