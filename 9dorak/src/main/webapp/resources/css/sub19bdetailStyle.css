@@ -845,16 +845,16 @@
 	top:303.83203125px;
 }
 .e1543_3357 {
-	width:400px;
-	height:264.630859375px;
-	position:absolute;
-	left:0.499969482421875px;
-	top:0px;
-	
-	background-image: url(../images/menu/food.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-	border-top-left-radius: 35px;
+    width: 400px;
+    height: 264.630859375px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: Symbol(figma.mixed) px;
+    background-image: url(../images/menu/food.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 35px;
     border-top-right-radius: 35px;
 }
 
@@ -942,17 +942,17 @@
 	top:303.83203125px;
 }
 .e1543_3367 {
-	width:400px;
-	height:264.630859375px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	border-radius:Symbol(figma.mixed)px;
-	background-image: url(../images/menu/food.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
+    width: 400px;
+    height: 264.630859375px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: Symbol(figma.mixed) px;
+    background-image: url(../images/menu/food.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
 }
 .e1543_3368 { 
 	width:254px;
@@ -962,13 +962,13 @@
 	top:313px;
 }
 .e1543_3370 {
-	font-weight: 700;
+    font-weight: 700;
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
     width: auto;
     max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 42px;
+    left: 68px;
     top: -3px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1038,17 +1038,17 @@
 	top:303.83203125px;
 }
 .e1543_3377 {
-	width:400px;
-	height:264.630859375px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	border-radius:Symbol(figma.mixed)px;
-	background-image: url(../images/menu/food.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
+    width: 400px;
+    height: 264.630859375px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: Symbol(figma.mixed) px;
+    background-image: url(../images/menu/food.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
 }
 .e1543_3378 { 
 	width:254px;
@@ -1058,13 +1058,13 @@
 	top:319px;
 }
 .e1543_3380 {
-	font-weight: 700;
+    font-weight: 700;
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
     width: auto;
     max-width: 100%;
     height: 29px;
     position: absolute;
-    left: 67px;
+    left: 81px;
     top: -9px;
     /* font-family: Montserrat; */
     text-align: left;
@@ -1141,17 +1141,17 @@
 	top:303.83203125px;
 }
 .e1543_3388 {
-	width:400px;
-	height:264.630859375px;
-	position:absolute;
-	left:0.499969482421875px;
-	top:0px;
-	border-radius:Symbol(figma.mixed)px;
-	background-image: url(../images/menu/food.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
+    width: 400px;
+    height: 264.630859375px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: Symbol(figma.mixed) px;
+    background-image: url(../images/menu/food.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
 }
 .e1543_3389 { 
 	width:254px;
@@ -1237,17 +1237,17 @@
 	top:303.83203125px;
 }
 .e1543_3398 {
-	width:400px;
-	height:264.630859375px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	border-radius:Symbol(figma.mixed)px;
-	background-image: url(../images/menu/food.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
+    width: 400px;
+    height: 264.630859375px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: Symbol(figma.mixed) px;
+    background-image: url(../images/menu/food.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
 }
 .e1543_3399 { 
 	width:254px;
@@ -1333,17 +1333,17 @@
 	top:303.83203125px;
 }
 .e1543_3408 {
-	width:400px;
-	height:264.630859375px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	border-radius:Symbol(figma.mixed)px;
-	background-image: url(../images/menu/food.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
+    width: 400px;
+    height: 264.630859375px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: Symbol(figma.mixed) px;
+    background-image: url(../images/menu/food.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
 }
 .e1543_3409 { 
 	width:254px;
