@@ -16,10 +16,12 @@ String contextPath = request.getContextPath();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 input {
-	width: 300px;
+	width: 290px;
 	height: 30px;
-	order-radius: 7px;
+	border-radius: 10px;
 	margin: 10px;
+	border: outset;
+	padding-left: 20px;
 }
 
 .modal_close_btn {
@@ -34,6 +36,30 @@ input {
 	text-decoration: none;
 	cursor: pointer;
 }
+#success {
+	position: relative;
+    left: 255px;
+    top: 24px;
+    border: none;
+    border-radius: 7px;
+    background-color: #ffae64;
+    width: 20%;
+    height: 34px;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+}
+
+.findpost {
+	border: none;
+    border-radius: 10px;
+    width: 94%;
+    background-color: #FFE5CB;
+    cursor: pointer;
+    border: groove;
+}
+
 </style>
 </head>
 <body>
@@ -41,7 +67,7 @@ input {
 		value="${memDel.mem_delname }">
 	<br>
 	<input type="text" id="sample4_postcode" placeholder="우편번호" />
-	<input type="button" onclick="sample4_execDaumPostcode()"
+	<input class="findpost" type="button" onclick="sample4_execDaumPostcode()"
 		value="우편번호 찾기">
 	<br>
 	<input type="text" id="sample4_roadAddress" placeholder="도로명주소" />
