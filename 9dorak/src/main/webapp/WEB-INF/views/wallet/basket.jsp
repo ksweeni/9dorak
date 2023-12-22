@@ -116,10 +116,9 @@
 											<div class="group-2">
 												<!-- 체크 박스 -->
 												<div class="frame-19">
-
-													<input class="checkbox" type="checkbox"
-														id="checkbox-2-${status.count}" name="selection"
-														onchange="basketList(${item.basket_pro_count},${item.pro_no},'${item.pro_name}',${item.pro_price},${status.count})">
+												<!-- onchange="basketList(${item.basket_pro_count},${item.pro_no},'${item.pro_name}',${item.pro_price},${status.count})"  -->
+												
+												<input class="checkbox" type="checkbox" id="checkbox-2-${status.count}" name="selection" onchange="basketList(${item.basket_pro_count},${item.pro_no},'${item.pro_name}',${item.pro_price},${status.count})">
 													<div class="text-wrapper-18">${item.mem_name}</div>
 												</div>
 
@@ -190,7 +189,7 @@
 								<div class="text-wrapper-2">주문정보</div>
 
 								<div class="text-wrapper-3" id="total-items">
-									총 <span id="total_count"> </span>Items
+									총 <span id="total_count">${totalItems}</span> Items
 								</div>
 
 							</div>
@@ -202,12 +201,10 @@
 								</div>
 
 								<div class="frame-11">
-									<div class="text-wrapper-10">총 결제 예상 금액</div>
+									<div class="text-wrapper-10">총 결제 예상 금액
 									<input class="text-wrapper-10" type="number" name="order_price"
-										value=""> 총 금액 <span id="totalAmount${status.count}">
-										${item.pro_price*item.basket_pro_count}</span>원
+										value="${totalAmount}">${totalAmount} 원</div>
 								</div>
-								
 								
 								<div class="frame-12" onclick="submitOrder()">
 									<label class="submitButton">주문하기</label> <input
@@ -435,10 +432,7 @@ function updateCount() {
 			  } 
 		 });
 		 
-			// 선택 항목 장바구니 목록으로 합치기
-		 let updatedCount = {};
-			
-		 //나의 체크에 의해 계산합계가 수정되어야한다. 
+		//나의 체크에 의해 계산합계가 수정되어야한다. 
 		basketList(quantity, pro_no, pro_name, price, index);
 	}
 	
@@ -534,7 +528,7 @@ function basketList(quantity, pro_no, pro_name, price, index) {
 		    	`;
 		     $("#cartRow").html($("#cartRow").html() + str);
          }
-		 
+         rowList();
 	 } else {
 		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
 			  var cartProName = $(item).find("input").val();
@@ -546,10 +540,39 @@ function basketList(quantity, pro_no, pro_name, price, index) {
 				      $(this).parent().find(":nth-child(2)").find("input").val(a-quantity);
 				 }
 			  } 
-		 });	
+		 });
+		 rowList();
 	 }
 }
 
+function rowList() {
+    let totalItems = 0;
+    
+    // 주문으로 들어가는 총 상품 수
+    $("#cartRow tr td:nth-child(2)").each(function(index, item) {
+        const listItems = parseFloat($(item).find("input").val());
+        console.log(listItems);
+        if (!isNaN(listItems)) {
+        	totalItems += listItems;
+            console.log(totalItems);
+        }
+    });
+    $("#total_count").html(totalItems);
+    
+    let totalAmount = 0;
+    // 주문으로 들어가는 총 가격
+    $("#cartRow tr td:nth-child(3").each(function(index, item) {
+        const eachPrices = parseFloat($(item).find("input").val());
+        console.log(eachPrices);
+        if (!isNaN(eachPrices)) {
+        	totalAmount += eachPrices;
+            console.log(totalAmount);
+        }
+    });
+    $(".text-wrapper-10 input[name='order_price']").val(totalAmount);
+};
+
+// 주문하기
 function submitOrder() {
     document.querySelector('.text-wrapper-11').click();
 }
