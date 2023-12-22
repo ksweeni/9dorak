@@ -276,7 +276,7 @@ String contextPath = request.getContextPath();
 			url : "${cpath}/my/updateMember.do",
 			data : param,
 			success : function(res) {
-				alert(res);
+				/* alert(res); */
 				location.reload();
 			}
 
@@ -336,7 +336,7 @@ String contextPath = request.getContextPath();
 			url : "${cpath}/my/profileDelete.do",
 			type : "post",
 			success : function(res) {
-				alert("성공")
+				/* alert("성공") */
 				window.location.reload();
 			}
 		})

@@ -421,7 +421,7 @@
 					data : JSON.stringify(requestData),
 					contentType : "application/json; charset=utf-8",
 					success : function(responseData) {
-
+						location.reload();
 						console.log(responseData);
 					},
 					error : function() {
