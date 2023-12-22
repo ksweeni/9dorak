@@ -206,7 +206,7 @@
 										value="${totalAmount}">${totalAmount} 원</div>
 								</div>
 								
-								<div class="frame-12" onclick="submitOrder()">
+								<div class="orderButton">
 									<label class="submitButton">주문하기</label> <input
 										class="text-wrapper-11" type="submit" value="주문하기"
 										style="display: none;">
@@ -290,7 +290,7 @@
 </body>
 
 <script>
-//로그인 여부 확인
+// 로그인 여부 확인
 function loginBasket() {
 	var mem_id = "${sessionScope.loginmem.mem_id}";
 	
@@ -378,7 +378,7 @@ function unselectAll() {
 	// 장바구니 수량 감소
 	$(".entypo-minus-wrapper").on("click", updateCount);
 	
-	// 수량 변경
+// 장바구니 수량 변경
 function updateCount() {
 		var myaction = $(this).attr("data-action");
 	    var count = $(this).attr("data-count");
@@ -388,7 +388,6 @@ function updateCount() {
 	    var pro_name = $(".pro_name" + count).val();
 	    var mem_id = $(".mem_id" + count).val();
 	    var quantity = Number($("#result" + index).html());
-	    console.log(count,price,index,pro_no,pro_name,mem_id,quantity);
 	    
 	    var changedNumb = count;
 	    if(myaction=="minus") {
@@ -417,7 +416,7 @@ function updateCount() {
 			}
 		});
 	    
-	    //오른쪽 목록에 반영하기 
+	    // 주문 정보 업데이트 하기
 	    $("#cartRow tr td:nth-child(1)").each(function(index, item){
 	    	  var myName = "#checkbox-2-" + (index+1);
 	    	  var checkOk = $(myName).prop("checked");
@@ -432,7 +431,7 @@ function updateCount() {
 			  } 
 		 });
 		 
-		//나의 체크에 의해 계산합계가 수정되어야한다. 
+		// 체크에 의한 상품 수량 수정
 		basketList(quantity, pro_no, pro_name, price, index);
 	}
 	
@@ -454,27 +453,7 @@ function updateCount() {
 	        }
 	    });
 	});
-
-	// 삭제 기능 모달 버튼
-	var modal = document.getElementById('modal');
-    var btns = document.querySelectorAll(".deleteItemModalButton");
-    
-    btns.forEach(function(btn) {
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-    });
-
-    function closeModal() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
-    
+  
     // 장바구니 삭제
     function deleteBasket(mem_id, pro_no, index) {
     	        $.ajax({
@@ -494,29 +473,46 @@ function updateCount() {
     	            }
     	        });
     	 }
+    
+ // 장바구니 삭제 기능 모달 버튼
+	var modal = document.getElementById('modal');
+    var btns = document.querySelectorAll(".deleteItemModalButton");
+    
+    btns.forEach(function(btn) {
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    });
 
-	// 선택 항목 장바구니 목록으로 합치기
-let updatedCount = {};
-	
-//나의 체크에 의해 계산합계가 수정되어야한다. 
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+// 주문 정보 목록
 function basketList(quantity, pro_no, pro_name, price, index) {
     var myName = "#checkbox-2-" + index;
     var checkOk = $(myName).prop("checked");
     var totalAmount = quantity * price;
     var search = false;
     
-	//checkbox가 선택이되면 목록에 추가(이미있으면 수정, 없으면 추가), 풀리면 지우기 
-	 if(checkOk) {
+	// checkBox가 선택이 되어 있으면
+	if(checkOk) {
 		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
 			 var cartProName = $(item).find("input").val();
-			 console.log(cartProName );
+			 // checkBox가 선택이 되어있고, 목록에 이미 존재하는 상품이라면, 기존 수량 업데이트하기
 			  if (pro_name==cartProName) {
 				 var a =  Number($(this).parent().find(":nth-child(2)").find("input").val());
 				 $(this).parent().find(":nth-child(2)").find("input").val(a+quantity);
 				 search=true;
 			  } 
 		 });
-		 
+		 // checkBox가 선택이 되어있고, 목록에 이미 존재하는 상품이 아니면 새로운 행으로 데이터 추가하기
          if (search==false) {
         	 var str = `
 		    		<tr>
@@ -529,13 +525,16 @@ function basketList(quantity, pro_no, pro_name, price, index) {
 		     $("#cartRow").html($("#cartRow").html() + str);
          }
          rowList();
+         // checkBox가 선택 해제되면
 	 } else {
 		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
 			  var cartProName = $(item).find("input").val();
 			  if(pro_name==cartProName){
 				 var a =  Number($(this).parent().find(":nth-child(2)").find("input").val());
-				 if(a-quantity<=0) {					  
+				 // 만일 상품의 수가 0 이하면 주문 정보에서 없애기
+				 if(a-quantity<=0) {
 					 $(this).parent().remove();
+				 // 0 초과이면 빼기
 				 } else {  
 				      $(this).parent().find(":nth-child(2)").find("input").val(a-quantity);
 				 }
@@ -545,36 +544,78 @@ function basketList(quantity, pro_no, pro_name, price, index) {
 	 }
 }
 
+// 주문 정보
 function rowList() {
-    let totalItems = 0;
-    
     // 주문으로 들어가는 총 상품 수
+	let totalItems = 0;
     $("#cartRow tr td:nth-child(2)").each(function(index, item) {
         const listItems = parseFloat($(item).find("input").val());
-        console.log(listItems);
         if (!isNaN(listItems)) {
         	totalItems += listItems;
-            console.log(totalItems);
         }
     });
     $("#total_count").html(totalItems);
     
-    let totalAmount = 0;
     // 주문으로 들어가는 총 가격
+    let totalAmount = 0;
     $("#cartRow tr td:nth-child(3").each(function(index, item) {
         const eachPrices = parseFloat($(item).find("input").val());
-        console.log(eachPrices);
         if (!isNaN(eachPrices)) {
         	totalAmount += eachPrices;
-            console.log(totalAmount);
         }
     });
     $(".text-wrapper-10 input[name='order_price']").val(totalAmount);
 };
 
-// 주문하기
+$(".orderButton").on("click", submitOrder());
+
+// 주문하기 버튼 submit
 function submitOrder() {
     document.querySelector('.text-wrapper-11').click();
+    
+    const mem_id = $(this).attr("mem_id").val());
+    const order_price = $(this).attr("order_price").val());
+    
+    // order 테이블 insert
+    $.ajax({
+        type: "POST",
+        url: "${cpath}/wallet/insertOrder.do",
+        data: {
+            mem_id: mem_id,
+            order_price: order_price
+        },
+        success: function(response) {
+            if (response === "성공!") {
+                console.log("콘솔 insertOrder 성공");
+            } else {
+                console.log("콘솔 insertOrder 실패:", response);
+            }
+        }
+    });
+    
+ 	// order detail 테이블 insert
+    $("#cartRow tr td:nth-child(4)").each(function() {
+        const pro_no = $(this).attr("pro_no").val());
+        const orderdetail_count = $(this).attr("orderdetail_count").val());
+        
+    $.ajax({
+        type: "POST",
+        url: "${cpath}/wallet/insertOrderDetail.do",
+        data: {
+        	pro_no: pro_no,
+        	orderdetail_count: orderdetail_count
+        },
+        success: function(response) {
+            if (response === "성공!") {
+                console.log("콘솔 insertOrderDetail 성공");
+            } else {
+                console.log("콘솔 insertOrderDetail 실패:", response);
+            }
+        }
+    });
+        
+    });
+    
 }
 
 </script>
