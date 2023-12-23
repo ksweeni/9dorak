@@ -16,7 +16,7 @@
 <div class="group-5">
 	<c:choose>
 		<c:when test="${not empty orderList}">
-			<c:forEach items="${orderList}" var="order">
+			<c:forEach items="${orderList}" var="order" varStatus="loop">
 				<div class="overlap-group-2">
 					<div class="coupons">
 						<div class="frame">
@@ -27,9 +27,14 @@
 						</div>
 					</div>
 					<div class="frame-4"></div>
-					<a href="${cpath }/review/reviewUpload.do">
+					<%-- <a href="${cpath }/review/reviewUpload.do?pro_no=${order.pro_no}">
 					<button class="primary-button">리뷰작성
-					</button></a>
+					</button></a> --%>
+					<form action="${cpath}/review/review.do" method="post">
+						<input type="hidden" id="order_no" name="order_no" value="${order.ORDER_NO}">
+						<input type="hidden" id="pro_no" name="pro_no" value="${order.PRO_NO }">
+						<button class="primary-button">리뷰작성</button>
+					</form>
 					<div class="text-wrapper-13">${order.ORDER_PRICE}</div>
 					<div class="text-wrapper-14">${order.PRO_NAME }</div>
 					<div class="text-wrapper-15">${order.ORDER_DATE }</div>

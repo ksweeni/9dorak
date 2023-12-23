@@ -170,6 +170,7 @@
 	border-radius: 5.4px;
 	border: 2.7px solid;
 	border-color: #f38820;
+	resize: none;
 }
 
 .screen .container-default:focus-visible {

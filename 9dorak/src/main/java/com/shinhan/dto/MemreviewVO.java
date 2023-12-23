@@ -21,4 +21,10 @@ public class MemreviewVO {
 	private int memreview_no; //리뷰 고유번호
 	private String mem_id; //멤버 아이디
 	
+	//private int pro_no;
+	//private int order_no;
+	
+	private String pro_no;
+	private String order_no;
+	
 }
