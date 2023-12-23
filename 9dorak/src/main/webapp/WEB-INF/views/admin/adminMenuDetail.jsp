@@ -40,31 +40,28 @@
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
 		<div class="e2099_3000">
-		<button class="update_memu" >수정하기</button>
+		<button class="update_memu" id="update">수정하기</button>
 		<button class="delete_memu" id="delete">삭제하기</button>
 		</div>
 		<div class="e2099_2487">
 		<div class="e2099_2490"><p><b>1. 메뉴 기본 정보</b></p>
 		메뉴번호 <br> 
-		<input type="text" value="${detailmenu.pro_no}" id="pro_no"></input>
+		<input type="text" value="${detailmenu.pro_no}" id="pro_no" readonly></input>
 		<br><br>
 		메뉴명 <br> 
 		<input type="text" value="${detailmenu.pro_name}" id="pro_name"></input>
 		<br><br>
+		메뉴설명 <br> 
+		<input type="text" value="${detailmenu.pro_detail}" id="pro_detail"></input>
+		<br><br>
 		메뉴가격<br> 
 		<input type="text" value="${detailmenu.pro_price}" id="pro_price"></input>
-		<br><br>
-		메뉴등록날짜 <br> 
-		<input type="text" value="${detailmenu.pro_rd}" id="pro_rd"></input>
 		<br><br>
 		메뉴좋아요수 <br> 
 		<input type="text" value="${detailmenu.pro_like}" id="pro_like"></input>
 		<br><br>
-		메뉴구독수 <br> 
-		<input type="text" value="${detailmenu.pro_sub}" id="pro_sub"></input>
-		<br><br>
-		메뉴재고수 <br> 
-		<input type="text" value="${detailmenu.pro_sc}" id="pro_sc"></input>
+		메뉴등록날짜 <br> 
+		<input type="text" value="${detailmenu.pro_rd}" id="pro_rd"></input>
 		</div>
 		<div class="e2099_2491"><p><b>2. 메뉴 영양소 정보</b></p>
 		메뉴알레르기 <br> 
@@ -175,6 +172,55 @@
 				$("body").html(res);
 			}
 
+		})
+	})
+	
+	//수정
+	$("#update").on("click", function() {
+		var pro_no = $("#pro_no").val();
+		var pro_name = $("#pro_name").val();
+		var pro_detail = $("#pro_detail").val();
+		var pro_price = $("#pro_price").val();
+		var pro_rd = $("#pro_rd").val();
+		var pro_like = $("#pro_like").val();
+		var pro_aller = $("#pro_aller").val();
+		var pro_prot = $("#pro_prot").val();
+		var pro_carb = $("#pro_carb").val();
+		var pro_prov = $("#pro_prov").val();
+		var pro_nat = $("#pro_nat").val();
+		var pro_sugar = $("#pro_sugar").val();
+		var pro_cal = $("#pro_cal").val();
+		var pro_weight = $("#pro_weight").val();
+		var pro_sub9 = $("#pro_sub9").val();
+		var pro_sub19 = $("#pro_sub19").val();
+		var pro_free = $("#pro_free").val();
+		var param = {
+			"pro_no" : pro_no,
+			"pro_name" : pro_name,
+			"pro_detail" : pro_detail,
+			"pro_price" : pro_price,
+			"pro_rd" : pro_rd,
+			"pro_like" : pro_like,
+			"pro_aller" : pro_aller,
+			"pro_prot" : pro_prot,
+			"pro_carb" : pro_carb,
+			"pro_prov" : pro_prov,
+			"pro_nat" : pro_nat,
+			"pro_sugar" : pro_sugar,
+			"pro_cal" : pro_cal,
+			"pro_weight" : pro_weight,
+			"pro_sub9" : pro_sub9,
+			"pro_sub19" : pro_sub19,
+			"pro_free" : pro_free
+		}
+		$.ajax({
+			url : "${cpath}/admin/adminMenuUpdate.do",
+			type : "post",
+			data : param,
+			success : function(res) {
+				/* alert(res); */
+				location.href = "${cpath}/admin/adminMenu.do";
+			}
 		})
 	})
 	

@@ -64,8 +64,20 @@ public class AdminController {
 		System.out.println(detailmenu);
 		return "admin/adminMenuDetail";
 	}
-
 	
+	@RequestMapping(value = "adminMenuUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminMenuUpdate(Model model, ProVO menu) {
+		System.out.println("aaa");
+		int result = mService.updateMenu(menu);
+		System.out.println(result);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+		}
+	}
+
 	@RequestMapping(value = "adminMenuDelete.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String adminMenuDelete(Model model, ProVO menu) {

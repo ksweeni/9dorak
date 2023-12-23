@@ -136,8 +136,8 @@ String contextPath = request.getContextPath();
 													<div class="text-wrapper">내용</div>
 												</div>
 											</div>
-											<input class="container-default-2" type="text"
-												name="challenge_cont" placeholder="본인이 참여한 내용을 자세히 적어주세요" />
+											<textarea class="container-default-2" type="text"
+												name="challenge_cont" placeholder="본인이 참여한 내용을 자세히 적어주세요"></textarea>
 										</div>
 									</div>
 

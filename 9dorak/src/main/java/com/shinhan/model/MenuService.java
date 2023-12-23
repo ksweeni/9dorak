@@ -100,5 +100,8 @@ public class MenuService {
 		return dao.deleteMenu(pro_no);
 	}
 
+	public int updateMenu(ProVO menu) {
+		return dao.updateMenu(menu);
+	}
 
 }
