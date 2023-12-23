@@ -139,4 +139,9 @@ public class MenuDAOMybatis {
 		return result;
 	}
 
+	public int insertMenu(ProVO menu) {
+		int result = sqlSession.insert(NAMESPACE + "insertMenu", menu);
+		return result;
+	}
+
 }

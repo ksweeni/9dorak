@@ -18,6 +18,7 @@ import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.FaqVO;
 import com.shinhan.dto.MemVO;
+import com.shinhan.dto.OneaskVO;
 import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.dto.SubVO;
@@ -63,6 +64,19 @@ public class AdminController {
 		model.addAttribute("detailmenu", detailmenu);
 		System.out.println(detailmenu);
 		return "admin/adminMenuDetail";
+	}
+	
+	@GetMapping("adminMenuInsert.do")
+	public String adminMenuInsertPage(Model model) {
+		return "admin/adminMenuInsert";
+	}
+	
+	@PostMapping("adminMenuInsert.do")
+	public String adminMenuInsert(Model model, ProVO menu) {
+		int result = mService.insertMenu(menu);
+		List<ProVO> mlist = mService.selectAll();
+		model.addAttribute("mlist", mlist);
+		return "redirect:/admin/adminMenu.do";
 	}
 	
 	@RequestMapping(value = "adminMenuUpdate.do", produces = "text/plain;charset=utf-8")

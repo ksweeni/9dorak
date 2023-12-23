@@ -104,4 +104,8 @@ public class MenuService {
 		return dao.updateMenu(menu);
 	}
 
+	public int insertMenu(ProVO menu) {
+		return dao.insertMenu(menu);
+	}
+
 }
