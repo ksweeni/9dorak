@@ -271,7 +271,7 @@
 									<div class="group-7">
 										<div class="overlap-6">
 											<img class="rectangle-5"
-												src="${cpath}/resources/images/menu/cake.png" />
+												src="${cpath}/resources/upload/${phtrlist.memreview_image}" />
 											<p class="p">${phtrlist.memreview_cont }</p>
 										</div>
 									</div>

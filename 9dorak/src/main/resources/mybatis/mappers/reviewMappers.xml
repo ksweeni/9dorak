@@ -4,14 +4,21 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.firstzone.review">
 
-	<!-- 메뉴 전체보기 -->
-<!--  	<select id="selectByOrderdetail" parameterType="HashMap" resultType="orderdetailvo">
+	<!-- 리뷰 넘어가기 -->
+	<select id="selectByOrderdetail" parameterType="HashMap" resultType="orderdetailvo">
 		SELECT TA.*, TB.*, TC.*
-		FROM ORDERDETAIL TA
-		JOIN ORDERS TB ON TA.ORDER_NO = TB.ORDER_NO
-		JOIN PRO TC ON TA.PRO_NO = TC.PRO_NO
-		WHERE TB.MEM_ID = '${mem_id}'
-		  AND TA.PRO_NO = ${pro_no}
-	</select> -->
+			FROM ORDERDETAIL TA
+				JOIN ORDERS TB ON TA.ORDER_NO = TB.ORDER_NO
+				JOIN PRO TC ON TA.PRO_NO = TC.PRO_NO
+			WHERE TB.MEM_ID = #{mem_id}
+			  AND TA.ORDER_NO = #{order_no}
+			  AND TA.PRO_NO = #{pro_no}
+	</select>
+	
+	<insert id="insertReview" parameterType="memreviewvo">
+		INSERT INTO
+			MEMREVIEW (memreview_no, MEMREVIEW_DATE, MEMREVIEW_CONT, MEMREVIEW_IMAGE, ORDER_NO, PRO_NO)
+				VALUES (review_seq.nextval, SYSDATE, #{memreview_cont}, #{memreview_image}, #{order_no}, #{pro_no})
+	</insert>
 
 </mapper>

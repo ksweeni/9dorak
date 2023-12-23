@@ -103,7 +103,7 @@ public class MyPageController {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<Map<String, Object>> orderList = mService.orderList(loginmem.getMem_id());
 		model.addAttribute("orderList", orderList);
-		System.out.println(orderList);
+		//System.out.println(orderList);
 		return "my/myOrderList";
 	}
 
