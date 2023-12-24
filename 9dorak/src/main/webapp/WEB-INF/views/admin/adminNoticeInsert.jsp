@@ -26,7 +26,7 @@
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
-		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
+		<span class="e2099_2473" onclick="location.href='${cpath}/admin/adminNotice.do'">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span>
 		<div class="admin_login">
 			<div class="e2099_2476">
@@ -39,6 +39,7 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
+		
 			<div class="e2099_2487">
 				<!-- 	<button class="notice-btn" onclick="toggleTable('notice')">공지사항</button>
 				<button class="faq-btn" onclick="toggleTable('faq')">자주 묻는
@@ -174,13 +175,15 @@
 			type : "post",
 			success: function(res){
 				alert(res);
+				location.href="${cpath}/admin/adminNotice.do";
 			}
 		})
 		
 	})
 	$("#noticeInsert").on("click",function(){
  
-
+		alert($("#anno_title").val());
+		alert($("#anno_cont").val());
 	 	var param ={
 			anno_title : $("#anno_title").val(),
 			anno_cont : $("#anno_cont").val()
@@ -193,6 +196,7 @@
 			type : "post",
 			success: function(res){
 				alert(res);
+				location.href="${cpath}/admin/adminNotice.do";
 			}
 		})
 		

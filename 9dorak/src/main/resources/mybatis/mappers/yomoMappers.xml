@@ -109,12 +109,37 @@
 		where anno_no = #{anno_no}
 	</delete>
 
-<!-- 	<insert id="adminNoticeInsert" parameterType="annovo">
+ 	<insert id="adminNoticeInsert" parameterType="annovo">
 		INSERT INTO anno (
-		ANNO_TITLE, ANNO_CONT, ANNO_VIEW, ANNO_DATE, ANNO_WRITER, ANNO_IMAGE
+		ANNO_NO ,ANNO_TITLE, ANNO_CONT, ANNO_VIEW, ANNO_DATE, ANNO_WRITER, ANNO_IMAGE
 		) VALUES (
-		#{anno_title}, #{anno_cont}, 0, sysdate, '관리자', null
+		anno_seq.nextval,#{anno_title}, #{anno_cont}, 0, sysdate, '관리자', null
 		)
-	</insert> -->
+	</insert> 
 
+
+
+	<select id="list" resultMap="myMap">
+		SELECT *
+		FROM (
+    <![CDATA[SELECT anno_no, anno_title, anno_view , anno_date,anno_writer, ROWNUM as rnum ]]>
+		FROM (
+		SELECT *
+		FROM Anno
+		WHERE 1=1 
+		ORDER BY Anno_no
+		)
+    <![CDATA[WHERE ROWNUM <= #{currentPage} + 10]]>
+		)
+		WHERE rnum > #{currentPage}
+	</select>
+
+	<resultMap id="myMap" type="hashMap">
+		<result property="anno_no" column="ANNO_NO" />
+		<result property="anno_title" column="ANNO_TITLE" />
+		<result property="anno_view" column="ANNO_VIEW" />
+		<result property="anno_date" column="ANNO_DATE" />
+		<result property="anno_writer" column="ANNO_WRITER" />
+		<!-- 나머지 필드에 대한 매핑 -->
+	</resultMap>
 </mapper>

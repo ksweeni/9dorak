@@ -1,6 +1,7 @@
 package com.shinhan.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +22,7 @@ import com.shinhan.dto.FaqVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OneaskVO;
 import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.PagingVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.dto.SubVO;
 import com.shinhan.model.ChallengeService;
@@ -125,14 +128,14 @@ public class AdminController {
 		return "admin/adminSub";
 	}
 
-	@GetMapping("adminNotice.do")
-	public String adminNotice(Model model) {
-		List<AnnoVO> ylist = yservice.selectAll();
-		List<FaqVO> flist = yservice.selectFaqAll();
-		model.addAttribute("ylist", ylist);
-		model.addAttribute("flist", flist);
-		return "admin/adminNotice";
-	}
+//	@GetMapping("adminNotice.do")
+//	public String adminNotice(Model model) {
+//		List<AnnoVO> ylist = yservice.selectAll();
+//		List<FaqVO> flist = yservice.selectFaqAll();
+//		model.addAttribute("ylist", ylist);
+//		model.addAttribute("flist", flist);
+//		return "admin/adminNotice";
+//	}
 
 	@GetMapping("adminEvent.do")
 	public String adminEvent(Model model) {
@@ -312,20 +315,39 @@ public class AdminController {
 	}
 	
 	
-	/*
-	 * @RequestMapping(value = "adminNoticeInsert.do", produces =
-	 * "text/plain;charset=utf-8")
-	 * 
-	 * @ResponseBody public String adminNoticeInsert(Model model, AnnoVO anno) {
-	 * 
-	 * int result = yservice.adminNoticeInsert(anno); if (result > 0) { return
-	 * "등록 성공"; } else { return "등록 실패";
-	 * 
-	 * } }
-	 */
+	
+	@RequestMapping(value = "adminNoticeInsert.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminNoticeInsert(Model model, AnnoVO anno) {
+		System.out.println(anno);
+		int result = yservice.adminNoticeInsert(anno);
+		if (result > 0) {
+			return "등록 성공";
+		} else {
+			return "등록 실패";
+		}
+	}
 	
 	
 	
-	
+	@GetMapping("adminNotice.do")
+	public String adminNotice(Model model ,@ModelAttribute("AnnoVO") AnnoVO AnnoVO,
+			@RequestParam(defaultValue = "1") int currentPage) {
+		List<AnnoVO> ylistAll = yservice.selectAll();
+		List<FaqVO> flist = yservice.selectFaqAll();
+		int totalCount = ylistAll.size(); // 전체게시물수
+		PagingVO pagingVO = new PagingVO(totalCount, currentPage);
+
+		AnnoVO.setStartIndex(pagingVO.getStartIndex()); // 뭔지 모름..
+		AnnoVO.setCntPerPage(pagingVO.getDisplayRow()); // 한페이지에 게시물 수
+		AnnoVO.setCurrentPage(pagingVO.getCurrentPage()); // 현재페이지
+		List<Map<String, Object>> ylist = yservice.list(AnnoVO); // 전체목록조회
+		model.addAttribute("totalCount", totalCount);
+		model.addAttribute("pagingVO", pagingVO);
+		model.addAttribute("ylist", ylist);
+		model.addAttribute("flist", flist);
+		
+		return "admin/adminNotice";
+	}
 
 }

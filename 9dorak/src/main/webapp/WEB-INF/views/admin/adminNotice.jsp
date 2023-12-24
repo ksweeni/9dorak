@@ -26,8 +26,9 @@
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
-		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
-		<span class="e2099_2475">쿠폰/포인트관리</span>
+		<span class="e2099_2473"
+			onclick="location.href='${cpath}/admin/adminNotice.do'">게시판관리</span>
+		<span class="e2099_2474">이벤트관리</span> <span class="e2099_2475">쿠폰/포인트관리</span>
 		<div class="admin_login">
 			<div class="e2099_2476">
 				<hr>
@@ -52,7 +53,7 @@
 						공지사항 list
 						<form action="" id="setRows">
 							<p>
-								한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
+								한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="10">
 							</p>
 						</form>
 
@@ -69,14 +70,20 @@
 					</thead>
 					<tbody>
 						<c:forEach var="anno" items="${ylist}" varStatus="rowStatus">
+
 							<tr>
 								<td><a
 									href="${cpath }/admin/adminNoticeDetail.do?anno_no=${anno.anno_no}">${anno.anno_no}</a></td>
-								<td><a href="#">${anno.anno_title}</a></td>
-								<td><a href="#">${anno.anno_view}</a></td>
-								<td><a href="#">${anno.anno_date}</a></td>
-								<td><a href="#">${anno.anno_writer}</a></td>
+								<td><a
+									href="${cpath }/admin/adminNoticeDetail.do?anno_no=${anno.anno_no}">${anno.anno_title}</a></td>
+								<td><a
+									href="${cpath }/admin/adminNoticeDetail.do?anno_no=${anno.anno_no}">${anno.anno_view}</a></td>
+								<td><a
+									href="${cpath }/admin/adminNoticeDetail.do?anno_no=${anno.anno_no}">${anno.anno_date}</a></td>
+								<td><a
+									href="${cpath }/admin/adminNoticeDetail.do?anno_no=${anno.anno_no}">${anno.anno_writer}</a></td>
 							</tr>
+
 						</c:forEach>
 
 
@@ -84,42 +91,67 @@
 					</tbody>
 
 				</table>
+				<!-- 게시판 테스트 -->
+
+				<div class="numButton">
+					<c:forEach var="pageNum" begin="${pagingVO.beginPage }"
+						end="${pagingVO.endPage }">
+						<c:choose>
+							<c:when
+								test="${pageNum eq pagingVO.currentPage && search eq null}">
+								<span><a href="#" onclick="fn_paging('${pageNum}')">${pageNum }</a></span>
+							</c:when>
+							<c:when
+								test="${pageNum eq pagingVO.currentPage && search ne null}">
+								<span><a href="#" onclick="fn_paging('${pageNum}')">${pageNum }</a></span>
+							</c:when>
+							<c:otherwise>
+								<a href="#" onclick="fn_paging('${pageNum}')">${pageNum }</a>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+				</div>
 				<div class="insertAnno">
 					<button id="AnnoInsert">글쓰기</button>
 				</div>
 			</div>
 
+		</div>
 
-			<div id="faqTable" class="table-container">
-				<table id="faq" border="1">
-					<!-- FAQ 테이블 내용 -->
-					<caption>
-						자주 묻는 질문 list
-						<form action="" id="setRows">
-							<p>
-								한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
-							</p>
-						</form>
 
-					</caption>
+		<div id="faqTable" class="table-container">
+			<table id="faq" border="1">
+				<!-- FAQ 테이블 내용 -->
+				<caption>
+					자주 묻는 질문 list
+					<form action="" id="setRows">
+						<p>
+							한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="10">
+						</p>
+					</form>
 
-					<thead>
+				</caption>
+
+				<thead>
+					<tr>
+						<th>FAQ번호</th>
+						<th>FAQ제목</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="faq" items="${flist}" varStatus="rowStatus">
 						<tr>
-							<th>FAQ번호</th>
-							<th>FAQ제목</th>
+							<td>${faq.faq_no}</td>
+							<td>${faq.faq_title}</td>
 						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="faq" items="${flist}" varStatus="rowStatus">
-							<tr>
-								<td>${faq.faq_no}</td>
-								<td>${faq.faq_title}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+					</c:forEach>
+				</tbody>
+			</table>
+			<div class="insertFaq">
+				<button id="FaqInsert">글쓰기</button>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 <script type="text/javascript">
@@ -198,13 +230,13 @@
 	function toggleTable(tableType) {
 		var noticeTable = document.getElementById("noticeTable");
 		var faqTable = document.getElementById("faqTable");
-
 		if (tableType === 'notice') {
 			noticeTable.style.display = "block";
 			faqTable.style.display = "none";
 		} else if (tableType === 'faq') {
 			noticeTable.style.display = "none";
 			faqTable.style.display = "block";
+
 		}
 	}
 
@@ -219,5 +251,31 @@
 
 		})
 	})
+	$("#FaqInsert").on("click", function() {
+		alert("Asd");
+		/* 	$.ajax({
+
+				url : "${cpath}/admin/adminNoticeInsert.do",
+				type : "get",
+				success : function(res) {
+					$("body").html(res);
+				}
+
+			}) */
+	})
+
+	function fn_paging(currentPage) {
+		$.ajax({
+			url : "${cpath}/admin/adminNotice.do?currentPage=" + currentPage,
+			type : "get",
+			success : function(res) {
+				/* alert("갔따오기 성공"); */
+				$("body").html(res);
+			}
+
+		})
+		/* location.href = "${cpath}/admin/adminNotice.do?currentPage="
+				+ currentPage; */
+	}
 </script>
 </html>

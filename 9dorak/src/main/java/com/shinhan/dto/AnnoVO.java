@@ -22,4 +22,26 @@ public class AnnoVO {
 	private String anno_writer; //공지사항 작성자
 	private String anno_image; //공지사항 이미지
 	private String order_type;
+	
+	
+	
+	private int currentPage;
+	public void setStartIndex(int startIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setCntPerPage(int displayRow) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public int getCurrentPage() {
+		return currentPage;
+	}
+
+
+	public void setCurrentPage(int currentPage) {
+		this.currentPage =(currentPage-1)*10;
+	}
+
 }

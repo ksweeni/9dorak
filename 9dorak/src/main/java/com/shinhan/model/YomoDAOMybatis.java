@@ -2,6 +2,7 @@ package com.shinhan.model;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -137,10 +138,18 @@ public class YomoDAOMybatis {
 	}
 
 
-	/*
-	 * public int adminNoticeInsert(AnnoVO anno) { int result =
-	 * sqlSession.insert(NAMESPACE + "adminNoticeInsert", anno); return result; }
-	 */
+	
+	public int adminNoticeInsert(AnnoVO anno) {
+		int result = sqlSession.insert(NAMESPACE + "adminNoticeInsert", anno);
+		return result;
+	}
+
+
+	public List<Map<String, Object>> list(AnnoVO annoVO) {
+		return sqlSession.selectList(NAMESPACE + "list", annoVO);
+		
+	}
+	 
 
 
 	
