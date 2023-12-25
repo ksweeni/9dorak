@@ -53,7 +53,8 @@
 						공지사항 list
 						<form action="" id="setRows">
 							<p>
-								한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="10">
+								<input type="text" id="annoKeyword" placeholder="검색어 입력">
+								<button id="searchBtn">검색</button>
 							</p>
 						</form>
 
@@ -125,9 +126,7 @@
 				<caption>
 					자주 묻는 질문 list
 					<form action="" id="setRows">
-						<p>
-							한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="10">
-						</p>
+						
 					</form>
 
 				</caption>
@@ -141,12 +140,34 @@
 				<tbody>
 					<c:forEach var="faq" items="${flist}" varStatus="rowStatus">
 						<tr>
-							<td>${faq.faq_no}</td>
-							<td>${faq.faq_title}</td>
+							<td><a
+								href="${cpath }/admin/adminNoticeFaqDetail.do?faq_no=${faq.faq_no}">${faq.faq_no}</a></td>
+							<td><a
+								href="${cpath }/admin/adminNoticeFaqDetail.do?faq_no=${faq.faq_no}">${faq.faq_title}</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
+			<!-- 게시판 테스트 2 -->
+			<div class="numButton2">
+				<c:forEach var="pageNum" begin="${pagingVO2.beginPage }"
+					end="${pagingVO2.endPage }">
+					<c:choose>
+						<c:when
+							test="${pageNum eq pagingVO2.currentPage && search eq null}">
+							<span><a href="#" onclick="fn_paging2('${pageNum}')">${pageNum }</a></span>
+						</c:when>
+						<c:when
+							test="${pageNum eq pagingVO2.currentPage && search ne null}">
+							<span><a href="#" onclick="fn_paging2('${pageNum}')">${pageNum }</a></span>
+						</c:when>
+						<c:otherwise>
+							<a href="#" onclick="fn_paging2('${pageNum}')">${pageNum }</a>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+			</div>
+			<!--  -->
 			<div class="insertFaq">
 				<button id="FaqInsert">글쓰기</button>
 			</div>
@@ -231,9 +252,11 @@
 		var noticeTable = document.getElementById("noticeTable");
 		var faqTable = document.getElementById("faqTable");
 		if (tableType === 'notice') {
+			fn_paging(1);
 			noticeTable.style.display = "block";
 			faqTable.style.display = "none";
 		} else if (tableType === 'faq') {
+			fn_paging2(1);
 			noticeTable.style.display = "none";
 			faqTable.style.display = "block";
 
@@ -252,16 +275,15 @@
 		})
 	})
 	$("#FaqInsert").on("click", function() {
-		alert("Asd");
-		/* 	$.ajax({
+		$.ajax({
 
-				url : "${cpath}/admin/adminNoticeInsert.do",
-				type : "get",
-				success : function(res) {
-					$("body").html(res);
-				}
+			url : "${cpath}/admin/adminNoticeFaqInsert.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
 
-			}) */
+		})
 	})
 
 	function fn_paging(currentPage) {
@@ -277,5 +299,38 @@
 		/* location.href = "${cpath}/admin/adminNotice.do?currentPage="
 				+ currentPage; */
 	}
+	function fn_paging2(currentPage2) {
+		$.ajax({
+			url : "${cpath}/admin/adminNotice.do?currentPage=" + currentPage2,
+			type : "get",
+			success : function(res) {
+				/* alert("갔따오기 성공"); */
+				$("body").html(res);
+				var noticeTable = document.getElementById("noticeTable");
+				var faqTable = document.getElementById("faqTable");
+				noticeTable.style.display = "none";
+				faqTable.style.display = "block";
+			}
+
+		})
+	}
+
+	$("#searchBtn").on("click", function() {
+		//alert($("#annoKeyword").val());
+		var param = {
+			keyword : $("#annoKeyword").val()
+		}
+		$.ajax({
+			url : "${cpath}/admin/adminSearchAnno.do",
+			type : "get",
+			data : param,
+			success : function(res) {
+				//	 alert("갔따오기 성공"); 
+				$("body").html(res);
+				$(".numButton").hide();
+			}
+		})
+	})
+	
 </script>
 </html>

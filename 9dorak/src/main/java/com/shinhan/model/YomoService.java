@@ -137,6 +137,31 @@ public class YomoService {
 		// TODO Auto-generated method stub
 		return dao.list(annoVO);
 	}
+
+	public FaqVO selectFaq_no(int faq_no) {
+		// TODO Auto-generated method stub
+		return dao.selectFaq_no(faq_no);
+	}
+
+	public int adminnoticeFaqUpdate(FaqVO faq) {
+		// TODO Auto-generated method stub
+		return dao.adminnoticeFaqUpdate(faq);
+	}
+
+	public int adminnoticeFaqDelete(int faq_no) {
+		// TODO Auto-generated method stub
+		return dao.adminnoticeFaqDelete(faq_no);
+	}
+
+	public int adminNoticeFaqInsert(FaqVO faq) {
+		// TODO Auto-generated method stub
+		return dao.adminNoticeFaqInsert(faq);
+	}
+
+	public List<Map<String, Object>> list2(FaqVO faqVO) {
+		// TODO Auto-generated method stub
+		return dao.list2(faqVO);
+	}
 	 
 
 

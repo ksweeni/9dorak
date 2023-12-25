@@ -48,11 +48,11 @@
 			<div id="noticeTable" class="table-container">
 				
 				<form action="">
-				공지사항 제목 : <input type="text"  id="anno_title"/> <br />
-				공지사항 내용 : <textarea id="anno_cont" ></textarea><br />
+				FAQ 제목 : <input type="text" id="faq_title"/> <br />
+				FAQ 내용 : <textarea id="faq_cont" ></textarea><br />
 				</form>
 			</div>
-			<button id="noticeInsert">등록</button>
+			<button id="noticeFaqInsert">등록</button>
 			<div id="faqTable" class="table-container"></div>
 		</div>
 	</div>
@@ -143,55 +143,17 @@
 		}
 	}
 	
-	$("#noticeUpdate").on("click",function(){
- 
+
+	$("#noticeFaqInsert").on("click",function(){
 
 	 	var param ={
-			anno_no : $("#anno_no").val(),
-			anno_title : $("#anno_title").val(),
-			anno_cont : $("#anno_cont").val()
-		} 
-	
-		$.ajax({
-			url : "${cpath}/admin/adminNoticeUpdate.do",
-			data : param,
-			type : "post",
-			success: function(res){
-				alert(res);
-			}
-		})
-		
-	})
-	$("#noticeDelete").on("click",function(){
- 
-
-	 	var param ={
-			anno_no : $("#anno_no").val()
-		} 
-	
-		$.ajax({
-			url : "${cpath}/admin/adminNoticeDelete.do",
-			data : param,
-			type : "post",
-			success: function(res){
-				alert(res);
-				location.href="${cpath}/admin/adminNotice.do";
-			}
-		})
-		
-	})
-	$("#noticeInsert").on("click",function(){
- 
-		alert($("#anno_title").val());
-		alert($("#anno_cont").val());
-	 	var param ={
-			anno_title : $("#anno_title").val(),
-			anno_cont : $("#anno_cont").val()
+			faq_title : $("#faq_title").val(),
+			faq_cont : $("#faq_cont").val()
 			
 		} 
 	
 		$.ajax({
-			url : "${cpath}/admin/adminNoticeInsert.do",
+			url : "${cpath}/admin/adminNoticeFaqInsert.do",
 			data : param,
 			type : "post",
 			success: function(res){

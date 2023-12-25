@@ -283,6 +283,12 @@ public class AdminController {
 		model.addAttribute("anno", anno);
 		return "admin/adminNoticeDetail";
 	}
+	@GetMapping("adminNoticeFaqDetail.do")
+	public String adminNoticeFaqDetail(Model model, FaqVO faq) {
+		faq = yservice.selectFaq_no(faq.getFaq_no());
+		model.addAttribute("faq", faq);
+		return "admin/adminNoticeFaqDetail";
+	}
 
 	@RequestMapping(value = "adminNoticeUpdate.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
@@ -295,10 +301,32 @@ public class AdminController {
 
 		}
 	}
+	@RequestMapping(value = "adminnoticeFaqUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminnoticeFaqUpdate(Model model, FaqVO faq) {
+		int result = yservice.adminnoticeFaqUpdate(faq);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+			
+		}
+	}
 	@RequestMapping(value = "adminNoticeDelete.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String adminNoticeDelete(Model model, AnnoVO anno) {
 		int result = yservice.adminNoticeDelete(anno.getAnno_no());
+		if (result > 0) {
+			return "삭제 성공";
+		} else {
+			return "삭제 실패";
+			
+		}
+	}
+	@RequestMapping(value = "adminnoticeFaqDelete.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminnoticeFaqDelete(Model model, FaqVO faq) {
+		int result = yservice.adminnoticeFaqDelete(faq.getFaq_no());
 		if (result > 0) {
 			return "삭제 성공";
 		} else {
@@ -314,13 +342,30 @@ public class AdminController {
 		return "admin/adminNoticeInsert";
 	}
 	
+	@GetMapping("adminNoticeFaqInsert.do")
+	public String adminNoticeFaqInsert() {
+		
+		return "admin/adminNoticeFaqInsert";
+	}
+	
 	
 	
 	@RequestMapping(value = "adminNoticeInsert.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String adminNoticeInsert(Model model, AnnoVO anno) {
-		System.out.println(anno);
+		
 		int result = yservice.adminNoticeInsert(anno);
+		if (result > 0) {
+			return "등록 성공";
+		} else {
+			return "등록 실패";
+		}
+	}
+	@RequestMapping(value = "adminNoticeFaqInsert.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminNoticeFaqInsert(Model model, FaqVO faq) {
+		
+		int result = yservice.adminNoticeFaqInsert(faq);
 		if (result > 0) {
 			return "등록 성공";
 		} else {
@@ -332,22 +377,43 @@ public class AdminController {
 	
 	@GetMapping("adminNotice.do")
 	public String adminNotice(Model model ,@ModelAttribute("AnnoVO") AnnoVO AnnoVO,
+			@ModelAttribute("FaqVO") FaqVO FaqVO,
 			@RequestParam(defaultValue = "1") int currentPage) {
 		List<AnnoVO> ylistAll = yservice.selectAll();
-		List<FaqVO> flist = yservice.selectFaqAll();
+		List<FaqVO> flistAll = yservice.selectFaqAll();
 		int totalCount = ylistAll.size(); // 전체게시물수
 		PagingVO pagingVO = new PagingVO(totalCount, currentPage);
-
+		
+		int totalCount2 = flistAll.size();
+		PagingVO pagingVO2 = new PagingVO(totalCount2, currentPage);
+		
 		AnnoVO.setStartIndex(pagingVO.getStartIndex()); // 뭔지 모름..
 		AnnoVO.setCntPerPage(pagingVO.getDisplayRow()); // 한페이지에 게시물 수
 		AnnoVO.setCurrentPage(pagingVO.getCurrentPage()); // 현재페이지
+		///
+		
+		FaqVO.setStartIndex(pagingVO2.getStartIndex()); // 뭔지 모름..
+		FaqVO.setCntPerPage(pagingVO2.getDisplayRow()); // 한페이지에 게시물 수
+		FaqVO.setCurrentPage(pagingVO2.getCurrentPage()); // 현재페이지
 		List<Map<String, Object>> ylist = yservice.list(AnnoVO); // 전체목록조회
-		model.addAttribute("totalCount", totalCount);
+
+		List<Map<String, Object>> flist = yservice.list2(FaqVO); // 전체목록조회
+//		model.addAttribute("totalCount", totalCount);
 		model.addAttribute("pagingVO", pagingVO);
+		model.addAttribute("pagingVO2", pagingVO2);
 		model.addAttribute("ylist", ylist);
 		model.addAttribute("flist", flist);
-		
 		return "admin/adminNotice";
 	}
 
+	
+	@GetMapping("adminSearchAnno.do")
+	public String adminSearchAnno(@RequestParam("keyword") String keyword , Model model) {
+//		System.out.println(keyword);
+		List<AnnoVO> ylist = yservice.searchYomo(keyword);
+		model.addAttribute("ylist", ylist);
+		return "admin/adminNotice";
+	}
+
+	
 }

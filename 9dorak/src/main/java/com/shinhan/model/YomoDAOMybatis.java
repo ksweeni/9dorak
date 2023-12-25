@@ -149,6 +149,36 @@ public class YomoDAOMybatis {
 		return sqlSession.selectList(NAMESPACE + "list", annoVO);
 		
 	}
+
+
+	public FaqVO selectFaq_no(int faq_no) {
+		FaqVO faq = sqlSession.selectOne(NAMESPACE + "selectFaq_no", faq_no);
+		return faq;
+	}
+
+
+	public int adminnoticeFaqUpdate(FaqVO faq) {
+		int result = sqlSession.update(NAMESPACE + "adminnoticeFaqUpdate", faq);
+		return result;
+	}
+
+
+	public int adminnoticeFaqDelete(int faq_no) {
+		int result = sqlSession.delete(NAMESPACE + "adminnoticeFaqDelete", faq_no);
+		return result;
+	}
+
+
+	public int adminNoticeFaqInsert(FaqVO faq) {
+		int result = sqlSession.insert(NAMESPACE + "adminNoticeFaqInsert", faq);
+		return result;
+	}
+
+
+	public List<Map<String, Object>> list2(FaqVO faqVO) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList(NAMESPACE + "list2", faqVO);
+	}
 	 
 
 

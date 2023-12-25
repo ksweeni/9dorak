@@ -39,20 +39,18 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
-		
 			<div class="e2099_2487">
-				<!-- 	<button class="notice-btn" onclick="toggleTable('notice')">공지사항</button>
-				<button class="faq-btn" onclick="toggleTable('faq')">자주 묻는
-					질문</button> -->
+		
 			</div>
 			<div id="noticeTable" class="table-container">
 				
 				<form action="">
-				공지사항 제목 : <input type="text"  id="anno_title"/> <br />
-				공지사항 내용 : <textarea id="anno_cont" ></textarea><br />
+				FAQ 번호 : <input type="text" value="${faq.faq_no }" id="faq_no"/> <br />
+				FAQ 제목 : <input type="text" value="${faq.faq_title }" id="faq_title"/> <br />
+				FAQ 내용 : <textarea id="faq_cont" >${faq.faq_cont }</textarea><br />
 				</form>
 			</div>
-			<button id="noticeInsert">등록</button>
+			<button id="noticeFaqUpdate">수정</button><button id="noticeFaqDelete">삭제</button>
 			<div id="faqTable" class="table-container"></div>
 		</div>
 	</div>
@@ -143,34 +141,17 @@
 		}
 	}
 	
-	$("#noticeUpdate").on("click",function(){
+	$("#noticeFaqUpdate").on("click",function(){
  
 
 	 	var param ={
-			anno_no : $("#anno_no").val(),
-			anno_title : $("#anno_title").val(),
-			anno_cont : $("#anno_cont").val()
+			faq_no : $("#faq_no").val(),
+			faq_title : $("#faq_title").val(),
+			faq_cont : $("#faq_cont").val()
 		} 
 	
 		$.ajax({
-			url : "${cpath}/admin/adminNoticeUpdate.do",
-			data : param,
-			type : "post",
-			success: function(res){
-				alert(res);
-			}
-		})
-		
-	})
-	$("#noticeDelete").on("click",function(){
- 
-
-	 	var param ={
-			anno_no : $("#anno_no").val()
-		} 
-	
-		$.ajax({
-			url : "${cpath}/admin/adminNoticeDelete.do",
+			url : "${cpath}/admin/adminnoticeFaqUpdate.do",
 			data : param,
 			type : "post",
 			success: function(res){
@@ -180,18 +161,15 @@
 		})
 		
 	})
-	$("#noticeInsert").on("click",function(){
+	$("#noticeFaqDelete").on("click",function(){
  
-		alert($("#anno_title").val());
-		alert($("#anno_cont").val());
+
 	 	var param ={
-			anno_title : $("#anno_title").val(),
-			anno_cont : $("#anno_cont").val()
-			
+			faq_no : $("#faq_no").val()
 		} 
 	
 		$.ajax({
-			url : "${cpath}/admin/adminNoticeInsert.do",
+			url : "${cpath}/admin/adminnoticeFaqDelete.do",
 			data : param,
 			type : "post",
 			success: function(res){
