@@ -129,5 +129,19 @@ public class MenuDAOMybatis {
 		return rev;
 	}
 
+	public int deleteMenu(int pro_no) {
+		int result = sqlSession.delete(NAMESPACE + "deleteMenu", pro_no);
+		return result;
+	}
+
+	public int updateMenu(ProVO menu) {
+		int result = sqlSession.update(NAMESPACE + "updateMenu", menu);
+		return result;
+	}
+
+	public int insertMenu(ProVO menu) {
+		int result = sqlSession.insert(NAMESPACE + "insertMenu", menu);
+		return result;
+	}
 
 }

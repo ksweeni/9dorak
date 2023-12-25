@@ -40,7 +40,7 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
-		<button class="insert_memu" onclick="">추가하기</button>
+		<button class="insert_memu">추가하기</button>
 			<table id="products" border="1">
 				<caption>
 					메뉴 list
@@ -109,6 +109,19 @@
 	</div>
 </body>
 <script type="text/javascript">
+	
+	$(".insert_memu").on("click", function() {
+		$.ajax({
+	
+			url : "${cpath}/admin/adminMenuInsert.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+	
+		})
+	})
+	
 	$(".e2099_2469").on("click", function() {
 		$.ajax({
 

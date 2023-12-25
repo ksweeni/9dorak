@@ -29,8 +29,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="frame-15"><%-- 
-						<div class="starpiont">${txtrlist.memreview_starpoint }</div> --%>
+					<div class="frame-15">
 						<p class="text-wrapper-17">${txtrlist.memreview_cont }</p>
 					</div>
 				</div>

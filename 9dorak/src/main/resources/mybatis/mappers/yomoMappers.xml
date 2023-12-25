@@ -6,14 +6,17 @@
 	<!-- 게시글 리스트 -->
 	<select id="selectAll" resultType="annovo"> select * from anno </select>
 	<select id="selectByno" resultType="annovo" parameterType="int">
-		select * from anno where anno_no = #{anno_no} </select>
+		select * from anno where anno_no = #{anno_no}
+	</select>
 	<select id="searchYomo" resultType="annovo"
 		parameterType="String"> SELECT * FROM anno WHERE anno_title LIKE
 		'%'||#{anno_title}||'%' </select>
 	<select id="selectOrderbyView" resultType="annovo"> select * from anno
-		order by anno_view desc </select>
+		order by anno_view desc
+	</select>
 	<select id="selectOrderbyNew" resultType="annovo"> select * from anno
-		order by anno_date desc </select>
+		order by anno_date desc
+	</select>
 	<select id="selectFaqAll" resultType="faqvo"> select * from faq </select>
 	<select id="selectBynoOneask" resultType="oneaskvo"
 		parameterType="int"> select * from oneask where oneask_no = #{oneask_no}
@@ -24,7 +27,8 @@
 		parameterType="String"> SELECT * FROM oneask WHERE oneask_title LIKE
 		'%'||#{oneask_title}||'%' </select>
 	<select id="selectOrderbyNewOneask" resultType="oneaskvo"> select * from
-		oneask order by oneask_date desc </select>
+		oneask order by oneask_date desc
+	</select>
 	<insert id="insertOneask" parameterType="oneaskvo"> INSERT INTO oneask (
 		oneask_no, oneask_title, oneask_cont, oneask_date, oneask_image,
 		oneask_status, mem_id ) VALUES ( oneask_seq.NEXTVAL, #{oneask_title},
@@ -37,4 +41,154 @@
 		where
 		oneask_no=#{oneask_no}
 	</update>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<update id="adminNoticeUpdate" parameterType="annovo">
+		UPDATE anno
+		SET
+		anno_title = #{anno_title},
+		anno_cont = #{anno_cont},
+		anno_date =
+		sysdate
+		WHERE anno_no = #{anno_no}
+
+	</update>
+	<update id="adminnoticeFaqUpdate" parameterType="faqvo">
+		UPDATE faq
+		SET
+		faq_title = #{faq_title},
+		faq_cont = #{faq_cont}
+		WHERE faq_no = #{faq_no}
+	</update>
+
+
+
+	<delete id="adminNoticeDelete" parameterType="int">
+		DELETE FROM anno
+		where anno_no = #{anno_no}
+	</delete>
+	<delete id="adminnoticeFaqDelete" parameterType="int">
+		DELETE FROM faq
+		where faq_no = #{faq_no}
+	</delete>
+
+ 	<insert id="adminNoticeInsert" parameterType="annovo">
+		INSERT INTO anno (
+		ANNO_NO ,ANNO_TITLE, ANNO_CONT, ANNO_VIEW, ANNO_DATE, ANNO_WRITER, ANNO_IMAGE
+		) VALUES (
+		anno_seq.nextval,#{anno_title}, #{anno_cont}, 0, sysdate, '관리자', null
+		)
+	</insert> 
+ 	<insert id="adminNoticeFaqInsert" parameterType="faqvo">
+		INSERT INTO faq (
+		faq_NO ,faq_TITLE, faq_CONT
+		) VALUES (
+		faq_seq.nextval,#{faq_title}, #{faq_cont}
+		)
+	</insert> 
+
+
+
+	<select id="list" resultMap="myMap">
+		SELECT *
+		FROM (
+    <![CDATA[SELECT anno_no, anno_title, anno_view , anno_date,anno_writer, ROWNUM as rnum ]]>
+		FROM (
+		SELECT *
+		FROM Anno
+		WHERE 1=1 
+		ORDER BY Anno_no
+		)
+    <![CDATA[WHERE ROWNUM <= #{currentPage} + 10]]>
+		)
+		WHERE rnum > #{currentPage}
+	</select>
+
+	<resultMap id="myMap" type="hashMap">
+		<result property="anno_no" column="ANNO_NO" />
+		<result property="anno_title" column="ANNO_TITLE" />
+		<result property="anno_view" column="ANNO_VIEW" />
+		<result property="anno_date" column="ANNO_DATE" />
+		<result property="anno_writer" column="ANNO_WRITER" />
+		<!-- 나머지 필드에 대한 매핑 -->
+	</resultMap>
+	
+	
+	
+	<select id="selectFaq_no" parameterType="int" resultType="faqvo">
+		SELECT *
+		FROM faq
+		WHERE FAQ_NO = #{faq_no}
+	</select>
+	
+	
+		<select id="list2" resultMap="myMap2">
+		SELECT *
+		FROM (
+    <![CDATA[SELECT faq_no, faq_title, faq_cont , ROWNUM as rnum ]]>
+		FROM (
+		SELECT *
+		FROM faq
+		WHERE 1=1 
+		ORDER BY faq_no
+		)
+    <![CDATA[WHERE ROWNUM <= #{currentPage} + 10]]>
+		)
+		WHERE rnum > #{currentPage}
+	</select>
+
+	<resultMap id="myMap2" type="hashMap">
+		<result property="faq_no" column="FAQ_NO" />
+		<result property="faq_title" column="FAQ_TITLE" />
+		<result property="faq_cont" column="FAQ_CONT" />
+		<!-- 나머지 필드에 대한 매핑 -->
+	</resultMap>
 </mapper>

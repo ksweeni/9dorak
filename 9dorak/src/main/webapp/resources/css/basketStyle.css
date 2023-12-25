@@ -264,7 +264,7 @@ body {
 	line-height: normal;
 }
 
-.case .frame-12 {
+.case .orderButton {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -306,12 +306,6 @@ body {
 	gap: 31px;
 	position: relative;
 	flex: 0 0 auto;
-}
-
-.case .checkbox {
-	position: relative;
-	width: 40px;
-	height: 40px;
 }
 
 .case .text-wrapper-12 {
@@ -503,7 +497,7 @@ body {
 	margin-bottom: 15px;
 }
 
-.case .checkbox-2 {
+.case .checkbox {
 	position: relative;
 	width: 30px;
 	height: 30px;

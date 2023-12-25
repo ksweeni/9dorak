@@ -6,7 +6,7 @@
 
 	<!-- 메뉴 전체보기  -->
 	<select id="selectAll" resultType="provo">
-		select * from pro
+		select * from pro order by pro_no asc
 	</select>
 	
 	<!-- 카테고리 + 검색 -->
@@ -244,5 +244,73 @@
 		   and orderdetail.order_no = memreview.order_no
 		   and memreview.memreview_image is null
     </select>
+
+	<delete id="deleteMenu" parameterType="int">
+		DELETE FROM pro
+		where pro_no = #{pro_no}
+	</delete>
+
+	<update id="updateMenu" parameterType="provo">
+		update pro
+		set
+		pro_name=#{pro_name},
+		pro_detail=#{pro_detail},
+		pro_price=#{pro_price},
+		pro_rd=sysdate,
+		pro_like=#{pro_like},
+		pro_aller=#{pro_aller},
+		pro_prot=#{pro_prot},
+		pro_carb=#{pro_carb},
+		pro_prov=#{pro_prov},
+		pro_nat=#{pro_nat},
+		pro_sugar=#{pro_sugar},
+		pro_cal=#{pro_cal},
+		pro_weight=#{pro_weight},
+		pro_sub9=#{pro_sub9},
+		pro_sub19=#{pro_sub19},
+		pro_free=#{pro_free}
+		where
+		pro_no=#{pro_no}
+	</update>
+	
+	<insert id="insertMenu" parameterType="provo">
+    INSERT INTO pro (
+        pro_no,
+        pro_name,
+        pro_detail,
+        pro_price,
+        pro_rd,
+        pro_like,
+        pro_aller,
+        pro_prot,
+        pro_carb,
+        pro_prov,
+        pro_nat,
+        pro_sugar,
+        pro_cal,
+        pro_weight,
+        pro_sub9,
+        pro_sub19,
+        pro_free
+    ) VALUES (
+        pro_seq.NEXTVAL,
+        #{pro_name},
+        #{pro_detail},
+        #{pro_price},
+        sysdate,
+        0,
+        #{pro_aller},
+        #{pro_prot},
+        #{pro_carb},
+        #{pro_prov},
+        #{pro_nat},
+        #{pro_sugar},
+        #{pro_cal},
+        #{pro_weight},
+        #{pro_sub9},
+        #{pro_sub19},
+        #{pro_free}
+    )
+	</insert>
     
 </mapper>

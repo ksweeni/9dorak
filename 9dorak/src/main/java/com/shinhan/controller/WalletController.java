@@ -4,10 +4,8 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.shinhan.dto.BasketVO;
 import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.MemDeliveryVO;
@@ -40,6 +37,7 @@ public class WalletController {
 	MyPageService mService;
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
 
+	// 주문하기 수정 필요
 	@GetMapping("pay.do")
 	public String pay(Model model, HttpSession session) {
 		List<PayVO> plist = wService.selectAllPay();

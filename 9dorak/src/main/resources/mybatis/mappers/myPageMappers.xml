@@ -110,7 +110,7 @@
 	<select id="orderList" parameterType="string" resultType="map">
 		SELECT
 		od.pro_no, p.pro_name, od.orderdetail_count,
-		o.order_status, o.order_date, o.order_price,
+		o.order_status, o.order_date, o.order_price, od.order_no,
 		(select
 		proimage_image
 		from proimage
@@ -158,7 +158,7 @@
 
 	<!-- 결제취소내역보기 -->
 	<select id="cancelList" parameterType="string" resultType="map">
-		SELECT od.pro_no, p.pro_name, o.order_price,
+<!-- 		SELECT od.pro_no, p.pro_name, o.order_price,
 		od.orderdetail_count, py.pay_status, py.pay_date,
 		(
 		select proimage_image
@@ -174,6 +174,24 @@
 		and (od.pro_no
 		= p.pro_no )
 		and (p.pro_no = py.order_no )
+		and py.pay_status = '결제 취소'
+		ORDER BY py.pay_date DESC -->
+		SELECT od.pro_no, p.pro_name, o.order_price,
+		od.orderdetail_count, py.pay_status, py.pay_date,
+		(
+		select proimage_image
+		from proimage
+		where p.pro_no = od.pro_no
+		and
+		rownum=1)
+		proimage_image
+		FROM orders o , orderdetail od , pro p ,pay py
+		WHERE o.mem_id
+		= #{mem_id}
+		and(o.order_no = od.order_no )
+		and (od.pro_no
+		= p.pro_no )
+		and (od.order_no= py.order_no )
 		and py.pay_status = '결제 취소'
 		ORDER BY py.pay_date DESC
 	</select>

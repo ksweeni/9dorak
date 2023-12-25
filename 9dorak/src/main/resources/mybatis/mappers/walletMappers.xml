@@ -213,4 +213,43 @@
 		OD.ORDERDETAIL_COUNT,
 		P.PRO_NAME
 	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 주문하기 --> 
+	<insert id="insertOrder" parameterType="ordervo">
+		insert into orders (order_no,
+		order_date, order_price, order_status, order_refund, mem_id)
+		values (orders_seq.nextval, sysdate, #{order_price}, '주문완료', null, #{mem_id})
+	</insert>
+	
+	<insert id="insertOrderDetail" parameterType="orderdetailvo">
+		insert into ORDERDETAIL (order_no, pro_no, orderdetail_count) values (orders_seq.nextval, #{pro_no}, #{orderdetail_count})
+	</insert>
+	
+	
+	
 </mapper>

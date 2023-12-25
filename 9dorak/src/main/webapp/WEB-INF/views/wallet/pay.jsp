@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta charset="utf-8" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
@@ -15,7 +17,18 @@
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
-<style type="text/css">
+<style>
+.modal {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+}
 </style>
 </head>
 <body>
@@ -194,9 +207,7 @@
 							<div class="text-wrapper-13">-500 P</div>
 						</div>
 					</div>
-					<div class="frame-12">
-						<div class="text-wrapper-14">결제하기</div>
-					</div>
+					<button class="frame-12" onclick="requestPay()">결제하기</button>
 					<img class="line" src="img/line-10.svg" />
 					<div class="group-4">
 						<div class="frame-10">
@@ -374,130 +385,175 @@
 		</div>
 	</div>
 
+	<div id="successModal" class="modal">
+		<p>결제가 성공하였습니다.</p>
+		<button onclick="closeModal()">홈으로 이동하기</button>
+	</div>
 
-</body>
-<script type="text/javascript">
 
- 	$(".frame-4").on("click",function(){
- 		var text = $(".text-wrapper-5").text();
- 		if( text === "보유 쿠폰 확인하기" || text==="보유한 쿠폰이 없습니다."){
- 			return ;
- 		} 
- 		
- 		alert(text.substring(4));
- 		
- 	})//
+	<script>
+		var IMP = window.IMP;
+		IMP.init("imp40668838"); // 내 가맹점 식별 코드
 
-</script>
-<script type="text/javascript">
-	$(".my-del").on("click", function() {
-		$(".delmodal").show();
-	})
-	$(".close").on("click", function() {
-		$(".delmodal").hide();
-		$(".couponmodal").hide();
+		var amount = 7000; // 원가
+		var coupon = 0;
 
-	})
-	$("#coupon").on("click", function() {
-		$(".couponmodal").show();
-	})
-</script>
+		function requestPay() {
+			var discountedAmount = amount - coupon; // Apply the coupon discount
+			IMP.request_pay({
+				pg : "inicis",
+				pay_method : "card",
+				merchant_uid : "ORD20180131-0000067", // 매번 새로워야 함
+				name : "구도락 결제 테스트 입니다",
+				amount : discountedAmount,
+				buyer_email : "gildong@gmail.com",
+				buyer_name : "buyer_name",
+				buyer_tel : "010-4242-4242",
+				buyer_addr : "buyer's buyer shop",
+				buyer_postcode : "01181"
+			}, function(rsp) { // callback
+				console.log(rsp);
+				$.ajax({
+					type : 'POST',
+					url : '${cpath}/verify/' + rsp.imp_uid,
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		$(".selectdel-button").on("click", function() {
+				}).done(function(data) {
+					console.log(data);
 
-			// 선택된 배송지 정보 가져오기
-			var selectedDelName = $(this).data("delname");
-			var selectedZipcode = $(this).data("zipcode");
-			var selectedAddr = $(this).data("addr");
-			var selectedDetail = $(this).data("detail");
-			$("#mem_delname").val(selectedDelName);
-			$("#sample4_postcode").val(selectedZipcode);
-			$("#sample4_jibunAddress").val(selectedAddr);
-			$("#sample4_detailAddress").val(selectedDetail);
+					if (data) {
+						openModal();
+					} else {
 
-			$(".delmodal").css("display", "none");
-
-		});
-
-		$(".selectCoupon-button").on("click", function() {
-			var coupon_name = $(this).data("coupon_name");
-			$("#coupon").text(coupon_name);
-			$(".couponmodal").css("display", "none");
-
-		});
-	});
-</script>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-	//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
-	function sample4_execDaumPostcode() {
-		$("#regnodel").hide();
-		$("#nodel").show();
-		new daum.Postcode(
-				{
-					oncomplete : function(data) {
-						// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-						// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-						// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-						var roadAddr = data.roadAddress; // 도로명 주소 변수
-						var extraRoadAddr = ''; // 참고 항목 변수
-
-						// 법정동명이 있을 경우 추가한다. (법정리는 제외)
-						// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-						if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
-							extraRoadAddr += data.bname;
-						}
-						// 건물명이 있고, 공동주택일 경우 추가한다.
-						if (data.buildingName !== '' && data.apartment === 'Y') {
-							extraRoadAddr += (extraRoadAddr !== '' ? ', '
-									+ data.buildingName : data.buildingName);
-						}
-						// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-						if (extraRoadAddr !== '') {
-							extraRoadAddr = ' (' + extraRoadAddr + ')';
-						}
-
-						// 우편번호와 주소 정보를 해당 필드에 넣는다.
-						document.getElementById('sample4_postcode').value = data.zonecode;
-						document.getElementById("sample4_roadAddress").value = roadAddr;
-						document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
-
-						// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-						if (roadAddr !== '') {
-							document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-						} else {
-							document.getElementById("sample4_extraAddress").value = '';
-						}
-
-						var guideTextBox = document.getElementById("guide");
-						// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-						if (data.autoRoadAddress) {
-							var expRoadAddr = data.autoRoadAddress
-									+ extraRoadAddr;
-							guideTextBox.innerHTML = '(예상 도로명 주소 : '
-									+ expRoadAddr + ')';
-							guideTextBox.style.display = 'block';
-
-						} else if (data.autoJibunAddress) {
-							var expJibunAddr = data.autoJibunAddress;
-							guideTextBox.innerHTML = '(예상 지번 주소 : '
-									+ expJibunAddr + ')';
-							guideTextBox.style.display = 'block';
-						} else {
-							guideTextBox.innerHTML = '';
-							guideTextBox.style.display = 'none';
-						}
+						var msg = '결제에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;
+						alert(msg);
 					}
+				});
+			});
+		}
+		</script>
 
-				}).open();
-	}
-</script>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		</body>
+		<script type="text/javascript">
 
+		$(".frame-4").on("click", function() {
+			var text = $(".text-wrapper-5").text();
+			if (text === "보유 쿠폰 확인하기" || text === "보유한 쿠폰이 없습니다.") {
+				return;
+			}
 
+			alert(text.substring(4));
+
+		})//
+	</script>
+	<script type="text/javascript">
+		$(".my-del").on("click", function() {
+			$(".delmodal").show();
+		})
+		$(".close").on("click", function() {
+			$(".delmodal").hide();
+			$(".couponmodal").hide();
+
+		})
+		$("#coupon").on("click", function() {
+			$(".couponmodal").show();
+		})
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".selectdel-button").on("click", function() {
+
+				// 선택된 배송지 정보 가져오기
+				var selectedDelName = $(this).data("delname");
+				var selectedZipcode = $(this).data("zipcode");
+				var selectedAddr = $(this).data("addr");
+				var selectedDetail = $(this).data("detail");
+				$("#mem_delname").val(selectedDelName);
+				$("#sample4_postcode").val(selectedZipcode);
+				$("#sample4_jibunAddress").val(selectedAddr);
+				$("#sample4_detailAddress").val(selectedDetail);
+
+				$(".delmodal").css("display", "none");
+
+			});
+
+			$(".selectCoupon-button").on("click", function() {
+				var coupon_name = $(this).data("coupon_name");
+				$("#coupon").text(coupon_name);
+				$(".couponmodal").css("display", "none");
+
+			});
+		});
+	</script>
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+		//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+		function sample4_execDaumPostcode() {
+			$("#regnodel").hide();
+			$("#nodel").show();
+			new daum.Postcode(
+					{
+						oncomplete : function(data) {
+							// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+							// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+							// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+							var roadAddr = data.roadAddress; // 도로명 주소 변수
+							var extraRoadAddr = ''; // 참고 항목 변수
+
+							// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+							// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+							if (data.bname !== ''
+									&& /[동|로|가]$/g.test(data.bname)) {
+								extraRoadAddr += data.bname;
+							}
+							// 건물명이 있고, 공동주택일 경우 추가한다.
+							if (data.buildingName !== ''
+									&& data.apartment === 'Y') {
+								extraRoadAddr += (extraRoadAddr !== '' ? ', '
+										+ data.buildingName : data.buildingName);
+							}
+							// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+							if (extraRoadAddr !== '') {
+								extraRoadAddr = ' (' + extraRoadAddr + ')';
+							}
+
+							// 우편번호와 주소 정보를 해당 필드에 넣는다.
+							document.getElementById('sample4_postcode').value = data.zonecode;
+							document.getElementById("sample4_roadAddress").value = roadAddr;
+							document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+
+							// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+							if (roadAddr !== '') {
+								document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+							} else {
+								document.getElementById("sample4_extraAddress").value = '';
+							}
+
+							var guideTextBox = document.getElementById("guide");
+							// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+							if (data.autoRoadAddress) {
+								var expRoadAddr = data.autoRoadAddress
+										+ extraRoadAddr;
+								guideTextBox.innerHTML = '(예상 도로명 주소 : '
+										+ expRoadAddr + ')';
+								guideTextBox.style.display = 'block';
+
+							} else if (data.autoJibunAddress) {
+								var expJibunAddr = data.autoJibunAddress;
+								guideTextBox.innerHTML = '(예상 지번 주소 : '
+										+ expJibunAddr + ')';
+								guideTextBox.style.display = 'block';
+							} else {
+								guideTextBox.innerHTML = '';
+								guideTextBox.style.display = 'none';
+							}
+						}
+
+					}).open();
+		}
+	</script>
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </html>

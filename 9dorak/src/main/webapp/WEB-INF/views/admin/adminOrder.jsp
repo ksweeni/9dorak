@@ -54,7 +54,7 @@
 					<tr>
 						<th>주문번호</th>
 						<th>주문날짜</th>
-						<th>주문카테고리</th>
+						<th>주문가격</th>
 						<th>주문상태</th>
 						<th>주문환불여부</th>
 						<th>주문회원ID</th>
@@ -66,7 +66,7 @@
 						<tr>
 							<td>${order.order_no}</td>
 							<td>${order.order_date}</td>
-							<td>${order.order_category}</td>
+							<td>${order.order_price}</td>
 							<td>${order.order_status}</td>
 							<td>${order.order_refund}</td>
 							<td>${order.mem_id}</td>
