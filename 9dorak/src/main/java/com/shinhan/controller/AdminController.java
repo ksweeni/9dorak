@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -142,6 +143,37 @@ public class AdminController {
 		List<ChallengeVO> chlist = chService.selectAll();
 		model.addAttribute("chlist", chlist);
 		return "admin/adminEvent";
+	}
+	
+	@GetMapping("adminEventDetail.do")
+	public String adminEventDetail(Model model, @RequestParam("challenge_no") int challengeNo) {
+	    ChallengeVO challenge = chService.selectByno(challengeNo);
+	    model.addAttribute("chno", challenge);
+	    return "admin/adminEventDetail";
+	}
+	
+	@RequestMapping(value = "adminEventUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminEventUpdate(Model model, ChallengeVO challenge) {
+		int result = chService.updateChall(challenge);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+
+		}
+	}
+	
+	@RequestMapping(value = "adminEventDelete.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminNoticeDelete(Model model, ChallengeVO challenge) {
+		int result = chService.deleteChal(challenge.getChallenge_no());
+		if (result > 0) {
+			return "삭제 성공";
+		} else {
+			return "삭제 실패";
+			
+		}
 	}
 
 	@GetMapping("adminPoint.do")
