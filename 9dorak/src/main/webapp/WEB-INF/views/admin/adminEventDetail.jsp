@@ -46,23 +46,23 @@
 					
 				<form action="">
 				 <label for="ch_no">챌린지번호 : </label>
-                    <input type="text" value="${chno.challenge_no}" id="ch_no" readonly /><br />
+                    <input type="text" value="${challenge.challenge_no}" id="ch_no" readonly /><br />
     			 <label for="ch_name">챌린지명/도시락만들9명 : </label>
-                    <input type="text" value="${chno.challenge_name}" id="ch_name" /><br />
+                    <input type="text" value="${challenge.challenge_name}" id="ch_name" /><br />
     			<label for="ch_cont">챌린지내용/도시락만들9소개 : </label>
-                    <textarea id="ch_cont">${chno.challenge_cont}</textarea><br />
+                    <textarea id="ch_cont">${challenge.challenge_cont}</textarea><br />
     			<label for="ch_image">챌린지이미지/도시락만들9이미지 : </label>
-    				<input type="text" value="${chno.challenge_image}" id="ch_image"/> <br />
+    				<input type="text" value="${challenge.challenge_image}" id="ch_image"/> <br />
     			<label for="ch_date">챌린지날짜 : </label>
-    				<input type="text" value="${chno.challenge_date}" id="ch_date"/> <br />
+    				<input type="text" value="${challenge.challenge_date}" id="ch_date"/> <br />
    		 		<label for="ch_start">챌린지시작날짜 : </label>
-   		 			<input type="text" value="${chno.challenge_start}" id="ch_start"/> <br />
+   		 			<input type="text" value="${challenge.challenge_start}" id="ch_start"/> <br />
     			<label for="ch_end">챌린지종료날짜 : </label>
-    				<input type="text" value="${chno.challenge_end}" id="ch_end"/> <br />
+    				<input type="text" value="${challenge.challenge_end}" id="ch_end"/> <br />
     			<label for="ch_category">챌린지구분 : </label>
-    				<input type="text" value="${chno.challenge_category}" id="ch_category"/> <br />
+    				<input type="text" value="${challenge.challenge_category}" id="ch_category"/> <br />
     			<label for="ch_recipe">만들9레시피 : </label>
-    				<input type="text" value="${chno.challenge_recipe}" id="ch_recipe"/> <br />
+    				<input type="text" value="${challenge.challenge_recipe}" id="ch_recipe"/> <br />
     			<label for="mem_id">회원ID : </label>
     				<input type="text" value="${chno.mem_id}" id="mem_id"/> <br />
 				</form>

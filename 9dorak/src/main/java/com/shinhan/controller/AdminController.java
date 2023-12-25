@@ -148,7 +148,7 @@ public class AdminController {
 	@GetMapping("adminEventDetail.do")
 	public String adminEventDetail(Model model, @RequestParam("challenge_no") int challengeNo) {
 	    ChallengeVO challenge = chService.selectByno(challengeNo);
-	    model.addAttribute("chno", challenge);
+	    model.addAttribute("challenge", challenge);
 	    return "admin/adminEventDetail";
 	}
 	
