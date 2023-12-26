@@ -20,7 +20,11 @@ String contextPath = request.getContextPath();
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		alert("${id}");
+	})
+</script>
 </head>
 <body>
 	<div class=e106_187>
@@ -47,9 +51,21 @@ String contextPath = request.getContextPath();
 							<div class="e106_402">중복확인</div>
 						</button>
 					</div>
-					<input class="e106_422" type="text" id="mem_id" name="mem_id"
-						value="${id }" ${kakao==1?"readonly":"" }
-						placeholder="10자리 이하의 아이디를 입력하세요" /> <span class="e106_423">아이디</span>
+					<!--  -->
+					<c:choose>
+						<c:when test="${id =='일반'}">
+							<input class="e106_422" type="text" id="mem_id" name="mem_id"
+								value="" placeholder="10자리 이하의 아이디를 입력하세요" />
+						</c:when>
+						<c:otherwise>
+							<input class="e106_422" type="text" id="mem_id" name="mem_id"
+								value="${id}" ${kakao==1 ? 'readonly="readonly"' : '' }
+								placeholder="10자리 이하의 아이디를 입력하세요" />
+						</c:otherwise>
+					</c:choose>
+
+					<!--  -->
+					<span class="e106_423">아이디</span>
 				</div>
 				<div class=e106_418>
 					<input class="e106_419" type="password" id="mem_pw" name="mem_pw"
@@ -64,7 +80,7 @@ String contextPath = request.getContextPath();
 						value="${email }" ${kakao==1?"readonly":"" } id="mem_email"
 						placeholder="hcghcg17@naver.com" /> <span class="e106_414">이메일</span>
 					<!--  -->
-		<!-- 			<div class=e106_397 id="emailCheck">
+					<!-- 			<div class=e106_397 id="emailCheck">
 						<div class="e106_398"></div>
 						<div class="e106_399">이메일인증</div>
 						<input type="hidden" id="mail-Check-Btn" />
@@ -79,7 +95,8 @@ String contextPath = request.getContextPath();
 						</c:when>
 						<c:otherwise>
 							<div class=e106_397 id="emailCheck">
-								<input type="hidden" id="mail-Check-Btn" style="display: none" disabled="true"/>
+								<input type="hidden" id="mail-Check-Btn" style="display: none"
+									disabled="true" />
 							</div>
 						</c:otherwise>
 					</c:choose>

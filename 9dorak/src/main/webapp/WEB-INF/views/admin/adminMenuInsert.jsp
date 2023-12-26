@@ -92,9 +92,11 @@
 		메뉴무료체험 <br> 
 		<input type="text" name="pro_free" placeholder="F 입력"></input>
 		</div>
+		<input type="file" name="mtfRequest"  multiple="multiple"/>
 		</div>
 		</form>
 		</div>
+		
 	</div>
 </body>
 <script type="text/javascript">
