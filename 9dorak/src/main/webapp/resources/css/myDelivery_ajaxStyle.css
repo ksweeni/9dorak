@@ -689,14 +689,15 @@
 }
 
 .e125_213 {
-	width: 52px;
-	height: 43px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
 /* 	background-image: url(${cpath}/resources/images/my/profile.png); */
-	background-repeat: no-repeat;
-	background-size: cover;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .e125_214 {
