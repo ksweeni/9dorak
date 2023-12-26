@@ -820,8 +820,8 @@
 	flex-shrink: 0;
 	border-radius: 30px;
     border: 1px solid #F48E28;
-    background: #fff;
-    color: #F48E28;
+    background: #F48E28;
+    color: #FFF;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -832,8 +832,8 @@
 }
 
 .allergy-button.selected {
-    background: #F48E28;
-    color: #FFF;
+    background: #FFF;
+    color: #F48E28;
 }
 
 .category-button {
