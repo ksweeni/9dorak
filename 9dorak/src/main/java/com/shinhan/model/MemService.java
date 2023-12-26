@@ -33,4 +33,8 @@ public class MemService {
 		return dao.deleteMem(mem_id);
 	}
 
+	public int insertMem(MemVO mem) {
+		return dao.insertMem(mem);
+	}
+
 }

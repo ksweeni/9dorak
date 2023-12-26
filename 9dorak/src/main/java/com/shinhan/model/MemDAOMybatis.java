@@ -39,4 +39,9 @@ public class MemDAOMybatis {
 		return result;
 	}
 
+	public int insertMem(MemVO mem) {
+		int result = sqlSession.insert(NAMESPACE + "insertMem", mem);
+		return result;
+	}
+
 }
