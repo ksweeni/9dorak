@@ -117,12 +117,12 @@
 				</div>
 				<div class="links">
 					<div class="privacy">
-						<a class="header-a"
+						<a class="orderlist"
 							href="${pageContext.request.contextPath}/my/orderDetails.do">주문
 							내역</a>
 					</div>
 					<div class="duolingo-for-schools">
-						<a class="header-a"
+						<a class="paylist"
 							href="${pageContext.request.contextPath}/my/orderPayment.do">결제
 							내역</a>
 					</div>

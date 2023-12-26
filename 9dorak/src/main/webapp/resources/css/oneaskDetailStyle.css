@@ -902,7 +902,6 @@
 	background-size:cover;
 }
 .e1081_4458 { 
-	color:rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 	width:58px;
 	height:26px;
 	position:absolute;
@@ -912,6 +911,7 @@
 	font-size:21px;
 	letter-spacing:0;
 	line-height:px;
+	font-weight: 700;
 }
 .e1081_4459 { 
 	color:rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
@@ -924,6 +924,7 @@
 	font-size:13px;
 	letter-spacing:0.800000011920929;
 	line-height:px;
+	font-weight: 700;
 }
 .e1081_4460 { 
 	width:198px;
@@ -946,7 +947,6 @@
     cursor: pointer;
 }
 .e1081_4462 {
-    /* color: rgba(255, 255, 255, 1); */
     width: 52px;
     height: 20px;
     position: absolute;
@@ -956,6 +956,8 @@
     font-size: 14px;
     letter-spacing: 0;
     line-height: px;
+    font-weight: 700;
+    color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 }
 .e1081_4463 { 
 	width:198px;
@@ -966,7 +968,6 @@
 	cursor: pointer;
 }
 .e1081_4464 { 
-	color:rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 	width:84px;
 	height:20px;
 	position:absolute;
@@ -976,6 +977,8 @@
 	font-size:14px;
 	letter-spacing:0;
 	line-height:px;
+	font-weight: 700;
+    color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 }
 .e1081_4465 { 
 	background-color: rgba(254.99996960163116, 174.5559909939766, 100.30001074075699, 1);
@@ -1000,6 +1003,8 @@
 	font-size:14px;
 	letter-spacing:0;
 	line-height:px;
+	text-shadow: 0px 4px 4px #00000040;
+    font-weight: 700;
 }
 .e1081_4467 { 
 	width:198px;
@@ -1013,7 +1018,6 @@
 	border-bottom-right-radius:16px;
 }
 .e1081_4468 { 
-	color:rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 	width:64px;
 	height:20px;
 	position:absolute;
@@ -1023,6 +1027,8 @@
 	font-size:14px;
 	letter-spacing:0;
 	line-height:px;
+	font-weight: 700;
+    color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 }
 .e1081_4206 { 
 	width:100%;
@@ -1600,5 +1606,6 @@ th:nth-child(2) {
     width: 40px;
     background-repeat: no-repeat;
 	background-size: cover;
+	border-radius: 20px;
 /*     background-image: url(../images/yomo/profile.png); */
 }

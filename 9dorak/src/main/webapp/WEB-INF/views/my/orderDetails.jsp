@@ -117,12 +117,12 @@
 						<div class="text-wrapper-3" onclick="myOrder()">주문 내역</div>
 					</div>
 					<div class="duolingo-for-schools">
-						<a class="header-a"
+						<a class="paylist"
 							href="${pageContext.request.contextPath}/my/orderPayment.do">결제
 							내역</a>
 					</div>
 					<div class="duolingo-for-schools-2">
-						<a class="header-a"
+						<a class="cancellist"
 							href="${pageContext.request.contextPath}/my/orderCancel.do">결제
 							취소 내역</a>
 					</div>
