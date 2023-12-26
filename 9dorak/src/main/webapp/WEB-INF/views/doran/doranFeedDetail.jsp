@@ -17,12 +17,7 @@
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 </head>
-<script>
-	var c = "${comments}";
-	var doran = "${doran}";
-	console.log(c);
-	console.log(doran);
-</script>
+
 <body>
 
 	<div class="div-wrapper">
@@ -146,7 +141,8 @@
 				</div>
 
 
-				<div class="frame-4" style="${doran.doran_image==null? 'top: 400px;' : ''}">
+				<div class="frame-4"
+					style="${doran.doran_image==null? 'top: 400px;' : ''}">
 					<div class="text-wrapper-13">COMMENTS ☁️</div>
 					<div class="overlap-wrapper">
 						<div class="overlap">
@@ -211,7 +207,7 @@
 				<div class="group-9">
 					<div class="group-10">
 						<div class="div-2">
-						
+
 							<div class="doran-profile">
 								<c:choose>
 									<c:when
@@ -289,8 +285,9 @@
 								<button class="text-wrapper-20" onclick="redirectToDoranPage()">도란도란</button>
 							</div>
 							<div class="tab-2">
-								<button class="text-wrapper-21" onclick="redirectToMyDoranPage()">내가 쓴 글</button>
-<!-- 								<button class="text-wrapper-21" onclick="redirectToMyDoranPage()">내가 쓴 글</button> -->
+								<button class="text-wrapper-21"
+									onclick="redirectToMyDoranPage()">내가 쓴 글</button>
+								<!-- 								<button class="text-wrapper-21" onclick="redirectToMyDoranPage()">내가 쓴 글</button> -->
 							</div>
 						</div>
 						<div class="text-wrapper-22">도란도란</div>
@@ -398,7 +395,11 @@
 			    if (loggedInUser === Author) {
 			        $(".detailfeed_deleteBtn").show();
 			    } else {
-			        $(".detailfeed_deleteBtn").hide();
+			    	if ("${doran.doran_image}" == null) {
+			            $(".unsplash").css("display", "none");
+			            $(".p").css("top", "150px");
+			            $(".doran-underInfo").css("top", "140px");
+			        }
 			    }
 			});
 			
@@ -430,7 +431,7 @@
 			</script>
 		</div>
 	</div>
-	<footer class="footer" style="top: 10rem;}">
+	<footer class="footer" style="top: 10rem;">
 
 		<div class="footer-company-loco">
 			<div class="footer-company">
