@@ -35,8 +35,10 @@
 						<input type="hidden" id="pro_no" name="pro_no" value="${order.PRO_NO }">
 						<button class="primary-button">리뷰작성</button>
 					</form>
+					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${order.PRO_NO}">
 					<div class="text-wrapper-13">${order.ORDER_PRICE}</div>
 					<div class="text-wrapper-14">${order.PRO_NAME }</div>
+					</a>
 					<div class="text-wrapper-15">${order.ORDER_DATE }</div>
 					<img class="rectangle" src="${cpath}/${order.PROIMAGE_IMAGE}" />
 				</div>
