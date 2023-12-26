@@ -53,19 +53,14 @@ public class DoranController {
 	public String doran(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model,
 			HttpSession session) {
 		List<DoranVO> dlist;
-//		System.out.println(orderBy);
 		dlist = dService.selectAll();
 		model.addAttribute("dlist", dlist);
 
 		MemVO memId = (MemVO) session.getAttribute("loginmem");
 
 		if (memId == null) {
-//			System.out.println("아이디가 없습니다");
 			model.addAttribute("memPoint", "로그인하고 포인트를 얻으세요");
-		} else {
-//			System.out.println(memId);
-		}
-//		System.out.println(memId);
+		} 
 		model.addAttribute("loginmem", memId);
 		System.out.println(dlist);
 		return "doran/doran";
@@ -89,7 +84,7 @@ public class DoranController {
 		return "doran/doran_ajax";
 	}
 
-	// 도란도란을 위한 데이터인지, 내가 쓴 글인지 확인
+
 	@GetMapping("/doranFor.do")
 	public String doranFor(@RequestParam(name = "dataFor", defaultValue = "doran") String dataFor, Model model,
 			HttpSession session, RedirectAttributes redirectAttributes) {
@@ -114,7 +109,7 @@ public class DoranController {
 		return "doran/doranUpload";
 	}
 
-	// 내가 쓴 글일 때, 조회 메소드
+
 	@GetMapping("/doranFilterForMe.do")
 	public String doranFilterForMe(@RequestParam(name = "orderBy", defaultValue = "latest") String orderBy, Model model,
 			HttpSession session) {
@@ -169,7 +164,7 @@ public class DoranController {
 			HttpSession session) {
 		Map<String, Object> response = new HashMap<>();
 		try {
-//			System.out.println("Received comment from frontend: " + newComment);
+
 			List<CommentVO> clist = dService.selectComment();
 			MemVO memVO = (MemVO) session.getAttribute("loginmem");
 			String memId = memVO.getMem_id();
@@ -182,7 +177,7 @@ public class DoranController {
 		
 			List<CommentVO> updatedComments = dService.selectAllCommentAbout(doranNo);
 			
-			// 업데이트된 댓글 목록을 응답에 추가
+		
 			response.put("comments", updatedComments);
 			response.put("success", true);
 			
@@ -192,8 +187,6 @@ public class DoranController {
 			response.put("error", e.getMessage());
 		}
 		return response;
-
-		// return"redirect:/doran/doranFeedDetail/"+doranNo+"?timestamp="+System.currentTimeMillis();
 	}
 
 	@PostMapping("doranUpload.do")
@@ -203,7 +196,7 @@ public class DoranController {
 		int dsize = dService.selectAll().size();
 		String path = request.getSession().getServletContext().getRealPath("resources");
 		System.out.println("path : " + path);
-//		String root = path + "\\uploadFiles" ;
+
 		String root = path + "\\upload";
 
 		File file = new File(root);
@@ -240,8 +233,12 @@ public class DoranController {
 		doran.setDoran_cont(doran.getDoran_cont());
 		doran.setDoran_view(0);
 		doran.setMem_id(memId);
-		doran.setDoran_image(ranFileName);
-		System.out.println(memVO);
+		
+		 if (!singleFile.isEmpty()) {
+			 doran.setDoran_image(ranFileName);
+		    } else {
+		        doran.setDoran_image(null);
+		    }
 		doran.setDoran_profile(memVO.getMem_image());
 		dService.insertDoran(doran);
 

@@ -77,7 +77,7 @@ String contextPath = request.getContextPath();
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
 								<div class="ellipse-light"></div>
-								<!-- <div class="text-wrapper-29">2</div> -->
+								
 							</div>
 						</div>
 					</div>
@@ -117,13 +117,13 @@ String contextPath = request.getContextPath();
 												<!-- 멀티파트 객체로 singleFile이 넘어간다 -->
 												​
 											</div>
-											<!-- bottom-content -->
+											
 										</div>
-										<!-- type-n -->
+									
 									</div>
-									<!-- upload-field -->
+									
 									​ ​
-									<!-- 업로드 testing -->
+									
 									<div class="button-group-wrapper">
 										<div class="button-group">
 											<button class="cancel-wrapper">
@@ -229,7 +229,6 @@ String contextPath = request.getContextPath();
 				</div>
 			</div>
 		</div>
-		<!-- div -->
 	</div>
 				<footer class="footer" style="top:30rem;">
 				<div class="footer-company-loco">
