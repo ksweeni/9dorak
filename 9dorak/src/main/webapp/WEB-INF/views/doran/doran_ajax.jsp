@@ -78,8 +78,8 @@
 			</div>
 		</div>
 		<script>
-    // 이미지가 없을 경우 높이를 200px로 설정하는 class 추가
-    var doranImage = '${doran.doran_image}'; // Use single quotes here
+  
+    var doranImage = '${doran.doran_image}'; 
     var doranFeed = document.getElementById("doran-feed-${loop.index}");
 
     if (doranFeed && !doranImage.trim()) {
@@ -95,22 +95,19 @@
 			return;
 		}
     	
-   		 alert(index);
+   	
          var likeIcon = document.getElementById("like-icon-" + index);
       
 
          if (likeIcon) {
-            // 이미지 파일 이름이 'unfill'로 끝나면 'fill'로 변경하고 그 반대도 적용
+     
             likeIcon.src = likeIcon.src.endsWith("-unfill.png") ?
                 '${cpath}/resources/images/doran/icon_doran-like-fill.png' : 
                 '${cpath}/resources/images/doran/icon_doran-like-unfill.png';
 
-            alert('${sessionScope.loginmem.mem_id}'); 
          }
-            // 세션에 저장된 값 가져오기
+            
              var memId = '${sessionScope.loginmem.mem_id}'; 
-
-            alert($(".doran-review-like" + index).text());
 
              $.ajax({
                 url: '${cpath}/doran/doranLikeUpdate.do', // Use single quotes here
@@ -119,7 +116,7 @@
                     "mem_id": memId
                 },
                 success: function (responseData) {
-                    alert(  responseData);
+                    //alert(  responseData);
                   
                 
                 }
@@ -128,7 +125,6 @@
     }
     
     function toFeedDetail(doranNum) {
-        alert(doranNum);
         increaseViewCount(doranNum); // 조회수 증가
         window.location.href = '${cpath}/doran/doranFeedDetail/' + doranNum;
     }
