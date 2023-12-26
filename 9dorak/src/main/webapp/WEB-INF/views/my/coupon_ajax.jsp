@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -23,65 +23,65 @@ String contextPath = request.getContextPath();
 <body>
 	<div class=e154_564>
 		<header class="header">
-				<div class="top-nav">
-					<div class="navbar">
-						<div class="text-event">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
-						</div>
-						<div class="text-menu">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
-						</div>
-						<div class="text-subscribe">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
-						</div>
-						<div class="text-yomo">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
-						</div>
-						<div class="text-doran">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
-						</div>
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-event">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
 					</div>
-					<a href="${pageContext.request.contextPath}/main.do"> <img
-						class="untitled-2"
-						src="${cpath}/resources/images/main/header-logo.png" />
-					</a>
-					<div class="div-3">
-						<div class="text-wrapper-28">
-							<c:choose>
-								<c:when test="${not empty sessionScope.loginmem.mem_id}">
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/my/myPage.do"
-										style="font-weight: bold; left: -1rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
-									</a>
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/my/logout.do"
-										style="position: relative; left: -1rem">로그아웃</a>
-								</c:when>
-								<c:otherwise>
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+					<div class="text-menu">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+					</div>
+					<div class="text-subscribe">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+					</div>
+					<div class="text-yomo">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+					</div>
+					<div class="text-doran">
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+					</div>
+				</div>
+				<a href="${pageContext.request.contextPath}/main.do"> <img
+					class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				</a>
+				<div class="div-3">
+					<div class="text-wrapper-28">
+						<c:choose>
+							<c:when test="${not empty sessionScope.loginmem.mem_id}">
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/my/myPage.do"
+									style="font-weight: bold; left: -1rem; position: relative;">
+									<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
+								</a>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/my/logout.do"
+									style="position: relative; left: -1rem">로그아웃</a>
+							</c:when>
+							<c:otherwise>
+								<a class="header-a"
+									href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
 			                        <a class="header-a"
-										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
-								</c:otherwise>
-							</c:choose>
-						</div>
-						<div class="group-20">
-							<div class="header-overlap-group-3">
-								<img class="header-group-21"
-									src="${cpath}/resources/images/main/header-cart.png" />
-								<div class="ellipse-light"></div>
-								<!-- <div class="text-wrapper-29">2</div> -->
-							</div>
+									href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<div class="group-20">
+						<div class="header-overlap-group-3">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<div class="ellipse-light"></div>
+							<!-- <div class="text-wrapper-29">2</div> -->
 						</div>
 					</div>
 				</div>
-			</header>
+			</div>
+		</header>
 
 		<div class=e154_576>
 			<div class=e154_577>
@@ -108,10 +108,9 @@ String contextPath = request.getContextPath();
 							<span class="e156_689">${item.coupon_check}</span>
 						</div>
 					</c:forEach>
-					<input type="text" id="coupon_code" class ="coupon-code" name="coupon"
-						placeholder="쿠폰번호를 입력해주세요!" />
-					<div class="register-coupon"
-						id="couponRegister">등록하기</div>
+					<input type="text" id="coupon_code" class="coupon-code"
+						name="coupon" placeholder="쿠폰번호를 입력해주세요!" />
+					<div class="register-coupon" id="couponRegister">등록하기</div>
 
 					<div class="e156_688"></div>
 				</div>
@@ -120,7 +119,20 @@ String contextPath = request.getContextPath();
 				<div class=e154_592>
 					<span class="e154_593">${loginmem.mem_name }</span><span
 						class="e154_594">LV.${loginmem.mem_grade }</span>
-					<div class="e154_595"></div>
+					<!-- <div class="e154_595"></div> -->
+					<!-- 프로필 테스트 -->
+					<c:choose>
+						<c:when
+							test="${sessionScope.loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+							<div class="e154_595"
+								style="background-image: url(${cpath}/${sessionScope.loginmem.mem_image});"></div>
+						</c:when>
+						<c:otherwise>
+							<div class="e154_595"
+								style="background-image: url(${cpath}/resources/upload/${sessionScope.loginmem.mem_image}); "></div>
+						</c:otherwise>
+					</c:choose>
+					<!--  -->
 				</div>
 				<div class=e154_596>
 					<div class=e155_635>

@@ -11,21 +11,22 @@
 	href="${cpath}/resources/css/orderCancelStyle.css?s" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
- $(function(){
-	 myCancel();
- });
-  function myCancel(){
-	  $.ajax({
-		  url:"cancelList.do",
-		  success:function(responseData){
-			  $("#here").html(responseData);
-		  }
-	  });
-  }
+	$(function() {
+		myCancel();
+	});
+	function myCancel() {
+		$.ajax({
+			url : "cancelList.do",
+			success : function(responseData) {
+				$("#here").html(responseData);
+			}
+		});
+	}
 </script>
 </head>
 
@@ -33,7 +34,7 @@
 	<div class="div-wrapper">
 		<div class="div">
 
-					<header class="header">
+			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
 						<div class="text-event">
@@ -95,13 +96,23 @@
 			</header>
 
 			<div class="group">
-				<div id="here">
-				</div>
+				<div id="here"></div>
 			</div>
 			<div class="menu">
 				<div class="username">
-					<div class="medium"></div>
-					<div class="text-wrapper-7">${loginmem.mem_id }</div>
+					<!-- 					<div class="medium"></div> -->
+					<c:choose>
+						<c:when
+							test="${sessionScope.loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+							<div class="medium"
+								style="background-image: url(${cpath}/${sessionScope.loginmem.mem_image});"></div>
+						</c:when>
+						<c:otherwise>
+							<div class="medium"
+								style="background-image: url(${cpath}/resources/upload/${sessionScope.loginmem.mem_image}); "></div>
+						</c:otherwise>
+					</c:choose>
+					<div class="text-wrapper-7">${loginmem.mem_name }</div>
 					<div class="text-wrapper-8">LV.${loginmem.mem_grade }</div>
 				</div>
 				<div class="links">

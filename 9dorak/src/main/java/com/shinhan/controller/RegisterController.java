@@ -55,10 +55,11 @@ public class RegisterController {
 	}
 
 	@GetMapping("registerForm.do")
-	public String registerForm(Model model) {
+	public String registerForm(Model model, HttpSession session) {
 //		System.out.println("registerForm.do");
 		List<MemVO> mlist = rService.selectAll();
 		model.addAttribute("mlist", mlist);
+		model.addAttribute("id", "일반");
 		return "register/registerForm";
 	}
 

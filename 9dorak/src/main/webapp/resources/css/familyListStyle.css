@@ -186,8 +186,8 @@ th {
 }
 
 .medium {
-	background-image:
-		url(https://cdn.animaapp.com/projects/658155e57eaeb2aed0b84cd7/releases/658155eff9e651ceb9d43885/img/medium@2x.png);
+/* 	background-image:
+		url(https://cdn.animaapp.com/projects/658155e57eaeb2aed0b84cd7/releases/658155eff9e651ceb9d43885/img/medium@2x.png); */
 	background-position: 50% 50%;
 	background-size: cover;
 	border-radius: 20px;

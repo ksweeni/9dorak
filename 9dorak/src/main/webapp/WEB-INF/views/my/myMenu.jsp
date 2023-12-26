@@ -100,7 +100,18 @@ String contextPath = request.getContextPath();
 			<div class=e79_253>
 				<div class=e79_254>
 					<span class="e79_256">${mem.mem_name }</span><span class="e79_257">LV.${mem.mem_grade }</span>
-					<div class="e79_424"></div>
+				<!-- 	<div class="e79_424"></div> -->
+							<c:choose>
+				<c:when
+					test="${sessionScope.loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+					<div class="e79_424"
+						style="background-image: url(${cpath}/${sessionScope.loginmem.mem_image});"></div>
+				</c:when>
+				<c:otherwise>
+					<div class="e79_424"
+						style="background-image: url(${cpath}/resources/upload/${sessionScope.loginmem.mem_image}); "></div>
+				</c:otherwise>
+			</c:choose>
 				</div>
 				<div class=e79_258>
 					<div class=e79_259>

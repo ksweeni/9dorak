@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -10,24 +10,27 @@ String contextPath = request.getContextPath();
 <html>
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/registerStyle.css"
-	type="text/css" /> 
+	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
+
 </head>
 <body>
 	<div class=e106_187>
-		
+
 
 
 		<div class=e106_334>
-			<span class="e106_335">아이를 위한 9일의 약속 <span style="color: orange;">구도락</span></span>
-		</div> 
+			<span class="e106_335">아이를 위한 9일의 약속 <span
+				style="color: orange;">구도락</span></span>
+		</div>
 		<div class=e106_348>
 			<div class="e106_291"></div>
 			<span class="e106_193">회원가입</span>
@@ -45,8 +48,8 @@ String contextPath = request.getContextPath();
 						</button>
 					</div>
 					<input class="e106_422" type="text" id="mem_id" name="mem_id"
-						value="${id }" ${kakao==1?"readonly":"" } placeholder="10자리 이하의 아이디를 입력하세요" />
-					<span class="e106_423" >아이디</span>
+						value="${id }" ${kakao==1?"readonly":"" }
+						placeholder="10자리 이하의 아이디를 입력하세요" /> <span class="e106_423">아이디</span>
 				</div>
 				<div class=e106_418>
 					<input class="e106_419" type="password" id="mem_pw" name="mem_pw"
@@ -60,18 +63,32 @@ String contextPath = request.getContextPath();
 					<input class="e106_413" type="email" name="mem_email"
 						value="${email }" ${kakao==1?"readonly":"" } id="mem_email"
 						placeholder="hcghcg17@naver.com" /> <span class="e106_414">이메일</span>
-					<div class=e106_397 id="emailCheck">
+					<!--  -->
+		<!-- 			<div class=e106_397 id="emailCheck">
 						<div class="e106_398"></div>
 						<div class="e106_399">이메일인증</div>
 						<input type="hidden" id="mail-Check-Btn" />
-						<%-- 						<a class="e106_399" href="#none"
-							onclick="window.open('${cpath}/register/emailCheckPage.do','new','scrollbars=yes,resizable=no width=700 height=200, left=0,top=0');return false">이메일인증</a> --%>
-					</div>
+					</div> -->
+					<c:choose>
+						<c:when test="${empty id}">
+							<div class=e106_397 id="emailCheck">
+								<div class="e106_398"></div>
+								<div class="e106_399">이메일인증</div>
+								<input type="hidden" id="mail-Check-Btn" />
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div class=e106_397 id="emailCheck">
+								<input type="hidden" id="mail-Check-Btn" style="display: none" disabled="true"/>
+							</div>
+						</c:otherwise>
+					</c:choose>
+
+					<!--  -->
 					<input class="form-control mail-check-input" id="numInput"
 						placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6"
-						style="display: none;">
-
-					<span id="mail-check-warn" class="mail-check-warn"></span>
+						style="display: none;"> <span id="mail-check-warn"
+						class="mail-check-warn"></span>
 
 				</div>
 
@@ -86,7 +103,7 @@ String contextPath = request.getContextPath();
 				<div class=e106_403>
 					<span class="e106_386">추천인 입력 <span class="choice">(선택)</span></span>
 					<div class="e106_456"></div>
-				
+
 					<input class="e106_457" type="text" placeholder="추천인 코드 입력"
 						name="mem_code" id="mem_code" /> <span class="e106_458">고객님과
 						추천인 모두에게 구도락 포인트를 드려요!</span><span class="e106_459">추천인</span>
@@ -95,7 +112,7 @@ String contextPath = request.getContextPath();
 					<button class="e106_395" id="register">
 						<div class="v39_199">회원가입</div>
 					</button>
-			
+
 				</div>
 			</div>
 			<input type="hidden" value="idUncheck" id="idCheckValue" />
@@ -106,7 +123,7 @@ String contextPath = request.getContextPath();
 				class="e108_187">이미 계정이 있나요? </span>
 		</div>
 
-			
+
 	</div>
 
 </body>
