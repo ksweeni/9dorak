@@ -134,7 +134,7 @@
 					</div>
 					<div class="links">
 						<div class="privacy">
-							<a class="header-a"
+							<a class="orderlist"
 								href="${pageContext.request.contextPath}/my/orderDetails.do">주문
 								내역</a>
 						</div>
@@ -142,7 +142,7 @@
 							<div class="text-wrapper-19" onclick="myPayment()">결제 내역</div>
 						</div>
 						<div class="duolingo-for-schools-2">
-							<a class="header-a"
+							<a class="cancellist"
 								href="${pageContext.request.contextPath}/my/orderCancel.do">결제
 								취소 내역</a>
 						</div>

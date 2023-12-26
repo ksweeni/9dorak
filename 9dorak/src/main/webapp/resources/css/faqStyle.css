@@ -980,7 +980,6 @@
 }
 
 .e1081_4458 {
-	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 	width: 58px;
 	height: 26px;
 	position: absolute;
@@ -990,6 +989,7 @@
 	font-size: 21px;
 	letter-spacing: 0;
 	line-height: px;
+	font-weight: 700;
 }
 
 .e1081_4459 {
@@ -1003,6 +1003,7 @@
 	font-size: 13px;
 	letter-spacing: 0.800000011920929;
 	line-height: px;
+	font-weight: 700;
 }
 
 .e1081_4460 {
@@ -1032,6 +1033,8 @@
 	font-size: 14px;
 	letter-spacing: 0;
 	line-height: px;
+	font-weight: 700;
+    color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 }
 
 .e1081_4463 {
@@ -1059,6 +1062,8 @@
 	font-size: 14px;
 	letter-spacing: 0;
 	line-height: px;
+	text-shadow: 0px 4px 4px #00000040;
+    font-weight: 700;
 }
 
 .e1081_4465 {
@@ -1080,6 +1085,7 @@
 	font-size: 14px;
 	letter-spacing: 0;
 	line-height: px;
+	font-weight: 700;
 }
 
 .e1081_4467 {
@@ -1105,6 +1111,7 @@
 	font-size: 14px;
 	letter-spacing: 0;
 	line-height: px;
+	font-weight: 700;
 }
 
 .e1081_4206 {
@@ -1744,7 +1751,6 @@ th, td {
 	display: inline-block;
 	padding: 3px 5px;
 	margin-right: 10px;
-	font-family: Tahoma;
 	background: #ccc;
 	color: #000;
 	text-decoration: none;
