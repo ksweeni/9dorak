@@ -143,7 +143,7 @@
 					</a>
 				</div>
 			</div>
-			<a href="${cpath}/wallet/pay.do" class=e50_43>
+			<a href="${cpath}/wallet/free.do" class=e50_43>
 				<div class="e50_44"></div>
 				<span class="e50_45">0원 결제하기</span>
 			</a>
