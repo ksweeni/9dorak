@@ -18,8 +18,8 @@ String contextPath = request.getContextPath();
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/mainStyle.css"
 	type="text/css" />
-<%-- <link rel="stylesheet" href="${cpath}/resources/css/myPageStyle.css"
-	type="text/css" /> --%>
+<link rel="stylesheet" href="${cpath}/resources/css/myPageStyle.css"
+	type="text/css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <!--아이콘-->
@@ -45,15 +45,15 @@ String contextPath = request.getContextPath();
 	crossorigin="anonymous"></script>
 
 <!--css-->
-<link rel="stylesheet" href="css/market/common.css">
+<!-- <link rel="stylesheet" href="css/market/common.css">
 <link rel="stylesheet" href="css/market/index.css">
-<link rel="stylesheet" href="css/market/join.css">
+<link rel="stylesheet" href="css/market/join.css"> -->
 
 <!-- js -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="js/market/menu_hover.js"></script>
-<script src="js/market/login_modal.js"></script>
+<!-- <script src="js/market/menu_hover.js"></script>
+<script src="js/market/login_modal.js"></script> -->
 
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
