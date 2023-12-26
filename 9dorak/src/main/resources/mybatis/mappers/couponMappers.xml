@@ -9,7 +9,8 @@
 	</select>
 
 	<select id="selectDistinctCoupon" resultType="couponvo">
-		select distinct coupon_name from coupon
+		select distinct
+		coupon_name from coupon
 	</select>
 
 	<insert id="insertCoupon" parameterType="couponvo">
@@ -20,5 +21,17 @@
 		#{coupon_reg},
 		#{mem_id})
 	</insert>
+
+	<delete id="deleteCouponName" parameterType="String">
+		delete from coupon where coupon_name=#{coupon_name}
+	</delete>
+
+	<delete id="deleteCoupons" parameterType="java.util.List">
+		DELETE FROM coupon WHERE coupon_code IN
+		<foreach collection="list" item="item" open="(" separator=","
+			close=")">
+			#{item}
+		</foreach>
+	</delete>
 
 </mapper>

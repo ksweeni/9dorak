@@ -28,4 +28,18 @@ public class CouponDAOMybatis {
 		int result = sqlSession.insert(NAMESPACE + "insertCoupon",coupon);
 		return result;
 	}
+	
+	public List<String> selectDistinctCoupon() {
+		List<String>clist = sqlSession.selectList(NAMESPACE+"selectDistinctCoupon");
+		return clist;
+	}
+	
+	
+	public void deleteCouponName(String CouponName) {
+		sqlSession.delete(NAMESPACE + "deleteCouponName", CouponName);
+	}
+	
+	public void deleteCoupons(List<Integer> couponCodes) {
+		sqlSession.delete(NAMESPACE + "deleteCoupons", couponCodes);
+    }
 }
