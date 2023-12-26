@@ -51,6 +51,9 @@ public class ReviewController {
         //System.out.println(inputMap);
         
 		model.addAttribute("orderdetail", rService.selectByOrderdetail(inputMap));
+
+		model.addAttribute("checkedreview", rService.selectCheckedReview(inputMap));
+		System.out.println(model.getAttribute("checkedreview"));
 		
 		return "review/reviewUpload";
 	}
@@ -113,7 +116,7 @@ public class ReviewController {
 		
 		int result = rService.insertReview(review);
 		
-		return "my/orderDetails";
+		return "redirect:/my/orderDetails.do";
 	}
 	
 	

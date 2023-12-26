@@ -29,5 +29,9 @@ public class ReviewService {
 		return dao.insertReview(review);
 	}
 
+	public int selectCheckedReview(Map<String, Object> inputMap) {
+		return dao.selectCheckedReview(inputMap);
+	}
+
 
 }
