@@ -694,7 +694,7 @@
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	background-image: url(${cpath}/resources/images/my/profile.png);
+/* 	background-image: url(${cpath}/resources/images/my/profile.png); */
 	background-repeat: no-repeat;
 	background-size: cover;
 }

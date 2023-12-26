@@ -98,7 +98,18 @@
 		<div class="overlap-group2">
 			<div class="menu">
 				<div class="username">
-					<div class="medium"></div>
+<!-- 					<div class="medium"></div> -->
+					<c:choose>
+						<c:when
+							test="${sessionScope.loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+							<div class="medium"
+								style="background-image: url(${cpath}/${sessionScope.loginmem.mem_image});"></div>
+						</c:when>
+						<c:otherwise>
+							<div class="medium"
+								style="background-image: url(${cpath}/resources/upload/${sessionScope.loginmem.mem_image}); "></div>
+						</c:otherwise>
+					</c:choose>
 					<div class="flex-col">
 						<div class="text-3 valign-text-middle">${loginmem.mem_name }</div>
 						<div class="lv valign-text-middle">LV.${loginmem.mem_grade }</div>

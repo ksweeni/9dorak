@@ -11,21 +11,22 @@
 	href="${cpath}/resources/css/orderDetailsStyle.css?s" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
- $(function(){
-	 myOrder();
- });
-  function myOrder(){
-	  $.ajax({
-		  url:"orderList.do",
-		  success:function(responseData){
-			  $("#here").html(responseData);
-		  }
-	  });
-  }
+	$(function() {
+		myOrder();
+	});
+	function myOrder() {
+		$.ajax({
+			url : "orderList.do",
+			success : function(responseData) {
+				$("#here").html(responseData);
+			}
+		});
+	}
 </script>
 </head>
 
@@ -33,7 +34,7 @@
 	<div class="div-wrapper">
 		<div class="div">
 
-		<header class="header">
+			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
 						<div class="text-event">
@@ -96,8 +97,19 @@
 
 			<div class="menu">
 				<div class="username">
-					<div class="medium"></div>
-					<div class="text-wrapper">${loginmem.mem_id }</div>
+					<!-- 					<div class="medium"></div> -->
+					<c:choose>
+						<c:when
+							test="${sessionScope.loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+							<div class="medium"
+								style="background-image: url(${cpath}/${sessionScope.loginmem.mem_image});"></div>
+						</c:when>
+						<c:otherwise>
+							<div class="medium"
+								style="background-image: url(${cpath}/resources/upload/${sessionScope.loginmem.mem_image}); "></div>
+						</c:otherwise>
+					</c:choose>
+					<div class="text-wrapper">${loginmem.mem_name }</div>
 					<div class="text-wrapper-2">LV.${loginmem.mem_grade }</div>
 				</div>
 				<div class="links">
@@ -106,17 +118,18 @@
 					</div>
 					<div class="duolingo-for-schools">
 						<a class="header-a"
-							href="${pageContext.request.contextPath}/my/orderPayment.do">결제 내역</a>
+							href="${pageContext.request.contextPath}/my/orderPayment.do">결제
+							내역</a>
 					</div>
 					<div class="duolingo-for-schools-2">
-							<a class="header-a"
-							href="${pageContext.request.contextPath}/my/orderCancel.do">결제 취소 내역</a>
+						<a class="header-a"
+							href="${pageContext.request.contextPath}/my/orderCancel.do">결제
+							취소 내역</a>
 					</div>
 				</div>
 			</div>
 			<div class="group-4">
-				<div id="here">
-				</div>
+				<div id="here"></div>
 			</div>
 			<div class="account-navigation">
 				<div class="ol">

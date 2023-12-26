@@ -11,7 +11,8 @@
 	href="${cpath}/resources/css/orderPaymentStyle.css?s" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
@@ -33,7 +34,7 @@
 	<div class="div-wrapper">
 		<div class="div">
 
-		<header class="header">
+			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
 						<div class="text-event">
@@ -116,8 +117,19 @@
 			<div class="menu-wrapperr">
 				<div class="menuu">
 					<div class="username">
-						<div class="medium"></div>
-						<div class="text-wrapper-16">${loginmem.mem_id }</div>
+						<!-- 						<div class="medium"></div> -->
+						<c:choose>
+							<c:when
+								test="${sessionScope.loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+								<div class="medium"
+									style="background-image: url(${cpath}/${sessionScope.loginmem.mem_image});"></div>
+							</c:when>
+							<c:otherwise>
+								<div class="medium"
+									style="background-image: url(${cpath}/resources/upload/${sessionScope.loginmem.mem_image}); "></div>
+							</c:otherwise>
+						</c:choose>
+						<div class="text-wrapper-16">${loginmem.mem_name }</div>
 						<div class="text-wrapper-17">LV.${loginmem.mem_grade }</div>
 					</div>
 					<div class="links">

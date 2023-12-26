@@ -278,7 +278,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 176px;
 	top: 24px;
-	background-image: url(${cpath}/resources/images/my/ellipse_1.png);
+/* 	background-image: url(${cpath}/resources/images/my/ellipse_1.png); */
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -619,7 +619,7 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	background-image: url(${cpath}/resources/images/my/profile.png);
+/* 	background-image: url(${cpath}/resources/images/my/profile.png); */
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -1079,7 +1079,22 @@ svg {
 					<div class=e178_739>
 						<span class="e178_740" onclick="copyCode()">코드 복사</span>
 					</div>
-					<div class="e178_728"></div>
+				<!-- 	<div class="e178_728"></div> -->
+				<!-- 프로필 테스트  -->
+				<c:choose>
+				<c:when
+					test="${mem.mem_image eq 'resources/images/my/baseProfile.png'}">
+					<div class="e178_728"
+						style="background-image: url(${cpath}/${mem.mem_image});"></div>
+				</c:when>
+				<c:otherwise>
+					<div class="e178_728"
+						style="background-image: url(${cpath}/resources/upload/${mem.mem_image}); "></div>
+				</c:otherwise>
+			</c:choose>
+
+				
+				<!--  -->
 					<span class="e178_729">${mem.mem_name }</span>
 					<div class="e178_738"></div>
 					<span class="e178_737">LV.${mem.mem_grade }</span>
@@ -1115,7 +1130,18 @@ svg {
 			<div class=e178_629>
 				<div class=e178_630>
 					<span class="e178_631">${mem.mem_name }</span><span class="e178_632">LV.${mem.mem_grade }</span>
-					<div class="e178_633"></div>
+					<!-- <div class="e178_633"></div> -->
+					<c:choose>
+				<c:when
+					test="${mem.mem_image eq 'resources/images/my/baseProfile.png'}">
+					<div class="e178_633"
+						style="background-image: url(${cpath}/${mem.mem_image});"></div>
+				</c:when>
+				<c:otherwise>
+					<div class="e178_633"
+						style="background-image: url(${cpath}/resources/upload/${mem.mem_image}); "></div>
+				</c:otherwise>
+			</c:choose>
 				</div>
 				<div class=e178_634>
 					<div class=e178_639>
