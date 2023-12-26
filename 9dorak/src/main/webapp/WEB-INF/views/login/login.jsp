@@ -84,7 +84,7 @@
 				console.log(data)
 				if (data.JavaData == "YES") {
 					alert("로그인 되었습니다.");
-					location.href = '${cpath}'; // 메인 테스트 페이지로
+					location.href = '${cpath}'; // 메인페이지로
 				} else if (data.JavaData == "register") {
 					$("#kakaoEmail").val(response.kakao_account.email);
 					$("#kakaoName").val(response.properties.nickname);
@@ -202,8 +202,8 @@
 			</div>
 		</div>
 	</div>
-	<form name="kakaoForm" id="kakaoForm" method="post"
-		action="../register/registerType.do">
+	<form name="kakaoForm" id="kakaoForm" method="get"
+		action="../register/registerForm.do">
 		<input type="hidden" name="email" id="kakaoEmail" /> <input
 			type="hidden" name="name" id="kakaoName" /> <input type="hidden"
 			name="id" id="kakaoId" />
