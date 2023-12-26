@@ -270,9 +270,9 @@ table {
     position: relative;
     border-collapse: collapse;
     margin-bottom: 10px;
-    left: 38%;
+    left: 1025px;
     transform: translateX(-50%);
-    top: 100px;
+    top: 78px;
     cursor: pointer;
 }
 th, td {
@@ -294,9 +294,9 @@ td {
     position: relative;
     width: 500px;
     text-align: center;
-    left: 38%;
+    left: 1049px;
     transform: translateX(-100%);
-    top: 100px;
+    top: 115px;
 }
 #nav a {
     position: relative;
@@ -322,8 +322,8 @@ td {
     font-size: 16px;
     margin-right: 15px;
     cursor: pointer;
-    left: 35px;
-    top: 98px;
+    left: 82px;
+    top: 79px;
     width: 80px;
     height: 40px;
 }

@@ -243,6 +243,49 @@
     border-radius: 20px 0 0 0;
 }
 
+.table-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: rgba(254.2806226015091, 137.48113721609116, 29.666072130203247,  0.6100000143051147);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#buttonContainer {
+    position: relative;
+    margin-left: 285px;
+}
+
+#EvantUpdate, #EvantDelete {
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #e06b15;
+}
+
 .e2099_2471 hr {
     border-color: white; /* 회색 색상 */
     width: 240px; /* 원하는 너비 */
@@ -265,6 +308,7 @@
 
 form {
   width: 500px;
+  margin-left: 100px
 }
 table {
     position: relative;

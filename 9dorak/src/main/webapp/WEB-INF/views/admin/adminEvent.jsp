@@ -68,8 +68,8 @@
 
 					<c:forEach var="chall" items="${chlist}" varStatus="rowStatus">
 						<tr>
-							<td>${chall.challenge_no}</td>
-							<td>${chall.challenge_name}</td>
+							<td><a href="${cpath}/admin/adminEventDetail.do?challenge_no=${chall.challenge_no}">${chall.challenge_no}</a></td>
+							<td><a href="${cpath}/admin/adminEventDetail.do?challenge_no=${chall.challenge_no}">${chall.challenge_name}</a></td>
 							<td>${chall.challenge_cont}</td>
 							<td>${chall.challenge_image}</td>
 							<td>${chall.challenge_date}</td>
@@ -77,7 +77,7 @@
 							<td>${chall.challenge_end}</td>
 							<td>${chall.challenge_category}</td>
 							<td>${chall.challenge_recipe}</td>
-							<td>${chall.mem_id}</td>
+							<td><a href="${cpath}/admin/adminEventDetail.do?challenge_no=${chall.challenge_no}">${chall.mem_id}</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -231,5 +231,6 @@ $(".e2099_2475").on("click", function() {
 
 
 	$setRows.submit();
+	
 </script>
 </html>

@@ -271,7 +271,7 @@
 									<div class="group-7">
 										<div class="overlap-6">
 											<img class="rectangle-5"
-												src="${cpath}/resources/images/menu/cake.png" />
+												src="${cpath}/resources/upload/${phtrlist.memreview_image}" />
 											<p class="p">${phtrlist.memreview_cont }</p>
 										</div>
 									</div>
@@ -325,9 +325,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="frame-15"><%-- 
-											<div class="starpiont" id="starRating${loop.index}">
-												${txtrlist.memreview_starpoint }</div> --%>
+										<div class="frame-15">
 											<p class="text-wrapper-17">${txtrlist.memreview_cont }</p>
 										</div>
 									</div>

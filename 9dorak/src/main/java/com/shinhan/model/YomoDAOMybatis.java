@@ -2,6 +2,7 @@ package com.shinhan.model;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -125,14 +126,66 @@ public class YomoDAOMybatis {
 	
 	
 	
-	
-	
-	
-	
 	public int adminNoticeUpdate(AnnoVO anno) {
 		int result = sqlSession.update(NAMESPACE + "adminNoticeUpdate", anno);
-		System.out.println(anno);
 		return result;
 	}
+
+
+	public int adminNoticeDelete(int anno_no) {
+		int result = sqlSession.delete(NAMESPACE + "adminNoticeDelete", anno_no);
+		return result;
+	}
+
+
+	
+	public int adminNoticeInsert(AnnoVO anno) {
+		int result = sqlSession.insert(NAMESPACE + "adminNoticeInsert", anno);
+		return result;
+	}
+
+
+	public List<Map<String, Object>> list(AnnoVO annoVO) {
+		return sqlSession.selectList(NAMESPACE + "list", annoVO);
+		
+	}
+
+
+	public FaqVO selectFaq_no(int faq_no) {
+		FaqVO faq = sqlSession.selectOne(NAMESPACE + "selectFaq_no", faq_no);
+		return faq;
+	}
+
+
+	public int adminnoticeFaqUpdate(FaqVO faq) {
+		int result = sqlSession.update(NAMESPACE + "adminnoticeFaqUpdate", faq);
+		return result;
+	}
+
+
+	public int adminnoticeFaqDelete(int faq_no) {
+		int result = sqlSession.delete(NAMESPACE + "adminnoticeFaqDelete", faq_no);
+		return result;
+	}
+
+
+	public int adminNoticeFaqInsert(FaqVO faq) {
+		int result = sqlSession.insert(NAMESPACE + "adminNoticeFaqInsert", faq);
+		return result;
+	}
+
+
+	public List<Map<String, Object>> list2(FaqVO faqVO) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList(NAMESPACE + "list2", faqVO);
+	}
+	 
+
+
+	
+
+	
+	
+	
 
 }

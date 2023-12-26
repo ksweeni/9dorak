@@ -134,5 +134,14 @@ public class MenuDAOMybatis {
 		return result;
 	}
 
+	public int updateMenu(ProVO menu) {
+		int result = sqlSession.update(NAMESPACE + "updateMenu", menu);
+		return result;
+	}
+
+	public int insertMenu(ProVO menu) {
+		int result = sqlSession.insert(NAMESPACE + "insertMenu", menu);
+		return result;
+	}
 
 }

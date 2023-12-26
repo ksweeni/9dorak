@@ -20,10 +20,8 @@ public class OrderVO {
 	private String mem_id; // 회원 아이디
 	
 	
-	///
+	// 주석 처리 해야함
 	private int pro_no; // 상품 번호
 	private int orderdetail_count; // 상품 수량
 	private String pro_name; // 상품명 
-	
-	
 }

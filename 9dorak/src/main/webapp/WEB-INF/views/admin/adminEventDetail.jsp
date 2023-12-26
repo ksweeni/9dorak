@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminNoticeStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminEventStyle.css?s" type="text/css" />
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -26,7 +26,7 @@
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
-		<span class="e2099_2473" onclick="location.href='${cpath}/admin/adminNotice.do'">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
+		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span>
 		<div class="admin_login">
 			<div class="e2099_2476">
@@ -42,18 +42,34 @@
 			<div class="e2099_2487">
 		
 			</div>
-			<div id="noticeTable" class="table-container">
-				
+			<div id="EvantDetail" class="table-container">
+					
 				<form action="">
-				공지사항 번호 : <input type="text" value="${anno.anno_no }" id="anno_no"/> <br />
-				공지사항 제목 : <input type="text" value="${anno.anno_title }" id="anno_title"/> <br />
-				공지사항 내용 : <textarea id="anno_cont" >${anno.anno_cont }</textarea><br />
-				공지사항  조회수 :<input type="text" value="${anno.anno_view }"/> <br />
-				공지사항 등록날짜 : <input type="text" value="${anno.anno_date}"/> <br />
+				 <label for="ch_no">챌린지번호 : </label>
+                    <input type="text" value="${challenge.challenge_no}" id="ch_no" readonly /><br />
+    			 <label for="ch_name">챌린지명/도시락만들9명 : </label>
+                    <input type="text" value="${challenge.challenge_name}" id="ch_name" /><br />
+    			<label for="ch_cont">챌린지내용/도시락만들9소개 : </label>
+                    <textarea id="ch_cont">${challenge.challenge_cont}</textarea><br />
+    			<label for="ch_image">챌린지이미지/도시락만들9이미지 : </label>
+    				<input type="text" value="${challenge.challenge_image}" id="ch_image"/> <br />
+    			<label for="ch_date">챌린지날짜 : </label>
+    				<input type="text" value="${challenge.challenge_date}" id="ch_date"/> <br />
+   		 		<label for="ch_start">챌린지시작날짜 : </label>
+   		 			<input type="text" value="${challenge.challenge_start}" id="ch_start"/> <br />
+    			<label for="ch_end">챌린지종료날짜 : </label>
+    				<input type="text" value="${challenge.challenge_end}" id="ch_end"/> <br />
+    			<label for="ch_category">챌린지구분 : </label>
+    				<input type="text" value="${challenge.challenge_category}" id="ch_category"/> <br />
+    			<label for="ch_recipe">만들9레시피 : </label>
+    				<input type="text" value="${challenge.challenge_recipe}" id="ch_recipe"/> <br />
+    			<label for="mem_id">회원ID : </label>
+    				<input type="text" value="${chno.mem_id}" id="mem_id"/> <br />
 				</form>
 			</div>
-			<button id="noticeUpdate">수정</button><button id="noticeDelete">삭제</button>
-			<div id="faqTable" class="table-container"></div>
+			<div id="buttonContainer">
+			<button id="EvantUpdate">수정</button><button id="EvantDelete">삭제</button>
+			</div>
 		</div>
 	</div>
 </body>
@@ -129,54 +145,41 @@
 
 		})
 	})
-
-	function toggleTable(tableType) {
-		var noticeTable = document.getElementById("noticeTable");
-		var faqTable = document.getElementById("faqTable");
-
-		if (tableType === 'notice') {
-			noticeTable.style.display = "block";
-			faqTable.style.display = "none";
-		} else if (tableType === 'faq') {
-			noticeTable.style.display = "none";
-			faqTable.style.display = "block";
-		}
-	}
 	
-	$("#noticeUpdate").on("click",function(){
- 
+	$("#EvantUpdate").on("click",function(){
 
 	 	var param ={
-			anno_no : $("#anno_no").val(),
-			anno_title : $("#anno_title").val(),
-			anno_cont : $("#anno_cont").val()
+	 		challenge_no : $("#ch_no").val(),
+	 		challenge_name : $("#ch_name").val(),
+	 		challenge_cont : $("#ch_cont").val(),
+	 		challenge_recipe : $("#ch_recipe").val()
 		} 
 	
 		$.ajax({
-			url : "${cpath}/admin/adminNoticeUpdate.do",
+			url : "${cpath}/admin/adminEventUpdate.do",
 			data : param,
 			type : "post",
 			success: function(res){
 				alert(res);
-				location.href="${cpath}/admin/adminNotice.do";
+				location.href="${cpath}/admin/adminEvent.do";
 			}
 		})
 		
 	})
-	$("#noticeDelete").on("click",function(){
+	
+	$("#EvantDelete").on("click",function(){
  
-
 	 	var param ={
-			anno_no : $("#anno_no").val()
+	 		challenge_no : $("#ch_no").val()
 		} 
 	
 		$.ajax({
-			url : "${cpath}/admin/adminNoticeDelete.do",
+			url : "${cpath}/admin/adminEventDelete.do",
 			data : param,
 			type : "post",
 			success: function(res){
 				alert(res);
-				location.href="${cpath}/admin/adminNotice.do";
+				location.href="${cpath}/admin/adminEvent.do";
 			}
 		})
 		

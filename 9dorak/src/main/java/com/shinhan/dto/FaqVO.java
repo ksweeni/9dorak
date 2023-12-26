@@ -17,4 +17,27 @@ public class FaqVO {
 	private String faq_title; // 질문 제목
 	private String faq_cont; // 질문 내용
 
+	
+	
+	
+	
+	private int currentPage;
+	public void setStartIndex(int startIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setCntPerPage(int displayRow) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public int getCurrentPage() {
+		return currentPage;
+	}
+
+
+	public void setCurrentPage(int currentPage) {
+		this.currentPage =(currentPage-1)*10;
+	}
+
 }

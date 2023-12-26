@@ -23,4 +23,9 @@ public class CouponDAOMybatis {
 		logger.info("selectAll :  {}", clist.size());
 		return clist;
 	}
+	
+	public int insertCoupon(CouponVO coupon){
+		int result = sqlSession.insert(NAMESPACE + "insertCoupon",coupon);
+		return result;
+	}
 }
