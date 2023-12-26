@@ -31,7 +31,7 @@
 							<div class="frame-5">
 								<div class="frame-6">
 									<div class="menu"
-										style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
+										style="background-image: url('${cpath}/resources/upload/${moaSelected.memreview_image}');"></div>
 									<div class="view">
 										<div>
 											<p class="p">${moaSelected.memreview_cont }</p>
@@ -45,7 +45,7 @@
 									<c:forEach items="${moalist }" var="moalist" varStatus="loop">
 										<div class="frame-pic">
 											<div class="menu-2" onclick="mediaReview(${moalist.memreview_no })"
-												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
+												style="background-image: url('${cpath}/resources/upload/${moalist.memreview_image}');"></div>
 											<%-- <div class="menu-2"
 												style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div> --%>
 										</div>

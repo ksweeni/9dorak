@@ -94,7 +94,7 @@
 							<div class="frame-5">
 								<div class="frame-6">
 									<div class="menu"
-										style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
+										style="background-image: url('${cpath}/resources/upload/${moafrist.memreview_image}');"></div>
 									<div class="view">
 										<div class="">
 											<%-- <div class="starpiont">별점 ${moafrist.memreview_starpoint }</div> --%>
@@ -110,7 +110,7 @@
 										<c:forEach items="${moalist }" var="moalist" varStatus="loop">
 											<div class="frame-pic">
 												<div class="menu-2" onclick="mediaReview(${moalist.memreview_no })"
-													style="background-image: url('${cpath}/resources/images/menu/cake.png');"></div>
+													style="background-image: url('${cpath}/resources/upload/${moalist.memreview_image}');"></div>
 											</div>
 										</c:forEach>
 									</div><!-- frame-10 -->
