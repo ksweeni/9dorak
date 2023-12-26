@@ -252,6 +252,9 @@ String contextPath = request.getContextPath();
 	border-color: #e7e7e7;
 	cursor: pointer;
 }
+.e178_739:hover {
+    border-color: #FFA07A; /* hover 시의 border 색상 */
+}
 
 .178_739 {
 	border: 1px solid
@@ -422,6 +425,7 @@ String contextPath = request.getContextPath();
 	text-align: left;
 	font-size: 30px;
 	letter-spacing: 0;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .e178_714 {
@@ -443,6 +447,7 @@ String contextPath = request.getContextPath();
 	text-align: left;
 	font-size: 30px;
 	letter-spacing: 0;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .e178_718 {
@@ -459,12 +464,15 @@ String contextPath = request.getContextPath();
 	height: 48px;
 	position: absolute;
 	left: 50.77336502075195px;
-	top: 64px;
-	background-color: #FFF8F1;
+	top: 64px; 
+	background-color: white;
 	border-radius: 16px;
 	border: 2px solid;
 	border-color: #e7e7e7;
 	cursor: pointer;
+}
+.e178_719:hover {
+    background-color: #FFF8F1; /* hover 시의 배경색 */
 }
 
 .178_719 {
@@ -488,12 +496,19 @@ String contextPath = request.getContextPath();
 
 .e178_721 {
 	background-color: rgba(255, 255, 255, 1);
-	width: 280px;
+	width: 260px;
 	height: 42.3828125px;
 	position: absolute;
 	left: 10px;
 	top: 0px;
 	border-radius: 8px;
+	border-color: #b5b5b5;
+	padding-left: 20px;
+}
+
+.e178_721:focus-visible {
+	outline: none;
+    box-shadow: 0px 0px 16px 0px lightgray;
 }
 
 .178_721 {
@@ -516,12 +531,15 @@ String contextPath = request.getContextPath();
 	position: absolute;
 	left: 42.42787551879883px;
 	top: 64px;
-	background-color: #FFF8F1;
+	background-color: white;
 	border-radius: 16px;
 	border: 2px solid;
 	border-color: #e7e7e7;
 	cursor: pointer;
 	border-color: #e7e7e7;
+}
+.e178_723:hover {
+    background-color: #FFF8F1; /* hover 시의 배경색 */
 }
 
 .178_723 {
@@ -545,7 +563,7 @@ String contextPath = request.getContextPath();
 
 .e178_725 {
 	background-color: rgba(255, 255, 255, 1);
-	width: 280px;
+	width: 260px;
 	height: 42.3828125px;
 	position: absolute;
 	left: 0px;
@@ -554,6 +572,13 @@ String contextPath = request.getContextPath();
 	border-top-right-radius: 8px;
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
+	border-color: #b5b5b5;
+	padding-left: 20px;
+}
+
+.e178_725:focus-visible {
+	outline: none;
+    box-shadow: 0px 0px 16px 0px lightgray;
 }
 
 .178_725 {
