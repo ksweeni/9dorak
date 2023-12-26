@@ -316,7 +316,7 @@ String contextPath = request.getContextPath();
 	width: 134.43411254882812px;
 	height: 42px;
 	position: absolute;
-	left: 44px;
+	left: 75px;
 	top: 423px;
 	/**/
 	text-align: left;
