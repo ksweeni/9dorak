@@ -39,7 +39,7 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
-		<button class="insert_memu">추가하기</button>
+		<button class="insert_member">추가하기</button>
 			<table id="products" border="1">
 				<caption>
 					회원 list
@@ -160,6 +160,18 @@ $(".e2099_2475").on("click", function() {
 
 	})
 })
+
+	$(".insert_member").on("click", function() {
+		$.ajax({
+	
+			url : "${cpath}/admin/adminMemberInsert.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+	
+		})
+	})
 
     $(document).ready(function () {
         // 테이블의 각 행을 클릭했을 때 이벤트 핸들러

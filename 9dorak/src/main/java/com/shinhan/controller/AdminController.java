@@ -140,7 +140,21 @@ public class AdminController {
 			return "삭제 실패";
 		}
 	}
+	
+	@GetMapping("adminMemberInsert.do")
+	public String adminMemberInsertPage(Model model) {
+		return "admin/adminMemberInsert";
+	}
 
+	@PostMapping("adminMemberInsert.do")
+	public String adminMemberInsert(Model model, MemVO mem) {
+		System.out.println(mem);
+		int result = memService.insertMem(mem);
+		List<MemVO> memlist = memService.selectAll();
+		model.addAttribute("memlist", memlist);
+		return "redirect:/admin/adminMember.do";
+	}
+	
 	@GetMapping("adminOrder.do")
 	public String adminOrder(Model model) {
 		List<OrderVO> orderlist = orderService.selectAll();
