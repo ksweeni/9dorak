@@ -14,9 +14,9 @@
 					<table id="familyTable">
 						<thead>
 							<tr>
-								<th>지인 이름</th>
-								<th>지인 아이디</th>
-								<th>가족/지인</th>
+								<th>친구 이름</th>
+								<th>친구 아이디</th>
+								<th>가족/친구</th>
 								<th>등록날짜</th>
 								<th>삭제</th>
 							</tr>
@@ -35,7 +35,7 @@
 							</c:forEach>
 						</tbody>
 					</table>
-					<button class="deleteButton" onclick="deleteSelect()">지인
+					<button class="deleteButton" onclick="deleteSelect()">친구
 						삭제</button>
 				</c:if>
 				

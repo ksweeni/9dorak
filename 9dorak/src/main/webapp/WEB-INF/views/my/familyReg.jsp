@@ -1088,7 +1088,7 @@ svg {
 
 		<div class=e178_608>
 			<div class=e178_609>
-				<span class="e178_610">지인 등록</span><span class="e178_611">지인
+				<span class="e178_610">친구 등록</span><span class="e178_611">친구
 					등록</span>
 				<svg xmlns="http://www.w3.org/2000/svg" width="6" height="10"
 					viewBox="0 0 6 10" fill="none">
@@ -1132,7 +1132,7 @@ svg {
 					<div class=e178_713>
 						<span class="e178_726">가족</span>
 					</div>
-					<span class="e178_717">지인</span>
+					<span class="e178_717">친구</span>
 
 
 					<div class=e178_718>
@@ -1170,11 +1170,11 @@ svg {
 				</div>
 				<div class=e178_634>
 					<div class=e178_639>
-						<span class="e178_640">지인 등록</span>
+						<span class="e178_640">친구 등록</span>
 					</div>
 					<div class=e178_635>
 						<a class="e178_636"
-							href="${pageContext.request.contextPath}/my/familyList.do">지인
+							href="${pageContext.request.contextPath}/my/familyList.do">친구
 							목록 조회</a>
 					</div>
 				</div>
