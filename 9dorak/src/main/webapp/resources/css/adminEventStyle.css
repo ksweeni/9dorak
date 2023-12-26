@@ -256,7 +256,7 @@ label {
 
 input,
 textarea {
-    width: 100%;
+    width: 10%;
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
@@ -307,8 +307,8 @@ button:hover {
 }
 
 form {
-  width: 500px;
-  margin-left: 100px
+  width: 175%;
+  margin-left: 100px;
 }
 table {
     position: relative;

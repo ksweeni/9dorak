@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
 <h2>지인 목록</h2>
@@ -26,7 +27,7 @@
 									<td>${member.MEM_NAME}</td>
 									<td>${member.MEM_ID2}</td>
 									<td>${member.PEOPLE_CATEGORY}</td>
-									<td>${member.PEOPLE_DATE}</td>
+									<td>${fn:substring(member.PEOPLE_DATE, 0, 10)}</td>
 									<td><input type="checkbox" name="selectedIds" 
 									class="rowCheckbox" 
 									value="${member.MEM_ID2}"></td>

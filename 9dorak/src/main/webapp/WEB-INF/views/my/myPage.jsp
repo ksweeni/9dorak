@@ -38,7 +38,6 @@ String contextPath = request.getContextPath();
 				</c:otherwise>
 			</c:choose>
 
-
 			<div class=e69_168>
 				<span class="e69_170">${mem.mem_name }</span>
 			</div>
