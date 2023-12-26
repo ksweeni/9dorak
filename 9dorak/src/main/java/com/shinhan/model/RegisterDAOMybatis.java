@@ -49,9 +49,9 @@ public class RegisterDAOMybatis {
 		return sqlSession.insert(NAMESPACE + "PointinsertMember", mem);
 	}
 
-	public int pointUpdate(String mem_code) {
+	public int pointUpdate(MemVO codemem) {
 		// TODO Auto-generated method stub
-		return sqlSession.update(NAMESPACE + "pointUpdate", mem_code);
+		return sqlSession.update(NAMESPACE + "pointUpdate", codemem);
 	}
 
 	public int insertEarn(EarnpointVO earn) {

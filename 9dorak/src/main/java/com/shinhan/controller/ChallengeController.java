@@ -25,16 +25,22 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.ChalllikeVO;
+import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.PagingVO;
 import com.shinhan.model.ChallengeService;
+import com.shinhan.model.MyPageService;
+import com.shinhan.model.RegisterService;
 
 @Controller
 @RequestMapping("event")
 public class ChallengeController {
 	@Autowired
 	ChallengeService chService;
-
+	@Autowired
+	RegisterService rService;
+	@Autowired
+	MyPageService mService;
 	private static final Logger logger = LoggerFactory.getLogger(ChallengeController.class);
 
 	@GetMapping("challenge.do")
@@ -61,7 +67,7 @@ public class ChallengeController {
 	@GetMapping("challengeDetail.do")
 	public String challenge2(Model model, ChallengeVO challenge, HttpSession session) {
 		ChallengeVO chall = chService.selectByno(challenge.getChallenge_no());
-		if (session.getAttribute("loginmem")==null) {
+		if (session.getAttribute("loginmem") == null) {
 			return "redirect:/login/loginForm.do";
 		}
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
@@ -122,7 +128,7 @@ public class ChallengeController {
 		String ext = "";
 		int lastIndex = originFileName.lastIndexOf(".");
 		if (lastIndex != -1) {
-		    ext = originFileName.substring(lastIndex);
+			ext = originFileName.substring(lastIndex);
 		}
 
 		// ext를 이용한 나머지 로직 수행
@@ -131,7 +137,6 @@ public class ChallengeController {
 
 		File changeFile = new File(root + "\\" + ranFileName);
 
-		
 		// 파일업로드
 		try {
 			singleFile.transferTo(changeFile);
@@ -145,6 +150,17 @@ public class ChallengeController {
 		int result = chService.insertChal(challenge);
 		List<ChallengeVO> chlist = chService.selectAll();
 		model.addAttribute("chlist", chlist);
+
+		EarnpointVO earn = new EarnpointVO();
+		earn.setMem_id(loginmem.getMem_id());
+		earn.setPoint_name("챌린지 글쓰기 이벤트");
+		earn.setPoint(50);
+		loginmem.setMem_point(50);
+		int EarnPoint = rService.insertEarn(earn);
+		int updateResult = rService.pointUpdate(loginmem);
+		loginmem = mService.getMember(loginmem.getMem_id());
+		session.setAttribute("loginmem", loginmem);
+
 		return "redirect:/event/challenge.do";
 	}
 
@@ -174,7 +190,7 @@ public class ChallengeController {
 		String ext = "";
 		int lastIndex = originFileName.lastIndexOf(".");
 		if (lastIndex != -1) {
-		    ext = originFileName.substring(lastIndex);
+			ext = originFileName.substring(lastIndex);
 		}
 
 		// ext를 이용한 나머지 로직 수행
@@ -183,7 +199,6 @@ public class ChallengeController {
 
 		File changeFile = new File(root + "\\" + ranFileName);
 
-		
 		// 파일업로드
 		try {
 			singleFile.transferTo(changeFile);
@@ -197,9 +212,19 @@ public class ChallengeController {
 		int result = chService.insertChal(challenge);
 		List<ChallengeVO> chlist = chService.selectAll();
 		model.addAttribute("chlist", chlist);
+		
+		EarnpointVO earn = new EarnpointVO();
+		earn.setMem_id(loginmem.getMem_id());
+		earn.setPoint_name("도시락 만들9 글쓰기 이벤트");
+		earn.setPoint(50);
+		loginmem.setMem_point(50);
+		int EarnPoint = rService.insertEarn(earn);
+		int updateResult = rService.pointUpdate(loginmem);
+		loginmem = mService.getMember(loginmem.getMem_id());
+		session.setAttribute("loginmem", loginmem);
 		return "redirect:/event/makelunchbox.do";
 	}
-	
+
 	@RequestMapping(value = "challengeDelete.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String challengeDelete(Model model, ChallengeVO challenge) {
@@ -211,10 +236,11 @@ public class ChallengeController {
 		}
 
 	}
-	
+
 	@RequestMapping(value = "challengelikeUpdate.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
-	public String challengelikeUpdate(Model model, HttpSession session, ChalllikeVO challenge, @RequestParam("check") String check){
+	public String challengelikeUpdate(Model model, HttpSession session, ChalllikeVO challenge,
+			@RequestParam("check") String check) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		ChalllikeVO challlike = new ChalllikeVO(loginmem.getMem_id(), challenge.getChallenge_no());
 		if (check.equals("1")) {
@@ -222,8 +248,7 @@ public class ChallengeController {
 			if (result > 0) {
 				return "좋아요 취소";
 			}
-		}
-		else {
+		} else {
 			int result = chService.insertlikeChall(challlike);
 			if (result > 0) {
 				return "좋아요 성공";
@@ -231,7 +256,7 @@ public class ChallengeController {
 		}
 		return null;
 	}
-	
+
 	// challengeLunchBox test
 	@GetMapping("challengeLunchBox.do")
 	public String challengeLunchBox(Model model) {

@@ -59,10 +59,10 @@
 		)
 	</insert>
 
-	<update id="pointUpdate" parameterType="String">
+	<update id="pointUpdate" parameterType="memvo">
 		UPDATE mem
 		SET mem_point =
-		mem_point+1000
+		mem_point+#{mem_point}
 		WHERE mem_code = #{mem_code}
 	</update>
 

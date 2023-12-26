@@ -290,6 +290,7 @@
 							</div>
 							<div class="tab-2">
 								<button class="text-wrapper-21" onclick="redirectToMyDoranPage()">내가 쓴 글</button>
+<!-- 								<button class="text-wrapper-21" onclick="redirectToMyDoranPage()">내가 쓴 글</button> -->
 							</div>
 						</div>
 						<div class="text-wrapper-22">도란도란</div>
@@ -496,4 +497,9 @@
 	</footer>
 	<!-- div-wrapper -->
 </body>
+<script type="text/javascript">
+	$(".doran-button-frofile-setting").on("click", function() {
+		location.href = "${cpath}/my/myMenu.do";
+	})
+</script>
 </html>

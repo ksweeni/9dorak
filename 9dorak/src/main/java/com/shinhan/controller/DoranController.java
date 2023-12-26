@@ -30,9 +30,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.shinhan.dto.CommentVO;
 import com.shinhan.dto.DoranVO;
 import com.shinhan.dto.DoranlikeVO;
+import com.shinhan.dto.EarnpointVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.model.DoranService;
 import com.shinhan.model.MyPageService;
+import com.shinhan.model.RegisterService;
 
 @Controller
 @RequestMapping("doran")
@@ -40,6 +42,10 @@ public class DoranController {
 
 	@Autowired
 	DoranService dService;
+	@Autowired
+	RegisterService rService;
+	@Autowired
+	MyPageService mService;
 
 	private static final Logger logger = LoggerFactory.getLogger(DoranController.class);
 
@@ -144,6 +150,16 @@ public class DoranController {
 		doran.setDoran_image(null);
 		doran.setDoran_profile(memVO.getMem_image());
 		dService.insertDoran(doran);
+		
+		EarnpointVO earn  = new EarnpointVO();
+		earn.setMem_id(memVO.getMem_id());
+		earn.setPoint_name("도란도란 글쓰기 이벤트");
+		earn.setPoint(50);
+		memVO.setMem_point(50);
+		int EarnPoint = rService.insertEarn(earn);
+		int updateResult = rService.pointUpdate(memVO);
+		memVO  = mService.getMember(memVO.getMem_id());
+		session.setAttribute("loginmem", memVO);
 		return "redirect:/doran/doran.do";
 	}
 
@@ -228,6 +244,16 @@ public class DoranController {
 		System.out.println(memVO);
 		doran.setDoran_profile(memVO.getMem_image());
 		dService.insertDoran(doran);
+
+		EarnpointVO earn  = new EarnpointVO();
+		earn.setMem_id(memVO.getMem_id());
+		earn.setPoint_name("도란도란 글쓰기 이벤트");
+		earn.setPoint(50);
+		memVO.setMem_point(50);
+		int EarnPoint = rService.insertEarn(earn);
+		int updateResult = rService.pointUpdate(memVO);
+		memVO  = mService.getMember(memVO.getMem_id());
+		session.setAttribute("loginmem", memVO);
 		return "redirect:/doran/doran.do";
 	}
 
