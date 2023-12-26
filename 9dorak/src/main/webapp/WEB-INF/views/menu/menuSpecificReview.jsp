@@ -492,19 +492,20 @@
     let currentPage = 1;
 
     function showItemsForPage(pageNumber) {
-        console.log('showItemsForPage called with pageNumber:', pageNumber);
+        //console.log('showItemsForPage called with pageNumber:', pageNumber);
         const numElements = document.querySelectorAll('.num-2');
+        
+        if (numElements.length > 0){
+            numElements.forEach(numElement => {
+                numElement.classList.remove('page-active');
+            });
+           
+            numElements[pageNumber - 1].classList.add('page-active');
 
-        numElements.forEach(numElement => {
-            numElement.classList.remove('page-active');
-        });
-
-       
-        numElements[pageNumber - 1].classList.add('page-active');
-
-       // 페이지가 맨 처음이거나 맨 뒤면 이동 버튼 없애기
-        document.getElementById('prevPage').style.display = (pageNumber === 1) ? 'none' : 'block';
-        document.getElementById('nextPage').style.display = (pageNumber === numElements.length) ? 'none' : 'block';
+           // 페이지가 맨 처음이거나 맨 뒤면 이동 버튼 없애기
+            document.getElementById('prevPage').style.display = (pageNumber === 1) ? 'none' : 'block';
+            document.getElementById('nextPage').style.display = (pageNumber === numElements.length) ? 'none' : 'block';
+        }
     }
 
     showItemsForPage(currentPage);

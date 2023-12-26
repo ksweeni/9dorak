@@ -156,11 +156,9 @@ public class MenuController {
         PagingVO pagVO = new PagingVO((int)revwCnt.get("txtCnt"),currentPage);
         
         ArrayList<Integer> pageList = new ArrayList<Integer>(); 
-        
-        //System.out.println(pagVO.getTotalPage());
-        
+       
         //페이지 숫자표시
-        for (int i= 0;i < pagVO.getTotalPage()+1;i++) {
+        for (int i= 0; i < pagVO.getTotalCount(); i++) {
             pageList.add(i, i+1);
         };
         
