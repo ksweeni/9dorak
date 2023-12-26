@@ -43,78 +43,150 @@
 
 			<div class="controll-top">
 				<div class="controll-div">
-					<h3>쿠폰 생성 및 삭제</h3>
-		
+					<div class="title">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+							viewBox="0 0 24 24" fill="none">
+<circle cx="12" cy="12" r="12" fill="#FF8901" />
+</svg>
+						<h3>쿠폰 생성 및 삭제</h3>
+					</div>
+
+
 					<div class="create-div">
+						<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+							viewBox="0 0 15 15" fill="none">
+<circle cx="7.5" cy="7.5" r="6" fill="#FF8901" stroke="white"
+								stroke-width="3" />
+</svg>
+						<div class="create-text">CREATE</div>
 						<input placeholder="적용할 회원을 셀렉한 뒤 입력하세요" name="couponName"
 							class="coupon-input">
 						<button class="create-button" onclick="createCoupon()">Create</button>
 					</div>
-					<div class="controll-div-2">
-					<h3>쿠폰 삭제</h3>
+					<div class="controll-div-3">
+						<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+							viewBox="0 0 15 15" fill="none">
+<path
+								d="M13.5 7.5C13.5 10.8137 10.8137 13.5 7.5 13.5C4.18629 13.5 1.5 10.8137 1.5 7.5C1.5 4.18629 4.18629 1.5 7.5 1.5C10.8137 1.5 13.5 4.18629 13.5 7.5Z"
+								fill="#FF8901" stroke="white" stroke-width="3" />
+</svg>
+						<div class="create-text">DELETE</div>
 
-				<button class="delete-button-1" onclick="deleteCoupon()">Delete</button>
-			</div>
+						<button class="delete-button-1" onclick="deleteCoupon()">Delete</button>
+					</div>
+
+
+					<div class="table-2">
+
+
+						<table id="products" border="1">
+							<caption>
+								회원 list
+
+								<form action="" id="setRows">
+									<p>
+										한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
+									</p>
+								</form>
+
+							</caption>
+
+							<thead>
+								<tr>
+									<th style="border-radius: 10px 0px 0px 0px;">쿠폰코드</th>
+									<th>쿠폰사용여부</th>
+									<th>쿠폰명</th>
+									<th>쿠폰등록여부</th>
+									<th>사용자ID</th>
+									<th style="border-radius: 0px 10px 0px 0px;">Select</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<c:forEach var="coupon" items="${clist}" varStatus="rowStatus">
+									<tr>
+										<td>${coupon.coupon_code}</td>
+										<td>${coupon.coupon_check}</td>
+										<td>${coupon.coupon_name}</td>
+										<td>${coupon.coupon_reg}</td>
+										<td>${coupon.mem_id}</td>
+										<td><input type="checkbox" name="selectedMembers"
+											value="${coupon.mem_id}"></td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
 
 				</div>
 
 
+
+			</div>
+
+			<div class="controll-top-2">
 				<div class="controll-div-2">
-					<h3>쿠폰 항목</h3>
+					<div class="title">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+							viewBox="0 0 24 24" fill="none">
+  <circle cx="12" cy="12" r="12" fill="#FF8901" />
+</svg>
+						<h3>전체 쿠폰 항목</h3>
+					</div>
 
-					<c:forEach var="existCoupon" items="${coupon}">
-						<button class="delete-button"
-							data-coupon-id="${existCoupon.coupon_name}">
-							${existCoupon.coupon_name}</button>
-					</c:forEach>
+					<div class="button-wrappers">
+						<c:forEach var="existCoupon" items="${coupon}">
+							<button class="delete-button"
+								data-coupon-id="${existCoupon.coupon_name}">
+								${existCoupon.coupon_name}</button>
+						</c:forEach>
+					</div>
 				</div>
-					
+
+				<div class="table-1">
+
+
+					<table id="products" border="1">
+						<caption>
+							쿠폰 list
+
+							<form action="" id="setRows">
+								<p>
+									한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
+								</p>
+							</form>
+
+						</caption>
+
+						<thead>
+							<tr>
+								<th style="border-radius: 10px 0px 0px 0px;">쿠폰코드</th>
+								<th>쿠폰사용여부</th>
+								<th>쿠폰명</th>
+								<th>쿠폰등록여부</th>
+								<th>사용자ID</th>
+								<th style="border-radius: 0px 10px 0px 0px;">Select</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<c:forEach var="coupon" items="${clist}" varStatus="rowStatus">
+								<tr>
+									<td>${coupon.coupon_code}</td>
+									<td>${coupon.coupon_check}</td>
+									<td>${coupon.coupon_name}</td>
+									<td>${coupon.coupon_reg}</td>
+									<td>${coupon.mem_id}</td>
+									<td><input type="checkbox" name="selectedMembers"
+										value="${coupon.mem_id}"></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+
+
 			</div>
-			
-		
-
-
-
-
-
-			<table id="products" border="1">
-				<caption>
-					쿠폰 list
-					
-					<form action="" id="setRows">
-						<p>
-							한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
-						</p>
-					</form>
-
-				</caption>
-
-				<thead>
-					<tr>
-						<th>쿠폰코드</th>
-						<th>쿠폰사용여부</th>
-						<th>쿠폰명</th>
-						<th>쿠폰등록여부</th>
-						<th>사용자ID</th>
-						<th>Select</th>
-					</tr>
-				</thead>
-				<tbody>
-
-					<c:forEach var="coupon" items="${clist}" varStatus="rowStatus">
-						<tr>
-							<td>${coupon.coupon_code}</td>
-							<td>${coupon.coupon_check}</td>
-							<td>${coupon.coupon_name}</td>
-							<td>${coupon.coupon_reg}</td>
-							<td>${coupon.mem_id}</td>
-							<td><input type="checkbox" name="selectedMembers"
-								value="${coupon.mem_id}"></td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-
 
 		</div>
 	</div>
