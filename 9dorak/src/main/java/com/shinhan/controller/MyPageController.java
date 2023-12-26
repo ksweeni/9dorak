@@ -88,6 +88,7 @@ public class MyPageController {
 	public String myMenu(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		MemVO mem = mService.getMember(loginmem.getMem_id());
+		session.setAttribute("loginmem", mem);
 		model.addAttribute("mem", mem);
 		return "my/myMenu";
 	}
@@ -358,7 +359,8 @@ public class MyPageController {
 	public String profileDelete(Model model, HttpSession session, HttpServletRequest request) {
 		MemVO memVO = (MemVO) session.getAttribute("loginmem");
 		int result = mService.profileDelete(memVO);
-
+		memVO.setMem_image("resources/images/my/baseProfile.png");
+		int updateResult = mService.updateDoranProfile(memVO);
 		return "redirect:/my/myMenu.do";
 	}
 
