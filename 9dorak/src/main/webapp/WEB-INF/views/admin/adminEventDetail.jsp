@@ -62,9 +62,9 @@
     			<label for="ch_category">챌린지구분 : </label>
     				<input type="text" value="${challenge.challenge_category}" id="ch_category"/> <br />
     			<label for="ch_recipe">만들9레시피 : </label>
-    				<input type="text" value="${challenge.challenge_recipe}" id="ch_recipe"/> <br />
+    				<textarea id="ch_recipe">${challenge.challenge_recipe}</textarea> <br />
     			<label for="mem_id">회원ID : </label>
-    				<input type="text" value="${chno.mem_id}" id="mem_id"/> <br />
+    				<input type="text" value="${challenge.mem_id}" id="mem_id"/> <br />
 				</form>
 			</div>
 			<div id="buttonContainer">
