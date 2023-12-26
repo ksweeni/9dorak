@@ -315,7 +315,7 @@
 		})
 	}
 
-	$("#searchBtn").on("click", function() {
+	$("#searchBtn").on("click", function(e) {
 		//alert($("#annoKeyword").val());
 		var param = {
 			keyword : $("#annoKeyword").val()
@@ -326,6 +326,7 @@
 			data : param,
 			success : function(res) {
 				//	 alert("갔따오기 성공"); 
+				
 				$("body").html(res);
 				$(".numButton").hide();
 			}
