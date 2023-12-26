@@ -40,32 +40,47 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
+
+			<div class="controll-top">
+				<div class="controll-div">
+					<h3>쿠폰 생성 및 삭제</h3>
 		
-		<div class="controll-div">
-		<h3>쿠폰 생성 및 삭제</h3>
-			<span>'할인대상' '할인율%' '할인쿠폰'의 형식으로 입력하세요</span> <span>적용할 멤버를
-				체크하세요</span> 
-				<div class="create-div"><input placeholder="coupon name" name="couponName" class="coupon-input">
-			<button class="create-button" onclick="createCoupon()">Create</button></div>
-			
+					<div class="create-div">
+						<input placeholder="적용할 회원을 셀렉한 뒤 입력하세요" name="couponName"
+							class="coupon-input">
+						<button class="create-button" onclick="createCoupon()">Create</button>
+					</div>
+					<div class="controll-div-2">
+					<h3>쿠폰 삭제</h3>
+
+				<button class="delete-button-1" onclick="deleteCoupon()">Delete</button>
+			</div>
+
+				</div>
 
 
-			<span>삭제할 테이블 셀을 클릭하세요</span>
-			<button onclick="deleteCoupon()">Delete</button>
-		
-		</div>
+				<div class="controll-div-2">
+					<h3>쿠폰 항목</h3>
+
+					<c:forEach var="existCoupon" items="${coupon}">
+						<button class="delete-button"
+							data-coupon-id="${existCoupon.coupon_name}">
+							${existCoupon.coupon_name}</button>
+					</c:forEach>
+				</div>
+					
+			</div>
 			
 		
-			<h3>쿠폰 항목</h3>
-			<c:forEach var="existCoupon" items="${coupon}">
-				<button class="delete-button"
-					data-coupon-id="${existCoupon.coupon_name}">
-					${existCoupon.coupon_name}</button>
-			</c:forEach>
+
+
+
+
 
 			<table id="products" border="1">
 				<caption>
 					쿠폰 list
+					
 					<form action="" id="setRows">
 						<p>
 							한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
@@ -100,7 +115,7 @@
 				</tbody>
 			</table>
 
-			
+
 		</div>
 	</div>
 </body>
@@ -246,8 +261,6 @@
 
 	$setRows.submit();
 
-	
-
 	function getSelectedMembers() {
 		var selectedMembers = [];
 		$('input[name="selectedMembers"]:checked').each(function() {
@@ -272,40 +285,39 @@
 			traditional : true,
 			success : function(res) {
 				alert(res);
-				updateCouponList(); 
+				updateCouponList();
 			}
 		});
 
 	}
 
 	function deleteCoupon() {
-	    var selectedCouponCodes = [];
+		var selectedCouponCodes = [];
 
-	    $('input[name="selectedMembers"]:checked').each(function () {
-	        var couponCode = $(this).closest('tr').find('td:first').text();
-	        selectedCouponCodes.push(couponCode);
-	    });
+		$('input[name="selectedMembers"]:checked').each(function() {
+			var couponCode = $(this).closest('tr').find('td:first').text();
+			selectedCouponCodes.push(couponCode);
+		});
 
-	    if (selectedCouponCodes.length === 0) {
-	        alert("No coupons selected for deletion.");
-	        return;
-	    }
+		if (selectedCouponCodes.length === 0) {
+			alert("No coupons selected for deletion.");
+			return;
+		}
 
-	    var jsonData = JSON.stringify(selectedCouponCodes);
-	    alert(jsonData);
+		var jsonData = JSON.stringify(selectedCouponCodes);
+		alert(jsonData);
 
-	    $.ajax({
-	        url: "${cpath}/admin/adminCouponDelete.do",
-	        type: "POST",
-	        contentType: "application/json",
-	        data: jsonData,
-	        success: function (res) {
-	            alert(res);
-	            updateCouponList(); 
-	        }
-	    });
+		$.ajax({
+			url : "${cpath}/admin/adminCouponDelete.do",
+			type : "POST",
+			contentType : "application/json",
+			data : jsonData,
+			success : function(res) {
+				alert(res);
+				updateCouponList();
+			}
+		});
 	}
-
 
 	$(document).ready(function() {
 		$(".delete-button").on("click", function() {
@@ -323,22 +335,22 @@
 					data : JSON.stringify(couponIds),
 					success : function(res) {
 						alert(res);
-						updateCouponList(); 
+						updateCouponList();
 
 					}
 				});
 			}
 		});
 	});
-	
+
 	function updateCouponList() {
-	    $.ajax({
-	        url: "${cpath}/admin/adminPoint.do", // 실제 목록을 불러오는 URL로 변경해야 합니다.
-	        type: "GET",
-	        success: function (res) {
-	            $("body").html(res); // 새로운 목록으로 테이블 업데이트
-	        }
-	    });
+		$.ajax({
+			url : "${cpath}/admin/adminPoint.do", // 실제 목록을 불러오는 URL로 변경해야 합니다.
+			type : "GET",
+			success : function(res) {
+				$("body").html(res); // 새로운 목록으로 테이블 업데이트
+			}
+		});
 	}
 </script>
 </html>
