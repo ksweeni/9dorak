@@ -125,8 +125,21 @@
 							</div>
 
 							<div class="group-4">
-								<img class="unsplash-ykc-qhmjk"
-									src="${cpath}/resources/upload/${doran.doran_profile}" />
+								<!--  -->
+								<c:choose>
+									<c:when
+										test="${doran.doran_profile eq 'resources/images/my/baseProfile.png'}">
+										<img class="unsplash-ykc-qhmjk"
+											src="${cpath}/resources/images/my/baseProfile.png" />
+									</c:when>
+									<c:otherwise>
+										<img class="unsplash-ykc-qhmjk"
+											src="${cpath}/resources/upload/${doran.doran_profile}" />
+									</c:otherwise>
+								</c:choose>
+
+
+								<!--  -->
 								<div class="frame-2">
 									<div class="frame-3">
 										<div class="text-wrapper-10">${doran.mem_id}</div>
@@ -175,8 +188,32 @@
 							<div class="group-6">
 								<div class="overlap-2">
 									<div class="input-comments">
-										<img class="unsplash-upihhsyew"
-											src="${cpath}/resources/upload/${doran.doran_profile}" />
+										<%-- <img class="unsplash-upihhsyew"
+											src="${cpath}/resources/upload/${doran.doran_profile}" /> --%>
+
+										<c:choose>
+											<c:when
+												test="${sessionScope.loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+												<div class="doran-profile-photo">
+													<img class="unsplash-upihhsyew"
+														src="${cpath }/resources/images/my/baseProfile.png" />
+												</div>
+											</c:when>
+											<c:when test="${sessionScope.loginmem.mem_image == null}">
+												<div class="doran-profile-photo">
+													<img class="unsplash-upihhsyew"
+														src="${cpath }/resources/images/my/baseProfile.png" />
+												</div>
+											</c:when>
+											<c:otherwise>
+												<div class="doran-upload-profilPhoto">
+													<img class="unsplash-upihhsyew"
+														src="${cpath}/resources/upload/${sessionScope.loginmem.mem_image}" />
+												</div>
+											</c:otherwise>
+										</c:choose>
+
+										<!--  -->
 										<div class="textzone">
 											<div class="overlap-group-4">
 												<textarea class="text-wrapper-17"
@@ -211,13 +248,13 @@
 							<div class="doran-profile">
 								<c:choose>
 									<c:when
-										test="${doran.doran_profile eq 'resources/images/my/baseProfile.png'}">
+										test="${sessionScope.loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
 										<div class="doran-profile-photo">
 											<img class="doran-profile-photoImg"
 												src="${cpath }/resources/images/my/baseProfile.png" />
 										</div>
 									</c:when>
-									<c:when test="${doran.doran_profile == null}">
+									<c:when test="${sessionScope.loginmem.mem_image == null}">
 										<div class="doran-profile-photo">
 											<img class="doran-profile-photoImg"
 												src="${cpath }/resources/images/my/baseProfile.png" />
@@ -226,7 +263,7 @@
 									<c:otherwise>
 										<div class="doran-upload-profilPhoto">
 											<img class="doran-profile-photoImg"
-												src="${cpath}/resources/upload/${doran.doran_profile}" />
+												src="${cpath}/resources/upload/${sessionScope.loginmem.mem_image}" />
 										</div>
 									</c:otherwise>
 								</c:choose>
