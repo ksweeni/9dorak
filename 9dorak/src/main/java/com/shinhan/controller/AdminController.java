@@ -1,5 +1,6 @@
 package com.shinhan.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -205,16 +206,10 @@ public class AdminController {
 	public String adminPoint(Model model) {
 		List<CouponVO> clist = couponService.selectAll();
 		model.addAttribute("clist", clist);
+		List<String> coupon = couponService.selectDistinctCoupon();
+		model.addAttribute("coupon", coupon);
 		return "admin/adminPoint";
 	}
-
-	@GetMapping("adminCouponCreate.do")
-	public String adminCouponCreate(Model model) {
-		List<CouponVO> clist = couponService.selectAll();
-		model.addAttribute("clist", clist);
-		return "admin/adminCouponCreate";
-	}
-
 
 	@PostMapping("adminCouponInsert.do")
 	@ResponseBody
@@ -223,20 +218,44 @@ public class AdminController {
 	    @RequestParam List<String> selectedMembers) {
 	   
 	    for (String memberId : selectedMembers) {
-	     
 	        CouponVO coupon = new CouponVO();
 	        coupon.setCoupon_code(null);
 	        coupon.setCoupon_name(couponName);
 	        coupon.setCoupon_reg("미등록");
 	        coupon.setCoupon_check("미사용");
 	        coupon.setMem_id(memberId); 
-	        
-	        int result = couponService.insertCoupon(coupon);
-	        System.out.println(coupon);
+	        couponService.insertCoupon(coupon);
 	    }
 
 	    return "coupon insert Success !";
 	}
+	
+	@PostMapping("adminCouponDelete.do")
+	@ResponseBody
+	public String adminCouponDelete(@RequestBody List<String> couponCodes) {
+	    List<Integer> intCodes = new ArrayList<>();
+	    List<String> stringCodes = new ArrayList<>();
+	    for (String code : couponCodes) {
+	        try {
+	            intCodes.add(Integer.parseInt(code));
+	        } catch (NumberFormatException e) {
+	            stringCodes.add(code);
+	        }
+	    }
+	    if (!intCodes.isEmpty()) {
+	        couponService.deleteCoupons(intCodes);
+	        return "coupon number delete Success!";
+	    }
+	    if (!stringCodes.isEmpty()) {
+	        for (String code : stringCodes) {
+	            couponService.deleteCouponName(code);
+	        }
+	        return "coupon name delete Success!";
+	    }
+	    return "No valid coupons found for deletion!";
+	}
+
+
 
 	
 	

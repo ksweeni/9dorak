@@ -20,4 +20,16 @@ public class CouponService {
 	public int insertCoupon(CouponVO coupon){
 		return dao.insertCoupon(coupon);
 	}
+	
+	public void deleteCoupons(List<Integer> couponCode) {
+		dao.deleteCoupons(couponCode);
+	}
+	
+	public void deleteCouponName(String CouponName) {
+		dao.deleteCouponName(CouponName);
+	}
+	
+	public List<String> selectDistinctCoupon() {
+		return dao.selectDistinctCoupon();
+	}
 }
