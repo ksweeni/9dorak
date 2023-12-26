@@ -23,6 +23,8 @@ import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.PayVO;
 import com.shinhan.dto.PeopleVO;
+import com.shinhan.dto.ProVO;
+import com.shinhan.model.EventService;
 import com.shinhan.model.MyPageService;
 import com.shinhan.model.WalletService;
 
@@ -32,6 +34,8 @@ public class WalletController {
 
 	@Autowired
 	WalletService wService;
+	@Autowired
+	EventService eService;
 
 	@Autowired
 	MyPageService mService;
@@ -179,5 +183,12 @@ public class WalletController {
 			response.put("success", false);
 		}
 		return response;
+	}
+	
+	@GetMapping("free.do")
+	public String freelunchbox(Model model) {
+		List<ProVO> freelist = eService.selectFreeAll();
+		model.addAttribute("freelist", freelist);
+		return "wallet/pay";
 	}
 }
