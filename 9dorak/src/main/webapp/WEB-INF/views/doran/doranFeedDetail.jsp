@@ -91,19 +91,22 @@
 			<div class="group-2">
 				<div class="feeds">
 					<div class="group-3">
-						<div class="overlap-group-2">
+						<div class="overlap-group-2"
+							style="${doran.doran_image==null ? 'height: 300px;' : ''}">
 							<button class="detailfeed_deleteBtn"
 								onclick="deleteDoran(${doran.doran_no})">
 								<img class="detailfeed_deleteBtnImg"
 									src="${cpath}/resources/images/doran/detailfeed_deleteBtn.png" />
 							</button>
+
+
 							<img class="unsplash"
-								src="${cpath }/resources/upload/${doran.doran_image}" />
-							<p class="p">${doran.doran_cont}</p>
-
-
-
-							<div class="doran-underInfo">
+								src="${cpath}/resources/upload/${doran.doran_image}"
+								style="${doran.doran_image==null ? 'display: none;' : ''}" />
+							<p class="p"
+								style="${doran.doran_image==null? 'top: 100px;' : ''}">${doran.doran_cont}</p>
+							<div class="doran-underInfo"
+								style="${doran.doran_image==null ? 'top: 100px;' : ''}">
 								<div class="doran-review">
 									<div class="doran-review-like">
 										<img class="doran-review-likeicon"
@@ -143,7 +146,7 @@
 				</div>
 
 
-				<div class="frame-4">
+				<div class="frame-4" style="${doran.doran_image==null? 'top: 400px;' : ''}">
 					<div class="text-wrapper-13">COMMENTS ☁️</div>
 					<div class="overlap-wrapper">
 						<div class="overlap">
@@ -208,7 +211,7 @@
 				<div class="group-9">
 					<div class="group-10">
 						<div class="div-2">
-							<!-- 로그인 안되어 있으면 프로필 설정 안보이게 하기  -->
+						
 							<div class="doran-profile">
 								<c:choose>
 									<c:when
@@ -283,10 +286,10 @@
 								</div>
 							</div>
 							<div class="tab">
-								<button class="text-wrapper-20">도란도란</button>
+								<button class="text-wrapper-20" onclick="redirectToDoranPage()">도란도란</button>
 							</div>
 							<div class="tab-2">
-								<button class="text-wrapper-21">내가 쓴 글</button>
+								<button class="text-wrapper-21" onclick="redirectToMyDoranPage()">내가 쓴 글</button>
 							</div>
 						</div>
 						<div class="text-wrapper-22">도란도란</div>
@@ -295,6 +298,15 @@
 
 			</div>
 			<script>
+			
+			 function redirectToDoranPage() {
+			        window.location.href = "${cpath}/doran/doran.do";
+			    }
+			 
+			 function redirectToMyDoranPage() {
+			        window.location.href = "${cpath}/doran/doranFor.do?dataFor=myDoran";
+			    }
+			 
 			var memId = "${sessionScope.loginmem.mem_id}";
 			var doranProfile = document.querySelector('.doran-profile');
 			var doranWriting = document.querySelector('.group-18');
@@ -417,7 +429,8 @@
 			</script>
 		</div>
 	</div>
-	<footer class="footer" style="top: 10rem;">
+	<footer class="footer" style="top: 10rem;}">
+
 		<div class="footer-company-loco">
 			<div class="footer-company">
 				<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요 우리는
