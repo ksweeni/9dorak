@@ -5,10 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?s"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/doranFeedDetailStyle.css?e"
+	href="${cpath}/resources/css/doranFeedDetailStyle.css?d"
 	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
