@@ -23,6 +23,7 @@ String contextPath = request.getContextPath();
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
+
 </head>
 <body>
 	<div class="v49_2207">
