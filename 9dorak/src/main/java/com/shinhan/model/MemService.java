@@ -21,4 +21,16 @@ public class MemService {
 		return dao.selectAll();
 	}
 
+	public MemVO selectByid(String mem_id) {
+		return dao.selectByid(mem_id);
+	}
+
+	public int updateMem(MemVO mem) {
+		return dao.updateMem(mem);
+	}
+
+	public int deleteMem(String mem_id) {
+		return dao.deleteMem(mem_id);
+	}
+
 }

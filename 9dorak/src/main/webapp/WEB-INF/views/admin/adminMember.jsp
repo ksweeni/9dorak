@@ -39,6 +39,7 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
+		<button class="insert_memu">추가하기</button>
 			<table id="products" border="1">
 				<caption>
 					회원 list
@@ -159,6 +160,31 @@ $(".e2099_2475").on("click", function() {
 
 	})
 })
+
+    $(document).ready(function () {
+        // 테이블의 각 행을 클릭했을 때 이벤트 핸들러
+        $('#products tbody').on('click', 'tr', function () {
+            // 클릭한 행의 메뉴 번호 가져오기
+            var mem_id = $(this).find('td:first').text();
+
+            // Ajax 호출
+            $.ajax({
+                type: 'POST',
+                url: '${cpath}/admin/adminMember.do',
+                data: { mem_id: mem_id },
+                success: function (response) {
+                    // 서버에서의 응답 처리
+                    $("body").html(response);
+                    console.log(mem_id);
+
+                    // 추가적인 동작 수행 가능
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    });
 
 	//페이징 처리 함수
 	var $setRows = $('#setRows');

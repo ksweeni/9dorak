@@ -24,4 +24,19 @@ public class MemDAOMybatis {
 		return memlist;
 	}
 
+	public MemVO selectByid(String mem_id) {
+		MemVO mem = sqlSession.selectOne(NAMESPACE + "selectByid", mem_id);
+		return mem;
+	}
+
+	public int updateMem(MemVO mem) {
+		int result = sqlSession.update(NAMESPACE + "updateMem", mem);
+		return result;
+	}
+
+	public int deleteMem(String mem_id) {
+		int result = sqlSession.delete(NAMESPACE + "deleteMem", mem_id);
+		return result;
+	}
+
 }

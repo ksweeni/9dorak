@@ -8,4 +8,32 @@
 		select * from mem
 	</select>
 	
+	<select id="selectByid" resultType="memvo" parameterType="memvo">
+		select *
+		from mem
+		where mem_id = #{mem_id}
+	</select>
+
+	<update id="updateMem" parameterType="memvo">
+		update mem
+		set
+		mem_pw=#{mem_pw},
+		mem_name=#{mem_name},
+		mem_bd=#{mem_bd},
+		mem_email=#{mem_email},
+		mem_phone=#{mem_phone},
+		mem_code=#{mem_code},
+		mem_point=#{mem_point},
+		mem_grade=#{mem_grade},
+		mem_quit=#{mem_quit},
+		mem_image=#{mem_image}
+		where
+		mem_id=#{mem_id}
+	</update>
+
+	<delete id="deleteMem" parameterType="string">
+		DELETE FROM mem
+		where mem_id = #{mem_id}
+	</delete>
+	
 </mapper>
