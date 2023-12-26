@@ -128,15 +128,15 @@ String contextPath = request.getContextPath();
 	<span class="mypage-title">마이페이지</span>
 	<div class=e69_172>
 		<div class=e69_173>
-	 		<a class=e69_174 href= "${cpath }/my/familyReg.do">
-				<div class=e69_175>
-					<span class="e69_176">가족등록</span><span class="e69_177">Check
-						your personalized favorites and wishlist</span>
-				</div>
-				<div class="e72_336"></div>
-			</a> 
+		 		<a class=e69_180 href= "${cpath }/my/familyReg.do">
+					<div class=e69_175>
+						<span class="e69_176">친구등록</span><span class="e69_177">Check
+							your personalized favorites and wishlist</span>
+					</div>
+					<div class="e72_336"></div>
+				</a> 
 
-			<div class=e69_180>
+			<!-- <div class=e69_180>
 				<div class=e69_181>
 					<span class="e69_176" style="top: -30px;">친구초대</span> <span
 						class="e69_182">Register and check your list of friends and
@@ -144,7 +144,7 @@ String contextPath = request.getContextPath();
 				</div>
 
 				<div class="e72_334"></div>
-			</div>
+			</div> -->
 
 			<a class=e69_186 href="${cpath }/my/pointAndCoupon.do">
 				<div class=e69_187>

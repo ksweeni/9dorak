@@ -180,7 +180,7 @@
 								<div class="overlap-2">
 									<div class="input-comments">
 										<img class="unsplash-upihhsyew"
-											src="img/unsplash-u3pi6hhsyew.svg" />
+											src="${cpath}/resources/upload/${doran.doran_profile}" />
 										<div class="textzone">
 											<div class="overlap-group-4">
 												<textarea class="text-wrapper-17"
