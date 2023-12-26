@@ -225,13 +225,12 @@ left: 155px;
 .e145_1565 {
 	width: 479px;
 	height: 101px;
-	/* 	position: absolute; */
 	position: relative;
-	left: 20.15234375px;
 	top: 20px;
 	left: 20.15234375px;
-	border: 1px solid gray;
+	border: 2px solid #e7e7e7;
 	border-radius: 30px;
+	margin-bottom: 10px;
 }
 
 .e145_1566 {
@@ -286,6 +285,7 @@ left: 155px;
 	font-size: 16px;
 	letter-spacing: 0;
 	line-height: px;
+	font-weight: 600;
 }
 
 .e145_1571 {
@@ -300,6 +300,7 @@ left: 155px;
 	font-size: 16px;
 	letter-spacing: 0;
 	line-height: px;
+	font-weight: 600;
 }
 
 .e145_1514 {
