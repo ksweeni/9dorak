@@ -364,6 +364,9 @@ public class MyPageController {
 
 	@GetMapping("familyReg.do")
 	public String familyReg(Model model, HttpSession session) {
+		if (session.getAttribute("loginmem")==null) {
+			return "redirect:/login/loginForm.do";
+		}
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		model.addAttribute("mem", loginmem);
 
