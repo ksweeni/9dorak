@@ -64,6 +64,17 @@ public class AdminController {
 		return "admin/adminMenuDetail";
 	}
 	
+	@RequestMapping(value = "adminMenuDelete.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminMenuDelete(Model model, ProVO menu) {
+		int result = mService.deleteMenu(menu.getPro_no());
+		if (result > 0) {
+			return "삭제 성공";
+		} else {
+			return "삭제 실패";
+		}
+	}
+	
 	@GetMapping("adminMember.do")
 	public String adminMember(Model model) {
 		List<MemVO> memlist = memService.selectAll();

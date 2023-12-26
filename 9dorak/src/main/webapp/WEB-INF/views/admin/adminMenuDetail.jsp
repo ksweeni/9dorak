@@ -40,8 +40,8 @@
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
 		<div class="e2099_3000">
-		<button class="update_memu" onclick="">수정하기</button>
-		<button class="delete_memu" onclick="">삭제하기</button>
+		<button class="update_memu" >수정하기</button>
+		<button class="delete_memu" id="delete">삭제하기</button>
 		</div>
 		<div class="e2099_2487">
 		<div class="e2099_2490"><p><b>1. 메뉴 기본 정보</b></p>
@@ -175,6 +175,24 @@
 				$("body").html(res);
 			}
 
+		})
+	})
+	
+	//삭제
+		$("#delete").on("click", function() {
+
+		var pro_no = $("#pro_no").val();
+		var param = {
+			"pro_no" : pro_no
+		}
+		$.ajax({
+			url : "${cpath}/admin/adminMenuDelete.do",
+			type : "post",
+			data : param,
+			success : function(res) {
+				/* alert(res) */
+				location.href = "${cpath}/admin/adminMenu.do";
+			}
 		})
 	})
 </script>

@@ -308,12 +308,6 @@ body {
 	flex: 0 0 auto;
 }
 
-.case .checkbox {
-	position: relative;
-	width: 40px;
-	height: 40px;
-}
-
 .case .text-wrapper-12 {
 	position: relative;
 	width: fit-content;
@@ -503,7 +497,7 @@ body {
 	margin-bottom: 15px;
 }
 
-.case .checkbox-2 {
+.case .checkbox {
 	position: relative;
 	width: 30px;
 	height: 30px;

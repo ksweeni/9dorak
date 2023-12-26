@@ -253,10 +253,8 @@
 
 	<!-- 댓글 추가 -->
 	<insert id="insertComment" parameterType="commentvo">
-		insert into comments
-		values (#{comment_no}, #{comment_cont}, sysdate,
-		#{doran_no},
-		#{mem_id})
+	insert into comments
+	values (#{comment_no}, #{comment_cont}, sysdate ,#{mem_id} ,#{doran_no} )
 	</insert>
 
 	<!-- 조회수 증가 -->

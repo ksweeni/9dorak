@@ -138,16 +138,16 @@
 }
 
 .e1433_2556 {
-	color: rgba(255, 255, 255, 1);
-	width: 123.47369384765625px;
-	height: 36px;
-	position: absolute;
-	left: 36px;
-	top: 20px;
-	text-align: left;
-	font-size: 20px;
-	letter-spacing: 0;
-	cursor:pointer;
+    color: rgba(255, 255, 255, 1);
+    width: 123.47369384765625px;
+    height: 36px;
+    position: absolute;
+    left: 36px;
+    top: 16px;
+    text-align: left;
+    font-size: 20px;
+    letter-spacing: 0;
+    cursor: pointer;
 }
 
 .e1433_2557 {
@@ -166,16 +166,16 @@
 }
 
 .e1433_2558 {
-	color: rgba(255, 255, 255, 1);
-	width: 123.47369384765625px;
-	height: 36px;
-	position: absolute;
-	left: 35px;
-	top: 19px;
-	text-align: left;
-	font-size: 20px;
-	letter-spacing: 0;
-	cursor:pointer;
+    color: rgba(255, 255, 255, 1);
+    width: 123.47369384765625px;
+    height: 36px;
+    position: absolute;
+    left: 35px;
+    top: 15px;
+    text-align: left;
+    font-size: 20px;
+    letter-spacing: 0;
+    cursor: pointer;
 }
 
 .e1433_2559 {
@@ -814,14 +814,14 @@
 
 .allergy-button {
 	width: 130px;
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: 600;
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 30px;
-	border: 1px solid #F48E28;
-	background: #F48E28;
-	color: #FFF;
+    border: 1px solid #F48E28;
+    background: #fff;
+    color: #F48E28;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -832,20 +832,20 @@
 }
 
 .allergy-button.selected {
-    background: #FFF;
-    color: #F48E28;
+    background: #F48E28;
+    color: #FFF;
 }
 
 .category-button {
     width: 109px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
     height: 56px;
     flex-shrink: 0;
     border-radius: 30px;
     border: 1px solid #F48E28;
-    background: #F48E28;
-    color: #FFF;
+    background: #fff;
+    color: #F48E28;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -999,8 +999,8 @@
 }
 
 .category-button.selected {
-    background: #FFF;
-    color: #F48E28;
+    background: #F48E28;
+    color: #FFF;
 }
 
 .1433_2611 {

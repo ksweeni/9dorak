@@ -151,10 +151,9 @@ public class DoranController {
 	@ResponseBody
 	public Map<String, Object> uploadComment(@RequestParam String newComment, @RequestParam int doranNo,
 			HttpSession session) {
-
 		Map<String, Object> response = new HashMap<>();
 		try {
-			System.out.println("Received comment from frontend: " + newComment);
+//			System.out.println("Received comment from frontend: " + newComment);
 			List<CommentVO> clist = dService.selectComment();
 			MemVO memVO = (MemVO) session.getAttribute("loginmem");
 			String memId = memVO.getMem_id();
@@ -164,13 +163,15 @@ public class DoranController {
 			comment.setComment_no(clist.size() + 1);
 			comment.setMem_id(memId);
 			dService.insertComment(comment);
-
+		
 			List<CommentVO> updatedComments = dService.selectAllCommentAbout(doranNo);
-
+			
 			// 업데이트된 댓글 목록을 응답에 추가
 			response.put("comments", updatedComments);
 			response.put("success", true);
+			
 		} catch (Exception e) {
+		
 			response.put("success", false);
 			response.put("error", e.getMessage());
 		}

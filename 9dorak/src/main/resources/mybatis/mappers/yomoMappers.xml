@@ -6,14 +6,17 @@
 	<!-- 게시글 리스트 -->
 	<select id="selectAll" resultType="annovo"> select * from anno </select>
 	<select id="selectByno" resultType="annovo" parameterType="int">
-		select * from anno where anno_no = #{anno_no} </select>
+		select * from anno where anno_no = #{anno_no}
+	</select>
 	<select id="searchYomo" resultType="annovo"
 		parameterType="String"> SELECT * FROM anno WHERE anno_title LIKE
 		'%'||#{anno_title}||'%' </select>
 	<select id="selectOrderbyView" resultType="annovo"> select * from anno
-		order by anno_view desc </select>
+		order by anno_view desc
+	</select>
 	<select id="selectOrderbyNew" resultType="annovo"> select * from anno
-		order by anno_date desc </select>
+		order by anno_date desc
+	</select>
 	<select id="selectFaqAll" resultType="faqvo"> select * from faq </select>
 	<select id="selectBynoOneask" resultType="oneaskvo"
 		parameterType="int"> select * from oneask where oneask_no = #{oneask_no}
@@ -24,7 +27,8 @@
 		parameterType="String"> SELECT * FROM oneask WHERE oneask_title LIKE
 		'%'||#{oneask_title}||'%' </select>
 	<select id="selectOrderbyNewOneask" resultType="oneaskvo"> select * from
-		oneask order by oneask_date desc </select>
+		oneask order by oneask_date desc
+	</select>
 	<insert id="insertOneask" parameterType="oneaskvo"> INSERT INTO oneask (
 		oneask_no, oneask_title, oneask_cont, oneask_date, oneask_image,
 		oneask_status, mem_id ) VALUES ( oneask_seq.NEXTVAL, #{oneask_title},
@@ -37,4 +41,64 @@
 		where
 		oneask_no=#{oneask_no}
 	</update>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<update id="adminNoticeUpdate" parameterType="annovo">
+		UPDATE anno
+		SET anno_title = #{anno_title},
+		anno_cont = #{anno_cont},
+		anno_date = sysdate
+		WHERE anno_no = #{anno_no}
+
+	</update>
+
+
 </mapper>
