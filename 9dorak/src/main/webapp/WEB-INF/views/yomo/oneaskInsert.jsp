@@ -176,9 +176,33 @@ String contextPath = request.getContextPath();
 		<span class="e1081_4454">1:1 문의</span>
 	</div>
 	<div class=e1081_4455>
-		<div class=e1081_4456>
-		<div class="profile_photo"></div>
-			<span class="e1081_4458">${sessionScope.loginmem.mem_name}</span><span class="e1081_4459">LV.${sessionScope.loginmem.mem_grade}</span>
+				<div class=e1081_4456>
+			<c:choose>
+				<c:when test="${empty sessionScope.loginmem.mem_image}">
+					<div class="profile_photo"></div>
+				</c:when>
+
+				<c:when
+					test="${sessionScope.loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
+					<div class="profile_photo"
+						style="background-image: url(${cpath}/${sessionScope.loginmem.mem_image});"></div>
+				</c:when>
+				<c:otherwise>
+					<div class="profile_photo"
+						style="background-image: url(${cpath}/resources/upload/${sessionScope.loginmem.mem_image}); "></div>
+				</c:otherwise>
+			</c:choose>
+			<!--  -->
+			<c:choose>
+				<c:when test="${empty sessionScope.loginmem.mem_image}">
+					<span class="e1081_4458"></span>
+					<span class="e1081_4459"></span>
+				</c:when>
+				<c:otherwise>
+					<span class="e1081_4458">${sessionScope.loginmem.mem_name}</span>
+					<span class="e1081_4459">LV.${sessionScope.loginmem.mem_grade}</span>
+				</c:otherwise>
+			</c:choose>
 		</div>
 		<div class=e1081_4460>
 			<a href="${pageContext.request.contextPath}/yomo/notice.do"

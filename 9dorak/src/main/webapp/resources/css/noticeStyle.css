@@ -1551,7 +1551,8 @@
 .profile_photo {
     height: 40px;
     width: 40px;
-/*     background-image: url(../images/yomo/profile.png); */
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 form {
