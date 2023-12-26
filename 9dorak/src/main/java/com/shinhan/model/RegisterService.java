@@ -40,9 +40,9 @@ public class RegisterService {
 		return dao.PointinsertMember(mem);
 	}
 
-	public int pointUpdate(String mem_code) {
+	public int pointUpdate(MemVO codemem) {
 		// TODO Auto-generated method stub
-		return dao.pointUpdate(mem_code);
+		return dao.pointUpdate(codemem);
 	}
 
 	public int insertEarn(EarnpointVO earn) {

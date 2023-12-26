@@ -80,8 +80,11 @@ public class RegisterController {
 	public String codeCheck(String mem_code, HttpSession session) {
 		int result = rService.codeCheck(mem_code);
 		if (result == 1) {
-			int updateResult = rService.pointUpdate(mem_code);
 			MemVO codemem = rService.getCodeMem(mem_code);
+			codemem.setMem_point(1000);
+			
+			int updateResult = rService.pointUpdate(codemem);
+			codemem = rService.getCodeMem(mem_code);
 			System.out.println(mem_code);
 //			System.out.println(updateResult);
 			EarnpointVO earn  = new EarnpointVO();
