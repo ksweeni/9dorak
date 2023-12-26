@@ -96,21 +96,22 @@ String contextPath = request.getContextPath();
 						<p>찜목록이 없습니다.</p>
 					</c:if>
 					<c:forEach var="item" items="${likeList}">
-						<a
-							href="${cpath }/menu/menuSpecificReview.do?pro_no=${item.pro_no}">
-							<div class="e145_1565">
-								<div class="e145_1566">
-									<div class="e145_1567">
-										<div class="e145_1569"></div>
+						<div class="e145_1565">
+							<a
+								href="${cpath }/menu/menuSpecificReview.do?pro_no=${item.pro_no}">
+								
+									<div class="e145_1566">
+										<div class="e145_1567">
+											<div class="e145_1569"></div>
+										</div>
 									</div>
-								</div>
-								<div class="e145_1570">
-									<span class="e145_1572">${item.pro_price}</span><span
-										class="e145_1571">${item.pro_name}</span>
-								</div>
-							</div>
-						</a>
-
+									<div class="e145_1570">
+										<span class="e145_1572">${item.pro_price}</span><span
+											class="e145_1571">${item.pro_name}</span>
+									</div>
+								
+							</a>
+						</div>
 					</c:forEach>
 
 				</div>
