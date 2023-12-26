@@ -8,6 +8,10 @@
 	font-family: "Wanted Sans Variable";
 }
 
+.header a:hover{
+	color: #F48E28 !important;
+}
+
 .footer {
 	column-gap: 30px;
 	display: flex;
