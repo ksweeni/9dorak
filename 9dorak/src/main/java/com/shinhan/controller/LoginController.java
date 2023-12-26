@@ -168,7 +168,7 @@ public class LoginController {
 		model.addAttribute("email",paramMap.get("email"));
 		model.addAttribute("id",paramMap.get("id"));
 		
-		return "register/registerForm";
+		return "register/registerType";
 	}
 	
 }
