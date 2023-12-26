@@ -124,8 +124,12 @@ String contextPath = request.getContextPath();
 													<div class="text-wrapper">제목</div>
 												</div>
 											</div>
-											<input class="container-default" type="text"
-												name="challenge_name" placeholder="참여하는 챌린지의 이름을 입력해주세요" />
+											<select class="container-default" name="challenge_name">
+    											<option value="우리 아이 성장 챌린지">우리 아이 성장 챌린지</option>
+    											<option value="다회용기 수거 챌린지">다회용기 수거 챌린지</option>
+											</select>
+											<!-- <input class="container-default" type="text"
+												name="challenge_name" placeholder="참여하는 챌린지의 이름을 입력해주세요" /> -->
 										</div>
 									</div>
 									<!-- 내용 -->
