@@ -66,7 +66,6 @@ public class AdminController {
 	public String adminMenuDetail(Model model, ProVO menu) {
 		ProVO detailmenu = mService.selectByNo(menu.getPro_no());
 		model.addAttribute("detailmenu", detailmenu);
-		System.out.println(detailmenu);
 		return "admin/adminMenuDetail";
 	}
 	
@@ -86,9 +85,7 @@ public class AdminController {
 	@RequestMapping(value = "adminMenuUpdate.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String adminMenuUpdate(Model model, ProVO menu) {
-		System.out.println("aaa");
 		int result = mService.updateMenu(menu);
-		System.out.println(result);
 		if (result > 0) {
 			return "수정 성공";
 		} else {
@@ -106,13 +103,41 @@ public class AdminController {
 			return "삭제 실패";
 		}
 	}
-	
 
 	@GetMapping("adminMember.do")
 	public String adminMember(Model model) {
 		List<MemVO> memlist = memService.selectAll();
 		model.addAttribute("memlist", memlist);
 		return "admin/adminMember";
+	}
+	
+	@PostMapping("adminMember.do")
+	public String adminMemberDetail(Model model, MemVO mem) {
+		MemVO detailmem = memService.selectByid(mem.getMem_id());
+		model.addAttribute("detailmem", detailmem);
+		return "admin/adminMemberDetail";
+	}
+	
+	@RequestMapping(value = "adminMemberUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminMemberUpdate(Model model, MemVO mem) {
+		int result = memService.updateMem(mem);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+		}
+	}
+
+	@RequestMapping(value = "adminMemberDelete.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminMemberDelete(Model model, MemVO mem) {
+		int result = memService.deleteMem(mem.getMem_id());
+		if (result > 0) {
+			return "삭제 성공";
+		} else {
+			return "삭제 실패";
+		}
 	}
 
 	@GetMapping("adminOrder.do")

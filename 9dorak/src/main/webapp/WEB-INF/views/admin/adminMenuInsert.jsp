@@ -98,6 +98,18 @@
 	</div>
 </body>
 <script type="text/javascript">
+
+$(".e2099_2468").on("click", function() {
+	$.ajax({
+
+		url : "${cpath}/admin/adminMenu.do",
+		type : "get",
+		success : function(res) {
+			$("body").html(res);
+		}
+
+	})
+})
 	
 	$(".insert_memu").on("click", function() {
 		$.ajax({
