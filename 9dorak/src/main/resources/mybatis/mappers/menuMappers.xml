@@ -122,7 +122,7 @@
 	<resultMap type="HashMap" id="proreviewMap">
     	<id column="memreview_date" property="memreview_date" javaType="java.lang.String"/>
     	<id column="memreview_cont" property="memreview_cont"/>
-    	<id column="memreview_image" property="memreview_imgage"/>
+    	<id column="memreview_image" property="memreview_image"/>
     	<id column="memreview_no" property="memreview_no"/>
     	<id column="pro_no" property="pro_no"/>
     	<id column="order_no" property="order_no"/>
@@ -191,7 +191,7 @@
 		    order by ta.memreview_date desc
     </select>
     
-	<!--     사진리뷰 모아보기 첫 큰화면 -->
+	<!-- 사진리뷰 모아보기 첫 큰화면 -->
     <select id="selectMoaFrist" parameterType="int" resultType="memreviewvo">
     	WITH RankedMoaFrist AS (
 	    	SELECT TA.*, TC.mem_id

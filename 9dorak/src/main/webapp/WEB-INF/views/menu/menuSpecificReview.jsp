@@ -753,21 +753,18 @@
 
 	    // 모아보기 링크 가져오기
 	    var viewLink = document.querySelector('.view-2');
-
-	    // 모아보기 링크 클릭 이벤트 설정
-	    viewLink.addEventListener('click', function (event) {
+	    
 	      // phtrlist가 비어있을 때
 	      if (${empty phtrlist}) {
 	        // 기본 동작 취소
 	        event.preventDefault();
 	        
-	        // 알림창 띄우기
-	        alert('안되지롱!');
+	        viewLink.style.display = 'none';
+	        
 	      }
-	    });
+	    
 	  });
 	
-
 	
 </script>
 

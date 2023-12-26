@@ -36,6 +36,11 @@ public class ReviewDAOMybatis {
 		int result = sqlSession.insert(NAMESPACE + "insertReview", review);
 		return result;
 	}
+
+	public int selectCheckedReview(Map<String, Object> inputMap) {
+		int result = sqlSession.selectOne(NAMESPACE + "selectCheckedReview", inputMap);
+		return result;
+	}
 	
 
 }

@@ -106,28 +106,15 @@
 								<div class="frame-wrapper">
 									<div class="frame">
 										<div class="button-group">
-											<button class="button">
+											<button class="button" onclick="goBack()">
 												<div class="upload">취소하기</div>
 											</button>
-											<button class="upload-wrapper">
+											<button class="upload-wrapper" onclick="goSubmit()">
 												<div class="upload-2">글쓰기</div>
 											</button>
 										</div>
 									</div>
 								</div>
-								<%-- <div class="rating">
-									<img class="rating-star"
-										src="${cpath}/resources/images/menu/star-unfill.png"
-										onclick="toggleStar(1)" /> <img class="rating-star"
-										src="${cpath}/resources/images/menu/star-unfill.png"
-										onclick="toggleStar(2)" /> <img class="rating-star"
-										src="${cpath}/resources/images/menu/star-unfill.png"
-										onclick="toggleStar(3)" /> <img class="rating-star"
-										src="${cpath}/resources/images/menu/star-unfill.png"
-										onclick="toggleStar(4)" /> <img class="rating-star"
-										src="${cpath}/resources/images/menu/star-unfill.png"
-										onclick="toggleStar(5)" />
-								</div> --%>
 							</div>
 						</div>
 						<div class="menu"
@@ -135,7 +122,6 @@
 						<div class="text-wrapper-2">${orderdetail.pro_name }, 어떠셨나요?</div>
 						<p class="p">이 상품에 대해 어느 정도 만족하셨나요?</p>
 					</div><!-- overlap -->
-		
 		
 					<div class="upload-field">
 						<div class="type-n">
@@ -230,15 +216,39 @@
 	</div><!-- screen -->
 	
 <script>
-    function toggleStar(starCount) {
-        let stars = document.querySelectorAll('.rating-star');
-        
-        for (let i = 0; i < stars.length; i++) {
-            if (i <= starCount - 1) {
-                stars[i].src = (stars[i].src.includes('unfill')) ? '${cpath}/resources/images/menu/star-fill.png' : '${cpath}/resources/images/menu/star-unfill.png';
-            }
-        }
+    
+    //취소하기 버튼 클릭
+    function goBack() {
+    	
+    	event.preventDefault();
+    	
+        // 뒤로가기 실행
+        window.history.back();
     }
+    
+    //글쓰기 버튼 클릭
+    function goSubmit() {
+    	
+    	var checkedReview = ${checkedreview};
+
+        if (checkedReview < 1) {
+            // 기존 이벤트를 수행
+            alert("리뷰 작성을 완료했습니다!");
+            
+            return true;
+        } else {
+        	
+        	alert("이미 작성한 리뷰입니다!");
+        	// 이벤트 취소
+            event.preventDefault();
+            // 뒤로가기 실행
+            window.history.back();
+            
+            return false;
+        }
+        
+	}
+    
 </script>
 </body>
 </html>

@@ -20,5 +20,12 @@
 			MEMREVIEW (memreview_no, MEMREVIEW_DATE, MEMREVIEW_CONT, MEMREVIEW_IMAGE, ORDER_NO, PRO_NO)
 				VALUES (review_seq.nextval, SYSDATE, #{memreview_cont}, #{memreview_image}, #{order_no}, #{pro_no})
 	</insert>
+	
+	<select id="selectCheckedReview" parameterType="HashMap" resultType="int">
+		select count(*)
+			from memreview
+			where order_no = #{order_no}
+			and pro_no = #{pro_no}
+	</select>
 
 </mapper>

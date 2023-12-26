@@ -51,6 +51,9 @@ public class ReviewController {
         //System.out.println(inputMap);
         
 		model.addAttribute("orderdetail", rService.selectByOrderdetail(inputMap));
+
+		model.addAttribute("checkedreview", rService.selectCheckedReview(inputMap));
+		System.out.println(model.getAttribute("checkedreview"));
 		
 		return "review/reviewUpload";
 	}
@@ -101,7 +104,7 @@ public class ReviewController {
 		review.setPro_no(request.getParameter("pro_no"));
 		
 		// 이미지를 업로드한 경우에만 파일 이름 설정
-		if (ranFileName != null && !ranFileName.isEmpty()) {
+		if (singleFile != null && !singleFile.isEmpty()) {
 		    review.setMemreview_image(ranFileName);
 		} else {
 		    review.setMemreview_image(null);
@@ -113,7 +116,7 @@ public class ReviewController {
 		
 		int result = rService.insertReview(review);
 		
-		return "my/orderDetails";
+		return "redirect:/my/orderDetails.do";
 	}
 	
 	
