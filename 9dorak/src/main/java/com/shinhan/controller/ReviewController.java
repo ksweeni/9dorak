@@ -101,7 +101,7 @@ public class ReviewController {
 		review.setPro_no(request.getParameter("pro_no"));
 		
 		// 이미지를 업로드한 경우에만 파일 이름 설정
-		if (ranFileName != null && !ranFileName.isEmpty()) {
+		if (singleFile != null && !singleFile.isEmpty()) {
 		    review.setMemreview_image(ranFileName);
 		} else {
 		    review.setMemreview_image(null);
