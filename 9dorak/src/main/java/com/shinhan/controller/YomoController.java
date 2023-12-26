@@ -88,6 +88,9 @@ public class YomoController {
 	
 	@GetMapping("oneaskDetail.do")
 	public String oneask(Model model, OneaskVO oneask, HttpSession session) {
+		if (session.getAttribute("loginmem")==null) {
+			return "redirect:/login/loginForm.do";
+		}
 		OneaskVO oneaskvo = yservice.selectBynoOneask(oneask.getOneask_no());
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 //		MemVO mem = mService.getMember(loginmem.getMem_id());
@@ -136,7 +139,10 @@ public class YomoController {
 	}
 	
 	@GetMapping("insertOneask.do")
-	public String insertOneaskPage(Model model) {
+	public String insertOneaskPage(Model model, HttpSession session) {
+		if (session.getAttribute("loginmem")==null) {
+			return "redirect:/login/loginForm.do";
+		}
 		return "yomo/oneaskInsert";
 	}
 	

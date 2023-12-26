@@ -98,18 +98,18 @@
 }
 
 .div-wrapper .container-default {
-	width: 695px;
-	flex: 0 0 auto;
-	margin-right: -91.3px;
-	display: flex;
-	align-items: flex-start;
-	gap: 10.8px;
-	padding: 10.8px;
-	position: relative;
-	background-color: var(- -white-branco);
-	border-radius: 5.4px;
-	border: 2.7px solid;
-	border-color: #f38820;
+    width: 727px;
+    flex: 0 0 auto;
+    margin-right: -91.3px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10.8px;
+    padding: 10.8px;
+    position: relative;
+    background-color: var(- -white-branco);
+    border-radius: 5.4px;
+    border: 2.7px solid;
+    border-color: #f38820;
 }
 
 .div-wrapper .group-2 {

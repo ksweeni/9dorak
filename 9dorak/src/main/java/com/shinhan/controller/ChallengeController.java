@@ -91,17 +91,19 @@ public class ChallengeController {
 	}
 
 	@GetMapping("insertChal.do")
-	public String insertChalPage(Model model) {
-//		System.out.println("insertChalPage");
+	public String insertChalPage(Model model, HttpSession session) {
+		if (session.getAttribute("loginmem")==null) {
+			return "redirect:/login/loginForm.do";
+		}
+		else {
 		return "event/challengeInsert";
+		}
 	}
 
 	@PostMapping("insertChal.do")
 	public String insertChal(Model model, ChallengeVO challenge, @RequestParam MultipartFile singleFile,
 			HttpServletRequest request, HttpSession session) {
-//		System.out.println("insertChalpost");
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
-		// 나중에 이거 세션에 값 가져와서 넣자
 		challenge.setMem_id(loginmem.getMem_id());
 		//// 파일업로드
 		// 2. 저장할 경로 가져오기

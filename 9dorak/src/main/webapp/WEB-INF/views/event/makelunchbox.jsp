@@ -133,11 +133,11 @@ function redirectToChallenge(challenge_no) {
 														<div class="overlap-3">
 															<div class="group-4">
 																<div class="rectangle-wrapper">
-																	<img class="rectangle" src="img/rectangle-1484-3.svg" />
+																	<!-- <img class="rectangle" src="img/rectangle-1484-3.svg" /> -->
 																</div>
 															</div>
-															<img class="icon-trophy" src="img/trophy-2.svg" /> <img
-																class="star" src="img/star-1.svg" />
+															<!-- <img class="icon-trophy" src="img/trophy-2.svg" /> --> 
+																<!-- <img class="star" src="img/star-1.svg" /> -->
 														</div>
 													</div>
 													<div class="text-wrapper-3">Foundations</div>
@@ -187,11 +187,11 @@ function redirectToChallenge(challenge_no) {
 													<div class="overlap-3">
 														<div class="group-4">
 															<div class="img-wrapper">
-																<img class="rectangle" src="img/rectangle-1484.svg" />
+																<!-- <img class="rectangle" src="img/rectangle-1484.svg" /> -->
 															</div>
 														</div>
-														<img class="icon-trophy" src="img/trophy-3.svg" /> <img
-															class="star" src="img/star-1-3.svg" />
+														<!-- <img class="icon-trophy" src="img/trophy-3.svg" /> <img
+															class="star" src="img/star-1-3.svg" /> -->
 													</div>
 												</div>
 												<div class="text-wrapper-3">Foundations</div>
@@ -241,11 +241,11 @@ function redirectToChallenge(challenge_no) {
 															<div class="overlap-3">
 																<div class="group-4">
 																	<div class="overlap-group-4">
-																		<img class="rectangle" src="img/rectangle-1484-2.svg" />
+																		<!-- <img class="rectangle" src="img/rectangle-1484-2.svg" /> -->
 																	</div>
 																</div>
-																<img class="icon-trophy" src="img/trophy.svg" /> <img
-																	class="star" src="img/star-1-2.svg" />
+																<!-- <img class="icon-trophy" src="img/trophy.svg" /> <img
+																	class="star" src="img/star-1-2.svg" /> -->
 															</div>
 														</div>
 														<div class="text-wrapper-3">Foundations</div>
