@@ -87,7 +87,6 @@
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
 								<div class="ellipse-light"></div>
-								<!-- <div class="text-wrapper-29">2</div> -->
 							</div>
 						</div>
 					</div>
@@ -113,23 +112,6 @@
 			</div>
 			<div class="group">
 				<div id="here"></div>
-				<!-- 				<div class="frame-6">
-					<button class="frame-7">
-						<div class="text-wrapper-7">최근 6개월</div>
-					</button>
-					<button class="frame-8">
-						<div class="text-wrapper-8">2023</div>
-					</button>
-					<button class="frame-8">
-						<div class="text-wrapper-8">2022</div>
-					</button>
-					<button class="frame-8">
-						<div class="text-wrapper-8">2021</div>
-					</button>
-					<button class="frame-8">
-						<div class="text-wrapper-8">2020</div>
-					</button>
-				</div> -->
 			</div>
 			<div class="menu-wrapperr">
 				<div class="menuu">

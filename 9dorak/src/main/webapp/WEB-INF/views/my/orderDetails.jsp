@@ -117,23 +117,6 @@
 			<div class="group-4">
 				<div id="here">
 				</div>
-<!-- 				<div class="frame-5">
-					<button class="frame-6">
-						<div class="text-wrapper-16">최근 6개월</div>
-					</button>
-					<button class="frame-7">
-						<div class="text-wrapper-17">2023</div>
-					</button>
-					<button class="frame-7">
-						<div class="text-wrapper-17">2022</div>
-					</button>
-					<button class="frame-7">
-						<div class="text-wrapper-17">2021</div>
-					</button>
-					<button class="frame-7">
-						<div class="text-wrapper-17">2020</div>
-					</button>
-				</div> -->
 			</div>
 			<div class="account-navigation">
 				<div class="ol">

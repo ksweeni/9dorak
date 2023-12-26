@@ -134,13 +134,14 @@ public class LoginController {
 	
 	//카카오로그인
 	@RequestMapping(value="kakaoLoginPro.do", method=RequestMethod.POST)
-	public @ResponseBody Map<String, Object> kakaoLoginPro(@RequestParam Map<String,Object> paramMap,HttpSession session) throws SQLException, Exception {
+	public @ResponseBody Map<String, Object> kakaoLoginPro(@RequestParam Map<String,Object> paramMap,HttpSession session, Model model) throws SQLException, Exception {
 	    System.out.println("paramMap:" + paramMap);
 	    Map <String, Object> resultMap = new HashMap<String, Object>();
 
 	    MemVO kakaoConnectionCheck = lservice.kakaoConnectionCheck(paramMap);
 	    //일치하는 id 없으면 가입
-	    if(kakaoConnectionCheck == null) {         
+	    if(kakaoConnectionCheck == null) {   
+	    	model.addAttribute("registerData", kakaoConnectionCheck);
 	        resultMap.put("JavaData", "register");
 	        
 	    }else {
