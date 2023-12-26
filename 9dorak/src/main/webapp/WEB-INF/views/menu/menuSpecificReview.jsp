@@ -137,7 +137,7 @@
 							</div>
 						</div>
 						<div class="overlap-3">
-							<button class="button-medium-text" id="shop">
+							<button class="button-medium-text" id="shop" onclick="payment()">
 								<div class="overlap-group-2">
 									<div class="label" id="shop-label">&nbsp;&nbsp;결제하기</div>
 
@@ -571,6 +571,14 @@
     // 하트 클릭 시 이모지 변화
     function toggleHeart() {
       var heartImage = document.getElementById('heart');
+      var mem_id = "${sessionScope.loginmem.mem_id}";
+      
+      if (mem_id == "") {
+			alert("로그인이 필요한 서비스입니다 !");
+			window.location.href = "${cpath}/login/loginForm.do";
+			return;
+		}
+      
       if (heartImage.src.endsWith('unfill.png')) {
         heartImage.src = '${cpath}/resources/images/menu/menu-heart-fill.png';
         HeartSubmit("1");
@@ -764,6 +772,18 @@
 	      }
 	    
 	  });
+	
+	function payment() {
+		var mem_id = "${sessionScope.loginmem.mem_id}";
+
+		// 로그인 여부 확인
+		if (mem_id == "") {
+			alert("로그인이 필요한 서비스입니다 !");
+			window.location.href="${cpath}/login/loginForm.do";
+			return;
+		}
+		
+	}
 	
 	
 </script>
