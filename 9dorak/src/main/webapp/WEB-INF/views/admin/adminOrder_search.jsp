@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminOrderStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminOrderStyle.css?d"
+	type="text/css" />
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -17,82 +18,57 @@
 <title>9도락 관리자페이지</title>
 </head>
 <body>
-	<div class=e2099_2373>
-		<div class="e2099_2463"></div>
-		<div class="e2099_2467"></div>
-		<div class="e2099_2471">
-			<hr>
-		</div>
-		<div class="e2099_2483"></div>
-		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
-		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
-		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
-		<span class="e2099_2475">쿠폰/포인트관리</span>
-		<div class="admin_login">
-			<div class="e2099_2476">
-				<hr>
+	<table id="products" border="1">
+		<caption>
+			주문 list<br>
+			<form action="" id="setRows">
+				<p>
+					<input type="hidden" name="rowPerPage" value="5">
+				</p>
+			</form>
+			<div class=e815_1065>
+				<div class="ei815_1066_6_1"></div>
+				<input type="text" class="e815_1067" placeholder="회원ID를 입력하세요">
 			</div>
-			<div class="e2099_2478"></div>
-			<span class="e2099_2477">관리자</span>
-			<div class="e2101_2491"></div>
-			<a href="${pageContext.request.contextPath}/my/logout.do"
-				class="e2101_2490">로그아웃</a>
-		</div>
-		<div class="e2099_2485"></div>
-		<div class="e2099_2486">
-			<table id="products" border="1">
-				<caption>
-					주문 list<br>
-					<form action="" id="setRows">
-						<p>
-							<input type="hidden" name="rowPerPage" value="5">
-						</p>
-					</form>
-					<div class=e815_1065>
-						<div class="ei815_1066_6_1"></div>
-						<input type="text" class="e815_1067" placeholder="주문회원ID를 입력하세요">
-					</div>
-				</caption>
-				<thead>
-					<tr>
-						<th>주문번호</th>
-						<th>주문날짜</th>
-						<th>주문가격</th>
-						<th>주문상태</th>
-						<th>주문환불여부</th>
-						<th>주문회원ID</th>
-					</tr>
-				</thead>
-				<tbody>
+		</caption>
+		<thead>
+			<tr>
+				<th>주문번호</th>
+				<th>주문날짜</th>
+				<th>주문가격</th>
+				<th>주문상태</th>
+				<th>주문환불여부</th>
+				<th>주문회원ID</th>
+			</tr>
+		</thead>
+		<tbody>
 
-					<c:forEach var="order" items="${orderlist}" varStatus="rowStatus">
-						<tr>
-							<td>${order.order_no}</td>
-							<td>${order.order_date}</td>
-							<td>${order.order_price}</td>
-							<td>${order.order_status}</td>
-							<td>${order.order_refund}</td>
-							<td>${order.mem_id}</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</div>
-	</div>
+			<c:forEach var="order" items="${olist}" varStatus="rowStatus">
+				<tr>
+					<td>${order.order_no}</td>
+					<td>${order.order_date}</td>
+					<td>${order.order_price}</td>
+					<td>${order.order_status}</td>
+					<td>${order.order_refund}</td>
+					<td>${order.mem_id}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </body>
 <script type="text/javascript">
-$(".ei815_1066_6_1").on("click", function() {
-	$.ajax({
-		url : "${cpath}/admin/searchadminOrder.do",
-		type : 'GET',
-		data : {
-			mem_id : $(".e815_1067").val()
-		},
-		success : function(data) {
-			$('.e2099_2486').html(data);
-		}
-	});
-})
+	$(".ei815_1066_6_1").on("click", function() {
+		$.ajax({
+			url : "${cpath}/admin/searchadminOrder.do",
+			type : 'GET',
+			data : {
+				mem_id : $(".e815_1067").val()
+			},
+			success : function(data) {
+				$('.e2099_2486').html(data);
+			}
+		});
+	})
 
 	$(".e2099_2468").on("click", function() {
 		$.ajax({

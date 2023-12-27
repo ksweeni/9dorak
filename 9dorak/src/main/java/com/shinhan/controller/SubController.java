@@ -43,8 +43,6 @@ public class SubController {
 		List<ProVO> sub9bllist = subService.selectAllSub9B();
 		model.addAttribute("sub9allist", sub9allist);
 		model.addAttribute("sub9bllist", sub9bllist);
-		System.out.println(sub9allist);
-		System.out.println(sub9bllist);
 		return "sub/subdetail_9sub";
 	}
 	
@@ -52,7 +50,6 @@ public class SubController {
 	public String subdetail_19asub(Model model, ProVO pro) {
 		List<ProVO> sub19allist = subService.selectAllSub19A();
 		model.addAttribute("sub19allist", sub19allist);
-		System.out.println(sub19allist);
 		return "sub/subdetail_19sub_a";
 	}
 
@@ -61,7 +58,6 @@ public class SubController {
 	public String subdetail_19bsub(Model model, ProVO pro) {
 		List<ProVO> sub19bllist = subService.selectAllSub19B();
 		model.addAttribute("sub19bllist", sub19bllist);
-		System.out.println(sub19bllist);
 		return "sub/subdetail_19sub_b";
 	}
 

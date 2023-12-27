@@ -122,12 +122,11 @@
 				</div>
 			</div>
 		</div>
-		<a href="${cpath}/wallet/pay.do" class=e1547_3778
+		<a href="${cpath}/wallet/sub9b.do" class=e1547_3778
 			style="cursor: pointer;"> <span class="e1547_3785">구독하기</span>
 		</a>
 		<div class=e1547_3786>
 			<span class="e1547_3719">A 메뉴</span>
-			
 			<div class=e1547_3723>
 				<div class=e1547_3724>
 					<div class="e1547_3725"></div>
@@ -164,7 +163,7 @@
 						class=e1547_3748><span class="e1547_3749">자세히보기</span> </a>
 				</div>
 			</div>
-			<a href="${cpath}/wallet/pay.do" class=e1547_3784
+			<a href="${cpath}/wallet/sub9a.do" class=e1547_3784
 				style="cursor: pointer;"><span class="e1547_3785">구독하기</span> </a>
 		</div>
 	</div>

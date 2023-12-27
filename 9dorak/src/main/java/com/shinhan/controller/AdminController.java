@@ -166,6 +166,14 @@ public class AdminController {
 		model.addAttribute("orderlist", orderlist);
 		return "admin/adminOrder";
 	}
+	
+	@GetMapping("searchadminOrder.do")
+	public String searchadminOrder(Model model, OrderVO order) {
+		List<OrderVO> olist = orderService.searchadminOrder(order.getMem_id());
+		/* System.out.println("searchAllergyCheck.do"); */
+		model.addAttribute("olist", olist);
+		return "admin/adminOrder_search";
+	}
 
 	@GetMapping("adminSub.do")
 	public String adminSub(Model model) {
