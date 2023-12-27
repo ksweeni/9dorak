@@ -163,68 +163,182 @@
 
 
 				</div>
+				<!--  -->
+
+
+
 				<div class="info">
 					<div class="frame-7">
 						<div class="frame-8">
 							<div class="text-wrapper-9"
 								style="position: relative; left: 69px;">결제정보</div>
-							<div class="text-wrapper-10">total ${ olist.size()} Items</div>
+							<div class="text-wrapper-10">
+								total
+								<c:choose>
+									<c:when test="${not empty olist}">
+										<span id="">${olist.size()}</span>
+									</c:when>
+									<c:when test="${not empty sub9allist }">
+										<span id="pro_count">9</span>
+									</c:when>
+									<c:when test="${not empty sub9bllist }">
+										<span id="pro_count">9</span>
+									</c:when>
+									<c:otherwise>
+										<span id="pro_count">19</span>
+									</c:otherwise>
+								</c:choose>
+								<!-- else 에는 19개 B 매뉴 사이즈 넣자  -->
+							</div>
 						</div>
 					</div>
-					<div class="frame-9">
-						<div class="text-wrapper-11">
 
-							<table style="bottom: 40px; position: relative;">
-								<tr>
-									<th>상품명</th>
-									<th>주문 가격</th>
-									<th>주문 수량</th>
-								</tr>
-								<c:forEach items="${olist}" var="ol">
-									<tr style="text-align: center;">
-										<td>${ol.pro_name}</td>
-										<td>${ol.order_price}</td>
-										<td>${ol.orderdetail_count}</td>
-									</tr>
-								</c:forEach>
-							</table>
+					<c:choose>
+						<c:when test="${not empty olist}">
+							<div class="frame-9">
+								<div class="text-wrapper-11">
+
+									<table style="bottom: 40px; position: relative;">
+										<tr>
+											<th>상품명</th>
+											<th>주문 가격</th>
+											<th>주문 수량</th>
+										</tr>
+										<c:forEach items="${olist}" var="ol">
+											<tr style="text-align: center;">
+												<td>${ol.pro_name}</td>
+												<td>${ol.order_price}</td>
+												<td>${ol.orderdetail_count}</td>
+											</tr>
+										</c:forEach>
+									</table>
 
 
-						</div>
-						<div class="text-wrapper-11"
-							style="position: relative; bottom: 39px; left: 60px;">주문 금액</div>
-						<div class="text-wrapper-11" style="right: 15px; bottom: 17px">${total }
-							원</div>
-					</div>
-					<div class="group-3">
-						<div class="frame-10">
-							<div class="text-wrapper-11">사용</div>
-							<div class="text-wrapper-12">쿠폰</div>
-							<div class="text-wrapper-13">-1,000 원</div>
-						</div>
-						<div class="frame-11">
-							<div class="text-wrapper-12">포인트</div>
-							<div class="text-wrapper-13">-500 P</div>
-						</div>
-					</div>
-					<button class="frame-12" onclick="requestPay()">결제하기</button>
-					<img class="line" src="img/line-10.svg" />
-					<div class="group-4">
-						<div class="frame-10">
-							<div class="text-wrapper-15">총 결제금액</div>
-							<div class="text-wrapper-15">${total }원</div>
-						</div>
-						<div class="group-5">
-							<p class="element-p">
-								<span class="text-wrapper-16">적립 예정 포인트 </span> <span
-									class="text-wrapper-3"> 35 P</span>
-							</p>
-							<img class="white-question-mark"
-								src="img/white-question-mark.svg" />
-						</div>
-					</div>
-					<img class="img" src="img/line-9.svg" />
+								</div>
+								<div class="text-wrapper-11"
+									style="position: relative; bottom: 39px; left: 60px;">주문
+									금액</div>
+								<div class="text-wrapper-11" style="right: 15px; bottom: 17px">${total }
+									원</div>
+							</div>
+							<div class="group-3">
+								<div class="frame-10">
+									<!-- 									<div class="text-wrapper-11">사용</div> -->
+									<div class="text-wrapper-12">쿠폰</div>
+									<div class="text-wrapper-13">-0 원</div>
+								</div>
+								<div class="frame-11">
+									<div class="text-wrapper-12">포인트</div>
+									<div class="text-wrapper-13">-0 P</div>
+								</div>
+							</div>
+							<button class="frame-12" onclick="requestPay()">결제하기</button>
+							<img class="line"
+								src="${cpath }/resources/images/wallet/Line9.png" />
+							<div class="group-4">
+								<div class="frame-10">
+									<div class="text-wrapper-15">총 결제금액</div>
+									<div class="text-wrapper-15">${total }원</div>
+								</div>
+								<div class="group-5">
+									<p class="element-p">
+										<span class="text-wrapper-16">적립 예정 포인트 </span> <span
+											class="text-wrapper-3"> 35 P</span>
+									</p>
+									<img class="white-question-mark"
+										src="img/white-question-mark.svg" />
+								</div>
+							</div>
+							<img class="line"
+								src="${cpath }/resources/images/wallet/Line9.png" />
+						</c:when>
+						<c:otherwise>
+							<!-- 주문 목록이 없는 경우 -->
+							<div class="frame-9">
+								<!-- 특별한 내용 없음 -->
+								<div class="text-wrapper-11">
+
+									<c:choose>
+										<c:when test="${not empty sub9allist }">
+											<div id="proname"
+												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배부르9A</div>
+										</c:when>
+										<c:otherwise>
+											<div id="proname"
+												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배부르9B</div>
+										</c:otherwise>
+									</c:choose>
+
+									<table style="bottom: 40px; position: relative; left: 14px;">
+										<tr>
+
+											<th>상품명</th>
+											<th>상품수량</th>
+										</tr>
+										<c:choose>
+											<c:when test="${not empty sub9allist}">
+												<c:forEach items="${sub9allist}" var="sub">
+													<tr style="text-align: center;">
+														<td>${sub.pro_name}</td>
+														<td>x3</td>
+													</tr>
+												</c:forEach>
+												<input type="hidden" id="subType" value="109" />
+											</c:when>
+											<c:otherwise>
+												<c:forEach items="${sub9bllist}" var="sub">
+													<tr style="text-align: center;">
+														<td>${sub.pro_name}</td>
+														<td>x3</td>
+													</tr>
+												</c:forEach>
+												<input type="hidden" id="subType" value="119" />
+											</c:otherwise>
+										</c:choose>
+									</table>
+								</div>
+							</div>
+							<!--  -->
+							<div class="group-3">
+								<!-- 특별한 내용 없음 -->
+								<div style="top: 20px; position: relative; left: 80px;">주문
+									금액</div>
+								<div style="top: 1px; position: relative; left: 303px;">${total }</div>
+								<div class="frame-10">
+									<div class="text-wrapper-11"></div>
+									<div class="text-wrapper-12" style="position: absolute;">쿠폰</div>
+									<div class="text-wrapper-13">-1000 원</div>
+								</div>
+								<div class="frame-11">
+									<div class="text-wrapper-98" style="position: absolute;">포인트</div>
+									<div class="text-wrapper-99">-1000 P</div>
+								</div>
+							</div>
+							<button class="frame-12" onclick="requestPay()">결제하기</button>
+							<img class="line"
+								src="${cpath }/resources/images/wallet/Line9.png" />
+							<div class="group-4">
+								<div class="frame-10">
+									<div class="text-wrapper-15">총 결제금액</div>
+									<div class="text-wrapper-15" id="lastTotal">${total }</div>
+								</div>
+								<div class="group-5">
+									<p class="element-p">
+										<span class="text-wrapper-16">적립 예정 포인트 </span> <span
+											class="text-wrapper-3"> 35 P</span>
+									</p>
+									<img class="white-question-mark"
+										src="${cpath }/resources/images/wallet/White question mark.png" />
+								</div>
+							</div>
+							<img class="img"
+								src="${cpath }/resources/images/wallet/Line9.png" />
+						</c:otherwise>
+					</c:choose>
 				</div>
+
+
+				<!--  -->
 			</div>
 			<div class="account-navigation">
 				<div class="text-wrapper-17">결제하기</div>
@@ -395,21 +509,41 @@
 		var IMP = window.IMP;
 		IMP.init("imp40668838"); // 내 가맹점 식별 코드
 
-		var amount = 7000; // 원가
+		var amount = $("#lastTotal").text(); // 원가
 		var coupon = 0;
 
 		function requestPay() {
+			if ($('#sample4_roadAddress').val().length === 0) {
+				alert("주소를 입력하세요");
+				return;
+			}
+
+			param = {
+
+				order_price : $("#lastTotal").text(),
+				pro_no : $("#subType").val(),
+				orderdetail_count : $("#pro_count").text()
+			}
+			$.ajax({
+				url : "${cpath}/subOrder",
+				data : param,
+				type : "post",
+				success : function(res) {
+
+				}
+			})// 주문 테이블 / 주문 상세 인서트
+
 			var discountedAmount = amount - coupon; // Apply the coupon discount
 			IMP.request_pay({
 				pg : "inicis",
 				pay_method : "card",
-				merchant_uid : "ORD20180131-0000067", // 매번 새로워야 함
-				name : "구도락 결제 테스트 입니다",
+				merchant_uid : "ORD20180131-0000070", // 매번 새로워야 함
+				name : "$('#proname').text()", // 1부르9
 				amount : discountedAmount,
-				buyer_email : "gildong@gmail.com",
-				buyer_name : "buyer_name",
-				buyer_tel : "010-4242-4242",
-				buyer_addr : "buyer's buyer shop",
+				buyer_email : "${mem.mem_id}",
+				buyer_name : "${mem.mem_name}",
+				buyer_tel : "${mem.mem_phone}",
+				buyer_addr : "$('#sample4_roadAddress').val()",
 				buyer_postcode : "01181"
 			}, function(rsp) { // callback
 				console.log(rsp);
@@ -430,130 +564,127 @@
 				});
 			});
 		}
-		</script>
-
-		</body>
-		<script type="text/javascript">
-
-		$(".frame-4").on("click", function() {
-			var text = $(".text-wrapper-5").text();
-			if (text === "보유 쿠폰 확인하기" || text === "보유한 쿠폰이 없습니다.") {
-				return;
-			}
-
-			alert(text.substring(4));
-
-		})//
-	</script>
-	<script type="text/javascript">
-		$(".my-del").on("click", function() {
-			$(".delmodal").show();
-		})
-		$(".close").on("click", function() {
-			$(".delmodal").hide();
-			$(".couponmodal").hide();
-
-		})
-		$("#coupon").on("click", function() {
-			$(".couponmodal").show();
-		})
 	</script>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".selectdel-button").on("click", function() {
+</body>
+<script type="text/javascript">
+	$(".frame-4").on("click", function() {
+		var text = $(".text-wrapper-5").text();
+		if (text === "보유 쿠폰 확인하기" || text === "보유한 쿠폰이 없습니다.") {
+			return;
+		}
 
-				// 선택된 배송지 정보 가져오기
-				var selectedDelName = $(this).data("delname");
-				var selectedZipcode = $(this).data("zipcode");
-				var selectedAddr = $(this).data("addr");
-				var selectedDetail = $(this).data("detail");
-				$("#mem_delname").val(selectedDelName);
-				$("#sample4_postcode").val(selectedZipcode);
-				$("#sample4_jibunAddress").val(selectedAddr);
-				$("#sample4_detailAddress").val(selectedDetail);
+		alert(text.substring(4));
 
-				$(".delmodal").css("display", "none");
+	})//
+</script>
+<script type="text/javascript">
+	$(".my-del").on("click", function() {
+		$(".delmodal").show();
+	})
+	$(".close").on("click", function() {
+		$(".delmodal").hide();
+		$(".couponmodal").hide();
 
-			});
+	})
+	$("#coupon").on("click", function() {
+		$(".couponmodal").show();
+	})
+</script>
 
-			$(".selectCoupon-button").on("click", function() {
-				var coupon_name = $(this).data("coupon_name");
-				$("#coupon").text(coupon_name);
-				$(".couponmodal").css("display", "none");
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".selectdel-button").on("click", function() {
 
-			});
+			// 선택된 배송지 정보 가져오기
+			var selectedDelName = $(this).data("delname");
+			var selectedZipcode = $(this).data("zipcode");
+			var selectedAddr = $(this).data("addr");
+			var selectedDetail = $(this).data("detail");
+			$("#mem_delname").val(selectedDelName);
+			$("#sample4_postcode").val(selectedZipcode);
+			$("#sample4_jibunAddress").val(selectedAddr);
+			$("#sample4_detailAddress").val(selectedDetail);
+
+			$(".delmodal").css("display", "none");
+
 		});
-	</script>
-	<script
-		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script>
-		//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
-		function sample4_execDaumPostcode() {
-			$("#regnodel").hide();
-			$("#nodel").show();
-			new daum.Postcode(
-					{
-						oncomplete : function(data) {
-							// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-							// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-							// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-							var roadAddr = data.roadAddress; // 도로명 주소 변수
-							var extraRoadAddr = ''; // 참고 항목 변수
+		$(".selectCoupon-button").on("click", function() {
+			var coupon_name = $(this).data("coupon_name");
+			$("#coupon").text(coupon_name);
+			$(".couponmodal").css("display", "none");
 
-							// 법정동명이 있을 경우 추가한다. (법정리는 제외)
-							// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-							if (data.bname !== ''
-									&& /[동|로|가]$/g.test(data.bname)) {
-								extraRoadAddr += data.bname;
-							}
-							// 건물명이 있고, 공동주택일 경우 추가한다.
-							if (data.buildingName !== ''
-									&& data.apartment === 'Y') {
-								extraRoadAddr += (extraRoadAddr !== '' ? ', '
-										+ data.buildingName : data.buildingName);
-							}
-							// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-							if (extraRoadAddr !== '') {
-								extraRoadAddr = ' (' + extraRoadAddr + ')';
-							}
+		});
+	});
+</script>
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+	function sample4_execDaumPostcode() {
+		$("#regnodel").hide();
+		$("#nodel").show();
+		new daum.Postcode(
+				{
+					oncomplete : function(data) {
+						// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-							// 우편번호와 주소 정보를 해당 필드에 넣는다.
-							document.getElementById('sample4_postcode').value = data.zonecode;
-							document.getElementById("sample4_roadAddress").value = roadAddr;
-							document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+						// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+						// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+						var roadAddr = data.roadAddress; // 도로명 주소 변수
+						var extraRoadAddr = ''; // 참고 항목 변수
 
-							// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-							if (roadAddr !== '') {
-								document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-							} else {
-								document.getElementById("sample4_extraAddress").value = '';
-							}
-
-							var guideTextBox = document.getElementById("guide");
-							// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-							if (data.autoRoadAddress) {
-								var expRoadAddr = data.autoRoadAddress
-										+ extraRoadAddr;
-								guideTextBox.innerHTML = '(예상 도로명 주소 : '
-										+ expRoadAddr + ')';
-								guideTextBox.style.display = 'block';
-
-							} else if (data.autoJibunAddress) {
-								var expJibunAddr = data.autoJibunAddress;
-								guideTextBox.innerHTML = '(예상 지번 주소 : '
-										+ expJibunAddr + ')';
-								guideTextBox.style.display = 'block';
-							} else {
-								guideTextBox.innerHTML = '';
-								guideTextBox.style.display = 'none';
-							}
+						// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+						// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+						if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+							extraRoadAddr += data.bname;
+						}
+						// 건물명이 있고, 공동주택일 경우 추가한다.
+						if (data.buildingName !== '' && data.apartment === 'Y') {
+							extraRoadAddr += (extraRoadAddr !== '' ? ', '
+									+ data.buildingName : data.buildingName);
+						}
+						// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+						if (extraRoadAddr !== '') {
+							extraRoadAddr = ' (' + extraRoadAddr + ')';
 						}
 
-					}).open();
-		}
-	</script>
-	<script
-		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+						// 우편번호와 주소 정보를 해당 필드에 넣는다.
+						document.getElementById('sample4_postcode').value = data.zonecode;
+						document.getElementById("sample4_roadAddress").value = roadAddr;
+						document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+
+						// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+						if (roadAddr !== '') {
+							document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+						} else {
+							document.getElementById("sample4_extraAddress").value = '';
+						}
+
+						var guideTextBox = document.getElementById("guide");
+						// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+						if (data.autoRoadAddress) {
+							var expRoadAddr = data.autoRoadAddress
+									+ extraRoadAddr;
+							guideTextBox.innerHTML = '(예상 도로명 주소 : '
+									+ expRoadAddr + ')';
+							guideTextBox.style.display = 'block';
+
+						} else if (data.autoJibunAddress) {
+							var expJibunAddr = data.autoJibunAddress;
+							guideTextBox.innerHTML = '(예상 지번 주소 : '
+									+ expJibunAddr + ')';
+							guideTextBox.style.display = 'block';
+						} else {
+							guideTextBox.innerHTML = '';
+							guideTextBox.style.display = 'none';
+						}
+					}
+
+				}).open();
+	}
+</script>
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </html>

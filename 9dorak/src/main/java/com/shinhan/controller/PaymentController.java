@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shinhan.dto.MemVO;
+import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PayVO;
 import com.shinhan.model.PayService;
 import com.siot.IamportRestClient.IamportClient;
@@ -62,7 +67,9 @@ public class PaymentController {
 	
 					e.printStackTrace();
 				}
-			
+								
+				
+				
 				Payment payment = iamportResponse.getResponse();
 				String productName = payment.getName(); // 상품명
 				BigDecimal paidAmount = payment.getAmount(); // 가격
@@ -124,6 +131,20 @@ public class PaymentController {
 		} else {
 			return "카드";
 		}
+	}
+	
+	
+	
+	
+	@ResponseBody
+	@PostMapping("/subOrder")
+	public String subOrder(OrderdetailVO orderdetail , OrderVO order, HttpSession session){
+		MemVO mem = (MemVO)session.getAttribute("loginmem");
+		order.setMem_id(mem.getMem_id());
+		int result = pService.subOrderInsert(order);
+		
+		int result2 = pService.subOrderDetailInsert(orderdetail);
+		return "";
 	}
 
 }

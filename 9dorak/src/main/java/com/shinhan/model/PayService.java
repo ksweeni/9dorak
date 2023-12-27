@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PayVO;
 
 import lombok.Getter;
@@ -160,6 +162,16 @@ public class PayService {
 		br.close();
 		conn.disconnect();
 		
+	}
+
+	public int subOrderInsert(OrderVO order) {
+		return dao.subOrderInsert(order);
+		
+	}
+
+	public int subOrderDetailInsert(OrderdetailVO orderdetail) {
+		// TODO Auto-generated method stub
+		return dao.subOrderDetailInsert(orderdetail);
 	}
 
 }

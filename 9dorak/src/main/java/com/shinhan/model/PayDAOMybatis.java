@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.shinhan.dto.BasketVO;
 import com.shinhan.dto.MemVO;
+import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PayVO;
 import com.shinhan.dto.PeopleVO;
 
@@ -34,6 +36,18 @@ public class PayDAOMybatis {
 
 	public int updatePayStatus(String impUid) {
 		return sqlSession.update(NAMESPACE + "updatePayStatus", impUid);
+	}
+
+	
+	// 주문테이블 인서트
+	public int subOrderInsert(OrderVO order) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert(NAMESPACE + "subOrderInsert", order);
+	}
+
+	public int subOrderDetailInsert(OrderdetailVO orderdetail) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert(NAMESPACE + "subOrderDetailInsert", orderdetail);
 	}
 
 }

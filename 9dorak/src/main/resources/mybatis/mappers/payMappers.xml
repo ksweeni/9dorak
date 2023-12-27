@@ -19,7 +19,22 @@
 
 	<update id="updatePayStatus" parameterType="String">
 		UPDATE pay
-		SET pay_status = '결제 취소'
+		SET
+		pay_status = '결제 취소'
 		WHERE imp_uid = #{imp_uid}
 	</update>
+
+	<insert id="subOrderInsert" parameterType="ordervo">
+		INSERT INTO orders
+		VALUES
+		( orders_seq.nextval , sysdate , #{order_price}, '주문 접수' ,
+		'',
+		#{mem_id})
+	</insert>
+
+	<insert id="subOrderDetailInsert" parameterType="orderdetailvo">
+		INSERT INTO orderdetail
+		VALUES
+		( orders_seq.nextval -1 , #{pro_no} , #{orderdetail_count} )
+	</insert>
 </mapper>
