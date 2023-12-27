@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminMenuInsertStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminMenuInsertStyle.css?d"
+	type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script
@@ -36,95 +37,143 @@
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
-			<a href="${pageContext.request.contextPath}/my/logout.do" class="e2101_2490">로그아웃</a>
+			<a href="${pageContext.request.contextPath}/my/logout.do"
+				class="e2101_2490">로그아웃</a>
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
-		<form action="${cpath}/admin/adminMenuInsert.do" method="post"
-							enctype="multipart/form-data">
-		<div class="e2099_3000">
-		<button type="submit" class="insert_memu" id="insert">메뉴 추가하기</button>
+			<form action="${cpath}/admin/adminMenuInsert.do" method="post"
+				enctype="multipart/form-data">
+				<div class="e2099_3000">
+					<button type="submit" class="insert_memu" id="insert">메뉴
+						추가하기</button>
+				</div>
+				<div class="e2099_2487">
+					<div class="e2099_2490">
+						<div class="e3001"></div>
+						<div class="e3000_1">
+							<p>
+								<b>메뉴 기본 정보</b>
+							</p>
+						</div>
+						<div class="e3000_3">
+							메뉴명 <br> <input type="text" name="pro_name"
+								placeholder="메뉴명 입력"></input>
+						</div>
+						<div class="e3000_4">
+							메뉴설명 <br> <input type="text" name="pro_detail"
+								placeholder="상세설명 입력"></input>
+						</div>
+						<div class="e3000_5">
+							메뉴가격<br> <input type="text" name="pro_price"
+								placeholder="가격 입력"></input>
+						</div>
+					</div>
+					<div class="e2099_2491">
+						<div class="e3002"></div>
+						<div class="e3000_8">
+							<p>
+								<b>메뉴 영양소 정보</b>
+							</p>
+						</div>
+						<div class="e3000_9">
+							메뉴알레르기 <br> <input type="text" name="pro_aller"
+								placeholder="알레르기 입력"></input>
+						</div>
+						<div class="e3000_10">
+							메뉴단백질 <br> <input type="text" name="pro_prot"
+								placeholder="단백질량 입력"></input>
+						</div>
+						<div class="e3000_11">
+							메뉴탄수화물 <br> <input type="text" name="pro_carb"
+								placeholder="탄수화물량 입력"></input>
+						</div>
+						<div class="e3000_12">
+							메뉴지방 <br> <input type="text" name="pro_prov"
+								placeholder="지방량 입력"></input>
+						</div>
+						<div class="e3000_13">
+							메뉴나트륨 <br> <input type="text" name="pro_nat"
+								placeholder="나트륨량 입력"></input>
+						</div>
+						<div class="e3000_14">
+							메뉴당류 <br> <input type="text" name="pro_sugar"
+								placeholder="당류량 입력"></input>
+						</div>
+						<div class="e3000_15">
+							메뉴칼로리 <br> <input type="text" name="pro_cal"
+								placeholder="칼로리 입력"></input>
+						</div>
+						<div class="e3000_16">
+							메뉴중량 <br> <input type="text" name="pro_weight"
+								placeholder="메뉴중량 입력"></input>
+						</div>
+					</div>
+					<div class="e2099_2492">
+						<div class="e3003"></div>
+						<div class="e3000_17">
+							<p>
+								<b>메뉴 구독 및 이벤트 정보</b>
+							</p>
+						</div>
+						<div class="e3000_18">
+							메뉴배부르9여부 <br> <input type="text" name="pro_sub9"
+								placeholder="A 혹은 B 입력"></input>
+						</div>
+						<div class="e3000_19">
+							메뉴배터지9여부 <br> <input type="text" name="pro_sub19"
+								placeholder="A 혹은 B 입력"></input>
+						</div>
+						<div class="e3000_20">
+							메뉴무료체험 <br> <input type="text" name="pro_free"
+								placeholder="F 입력"></input>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div class="e3004"></div>
+						<div class="e3000_26">
+							<p>
+								<b>메뉴 사진 정보</b>
+							</p>
+						</div>
+			<div class="e3005">
+			<form name="fileForm" action="requestupload2" method="post" enctype="multipart/form-data">
+				<div class="e3000_21"><input multiple="multiple" type="file" name="file" /></div>
+				<div class="e3000_22"><input multiple="multiple" type="file" name="file" /></div>
+				<div class="e3000_23"><input multiple="multiple" type="file" name="file" /></div>
+				<div class="e3000_24"><input multiple="multiple" type="file" name="file" /></div> 
+				<div class="e3000_25"><input class="insert_photo" type="submit" value="전송" /></div>
+			</form>
+			</div>
 		</div>
-		<div class="e2099_2487">
-		<div class="e2099_2490"><p><b>1. 메뉴 기본 정보</b></p>
-		메뉴명 <br> 
-		<input type="text" name="pro_name" placeholder="메뉴명 입력"></input>
-		<br><br>
-		메뉴설명 <br> 
-		<input type="text" name="pro_detail" placeholder="메뉴상세설명 입력"></input>
-		<br><br>
-		메뉴가격<br> 
-		<input type="text" name="pro_price" placeholder="메뉴가격 입력"></input>
-		<br><br>
-		</div>
-		<div class="e2099_2491"><p><b>2. 메뉴 영양소 정보</b></p>
-		메뉴알레르기 <br> 
-		<input type="text" name="pro_aller" placeholder="메뉴알레르기 입력"></input>
-		<br><br>
-		메뉴단백질 <br> 
-		<input type="text" name="pro_prot" placeholder="메뉴단백질량 입력"></input>
-		<br><br>
-		메뉴탄수화물 <br> 
-		<input type="text" name="pro_carb" placeholder="메뉴탄수화물량 입력"></input>
-		<br><br>
-		메뉴지방 <br> 
-		<input type="text" name="pro_prov" placeholder="메뉴지방량 입력"></input>
-		<br><br>
-		메뉴나트륨 <br> 
-		<input type="text" name="pro_nat" placeholder="메뉴나트륨량 입력"></input>
-		<br><br>
-		메뉴당류 <br> 
-		<input type="text" name="pro_sugar" placeholder="메뉴당류량 입력"></input>
-		<br><br>
-		메뉴칼로리 <br> 
-		<input type="text" name="pro_cal" placeholder="메뉴칼로리 입력"></input>
-		<br><br>
-		메뉴중량 <br> 
-		<input type="text" name="pro_weight" placeholder="메뉴중량 입력"></input>
-		</div>
-		<div class="e2099_2492"><p><b>3. 메뉴 구독 및 이벤트정보</b></p>
-		메뉴배부르9여부 <br> 
-		<input type="text" name="pro_sub9" placeholder="A 혹은 B 입력"></input>
-		<br><br>
-		메뉴배터지9여부 <br> 
-		<input type="text" name="pro_sub19" placeholder="A 혹은 B 입력"></input>
-		<br><br>
-		메뉴무료체험 <br> 
-		<input type="text" name="pro_free" placeholder="F 입력"></input>
-		</div>
-		<input type="file" name="mtfRequest"  multiple="multiple"/>
-		</div>
-		</form>
-		</div>
-		
 	</div>
 </body>
 <script type="text/javascript">
+	$(".e2099_2468").on("click", function() {
+		$.ajax({
 
-$(".e2099_2468").on("click", function() {
-	$.ajax({
+			url : "${cpath}/admin/adminMenu.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
 
-		url : "${cpath}/admin/adminMenu.do",
-		type : "get",
-		success : function(res) {
-			$("body").html(res);
-		}
-
+		})
 	})
-})
-	
+
 	$(".insert_memu").on("click", function() {
 		$.ajax({
-	
+
 			url : "${cpath}/admin/adminMenuInsert.do",
 			type : "get",
 			success : function(res) {
 				$("body").html(res);
 			}
-	
+
 		})
 	})
-	
+
 	$(".e2099_2469").on("click", function() {
 		$.ajax({
 
