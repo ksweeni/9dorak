@@ -352,7 +352,7 @@
 								d="M19.7576 9.2625L14.0326 15L19.7576 20.7375L17.9951 22.5L10.4951 15L17.9951 7.5L19.7576 9.2625Z"
 								fill="#C4CDD5" />
 							</svg>
-					</div>
+					</div><!-- 이전화살표 -->
 				
 					<c:forEach  items="${pageList}" var="items" varStatus="loop"> 
 						<div class="num-wrapper">
@@ -369,12 +369,14 @@
 								d="M11.8577 9.2625L17.5827 15L11.8577 20.7375L13.6202 22.5L21.1202 15L13.6202 7.5L11.8577 9.2625Z"
 								fill="#C4CDD5" />
 						</svg>
-					</div>
-				</div>
+					</div><!-- 다음화살표 -->
+				</div><!-- pagination -->
 			</div>
 			<!-- text-reviews-and -->
 		</div><!-- div -->
 	</div><!-- div-wrapper -->
+	
+	
 				<footer class="footer" style="top:0rem;">
 				<div class="footer-company-loco">
 					<div class="footer-company">

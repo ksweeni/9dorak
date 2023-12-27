@@ -154,14 +154,31 @@ public class MenuController {
         
         Map<String, Object> revwCnt = mService.reviewCnt(pro.getPro_no());
         PagingVO pagVO = new PagingVO((int)revwCnt.get("txtCnt"),currentPage);
+        MemreviewVO memreviewVO = new MemreviewVO();
         
         ArrayList<Integer> pageList = new ArrayList<Integer>(); 
        
+        System.out.println((int)revwCnt.get("txtCnt"));
+        System.out.println(inputMap.get("currentPage"));
+        System.out.println(pagVO.getTotalPage());
+        
         //페이지 숫자표시
-        for (int i= 0; i < pagVO.getTotalCount(); i++) {
-            pageList.add(i, i+1);
+        for (int i= 0; i < pagVO.getTotalPage(); i++) {
+            pageList.add(i,i+1);
         };
         
+        //////////////////////////////////////////////////
+//        memreviewVO.setStartIndex(pagVO.getStartIndex()); // 뭔지 모름..
+//        memreviewVO.setCntPerPage(4); // 한페이지에 게시물 수
+//        memreviewVO.setCurrentPage(pagVO.getCurrentPage()); // 현재페이지
+//        
+//        List<Map<String, Object>> rlist = mService.list(ChallengeVO); // 전체목록조회
+//
+//		model.addAttribute("rlist", rlist);
+//		model.addAttribute("totalCount", totalCount);
+//		model.addAttribute("pagingVO", pagingVO);
+		/////////////////////////////////////////////////
+		
         model.addAttribute("pageList", pageList);
              
         model.addAttribute("txtrlist", txtrlist);
@@ -255,7 +272,7 @@ public class MenuController {
 		
 		List<Map<String, Object>> moalist = mService.selectMoaview(pro.getPro_no());
 		model.addAttribute("moalist", moalist);
-		System.out.println(moalist);
+		//System.out.println(moalist);
 		
 		model.addAttribute("moadetail", mService.selectByNo(pro.getPro_no()));
 		model.addAttribute("moaSelected", mService.selectMoaSelected(rev.getMemreview_no()));
