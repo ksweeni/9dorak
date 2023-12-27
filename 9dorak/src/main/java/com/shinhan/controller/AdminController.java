@@ -1,12 +1,16 @@
 package com.shinhan.controller;
 
+import java.io.File;
+import java.io.IOException;
+
 //import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
-import javax.activation.CommandMap;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.ChallengeVO;
@@ -418,4 +422,49 @@ public class AdminController {
 		return "admin/adminNotice";
 	}
 
+	@RequestMapping(value = "requestupload2")
+    public String requestupload2(MultipartHttpServletRequest mtfRequest ,HttpServletRequest request) {
+        List<MultipartFile> fileList = mtfRequest.getFiles("file");
+        System.out.println(fileList);
+        String src = mtfRequest.getParameter("src");
+        System.out.println("src value : " + src);
+
+        String path = request.getSession().getServletContext().getRealPath("resources");
+		System.out.println("path : " + path);
+//		String root = path + "\\uploadFiles" ;
+		String root = path + "\\upload";
+
+		File file = new File(root);
+
+		// 만약 uploadFiles 폴더가 없으면 생성해라 라는뜻
+		if (!file.exists())
+			file.mkdirs();
+
+        for (MultipartFile mf : fileList) {
+            String originFileName = mf.getOriginalFilename(); // 원본 파일 명
+            long fileSize = mf.getSize(); // 파일 사이즈
+
+            System.out.println("originFileName : " + originFileName);
+            System.out.println("fileSize : " + fileSize);
+            String ext = "";
+    		int lastIndex = originFileName.lastIndexOf(".");
+    		if (lastIndex != -1) {
+    			ext = originFileName.substring(lastIndex);
+    		}
+            String ranFileName = UUID.randomUUID().toString() + ext;
+        	File changeFile = new File(root + "\\" + ranFileName);
+            System.out.println(changeFile);
+            try {
+                mf.transferTo(new File(ranFileName));
+            } catch (IllegalStateException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } 
+        }
+
+        return "redirect:/";
+    }
 }
