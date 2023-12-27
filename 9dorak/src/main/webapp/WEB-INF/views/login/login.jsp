@@ -188,7 +188,7 @@
 						<p class="p">
 							<span class="span">아이디가 없으신가요 ?&nbsp;&nbsp;</span> <span
 								class="text-wrapper-6">&nbsp;&nbsp;</span>
-							<button onclick="location.href='../register/registerType.do'"
+							<button onclick="location.href='../register/registerTypekakaoLoginPro.do'"
 								type="submit" class="text-wrapper-7">회원가입 하기</button>
 						</p>
 						<p class="div-2">
@@ -203,7 +203,7 @@
 		</div>
 	</div>
 	<form name="kakaoForm" id="kakaoForm" method="get"
-		action="../register/registerForm.do">
+		action="../register/registerType.do">
 		<input type="hidden" name="email" id="kakaoEmail" /> <input
 			type="hidden" name="name" id="kakaoName" /> <input type="hidden"
 			name="id" id="kakaoId" />

@@ -59,7 +59,6 @@ public class RegisterController {
 //		System.out.println("registerForm.do");
 		List<MemVO> mlist = rService.selectAll();
 		model.addAttribute("mlist", mlist);
-		model.addAttribute("id", "일반");
 		return "register/registerForm";
 	}
 

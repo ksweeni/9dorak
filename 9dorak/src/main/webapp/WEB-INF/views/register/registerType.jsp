@@ -24,12 +24,6 @@ String contextPath = request.getContextPath();
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 
-<script type="text/javascript">
-$(document).ready(function(){
-	alert("${id}")
-})
-
-</script>
 </head>
 <body>
 	<div class="v49_2207">
@@ -51,14 +45,14 @@ $(document).ready(function(){
 		<a href="${cpath }" class="v49_2133">아이를 위한 9일의 약속 <span
 			style="color: orange;">구도락</span></a>
 		<div class="v49_2134">
-			<a href="${cpath }/register/registerForm.do" class="v49_2136">
+			<a href="${cpath }/register/registerForm.do?id=${id}" class="v49_2136">
 				<div class="v49_2135">
 					<div class="baby-face"></div>
 					<span class="v49_2139">도시락을 담을 우리 아이</span>
 				</div>
 			</a>
 			<div class="v49_2140">
-				<a href="${cpath }/register/registerForm.do" class="v49_2141">
+				<a href="${cpath }/register/registerForm.do?id=${id}" class="v49_2141">
 					<div class="parent-face"></div> <span class="v49_2142">아이에게
 						선물할 부모님</span>
 				</a>

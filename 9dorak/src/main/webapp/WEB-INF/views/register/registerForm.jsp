@@ -47,9 +47,21 @@ String contextPath = request.getContextPath();
 							<div class="e106_402">중복확인</div>
 						</button>
 					</div>
-					<input class="e106_422" type="text" id="mem_id" name="mem_id"
-						value="${id }" ${kakao==1?"readonly":"" }
-						placeholder="10자리 이하의 아이디를 입력하세요" /> <span class="e106_423">아이디</span>
+					<!--  -->
+					<c:choose>
+						<c:when test="${id == ''}">
+							<input class="e106_422" type="text" id="mem_id" name="mem_id"
+								value="" ${kakao==1?"readonly":"" }
+								placeholder="10자리 이하의 아이디를 입력하세요" />
+						</c:when>
+						<c:otherwise>
+							<input class="e106_422" type="text" id="mem_id" name="mem_id"
+								value="${id }" ${kakao==1?"readonly":"" }
+								placeholder="10자리 이하의 아이디를 입력하세요" />
+						</c:otherwise>
+					</c:choose>
+					<!--  -->
+					<span class="e106_423">아이디</span>
 				</div>
 				<div class=e106_418>
 					<input class="e106_419" type="password" id="mem_pw" name="mem_pw"
@@ -69,26 +81,28 @@ String contextPath = request.getContextPath();
 						<div class="e106_399">이메일인증</div>
 						<input type="hidden" id="mail-Check-Btn" />
 					</div> -->
+					<!--  -->
 					<c:choose>
 						<c:when test="${empty id}">
-							<div class=e106_397 id="emailCheck">
+							<div class="e106_397" id="emailCheck">
 								<div class="e106_398"></div>
 								<div class="e106_399">이메일인증</div>
 								<input type="hidden" id="mail-Check-Btn" />
 							</div>
+							<input class="form-control mail-check-input" id="numInput"
+								placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled"
+								maxlength="6" style="display: none;">
+							<span id="mail-check-warn" class="mail-check-warn"></span>
 						</c:when>
 						<c:otherwise>
-							<div class=e106_397 id="emailCheck">
-								<input type="hidden" id="mail-Check-Btn" style="display: none" disabled="true"/>
+							<div class="e106_397" id="emailCheck">
+								<input type="hidden" id="mail-Check-Btn" style="display: none"
+									disabled="true" />
 							</div>
 						</c:otherwise>
 					</c:choose>
 
 					<!--  -->
-					<input class="form-control mail-check-input" id="numInput"
-						placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6"
-						style="display: none;"> <span id="mail-check-warn"
-						class="mail-check-warn"></span>
 
 				</div>
 
