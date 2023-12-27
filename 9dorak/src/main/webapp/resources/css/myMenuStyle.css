@@ -381,16 +381,16 @@
 }
 
 .e79_388 {
-	width: 118px;
-	height: 98px;
+	width: 115px;
+	height: 114px;
 	position: absolute;
-	left: 128px;
-	top: 0px;
+	left: 120px;
+	top: -15px;
 	/* 	background-image: url(${cpath}/resources/images/my/snsicon.png); */
 	/*  	background-image: url(${cpath}/resources/upload/${mem.mem_image});  */
 	background-repeat: no-repeat;
 	background-size: cover;
-	border-radius: 30px;
+	border-radius: 60px;
 }
 
 .79_425 {

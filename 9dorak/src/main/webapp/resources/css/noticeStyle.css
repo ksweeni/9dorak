@@ -1724,6 +1724,7 @@
 	padding-left: 100px;
 	padding-right: 100px;
 	text-align: center;
+	cursor: pointer;
 }
 
 .table td:first-child {

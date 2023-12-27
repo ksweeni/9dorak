@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/oneaskStyle.css?d"
+<link rel="stylesheet" href="${cpath}/resources/css/oneaskStyle.css?s"
 	type="text/css" />
 <meta charset="UTF-8">
 <script
