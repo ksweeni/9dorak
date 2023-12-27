@@ -62,8 +62,7 @@ String contextPath = request.getContextPath();
 <body>
 	<div class="screen">
 		<div class="div">
-
-			<header class="header">
+					<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
 						<div class="text-event">
@@ -88,7 +87,7 @@ String contextPath = request.getContextPath();
 						</div>
 					</div>
 					<a href="${pageContext.request.contextPath}/main.do"> <img
-						class="untitled-2"
+						class="untitled-2" style="top: -1.5rem !important;"
 						src="${cpath}/resources/images/main/header-logo.png" />
 					</a>
 					<div class="div-3">
@@ -121,8 +120,6 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</header>
-
-
 			<span class="e1433_2546">좋아요 ❤️</span> <span class="e1433_2547">추천
 				👍</span> <span class="e1433_2548">못먹는 음식은 NOPE 🙅🏻</span>
 			<div class=e1433_2549>
