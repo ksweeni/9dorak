@@ -1,5 +1,44 @@
-t "UTF-8 "; .2099_2373 {
+@charset "UTF-8";
+
+.search-button {
+	cursor: pointer;
+	border-color: #FEB775;
+	border-radius: 4px;
+	padding: 4px;
+	font-weight: 600;
+	color: white;
+	background: #FEB775;
+}
+
+.annoKeyword {
+	border-color: #CDD1DE;
+	border-radius: 4px;
+	height: 1.2rem;
+	outline: #CDD1DE;
+}
+
+.2099_2373 {
 	overflow: hidden;
+}
+
+.search-wrapper {
+	position: relative;
+}
+
+.anno-insertbtn {
+	border: 2px solid orange;
+	font-weight: 600;
+	color: orange;
+	display: inline-flex;
+	padding: 12px 16px;
+	align-items: flex-start;
+	gap: 16px;
+	border-radius: 4px;
+	background: white;
+	font-size: 13px;
+	margin-right: 15px;
+	cursor: pointer;
+	width: fit-content;
 }
 
 .e2099_2373 {
@@ -38,7 +77,6 @@ t "UTF-8 "; .2099_2373 {
 	position: absolute;
 	left: 80px;
 	top: 200px;
-	/* font-family: Poppins; */
 	text-align: center;
 	font-size: 16px;
 	letter-spacing: 2;
@@ -66,7 +104,6 @@ t "UTF-8 "; .2099_2373 {
 	height: 16px;
 	left: 73px;
 	top: -4px;
-	/* font-family: Poppins; */
 	text-align: center;
 	font-size: 15px;
 	letter-spacing: 2;
@@ -79,7 +116,6 @@ t "UTF-8 "; .2099_2373 {
 	height: 40px;
 	left: 25px;
 	top: 25px;
-	/* border: solid 1px black; */
 	background-image: url(../images/admin/admin02.png);
 }
 
@@ -90,7 +126,6 @@ t "UTF-8 "; .2099_2373 {
 	position: absolute;
 	left: 80px;
 	top: 266px;
-	/* font-family: Poppins; */
 	text-align: center;
 	font-size: 16px;
 	letter-spacing: 2;
@@ -267,14 +302,19 @@ t "UTF-8 "; .2099_2373 {
 }
 
 .notice-btn, .faq-btn {
-	border: 2px solid orange;
-	background-color: white;
-	border-radius: 10px;
+	font-weight: 600;
+	border: none;
+	color: white;
+	display: inline-flex;
+	padding: 12px 16px;
+	align-items: flex-start;
+	gap: 16px;
+	border-radius: 4px;
+	background: #FF8901;
 	font-size: 13px;
 	margin-right: 15px;
 	cursor: pointer;
-	width: 92px;
-	height: 40px;
+	width: fit-content;
 }
 
 .e2099_2487 {
@@ -313,12 +353,26 @@ td {
 } */
 /* 공지사항 */
 #noticeTable table {
+	box-shadow: 0px 8px 32px 0px rgba(51, 38, 174, 0.08);
+	border-style: hidden;
+	border: none;
+	cursor: pointer;
+	border-radius: 10px;
 	position: relative;
 	border-collapse: collapse;
 	margin-bottom: 10px;
-	left: 38%;
+	left: 70%; transform : translateX( -70%);
+	top: 2rem;
 	transform: translateX(-70%);
-	top: 100px;
+}
+
+caption {
+	color: #1C2A53;
+	position: relative;
+	font-size: 1.5rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 30px;
 }
 
 #noticeTable table th, td {
@@ -326,8 +380,8 @@ td {
 }
 
 #noticeTable table th {
-	background-color: rgb(255, 125, 51);
-	color: white; /* 원하는 색상 값 */
+	background-color: #F8F8F8;
+	color: #8E95A9;
 	padding: 3px 40px;
 }
 
@@ -378,7 +432,6 @@ td {
 	display: inline-block;
 	padding: 3px 5px;
 	margin-right: 10px;
-	font-family: Tahoma;
 	background: #ccc;
 	color: #000;
 	text-decoration: none;
@@ -392,7 +445,15 @@ td {
 }
 
 #noticeTable {
+	width: 1200px;
+	height: 300px;
+	position: relative;
+	top: 100px;
+	left: 6%;
 	display: block; /* 초기에는 공지사항 테이블 보이기 */
+	border-radius: 16px;
+	background: #FFF;
+	box-shadow: 0px 8px 32px 0px rgba(51, 38, 174, 0.08);
 }
 
 #faqTable {
@@ -417,18 +478,18 @@ td {
 
 .numButton {
 	position: relative;
-	left: 650px;
-	top: 100px;
+	left: 50%;
+	top: 40px;
 	width: 100px;
 }
 
 .numButton a {
 	padding: 3px 5px;
 	margin-right: 10px;
-	font-family: Tahoma;
-	background: #ccc;
-	color: #000;
 	text-decoration: none;
+	color: white;
+	background: #FEB775;
+	border-radius: 5px;
 }
 /* 자묻 */
 .numButton2 {
@@ -440,12 +501,10 @@ td {
 .numButton2 a {
 	padding: 3px 5px;
 	margin-right: 10px;
-	font-family: Tahoma;
 	background: #ccc;
 	color: #000;
 	text-decoration: none;
 }
-
 
 .insertFaq {
 	position: relative;
@@ -463,6 +522,7 @@ td {
 	height: 40px;
 }
 
-a{
+a {
+	color: #555F7E;
 	text-decoration: none;
 }

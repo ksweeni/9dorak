@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminNoticeStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminNoticeStyle.css?e" type="text/css" />
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -45,6 +45,7 @@
 				<button class="notice-btn" onclick="toggleTable('notice')">공지사항</button>
 				<button class="faq-btn" onclick="toggleTable('faq')">자주 묻는
 					질문</button>
+					<button class="anno-insertbtn" id="AnnoInsert">글쓰기</button>
 			</div>
 			<div id="noticeTable" class="table-container">
 				<table id="notice" border="1">
@@ -52,9 +53,9 @@
 					<caption>
 						공지사항 list
 						<form action="" id="setRows">
-							<p>
-								<input type="text" id="annoKeyword" placeholder="검색어 입력">
-								<button id="searchBtn">검색</button>
+							<p class="search-wrapper">
+								<input type="text"  class="annoKeyword" id="annoKeyword" placeholder="검색어 입력">
+								<button id="searchBtn" class="search-button">검색</button>
 							</p>
 						</form>
 
@@ -62,11 +63,11 @@
 
 					<thead>
 						<tr>
-							<th>공지사항번호</th>
+							<th style="border-radius: 10px 0px 0px 0px;">공지사항번호</th>
 							<th>공지사항제목</th>
 							<th>공지사항조회수</th>
 							<th>공지사항작성날짜</th>
-							<th>공지사항작성자</th>
+							<th style="border-radius: 0px 10px 0px 0px;">공지사항작성자</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -112,9 +113,7 @@
 						</c:choose>
 					</c:forEach>
 				</div>
-				<div class="insertAnno">
-					<button id="AnnoInsert">글쓰기</button>
-				</div>
+				
 			</div>
 
 		</div>

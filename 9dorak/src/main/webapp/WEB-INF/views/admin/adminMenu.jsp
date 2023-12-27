@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminMenuStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminMenuStyle.css?e" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script
@@ -41,6 +41,7 @@
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
 		<button class="insert_memu">추가하기</button>
+		<div class="table-wrapper">
 			<table id="products" border="1">
 				<caption>
 					메뉴 list
@@ -57,12 +58,7 @@
 						<th>메뉴번호</th>
 						<th>메뉴이름</th>
 						<th>메뉴가격</th>
-						<th>메뉴좋아요수</th>
-						<th>메뉴구독수</th>
-						<th>메뉴재고수</th>
-						<th>메뉴조회수</th>
 						<th>메뉴등록날짜</th>
-						<th>메뉴삭제여부</th>
 						<th>메뉴알레르기</th>
 						<th>메뉴단백질</th>
 						<th>메뉴탄수화물</th>
@@ -71,10 +67,6 @@
 						<th>메뉴당류</th>
 						<th>메뉴칼로리</th>
 						<th>메뉴중량</th>
-						<th>메뉴배부르9여부</th>
-						<th>메뉴배터지9여부</th>
-						<th>메뉴무료체험여부</th>
-
 					</tr>
 				</thead>
 				<tbody>
@@ -84,12 +76,7 @@
 							<td>${menu.pro_no}</td>
 							<td>${menu.pro_name}</td>
 							<td>${menu.pro_price}</td>
-							<td>${menu.pro_like}</td>
-							<td>${menu.pro_sub}</td>
-							<td>${menu.pro_sc}</td>
-							<td>${menu.pro_view}</td>
 							<td>${menu.pro_rd}</td>
-							<td>${menu.pro_delete}</td>
 							<td>${menu.pro_aller}</td>
 							<td>${menu.pro_prot}</td>
 							<td>${menu.pro_carb}</td>
@@ -98,13 +85,12 @@
 							<td>${menu.pro_sugar}</td>
 							<td>${menu.pro_cal}</td>
 							<td>${menu.pro_weight}</td>
-							<td>${menu.pro_sub9}</td>
-							<td>${menu.pro_sub19}</td>
-							<td>${menu.pro_free}</td>
+						
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
+			</div>
 		</div>
 	</div>
 </body>

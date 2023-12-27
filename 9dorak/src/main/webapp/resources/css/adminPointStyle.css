@@ -290,7 +290,6 @@
 	height: 16px;
 	left: 129px;
 	top: -24px;
-	/* font-family: Poppins; */
 	text-align: center;
 	font-size: 15px;
 	letter-spacing: 2;
@@ -424,6 +423,7 @@ table {
 
 .table-2 {
 	top: 5rem;
+	width: 400px;
 	position: relative;
 }
 
