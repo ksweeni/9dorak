@@ -345,6 +345,11 @@ function logCheckboxValue(checkbox) {
 	document.body.appendChild(displayDiv);
 }
 
+
+
+<%--
+
+
 var isChecked = false;
 
 function checkBoxSelector() {
@@ -372,6 +377,7 @@ function unselectAll() {
 		checkboxes[i].checked = false;
 	}
 }
+--%>
 
 	// 장바구니 수량 증가
 	$(".entypo-plus-wrapper").on("click", updateCount);	
@@ -453,27 +459,7 @@ function updateCount() {
 	        }
 	    });
 	});
-  
-    // 장바구니 삭제
-    function deleteBasket(mem_id, pro_no, index) {
-    	        $.ajax({
-    	            type: "POST",
-    	            url: "${cpath}/wallet/deleteBasket.do",
-    	            data: {
-    	                mem_id: mem_id,
-    	                pro_no: pro_no
-    	            },
-    	            success: function(response) {
-    	                if (response === "성공!") {
-    	                    console.log("콘솔 - 삭제 성공!!");
-    	                    closeModal();
-    	                } else {
-    	                    console.log("콘솔 - 삭제 실패:", response);
-    	                }
-    	            }
-    	        });
-    	 }
-    
+	
  // 장바구니 삭제 기능 모달 버튼
 	var modal = document.getElementById('modal');
     var btns = document.querySelectorAll(".deleteItemModalButton");
@@ -493,6 +479,32 @@ function updateCount() {
             closeModal();
         }
     }
+    
+    // 장바구니 삭제
+    function deleteBasket(mem_id, pro_no, index) {
+    	        $.ajax({
+    	            type: "POST",
+    	            url: "${cpath}/wallet/deleteBasket.do",
+    	            contentType: "application/json",
+    	            data: JSON.stringify({
+    	                mem_id: mem_id,
+    	                pro_no: pro_no
+    	            }),
+    	            success: function(response) {
+    	            	console.log("console:", response);
+    	                if (response.success) {
+    	                    console.log("콘솔 - 삭제 성공!!");
+    	                    location.reload(); 
+    	                } else {
+    	                	console.error("콘솔 - 장바구니 삭제 실패", response.message);
+    	                	alert("장바구니 삭제 실패 ㅜㅜㅜ!!");
+    	                } 
+    	            },
+    	            error: function(error) {
+    	                    console.error("AJAX Error:", error);
+    	                }
+    	        });
+    	 }
 
 // 주문 정보 목록
 function basketList(quantity, pro_no, pro_name, price, index) {
@@ -567,55 +579,73 @@ function rowList() {
     $(".text-wrapper-10 input[name='order_price']").val(totalAmount);
 };
 
-$(".orderButton").on("click", submitOrder());
+$(".orderButton").on("click", function() {
+    submitOrder();
+});
 
 // 주문하기 버튼 submit
 function submitOrder() {
-    document.querySelector('.text-wrapper-11').click();
-    
-    const mem_id = $(this).attr("mem_id").val());
-    const order_price = $(this).attr("order_price").val());
+    var mem_id = "${sessionScope.loginmem.mem_id}";
+    const order_price = $('.text-wrapper-10').find("input").val();
+    const requestData = {
+            mem_id: mem_id,
+            order_price: order_price
+        };
     
     // order 테이블 insert
     $.ajax({
         type: "POST",
         url: "${cpath}/wallet/insertOrder.do",
-        data: {
-            mem_id: mem_id,
-            order_price: order_price
-        },
+        contentType: "application/json",
+        data: JSON.stringify(requestData),
         success: function(response) {
-            if (response === "성공!") {
+            if (response.success && response.order_no) {
                 console.log("콘솔 insertOrder 성공");
+                insertOrderDetails(response.order_no); // 반환된 order_no 전달
             } else {
-                console.log("콘솔 insertOrder 실패:", response);
+            	console.log("콘솔 insertOrder 실패:", response.message || "Unexpected error");
+                console.log(response.order_no);
             }
+        },
+        error: function(error) {
+            console.log("콘솔 insertOrder 오류:", error);
         }
     });
     
- 	// order detail 테이블 insert
-    $("#cartRow tr td:nth-child(4)").each(function() {
-        const pro_no = $(this).attr("pro_no").val());
-        const orderdetail_count = $(this).attr("orderdetail_count").val());
-        
+    // form 내용 submit
+    $("form").attr("action", "${cpath}/wallet/pay.do");
+    $("form").submit();
+}
+
+// orderDetail 테이블 insert
+function insertOrderDetails(order_no) {
+
+    $("#cartRow tr").each(function() {
+        const pro_no = $(this).find("input[name='pro_no']").val();
+        const orderdetail_count = $(this).find("input[name='orderdetail_count']").val();
+    
+    // ajax를 상품 별로 수행 
     $.ajax({
         type: "POST",
         url: "${cpath}/wallet/insertOrderDetail.do",
-        data: {
-        	pro_no: pro_no,
-        	orderdetail_count: orderdetail_count
-        },
+        contentType: "application/json",
+        data: JSON.stringify({
+        	order_no: order_no,
+            pro_no: pro_no,
+            orderdetail_count: orderdetail_count
+        }),
         success: function(response) {
-            if (response === "성공!") {
+            if (response.success) {
                 console.log("콘솔 insertOrderDetail 성공");
             } else {
-                console.log("콘솔 insertOrderDetail 실패:", response);
+                console.log("콘솔 insertOrderDetail 실패:", response.message);
             }
+        },
+        error: function(error) {
+            console.log("콘솔 insertOrderDetail 오류:", error.statusText);
         }
     });
-        
-    });
-    
+  });
 }
 
 </script>

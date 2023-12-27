@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.shinhan.dto.BasketVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PayVO;
 import com.shinhan.dto.PeopleVO;
 
@@ -89,9 +90,23 @@ public class WalletService {
 	}
 
 	public List<OrderVO> getOrderList(int order_no) {
-		// TODO Auto-generated method stub
 		return dao.getOrderList(order_no);
 	}
+	
+		public int insertOrder(OrderVO order) {
+			return dao.insertOrder(order);
+		}
+		
+		
+//		public int insertOrderDetail(OrderdetailVO orderDetail, int order_no) {
+//			return dao.insertOrderDetail(orderDetail, order_no);
+//		}
 
-
+		public int selectOrderNum() {
+			return dao.selectOrderNum();
+		}
+		
+		public int insertOrderDetail(OrderdetailVO orderDetail) {
+			return dao.insertOrderDetail(orderDetail);
+		}
 }

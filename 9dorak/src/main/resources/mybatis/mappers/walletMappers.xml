@@ -231,25 +231,17 @@
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!-- 주문하기 --> 
 	<insert id="insertOrder" parameterType="ordervo">
-		insert into orders (order_no,
-		order_date, order_price, order_status, order_refund, mem_id)
-		values (orders_seq.nextval, sysdate, #{order_price}, '주문완료', null, #{mem_id})
+		insert into orders values ( orders_seq.nextval, sysdate, #{order_price}, '주문 접수', '', #{mem_id})
 	</insert>
+	
+	<select id="selectOrderNum" resultType="int">
+		select order_no from orders where rownum=1 order by order_no desc
+	</select>
 	
 	<insert id="insertOrderDetail" parameterType="orderdetailvo">
-		insert into ORDERDETAIL (order_no, pro_no, orderdetail_count) values (orders_seq.nextval, #{pro_no}, #{orderdetail_count})
+		insert into orderdetail (order_no, pro_no, orderdetail_count) values (#{order_no}, #{pro_no}, #{orderdetail_count})
 	</insert>
-	
 	
 	
 </mapper>

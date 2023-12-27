@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,12 +22,12 @@ import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PayVO;
 import com.shinhan.dto.PeopleVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.EventService;
 import com.shinhan.model.MyPageService;
-import com.shinhan.model.SubService;
 import com.shinhan.model.WalletService;
 
 @Controller
@@ -37,8 +38,6 @@ public class WalletController {
 	WalletService wService;
 	@Autowired
 	EventService eService;
-	@Autowired
-	SubService subService;
 
 	@Autowired
 	MyPageService mService;
@@ -55,7 +54,9 @@ public class WalletController {
 		MemVO mem = (MemVO) session.getAttribute("loginmem");
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
-		List<OrderVO> olist = wService.getOrderList(1);
+		int order_no = wService.selectOrderNum();
+		List<OrderVO> olist = wService.getOrderList(order_no);
+		
 		System.out.println(olist);
 		int total = 0;
 		for (OrderVO or : olist) {
@@ -74,33 +75,74 @@ public class WalletController {
 
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	// 장바구니 삭제
-	@PostMapping("deleteBasket.do")
-	@ResponseBody
-	public String deleteBasket(BasketVO basket) {
-		System.out.println(basket);
-		int result = wService.deleteBasket(basket);
-		String flag;
-
-		if (result > 0) {
-			flag = "성공!";
-		} else {
-			flag = "실패!";
+	// 주문, 주문 디테일 테이블 data insert
+		@PostMapping("insertOrder.do")
+		@ResponseBody
+		public Map<String, Object> insertOrder(@RequestBody OrderVO order, HttpServletRequest request) {
+			Map<String, Object> response = new HashMap<>();
+			int resultOrder = wService.insertOrder(order);
+			int order_no = wService.selectOrderNum();   
+			
+			if (resultOrder > 0) {
+					response.put("success", true);
+					response.put("message", "Order added successfully.");
+					response.put("order_no", order_no);
+				} else {
+					response.put("success", false);
+					response.put("message", "Failed to add order.");
+				}
+				return response;
 		}
-		return flag;
-	}
+	
+		@PostMapping("insertOrderDetail.do")
+		@ResponseBody
+		public Map<String, Object> insertOrderDetail(@RequestBody OrderdetailVO orderDetail, HttpServletRequest request) {
+			Map<String, Object> response = new HashMap<>();
+			
+			int resultOrderDetail = wService.insertOrderDetail(orderDetail);
+			    
+			    if (resultOrderDetail > 0) {
+					response.put("success", true);
+					response.put("message", "OrderDetail added successfully.");
+				} else {
+					response.put("success", false);
+					response.put("message", "Failed to add orderDetail.");
+				}
+				return response;
+		}
+		
+
+		
+		
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// 장바구니 삭제
+		@PostMapping("deleteBasket.do")
+		@ResponseBody
+		public Map<String, Object> deleteBasket(@RequestBody BasketVO basket) {
+		    Map<String, Object> response = new HashMap<>();
+		    
+		    System.out.println(basket);
+		    int result = wService.deleteBasket(basket);
+		    System.out.println(basket);
+		    
+		    if (result > 0) {
+		        response.put("success", true);
+		    } else {
+		        response.put("success", false);
+		    }
+		    return response;
+		}
 
 	// 장바구니 수량 변경
 	@PostMapping("updateBasket.do")
@@ -195,5 +237,45 @@ public class WalletController {
 		return "wallet/pay";
 	}
 	
+	@GetMapping("sub9a.do")
+	public String sub9a(Model model , HttpSession session) {
+		List<ProVO> sub9allist = subService.selectAllSub9A();
+		MemVO mem = (MemVO)session.getAttribute("loginmem");
+		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
+		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
+		model.addAttribute("sub9allist", sub9allist);
+		model.addAttribute("total",59000);
+		model.addAttribute("mem",mem);
+		model.addAttribute("clist",clist);
+		model.addAttribute("dlist",dlist);
+		return "wallet/pay";
+	}
 	
+	@GetMapping("sub9b.do")
+	public String sub9b(Model model , HttpSession session) {
+		List<ProVO> sub9bllist = subService.selectAllSub9B();
+		MemVO mem = (MemVO)session.getAttribute("loginmem");
+		model.addAttribute("sub9bllist", sub9bllist);
+		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
+		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
+		model.addAttribute("total",59000);
+		model.addAttribute("mem",mem);
+		model.addAttribute("clist",clist);
+		model.addAttribute("dlist",dlist);
+		return "wallet/pay";
+	}
+	
+	@GetMapping("sub19a.do")
+	public String sub19a(Model model) {
+		List<ProVO> sub19allist = subService.selectAllSub19A();
+		model.addAttribute("sub19allist", sub19allist);
+		return "wallet/pay";
+	}
+	
+	@GetMapping("sub19b.do")
+	public String sub19b(Model model) {
+		List<ProVO> sub19bllist = subService.selectAllSub19B();
+		model.addAttribute("sub19bllist", sub19bllist);
+		return "wallet/pay";
+	}
 }
