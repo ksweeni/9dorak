@@ -42,20 +42,40 @@
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
 			<div class="e2099_2487">
+				<div class="filters">Apply Filters :</div>
+				<div class="dropdown">
+					<button class="dropbtn">
+						<span class="dropbtn_icon">공지사항</span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+							viewBox="0 0 20 21" fill="none">
+<path
+								d="M5.41 7.5L10 11.8302L14.59 7.5L16 8.83962L10 14.5L4 8.83962L5.41 7.5Z"
+								fill="#2B2B2B" />
+</svg>
+					</button>
+					<div class="dropdown-content">
+						<a href="#">공지사항</a> <a href="#">자주 묻는 질문</a>
+					</div>
+				</div>
+				<!--  
 				<button class="notice-btn" onclick="toggleTable('notice')">공지사항</button>
 				<button class="faq-btn" onclick="toggleTable('faq')">자주 묻는
-					질문</button>
-					<button class="anno-insertbtn" id="AnnoInsert">글쓰기</button>
+					질문</button>-->
+				<button class="anno-insertbtn" id="AnnoInsert">글쓰기</button>
+				<input type="text" class="annoKeyword" id="annoKeyword"
+									placeholder="검색어 입력">
+									<button id="searchBtn" class="search-button">검색</button>
 			</div>
 			<div id="noticeTable" class="table-container">
 				<table id="notice" border="1">
 					<!-- 공지사항 테이블 내용 -->
 					<caption>
-						공지사항 list
+						공지사항 List
 						<form action="" id="setRows">
 							<p class="search-wrapper">
-								<input type="text"  class="annoKeyword" id="annoKeyword" placeholder="검색어 입력">
-								<button id="searchBtn" class="search-button">검색</button>
+								<!--<input type="text" class="annoKeyword" id="annoKeyword"
+									placeholder="검색어 입력">
+								<button id="searchBtn" class="search-button">검색</button>-->
 							</p>
 						</form>
 
@@ -113,7 +133,7 @@
 						</c:choose>
 					</c:forEach>
 				</div>
-				
+
 			</div>
 
 		</div>
@@ -124,9 +144,7 @@
 				<!-- FAQ 테이블 내용 -->
 				<caption>
 					자주 묻는 질문 list
-					<form action="" id="setRows">
-						
-					</form>
+					<form action="" id="setRows"></form>
 
 				</caption>
 
@@ -325,12 +343,11 @@
 			data : param,
 			success : function(res) {
 				//	 alert("갔따오기 성공"); 
-				
+
 				$("body").html(res);
 				$(".numButton").hide();
 			}
 		})
 	})
-	
 </script>
 </html>

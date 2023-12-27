@@ -81,10 +81,7 @@
 
 						<table id="products" border="1" style="width: 300px;">
 							<caption>
-								회원 list
-
-					
-
+								회원 List
 							</caption>
 
 							<thead>
@@ -141,12 +138,12 @@
 
 					<table id="products" border="1">
 						<caption>
-							쿠폰 list
+							쿠폰 List
 
 						<form action="" id="setRows">
-								<p>
-									한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
-								</p>
+								<!--  <p>-->
+									<input type="text" name="rowPerPage" value="5" style="display:none">
+									<!--  </p>-->
 							</form>  
 						</caption>
 

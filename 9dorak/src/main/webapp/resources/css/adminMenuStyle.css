@@ -4,7 +4,7 @@
 	width: 1200px;
 	border-radius: 16px;
 	background: #FFF;
-	box-shadow: 0px 8px 32px 0px rgba(51, 38, 174, 0.08);
+
 	width: 1200px;
 	height:350px;
 	top: 5%;
@@ -13,12 +13,12 @@
 }
 
 caption {
+	font-weight:700;
 	color: #1C2A53;
-	left: -46%;
+	margin-bottom:32px;
 	position: relative;
 	font-size: 1.5rem;
 	font-style: normal;
-	font-weight: 500;
 	line-height: 30px;
 }
 

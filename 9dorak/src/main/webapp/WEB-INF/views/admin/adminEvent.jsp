@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminEventStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminEventStyle.css?e" type="text/css" />
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -43,23 +43,23 @@
 		<div class="e2099_2486">
 			<table id="products" border="1">
 				<caption>
-					챌린지 list
+					챌린지 List
 					<form action="" id="setRows">
-						<p>
-							한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
-						</p>
+						<!--  <p>-->
+							<input type="text" name="rowPerPage" value="5" style="display:none;">
+						<!--  </p>-->
 					</form>
 
 				</caption>
 
 				<thead>
 					<tr>
-						<th>챌린지번호</th>
+						<th style="border-radius: 10px 0px 0px 0px;">챌린지번호</th>
 						<th>챌린지명/도시락만들9명</th>
 						<th>챌린지내용/도시락만들9소개</th>
 						<th>챌린지날짜</th>
 						<th>만들9레시피</th>
-						<th>회원ID</th>
+						<th style="border-radius:0px 10px 0px 0px;">회원ID</th>
 					</tr>
 				</thead>
 				<tbody>
