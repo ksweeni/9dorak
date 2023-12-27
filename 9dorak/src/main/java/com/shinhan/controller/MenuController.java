@@ -153,31 +153,18 @@ public class MenuController {
         List<Map<String, Object>> phtrlist = mService.selectProReviewPth(inputMap);
         
         Map<String, Object> revwCnt = mService.reviewCnt(pro.getPro_no());
-        PagingVO pagVO = new PagingVO((int)revwCnt.get("txtCnt"),currentPage);
-        MemreviewVO memreviewVO = new MemreviewVO();
+        
+        int pageNum = (int) Math.ceil((int)revwCnt.get("txtCnt") * 1.0 / 4);
         
         ArrayList<Integer> pageList = new ArrayList<Integer>(); 
        
-        System.out.println((int)revwCnt.get("txtCnt"));
-        System.out.println(inputMap.get("currentPage"));
-        System.out.println(pagVO.getTotalPage());
+        //System.out.println((int)revwCnt.get("txtCnt"));
+        //System.out.println(pageNum);
         
         //페이지 숫자표시
-        for (int i= 0; i < pagVO.getTotalPage(); i++) {
+        for (int i= 0; i < pageNum; i++) {
             pageList.add(i,i+1);
         };
-        
-        //////////////////////////////////////////////////
-//        memreviewVO.setStartIndex(pagVO.getStartIndex()); // 뭔지 모름..
-//        memreviewVO.setCntPerPage(4); // 한페이지에 게시물 수
-//        memreviewVO.setCurrentPage(pagVO.getCurrentPage()); // 현재페이지
-//        
-//        List<Map<String, Object>> rlist = mService.list(ChallengeVO); // 전체목록조회
-//
-//		model.addAttribute("rlist", rlist);
-//		model.addAttribute("totalCount", totalCount);
-//		model.addAttribute("pagingVO", pagingVO);
-		/////////////////////////////////////////////////
 		
         model.addAttribute("pageList", pageList);
              
