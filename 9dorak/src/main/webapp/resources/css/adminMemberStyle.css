@@ -273,6 +273,7 @@ table {
     left: 774px;
     transform: translateX(-50%);
     top: 81px;
+    cursor: pointer;
 }
 th, td {
   padding: 3px 8px;

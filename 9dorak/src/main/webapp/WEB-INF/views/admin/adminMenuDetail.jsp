@@ -44,59 +44,79 @@
 		<button class="delete_memu" id="delete">삭제하기</button>
 		</div>
 		<div class="e2099_2487">
-		<div class="e2099_2490"><p><b>1. 메뉴 기본 정보</b></p>
+		<div class="e2099_2490"><div class="e3001"></div><div class="e3000_1"><p><b>메뉴 기본 정보</b></p></div>
+		<div class="e3000_2">
 		메뉴번호 <br> 
 		<input type="text" value="${detailmenu.pro_no}" id="pro_no" readonly></input>
-		<br><br>
+		</div>
+		<div class="e3000_3">
 		메뉴명 <br> 
 		<input type="text" value="${detailmenu.pro_name}" id="pro_name"></input>
-		<br><br>
+		</div>
+		<div class="e3000_4">
 		메뉴설명 <br> 
 		<input type="text" value="${detailmenu.pro_detail}" id="pro_detail"></input>
-		<br><br>
+		</div>
+		<div class="e3000_5">
 		메뉴가격<br> 
 		<input type="text" value="${detailmenu.pro_price}" id="pro_price"></input>
-		<br><br>
+		</div>
+		<div class="e3000_6">
 		메뉴좋아요수 <br> 
 		<input type="text" value="${detailmenu.pro_like}" id="pro_like"></input>
-		<br><br>
-		메뉴등록날짜 <br> 
-		<input type="text" value="${detailmenu.pro_rd}" id="pro_rd"></input>
 		</div>
-		<div class="e2099_2491"><p><b>2. 메뉴 영양소 정보</b></p>
+		<div class="e3000_7">
+		메뉴등록날짜 <br> 
+		<input type="date" value="${detailmenu.pro_rd}" id="pro_rd"></input>
+		</div>
+		</div>
+		<div class="e2099_2491"><div class="e3002"></div><div class="e3000_8"><p><b>메뉴 영양소 정보</b></p></div>
+		<div class="e3000_9">
 		메뉴알레르기 <br> 
 		<input type="text" value="${detailmenu.pro_aller}" id="pro_aller"></input>
-		<br><br>
+		</div>
+		<div class="e3000_10">
 		메뉴단백질 <br> 
 		<input type="text" value="${detailmenu.pro_prot}" id="pro_prot"></input>
-		<br><br>
+		</div>
+		<div class="e3000_11">
 		메뉴탄수화물 <br> 
 		<input type="text" value="${detailmenu.pro_carb}" id="pro_carb"></input>
-		<br><br>
+		</div>
+		<div class="e3000_12">
 		메뉴지방 <br> 
 		<input type="text" value="${detailmenu.pro_prov}" id="pro_prov"></input>
-		<br><br>
+		</div>
+		<div class="e3000_13">
 		메뉴나트륨 <br> 
 		<input type="text" value="${detailmenu.pro_nat}" id="pro_nat"></input>
-		<br><br>
+		</div>
+		<div class="e3000_14">
 		메뉴당류 <br> 
 		<input type="text" value="${detailmenu.pro_sugar}" id="pro_sugar"></input>
-		<br><br>
+		</div>
+		<div class="e3000_15">
 		메뉴칼로리 <br> 
 		<input type="text" value="${detailmenu.pro_cal}" id="pro_cal"></input>
-		<br><br>
+		</div>
+		<div class="e3000_16">
 		메뉴중량 <br> 
 		<input type="text" value="${detailmenu.pro_weight}" id="pro_weight"></input>
 		</div>
-		<div class="e2099_2492"><p><b>3. 메뉴 구독 및 이벤트정보</b></p>
+		</div>
+		<div class="e2099_2492"><div class="e3003"></div><div class="e3000_17"><p><b>메뉴 구독 및 이벤트정보</b></p></div>
+		<div class="e3000_18">
 		메뉴배부르9여부 <br> 
 		<input type="text" value="${detailmenu.pro_sub9}" id="pro_sub9"></input>
-		<br><br>
+		</div>
+		<div class="e3000_19">
 		메뉴배터지9여부 <br> 
 		<input type="text" value="${detailmenu.pro_sub19}" id="pro_sub19"></input>
-		<br><br>
+		</div>
+		<div class="e3000_20">
 		메뉴무료체험 <br> 
 		<input type="text" value="${detailmenu.pro_free}" id="pro_free"></input>
+		</div>
 		</div>
 		</div>
 		</div>

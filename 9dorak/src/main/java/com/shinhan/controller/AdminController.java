@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.activation.CommandMap;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.ChallengeVO;
@@ -29,6 +25,7 @@ import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.FaqVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PagingVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.dto.SubVO;
@@ -165,6 +162,14 @@ public class AdminController {
 		List<OrderVO> orderlist = orderService.selectAll();
 		model.addAttribute("orderlist", orderlist);
 		return "admin/adminOrder";
+	}
+	
+	@PostMapping("adminOrder.do")
+	public String adminOrderDetail(Model model, OrderdetailVO order) {
+		OrderdetailVO detailorder = orderService.selectByOrder(order.getOrder_no());
+		model.addAttribute("detailorder", detailorder);
+		System.out.println(detailorder);
+		return "admin/adminOrderDetail";
 	}
 	
 	@GetMapping("searchadminOrder.do")

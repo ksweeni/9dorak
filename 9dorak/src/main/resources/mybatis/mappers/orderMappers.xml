@@ -11,5 +11,11 @@
 	<select id="searchadminOrder" resultType="ordervo" parameterType="String">
 		SELECT * FROM orders WHERE mem_id LIKE '%'||#{mem_id}||'%' 
 	</select>
+
+	<select id="selectByOrder" resultType="orderdetailvo" parameterType="orderdetailvo">
+		select *
+		from orderdetail
+		where order_no = #{order_no}
+	</select>
 	
 </mapper>
