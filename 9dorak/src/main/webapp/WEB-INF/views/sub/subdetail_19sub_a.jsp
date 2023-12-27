@@ -165,7 +165,7 @@
 				</div>
 			</div>
 		</div>
-		<a href="${cpath}/wallet/pay.do" class=e1543_3415 style="cursor:pointer;">
+		<a href="${cpath}/wallet/sub19a.do" class=e1543_3415 style="cursor:pointer;">
 			<span class="e1543_3416">구독하기</span>
 		</a>
 	</div>
