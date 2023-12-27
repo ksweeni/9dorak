@@ -27,4 +27,21 @@ public class MemreviewVO {
 	private String pro_no;
 	private String order_no;
 	
+	private int currentPage;
+	
+	public void setStartIndex(int startIndex) {
+		
+	}
+	public void setCntPerPage(int displayRow) {
+		
+	}
+	
+	public int getCurrentPage() {
+		return currentPage;
+	}
+
+	public void setCurrentPage(int currentPage) {
+		this.currentPage =(currentPage-1)*10;
+	}
+	
 }

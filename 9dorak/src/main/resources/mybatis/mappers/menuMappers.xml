@@ -146,7 +146,7 @@
 			JOIN
 				ORDERS TC ON TB.ORDER_NO = TC.ORDER_NO
 			WHERE
-				TB.PRO_NO = ${pro_no}
+				TB.PRO_NO = #{pro_no}
 				AND TA.memreview_image IS NULL
 			ORDER BY
 				TA.memreview_date DESC
@@ -169,9 +169,7 @@
     	WITH RankedMemReviews AS (
 		    SELECT TA.*
 		    FROM memreview TA
-		    JOIN orderdetail TB ON TA.order_no = TB.order_no
-		    JOIN orders TC ON TB.order_no = TC.order_no
-		    WHERE TB.pro_no = #{pro_no}
+		    WHERE TA.pro_no = #{pro_no}
 		        AND TA.memreview_image IS NOT NULL
 		    order by ta.memreview_date desc
 		)
@@ -182,11 +180,9 @@
     
 	<!-- 사진리뷰 모아보기 리스트 -->
     <select id="selectMoaview" parameterType="HashMap" resultMap="proreviewMap">
-    	SELECT TA.*, TC.mem_id
+    	SELECT TA.*
 		    FROM memreview TA
-		    JOIN orderdetail TB ON TA.order_no = TB.order_no
-		    JOIN orders TC ON TB.order_no = TC.order_no
-		    WHERE TB.pro_no = ${pro_no}
+		    WHERE TA.pro_no = #{pro_no}
 		        AND TA.memreview_image IS NOT NULL
 		    order by ta.memreview_date desc
     </select>
@@ -194,11 +190,10 @@
 	<!-- 사진리뷰 모아보기 첫 큰화면 -->
     <select id="selectMoaFrist" parameterType="int" resultType="memreviewvo">
     	WITH RankedMoaFrist AS (
-	    	SELECT TA.*, TC.mem_id
+	    	SELECT TA.*, TB.mem_id
 			    FROM memreview TA
-			    JOIN orderdetail TB ON TA.order_no = TB.order_no
-			    JOIN orders TC ON TB.order_no = TC.order_no
-			    WHERE TB.pro_no = ${pro_no}
+			    JOIN orders TB ON TA.order_no = TB.order_no
+			    WHERE TA.pro_no = #{pro_no}
 			        AND TA.memreview_image IS NOT NULL
 			    order by ta.memreview_date desc
 		 )
@@ -209,29 +204,26 @@
     
 	<!-- 사진리뷰 모아보기 선택 큰화면 -->
     <select id="selectMoaSelected" parameterType="int" resultType="memreviewvo">
-    	SELECT TA.*, TC.mem_id
+    	SELECT TA.*, TB.mem_id
 		    FROM memreview TA
-		    JOIN orderdetail TB ON TA.order_no = TB.order_no
-		    JOIN orders TC ON TB.order_no = TC.order_no
-		    WHERE TA.memreview_no = ${memreview_no}
+		    JOIN orders TB ON TA.order_no = TB.order_no
+		    WHERE TA.memreview_no = #{memreview_no}
     </select>
 
 	<!-- 리뷰 토탈 카운트 -->
     <select id="proRevwTotCnt" parameterType="int" resultType="int">
-	    select 
-	           count(*)
-	  	  from memreview, orderdetail
-		 where orderdetail.pro_no = #{pro_no}
-		   and orderdetail.order_no = memreview.order_no
+	    select
+	    	count(*)
+			from memreview
+			where memreview.pro_no = #{pro_no}
     </select>
     
     <!-- 사진 리뷰 카운트 -->
     <select id="proRevwPhtCnt" parameterType="int" resultType="int">
 	    select 
 	           count(*)
-	  	  from memreview, orderdetail
-		 where orderdetail.pro_no = #{pro_no}
-		   and orderdetail.order_no = memreview.order_no
+	  	  from memreview
+		 where memreview.pro_no = #{pro_no}
 		   and memreview.memreview_image is not null
     </select>
     
@@ -239,9 +231,8 @@
     <select id="proRevwTxtCnt" parameterType="int" resultType="int">
 	    select 
 	           count(*)
-	  	  from memreview, orderdetail
-		 where orderdetail.pro_no = #{pro_no}
-		   and orderdetail.order_no = memreview.order_no
+	  	  from memreview
+		 where memreview.pro_no = #{pro_no}
 		   and memreview.memreview_image is null
     </select>
 
