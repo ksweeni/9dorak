@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminPointStyle.css?e" type="text/css" />
+	href="${cpath}/resources/css/adminPointStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -83,35 +83,28 @@
 							<caption>
 								회원 list
 
-								<form action="" id="setRows">
-									<p>
-										한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
-									</p>
-								</form>
+					
 
 							</caption>
 
 							<thead>
 								<tr>
-									<th style="border-radius: 10px 0px 0px 0px;">쿠폰코드</th>
-									<th>쿠폰사용여부</th>
-									<th>쿠폰명</th>
-									<th>쿠폰등록여부</th>
-									<th>사용자ID</th>
+									<th style="border-radius: 10px 0px 0px 0px;"> ID</th>
+									<th>NAME</th>
+								
+									
+									
 									<th style="border-radius: 0px 10px 0px 0px;">Select</th>
 								</tr>
 							</thead>
 							<tbody>
 
-								<c:forEach var="coupon" items="${clist}" varStatus="rowStatus">
+								<c:forEach var="mem" items="${mlist}" varStatus="rowStatus">
 									<tr>
-										<td>${coupon.coupon_code}</td>
-										<td>${coupon.coupon_check}</td>
-										<td>${coupon.coupon_name}</td>
-										<td>${coupon.coupon_reg}</td>
-										<td>${coupon.mem_id}</td>
+										<td>${mem.mem_id}</td>
+										<td>${mem.mem_name}</td>
 										<td><input type="checkbox" name="selectedMembers"
-											value="${coupon.mem_id}"></td>
+											value="${mem.mem_id}"></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -150,12 +143,11 @@
 						<caption>
 							쿠폰 list
 
-							<form action="" id="setRows">
+							 <form action="" id="setRows">
 								<p>
 									한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
 								</p>
 							</form>
-
 						</caption>
 
 						<thead>
@@ -272,7 +264,7 @@
 				e.preventDefault();
 				var rowPerPage = $('[name="rowPerPage"]').val() * 1;// 1 을  곱하여 문자열을 숫자형로 변환
 
-				//	    console.log(typeof rowPerPage);
+		
 
 				var zeroWarning = 'Sorry, but we cat\'t display "0" rows page. + \nPlease try again.'
 				if (!rowPerPage) {
