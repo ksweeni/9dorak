@@ -195,31 +195,5 @@ public class WalletController {
 		return "wallet/pay";
 	}
 	
-	@GetMapping("sub9a.do")
-	public String sub9a(Model model) {
-		List<ProVO> sub9allist = subService.selectAllSub9A();
-		model.addAttribute("sub9allist", sub9allist);
-		return "wallet/pay";
-	}
 	
-	@GetMapping("sub9b.do")
-	public String sub9b(Model model) {
-		List<ProVO> sub9bllist = subService.selectAllSub9B();
-		model.addAttribute("sub9bllist", sub9bllist);
-		return "wallet/pay";
-	}
-	
-	@GetMapping("sub19a.do")
-	public String sub19a(Model model) {
-		List<ProVO> sub19allist = subService.selectAllSub19A();
-		model.addAttribute("sub19allist", sub19allist);
-		return "wallet/pay";
-	}
-	
-	@GetMapping("sub19b.do")
-	public String sub19b(Model model) {
-		List<ProVO> sub19bllist = subService.selectAllSub19B();
-		model.addAttribute("sub19bllist", sub19bllist);
-		return "wallet/pay";
-	}
 }

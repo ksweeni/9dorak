@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.MenuService;
@@ -59,6 +60,12 @@ public class SubController {
 		List<ProVO> sub19bllist = subService.selectAllSub19B();
 		model.addAttribute("sub19bllist", sub19bllist);
 		return "sub/subdetail_19sub_b";
+	}
+	
+	@GetMapping("subOrder.do")
+	public String subOrder( @RequestParam("subType") String subType) {
+		System.out.println(subType);
+		return "wallet/pay";
 	}
 
 }

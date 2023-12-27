@@ -2,35 +2,35 @@
 
 .my-del-button {
 	margin-top: 3%;
-    position: relative;
-    left: 79%;
+	position: relative;
+	left: 79%;
 }
 
 .my-del {
-	cursor:pointer;
+	cursor: pointer;
 	border: 1px solid #fc8019;
 	padding: 10px 20px;
-    border-radius: 10px;
-    background-color: transparent;
-    color: #fc8019;
-    font-size: 1rem;
-    font-weight: 500;
+	border-radius: 10px;
+	background-color: transparent;
+	color: #fc8019;
+	font-size: 1rem;
+	font-weight: 500;
 }
-
 
 .my-del:hover {
 	background: white;
 }
+
 input {
-	accent-color:orange;
+	accent-color: orange;
 }
 
 .checkbox+label {
-	color: black; 
+	color: black;
 }
 
 .checkbox:checked+label {
-	color: orange; 
+	color: orange;
 }
 
 .screen {
@@ -225,7 +225,7 @@ input {
 }
 
 .screen .frame-4 {
-	cursor:pointer;
+	cursor: pointer;
 	display: flex;
 	width: 130px;
 	height: 35px;
@@ -446,6 +446,7 @@ input {
 	font-size: 16px;
 	letter-spacing: 0;
 	line-height: normal;
+	right: 17px;
 }
 
 .screen .frame-9 {
@@ -489,16 +490,50 @@ input {
 }
 
 .screen .text-wrapper-12 {
-	position: relative;
+	/* 	position: relative;
 	width: 61px;
 	margin-top: -1px;
-	/**/
+	
+	font-weight: 500;
+	color: #808080;
+	font-size: 14px;
+	text-align: center;
+	letter-spacing: 0;
+	line-height: normal; */
+	position: relative;
+	width: 43px;
+	margin-top: -1px;
 	font-weight: 500;
 	color: #808080;
 	font-size: 14px;
 	text-align: center;
 	letter-spacing: 0;
 	line-height: normal;
+	left: 214px;
+	top: 70px;
+}
+.screen .text-wrapper-98 {
+	/* 	position: relative;
+	width: 61px;
+	margin-top: -1px;
+	
+	font-weight: 500;
+	color: #808080;
+	font-size: 14px;
+	text-align: center;
+	letter-spacing: 0;
+	line-height: normal; */
+	position: relative;
+	width: 43px;
+	margin-top: -1px;
+	font-weight: 500;
+	color: #808080;
+	font-size: 14px;
+	text-align: center;
+	letter-spacing: 0;
+	line-height: normal;
+	left: 80px;
+	top: 70px;
 }
 
 .screen .text-wrapper-13 {
@@ -511,6 +546,20 @@ input {
 	font-size: 14px;
 	letter-spacing: 0;
 	line-height: normal;
+	top: 70px;
+}
+.screen .text-wrapper-99 {
+	position: relative;
+	width: fit-content;
+	margin-top: -1px;
+	/**/
+	font-weight: 500;
+	color: #f38820;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: normal;
+	top: 70px;
+	left: 176px;
 }
 
 .screen .frame-11 {
@@ -526,7 +575,7 @@ input {
 .screen .frame-12 {
 	width: 315px;
 	display: flex;
-	cursor:pointer;
+	cursor: pointer;
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
@@ -551,7 +600,7 @@ input {
 }
 
 .screen .line {
-	top: 238px;
+	top: 300px;
 	position: absolute;
 	width: 380px;
 	height: 1px;
@@ -577,7 +626,9 @@ input {
 	margin-top: -1px;
 	letter-spacing: 0;
 	line-height: normal;
+	top: 85px;
 }
+
 
 .screen .group-5 {
 	position: absolute;
@@ -590,7 +641,7 @@ input {
 .screen .element-p {
 	position: absolute;
 	width: 137px;
-	top: 0;
+	top: 71px;
 	left: 17px;
 	/**/
 	font-weight: 500;
@@ -609,12 +660,12 @@ input {
 	position: absolute;
 	width: 16px;
 	height: 16px;
-	top: 0;
+	top: 85px;
 	left: 0;
 }
 
 .screen .img {
-	top: 148px;
+	top: 220px;
 	position: absolute;
 	width: 380px;
 	height: 1px;
@@ -1048,6 +1099,7 @@ input {
 	left: 118px;
 	object-fit: cover;
 }
+
 #myModal- {
 	display: none;
 	position: fixed;
