@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
@@ -39,7 +40,7 @@
 					<div class="text-wrapper-13">${order.ORDER_PRICE}</div>
 					<div class="text-wrapper-14">${order.PRO_NAME }</div>
 					</a>
-					<div class="text-wrapper-15">${order.ORDER_DATE }</div>
+					<div class="text-wrapper-15">${fn:substring(order.ORDER_DATE, 0, 16)}</div>
 					<img class="rectangle" src="${cpath}/${order.PROIMAGE_IMAGE}" />
 				</div>
 
@@ -50,4 +51,3 @@
 		</c:otherwise>
 	</c:choose>
 </div>
-

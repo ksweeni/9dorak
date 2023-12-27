@@ -248,7 +248,7 @@ body {
 	height: 48px;
 	position: absolute;
 	left: 233px;
-	top: 500px;
+	top: 488px;
 	background-color: #ffffff;
 	border-radius: 16px;
 	border: 2px solid;
@@ -280,11 +280,11 @@ body {
 
 .e178_728 {
 	border-radius: 50%;
-	width: 178px;
-	height: 178px;
+	width: 169px;
+	height: 169px;
 	position: relative;
-	left: 230px;
-	top: 63px;
+	left: 247px;
+	top: 76px;
 	/* 	background-image: url(${cpath}/resources/images/my/ellipse_1.png); */
 	background: center/cover no-repeat;
 	background-position: center;
@@ -301,7 +301,7 @@ body {
 	width: 185px;
 	height: 58px;
 	position: absolute;
-	left: 265px;
+	left: 274px;
 	top: 280px;
 	/**/
 	text-align: left;
@@ -347,7 +347,7 @@ body {
 	width: 182.33592224121094px;
 	height: 29px;
 	position: absolute;
-	left: 76px;
+	left: 86px;
 	top: 65px;
 	/**/
 	text-align: left;
@@ -373,7 +373,7 @@ body {
 	width: 223px;
 	height: 45px;
 	position: absolute;
-	left: 82px;
+	left: 80px;
 	top: 5px;
 	/**/
 	text-align: left;
@@ -425,7 +425,7 @@ body {
 	width: 91px;
 	height: 35px;
 	position: absolute;
-	left: 16px;
+	left: 26px;
 	top: 10px;
 	/**/
 	text-align: left;
@@ -469,7 +469,7 @@ body {
 	width: 200px;
 	height: 48px;
 	position: absolute;
-	left: 50.77336502075195px;
+	left: 62.773365px;
 	top: 64px;
 	background-color: white;
 	border-radius: 16px;
@@ -506,7 +506,7 @@ body {
 	width: 260px;
 	height: 42.3828125px;
 	position: absolute;
-	left: 10px;
+	left: 22px;
 	top: 0px;
 	border-radius: 8px;
 	border-color: #b5b5b5;
