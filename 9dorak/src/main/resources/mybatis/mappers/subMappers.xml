@@ -24,4 +24,20 @@
 		select * from pro where pro_sub19 = 'B'
 	</select>
 
+
+
+
+
+
+	
+	
+	
+	<insert id="insertSub" parameterType="subvo">
+		insert into sub values (sub_seq.nextval, '', sysdate, #{mem_id})
+	</insert>
+	
+	<select id="selectSubNum" resultType="int">
+		select sub_no from sub where rownum=1 order by sub_no desc
+	</select>
+
 </mapper>

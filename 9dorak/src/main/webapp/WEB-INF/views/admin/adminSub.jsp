@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/adminSubStyle.css?d"
 	type="text/css" />
@@ -38,7 +38,11 @@
 		<a href="${pageContext.request.contextPath}/my/logout.do" class="e2101_2490">로그아웃</a>
 		</div>
 		<div class="e2099_2485"></div>
+		
+		
 		<div class="e2099_2486">
+		
+		<button class="insert_sub">추가하기</button>
 			<table id="products" border="1">
 				<caption>
 					구독 list
@@ -108,6 +112,30 @@ $(".e2099_2470").on("click", function() {
 		}
 
 	})
+})
+
+$(".e2099_2472").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminSub.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+
+		})
+	})
+	
+$(".insert_sub").on("click", function() {
+		$.ajax({
+	
+			url : "${cpath}/admin/adminSubInsert.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+	
+		})
 })
 
 $(".e2099_2473").on("click", function() {
@@ -218,5 +246,6 @@ $(".e2099_2475").on("click", function() {
 
 
 	$setRows.submit();
+	
 </script>
 </html>

@@ -186,7 +186,40 @@ public class AdminController {
 		model.addAttribute("sublist", sublist);
 		return "admin/adminSub";
 	}
+	
+	@GetMapping("adminSubInsert.do")
+	public String adminSubInsertPage(Model model) {
+		return "admin/adminMenuInsert";
+	}
 
+	@PostMapping("adminSubInsert.do")
+	public String adminSubInsert(Model model, SubVO sub) {
+		System.out.println(sub);
+		int result = subService.insertSub(sub);
+		//int sub_no = subService.selectSubNum();
+		
+		if (result > 0) {
+			return "insert 성공";
+		} else {
+			return "insert 실패";
+		}
+		//return "redirect:/admin/adminSub.do";
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 //	@GetMapping("adminNotice.do")
 //	public String adminNotice(Model model) {
 //		List<AnnoVO> ylist = yservice.selectAll();

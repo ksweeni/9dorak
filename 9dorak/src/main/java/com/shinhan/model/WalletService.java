@@ -25,25 +25,9 @@ public class WalletService {
 		return dao.selectAllPay();
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public List<BasketVO> getBasket(String mem_id) {
 		return dao.getBasket(mem_id);
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	public int deleteBasket(BasketVO basket) {
 		return dao.deleteBasket(basket);
@@ -76,11 +60,11 @@ public class WalletService {
 	public List<BasketVO> checkBasket(String mem_id, int pro_no) {
 		return dao.checkBasket(mem_id, pro_no);
 	}
-	
+
 	public int addBasket(BasketVO basket) {
 		return dao.addBasket(basket);
 	}
-	
+
 	public List<BasketVO> emptyBasket(String mem_id) {
 		return dao.emptyBasket(mem_id);
 	}
@@ -92,21 +76,16 @@ public class WalletService {
 	public List<OrderVO> getOrderList(int order_no) {
 		return dao.getOrderList(order_no);
 	}
-	
-		public int insertOrder(OrderVO order) {
-			return dao.insertOrder(order);
-		}
-		
-		
-//		public int insertOrderDetail(OrderdetailVO orderDetail, int order_no) {
-//			return dao.insertOrderDetail(orderDetail, order_no);
-//		}
 
-		public int selectOrderNum() {
-			return dao.selectOrderNum();
-		}
-		
-		public int insertOrderDetail(OrderdetailVO orderDetail) {
-			return dao.insertOrderDetail(orderDetail);
-		}
+	public int insertOrder(OrderVO order) {
+		return dao.insertOrder(order);
+	}
+
+	public int selectOrderNum() {
+		return dao.selectOrderNum();
+	}
+
+	public int insertOrderDetail(OrderdetailVO orderDetail) {
+		return dao.insertOrderDetail(orderDetail);
+	}
 }
