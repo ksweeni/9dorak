@@ -294,8 +294,8 @@ body {
 	position: relative;
     width: 700px;
     height: 100px;
-    top: -380px;
-    left: -280px;
+    top: 180px;
+    left: 0px;
     background-color: #ffbf8442;
     border-radius: 10px;
 }
@@ -465,6 +465,7 @@ body {
 	height: 40px;
 	background-color: #f1f4f3;
 	border-radius: 15px;
+	cursor: pointer;
 }
 
 .case .img-3 {
@@ -480,6 +481,7 @@ body {
 	height: 40px;
 	background-color: #f1f4f3;
 	border-radius: 15px;
+	cursor: pointer;
 }
 
 .case .deleteItemModalButton {
@@ -488,6 +490,7 @@ body {
 	height: 30px;
 	top: 14px;
 	left: 643px;
+	cursor: pointer;
 }
 
 .case .frame-19 {
