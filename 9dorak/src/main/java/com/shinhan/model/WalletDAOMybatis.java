@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.shinhan.dto.BasketVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PayVO;
 import com.shinhan.dto.PeopleVO;
 
@@ -119,9 +120,25 @@ public class WalletDAOMybatis {
     }
 
 	public List<OrderVO> getOrderList(int order_no) {
-		// TODO Auto-generated method stub
 		   return sqlSession.selectList(NAMESPACE + "getOrderList", order_no);
 	}
-
+	
+	// 주문 테이블 insert
+	public int insertOrder(OrderVO order) {
+		int result = sqlSession.insert(NAMESPACE + "insertOrder", order);
+		System.out.println(order);
+		return result; // order_no 반환
+	}
+	
+	// 마지막 주문 번호 찾기
+	public int selectOrderNum() {
+		int result = sqlSession.selectOne(NAMESPACE + "selectOrderNum");
+		return result;
+	}
+	
+	// 주문 디테일 테이블 insert
+	public int insertOrderDetail(OrderdetailVO orderDetail) {
+		return sqlSession.insert(NAMESPACE + "insertOrderDetail", orderDetail);
+	}
 
 }
