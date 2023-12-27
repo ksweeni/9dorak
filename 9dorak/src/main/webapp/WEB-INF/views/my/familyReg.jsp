@@ -15,6 +15,10 @@ String contextPath = request.getContextPath();
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <style>
+body {
+	margin: 0;
+}
+
 .178_596 {
 	overflow: hidden;
 }
@@ -174,8 +178,8 @@ String contextPath = request.getContextPath();
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
 	width: 152.17800903320312px;
 	height: 18px;
-	position: absolute;
-	left: 125.29296875px;
+	position: relative;
+	left: 98.292969px;
 	top: -9.094947017729282e-13px;
 	/**/
 	text-align: left;
@@ -212,10 +216,9 @@ String contextPath = request.getContextPath();
 .e178_613 {
 	width: 77.61075592041016px;
 	height: 18px;
-	position: absolute;
-	left: 2.05078125px;
+	position: relative;
+	left: -89.949219px;
 	top: -9.094947017729282e-13px;
-	/**/
 	text-align: left;
 	font-size: 14px;
 	letter-spacing: 0;
@@ -235,8 +238,8 @@ String contextPath = request.getContextPath();
 	width: 950px;
 	height: 799px;
 	position: absolute;
-	left: 0px;
-	top: 0px;
+	left: 27px;
+	top: -53px;
 }
 
 .e178_739 {
@@ -252,8 +255,9 @@ String contextPath = request.getContextPath();
 	border-color: #e7e7e7;
 	cursor: pointer;
 }
+
 .e178_739:hover {
-    border-color: #FFA07A; /* hover 시의 border 색상 */
+	border-color: #FFA07A; /* hover 시의 border 색상 */
 }
 
 .178_739 {
@@ -275,15 +279,17 @@ String contextPath = request.getContextPath();
 }
 
 .e178_728 {
-	border-radius: 500px;
-	width: 300px;
-	height: 200px;
-	position: absolute;
-	left: 176px;
-	top: 24px;
+	border-radius: 50%;
+	width: 178px;
+	height: 178px;
+	position: relative;
+	left: 230px;
+	top: 63px;
 	/* 	background-image: url(${cpath}/resources/images/my/ellipse_1.png); */
-	background-repeat: no-repeat;
-	background-size: cover;
+	background: center/cover no-repeat;
+	background-position: center;
+	overflow: hidden;
+	border: 5px solid #FAF9FF;
 }
 
 .178_728 {
@@ -464,15 +470,16 @@ String contextPath = request.getContextPath();
 	height: 48px;
 	position: absolute;
 	left: 50.77336502075195px;
-	top: 64px; 
+	top: 64px;
 	background-color: white;
 	border-radius: 16px;
 	border: 2px solid;
 	border-color: #e7e7e7;
 	cursor: pointer;
 }
+
 .e178_719:hover {
-    background-color: #FFF8F1; /* hover 시의 배경색 */
+	background-color: #FFF8F1; /* hover 시의 배경색 */
 }
 
 .178_719 {
@@ -508,7 +515,7 @@ String contextPath = request.getContextPath();
 
 .e178_721:focus-visible {
 	outline: none;
-    box-shadow: 0px 0px 16px 0px lightgray;
+	box-shadow: 0px 0px 16px 0px lightgray;
 }
 
 .178_721 {
@@ -538,8 +545,9 @@ String contextPath = request.getContextPath();
 	cursor: pointer;
 	border-color: #e7e7e7;
 }
+
 .e178_723:hover {
-    background-color: #FFF8F1; /* hover 시의 배경색 */
+	background-color: #FFF8F1; /* hover 시의 배경색 */
 }
 
 .178_723 {
@@ -578,7 +586,7 @@ String contextPath = request.getContextPath();
 
 .e178_725:focus-visible {
 	outline: none;
-    box-shadow: 0px 0px 16px 0px lightgray;
+	box-shadow: 0px 0px 16px 0px lightgray;
 }
 
 .178_725 {
@@ -590,7 +598,7 @@ String contextPath = request.getContextPath();
 	width: 250px;
 	height: 227px;
 	position: absolute;
-	left: 0px;
+	left: -25px;
 	top: 146px;
 	background-color: #ffffff;
 	border-radius: 16px;
@@ -695,7 +703,6 @@ String contextPath = request.getContextPath();
 }
 
 .e178_636 {
-	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 	width: 135px;
 	height: 20px;
 	position: absolute;
@@ -703,10 +710,11 @@ String contextPath = request.getContextPath();
 	top: 15px;
 	/**/
 	text-align: left;
-	font-size: 15px;
 	letter-spacing: 0;
 	text-decoration: none;
-	text-shadow: 0px 4px 4px #00000040;
+	font-size: 14px;
+	font-weight: 700;
+	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 }
 
 .e178_643 {
@@ -1019,7 +1027,7 @@ String contextPath = request.getContextPath();
 }
 
 svg {
-	margin-left: 95px;
+	margin-left: 27px;
 }
 </style>
 </head>

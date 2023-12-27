@@ -12,7 +12,7 @@ String contextPath = request.getContextPath();
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/pointAndCouponStyle.css" type="text/css" />
+	href="${cpath}/resources/css/pointAndCouponStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script

@@ -5,78 +5,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?e"
+<link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/familyListStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/familyListStyle.css?s" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </head>
 <body>
-
-	<div
-		class="u4358u4449u4363u4469u4369u4454u4363u4469u4364u4469-u4364u4469u4363u4469u4523-u4358u4457u4520u4357u4457u4520-u4364u4457u4370u4460 screen">
-
-		<header class="header">
-				<div class="top-nav">
-					<div class="navbar">
-						<div class="text-event">
+	<header class="header">
+		<div class="top-nav">
+			<div class="navbar">
+				<div class="text-event">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+				</div>
+				<div class="text-menu">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+				</div>
+				<div class="text-subscribe">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+				</div>
+				<div class="text-yomo">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+				</div>
+				<div class="text-doran">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+				</div>
+			</div>
+			<a href="${pageContext.request.contextPath}/main.do"> <img
+				class="untitled-2"
+				src="${cpath}/resources/images/main/header-logo.png" />
+			</a>
+			<div class="div-3">
+				<div class="text-wrapper-28">
+					<c:choose>
+						<c:when test="${not empty sessionScope.loginmem.mem_id}">
 							<a class="header-a"
-								href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
-						</div>
-						<div class="text-menu">
+								href="${pageContext.request.contextPath}/my/myPage.do"
+								style="font-weight: bold; left: -1rem; position: relative;">
+								<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
+							</a>
 							<a class="header-a"
-								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
-						</div>
-						<div class="text-subscribe">
+								href="${pageContext.request.contextPath}/my/logout.do"
+								style="position: relative; left: -1rem">로그아웃</a>
+						</c:when>
+						<c:otherwise>
 							<a class="header-a"
-								href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
-						</div>
-						<div class="text-yomo">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
-						</div>
-						<div class="text-doran">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
-						</div>
-					</div>
-					<a href="${pageContext.request.contextPath}/main.do"> <img
-						class="untitled-2"
-						src="${cpath}/resources/images/main/header-logo.png" />
-					</a>
-					<div class="div-3">
-						<div class="text-wrapper-28">
-							<c:choose>
-								<c:when test="${not empty sessionScope.loginmem.mem_id}">
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/my/myPage.do"
-										style="font-weight: bold; left: -1rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
-									</a>
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/my/logout.do"
-										style="position: relative; left: -1rem">로그아웃</a>
-								</c:when>
-								<c:otherwise>
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+								href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
 			                        <a class="header-a"
-										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
-								</c:otherwise>
-							</c:choose>
-						</div>
-						<div class="group-20" id="lightsParent">
-							<div class="header-overlap-group-3" onclick="loginBasket()">
-								<img class="header-group-21"
-									src="${cpath}/resources/images/main/header-cart.png" />
-							</div>
-						</div>
+								href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<div class="group-20" id="lightsParent">
+					<div class="header-overlap-group-3" onclick="loginBasket()">
+						<img class="header-group-21"
+							src="${cpath}/resources/images/main/header-cart.png" />
 					</div>
 				</div>
-			</header>
+			</div>
+		</div>
+	</header>
+	<div
+		class="u4358u4449u4363u4469u4369u4454u4363u4469u4364u4469-u4364u4469u4363u4469u4523-u4358u4457u4520u4357u4457u4520-u4364u4457u4370u4460 screen">
 
 		<div class="account-navigation">
 			<div class="frame-481485">
@@ -98,7 +96,7 @@
 		<div class="overlap-group2">
 			<div class="menu">
 				<div class="username">
-<!-- 					<div class="medium"></div> -->
+					<!-- 					<div class="medium"></div> -->
 					<c:choose>
 						<c:when
 							test="${sessionScope.loginmem.mem_image eq 'resources/images/my/baseProfile.png'}">
