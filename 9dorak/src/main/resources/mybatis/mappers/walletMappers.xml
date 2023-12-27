@@ -25,11 +25,6 @@
 		<![CDATA[ select proimage_image from proimage where pro_no=#{pro_no} and rownum <= 1 ]]>
 	</select>
 
-
-
-
-
-
 	<!-- 장바구니 삭제 -->
 	<delete id="deleteBasket" parameterType="basketvo">
 		delete from basket where
@@ -242,6 +237,5 @@
 	<insert id="insertOrderDetail" parameterType="orderdetailvo">
 		insert into orderdetail (order_no, pro_no, orderdetail_count) values (#{order_no}, #{pro_no}, #{orderdetail_count})
 	</insert>
-	
 	
 </mapper>
