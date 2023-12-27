@@ -97,11 +97,11 @@ th {
 	flex-direction: column;
 	gap: 25px;
 	height: 230px;
-	left: 69px;
+	left: 34px;
 	padding: 26px;
 	position: absolute;
-	top: 38px;
-	width: 252px;
+	top: 28px;
+	width: 253px;
 }
 
 .links {
@@ -154,11 +154,12 @@ th {
 	margin-right: -121px;
 	margin-top: -1px;
 	position: relative;
-	text-shadow: 0px 4px 4px #00000040;
 	white-space: nowrap;
 	width: fit-content;
 	text-decoration: none;
-	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 }
 
 .privacy-2 {
@@ -842,4 +843,5 @@ th {
 	position: relative;
 	white-space: nowrap;
 	width: fit-content;
+	font-size: 14px;
 }
