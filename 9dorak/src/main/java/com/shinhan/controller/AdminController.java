@@ -235,6 +235,8 @@ public class AdminController {
 		model.addAttribute("clist", clist);
 		List<String> coupon = couponService.selectDistinctCoupon();
 		model.addAttribute("coupon", coupon);
+		List<MemVO> mlist = memService.selectAll();
+		model.addAttribute("mlist",mlist);
 		return "admin/adminPoint";
 	}
 
