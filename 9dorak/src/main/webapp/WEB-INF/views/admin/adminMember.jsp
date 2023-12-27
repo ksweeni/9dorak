@@ -45,7 +45,7 @@
 					회원 list
 					<form action="" id="setRows">
 						<p>
-							한 페이지당 데이터 수 : <input type="text" name="rowPerPage" value="5">
+							<input type="hidden" name="rowPerPage" value="5">
 						</p>
 					</form>
 

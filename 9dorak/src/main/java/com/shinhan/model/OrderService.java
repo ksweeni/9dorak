@@ -22,4 +22,8 @@ public class OrderService {
 		return dao.selectAll();
 	}
 
+	public List<OrderVO> searchadminOrder(String mem_id) {
+		return dao.searchadminOrder(mem_id);
+	}
+
 }
