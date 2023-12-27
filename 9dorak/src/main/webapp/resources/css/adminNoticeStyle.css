@@ -352,67 +352,52 @@ td {
 	text-align: center; 가운데 정렬
 } */
 /* 공지사항 */
-#noticeTable table {
-	box-shadow: 0px 8px 32px 0px rgba(51, 38, 174, 0.08);
-	border-style: hidden;
-	border: none;
-	cursor: pointer;
-	border-radius: 10px;
-	position: relative;
-	border-collapse: collapse;
-	margin-bottom: 10px;
-	left: 70%; transform : translateX( -70%);
-	top: 2rem;
-	transform: translateX(-70%);
-}
 
-caption {
+
+
+caption {    
+	margin-bottom: 32px;
 	color: #1C2A53;
 	position: relative;
 	font-size: 1.5rem;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 700;
 	line-height: 30px;
 }
 
-#noticeTable table th, td {
-	padding: 3px 8px;
-}
-
-#noticeTable table th {
-	background-color: #F8F8F8;
-	color: #8E95A9;
-	padding: 3px 40px;
-}
-
-#noticeTable table td {
-	padding: 3px 40px;
-	text-align: center; /* 가운데 정렬 */
-}
-/* 자주 묻는 질문 */
-#faqTable table {
+table {
+	border-color: #E9EAF3;
+	box-shadow: 0px 8px 32px 0px rgba(51, 38, 174, 0.08);
+	border-style: hidden;
 	position: relative;
 	border-collapse: collapse;
 	margin-bottom: 10px;
-	left: 47%;
-	transform: translateX(-70%);
-	top: 180px;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
-#faqTable table th, td {
+th, td {
 	padding: 3px 8px;
 }
 
-#faqTable table th {
-	background-color: rgb(255, 125, 51);
-	color: white; /* 원하는 색상 값 */
-	padding: 3px 8px;
+th {
+	background-color: #F8F8F8;
+	color: #8E95A9;
+	padding: 5px 9px;
+	height: 2rem;
 }
 
-#faqTable table td {
-	padding: 3px 8px;
+td {
+	padding: 5px 8px;
 	text-align: center; /* 가운데 정렬 */
+	color: #555F7E;
 }
+
+td:hover{
+	text-shadow: -1px 1px 0px lightgray;
+}
+
+/* 자주 묻는 질문 */
 
 .off-screen {
 	display: none;
