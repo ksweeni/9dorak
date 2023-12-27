@@ -32,5 +32,16 @@ public class SubService {
 
 	public List<ProVO> selectAllSub19B() {
 		return dao.selectAllSub19B();
-	}	
+	}
+	
+	
+	
+	
+	public int insertSub(SubVO sub) {
+		return dao.insertSub(sub);
+	}
+	
+	public int selectSubNum() {
+		return dao.selectSubNum();
+	}
 }

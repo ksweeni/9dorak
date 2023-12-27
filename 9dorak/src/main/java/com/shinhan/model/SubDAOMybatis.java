@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.shinhan.dto.BasketVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.dto.SubVO;
 
@@ -44,5 +45,19 @@ public class SubDAOMybatis {
 	public List<ProVO> selectAllSub19B() {
 		List<ProVO> sub19blist = sqlSession.selectList(NAMESPACE + "selectAllSub19B");
 		return sub19blist;
+	}
+	
+	
+	
+	
+	
+	
+	public int insertSub(SubVO sub) {
+    	return sqlSession.insert(NAMESPACE + "insertSub", sub);
+    }
+
+	public int selectSubNum() {
+		int result = sqlSession.selectOne(NAMESPACE + "selectSubNum");
+		return result;
 	}
 }
