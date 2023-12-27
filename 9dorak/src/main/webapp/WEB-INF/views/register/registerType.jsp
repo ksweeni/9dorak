@@ -24,6 +24,12 @@ String contextPath = request.getContextPath();
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 
+<script type="text/javascript">
+$(document).ready(function(){
+	alert("${id}")
+})
+
+</script>
 </head>
 <body>
 	<div class="v49_2207">

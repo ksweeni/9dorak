@@ -167,8 +167,8 @@ public class LoginController {
 		model.addAttribute("name",paramMap.get("name"));
 		model.addAttribute("email",paramMap.get("email"));
 		model.addAttribute("id",paramMap.get("id"));
-		
-		return "register/registerForm";
+		System.out.println("로그인 레지스터폼 .do");
+		return "register/registerType";
 	}
 	
 }
