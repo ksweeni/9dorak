@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.ProVO;
 
 @Repository 
@@ -29,6 +30,11 @@ public class OrderDAOMybatis {
 	public List<OrderVO> searchadminOrder(String mem_id) {
 		List<OrderVO> olist = sqlSession.selectList(NAMESPACE + "searchadminOrder", mem_id);
 		return olist;
+	}
+
+	public OrderdetailVO selectByOrder(int order_no) {
+		OrderdetailVO order = sqlSession.selectOne(NAMESPACE + "selectByOrder", order_no);
+		return order;
 	}
 
 }
