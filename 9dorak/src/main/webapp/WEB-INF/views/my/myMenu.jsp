@@ -18,7 +18,9 @@ String contextPath = request.getContextPath();
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/myMenuStyle.css"
 	type="text/css" />
-<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
