@@ -245,11 +245,11 @@
 }
 
 .e2099_2487 {
-    position: relative;
-    left: 103px;
-    top: 43px;
-    width: 2px;
-    height: 2px;
+	position: relative;
+	left: 103px;
+	top: 43px;
+	width: 2px;
+	height: 2px;
 }
 
 .e2099_2471 hr {
@@ -273,33 +273,33 @@
 }
 
 .e2099_2490 {
-    position: relative;
-    left: -23px;
-    width: 202px;
-    top: 32px;
-    /* border: solid 1px rgba(244, 140, 40, 1); */
-    pa-left: 11px;
-    padding: 5px 20px 20px 20px;
+	position: relative;
+	left: -23px;
+	width: 202px;
+	top: 32px;
+	/* border: solid 1px rgba(244, 140, 40, 1); */
+	pa-left: 11px;
+	padding: 5px 20px 20px 20px;
 }
 
 .e2099_2491 {
-    position: relative;
-    left: -23px;
-    width: 202px;
-    top: -218px;
-    /* border: solid 1px rgba(244, 140, 40, 1); */
-    pa-left: 11px;
-    padding: 5px 20px 20px 20px;
+	position: relative;
+	left: -23px;
+	width: 202px;
+	top: -218px;
+	/* border: solid 1px rgba(244, 140, 40, 1); */
+	pa-left: 11px;
+	padding: 5px 20px 20px 20px;
 }
 
 .e2099_2492 {
-    position: relative;
-    left: -23px;
-    width: 202px;
-    top: -227px;
-    /* border: solid 1px rgba(244, 140, 40, 1); */
-    pa-left: 11px;
-    padding: 5px 20px 20px 20px;
+	position: relative;
+	left: -23px;
+	width: 202px;
+	top: -254px;
+	/* border: solid 1px rgba(244, 140, 40, 1); */
+	pa-left: 11px;
+	padding: 5px 20px 20px 20px;
 }
 
 .update_memu {
@@ -313,8 +313,9 @@
 	width: 80px;
 	height: 40px;
 }
+
 .delete_memu {
-	border: 2px solid rgb(255 255 255);
+	border: 2px solid rgb(255, 255, 255);
 	background-color: #cc0000;
 	border-radius: 10px;
 	color: white;
@@ -324,317 +325,393 @@
 	width: 80px;
 	height: 40px;
 }
+
 .e2099_3000 {
-    position: relative;
-    left: 884px;
-    top: 732px;
+	position: relative;
+	left: 884px;
+	top: 86px;
 }
+
 .e3001 {
-    position: relative;
-    left: -8px;
-    height: 30px;
-    width: 30px;
-    top: -34px;
-    background-image: url(../images/admin/admin05.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* border: 1px solid black; */
+	position: relative;
+	left: -8px;
+	height: 30px;
+	width: 30px;
+	top: -34px;
+	background-image: url(../images/admin/admin05.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* border: 1px solid black; */
 }
+
 .e3000_1 {
-    position: relative;
-    left: 29px;
-    top: -74px;
+	position: relative;
+	left: 29px;
+	top: -74px;
 }
+
 .e3000_1 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
+
 .e3002 {
-    position: relative;
-    left: -8px;
-    height: 30px;
-    width: 30px;
-    top: 0px;
-    background-image: url(../images/admin/admin06.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* border: 1px solid black; */
+	position: relative;
+	left: -8px;
+	height: 30px;
+	width: 30px;
+	top: 0px;
+	background-image: url(../images/admin/admin06.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* border: 1px solid black; */
 }
-.e3000_2{
+
+.e3000_2 {
 	position: relative;
 	left: -2px;
 	top: -70px;
 }
+
 .e3000_2 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_2 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
+
 .e3003 {
-    position: relative;
-    left: -8px;
-    height: 30px;
-    width: 30px;
-    top: -313px;
-    background-image: url(../images/admin/admin07.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* border: 1px solid black; */
+	position: relative;
+	left: -8px;
+	height: 30px;
+	width: 30px;
+	top: -313px;
+	background-image: url(../images/admin/admin07.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* border: 1px solid black; */
 }
-.e3000_3{
+
+.e3000_3 {
 	position: relative;
 	left: -2px;
 	top: -58px;
 }
+
 .e3000_3 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
-}
-.e3000_3 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
-}
-.e3000_4 {
-    position: relative;
-    left: 247px;
-    top: -188.6px;
-}
-.e3000_4 input {
-    padding: 10px;
-    width: 695px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
-}
-.e3000_4 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
-}
-.e3000_5{
-	position: relative;
-	left: 249px;
-	top: -175.5px;
-}
-.e3000_5 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
-}
-.e3000_5 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
-}
-.e3000_6{
-	position: relative;
-	left: 496px;
-	top: -234.5px;
-}
-.e3000_6 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
-}
-.e3000_6 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
-}
-.e3000_7{
-	position: relative;
-	left: 742px;
-	top: -293.6px;
-}
-.e3000_7 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
-}
-.e3000_7 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
-}
-.e3000_8 {
-    position: relative;
-    left: 27px;
-    top: -42px;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
 
-.e3000_9{
+.e3000_3 input:hover {
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+
+.e3000_4 {
+	position: relative;
+	left: 247px;
+	top: -197.6px;
+}
+
+.e3000_4 input {
+	padding: 10px;
+	width: 695px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
+}
+
+.e3000_4 input:hover {
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+
+.e3000_5 {
+	position: relative;
+	left: 249px;
+	top: -185.5px;
+}
+
+.e3000_5 input {
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
+}
+
+.e3000_5 input:hover {
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+
+.e3000_6 {
+	position: relative;
+	left: 496px;
+	top: -249.5px;
+}
+
+.e3000_6 input {
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
+}
+
+.e3000_6 input:hover {
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+
+.e3000_7 {
+	position: relative;
+	left: 742px;
+	top: -314.6px;
+}
+
+.e3000_7 input {
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
+}
+
+.e3000_7 input:hover {
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+
+.e3000_8 {
+	position: relative;
+	left: 27px;
+	top: -42px;
+}
+
+.e3000_9 {
 	position: relative;
 	left: -2px;
 	top: -36px;
 }
+
 .e3000_9 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_9 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-.e3000_10{
+
+.e3000_10 {
 	position: relative;
 	left: 249px;
-	top: -94.7px;
+	top: -100.7px;
 }
+
 .e3000_10 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_10 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-.e3000_11{
+
+.e3000_11 {
 	position: relative;
 	left: 497px;
-	top: -153.7px;
+	top: -164.7px;
 }
+
 .e3000_11 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_11 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-.e3000_12{
+
+.e3000_12 {
 	position: relative;
 	left: 742px;
-	top: -212.7px;
+	top: -227.7px;
 }
+
 .e3000_12 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_12 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-.e3000_13{
+
+.e3000_13 {
 	position: relative;
 	left: -2px;
-	top: -197px;
+	top: -214px;
 }
+
 .e3000_13 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_13 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-.e3000_14{
+
+.e3000_14 {
 	position: relative;
 	left: 249px;
-	top: -255.60000000000002px;
+	top: -277.6px;
 }
+
 .e3000_14 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_14 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-.e3000_15{
+
+.e3000_15 {
 	position: relative;
 	left: 497px;
-	top: -313.6px;
+	top: -340.6px;
 }
+
 .e3000_15 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_15 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-.e3000_16{
+
+.e3000_16 {
 	position: relative;
 	left: 741px;
-	top: -372px;
+	top: -404px;
 }
+
 .e3000_16 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_16 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-.e3000_17{
+
+.e3000_17 {
 	position: relative;
 	left: 27px;
 	top: -354px;
 }
-.e3000_18{
+
+.e3000_18 {
 	position: relative;
 	left: -2px;
 	top: -355px;
 }
+
 .e3000_18 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_18 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-.e3000_19{
+
+.e3000_19 {
 	position: relative;
 	left: 248px;
-	top: -413.5px;
+	top: -419.5px;
 }
+
 .e3000_19 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_19 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-.e3000_20{
+
+.e3000_20 {
 	position: relative;
 	left: 496px;
-	top: -472.9px;
+	top: -482.9px;
 }
+
 .e3000_20 input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-    outline: gray;
-    border: 2px solid #b6b6b6;
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
 }
+
 .e3000_20 input:hover {
-    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+
+.e3000_21 {
+	position: relative;
+	left: 741px;
+	top: -546.9px;
+}
+
+.e3000_21 input {
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
+}
+
+.e3000_21 input:hover {
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
 
 .sales {
@@ -648,4 +725,163 @@
 	font-size: 16px;
 	letter-spacing: 2;
 	cursor: pointer;
+}
+
+.e3004 {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	background-image: url(../images/admin/admin08.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	left: -11px;
+	top: -703px;
+}
+
+.e3000_99 {
+	position: relative;
+	left: 28px;
+	top: -744px;
+	width: max-content;
+}
+
+.e3000_100 {
+	position: relative;
+	left: -7px;
+	top: -744px;
+	width: max-content;
+}
+
+.e3000_101 {
+	position: relative;
+	left: -2px;
+	top: -2px;
+	width: max-content;
+	height: 170px;
+}
+b#pro_no {
+	color: rgb(118 116 116);
+}
+
+input#pro_no {
+	margin-top: 5px;
+}
+b#pro_name {
+	color: rgb(118 116 116);
+}
+
+input#pro_name {
+	margin-top: 5px;
+}
+b#pro_detail {
+	color: rgb(118 116 116);
+}
+
+input#pro_detail {
+	margin-top: 5px;
+}
+b#pro_price {
+	color: rgb(118 116 116);
+}
+
+input#pro_price {
+	margin-top: 5px;
+}
+b#pro_like {
+	color: rgb(118 116 116);
+}
+
+input#pro_like {
+	margin-top: 5px;
+}
+b#pro_rd {
+	color: rgb(118 116 116);
+}
+
+input#pro_rd {
+	margin-top: 5px;
+}
+b#pro_aller {
+	color: rgb(118 116 116);
+}
+
+input#pro_aller {
+	margin-top: 5px;
+}
+b#pro_prot {
+	color: rgb(118 116 116);
+}
+
+input#pro_prot {
+	margin-top: 5px;
+}
+b#pro_carb {
+	color: rgb(118 116 116);
+}
+
+input#pro_carb {
+	margin-top: 5px;
+}
+b#pro_prov {
+	color: rgb(118 116 116);
+}
+
+input#pro_prov {
+	margin-top: 5px;
+}
+b#pro_nat {
+	color: rgb(118 116 116);
+}
+
+input#pro_nat {
+	margin-top: 5px;
+}
+b#pro_sugar {
+	color: rgb(118 116 116);
+}
+
+input#pro_sugar {
+	margin-top: 5px;
+}
+b#pro_cal {
+	color: rgb(118 116 116);
+}
+
+input#pro_cal {
+	margin-top: 5px;
+}
+b#pro_weight {
+	color: rgb(118 116 116);
+}
+
+input#pro_weight {
+	margin-top: 5px;
+}
+b#pro_sub9 {
+	color: rgb(118 116 116);
+}
+
+input#pro_sub9 {
+	margin-top: 5px;
+}
+b#pro_sub19 {
+	color: rgb(118 116 116);
+}
+
+input#pro_sub19 {
+	margin-top: 5px;
+}
+b#pro_free {
+	color: rgb(118 116 116);
+}
+
+input#pro_free {
+	margin-top: 5px;
+}
+b#pro_sc {
+	color: rgb(118 116 116);
+}
+
+input#pro_sc {
+	margin-top: 5px;
 }

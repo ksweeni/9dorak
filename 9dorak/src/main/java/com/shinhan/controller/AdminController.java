@@ -70,9 +70,13 @@ public class AdminController {
 	}
 
 	@PostMapping("adminMenu.do")
-	public String adminMenuDetail(Model model, ProVO menu) {
+	public String adminMenuDetail(Model model, ProVO menu, ProimageVO menuimage) {
 		ProVO detailmenu = mService.selectByNo(menu.getPro_no());
+		List<ProimageVO> detailmenuimage = mService.selectByNoImage(menuimage.getPro_no());
 		model.addAttribute("detailmenu", detailmenu);
+		model.addAttribute("detailmenuimage", detailmenuimage);
+		System.out.println(detailmenuimage);
+		System.out.println(detailmenuimage);
 		return "admin/adminMenuDetail";
 	}
 
