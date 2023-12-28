@@ -189,14 +189,14 @@
 	height: 36px;
 	position: absolute;
 	left: 35px;
-	top: 127px;
+	top: 322px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
 
-.e2099_2472 {
+.e2099_2468 {
 	color: rgba(255, 255, 255, 1);
 	width: max-content;
 	height: 16px;
@@ -210,7 +210,7 @@
 	cursor: pointer;
 }
 
-.e2099_2468 {
+.e2099_2472 {
 	color: rgba(255, 255, 255, 1);
 	width: max-content;
 	height: 16px;
