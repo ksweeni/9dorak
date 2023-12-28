@@ -48,53 +48,99 @@
 			</div>
 			<div class="e2099_2487">
 				<div class="e2099_2490">
-					<p>
-						<b>회원 기본 정보</b>
-					</p>
-					<div class="div-first">
-					<div class="div-1">
-						회원 이름 <br> <input  class="input-1" type="text" value="${detailmem.mem_name}"
-							id="mem_name"></input>
-					</div>
+				<div class="title">
 
-					<div class="div-1">
-						회원 생년월일 <br> <input type="text" value="${detailmem.mem_bd}"
-							id="mem_bd"></input>
-					</div>
-					</div>
+						<div class="e3001"></div>
+						<div class="b">회원 기본 정보</div>
 
+					</div>
 					
+					
+					<div class="div-first">
+						<div class="div-1">
+							회원 이름 <br> <input class="input-1" type="text"
+								value="${detailmem.mem_name}" id="mem_name"></input>
+						</div>
 
+						<div class="div-1">
+							회원 생년월일 <br> <input class="input-1" type="text"
+								value="${detailmem.mem_bd}" id="mem_bd"></input>
+						</div>
+					</div>
 
+					<div class="div-first">
+						<div class="div-1">
+							회원이메일<br> <input class="input-1" type="text"
+								value="${detailmem.mem_email}" id="mem_email"></input>
+						</div>
 
-		
-					<br> 회원이메일<br> <input type="text"
-						value="${detailmem.mem_email}" id="mem_email"></input> <br>
-					<br> 회원전화번호 <br> <input type="text"
-						value="${detailmem.mem_phone}" id="mem_phone"></input>
+						<div class="div-1">
+							회원전화번호 <br> <input class="input-1" type="text"
+								value="${detailmem.mem_phone}" id="mem_phone"></input>
+						</div>
+					</div>
 				</div>
+
+
 				<div class="e2099_2491">
-					<p>
-						<b>회원 구도락 정보</b>
-					</p>
-					회원ID <br> <input type="text" value="${detailmem.mem_id}"
-						id="mem_id" readonly></input> <br>
-					<br> 회원PW <br> <input type="text"
-						value="${detailmem.mem_pw}" id="mem_pw"></input> <br>
-					<br> 회원코드 <br> <input type="text"
-						value="${detailmem.mem_code}" id="mem_code"></input> <br>
-					<br> 회원포인트 <br> <input type="text"
-						value="${detailmem.mem_point}" id="mem_point"></input> <br>
-					<br> 회원등급 <br> <input type="text"
-						value="${detailmem.mem_grade}" id="mem_grade"></input> <br>
-					<br> 회원탈퇴여부 <br> <input type="text"
-						value="${detailmem.mem_quit}" id="mem_quit"></input> <br>
-					<br> 회원이미지 <br> <input type="text"
-						value="${detailmem.mem_image}" id="mem_image"></input>
+					<div class="title">
+
+						<div class="e3002" ></div>
+						<div class="b">회원 구도락 정보</div>
+
+					</div>
+
+
+
+					<div class="div-first">
+						<div class="div-1">
+							회원ID <br> <input class="input-1" type="text"
+								value="${detailmem.mem_id}" id="mem_id" readonly></input>
+						</div>
+
+						<div class="div-1">
+							회원PW <br> <input class="input-1" type="text"
+								value="${detailmem.mem_pw}" id="mem_pw"></input>
+						</div>
+					</div>
+
+					<div class="div-first">
+						<div class="div-1">
+							회원코드 <br> <input class="input-1" type="text"
+								value="${detailmem.mem_code}" id="mem_code"></input>
+						</div>
+					</div>
+
+
+
+					<div class="div-first">
+						<div class="div-1">
+							회원포인트 <br> <input class="input-1" type="text"
+								value="${detailmem.mem_point}" id="mem_point"></input>
+						</div>
+
+						<div class="div-1">
+							회원등급 <br> <input class="input-1" type="text"
+								value="${detailmem.mem_grade}" id="mem_grade"></input>
+						</div>
+					</div>
+
+					<div class="div-first">
+						<div class="div-1">
+							회원탈퇴여부 <br> <input class="input-1" type="text"
+								value="${detailmem.mem_quit}" id="mem_quit"></input>
+						</div>
+
+						<div class="div-1">
+							회원이미지 <br> <input class="input-1" type="text"
+								value="${detailmem.mem_image}" id="mem_image"></input>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 </body>
 <script type="text/javascript">
 	$(".e2099_2468")
