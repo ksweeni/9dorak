@@ -1543,19 +1543,20 @@
 }
 
 #event_menu ul li a {
-	display: block;
 	padding: 27px; /* 상하좌우에 동일한 padding 값 적용 */
 	text-decoration: none; /* 링크에 밑줄 제거 */
 	color: black; /* 기본 텍스트 색상 지정 */
 	transition: color 0.3s; /* hover 효과 부드럽게 적용 */
+	position: relative;
+	top: 12px;
 }
 
 #event_menu ul li:nth-child(3) a {
-	color: blue;
-}
-
-#event_menu ul li a:hover {
-	color: blue;
+	background-color: #feae64;
+    border-radius: 30px;
+    height: 0px;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
 }
 
 hr {
