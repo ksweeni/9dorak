@@ -92,6 +92,8 @@ function redirectToChallenge(challenge_no) {
 					</div>
 				</div>
 			</header>
+			
+			
 	<div class="screen">
 		<div class="element">
 			<div class="div">
@@ -115,7 +117,7 @@ function redirectToChallenge(challenge_no) {
 								추가</a></li>
 					</ul>
 				</div>
-				<hr>
+				<div class="main">
 				<div class="group">
 					<div class="text-wrapper">내가 만든 구도락, 신메뉴로&nbsp;&nbsp;탄생</div>
 					<div class="text-wrapper-2">여러분만의 구도락을 제안하고, 추천해보세요</div>
@@ -289,7 +291,7 @@ function redirectToChallenge(challenge_no) {
 						</div>
 					</div>
 					<div class="group-13">
-						<div class="text-wrapper-7">11월의 후보</div>
+						<div class="text-wrapper-7">이 달의 후보</div>
 						<p class="p">당월 말까지 투표가 진행됩니다 !</p>
 					</div>
 				</div>
@@ -359,6 +361,9 @@ function redirectToChallenge(challenge_no) {
 				</div>
 			</div>
 		</div>
+		</div>
+		
+		
 		<footer class="footer">
 			<div class="footer-company-loco">
 				<div class="footer-company">

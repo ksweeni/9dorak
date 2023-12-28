@@ -170,7 +170,6 @@
 					추가</a></li>
 		</ul>
 	</div>
-	<hr>
 	<br></br>
 	<div class="board">
 		챌린지명 <br> <input type="text" value="${chall.challenge_name}"

@@ -100,7 +100,6 @@
 			</ul>
 		</div>
 	</div>
-	<hr>
 	<div class=e50_17>
 		<div class=e50_18>
 			<div class=e50_19>

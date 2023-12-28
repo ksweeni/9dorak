@@ -194,12 +194,11 @@ a {
 }
 
 hr {
-    top: -10px;
     width: 80%;
     background: #a0a0a0;
     margin: 0 auto;
     height: 1px;
-    border: 0;
+    border: 30;
 }
 
 li {
@@ -207,7 +206,7 @@ li {
 }
 
 #event_menu {
-	margin-top: 100px;
+	margin-top: 150px;
 }
 
 #event_menu ul {
@@ -222,22 +221,25 @@ li {
 	height: 73px;
 	line-height: 50px;
 	text-align: center;
+	
 }
-
 #event_menu ul li a {
-	display: block;
-	padding: 27px; /* 상하좌우에 동일한 padding 값 적용 */
+	padding: 25px; /* 상하좌우에 동일한 padding 값 적용 */
 	text-decoration: none; /* 링크에 밑줄 제거 */
-	color: black; /* 기본 텍스트 색상 지정 */
+	color: #7A7A7A; /* 기본 텍스트 색상 지정 */
 	transition: color 0.3s; /* hover 효과 부드럽게 적용 */
+	font-size: 1.1rem;
+	font-weight: 700;
+	position: relative;
+    top: 10px;
 }
 
 #event_menu ul li:first-child a {
-	color: blue; /* 첫 번째 a 태그에만 파란색 적용 */
-}
-
-#event_menu ul li a:hover {
-	color: blue;
+	background-color: #feae64;
+    border-radius: 30px;
+    height: 0px;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
 }
 
 #main {
@@ -260,6 +262,10 @@ h5 {
 .table {
   width: 100%;
   border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-style: hidden;
 }
 
 .table th,
@@ -270,9 +276,9 @@ h5 {
 }
 
 .table th {
-  background-color: #f38820;
   color: #fff;
   text-align: center;
+  background-color: #feae64;
 }
 
 .table td {
@@ -297,7 +303,8 @@ h5 {
 }
 
 .table tbody tr:hover {
-  background-color: #f5f5f5;
+  background-color: #FFF8F1;
+  cursor: pointer;
 }
 
 .pagination {
@@ -327,12 +334,12 @@ h5 {
     position: relative;
     margin: 0 300px;
     width: 100px;
-    left: 402px;
+    left: 460px;
     height: 50px;
     font-size: 15px;
-    color: #f38820;
-    border: 2px solid #f38820;
-    border-radius: 50px;
+    color: #feae64;
+    border: 2px solid #feae64;
+    border-radius: 60px;
     background-color: white;
 }
 
@@ -887,6 +894,6 @@ h5 {
 }
 .table_number {
     position: relative;
-    left: 402px;
+    left: 490px;
     top: 29px;
 }

@@ -173,7 +173,6 @@ function redirectToChallenge(challenge_no) {
 						추가</a></li>
 			</ul>
 		</div>
-		<hr>
 		<div id="main">
 			<h4>우리 아이와 함께하고 혜택 받기</h4>
 			<h5>구도락 회원이면 누구나 간단히 빠르게 참여하고 포인트를 받아가세요!</h5>
