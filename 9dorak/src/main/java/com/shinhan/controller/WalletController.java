@@ -246,6 +246,9 @@ public class WalletController {
 	@GetMapping("sub9a.do")
 	public String sub9a(Model model , HttpSession session) {
 		List<ProVO> sub9allist = subService.selectAllSub9A();
+		if((MemVO)session.getAttribute("loginmem") ==null ) {
+			return "redirect:/login/loginForm.do";
+		}
 		MemVO mem = (MemVO)session.getAttribute("loginmem");
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
@@ -260,6 +263,9 @@ public class WalletController {
 	@GetMapping("sub9b.do")
 	public String sub9b(Model model , HttpSession session) {
 		List<ProVO> sub9bllist = subService.selectAllSub9B();
+		if((MemVO)session.getAttribute("loginmem") ==null ) {
+			return "redirect:/login/loginForm.do";
+		}
 		MemVO mem = (MemVO)session.getAttribute("loginmem");
 		model.addAttribute("sub9bllist", sub9bllist);
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
@@ -272,16 +278,36 @@ public class WalletController {
 	}
 	
 	@GetMapping("sub19a.do")
-	public String sub19a(Model model) {
+	public String sub19a(Model model,HttpSession session) {
+		if((MemVO)session.getAttribute("loginmem") ==null ) {
+			return "redirect:/login/loginForm.do";
+		}
+		MemVO mem = (MemVO)session.getAttribute("loginmem");
 		List<ProVO> sub19allist = subService.selectAllSub19A();
 		model.addAttribute("sub19allist", sub19allist);
+		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
+		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
+		model.addAttribute("total",99999);
+		model.addAttribute("mem",mem);
+		model.addAttribute("clist",clist);
+		model.addAttribute("dlist",dlist);
 		return "wallet/pay";
 	}
 	
 	@GetMapping("sub19b.do")
-	public String sub19b(Model model) {
+	public String sub19b(Model model,HttpSession session) {
+		if((MemVO)session.getAttribute("loginmem") ==null ) {
+			return "redirect:/login/loginForm.do";
+		}
+		MemVO mem = (MemVO)session.getAttribute("loginmem");
 		List<ProVO> sub19bllist = subService.selectAllSub19B();
 		model.addAttribute("sub19bllist", sub19bllist);
+		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
+		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
+		model.addAttribute("total",99999);
+		model.addAttribute("mem",mem);
+		model.addAttribute("clist",clist);
+		model.addAttribute("dlist",dlist);
 		return "wallet/pay";
 	}
 }

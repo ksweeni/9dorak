@@ -170,7 +170,7 @@ public class AdminController {
 		model.addAttribute("orderlist", orderlist);
 		return "admin/adminOrder";
 	}
-	
+
 	@GetMapping("searchadminOrder.do")
 	public String searchadminOrder(Model model, OrderVO order) {
 		List<OrderVO> olist = orderService.searchadminOrder(order.getMem_id());
@@ -185,7 +185,7 @@ public class AdminController {
 		model.addAttribute("sublist", sublist);
 		return "admin/adminSub";
 	}
-	
+
 	@GetMapping("adminSubInsert.do")
 	public String adminSubInsertPage(Model model) {
 		return "admin/adminSubInsert";
@@ -195,30 +195,16 @@ public class AdminController {
 	public String adminSubInsert(Model model, SubVO sub) {
 		System.out.println(sub);
 		int result = subService.insertSub(sub);
-		//int sub_no = subService.selectSubNum();
-		
+		// int sub_no = subService.selectSubNum();
+
 		if (result > 0) {
 			return "insert 성공";
 		} else {
 			return "insert 실패";
 		}
-		//return "redirect:/admin/adminSub.do";
+		// return "redirect:/admin/adminSub.do";
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 //	@GetMapping("adminNotice.do")
 //	public String adminNotice(Model model) {
 //		List<AnnoVO> ylist = yservice.selectAll();
@@ -273,7 +259,7 @@ public class AdminController {
 		List<String> coupon = couponService.selectDistinctCoupon();
 		model.addAttribute("coupon", coupon);
 		List<MemVO> mlist = memService.selectAll();
-		model.addAttribute("mlist",mlist);
+		model.addAttribute("mlist", mlist);
 		return "admin/adminPoint";
 	}
 
@@ -455,14 +441,13 @@ public class AdminController {
 		return "admin/adminNotice";
 	}
 
-	@RequestMapping(value = "requestupload2")
-    public String requestupload2(MultipartHttpServletRequest mtfRequest ,HttpServletRequest request) {
-        List<MultipartFile> fileList = mtfRequest.getFiles("file");
-        System.out.println(fileList);
-        String src = mtfRequest.getParameter("src");
-        System.out.println("src value : " + src);
+	@PostMapping("requestupload2.do")
+	public String requestupload2(MultipartHttpServletRequest mtfRequest, HttpServletRequest request) {
+		List<MultipartFile> fileList = mtfRequest.getFiles("file");
+		System.out.println(fileList);
 
-        String path = request.getSession().getServletContext().getRealPath("resources");
+		// 2. 저장할 경로 가져오기
+		String path = request.getSession().getServletContext().getRealPath("resources");
 		System.out.println("path : " + path);
 //		String root = path + "\\uploadFiles" ;
 		String root = path + "\\upload";
@@ -473,31 +458,32 @@ public class AdminController {
 		if (!file.exists())
 			file.mkdirs();
 
-        for (MultipartFile mf : fileList) {
-            String originFileName = mf.getOriginalFilename(); // 원본 파일 명
-            long fileSize = mf.getSize(); // 파일 사이즈
+		for (MultipartFile mf : fileList) {
+			String originFileName = mf.getOriginalFilename(); // 원본 파일 명
+			long fileSize = mf.getSize(); // 파일 사이즈
 
-            System.out.println("originFileName : " + originFileName);
-            System.out.println("fileSize : " + fileSize);
-            String ext = "";
-    		int lastIndex = originFileName.lastIndexOf(".");
-    		if (lastIndex != -1) {
-    			ext = originFileName.substring(lastIndex);
-    		}
-            String ranFileName = UUID.randomUUID().toString() + ext;
-        	File changeFile = new File(root + "\\" + ranFileName);
-            System.out.println(changeFile);
-            try {
-                mf.transferTo(new File(ranFileName));
-            } catch (IllegalStateException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } 
-        }
+			System.out.println("originFileName : " + originFileName);
+			System.out.println("fileSize : " + fileSize);
+			String ext = "";
+			int lastIndex = originFileName.lastIndexOf(".");
+			if (lastIndex != -1) {
+				ext = originFileName.substring(lastIndex);
+			}
+			String ranFileName = UUID.randomUUID().toString() + ext;
+			File changeFile = new File(root + "\\" + ranFileName);
+			System.out.println(changeFile);
+			try {
+				System.out.println("업로드성공");
+				mf.transferTo(changeFile);
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
-        return "redirect:/";
-    }
+		return "redirect:/admin/adminMenu.do";
+	}
 }

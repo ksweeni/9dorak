@@ -35,6 +35,6 @@
 	<insert id="subOrderDetailInsert" parameterType="orderdetailvo">
 		INSERT INTO orderdetail
 		VALUES
-		( orders_seq.nextval -1 , #{pro_no} , #{orderdetail_count} )
+		( #{order_no} , #{pro_no} , #{orderdetail_count} )
 	</insert>
 </mapper>

@@ -20,6 +20,7 @@ import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PayVO;
 import com.shinhan.model.PayService;
+import com.shinhan.model.WalletService;
 import com.siot.IamportRestClient.IamportClient;
 import com.siot.IamportRestClient.exception.IamportResponseException;
 import com.siot.IamportRestClient.response.IamportResponse;
@@ -27,7 +28,8 @@ import com.siot.IamportRestClient.response.Payment;
 
 @Controller
 public class PaymentController {
-
+	@Autowired
+	WalletService wService;
 	@Autowired
 	PayService pService;
 	private final IamportClient iamportClient;
@@ -142,7 +144,8 @@ public class PaymentController {
 		MemVO mem = (MemVO)session.getAttribute("loginmem");
 		order.setMem_id(mem.getMem_id());
 		int result = pService.subOrderInsert(order);
-		
+		int order_no = wService.selectOrderNum();
+		orderdetail.setOrder_no(order_no);
 		int result2 = pService.subOrderDetailInsert(orderdetail);
 		return "";
 	}
