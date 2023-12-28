@@ -179,13 +179,14 @@ body {
 	width: 152.17800903320312px;
 	height: 18px;
 	position: relative;
-	left: 98.292969px;
+	left: 109.292969px;
 	top: -9.094947017729282e-13px;
 	/**/
 	text-align: left;
 	font-size: 14px;
 	letter-spacing: 0;
 	line-height: px;
+	font-weight: 600;
 }
 
 .e178_611 {
@@ -199,7 +200,7 @@ body {
 	text-align: left;
 	font-size: 32px;
 	letter-spacing: 0;
-	line-height: px;
+	font-weight: 800;
 }
 
 .e178_612 {
@@ -222,8 +223,8 @@ body {
 	text-align: left;
 	font-size: 14px;
 	letter-spacing: 0;
-	font-weight: 600;
 	color: #484848;
+	font-weight: 600;
 }
 
 .e178_614 {
@@ -631,6 +632,8 @@ body {
 	text-align: left;
 	font-size: 21px;
 	letter-spacing: 0;
+	font-weight: 700;
+	
 }
 
 .e178_632 {
@@ -644,6 +647,7 @@ body {
 	text-align: left;
 	font-size: 13px;
 	letter-spacing: 0.800000011920929;
+	font-weight: 700;
 }
 
 .e178_633 {
@@ -1028,8 +1032,12 @@ body {
 
 svg {
 	margin-left: 27px;
+	font-weight: 600;
 }
 </style>
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class=e178_596>
