@@ -4,241 +4,262 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.firstzone.menu">
 
-	<!-- 메뉴 전체보기  -->
+	<!-- 메뉴 전체보기 -->
 	<select id="selectAll" resultType="provo">
-		select * from pro order by pro_no asc
+		select * from pro order by
+		pro_no asc
 	</select>
-	
+
 	<!-- 카테고리 + 검색 -->
-	<select id="selectSearchPro" resultType="provo" parameterType="provo">
+	<select id="selectSearchPro" resultType="provo"
+		parameterType="provo">
 		select *
-		  from pro t1,
-			   category t2
-		  where t1.pro_no=t2.pro_no
-		<if test="ingre_no != null and ingre_no != ''" >
-			and t2.ingre_no = #{ingre_no}
+		from pro t1,
+		category t2
+		where t1.pro_no=t2.pro_no
+		<if test="ingre_no != null and ingre_no != ''">
+			and t2.ingre_no =
+			#{ingre_no}
 		</if>
-		<if test="pro_name != null and pro_name != ''" >
-			and t1.pro_name like '%'||#{pro_name}||'%'
+		<if test="pro_name != null and pro_name != ''">
+			and t1.pro_name like
+			'%'||#{pro_name}||'%'
 		</if>
 	</select>
-	
+
 	<!-- 신상품순 정렬 -->
 	<select id="selectOrderbyNew" resultType="provo">
-		select * from pro order by pro_rd desc
+		select * from pro order
+		by pro_rd desc
 	</select>
-	
+
 	<!-- 인기순 정렬 -->
 	<select id="selectOrderbyLike" resultType="provo">
-		select * from pro order by pro_like desc
+		select * from pro
+		order by pro_like desc
 	</select>
-	
+
 	<!-- 알러지 + 검색 -->
-	<select id="searchAllergyCheck" resultType="provo" parameterType="provo">
+	<select id="searchAllergyCheck" resultType="provo"
+		parameterType="provo">
 		select *
-		  from pro
-		  where (pro_aller not in #{pro_aller}
-				or pro_aller is null)
-		<if test="pro_name != null and pro_name != ''" >
-			and pro_name like '%'||#{pro_name}||'%'
+		from pro
+		where (pro_aller not in #{pro_aller}
+		or pro_aller is null)
+		<if test="pro_name != null and pro_name != ''">
+			and pro_name like
+			'%'||#{pro_name}||'%'
 		</if>
 	</select>
-	
-<!-- 	<select id="searchAllergyCheck" resultType="provo" parameterType="String">
-		select *
-		from pro
-		where pro_aller not in #{pro_aller}
-		or pro_aller is null
-	</select> -->
-	
+
+	<!-- <select id="searchAllergyCheck" resultType="provo" parameterType="String"> 
+		select * from pro where pro_aller not in #{pro_aller} or pro_aller is null 
+		</select> -->
+
 	<!-- 알러지 + 정렬 -->
-	<select id="selectAllOrder" resultType="provo" parameterType="provo">
+	<select id="selectAllOrder" resultType="provo"
+		parameterType="provo">
 		select *
 		from pro
-		where pro_aller not in #{pro_aller} or pro_aller is null
-			<if test="order_type eq '인기순'">
-				order by pro_like desc
-			</if>
-			<if test="order_type eq '신상품 순'">
-				order by pro_rd desc
-			</if>
+		where pro_aller not in #{pro_aller} or pro_aller is
+		null
+		<if test="order_type eq '인기순'">
+			order by pro_like desc
+		</if>
+		<if test="order_type eq '신상품 순'">
+			order by pro_rd desc
+		</if>
 	</select>
-	
+
 	<!-- 카테고리 + 정렬 -->
-	<select id="selectCtgrOrder" resultType="provo" parameterType="provo">
+	<select id="selectCtgrOrder" resultType="provo"
+		parameterType="provo">
 		select *
-		  from pro t1,
-			   category t2
-		  where t1.pro_no = t2.pro_no
-          and ingre_no = #{ingre_no}
-			<if test="order_type eq '인기순'">
-				order by pro_like desc
-			</if>
-			<if test="order_type eq '신상품 순'">
-				order by pro_rd desc
-			</if>
+		from pro t1,
+		category t2
+		where t1.pro_no = t2.pro_no
+		and ingre_no = #{ingre_no}
+		<if test="order_type eq '인기순'">
+			order by pro_like desc
+		</if>
+		<if test="order_type eq '신상품 순'">
+			order by pro_rd desc
+		</if>
 	</select>
-	
+
 	<!-- 카테고리 -->
-	<select id="searchCategoryCheck" resultType="provo" parameterType="String">
+	<select id="searchCategoryCheck" resultType="provo"
+		parameterType="String">
 		SELECT pro.*, category.ingre_no
 		FROM pro
-		LEFT JOIN category ON pro.pro_no = category.pro_no where ingre_no = #{ingre_no}
+		LEFT JOIN
+		category ON pro.pro_no = category.pro_no where ingre_no = #{ingre_no}
 	</select>
-	
+
 	<!-- 상품상세보기 -->
 	<select id="selectByNo" resultType="provo" parameterType="provo">
-		select *
+		select
+		*
 		from pro
 		where pro_no = #{pro_no}
 	</select>
-    
-    <!-- 찜여부 구분 -->
-    <select id="selectReserveYn" parameterType="HashMap" resultType="int">
-	    select 
-	           count(*)
-		  from reserve
-	     where mem_id = #{mem_id}
-		   and pro_no = #{pro_no}
-    </select>
-    
-    <!-- 찜목록 추가 -->
-    <insert id="insertReserve" parameterType="HashMap" >
-		insert into reserve (mem_id, pro_no) values (#{mem_id},#{pro_no})
-    </insert>
-    
-    <!-- 찜목록 삭제 -->
-    <delete id="deleteReserve"  parameterType="HashMap">
-    	delete reserve where mem_id = #{mem_id} and pro_no = #{pro_no}
-    </delete>
-    
-    <!-- 찜목록 추가에 따른 상품좋아요 업데이트 -->
-    <update id="updateProLike" parameterType="String">
-    	update pro set pro_like = (select count(*) from reserve where pro_no = #{pro_no})
-		where pro_no = #{pro_no}
-    </update>
 
-    <!-- 상품리뷰 맵 -->
+	<!-- 찜여부 구분 -->
+	<select id="selectReserveYn" parameterType="HashMap"
+		resultType="int">
+		select
+		count(*)
+		from reserve
+		where mem_id = #{mem_id}
+		and pro_no = #{pro_no}
+	</select>
+
+	<!-- 찜목록 추가 -->
+	<insert id="insertReserve" parameterType="HashMap">
+		insert into
+		reserve (mem_id, pro_no) values (#{mem_id},#{pro_no})
+	</insert>
+
+	<!-- 찜목록 삭제 -->
+	<delete id="deleteReserve" parameterType="HashMap">
+		delete reserve where mem_id = #{mem_id} and pro_no = #{pro_no}
+	</delete>
+
+	<!-- 찜목록 추가에 따른 상품좋아요 업데이트 -->
+	<update id="updateProLike" parameterType="String">
+		update pro set pro_like = (select count(*) from reserve where pro_no =
+		#{pro_no})
+		where pro_no = #{pro_no}
+	</update>
+
+	<!-- 상품리뷰 맵 -->
 	<resultMap type="HashMap" id="proreviewMap">
-    	<id column="memreview_date" property="memreview_date" javaType="java.lang.String"/>
-    	<id column="memreview_cont" property="memreview_cont"/>
-    	<id column="memreview_image" property="memreview_image"/>
-    	<id column="memreview_no" property="memreview_no"/>
-    	<id column="pro_no" property="pro_no"/>
-    	<id column="order_no" property="order_no"/>
-    	<id column="mem_id" property="mem_id"/>
-    </resultMap>
-    
-    <!-- 상품리뷰 텍스트 -->
-    <select id="selectProReviewTxt" parameterType="HashMap" resultMap="proreviewMap">
-	with base_t as
+		<id column="memreview_date" property="memreview_date"
+			javaType="java.lang.String" />
+		<id column="memreview_cont" property="memreview_cont" />
+		<id column="memreview_image" property="memreview_image" />
+		<id column="memreview_no" property="memreview_no" />
+		<id column="pro_no" property="pro_no" />
+		<id column="order_no" property="order_no" />
+		<id column="mem_id" property="mem_id" />
+	</resultMap>
+
+	<!-- 상품리뷰 텍스트 -->
+	<select id="selectProReviewTxt" parameterType="HashMap"
+		resultMap="proreviewMap">
+		with base_t as
 		(
-			SELECT
-				TO_CHAR(TA.memreview_date, 'yyyy"년 "mm"월 "dd"일"') AS memreview_date,
-				TA.memreview_cont AS memreview_cont,
-				TA.order_no AS order_no,
-				TB.pro_no AS pro_no,
-				TC.mem_id AS mem_id
-			FROM
-				MEMREVIEW TA
-			JOIN
-				ORDERDETAIL TB ON TA.ORDER_NO = TB.ORDER_NO AND TA.PRO_NO = TB.PRO_NO
-			JOIN
-				ORDERS TC ON TB.ORDER_NO = TC.ORDER_NO
-			WHERE
-				TB.PRO_NO = #{pro_no}
-				AND TA.memreview_image IS NULL
-			ORDER BY
-				TA.memreview_date DESC
+		SELECT
+		TO_CHAR(TA.memreview_date, 'yyyy"년 "mm"월 "dd"일"') AS memreview_date,
+		TA.memreview_cont AS memreview_cont,
+		TA.order_no AS order_no,
+		TB.pro_no AS pro_no,
+		TC.mem_id AS mem_id
+		FROM
+		MEMREVIEW TA
+		JOIN
+		ORDERDETAIL TB ON TA.ORDER_NO = TB.ORDER_NO AND TA.PRO_NO = TB.PRO_NO
+		JOIN
+		ORDERS TC ON TB.ORDER_NO = TC.ORDER_NO
+		WHERE
+		TB.PRO_NO = #{pro_no}
+		AND TA.memreview_image IS NULL
+		ORDER BY
+		TA.memreview_date DESC
 		)
-	, one_page_t as
-	(
-	select
-	base_t.*
-	, ROWNUM AS rnum
-	from base_t
+		, one_page_t as
+		(
+		select
+		base_t.*
+		, ROWNUM AS rnum
+		from base_t
 	    <![CDATA[ where ROWNUM <= #{currentPage}+4]]>
-	    )
-	    select *
-	    from one_page_t
-	    where rnum > #{currentPage}
-    </select> 
-    
-    <!-- 상품리뷰 사진 -->
-    <select id="selectProReviewPth" parameterType="HashMap" resultMap="proreviewMap">
-    	WITH RankedMemReviews AS (
-		    SELECT TA.*
-		    FROM memreview TA
-		    WHERE TA.pro_no = #{pro_no}
-		        AND TA.memreview_image IS NOT NULL
-		    order by ta.memreview_date desc
+		)
+		select *
+		from one_page_t
+		where rnum > #{currentPage}
+	</select>
+
+	<!-- 상품리뷰 사진 -->
+	<select id="selectProReviewPth" parameterType="HashMap"
+		resultMap="proreviewMap">
+		WITH RankedMemReviews AS (
+		SELECT TA.*
+		FROM memreview TA
+		WHERE TA.pro_no = #{pro_no}
+		AND TA.memreview_image IS NOT NULL
+		order by ta.memreview_date desc
 		)
 		SELECT *
 		FROM RankedMemReviews
 		<![CDATA[ WHERE ROWNUM <= 4 ]]>
-    </select>
-    
+	</select>
+
 	<!-- 사진리뷰 모아보기 리스트 -->
-    <select id="selectMoaview" parameterType="HashMap" resultMap="proreviewMap">
-    	SELECT TA.*
-		    FROM memreview TA
-		    WHERE TA.pro_no = #{pro_no}
-		        AND TA.memreview_image IS NOT NULL
-		    order by ta.memreview_date desc
-    </select>
-    
+	<select id="selectMoaview" parameterType="HashMap"
+		resultMap="proreviewMap">
+		SELECT TA.*
+		FROM memreview TA
+		WHERE TA.pro_no = #{pro_no}
+		AND TA.memreview_image IS NOT NULL
+		order by ta.memreview_date desc
+	</select>
+
 	<!-- 사진리뷰 모아보기 첫 큰화면 -->
-    <select id="selectMoaFrist" parameterType="int" resultType="memreviewvo">
-    	WITH RankedMoaFrist AS (
-	    	SELECT TA.*, TB.mem_id
-			    FROM memreview TA
-			    JOIN orders TB ON TA.order_no = TB.order_no
-			    WHERE TA.pro_no = #{pro_no}
-			        AND TA.memreview_image IS NOT NULL
-			    order by ta.memreview_date desc
-		 )
+	<select id="selectMoaFrist" parameterType="int"
+		resultType="memreviewvo">
+		WITH RankedMoaFrist AS (
+		SELECT TA.*, TB.mem_id
+		FROM memreview TA
+		JOIN orders TB ON TA.order_no = TB.order_no
+		WHERE TA.pro_no = #{pro_no}
+		AND TA.memreview_image IS NOT NULL
+		order by ta.memreview_date desc
+		)
 		SELECT *
 		FROM RankedMoaFrist
 		<![CDATA[ WHERE ROWNUM <= 1 ]]>
-    </select>
-    
+	</select>
+
 	<!-- 사진리뷰 모아보기 선택 큰화면 -->
-    <select id="selectMoaSelected" parameterType="int" resultType="memreviewvo">
-    	SELECT TA.*, TB.mem_id
-		    FROM memreview TA
-		    JOIN orders TB ON TA.order_no = TB.order_no
-		    WHERE TA.memreview_no = #{memreview_no}
-    </select>
+	<select id="selectMoaSelected" parameterType="int"
+		resultType="memreviewvo">
+		SELECT TA.*, TB.mem_id
+		FROM memreview TA
+		JOIN orders TB ON TA.order_no = TB.order_no
+		WHERE TA.memreview_no = #{memreview_no}
+	</select>
 
 	<!-- 리뷰 토탈 카운트 -->
-    <select id="proRevwTotCnt" parameterType="int" resultType="int">
-	    select
-	    	count(*)
-			from memreview
-			where memreview.pro_no = #{pro_no}
-    </select>
-    
-    <!-- 사진 리뷰 카운트 -->
-    <select id="proRevwPhtCnt" parameterType="int" resultType="int">
-	    select 
-	           count(*)
-	  	  from memreview
-		 where memreview.pro_no = #{pro_no}
-		   and memreview.memreview_image is not null
-    </select>
-    
-   <!-- 텍스트 리뷰 카운트 -->
-    <select id="proRevwTxtCnt" parameterType="int" resultType="int">
-	    select 
-	           count(*)
-	  	  from memreview
-		 where memreview.pro_no = #{pro_no}
-		   and memreview.memreview_image is null
-    </select>
+	<select id="proRevwTotCnt" parameterType="int" resultType="int">
+		select
+		count(*)
+		from memreview
+		where memreview.pro_no = #{pro_no}
+	</select>
+
+	<!-- 사진 리뷰 카운트 -->
+	<select id="proRevwPhtCnt" parameterType="int" resultType="int">
+		select
+		count(*)
+		from memreview
+		where memreview.pro_no = #{pro_no}
+		and memreview.memreview_image is not null
+	</select>
+
+	<!-- 텍스트 리뷰 카운트 -->
+	<select id="proRevwTxtCnt" parameterType="int" resultType="int">
+		select
+		count(*)
+		from memreview
+		where memreview.pro_no = #{pro_no}
+		and memreview.memreview_image is null
+	</select>
 
 	<delete id="deleteMenu" parameterType="int">
 		DELETE FROM pro
-		where pro_no = #{pro_no}
+		where
+		pro_no = #{pro_no}
 	</delete>
 
 	<update id="updateMenu" parameterType="provo">
@@ -263,45 +284,63 @@
 		where
 		pro_no=#{pro_no}
 	</update>
-	
+
 	<insert id="insertMenu" parameterType="provo">
-    INSERT INTO pro (
-        pro_no,
-        pro_name,
-        pro_detail,
-        pro_price,
-        pro_rd,
-        pro_like,
-        pro_aller,
-        pro_prot,
-        pro_carb,
-        pro_prov,
-        pro_nat,
-        pro_sugar,
-        pro_cal,
-        pro_weight,
-        pro_sub9,
-        pro_sub19,
-        pro_free
-    ) VALUES (
-        pro_seq.NEXTVAL,
-        #{pro_name},
-        #{pro_detail},
-        #{pro_price},
-        sysdate,
-        0,
-        #{pro_aller},
-        #{pro_prot},
-        #{pro_carb},
-        #{pro_prov},
-        #{pro_nat},
-        #{pro_sugar},
-        #{pro_cal},
-        #{pro_weight},
-        #{pro_sub9},
-        #{pro_sub19},
-        #{pro_free}
-    )
+		INSERT INTO pro (
+		pro_no,
+		pro_name,
+		pro_detail,
+		pro_price,
+		pro_rd,
+		pro_like,
+		pro_aller,
+		pro_prot,
+		pro_carb,
+		pro_prov,
+		pro_nat,
+		pro_sugar,
+		pro_cal,
+		pro_weight,
+		pro_sub9,
+		pro_sub19,
+		pro_free
+		) VALUES (
+		pro_seq.NEXTVAL,
+		#{pro_name},
+		#{pro_detail},
+		#{pro_price},
+		sysdate,
+		0,
+		#{pro_aller},
+		#{pro_prot},
+		#{pro_carb},
+		#{pro_prov},
+		#{pro_nat},
+		#{pro_sugar},
+		#{pro_cal},
+		#{pro_weight},
+		#{pro_sub9},
+		#{pro_sub19},
+		#{pro_free}
+		)
 	</insert>
-    
+
+
+
+	<select id="selectProNo" resultType="int">
+		select pro_no from pro where
+		rownum=1 order by pro_no desc
+	</select>
+
+
+
+	<insert id="insertPro_image" parameterType="proimagevo">
+		INSERT INTO pro_image (
+		proimage_no , proimage_image, pro_no
+
+		) VALUES (
+		proimg_seq.NEXTVAL, #{proimage_image} , {pro_no}
+		)
+	</insert>
+
 </mapper>
