@@ -29,6 +29,7 @@
 		<span class="e2099_2473"
 			onclick="location.href='${cpath}/admin/adminNotice.do'">게시판관리</span>
 		<span class="e2099_2474">이벤트관리</span> <span class="e2099_2475">쿠폰/포인트관리</span>
+		<span class="sales">매출관리</span>
 		<div class="admin_login">
 			<div class="e2099_2476">
 				<hr>
@@ -206,5 +207,18 @@
 		})
 
 	})
+	
+	$(".sales").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminSales.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+
+		})
+	})
+	
 </script>
 </html>

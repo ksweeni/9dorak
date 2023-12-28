@@ -28,6 +28,7 @@
 		<span class="e2099_2473">게시판관리</span>
 		<span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span>
+		<span class="sales">매출관리</span>
 		<div class="admin_login">
 		<div class="e2099_2476">
 			<hr>

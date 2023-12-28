@@ -224,5 +224,6 @@ $("#searchBtn").on("click", function() {
 			});
 
 	$setRows.submit();
+
 </script>
 </html>
