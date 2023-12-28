@@ -54,7 +54,7 @@
 </svg>
 					</button>
 					<div class="dropdown-content">
-						<a href="#">공지사항</a> <a href="#">자주 묻는 질문</a>
+						<a href="#" onclick="toggleTable('notice')">공지사항</a> <a href="#" onclick="toggleTable('faq')">자주 묻는 질문</a>
 					</div>
 				</div>
 				<!--  
@@ -199,6 +199,8 @@
 			url : "${cpath}/admin/adminMenu.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -211,6 +213,8 @@
 			url : "${cpath}/admin/adminMember.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -223,6 +227,8 @@
 			url : "${cpath}/admin/adminOrder.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -235,6 +241,8 @@
 			url : "${cpath}/admin/adminSub.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -247,6 +255,8 @@
 			url : "${cpath}/admin/adminEvent.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -286,6 +296,8 @@
 			url : "${cpath}/admin/adminNoticeInsert.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -297,6 +309,8 @@
 			url : "${cpath}/admin/adminNoticeFaqInsert.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -309,6 +323,8 @@
 			type : "get",
 			success : function(res) {
 				/* alert("갔따오기 성공"); */
+								var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -343,7 +359,8 @@
 			data : param,
 			success : function(res) {
 				//	 alert("갔따오기 성공"); 
-
+				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 				$(".numButton").hide();
 			}
