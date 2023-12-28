@@ -150,10 +150,10 @@
 
 	<!-- 빈 장바구니 -->
 	<select id="emptyBasket" resultType="basketvo">
-		select * from basket where
-		mem_id=#{mem_id}
+		select * from basket where mem_id in (select mem_id2 from people where mem_id=#{mem_id})
+		union
+		select * from basket where mem_id=#{mem_id}
 	</select>
-
 
 	<select id="getOrderList" resultType="ordervo" parameterType="int">
 		SELECT

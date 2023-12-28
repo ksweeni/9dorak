@@ -218,16 +218,10 @@
 						success : function(response) {
 							if (response.success) {
 								console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
-								//alert("상품이 이미 장바구니에 존재합니다! - 불키자");
 								lightsOn();
 							} else {
 								console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
 							}
-						},
-						error : function(xhr, status, error) {
-							console.error("콘솔 - Error during basket operation. Status: " + status);
-							console.error("콘솔 - Server response: " + xhr.responseText);
-							//alert("An error occurred during the checkBasket operation!");
 						}
 				});
 		}

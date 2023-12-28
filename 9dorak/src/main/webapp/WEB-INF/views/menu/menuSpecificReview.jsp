@@ -108,12 +108,12 @@
 				</div>
 				<div class="specific">
 					<div class="overlap-2">
-						<div class="title">${menudetail.pro_name }</div>
+						<div class="title">${menudetail.pro_name}</div>
 						<img id="heart" class="heart"
 							src="${cpath}/resources/images/menu/menu-heart-unfill.png"
 							onclick="toggleHeart()" />
 					</div>
-					<div class="text-wrapper">${menudetail.pro_price }원</div>
+					<div class="text-wrapper">${menudetail.pro_price}원</div>
 					<div class="price-and-button">
 						<div class="frame-wrapper">
 							<div class="frame">
@@ -157,73 +157,73 @@
 							<div class="frame-4">
 								<div class="group-2">
 									<progress class="overlap-group-3" id="progress"
-										value="${menudetail.pro_carb }" min="0"
-										max="${menudetail.pro_weight }"></progress>
+										value="${menudetail.pro_carb}" min="0"
+										max="${menudetail.pro_weight}"></progress>
 
 								</div>
-								<div class="text-wrapper-4">${menudetail.pro_carb }%</div>
+								<div class="text-wrapper-4">${menudetail.pro_carb}%</div>
 							</div>
 							<div class="frame-5">
 
 								<div class="text-wrapper-5">탄수화물</div>
-								<div class="text-wrapper-6">${menudetail.pro_carb }/${menudetail.pro_weight }g</div>
+								<div class="text-wrapper-6">${menudetail.pro_carb}/${menudetail.pro_weight}g</div>
 							</div>
 						</div>
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
 									<progress class="overlap-group-3" id="progress"
-										value="${menudetail.pro_prot }" min="0"
-										max="${menudetail.pro_weight }"></progress>
+										value="${menudetail.pro_prot}" min="0"
+										max="${menudetail.pro_weight}"></progress>
 
 								</div>
-								<div class="text-wrapper-4">${menudetail.pro_prot }%</div>
+								<div class="text-wrapper-4">${menudetail.pro_prot}%</div>
 							</div>
 							<div class="frame-6">
 								<div class="text-wrapper-5">단백질</div>
-								<div class="text-wrapper-6">${menudetail.pro_prot }/${menudetail.pro_weight }g</div>
+								<div class="text-wrapper-6">${menudetail.pro_prot}/${menudetail.pro_weight}g</div>
 							</div>
 						</div>
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
 									<progress class="overlap-group-3" id="progress"
-										value="${menudetail.pro_prov }" min="0"
-										max="${menudetail.pro_weight }"></progress>
+										value="${menudetail.pro_prov}" min="0"
+										max="${menudetail.pro_weight}"></progress>
 								</div>
-								<div class="text-wrapper-4">${menudetail.pro_prov }%</div>
+								<div class="text-wrapper-4">${menudetail.pro_prov}%</div>
 							</div>
 							<div class="frame-7">
 								<div class="text-wrapper-5">지방</div>
-								<div class="text-wrapper-6">${menudetail.pro_prov }/${menudetail.pro_weight }g</div>
+								<div class="text-wrapper-6">${menudetail.pro_prov}/${menudetail.pro_weight}g</div>
 							</div>
 						</div>
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-2">
 									<progress class="overlap-group-3" id="progress"
-										value="${menudetail.pro_nat }" min="0"
-										max="${menudetail.pro_weight }"></progress>
+										value="${menudetail.pro_nat}" min="0"
+										max="${menudetail.pro_weight}"></progress>
 								</div>
-								<div class="text-wrapper-4">${menudetail.pro_nat }%</div>
+								<div class="text-wrapper-4">${menudetail.pro_nat}%</div>
 							</div>
 							<div class="frame-6">
 								<div class="text-wrapper-5">나트륨</div>
-								<div class="text-wrapper-6">${menudetail.pro_nat }/${menudetail.pro_weight }g</div>
+								<div class="text-wrapper-6">${menudetail.pro_nat}/${menudetail.pro_weight}g</div>
 							</div>
 						</div>
 						<div class="view">
 							<div class="frame-4">
 								<div class="group-3">
 									<progress class="overlap-group-3" id="progress"
-										value="${menudetail.pro_sugar }" min="0"
-										max="${menudetail.pro_weight }"></progress>
+										value="${menudetail.pro_sugar}" min="0"
+										max="${menudetail.pro_weight}"></progress>
 								</div>
-								<div class="text-wrapper-4">${menudetail.pro_sugar }%</div>
+								<div class="text-wrapper-4">${menudetail.pro_sugar}%</div>
 							</div>
 							<div class="frame-7">
 								<div class="text-wrapper-5">당류</div>
-								<div class="text-wrapper-6">${menudetail.pro_sugar }/${menudetail.pro_weight }g</div>
+								<div class="text-wrapper-6">${menudetail.pro_sugar}/${menudetail.pro_weight}g</div>
 							</div>
 						</div>
 					</div>
@@ -233,7 +233,7 @@
 							<div class="overlap-group-4">
 								<p class="text">
 									<span class="span">1일 섭취 기준인 2,000kcal 중 </span> <span
-										class="text-wrapper-7">${menudetail.pro_cal } kcal</span> <span
+										class="text-wrapper-7">${menudetail.pro_cal} kcal</span> <span
 										class="span">를 섭취할 수 있어요 👨‍🍳</span>
 								</p>
 							</div>
@@ -609,7 +609,7 @@
 			}
 		});
 	};
-
+	
     // 아이디+상품이 장바구니에 이미 있는지 확인
     function checkBasket() {
 	    var mem_id = "${sessionScope.loginmem.mem_id}";
@@ -618,6 +618,13 @@
 	    if (mem_id == "") {
 			alert("로그인이 필요한 서비스입니다 !");
 			window.location.href = "${cpath}/login/loginForm.do";
+			return;
+		}
+	   
+	    // 재고 확인
+		var stock = ${menudetail.pro_sc}
+		if(stock <= 0) {
+			alert("재고가 없습니다!");
 			return;
 		}
 	    
@@ -633,17 +640,14 @@
 	        dataType: "json",
 	        success: function (response) {
 	        	if (!response.success) {
-	                console.log("콘솔 - 상품이 이미 장바구니에 존재합니다!");
 	                alert("상품이 이미 장바구니에 존재합니다!");
 	            } else {
-	                console.log("콘솔 - 상품이 장바구니에 없음");
 	                addBasket(mem_id, pro_no);
 	            }
 	        },
 	        error: function (xhr, status, error) {
 	            console.error("콘솔 - Error during basket operation. Status: " + status);
 	            console.error("콘솔 - Server response: " + xhr.responseText);
-	            alert("An error occurred during the checkBasket operation!");
 	        }
 
 	    });
@@ -658,6 +662,7 @@
 			window.location.href="${cpath}/login/loginForm.do";
 			return;
 		} else {
+			//stockCheck();
 			window.location.href="${pageContext.request.contextPath}/wallet/basket.do";
 		}
 	}
@@ -677,7 +682,6 @@
 					success : function(response) {
 						if (response.success) {
 							console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
-							//alert("상품이 이미 장바구니에 존재합니다! - 불키자");
 							lightsOn();
 						} else {
 							console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
@@ -686,9 +690,7 @@
 					error : function(xhr, status, error) {
 						console.error("콘솔 - Error during basket operation. Status: " + status);
 						console.error("콘솔 - Server response: " + xhr.responseText);
-						//alert("An error occurred during the checkBasket operation!");
 					}
-
 				});
 	}
 
@@ -727,16 +729,13 @@
             console.log(response);
             if (response.success) {
             	lightsOn();
-                console.log("콘솔 - Item added to the basket successfully");
                 alert("장바구니에 담았습니다!");
             } else {
-                console.error("콘솔 - Failed to add item to the basket:", response.message);
                 alert("장바구니에 담기지 않았습니다");
             }
         },
 
         error: function (error) {
-            console.error("콘솔 - Error adding item to the basket:", error);
             alert("An error occurred during the addBasket operation!");
         }
     });
@@ -784,10 +783,15 @@
 			alert("로그인이 필요한 서비스입니다 !");
 			window.location.href="${cpath}/login/loginForm.do";
 			return;
+		} else {
+			// 재고확인 먼저..!!
+			var stock = ${menudetail.pro_sc}
+			if(stock <= 0) {
+			alert("재고가 없습니다!");
+			return;
+			}
 		}
-		
 	}
-	
 	
 </script>
 
