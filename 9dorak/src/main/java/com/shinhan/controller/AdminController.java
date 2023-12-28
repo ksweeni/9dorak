@@ -76,6 +76,7 @@ public class AdminController {
 		model.addAttribute("detailmenu", detailmenu);
 		model.addAttribute("detailmenuimage", detailmenuimage);
 		System.out.println(detailmenuimage);
+		System.out.println(detailmenuimage);
 		return "admin/adminMenuDetail";
 	}
 
