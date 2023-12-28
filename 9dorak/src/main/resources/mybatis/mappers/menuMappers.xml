@@ -357,7 +357,6 @@
 		INSERT INTO proimage
 		(
 		proimage_no , proimage_image, pro_no
-
 		) VALUES (
 		proimg_seq.NEXTVAL,
 		#{proimage_image} , #{pro_no}
