@@ -1725,6 +1725,11 @@
 	width: 460px;
 }
 
+.table th:nth-child(3) {
+	width: 150px; 
+    text-align: center; 
+}
+
 .table td {
 	padding-left: 100px;
 	padding-right: 100px;

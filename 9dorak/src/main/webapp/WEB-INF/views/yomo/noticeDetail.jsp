@@ -87,16 +87,14 @@
 	</div>
 	<div></div>
 	<div class="e844_616">
-		<hr>
-		<p>
+		<p class="title">
 			<b>${anno.anno_title}</b>
 		</p>
-		<p>${anno.anno_date}</p>
+		<p class="date">${anno.anno_date}</p>
 		<hr>
 		<div class="e844_999">
 			<p>${anno.anno_cont}</p>
 		</div>
-		<hr>
 	</div>
 	<div class=e844_617></div>
 	<!-- 	<div class=e854_1005>
