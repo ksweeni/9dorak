@@ -39,36 +39,64 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
-			<div class="e2099_2487">
-		
-			</div>
+			<div class="e2099_2487"></div>
 			<div id="EvantDetail" class="table-container">
-					
+
+
 				<form action="">
-				 <label for="ch_no">챌린지번호 : </label>
-                    <input type="text" value="${challenge.challenge_no}" id="ch_no" readonly /><br />
-    			 <label for="ch_name">챌린지명/도시락만들9명 : </label>
-                    <input type="text" value="${challenge.challenge_name}" id="ch_name" /><br />
-    			<label for="ch_cont">챌린지내용/도시락만들9소개 : </label>
-                    <textarea id="ch_cont">${challenge.challenge_cont}</textarea><br />
-    			<label for="ch_image">챌린지이미지/도시락만들9이미지 : </label>
-    				<input type="text" value="${challenge.challenge_image}" id="ch_image"/> <br />
-    			<label for="ch_date">챌린지날짜 : </label>
-    				<input type="text" value="${challenge.challenge_date}" id="ch_date"/> <br />
-   		 		<label for="ch_start">챌린지시작날짜 : </label>
-   		 			<input type="text" value="${challenge.challenge_start}" id="ch_start"/> <br />
-    			<label for="ch_end">챌린지종료날짜 : </label>
-    				<input type="text" value="${challenge.challenge_end}" id="ch_end"/> <br />
-    			<label for="ch_category">챌린지구분 : </label>
-    				<input type="text" value="${challenge.challenge_category}" id="ch_category"/> <br />
-    			<label for="ch_recipe">만들9레시피 : </label>
-    				<textarea id="ch_recipe">${challenge.challenge_recipe}</textarea> <br />
-    			<label for="mem_id">회원ID : </label>
-    				<input type="text" value="${challenge.mem_id}" id="mem_id"/> <br />
+					<div class="top">
+						<div class="top-title">
+							<p class="top-title-p">챌린지 수정 및 삭제</p>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+								viewBox="0 0 24 24" fill="none">
+<path d="M12 20H21" stroke="#F49B33" stroke-width="3"
+									stroke-linecap="round" stroke-linejoin="round" />
+<path
+									d="M16.5 3.50023C16.8978 3.1024 17.4374 2.87891 18 2.87891C18.2786 2.87891 18.5544 2.93378 18.8118 3.04038C19.0692 3.14699 19.303 3.30324 19.5 3.50023C19.697 3.69721 19.8532 3.93106 19.9598 4.18843C20.0665 4.4458 20.1213 4.72165 20.1213 5.00023C20.1213 5.2788 20.0665 5.55465 19.9598 5.81202C19.8532 6.06939 19.697 6.30324 19.5 6.50023L7 19.0002L3 20.0002L4 16.0002L16.5 3.50023Z"
+									stroke="#F49B33" stroke-width="3" stroke-linecap="round"
+									stroke-linejoin="round" />
+</svg>
+						</div>
+						<hr class="hr-line" />
+					</div>
+					
+					<div class="content-wrapper">
+					
+					<div class="div-1">
+					<div class="div-1-wrapper"><label for="ch_no">챌린지번호 </label> <input class="input-1" type="text"
+						value="${challenge.challenge_no}" id="ch_no" readonly /></div>
+						<div class="div-1-wrapper">	<label for="mem_id">회원ID </label> <input class="input-1"  type="text"
+						value="${challenge.mem_id}" id="mem_id" /> </div>
+						
+						<div class="div-1-wrapper">	<label
+						for="ch_category">챌린지구분</label> <input type="text"
+						value="${challenge.challenge_category}" id="ch_category" /> </div>
+						
+					
+						
+						</div>
+					<label
+						for="ch_name">챌린지명/도시락만들9명 </label> <input type="text"
+						value="${challenge.challenge_name}" id="ch_name" /><br /> <label
+						for="ch_cont">챌린지내용/도시락만들9소개 </label>
+					<textarea id="ch_cont">${challenge.challenge_cont}</textarea>
+					<br /> <label for="ch_image">챌린지이미지/도시락만들9이미지 </label> <input
+						type="text" value="${challenge.challenge_image}" id="ch_image" />
+					<br /> <label for="ch_date">챌린지날짜  </label> <input type="text"
+						value="${challenge.challenge_date}" id="ch_date" /> <br /> <label
+						for="ch_start">챌린지시작날짜 </label> <input type="text"
+						value="${challenge.challenge_start}" id="ch_start" /> <br /> <label
+						for="ch_end">챌린지종료날짜 </label> <input type="text"
+						value="${challenge.challenge_end}" id="ch_end" /> <br />  <br />
+					<label for="ch_recipe">만들9레시피 </label>
+					<textarea id="ch_recipe">${challenge.challenge_recipe}</textarea>
+					<br />  
+						</div>
 				</form>
 			</div>
 			<div id="buttonContainer">
-			<button id="EvantUpdate">수정</button><button id="EvantDelete">삭제</button>
+				<button id="EvantUpdate">수정</button>
+				<button id="EvantDelete">삭제</button>
 			</div>
 		</div>
 	</div>
@@ -145,44 +173,44 @@
 
 		})
 	})
-	
-	$("#EvantUpdate").on("click",function(){
 
-	 	var param ={
-	 		challenge_no : $("#ch_no").val(),
-	 		challenge_name : $("#ch_name").val(),
-	 		challenge_cont : $("#ch_cont").val(),
-	 		challenge_recipe : $("#ch_recipe").val()
-		} 
-	
+	$("#EvantUpdate").on("click", function() {
+
+		var param = {
+			challenge_no : $("#ch_no").val(),
+			challenge_name : $("#ch_name").val(),
+			challenge_cont : $("#ch_cont").val(),
+			challenge_recipe : $("#ch_recipe").val()
+		}
+
 		$.ajax({
 			url : "${cpath}/admin/adminEventUpdate.do",
 			data : param,
 			type : "post",
-			success: function(res){
+			success : function(res) {
 				alert(res);
-				location.href="${cpath}/admin/adminEvent.do";
+				location.href = "${cpath}/admin/adminEvent.do";
 			}
 		})
-		
+
 	})
-	
-	$("#EvantDelete").on("click",function(){
- 
-	 	var param ={
-	 		challenge_no : $("#ch_no").val()
-		} 
-	
+
+	$("#EvantDelete").on("click", function() {
+
+		var param = {
+			challenge_no : $("#ch_no").val()
+		}
+
 		$.ajax({
 			url : "${cpath}/admin/adminEventDelete.do",
 			data : param,
 			type : "post",
-			success: function(res){
+			success : function(res) {
 				alert(res);
-				location.href="${cpath}/admin/adminEvent.do";
+				location.href = "${cpath}/admin/adminEvent.do";
 			}
 		})
-		
+
 	})
 </script>
 </html>
