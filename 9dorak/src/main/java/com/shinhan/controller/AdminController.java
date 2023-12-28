@@ -186,6 +186,13 @@ public class AdminController {
 		return "admin/adminSub";
 	}
 	
+	@PostMapping("adminSub.do")
+	public String adminSubDetail(Model model, SubVO sub) {
+		SubVO detailSub = subService.selectSubNo(sub.getSub_no());
+		model.addAttribute("detailSub", detailSub);
+		return "admin/adminSubDetail";
+	}
+	
 	@GetMapping("adminSubInsert.do")
 	public String adminSubInsertPage(Model model) {
 		return "admin/adminSubInsert";
@@ -195,19 +202,31 @@ public class AdminController {
 	public String adminSubInsert(Model model, SubVO sub) {
 		System.out.println(sub);
 		int result = subService.insertSub(sub);
-		//int sub_no = subService.selectSubNum();
 		
-		if (result > 0) {
-			return "insert 성공";
-		} else {
-			return "insert 실패";
-		}
-		//return "redirect:/admin/adminSub.do";
+		return "redirect:/admin/adminSub.do";
 	}
 
+	@RequestMapping(value = "adminSubUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminSubUpdate(Model model, SubVO sub) {
+		int result = subService.updateSub(sub);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+		}
+	}
 	
-	
-	
+	@RequestMapping(value = "adminSubDelete.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminSubDelete(Model model, SubVO sub) {
+		int result = subService.deleteSub(sub.getSub_no());
+		if (result > 0) {
+			return "삭제 성공";
+		} else {
+			return "삭제 실패";
+		}
+	}
 	
 	
 	
