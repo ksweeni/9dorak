@@ -14,7 +14,8 @@
 	position: relative;
 	border-collapse: collapse;
 	margin-bottom: 10px;
-	left: 50%;
+	left: 396px;
+	top: 96px;
 	transform: translateX(-50%);
 }
 
@@ -336,9 +337,9 @@ td:hover{
     position: relative;
     width: 500px;
     text-align: center;
-    left: 382px;
+    left: 415px;
     transform: translateX(-100%);
-    top: 100px;
+    top: 114px;
 }
 #nav a {
     position: relative;
@@ -367,7 +368,7 @@ td:hover{
     height: 24.7421875px;
     position: absolute;
     left: 365.0625px;
-    top: -4.9375px;
+    top: 3.0625px;
     cursor: pointer;
     background-repeat: no-repeat;
     background-size: cover;

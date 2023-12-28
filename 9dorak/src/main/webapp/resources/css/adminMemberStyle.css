@@ -288,7 +288,8 @@ table {
 	position: relative;
 	border-collapse: collapse;
 	margin-bottom: 10px;
-	left: 50%;
+	left: 731px;
+	top: -63px;
 	transform: translateX(-50%);
 }
 
@@ -309,7 +310,7 @@ td {
 	color: #555F7E;
 }
 
-td:hover{
+td:hover {
 	text-shadow: -1px 1px 0px lightgray;
 }
 
@@ -321,9 +322,9 @@ td:hover{
 	position: relative;
 	width: 500px;
 	text-align: center;
-left: 50%;
+	left: 747px;
 	transform: translateX(-100%);
-	top: 20px;
+	top: -36px;
 }
 
 #nav a {
@@ -344,6 +345,34 @@ left: 50%;
 #nav a.active {
 	background: #333;
 	color: #fff;
+}
+
+#products {
+	width: 120%; /* 원하는 넓이로 조절하세요 */
+}
+
+#products th:nth-child(2) {
+	width: 164px;
+}
+
+#products th:nth-child(3) {
+	width: 150px; /* 원하는 넓이로 조절하세요 */
+}
+
+#products th:nth-child(6) {
+	width: 150px; /* 원하는 넓이로 조절하세요 */
+}
+
+#products th:nth-child(8) {
+	width: 150px; /* 원하는 넓이로 조절하세요 */
+}
+
+#products th:nth-child(9) {
+	width: 150px; /* 원하는 넓이로 조절하세요 */
+}
+
+#products th:nth-child(10) {
+	width: 150px; /* 원하는 넓이로 조절하세요 */
 }
 
 .insert_member {
