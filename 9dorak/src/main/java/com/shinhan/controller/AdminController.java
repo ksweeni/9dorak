@@ -84,7 +84,9 @@ public class AdminController {
 	@PostMapping("adminMenuInsert.do")
 	public String adminMenuInsert(Model model, ProVO menu , MultipartHttpServletRequest mtfRequest, HttpServletRequest request) {
 		int result = mService.insertMenu(menu);
+		System.out.println(result);
 		int pro_no = mService.selectProNo();
+		System.out.println(pro_no);
 		List<ProVO> mlist = mService.selectAll();
 		model.addAttribute("mlist", mlist);
 		// 파일업로드
