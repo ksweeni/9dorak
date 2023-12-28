@@ -99,7 +99,6 @@
 			</ul>
 		</div>
 	</div>
-	<hr>
 	<div class=e62_324>
 		<div class=e62_466>
 

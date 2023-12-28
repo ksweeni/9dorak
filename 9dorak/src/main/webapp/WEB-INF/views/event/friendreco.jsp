@@ -19,6 +19,7 @@
 <script>
 	Kakao.init('744b3913b823c75012d64f9856fdc141'); // 사용하려는 앱의 JavaScript 키 입력
 </script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
@@ -105,7 +106,6 @@
 			</ul>
 		</div>
 	</div>
-	<hr>
 	<div class=e62_324>
 		<div class=e62_466>
 			<div class=e62_325>
@@ -224,6 +224,23 @@
 						},
 					}, ],
 				});
+		
+		$(document).ready(function() {
+			function fadeInSequentially(elements, interval) {
+				var index = 0;
+				var intervalId = setInterval(function() {
+					elements.eq(index).addClass("active");
+					index++;
+
+					if (index === elements.length) {
+						clearInterval(intervalId);
+					}
+				}, interval);
+			}
+
+			var elements = $(".e62_326, .e63_173, .e62_465");
+			fadeInSequentially(elements, 500); // 각 요소가 1초 간격으로 나타납니다.
+		});
 	</script>
 </body>
 </html>

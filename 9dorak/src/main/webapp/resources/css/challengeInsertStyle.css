@@ -914,7 +914,7 @@
 }
 
 #event_menu {
-	margin-top: 100px;
+	margin-top: 150px;
 }
 
 #event_menu ul {
@@ -933,19 +933,22 @@
 }
 
 #event_menu ul li a {
-	display: block;
-	padding: 27px; /* 상하좌우에 동일한 padding 값 적용 */
-	text-decoration: none; /* 링크에 밑줄 제거 */
-	color: black; /* 기본 텍스트 색상 지정 */
-	transition: color 0.3s; /* hover 효과 부드럽게 적용 */
+	padding: 25px;
+    text-decoration: none;
+    color: #7A7A7A;
+    transition: color 0.3s;
+    font-size: 1.1rem;
+    font-weight: 700;
+    position: relative;
+    top: 10px;
 }
 
 #event_menu ul li:first-child a {
-	color: blue; /* 첫 번째 a 태그에만 파란색 적용 */
-}
-
-#event_menu ul li a:hover {
-	color: blue;
+	background-color: #feae64;
+    border-radius: 30px;
+    height: 0px;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
 }
 hr {
     top: -10px;

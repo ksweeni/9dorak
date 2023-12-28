@@ -178,7 +178,6 @@
 			</ul>
 		</div>
 	</div>
-	<hr>
 				<footer class="footer" style="top:90rem;">
 				<div class="footer-company-loco">
 					<div class="footer-company">

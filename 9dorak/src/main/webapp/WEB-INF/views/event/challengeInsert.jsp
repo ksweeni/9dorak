@@ -99,7 +99,6 @@ String contextPath = request.getContextPath();
 						추가</a></li>
 			</ul>
 		</div>
-		<hr>
 	<div class="div-wrapper">
 			<div class="frame-2">
 				<div class="frame-3">
@@ -111,6 +110,7 @@ String contextPath = request.getContextPath();
 			<div class="overlap">
 				<div class="group">
 					<div class="overlap-group">
+					<div class="formarea">
 						<form action="${cpath}/event/insertChal.do" method="post"
 							enctype="multipart/form-data">
 							<!-- 제목 -->
@@ -205,10 +205,10 @@ document.addEventListener("DOMContentLoaded", function() {
 								</div>
 							</div>
 						</form>
+						</div><!-- formarea -->
 					</div>
 				</div>
 			</div>
-			<img class="group-10" src="img/group-481746.png" />
 		</div>
 					<footer class="footer" style="top:80rem;">
 				<div class="footer-company-loco">
