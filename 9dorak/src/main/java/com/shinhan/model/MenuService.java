@@ -119,4 +119,8 @@ public class MenuService {
 		return dao.insertPro_image(pro_image);
 	}
 
+	public List<ProimageVO> selectByNoImage(int pro_no) {
+		return dao.selectByNoImage(pro_no);
+	}
+
 }

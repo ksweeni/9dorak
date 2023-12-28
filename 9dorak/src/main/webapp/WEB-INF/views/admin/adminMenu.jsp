@@ -75,6 +75,7 @@
 						<th>메뉴당류</th>
 						<th>메뉴칼로리</th>
 						<th>메뉴중량</th>
+						<th>메뉴재고</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -93,7 +94,7 @@
 							<td>${menu.pro_sugar}</td>
 							<td>${menu.pro_cal}</td>
 							<td>${menu.pro_weight}</td>
-						
+							<td>${menu.pro_sc}</td>
 						</tr>
 					</c:forEach>
 				</tbody>

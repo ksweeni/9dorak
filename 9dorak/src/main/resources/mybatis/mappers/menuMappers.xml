@@ -298,7 +298,8 @@
 		pro_weight=#{pro_weight},
 		pro_sub9=#{pro_sub9},
 		pro_sub19=#{pro_sub19},
-		pro_free=#{pro_free}
+		pro_free=#{pro_free},
+		pro_sc=#{pro_sc}
 		where
 		pro_no=#{pro_no}
 	</update>
@@ -308,6 +309,7 @@
 		pro_no,
 		pro_name,
 		pro_detail,
+		pro_sc,
 		pro_price,
 		pro_rd,
 		pro_like,
@@ -326,6 +328,7 @@
 		pro_seq.NEXTVAL,
 		#{pro_name},
 		#{pro_detail},
+		0,
 		#{pro_price},
 		sysdate,
 		0,
@@ -363,5 +366,12 @@
 		#{proimage_image} , #{pro_no}
 		)
 	</insert>
+	
+	<select id="selectByNoImage" resultType="proimagevo" parameterType="proimagevo">
+		select
+		*
+		from proimage
+		where pro_no = #{pro_no}
+	</select>
 
 </mapper>

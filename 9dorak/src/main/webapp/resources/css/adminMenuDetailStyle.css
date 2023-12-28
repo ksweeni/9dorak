@@ -327,7 +327,7 @@
 .e2099_3000 {
     position: relative;
     left: 884px;
-    top: 732px;
+    top: 86px;
 }
 .e3001 {
     position: relative;
@@ -636,6 +636,21 @@
 .e3000_20 input:hover {
     border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
+.e3000_21{
+	position: relative;
+	left: 741px;
+	top: -531.9px;
+}
+.e3000_21 input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 8px;
+    outline: gray;
+    border: 2px solid #b6b6b6;
+}
+.e3000_21 input:hover {
+    border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
 
 .sales {
 	color: rgba(255, 255, 255, 1);
@@ -648,4 +663,33 @@
 	font-size: 16px;
 	letter-spacing: 2;
 	cursor: pointer;
+}
+.e3004 {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background-image: url(../images/admin/admin08.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: -11px;
+    top: -703px;
+}
+.e3000_99 {
+    position: relative;
+    left: 28px;
+    top: -744px;
+    width: max-content;
+}
+.e3000_100 {
+    position: relative;
+    left: -7px;
+    top: -744px;
+    width: max-content;
+}
+.e3000_101 {
+    position: relative;
+    left: -2px;
+    top: -2px;
+    width: max-content;
+    height: 170px;
 }
