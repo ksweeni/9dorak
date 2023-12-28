@@ -110,6 +110,8 @@ $(".e2099_2468").on("click", function() {
 		url : "${cpath}/admin/adminMenu.do",
 		type : "get",
 		success : function(res) {
+			var oldCssFilePath = "${cpath}/resources/css/adminMenuStyle.css?d";
+			$('link[href="' + oldCssFilePath + '"]').remove();
 			$("body").html(res);
 		}
 
@@ -122,6 +124,8 @@ $(".e2099_2468").on("click", function() {
 			url : "${cpath}/admin/adminMenuInsert.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminMenuStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 	
@@ -134,6 +138,8 @@ $(".e2099_2468").on("click", function() {
 			url : "${cpath}/admin/adminMember.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminMenuStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -146,6 +152,8 @@ $(".e2099_2468").on("click", function() {
 			url : "${cpath}/admin/adminOrder.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminMenuStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -158,6 +166,8 @@ $(".e2099_2468").on("click", function() {
 			url : "${cpath}/admin/adminSub.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminMenuStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -170,6 +180,8 @@ $(".e2099_2468").on("click", function() {
 			url : "${cpath}/admin/adminNotice.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminMenuStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -182,6 +194,8 @@ $(".e2099_2468").on("click", function() {
 			url : "${cpath}/admin/adminEvent.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminMenuStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -194,6 +208,8 @@ $(".e2099_2468").on("click", function() {
 			url : "${cpath}/admin/adminPoint.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminMenuStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -212,6 +228,8 @@ $(".e2099_2468").on("click", function() {
                 url: '${cpath}/admin/adminMenu.do',
                 data: { pro_no: pro_no },
                 success: function (response) {
+        			var oldCssFilePath = "${cpath}/resources/css/adminMenuStyle.css?d";
+        			$('link[href="' + oldCssFilePath + '"]').remove();
                     // 서버에서의 응답 처리
                     $("body").html(response);
                     console.log(pro_no);

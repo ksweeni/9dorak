@@ -89,6 +89,8 @@ $(".ei815_1066_6_1").on("click", function() {
 			mem_id : $(".e815_1067").val()
 		},
 		success : function(data) {
+			var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+			$('link[href="' + oldCssFilePath + '"]').remove();
 			$('.e2099_2486').html(data);
 		}
 	});
@@ -100,6 +102,8 @@ $(".ei815_1066_6_1").on("click", function() {
 			url : "${cpath}/admin/adminMenu.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -112,6 +116,8 @@ $(".ei815_1066_6_1").on("click", function() {
 			url : "${cpath}/admin/adminMember.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -124,6 +130,8 @@ $(".ei815_1066_6_1").on("click", function() {
 			url : "${cpath}/admin/adminSub.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -136,6 +144,8 @@ $(".ei815_1066_6_1").on("click", function() {
 			url : "${cpath}/admin/adminNotice.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -148,6 +158,8 @@ $(".ei815_1066_6_1").on("click", function() {
 			url : "${cpath}/admin/adminEvent.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -160,6 +172,8 @@ $(".ei815_1066_6_1").on("click", function() {
 			url : "${cpath}/admin/adminPoint.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
