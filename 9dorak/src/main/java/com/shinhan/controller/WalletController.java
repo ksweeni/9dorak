@@ -28,6 +28,7 @@ import com.shinhan.dto.PeopleVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.EventService;
 import com.shinhan.model.MyPageService;
+import com.shinhan.model.SubService;
 import com.shinhan.model.WalletService;
 
 @Controller
@@ -42,7 +43,8 @@ public class WalletController {
 	@Autowired
 	MyPageService mService;
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
-
+	
+	
 	// 주문하기 수정 필요
 	@GetMapping("pay.do")
 	public String pay(Model model, HttpSession session) {
