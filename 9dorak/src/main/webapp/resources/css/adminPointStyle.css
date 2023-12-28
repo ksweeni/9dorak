@@ -504,6 +504,7 @@ td {
     accent-color: orange;
 }
 #nav a {
+	border-radius: 5px;
 	color:white;
 	position: relative;
 	display: inline-block;
