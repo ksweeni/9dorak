@@ -520,30 +520,6 @@ form {
 	width: 500px;
 }
 
-/* table {
-	position: relative;
-	border-collapse: collapse;
-	margin-bottom: 10px;
-	left: 25%;
-	transform: translateX(-70%);
-	top: 100px;
-}
-
-th, td {
-	padding: 3px 8px;
-}
-
-th {
-	background-color: rgb(255, 125, 51);
-	color: white; 원하는 색상 값
-	padding: 3px 8px;
-}
-
-td {
-	padding: 3px 8px;
-	text-align: center; 가운데 정렬
-} */
-/* 공지사항 */
 caption {
 	left: 0%;
 	margin-bottom: 32px;

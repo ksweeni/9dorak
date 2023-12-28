@@ -1,22 +1,38 @@
 @charset "UTF-8";
 
+caption {
+	font-weight: 700;
+	color: #1C2A53;
+	margin-bottom: 32px;
+	position: relative;
+	font-size: 1.5rem;
+	font-style: normal;
+	line-height: 30px;
+}
+
 .div-1 {
-	    gap: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+	gap: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 20px;
 }
 
 .input-1 {
-	width:150px;
+	width: 183px;
 }
+
 .div-1-wrapper {
 	display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
 }
+
 .content-wrapper {
+	gap: 1rem;
+	display: flex;
+	flex-direction: column;
 	position: relative;
 	top: 2rem;
 }
@@ -311,7 +327,7 @@ input, textarea {
 	width: 621px;
 	height: 30px;
 	padding-left: 10px;
-	outline:none;
+	outline: none;
 }
 
 button {
@@ -326,11 +342,22 @@ button {
 
 #buttonContainer {
 	position: relative;
-	margin-left: 285px;
+	margin-left: 4%;
+	margin-top: 1%;
 }
 
 #EvantUpdate, #EvantDelete {
+	font-weight: 700;
 	margin-right: 10px;
+	border-radius: 4px;
+}
+
+#EvantDelete {
+	background: #FF0101;
+}
+
+#EvantUpdate {
+	background: #FF9603;
 }
 
 button:hover {

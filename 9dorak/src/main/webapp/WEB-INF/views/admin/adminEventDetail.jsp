@@ -59,132 +59,192 @@
 						</div>
 						<hr class="hr-line" />
 					</div>
-					
+
 					<div class="content-wrapper">
-					
-					<div class="div-1">
-					<div class="div-1-wrapper"><label for="ch_no">챌린지번호 </label> <input class="input-1" type="text"
-						value="${challenge.challenge_no}" id="ch_no" readonly /></div>
-						<div class="div-1-wrapper">	<label for="mem_id">회원ID </label> <input class="input-1"  type="text"
-						value="${challenge.mem_id}" id="mem_id" /> </div>
-						
-						<div class="div-1-wrapper">	<label
-						for="ch_category">챌린지구분</label> <input type="text"
-						value="${challenge.challenge_category}" id="ch_category" /> </div>
-						
-					
-						
+
+						<div class="div-1">
+							<div class="div-1-wrapper">
+								<label for="ch_no">챌린지번호 </label> <input class="input-1"
+									type="text" value="${challenge.challenge_no}" id="ch_no"
+									readonly />
+							</div>
+							<div class="div-1-wrapper">
+								<label for="mem_id">회원ID </label> <input class="input-1"
+									type="text" value="${challenge.mem_id}" id="mem_id" />
+							</div>
+							<div class="div-1-wrapper">
+								<label for="ch_category">챌린지구분</label> <input class="input-1"
+									type="text" value="${challenge.challenge_category}"
+									id="ch_category" />
+							</div>
 						</div>
-					<label
-						for="ch_name">챌린지명/도시락만들9명 </label> <input type="text"
-						value="${challenge.challenge_name}" id="ch_name" /><br /> <label
-						for="ch_cont">챌린지내용/도시락만들9소개 </label>
-					<textarea id="ch_cont">${challenge.challenge_cont}</textarea>
-					<br /> <label for="ch_image">챌린지이미지/도시락만들9이미지 </label> <input
-						type="text" value="${challenge.challenge_image}" id="ch_image" />
-					<br /> <label for="ch_date">챌린지날짜  </label> <input type="text"
-						value="${challenge.challenge_date}" id="ch_date" /> <br /> <label
-						for="ch_start">챌린지시작날짜 </label> <input type="text"
-						value="${challenge.challenge_start}" id="ch_start" /> <br /> <label
-						for="ch_end">챌린지종료날짜 </label> <input type="text"
-						value="${challenge.challenge_end}" id="ch_end" /> <br />  <br />
-					<label for="ch_recipe">만들9레시피 </label>
-					<textarea id="ch_recipe">${challenge.challenge_recipe}</textarea>
-					<br />  
+
+
+						<div class="div-1">
+							<div class="div-1-wrapper">
+								<label for="ch_date">챌린지날짜 </label> <input class="input-1"
+									type="text" value="${challenge.challenge_date}" id="ch_date" />
+							</div>
+							<div class="div-1-wrapper">
+								<label for="ch_start">챌린지 시작날짜 </label> <input class="input-1"
+									type="date" id="ch_start" value="${challenge.challenge_start}" />
+							</div>
+							<div class="div-1-wrapper">
+								<label for="ch_end">챌린지 종료날짜 </label> <input class="input-1"
+									type="date" value="${challenge.challenge_end}" id="ch_end" />
+							</div>
 						</div>
+
+						<div class="div-2">
+							<label for="ch_name">챌린지명/도시락만들9 명 </label> <input type="text"
+								value="${challenge.challenge_name}" id="ch_name" />
+						</div>
+						<div class="div-2">
+							<label for="ch_cont">챌린지내용/도시락만들9 소개 </label>
+							<textarea id="ch_cont" style="height: 100px; padding-top:10px;">${challenge.challenge_cont}</textarea>
+						</div>
+
+						<label for="ch_image">챌린지이미지/도시락만들9이미지 </label> <input type="text"
+							value="${challenge.challenge_image}" id="ch_image" /> <br />
+					</div>
 				</form>
 			</div>
 			<div id="buttonContainer">
-				<button id="EvantUpdate">수정</button>
-				<button id="EvantDelete">삭제</button>
+				<button id="EvantUpdate">수정하기</button>
+				<button id="EvantDelete">삭제하기</button>
 			</div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
-	$(".e2099_2468").on("click", function() {
-		$.ajax({
 
-			url : "${cpath}/admin/adminMenu.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+window.onload = function () {
+  
+    const initialStartDate = "${challenge.challenge_start}";
+    const initialDate = "${challenge.challenge_date}";
+    const initialEndDate = "${challenge.challenge_end}";
 
-		})
-	})
+    if (initialStartDate && initialDate && initialEndDate) {
+        document.getElementById("ch_start").value = initialStartDate;
+        document.getElementById("ch_date").value = initialDate;
+        document.getElementById("ch_end").value = initialEndDate;
+    }
+};
+	
 
-	$(".e2099_2469").on("click", function() {
-		$.ajax({
+	$(".e2099_2468")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMember.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMenu.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2470").on("click", function() {
-		$.ajax({
+	$(".e2099_2469")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminOrder.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMember.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2472").on("click", function() {
-		$.ajax({
+	$(".e2099_2470")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminSub.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminOrder.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2474").on("click", function() {
-		$.ajax({
+	$(".e2099_2472")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminEvent.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminSub.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2475").on("click", function() {
-		$.ajax({
+	$(".e2099_2474")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminPoint.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminEvent.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
+
+	$(".e2099_2475")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
+
+									url : "${cpath}/admin/adminPoint.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
+
+								})
+					})
 
 	$("#EvantUpdate").on("click", function() {
 
