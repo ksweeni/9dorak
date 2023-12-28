@@ -579,8 +579,10 @@
 		var IMP = window.IMP;
 		IMP.init("imp40668838"); // 내 가맹점 식별 코드
 
+		
 		var amount = $("#lastTotal").text(); // 원가
 		var coupon = 0;
+		console.log(amount);
 
 		function requestPay() {
 			if ($('#sample4_roadAddress').val().length === 0) {
@@ -607,7 +609,7 @@
 			IMP.request_pay({
 				pg : "inicis",
 				pay_method : "card",
-				merchant_uid : "ORD20180131-0000070", // 매번 새로워야 함
+				merchant_uid : "ORD20180131-0000071", // 매번 새로워야 함
 				name : "$('#proname').text()", // 1부르9
 				amount : discountedAmount,
 				buyer_email : "${mem.mem_id}",
@@ -625,7 +627,7 @@
 					console.log(data);
 
 					if (data) {
-						openModal();
+						//openModal();
 					} else {
 
 						var msg = '결제에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;
