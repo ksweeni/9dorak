@@ -57,7 +57,7 @@
 							</p>
 						</div>
 						<div class="e3000_3">
-							메뉴명 <br> <input type="text" name="pro_name"
+							<b>메뉴명</b> <br> <input type="text" name="pro_name"
 								placeholder="메뉴명 입력"></input>
 						</div>
 						<div class="e3000_4">
@@ -113,7 +113,7 @@
 						<div class="e3003"></div>
 						<div class="e3000_17">
 							<p>
-								<b>메뉴 구독 및 이벤트 정보</b>
+								<b>메뉴 기타 정보</b>
 							</p>
 						</div>
 						<div class="e3000_18">

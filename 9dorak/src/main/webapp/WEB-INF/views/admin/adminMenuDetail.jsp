@@ -104,7 +104,7 @@
 		<input type="text" value="${detailmenu.pro_weight}" id="pro_weight"></input>
 		</div>
 		</div>
-		<div class="e2099_2492"><div class="e3003"></div><div class="e3000_17"><p><b>메뉴 구독 및 이벤트정보</b></p></div>
+		<div class="e2099_2492"><div class="e3003"></div><div class="e3000_17"><p><b>메뉴 기타 정보</b></p></div>
 		<div class="e3000_18">
 		메뉴배부르9여부 <br> 
 		<input type="text" value="${detailmenu.pro_sub9}" id="pro_sub9"></input>
@@ -117,6 +117,18 @@
 		메뉴무료체험 <br> 
 		<input type="text" value="${detailmenu.pro_free}" id="pro_free"></input>
 		</div>
+		<div class="e3000_21">
+		메뉴재고 <br> 
+		<input type="text" value="${detailmenu.pro_sc}" id="pro_sc"></input>
+		</div>
+		</div>
+		<div class="e3004"></div>
+		<div class="e3000_99"><p><b>메뉴 사진 정보</b></p></div>
+		<div class="e3000_100">
+		<img class="e3000_101" src="${cpath}/resources/upload/${detailmenuimage[0].proimage_image}"></img>
+		<img class="e3000_101" src="${cpath}/resources/upload/${detailmenuimage[1].proimage_image}"></img>
+		<img class="e3000_101" src="${cpath}/resources/upload/${detailmenuimage[2].proimage_image}"></img>
+		<img class="e3000_101" src="${cpath}/resources/upload/${detailmenuimage[3].proimage_image}"></img>
 		</div>
 		</div>
 		</div>
@@ -239,6 +251,7 @@ $(".e2099_2468").on("click", function() {
 		var pro_sub9 = $("#pro_sub9").val();
 		var pro_sub19 = $("#pro_sub19").val();
 		var pro_free = $("#pro_free").val();
+		var pro_sc = $("#pro_sc").val();
 		var param = {
 			"pro_no" : pro_no,
 			"pro_name" : pro_name,
@@ -256,7 +269,8 @@ $(".e2099_2468").on("click", function() {
 			"pro_weight" : pro_weight,
 			"pro_sub9" : pro_sub9,
 			"pro_sub19" : pro_sub19,
-			"pro_free" : pro_free
+			"pro_free" : pro_free,
+			"pro_sc" : pro_sc
 		}
 		$.ajax({
 			url : "${cpath}/admin/adminMenuUpdate.do",
@@ -286,5 +300,17 @@ $(".e2099_2468").on("click", function() {
 			}
 		})
 	})
+	
+	function readURL(input, previewId) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				document.getElementById(previewId).src = e.target.result;
+			};
+			reader.readAsDataURL(input.files[0]);
+		} else {
+			document.getElementById(previewId).src = "";
+		}
+	}
 </script>
 </html>

@@ -156,4 +156,9 @@ public class MenuDAOMybatis {
 		return result;
 	}
 
+	public List<ProimageVO> selectByNoImage(int pro_no) {
+		List<ProimageVO> proimage = sqlSession.selectList(NAMESPACE + "selectByNoImage" ,pro_no);
+		return proimage;
+	}
+
 }
