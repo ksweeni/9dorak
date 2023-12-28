@@ -407,3 +407,16 @@ td:hover{
 	border-radius: 4px;
 	background: #F49B33;
 }
+
+.sales {
+	color: rgba(255, 255, 255, 1);
+	width: max-content;
+	height: 16px;
+	position: absolute;
+	left: 80px;
+	top: 590px;
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2;
+	cursor: pointer;
+}
