@@ -147,7 +147,7 @@ public class MenuDAOMybatis {
 
 	public int selectProNo() {
 		// TODO Auto-generated method stub
-		int result = sqlSession.insert(NAMESPACE + "selectProNo");
+		int result = sqlSession.selectOne(NAMESPACE + "selectProNo");
 		return result;
 	}
 
