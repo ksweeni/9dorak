@@ -1,20 +1,139 @@
 @charset "UTF-8";
 
+.contents {
+	position: relative;
+    top: -5.5rem;
+
+}
+.hr-line {
+	background: #F49B33;
+	height: 2px;
+	border: 0;
+}
+
+.top-title-p {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	color: #5E5E5E;
+}
+
+.top {
+	position: relative;
+	top: -7rem;
+}
+
+.top-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.date-wrapper {
+	gap: 2rem;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
+
+.button-wrapper {
+	position: relative;
+	left: 6%;
+	top: 25rem;
+}
+
+.delete-button {
+	cursor: pointer;
+	border-radius: 4px;
+	color: white;
+	border: none;
+	font-weight: 700;
+	background: #FF0101;
+	display: inline-flex;
+	padding: 12px 16px;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+.update-button {
+	cursor: pointer;
+	color: white;
+	display: inline-flex;
+	padding: 12px 16px;
+	align-items: flex-start;
+	gap: 16px;
+	border-radius: 4px;
+	background: #FF9603;
+	border: none;
+	font-weight: 700;
+	color: white;
+}
+
+.notice-date {
+	color: orange;
+    font-weight: 600;
+	background: #FFF;
+	display: flex;
+	padding: 10px 16px;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	border-radius: 5px;
+	border: 2px solid #DFDFDF;
+	outline: none;
+}
+
+.notice-text {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	padding-top: 10px;
+	padding-left: 10px;
+	width: 1026px;
+	height: 125px;
+	border-radius: 5px;
+	border: 2px solid #DFDFDF;
+	outline: none;
+	border: 2px solid #DFDFDF;
+}
+
+.notice-form {
+	color: #5E5E5E;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.notice-input {
+	margin-bottom: 15px;
+	margin-top: 10px;
+	padding-left: 10px;
+	width: 621px;
+	height: 40px;
+	outline: none;
+	border-radius: 5px;
+	border: 2px solid #DFDFDF;
+}
+
 .dropdown {
 	position: relative;
 	display: inline-block;
 }
 
 .dropbtn_icon {
-	font-family: 'Material Icons';
+	top: -0.1rem;
+	position: relative;
+    left: 5%;
 }
 
 .dropbtn {
+	margin-right: 10px;
 	color: #F48E28;
-	padding: 12px;
-	font-size: 16px;
+	padding: 5px;
+	font-size: 13px;
 	font-style: normal;
-	text-align: left; cursor : pointer;
+	text-align: left;
+	cursor: pointer;
 	font-weight: 700;
 	line-height: 24px;
 	border-radius: 5px;
@@ -24,18 +143,19 @@
 }
 
 .dropdown-content {
+	font-weight:600;
 	display: none;
 	position: absolute;
 	z-index: 1; /*다른 요소들보다 앞에 배치*/
-	font-weight: 400;
-	background-color: #f9f9f9;
+	background-color: white;
 	min-width: 200px;
 }
 
 .dropdown-content a {
+	font-weight: 600;
+    color: #F49B33;
 	display: block;
 	text-decoration: none;
-	color: rgb(37, 37, 37);
 	font-size: 12px;
 	padding: 12px 20px;
 }
@@ -49,6 +169,7 @@
 }
 
 .filters {
+	margin-right: 10px;
 	color: #5E5E5E;
 	font-size: 16px;
 	font-style: normal;
@@ -59,27 +180,26 @@
 .search-button {
 	cursor: pointer;
 	border-color: #FEB775;
-
 	padding: 4px;
 	font-weight: 600;
 	color: white;
 	width: 126px;
-    height: 40px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background: #F49B33;
+	height: 40px;
+	flex-shrink: 0;
+	border-radius: 4px;
+	background: #F49B33;
 }
 
 .annoKeyword {
 	padding-left: 10px;
 	margin-right: 10px;
-    border-radius: 5px;
-    border: 2px dashed #DFDFDF;
-    background: #FFF;
-    width: 267px;
-    height: 35px;
-    flex-shrink: 0;
-    outline: #CDD1DE;
+	border-radius: 5px;
+	border: 2px dashed #DFDFDF;
+	background: #FFF;
+	width: 267px;
+	height: 35px;
+	flex-shrink: 0;
+	outline: #CDD1DE;
 }
 
 .2099_2373 {
@@ -104,8 +224,12 @@
 	margin-right: 250px;
 	cursor: pointer;
 	width: fit-content;
+	 transition: background 0.5s ease;
 }
-
+.anno-insertbtn:hover {
+	background: orange;
+    color: white;
+}
 .e2099_2373 {
 	position: absolute;
 	top: 0;
@@ -438,7 +562,7 @@ table {
 	position: relative;
 	border-collapse: collapse;
 	margin-bottom: 10px;
-	left: 50%;
+	left: 40%;
 	transform: translateX(-50%);
 }
 
@@ -525,7 +649,7 @@ td:hover {
 
 .numButton {
 	position: relative;
-	left: 50%;
+	left: 40%;
 	top: 40px;
 	width: 100px;
 }

@@ -42,12 +42,12 @@
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
 			<div class="e2099_2487">
-				<div class="filters">Apply Filters :</div>
+				<div class="filters">Apply Filters </div>
 				<div class="dropdown">
 					<button class="dropbtn">
 						<span class="dropbtn_icon">공지사항</span>
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-							viewBox="0 0 20 21" fill="none">
+							viewBox="0 0 20 21" fill="none" style="top: 0.2rem; position: relative;">
 <path
 								d="M5.41 7.5L10 11.8302L14.59 7.5L16 8.83962L10 14.5L4 8.83962L5.41 7.5Z"
 								fill="#2B2B2B" />
