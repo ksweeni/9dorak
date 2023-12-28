@@ -369,20 +369,6 @@ function unselectAll() {
 	// 장바구니 수량 감소
 	$(".entypo-minus-wrapper").on("click", stockCheck);
 	
-	// 체크박스
-	/* $(".checkbox").on("click", function() {
-		var count = $(this).attr("data-count");
-		var stock = Number($(".pro_sc" + count).val());
-		
-		console.log(stock);
-		
-		if(stock <= 0) {
-			alert("재고가 없습니다!");
-		} else {
-			basketList();
-		}
-	});
-	 */
 	// 재고확인
 	function stockCheck() {
 		var count = $(this).attr("data-count");
@@ -472,7 +458,7 @@ function updateCount() {
 	    });
 	});
 	
- // 장바구니 삭제 기능 모달 버튼
+ 	// 장바구니 삭제 기능 모달 버튼
 	var modal = document.getElementById('modal');
     var btns = document.querySelectorAll(".deleteItemModalButton");
     
@@ -608,7 +594,7 @@ function submitOrder() {
     const requestData = {
             mem_id: mem_id,
             order_price: order_price
-        };
+    };
     
     // order 테이블 insert
     $.ajax({
