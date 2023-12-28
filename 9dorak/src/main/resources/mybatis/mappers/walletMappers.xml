@@ -50,6 +50,7 @@
 			javaType="java.lang.String" />
 		<id column="proimage_image" property="proimage_image" />
 		<id column="mem_id" property="mem_id" />
+		<id column="pro_sc" property="pro_sc"/>
 	</resultMap>
 
 	<!-- 지인 존재 여부 검색 -->
@@ -62,14 +63,9 @@
 	<select id="peopleBasket" parameterType="String"
 		resultMap="basketMap">
 		with ranked_proimages as (
-		select m.mem_id, m.mem_name,
-		b.pro_no, p.pro_name, b.basket_pro_count,
-		p.pro_price,
-		to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"')
-		basket_date,
-		i.proimage_image, row_number() over (partition by
-		m.mem_name, b.pro_no
-		order by i.proimage_image) as image_rank
+		select m.mem_id, m.mem_name, b.pro_no, p.pro_name, b.basket_pro_count, p.pro_price, p.pro_sc,
+		to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"') basket_date,
+		i.proimage_image, row_number() over (partition by m.mem_name, b.pro_no order by i.proimage_image) as image_rank
 		from mem m
 		join basket b on
 		m.mem_id = b.mem_id
@@ -80,9 +76,7 @@
 		join mem m on
 		pe.mem_id=m.mem_id where m.mem_id=#{mem_id})
 		)
-		select
-		mem_name, pro_no, pro_name, basket_pro_count, pro_price, basket_date,
-		proimage_image, mem_id
+		select mem_name, pro_no, pro_name, basket_pro_count, pro_price, basket_date, proimage_image, mem_id, pro_sc
 		from ranked_proimages
 		where image_rank=1
 		order by
@@ -93,14 +87,9 @@
 	<select id="noPeopleBasket" parameterType="String"
 		resultMap="basketMap">
 		with ranked_proimages as (
-		select m.mem_id, m.mem_name,
-		b.pro_no, p.pro_name, b.basket_pro_count,
-		p.pro_price,
-		to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"')
-		basket_date,
-		i.proimage_image, row_number() over (partition by
-		m.mem_name, b.pro_no
-		order by i.proimage_image) as image_rank
+		select m.mem_id, m.mem_name, b.pro_no, p.pro_name, b.basket_pro_count, p.pro_price, p.pro_sc,
+		to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"') basket_date,
+		i.proimage_image, row_number() over (partition by m.mem_name, b.pro_no order by i.proimage_image) as image_rank
 		from mem m
 		join basket b on
 		m.mem_id = b.mem_id
@@ -109,10 +98,7 @@
 		p.pro_no = i.pro_no
 		where m.mem_id=#{mem_id}
 		)
-		select mem_name, pro_no,
-		pro_name, basket_pro_count, pro_price, basket_date,
-		proimage_image,
-		mem_id
+		select mem_name, pro_no, pro_name, basket_pro_count, pro_price, basket_date, proimage_image, mem_id, pro_sc
 		from ranked_proimages
 		where image_rank = 1
 		order by basket_date
@@ -123,14 +109,9 @@
 	<select id="allPeopleBasket" parameterType="String"
 		resultMap="basketMap">
 		with ranked_proimages as (
-		select m.mem_id, m.mem_name,
-		b.pro_no, p.pro_name, b.basket_pro_count,
-		p.pro_price,
-		to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"')
-		basket_date,
-		i.proimage_image, row_number() over (partition by
-		m.mem_name, b.pro_no
-		order by i.proimage_image) as image_rank
+		select m.mem_id, m.mem_name, b.pro_no, p.pro_name, b.basket_pro_count, p.pro_price, p.pro_sc
+		to_char(b.basket_date, 'yyyy"년 "mm"월 "dd"일"') basket_date,
+		i.proimage_image, row_number() over (partition by m.mem_name, b.pro_no order by i.proimage_image) as image_rank
 		from mem m
 		join basket b on
 		m.mem_id = b.mem_id
@@ -138,16 +119,11 @@
 		join proimage i on
 		p.pro_no = i.pro_no
 		where m.mem_id in (select pe.mem_id2 from people pe
-		join mem m on
-		pe.mem_id=m.mem_id where m.mem_id=#{mem_id})
-		or
-		m.mem_id=#{mem_id}
+		join mem m on pe.mem_id=m.mem_id
+		where m.mem_id=#{mem_id}) or m.mem_id=#{mem_id}
 		)
-		select mem_name, pro_no, pro_name,
-		basket_pro_count, pro_price, basket_date,
-		proimage_image, mem_id
-		from
-		ranked_proimages
+		select mem_name, pro_no, pro_name, basket_pro_count, pro_price, basket_date, proimage_image, mem_id, pro_sc
+		from ranked_proimages
 		where image_rank=1
 		order by basket_date desc
 	</select>
