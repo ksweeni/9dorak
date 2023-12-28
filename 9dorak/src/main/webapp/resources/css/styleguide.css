@@ -8,6 +8,10 @@
 	font-family: "Wanted Sans Variable";
 }
 
+table {
+	cursor: pointer;
+}
+
 .header a:hover{
 	color: #F48E28 !important;
 }
