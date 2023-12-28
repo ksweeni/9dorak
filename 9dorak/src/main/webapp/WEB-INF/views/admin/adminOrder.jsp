@@ -179,6 +179,18 @@ $("#searchBtn").on("click", function() {
 
 		})
 	})
+	
+	$(".sales").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminSales.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+
+		})
+	})
 
 	//페이징 처리 함수
 	var $setRows = $('#setRows');
