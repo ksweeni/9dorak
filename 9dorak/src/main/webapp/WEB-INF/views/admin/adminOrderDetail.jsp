@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminOrderStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminOrderDetailStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -41,7 +41,7 @@
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
  			<table id="products" border="1">
-				<caption>
+				<caption  style="">
 					주문상세 list<br>
 					<form action="" id="setRows">
 						<p>
