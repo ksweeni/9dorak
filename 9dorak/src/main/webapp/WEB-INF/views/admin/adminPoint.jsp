@@ -101,7 +101,7 @@
 										<td>${mem.mem_id}</td>
 										<td>${mem.mem_name}</td>
 										<td><input type="checkbox" name="selectedMembers"
-											value="${mem.mem_id}"></td>
+											value="${mem.mem_id}" class="checkbox-style"></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -167,7 +167,7 @@
 									<td>${coupon.coupon_reg}</td>
 									<td>${coupon.mem_id}</td>
 									<td><input type="checkbox" name="selectedMembers"
-										value="${coupon.mem_id}"></td>
+										value="${coupon.mem_id}" class="checkbox-style"></td>
 								</tr>
 							</c:forEach>
 						</tbody>

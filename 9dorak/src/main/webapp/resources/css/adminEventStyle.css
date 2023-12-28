@@ -358,6 +358,7 @@ td:hover{
     top: 100px;
 }
 #nav a {
+	border-radius: 5px;
     position: relative;
     display: inline-block;
     padding: 3px 5px;
