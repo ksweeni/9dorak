@@ -33,6 +33,7 @@ import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.FaqVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PagingVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.dto.SubVO;
@@ -169,6 +170,14 @@ public class AdminController {
 		List<OrderVO> orderlist = orderService.selectAll();
 		model.addAttribute("orderlist", orderlist);
 		return "admin/adminOrder";
+	}
+	
+	@PostMapping("adminOrder.do")
+	public String adminOrderDetail(Model model, OrderdetailVO order) {
+		OrderdetailVO detailorder = orderService.selectByOrder(order.getOrder_no());
+		model.addAttribute("detailorder", detailorder);
+		System.out.println(detailorder);
+		return "admin/adminOrderDetail";
 	}
 
 	@GetMapping("searchadminOrder.do")
