@@ -238,12 +238,12 @@
 							<div class="group-4">
 								<div class="frame-10">
 									<div class="text-wrapper-15">총 결제금액</div>
-									<div class="text-wrapper-15">${total }원</div>
+									<div class="text-wrapper-15" id="lastTotal">${total }원</div>
 								</div>
 								<div class="group-5">
 									<p class="element-p">
 										<span class="text-wrapper-16">적립 예정 포인트 </span> <span
-											class="text-wrapper-3"> 35 P</span>
+											class="text-wrapper-3">P</span>
 									</p>
 									<img class="white-question-mark"
 										src="img/white-question-mark.svg" />
@@ -263,9 +263,17 @@
 											<div id="proname"
 												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배부르9A</div>
 										</c:when>
-										<c:otherwise>
+										<c:when test="${not empty sub9bllist }">
 											<div id="proname"
 												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배부르9B</div>
+										</c:when>
+										<c:when test="${not empty sub19allist }">
+											<div id="proname"
+												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배터지9A</div>
+										</c:when>
+										<c:otherwise>
+											<div id="proname"
+												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배터지9B</div>
 										</c:otherwise>
 									</c:choose>
 
@@ -285,8 +293,26 @@
 												</c:forEach>
 												<input type="hidden" id="subType" value="109" />
 											</c:when>
-											<c:otherwise>
+											<c:when test="${not empty sub9bllist}">
 												<c:forEach items="${sub9bllist}" var="sub">
+													<tr style="text-align: center;">
+														<td>${sub.pro_name}</td>
+														<td>x3</td>
+													</tr>
+												</c:forEach>
+												<input type="hidden" id="subType" value="109" />
+											</c:when>
+											<c:when test="${not empty sub19allist}">
+												<c:forEach items="${sub19allist}" var="sub">
+													<tr style="text-align: center;">
+														<td>${sub.pro_name}</td>
+														<td>x3</td>
+													</tr>
+												</c:forEach>
+												<input type="hidden" id="subType" value="119" />
+											</c:when>
+											<c:otherwise>
+												<c:forEach items="${sub19bllist}" var="sub">
 													<tr style="text-align: center;">
 														<td>${sub.pro_name}</td>
 														<td>x3</td>
@@ -298,41 +324,85 @@
 									</table>
 								</div>
 							</div>
-							<!--  -->
-							<div class="group-3">
-								<!-- 특별한 내용 없음 -->
-								<div style="top: 20px; position: relative; left: 80px;">주문
-									금액</div>
-								<div style="top: 1px; position: relative; left: 303px;">${total }</div>
-								<div class="frame-10">
-									<div class="text-wrapper-11"></div>
-									<div class="text-wrapper-12" style="position: absolute;">쿠폰</div>
-									<div class="text-wrapper-13">-1000 원</div>
-								</div>
-								<div class="frame-11">
-									<div class="text-wrapper-98" style="position: absolute;">포인트</div>
-									<div class="text-wrapper-99">-1000 P</div>
-								</div>
-							</div>
-							<button class="frame-12" onclick="requestPay()">결제하기</button>
-							<img class="line"
-								src="${cpath }/resources/images/wallet/Line9.png" />
-							<div class="group-4">
-								<div class="frame-10">
-									<div class="text-wrapper-15">총 결제금액</div>
-									<div class="text-wrapper-15" id="lastTotal">${total }</div>
-								</div>
-								<div class="group-5">
-									<p class="element-p">
-										<span class="text-wrapper-16">적립 예정 포인트 </span> <span
-											class="text-wrapper-3"> 35 P</span>
-									</p>
-									<img class="white-question-mark"
-										src="${cpath }/resources/images/wallet/White question mark.png" />
-								</div>
-							</div>
-							<img class="img"
-								src="${cpath }/resources/images/wallet/Line9.png" />
+
+							<c:choose>
+								<c:when test="${not empty sub9allist || not empty sub9bllist }">
+									<div class="group-3">
+										<!-- 특별한 내용 없음 -->
+										<!-- 배부르구 결제부분 -->
+										<div style="top: 20px; position: relative; left: 80px;">주문
+											금액</div>
+										<div style="top: 1px; position: relative; left: 303px;">${total }원</div>
+										<div class="frame-10">
+											<div class="text-wrapper-11"></div>
+											<div class="text-wrapper-12" style="position: absolute;">쿠폰</div>
+											<div class="text-wrapper-13">-0 원</div>
+										</div>
+										<div class="frame-11">
+											<div class="text-wrapper-98" style="position: absolute;">포인트</div>
+											<div class="text-wrapper-99">-0 P</div>
+										</div>
+									</div>
+									<button class="frame-12" onclick="requestPay()">결제하기</button>
+									<img class="line"
+										src="${cpath }/resources/images/wallet/Line9.png" />
+									<div class="group-4">
+										<div class="frame-10">
+											<div class="text-wrapper-15">총 결제금액</div>
+											<div class="text-wrapper-15" id="lastTotal">${total }원</div>
+										</div>
+										<div class="group-5">
+											<p class="element-p">
+												<span class="text-wrapper-16">적립 예정 포인트 </span> <span
+													class="text-wrapper-3">P</span>
+											</p>
+											<img class="white-question-mark"
+												src="${cpath }/resources/images/wallet/White question mark.png" />
+										</div>
+									</div>
+									<img class="img"
+										src="${cpath }/resources/images/wallet/Line9.png" />
+								</c:when>
+								<c:otherwise>
+									<div class="group-3">
+										<!-- 특별한 내용 없음 -->
+										<!-- 배터지구 결제부분 -->
+										<div style="top: 72px; position: relative; left: 80px;">주문
+											금액</div>
+										<div style="top: 52px; position: relative; left: 303px;">${total }원</div>
+										<div class="frame-10">
+											<div class="text-wrapper-11"></div>
+											<div class="text-wrapper-12" style="position: absolute; top: 115px">쿠폰</div>
+											<div class="text-wrapper-13" style="top: 115px">-0 원</div>
+										</div>
+										<div class="frame-11">
+											<div class="text-wrapper-98" style="position: absolute; top: 110px">포인트</div>
+											<div class="text-wrapper-99" style="top: 110px">-0 P</div>
+										</div>
+									</div>
+									<button class="frame-12" onclick="requestPay()">결제하기</button>
+									<img class="line"
+										src="${cpath }/resources/images/wallet/Line9.png" style="top: 332px" />
+									<div class="group-4">
+										<div class="frame-10">
+											<div class="text-wrapper-15">총 결제금액</div>
+											<div class="text-wrapper-15" id="lastTotal">${total }</div>
+										</div>
+										<div class="group-5">
+											<p class="element-p">
+												<span class="text-wrapper-16">적립 예정 포인트 </span> <span
+													class="text-wrapper-3">P</span>
+											</p>
+											<img class="white-question-mark"
+												src="${cpath }/resources/images/wallet/White question mark.png" />
+										</div>
+									</div>
+									<img class="img"
+										src="${cpath }/resources/images/wallet/Line9.png" style="position: 
+										relative; top: 260px;
+										"/>
+								</c:otherwise>
+							</c:choose>
 						</c:otherwise>
 					</c:choose>
 				</div>

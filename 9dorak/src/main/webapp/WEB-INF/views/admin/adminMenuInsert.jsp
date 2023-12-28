@@ -132,19 +132,38 @@
 				</div>
 			</form>
 			<div class="e3004"></div>
-						<div class="e3000_26">
-							<p>
-								<b>메뉴 사진 정보</b>
-							</p>
-						</div>
+			<div class="e3000_26">
+				<p>
+					<b>메뉴 사진 정보</b>
+				</p>
+			</div>
 			<div class="e3005">
-			<form name="fileForm" action="requestupload2" method="post" enctype="multipart/form-data">
-				<div class="e3000_21"><input multiple="multiple" type="file" name="file" /></div>
-				<div class="e3000_22"><input multiple="multiple" type="file" name="file" /></div>
-				<div class="e3000_23"><input multiple="multiple" type="file" name="file" /></div>
-				<div class="e3000_24"><input multiple="multiple" type="file" name="file" /></div> 
-				<div class="e3000_25"><input class="insert_photo" type="submit" value="전송" /></div>
-			</form>
+				<form name="fileForm" action="${cpath }/admin/requestupload2.do"
+					method="post" enctype="multipart/form-data">
+					<div class="e3000_21">
+						<input onchange="readURL(this, 'preview1');" multiple="multiple"
+							type="file" name="file" /> <img id="preview1"
+							class="preview-image" src="" alt="Preview 1" />
+					</div>
+					<div class="e3000_22">
+						<input onchange="readURL(this, 'preview2');" multiple="multiple"
+							type="file" name="file" /> <img id="preview2"
+							class="preview-image" src="" alt="Preview 2" />
+					</div>
+					<div class="e3000_23">
+						<input onchange="readURL(this, 'preview3');" multiple="multiple"
+							type="file" name="file" /> <img id="preview3"
+							class="preview-image" src="" alt="Preview 3" />
+					</div>
+					<div class="e3000_24">
+						<input onchange="readURL(this, 'preview4');" multiple="multiple"
+							type="file" name="file" /> <img id="preview4"
+							class="preview-image" src="" alt="Preview 4" />
+					</div>
+					<div class="e3000_25">
+						<input class="insert_photo" type="submit" value="전송" />
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -245,5 +264,16 @@
 
 		})
 	})
+	function readURL(input, previewId) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				document.getElementById(previewId).src = e.target.result;
+			};
+			reader.readAsDataURL(input.files[0]);
+		} else {
+			document.getElementById(previewId).src = "";
+		}
+	}
 </script>
 </html>
