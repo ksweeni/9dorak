@@ -566,4 +566,29 @@ public class AdminController {
 
 		return "redirect:/admin/adminMenu.do";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// 매출관리 페이지 연동 .. 수정예정
+	@GetMapping("adminSales.do")
+	public String adminSales(Model model) {
+		List<SubVO> sublist = subService.selectAll();
+		model.addAttribute("sublist", sublist);
+		return "admin/adminSales";
+	}
+	
 }

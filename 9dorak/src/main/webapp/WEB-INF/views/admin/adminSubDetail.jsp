@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminMemberDetailStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminSubDetailStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script
@@ -44,7 +44,7 @@
 		<button class="delete_sub" id="delete">삭제하기</button>
 		</div>
 		<div class="e2099_2487">
-		<div class="e2099_2490"><p><b>구독 내용 수정</b></p>
+		<div class="e2099_2490"><p><b>1. 구독</b></p>
 		구독번호 <br> 
 		<input type="number" value="${detailSub.sub_no}" id="sub_no"></input>
 		<br><br>
@@ -56,6 +56,12 @@
 		<br><br>
 		구독회원ID <br> 
 		<input type="text" value="${detailSub.mem_id}" id="mem_id"></input>
+		</div>
+		<div class="e2099_2491"><p><b>2. 구독 상세</b></p>
+		배부르9 <br>
+		<br><br>
+		배터지9 <br> 
+		<br><br>
 		</div>
 		</div>
 		</div>
