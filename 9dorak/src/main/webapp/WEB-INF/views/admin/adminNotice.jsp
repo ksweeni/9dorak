@@ -188,9 +188,10 @@
 				</c:forEach>
 			</div>
 			<!--  -->
-			<div class="insertFaq">
+	<!-- 		<div class="insertFaq">
 				<button id="FaqInsert">글쓰기</button>
-			</div>
+			</div> -->
+			<button class="insertFaq" id="FaqInsert">글쓰기</button>
 		</div>
 	</div>
 	</div>
