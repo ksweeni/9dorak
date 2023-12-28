@@ -2,16 +2,12 @@ package com.shinhan.controller;
 
 import java.io.File;
 import java.io.IOException;
-
 //import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-
 import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.CouponVO;
@@ -185,7 +180,14 @@ public class AdminController {
 		model.addAttribute("sublist", sublist);
 		return "admin/adminSub";
 	}
-
+	
+	@PostMapping("adminSub.do")
+	public String adminSubDetail(Model model, SubVO sub) {
+		SubVO detailSub = subService.selectSubNo(sub.getSub_no());
+		model.addAttribute("detailSub", detailSub);
+		return "admin/adminSubDetail";
+	}
+	
 	@GetMapping("adminSubInsert.do")
 	public String adminSubInsertPage(Model model) {
 		return "admin/adminSubInsert";
@@ -195,14 +197,30 @@ public class AdminController {
 	public String adminSubInsert(Model model, SubVO sub) {
 		System.out.println(sub);
 		int result = subService.insertSub(sub);
-		// int sub_no = subService.selectSubNum();
+		
+		return "redirect:/admin/adminSub.do";
+	}
 
+	@RequestMapping(value = "adminSubUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminSubUpdate(Model model, SubVO sub) {
+		int result = subService.updateSub(sub);
 		if (result > 0) {
-			return "insert 성공";
+			return "수정 성공";
 		} else {
-			return "insert 실패";
+			return "수정 실패";
 		}
-		// return "redirect:/admin/adminSub.do";
+	}
+	
+	@RequestMapping(value = "adminSubDelete.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminSubDelete(Model model, SubVO sub) {
+		int result = subService.deleteSub(sub.getSub_no());
+		if (result > 0) {
+			return "삭제 성공";
+		} else {
+			return "삭제 실패";
+		}
 	}
 
 //	@GetMapping("adminNotice.do")
