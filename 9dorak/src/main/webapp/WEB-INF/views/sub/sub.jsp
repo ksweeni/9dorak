@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/subStyle.css"
@@ -17,7 +18,7 @@
 <body>
 	<div class="screen">
 		<div class=e1518_2324>
-<header class="header">
+		<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
 						<div class="text-event">

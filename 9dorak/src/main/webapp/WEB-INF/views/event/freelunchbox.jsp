@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet"
@@ -212,8 +213,8 @@
 				</div>
 			</footer>
 </body>
-<script>
-//장바구니 
+<script type="text/javascript">
+// 장바구니 
 function loginBasket() {
 		var mem_id = "${sessionScope.loginmem.mem_id}";
 
