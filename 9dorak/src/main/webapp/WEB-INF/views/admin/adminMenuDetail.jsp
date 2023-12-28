@@ -46,79 +46,79 @@
 		<div class="e2099_2487">
 		<div class="e2099_2490"><div class="e3001"></div><div class="e3000_1"><p><b>메뉴 기본 정보</b></p></div>
 		<div class="e3000_2">
-		메뉴번호 <br> 
+		<b id="pro_no">메뉴번호</b> <br>
 		<input type="text" value="${detailmenu.pro_no}" id="pro_no" readonly></input>
 		</div>
 		<div class="e3000_3">
-		메뉴명 <br> 
+		<b id="pro_name">메뉴명</b> <br>
 		<input type="text" value="${detailmenu.pro_name}" id="pro_name"></input>
 		</div>
 		<div class="e3000_4">
-		메뉴설명 <br> 
+		<b id="pro_detail">메뉴설명</b> <br>
 		<input type="text" value="${detailmenu.pro_detail}" id="pro_detail"></input>
 		</div>
 		<div class="e3000_5">
-		메뉴가격<br> 
+		<b id="pro_price">메뉴가격</b> <br>
 		<input type="text" value="${detailmenu.pro_price}" id="pro_price"></input>
 		</div>
 		<div class="e3000_6">
-		메뉴좋아요수 <br> 
+		<b id="pro_like">메뉴좋아요</b> <br>
 		<input type="text" value="${detailmenu.pro_like}" id="pro_like"></input>
 		</div>
 		<div class="e3000_7">
-		메뉴등록날짜 <br> 
+		<b id="pro_rd">메뉴등록날짜</b> <br>
 		<input type="date" value="${detailmenu.pro_rd}" id="pro_rd"></input>
 		</div>
 		</div>
 		<div class="e2099_2491"><div class="e3002"></div><div class="e3000_8"><p><b>메뉴 영양소 정보</b></p></div>
 		<div class="e3000_9">
-		메뉴알레르기 <br> 
+		<b id="pro_aller">메뉴알레르기</b> <br>
 		<input type="text" value="${detailmenu.pro_aller}" id="pro_aller"></input>
 		</div>
 		<div class="e3000_10">
-		메뉴단백질 <br> 
+		<b id="pro_prot">메뉴단백질</b> <br>
 		<input type="text" value="${detailmenu.pro_prot}" id="pro_prot"></input>
 		</div>
 		<div class="e3000_11">
-		메뉴탄수화물 <br> 
+		<b id="pro_carb">메뉴탄수화물</b> <br>
 		<input type="text" value="${detailmenu.pro_carb}" id="pro_carb"></input>
 		</div>
 		<div class="e3000_12">
-		메뉴지방 <br> 
+		<b id="pro_prov">메뉴지방</b> <br>
 		<input type="text" value="${detailmenu.pro_prov}" id="pro_prov"></input>
 		</div>
 		<div class="e3000_13">
-		메뉴나트륨 <br> 
+		<b id="pro_nat">메뉴나트륨</b> <br>
 		<input type="text" value="${detailmenu.pro_nat}" id="pro_nat"></input>
 		</div>
 		<div class="e3000_14">
-		메뉴당류 <br> 
+		<b id="pro_sugar">메뉴당류</b> <br>
 		<input type="text" value="${detailmenu.pro_sugar}" id="pro_sugar"></input>
 		</div>
 		<div class="e3000_15">
-		메뉴칼로리 <br> 
+		<b id="pro_cal">메뉴칼로리</b> <br>
 		<input type="text" value="${detailmenu.pro_cal}" id="pro_cal"></input>
 		</div>
 		<div class="e3000_16">
-		메뉴중량 <br> 
+		<b id="pro_weight">메뉴중량</b> <br>
 		<input type="text" value="${detailmenu.pro_weight}" id="pro_weight"></input>
 		</div>
 		</div>
 		<div class="e2099_2492"><div class="e3003"></div><div class="e3000_17"><p><b>메뉴 기타 정보</b></p></div>
 		<div class="e3000_18">
-		메뉴배부르9여부 <br> 
+		<b id="pro_sub9">메뉴배부르9여부</b> <br>
 		<input type="text" value="${detailmenu.pro_sub9}" id="pro_sub9"></input>
 		</div>
 		<div class="e3000_19">
-		메뉴배터지9여부 <br> 
+		<b id="pro_sub19">메뉴배터지9여부</b> <br>
 		<input type="text" value="${detailmenu.pro_sub19}" id="pro_sub19"></input>
 		</div>
 		<div class="e3000_20">
-		메뉴무료체험 <br> 
+		<b id="pro_free">메뉴무료체험</b> <br>
 		<input type="text" value="${detailmenu.pro_free}" id="pro_free"></input>
 		</div>
 		<div class="e3000_21">
-		메뉴재고 <br> 
+		<b id="pro_sc">메뉴재고</b> <br>
 		<input type="text" value="${detailmenu.pro_sc}" id="pro_sc"></input>
 		</div>
 		</div>
