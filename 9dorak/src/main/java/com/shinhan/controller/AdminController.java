@@ -188,7 +188,7 @@ public class AdminController {
 	
 	@GetMapping("adminSubInsert.do")
 	public String adminSubInsertPage(Model model) {
-		return "admin/adminMenuInsert";
+		return "admin/adminSubInsert";
 	}
 
 	@PostMapping("adminSubInsert.do")
