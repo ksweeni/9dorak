@@ -126,7 +126,7 @@
 							<span class="span">보유 쿠폰 </span> <span class="text-wrapper-3">${clist.size()}장</span>
 						</p>
 						<div class="group-2">
-							<div class="frame-4">
+							<div class="frame-4" id="couponApply">
 								<div class="text-wrapper-4">쿠폰 적용</div>
 							</div>
 							<div class="overlap-group-wrapper">
@@ -146,16 +146,16 @@
 					</div>
 					<div class="points">
 						<p class="p">
-							<span class="span">보유 포인트 </span> <span class="text-wrapper-3">${mem.mem_point }
+							<span class="span">보유 포인트 </span>
+							<span class="text-wrapper-3" id="mypoint">${mem.mem_point }
 								P</span>
 						</p>
 						<div class="group-2">
-							<div class="frame-4">
+							<div class="frame-4" id="pointApply">
 								<div class="text-wrapper-7">포인트 적용</div>
 							</div>
 							<div class="overlap-group-wrapper">
-								<input class="overlap-group" placeholder="포인트를 입력해주세요">
-
+								<input id="point" class="overlap-group" placeholder="포인트를 입력해주세요">
 							</div>
 							<div class="text-wrapper-6">포인트</div>
 						</div>
@@ -225,11 +225,11 @@
 								<div class="frame-10">
 									<!-- 									<div class="text-wrapper-11">사용</div> -->
 									<div class="text-wrapper-12">쿠폰</div>
-									<div class="text-wrapper-13">-0 원</div>
+									<div class="text-wrapper-13">- 0원</div>
 								</div>
 								<div class="frame-11">
 									<div class="text-wrapper-12">포인트</div>
-									<div class="text-wrapper-13">-0 P</div>
+									<div class="text-wrapper-99">- 0원</div>
 								</div>
 							</div>
 							<button class="frame-12" onclick="requestPay()">결제하기</button>
@@ -336,11 +336,11 @@
 										<div class="frame-10">
 											<div class="text-wrapper-11"></div>
 											<div class="text-wrapper-12" style="position: absolute;">쿠폰</div>
-											<div class="text-wrapper-13">-0 원</div>
+											<div class="text-wrapper-13">- 0원</div>
 										</div>
 										<div class="frame-11">
 											<div class="text-wrapper-98" style="position: absolute;">포인트</div>
-											<div class="text-wrapper-99">-0 P</div>
+											<div class="text-wrapper-99">- 0원</div>
 										</div>
 									</div>
 									<button class="frame-12" onclick="requestPay()">결제하기</button>
@@ -373,11 +373,12 @@
 										<div class="frame-10">
 											<div class="text-wrapper-11"></div>
 											<div class="text-wrapper-12" style="position: absolute; top: 115px">쿠폰</div>
-											<div class="text-wrapper-13" style="top: 115px">-0 원</div>
+											<div class="text-wrapper-13" style="top: 115px">- 0원</div>
 										</div>
 										<div class="frame-11">
+											<div class="text-wrapper-11"></div>
 											<div class="text-wrapper-98" style="position: absolute; top: 110px">포인트</div>
-											<div class="text-wrapper-99" style="top: 110px">-0 P</div>
+											<div class="text-wrapper-99" style="top: 110px">- 0원</div>
 										</div>
 									</div>
 									<button class="frame-12" onclick="requestPay()">결제하기</button>
@@ -386,15 +387,14 @@
 									<div class="group-4">
 										<div class="frame-10">
 											<div class="text-wrapper-15">총 결제금액</div>
-											<div class="text-wrapper-15" id="lastTotal">${total }원</div>
+											<div class="text-wrapper-15" id="lastTotal">${total }</div>
+											<div class="text-wrapper-15">원</div>
 										</div>
 										<div class="group-5">
 											<p class="element-p">
-												<span class="text-wrapper-16">적립 예정 포인트 </span> <span
-													class="text-wrapper-3">P</span>
+												<span class="text-wrapper-16">적립 예정 포인트 </span>
+												<span class="text-wrapper-3">P</span>
 											</p>
-											<img class="white-question-mark"
-												src="${cpath }/resources/images/wallet/White question mark.png" />
 										</div>
 									</div>
 									<img class="img"
@@ -445,10 +445,11 @@
 						<div class="text-wrapper-28">
 							<c:choose>
 								<c:when test="${not empty sessionScope.loginmem.mem_id}">
-									<span
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/myPage.do"
 										style="font-weight: bold; left: -1rem; position: relative;">
 										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
-									</span>
+									</a>
 									<a class="header-a"
 										href="${pageContext.request.contextPath}/my/logout.do"
 										style="position: relative; left: -1rem">로그아웃</a>
@@ -461,11 +462,10 @@
 								</c:otherwise>
 							</c:choose>
 						</div>
-						<div class="group-20">
-							<div class="header-overlap-group-3">
+						<div class="group-20" id="lightsParent">
+							<div class="header-overlap-group-3" onclick="loginBasket()">
 								<img class="header-group-21"
 									src="${cpath}/resources/images/main/header-cart.png" />
-								<div class="ellipse-light"></div>
 							</div>
 						</div>
 					</div>
@@ -642,15 +642,94 @@
 
 </body>
 <script type="text/javascript">
-	$(".frame-4").on("click", function() {
-		var text = $(".text-wrapper-5").text();
-		if (text === "보유 쿠폰 확인하기" || text === "보유한 쿠폰이 없습니다.") {
-			return;
-		}
 
-		alert(text.substring(4));
+	//초기화
+	var lastTotalText = $("#lastTotal").text().replace(/\D/g, '');
+    var lastTotal = parseFloat(lastTotalText);
+        
+	$("#couponApply").on("click", function() {
+	    var text = $(".text-wrapper-5").text();
+	
+	    if (text === "보유 쿠폰 확인하기" || text === "보유한 쿠폰이 없습니다.") {
+	        return;
+	    }
+	
+	    // "원"이 포함된 경우 금액 차감
+	    if (text.includes("원")) {
+	        var matches = text.match(/\d+/);
+	        if (matches) {
+	            var deductionAmount = parseFloat(matches[0]);
+	
+	            // 숫자가 유효한 경우에만 연산 수행
+	            if (!isNaN(lastTotal)) {
+	                var newTotal = lastTotal - deductionAmount;
+	
+	                // 차감된 결과를 출력
+	                $("#lastTotal").text(Math.floor(newTotal));
+	
+	                // 할인된 금액을 ".text-wrapper-13"에 표시
+	                $(".text-wrapper-13").text("-" + Math.floor(deductionAmount) + "원");
+	            }
+	        }
+	    }
+	
+	    // "%"가 포함된 경우 할인율 적용
+	    if (text.includes("%")) {
+	        var matches = text.match(/\d+/);
+	        if (matches) {
+	            var discountPercentage = parseFloat(matches[0]);
+	
+	            // 숫자가 유효한 경우에만 연산 수행
+	            if (!isNaN(lastTotal)) {
+	                var discountAmount = (discountPercentage / 100) * lastTotal;
+	                var newTotal = lastTotal - discountAmount;
+	
+	                // 할인된 결과를 출력
+	                $("#lastTotal").text(Math.floor(newTotal));
+	
+	                // 할인된 금액을 ".text-wrapper-13"에 표시
+	                $(".text-wrapper-13").text("-" + Math.floor(discountAmount) + "원");
+	            }
+	        }
+	    }
+	});
+			
+</script>
+<script type="text/javascript">
 
-	})//
+	//var a = ${mem.mem_grade };
+	//alert(a);
+	
+	var myPoint = $("#mypoint").text().replace(/\D/g, '');
+
+	//포인트 적용 버튼 클릭 이벤트 처리
+	$("#pointApply").on("click", function () {
+	    // 입력된 포인트 값을 가져오기
+	    var enteredPoint = $("#point").val();
+	    
+	    var lastTotalText = $("#lastTotal").text().replace(/\D/g, '');
+        var lastTotal = parseFloat(lastTotalText);
+
+        // 숫자가 유효한 경우에만 연산 수행
+        if (!isNaN(lastTotal)) {
+        	
+        	if(enteredPoint <= myPoint) {
+	            // 입력된 포인트를 "#lastTotal"에서 차감
+	            var newTotal = lastTotal - parseFloat(enteredPoint);
+	
+	            // 차감된 결과를 출력
+	            $("#lastTotal").text(Math.floor(newTotal));
+	            
+	            // 할인된 금액을 ".text-wrapper-99"에 표시
+	            $(".text-wrapper-99").text("-" + Math.floor(enteredPoint) + "원");
+        	}
+        	else {
+        		alert("보유 포인트를 다시 확인해주세요!");
+        	}
+        }
+	
+	});
+	
 </script>
 <script type="text/javascript">
 	$(".my-del").on("click", function() {
