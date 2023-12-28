@@ -79,6 +79,7 @@
 }
 
 .coupon-input {
+	width: fit-content;
 	padding-left: 5px;
 	border-radius: 10px;
 	border: 1px solid #E8E8E8;
@@ -107,6 +108,7 @@
 }
 
 .delete-button {
+	padding: 5px;
 	margin-right: 10px;
 	margin-bottom: 10px;
 	cursor: pointer;
@@ -117,10 +119,11 @@
 	background: white;
 	color: orange;
 	border: 2px solid orange;
-	font-size: 1rem;
+
 }
 
 .delete-button:hover {
+	background: white;
 	box-shadow: 1px 1px 7px 0px orange;
 }
 
@@ -493,16 +496,20 @@ td {
 	left: 30%;
 	transform: translateX(-100%);
 	top: 100px;
+	color: #fff;
 }
-
+.checkbox-style{
+	    width: 20%;
+    margin: 0 auto;
+    accent-color: orange;
+}
 #nav a {
+	color:white;
 	position: relative;
 	display: inline-block;
 	padding: 3px 5px;
 	margin-right: 10px;
-	font-family: Tahoma;
-	background: #ccc;
-	color: #000;
+	background: #FEB775;
 	text-decoration: none;
 	left: 50%;
 	transform: translateX(-50%);

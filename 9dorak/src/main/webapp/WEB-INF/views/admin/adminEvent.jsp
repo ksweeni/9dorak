@@ -54,12 +54,12 @@
 
 				<thead>
 					<tr>
-						<th>챌린지번호</th>
+						<th style="border-radius: 10px 0px 0px 0px;">챌린지번호</th>
 						<th>챌린지명/도시락만들9명</th>
 						<th>챌린지내용/도시락만들9소개</th>
 						<th>챌린지날짜</th>
 						<th>만들9레시피</th>
-						<th>회원ID</th>
+						<th style="border-radius: 0px 10px 0px 0px;">회원ID</th>
 					</tr>
 				</thead>
 				<tbody>
