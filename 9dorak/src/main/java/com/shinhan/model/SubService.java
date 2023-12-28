@@ -44,4 +44,16 @@ public class SubService {
 	public int selectSubNum() {
 		return dao.selectSubNum();
 	}
+	
+	public SubVO selectSubNo(int sub_no) {
+		return dao.selectSubNo(sub_no);
+	}
+	
+	public int deleteSub(int sub_no) {
+		return dao.deleteSub(sub_no);
+	}
+	
+	public int updateSub(SubVO sub) {
+		return dao.updateSub(sub);
+	}
 }

@@ -60,4 +60,19 @@ public class SubDAOMybatis {
 		int result = sqlSession.selectOne(NAMESPACE + "selectSubNum");
 		return result;
 	}
+	
+	public SubVO selectSubNo(int sub_no) {
+		SubVO sub = sqlSession.selectOne(NAMESPACE + "selectSubNo", sub_no);
+		return sub;
+	}
+	
+	public int deleteSub(int sub_no) {
+		int result = sqlSession.delete(NAMESPACE + "deleteSub", sub_no);
+		return result;
+	}
+	
+	public int updateSub(SubVO sub) {
+		int result = sqlSession.update(NAMESPACE + "updateSub", sub);
+		return result;
+	}
 }

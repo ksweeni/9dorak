@@ -29,15 +29,27 @@
 
 
 
-	
+
 	
 	
 	<insert id="insertSub" parameterType="subvo">
-		insert into sub values (sub_seq.nextval, '', sysdate, #{mem_id})
+		insert into sub values (sub_seq.nextval, #{sub_extend}, sysdate, #{mem_id})
 	</insert>
 	
 	<select id="selectSubNum" resultType="int">
 		select sub_no from sub where rownum=1 order by sub_no desc
 	</select>
+	
+	<select id="selectSubNo" resultType="subvo">
+		select * from sub where sub_no=#{sub_no}
+	</select>
+	
+	<update id="updateSub" parameterType="subvo">
+		update sub set sub_extend=#{sub_extend}, sub_date=#{sub_date}, mem_id=#{mem_id} where sub_no=#{sub_no}
+	</update>
+	
+	<delete id="deleteSub" parameterType="int">
+		delete from sub where sub_no=#{sub_no}
+	</delete>
 
 </mapper>
