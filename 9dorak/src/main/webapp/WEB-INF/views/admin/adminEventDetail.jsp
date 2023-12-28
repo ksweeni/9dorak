@@ -108,6 +108,8 @@
 			url : "${cpath}/admin/adminMenu.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -120,6 +122,8 @@
 			url : "${cpath}/admin/adminMember.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -132,6 +136,8 @@
 			url : "${cpath}/admin/adminOrder.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -144,6 +150,8 @@
 			url : "${cpath}/admin/adminSub.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -156,6 +164,8 @@
 			url : "${cpath}/admin/adminEvent.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -168,6 +178,8 @@
 			url : "${cpath}/admin/adminPoint.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 

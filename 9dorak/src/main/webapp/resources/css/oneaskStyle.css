@@ -195,8 +195,8 @@
 	width:341px;
 	height:46px;
 	position:absolute;
-	left: 525px;
-	top: 253px;
+	left: 535px;
+	top: 291px;
 	border-top-left-radius:14px;
 	border-top-right-radius:14px;
 	border-bottom-left-radius:14px;
@@ -630,7 +630,7 @@
     height: 109px;
     position: absolute;
     left: 909px;
-    top: 648px;
+    top: 541px;
     border-radius: 35px;
 }
 .e844_617 { 
@@ -730,7 +730,7 @@
     height: 32px;
     position: absolute;
     left: 214px;
-    top: -144px;
+    top: -90px;
 }
 .e844_863 {
     color: rgba(255, 107.09999665617943, 0, 1);
@@ -1534,12 +1534,17 @@
 }
 
 .table {
-    position: absolute;
+    position: relative;
     border-collapse: collapse;
-    left: 532px;
+    left: 527px;
     /* transform: translateX(-50%); */
-    top: 373px;
+    top: 381px;
     width: 942px;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #FFF8F1;
 }
 
 .table th,
@@ -1551,7 +1556,7 @@
 }
 
 .table th {
-  background-color: #f38820;
+  background-color: #feae64;
   color: #fff;
   text-align: center;
 }
@@ -1574,10 +1579,17 @@ th:nth-child(2) {
     height: 50px;
     font-size: 15px;
     color: #f38820;
-    border: 2px solid #f38820;
+    border: 2px solid #feae64;
     border-radius: 60px;
     background-color: white;
+    cursor: pointer;
 }
+
+.right-aligned-button:hover {
+	background-color: #feae64;
+	color: white;
+}
+
 .profile_photo {
 /*     background-image: url(../images/yomo/profile.png); */
     position: absolute;
