@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.ProVO;
+import com.shinhan.dto.ProimageVO;
 
 
 @Service
@@ -106,6 +107,16 @@ public class MenuService {
 
 	public int insertMenu(ProVO menu) {
 		return dao.insertMenu(menu);
+	}
+
+	public int selectProNo() {
+		// TODO Auto-generated method stub
+		return dao.selectProNo();
+	}
+
+	public int insertPro_image(ProimageVO pro_image) {
+		// TODO Auto-generated method stub
+		return dao.insertPro_image(pro_image);
 	}
 
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.ProVO;
+import com.shinhan.dto.ProimageVO;
 
 
 @Repository 
@@ -141,6 +142,17 @@ public class MenuDAOMybatis {
 
 	public int insertMenu(ProVO menu) {
 		int result = sqlSession.insert(NAMESPACE + "insertMenu", menu);
+		return result;
+	}
+
+	public int selectProNo() {
+		// TODO Auto-generated method stub
+		int result = sqlSession.insert(NAMESPACE + "selectProNo");
+		return result;
+	}
+
+	public int insertPro_image(ProimageVO pro_image) {
+		int result = sqlSession.insert(NAMESPACE + "insertPro_image",pro_image);
 		return result;
 	}
 

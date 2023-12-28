@@ -30,6 +30,7 @@ import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.PagingVO;
 import com.shinhan.dto.ProVO;
+import com.shinhan.dto.ProimageVO;
 import com.shinhan.dto.SubVO;
 import com.shinhan.model.ChallengeService;
 import com.shinhan.model.CouponService;
@@ -80,10 +81,60 @@ public class AdminController {
 	}
 
 	@PostMapping("adminMenuInsert.do")
-	public String adminMenuInsert(Model model, ProVO menu) {
+	public String adminMenuInsert(Model model, ProVO menu , MultipartHttpServletRequest mtfRequest, HttpServletRequest request) {
 		int result = mService.insertMenu(menu);
+		int pro_no = mService.selectProNo();
 		List<ProVO> mlist = mService.selectAll();
 		model.addAttribute("mlist", mlist);
+		// 파일업로드
+		List<MultipartFile> fileList = mtfRequest.getFiles("file");
+		System.out.println(fileList);
+
+		// 2. 저장할 경로 가져오기
+		String path = request.getSession().getServletContext().getRealPath("resources");
+		System.out.println("path : " + path);
+//		String root = path + "\\uploadFiles" ;
+		String root = path + "\\upload";
+
+		File file = new File(root);
+
+		// 만약 uploadFiles 폴더가 없으면 생성해라 라는뜻
+		if (!file.exists())
+			file.mkdirs();
+
+		for (MultipartFile mf : fileList) {
+			String originFileName = mf.getOriginalFilename(); // 원본 파일 명
+			long fileSize = mf.getSize(); // 파일 사이즈
+
+			System.out.println("originFileName : " + originFileName);
+			System.out.println("fileSize : " + fileSize);
+			String ext = "";
+			int lastIndex = originFileName.lastIndexOf(".");
+			if (lastIndex != -1) {
+				ext = originFileName.substring(lastIndex);
+			}
+			String ranFileName = UUID.randomUUID().toString() + ext;
+			File changeFile = new File(root + "\\" + ranFileName);
+			ProimageVO pro_image = new ProimageVO();
+			pro_image.setPro_no(pro_no);
+			pro_image.setProimage_image(ranFileName);
+			int imageResult = mService.insertPro_image(pro_image);
+			System.out.println("인서트성공");
+			System.out.println(changeFile);
+//			mService.insertProImage();/
+			try {
+				System.out.println("업로드성공");
+				mf.transferTo(changeFile);
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
 		return "redirect:/admin/adminMenu.do";
 	}
 
