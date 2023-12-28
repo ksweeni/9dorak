@@ -386,7 +386,7 @@
 									<div class="group-4">
 										<div class="frame-10">
 											<div class="text-wrapper-15">총 결제금액</div>
-											<div class="text-wrapper-15" id="lastTotal">${total }</div>
+											<div class="text-wrapper-15" id="lastTotal">${total }원</div>
 										</div>
 										<div class="group-5">
 											<p class="element-p">
@@ -579,14 +579,18 @@
 		var IMP = window.IMP;
 		IMP.init("imp40668838"); // 내 가맹점 식별 코드
 
-		var amount = $("#lastTotal").text(); // 원가
-		var coupon = 0;
+		var amountWithCurrency = $("#lastTotal").text();
 
+		var amount = amountWithCurrency.substring(0, amountWithCurrency.length - 1);
+
+		var coupon = 0;	
+		
 		function requestPay() {
 			if ($('#sample4_roadAddress').val().length === 0) {
 				alert("주소를 입력하세요");
 				return;
 			}
+			
 
 			param = {
 
@@ -607,13 +611,13 @@
 			IMP.request_pay({
 				pg : "inicis",
 				pay_method : "card",
-				merchant_uid : "ORD20180131-0000070", // 매번 새로워야 함
+				merchant_uid : "ORD20180131-0000071", // 매번 새로워야 함
 				name : "$('#proname').text()", // 1부르9
 				amount : discountedAmount,
 				buyer_email : "${mem.mem_id}",
 				buyer_name : "${mem.mem_name}",
-				buyer_tel : "${mem.mem_phone}",
-				buyer_addr : "$('#sample4_roadAddress').val()",
+				buyer_tel : "010-9668-1635",
+				buyer_addr : "동안구",
 				buyer_postcode : "01181"
 			}, function(rsp) { // callback
 				console.log(rsp);
