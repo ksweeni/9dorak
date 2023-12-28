@@ -21,6 +21,9 @@ String contextPath = request.getContextPath();
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body style="width: 100%">
 	<div class=e69_166>

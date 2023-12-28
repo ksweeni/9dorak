@@ -14,10 +14,13 @@ String contextPath = request.getContextPath();
 <link rel="stylesheet"
 	href="${cpath}/resources/css/pointAndCouponStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<div class=e145_1481>

@@ -11,13 +11,14 @@ String contextPath = request.getContextPath();
 <head>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/myPointStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/myPointStyle.css?d"
 	type="text/css" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 	<div class=e169_509>

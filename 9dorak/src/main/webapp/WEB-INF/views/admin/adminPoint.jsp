@@ -187,6 +187,8 @@
 			url : "${cpath}/admin/adminMenu.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -199,6 +201,8 @@
 			url : "${cpath}/admin/adminMember.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -211,6 +215,8 @@
 			url : "${cpath}/admin/adminOrder.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -223,6 +229,8 @@
 			url : "${cpath}/admin/adminSub.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -247,6 +255,8 @@
 			url : "${cpath}/admin/adminEvent.do",
 			type : "get",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res);
 			}
 
@@ -409,6 +419,8 @@
 			url : "${cpath}/admin/adminPoint.do", // 실제 목록을 불러오는 URL로 변경해야 합니다.
 			type : "GET",
 			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
 				$("body").html(res); // 새로운 목록으로 테이블 업데이트
 			}
 		});
