@@ -13,6 +13,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
+<title>9도락</title>
 </head>
 <body>
 	<header class="header">
@@ -90,7 +93,7 @@
 				</div>
 			</div>
 			<h1 class="text-9"
-				style="margin-top: 52px; font-weight: unset; position: relative; top: 10px;">친구
+				style="margin-top: 52px; font-weight: 800; position: relative; top: 5px;">친구
 				목록 조회</h1>
 		</div>
 		<div class="overlap-group2">

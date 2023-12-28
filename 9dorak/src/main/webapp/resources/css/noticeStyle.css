@@ -220,8 +220,8 @@
 	width: 341px;
 	height: 46px;
 	position: absolute;
-	left: 525px;
-	top: 258px;
+	left: 534px;
+	top: 292px;
 	border-top-left-radius: 14px;
 	border-top-right-radius: 14px;
 	border-bottom-left-radius: 14px;
@@ -729,7 +729,7 @@
 	height: 32px;
 	position: absolute;
 	left: 0px;
-	top: 6px;
+	top: 57px;
 }
 
 .e831_685 {
@@ -804,7 +804,7 @@
 	height: 32px;
 	position: absolute;
 	left: 99px;
-	top: 0px;
+	top: 53px;
 }
 
 .e844_863 {
@@ -1695,18 +1695,23 @@
 }
 
 .table {
-	position: absolute;
-	border-collapse: collapse;
-	left: 532px;
-	/* transform: translateX(-50%); */
-	top: 409px;
-	width: 946px;
+  	position: relative;
+ 	left: 1000px; 
+ 	transform: translateX(-50%);
+ 	top: 383px; 
+ 	width: 946px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .table th, .table td {
 	padding: 8px;
 	border: 1px solid #ccc;
 	text-align: center;
+	background-color: #FFF8F1;
 }
 
 .table th:first-child {
@@ -1714,7 +1719,7 @@
 }
 
 .table th {
-	background-color: #f38820;
+	background-color: #feae64;
 	color: #fff;
 	text-align: center;
 	width: 460px;
