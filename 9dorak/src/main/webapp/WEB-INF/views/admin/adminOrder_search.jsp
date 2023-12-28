@@ -27,8 +27,8 @@
 				</p>
 			</form>
 			<div class=e815_1065>
-				<div class="ei815_1066_6_1"></div>
-				<input type="text" class="e815_1067" placeholder="회원ID를 입력하세요">
+						<input type="text" class="e815_1067" id="annoKeyword" placeholder="주문회원ID를 입력하세요">
+						<button id="searchBtn" class="ei815_1066_6_1">검색</button>
 			</div>
 		</caption>
 		<thead>
@@ -57,21 +57,20 @@
 	</table>
 </body>
 <script type="text/javascript">
-	$(".ei815_1066_6_1").on("click", function() {
-		$.ajax({
-			url : "${cpath}/admin/searchadminOrder.do",
-			type : 'GET',
-			data : {
-				mem_id : $(".e815_1067").val()
-			},
-			success : function(data) {
-
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$('.e2099_2486').html(data);
-			}
-		});
-	})
+$("#searchBtn").on("click", function() {
+	$.ajax({
+		url : "${cpath}/admin/searchadminOrder.do",
+		type : 'GET',
+		data : {
+			mem_id : $(".e815_1067").val()
+		},
+		success : function(data) {
+			var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+			$('link[href="' + oldCssFilePath + '"]').remove();
+			$('.e2099_2486').html(data);
+		}
+	});
+})
 
 	$(".e2099_2468").on("click", function() {
 		$.ajax({

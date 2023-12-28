@@ -49,8 +49,8 @@
 						</p>
 					</form>
 					<div class=e815_1065>
-						<div class="ei815_1066_6_1"></div>
-						<input type="text" class="e815_1067" placeholder="주문회원ID를 입력하세요">
+						<input type="text" class="e815_1067" id="annoKeyword" placeholder="주문회원ID를 입력하세요">
+						<button id="searchBtn" class="ei815_1066_6_1">검색</button>
 					</div>
 				</caption>
 				<thead>
@@ -81,7 +81,7 @@
 	</div>
 </body>
 <script type="text/javascript">
-$(".ei815_1066_6_1").on("click", function() {
+$("#searchBtn").on("click", function() {
 	$.ajax({
 		url : "${cpath}/admin/searchadminOrder.do",
 		type : 'GET',

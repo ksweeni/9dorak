@@ -373,7 +373,7 @@ td:hover{
     left: 3px;
     top: -9px;
 }
-.ei815_1066_6_1 {
+/* .ei815_1066_6_1 {
     background-image: url(../images/admin/admin04.png);
     width: 26.7421875px;
     height: 24.7421875px;
@@ -383,4 +383,27 @@ td:hover{
     cursor: pointer;
     background-repeat: no-repeat;
     background-size: cover;
+} */
+.e815_1067 {
+	padding-left: 10px;
+	margin-right: 10px;
+	border-radius: 5px;
+	border: 2px dashed #DFDFDF;
+	background: #FFF;
+	width: 267px;
+	height: 35px;
+	flex-shrink: 0;
+	outline: #CDD1DE;
+}
+.ei815_1066_6_1 {
+	cursor: pointer;
+	border-color: #FEB775;
+	padding: 4px;
+	font-weight: 600;
+	color: white;
+	width: 126px;
+	height: 40px;
+	flex-shrink: 0;
+	border-radius: 4px;
+	background: #F49B33;
 }
