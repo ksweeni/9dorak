@@ -191,7 +191,7 @@
 	border-bottom-right-radius:30px;
 }
 .e815_1065 {
-	background-color:rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+	background-color: #fff;
 	width:341px;
 	height:46px;
 	position:absolute;
@@ -201,6 +201,7 @@
 	border-top-right-radius:14px;
 	border-bottom-left-radius:14px;
 	border-bottom-right-radius:14px;
+	border: 2px solid rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
 }
 .e815_1066 { 
 	width:17px;
@@ -219,7 +220,7 @@
     cursor: pointer;
 }
 .e815_1067 {
-    color: rgba(255, 255, 255, 1);
+    color: #000000;
     width: 250px;
     height: 30px;
     position: absolute;
@@ -1582,6 +1583,9 @@ th:nth-child(2) {
     border-radius: 60px;
     background-color: white;
     cursor: pointer;
+    position: relative;
+    top: -226px;
+    left: -467px;
 }
 
 .right-aligned-button:hover {

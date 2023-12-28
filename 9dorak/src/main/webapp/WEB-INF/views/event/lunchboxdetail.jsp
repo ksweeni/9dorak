@@ -107,7 +107,6 @@ String contextPath = request.getContextPath();
 								추가</a></li>
 					</ul>
 				</div>
-				<hr>
 				<br></br>
 				<div class="board">
 					<b>도시락명</b> <br> 
