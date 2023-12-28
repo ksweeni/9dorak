@@ -179,6 +179,18 @@ $(".ei815_1066_6_1").on("click", function() {
 
 		})
 	})
+	
+	$(".e2099_2470").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminOrder.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+
+		})
+	})
 
 	//페이징 처리 함수
 	var $setRows = $('#setRows');

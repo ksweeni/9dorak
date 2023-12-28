@@ -184,5 +184,17 @@ $(".e2099_2468").on("click", function() {
 
 		})
 	})
+	
+	$(".sales").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminSales.do",
+			type : "get",
+			success : function(res) {
+				$("body").html(res);
+			}
+
+		})
+	})
 </script>
 </html>

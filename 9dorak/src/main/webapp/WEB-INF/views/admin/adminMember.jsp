@@ -27,7 +27,7 @@
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
 		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
-		<span class="e2099_2475">쿠폰/포인트관리</span>
+		<span class="e2099_2475">쿠폰/포인트관리</span> <span class="sales">매출관리</span>
 		<div class="admin_login">
 			<div class="e2099_2476">
 				<hr>
@@ -174,6 +174,18 @@
 			success : function(res) {
 				var oldCssFilePath = "${cpath}/resources/css/adminMemberStyle.css?e";
 				$('link[href="' + oldCssFilePath + '"]').remove();
+				$("body").html(res);
+			}
+
+		})
+	})
+	
+	$(".sales").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminSales.do",
+			type : "get",
+			success : function(res) {
 				$("body").html(res);
 			}
 
