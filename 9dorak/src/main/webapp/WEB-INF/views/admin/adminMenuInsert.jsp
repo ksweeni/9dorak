@@ -130,41 +130,43 @@
 						</div>
 					</div>
 				</div>
-			</form>
-			<div class="e3004"></div>
-			<div class="e3000_26">
+				<div class="e3000_99">
+				<div class="e3004"></div>
 				<p>
 					<b>메뉴 사진 정보</b>
 				</p>
-			</div>
-			<div class="e3005">
-				<form name="fileForm" action="${cpath }/admin/requestupload2.do"
-					method="post" enctype="multipart/form-data">
-					<div class="e3000_21">
-						<input onchange="readURL(this, 'preview1');" multiple="multiple"
-							type="file" name="file" /> <img id="preview1"
-							class="preview-image" src="" alt="Preview 1" />
-					</div>
-					<div class="e3000_22">
-						<input onchange="readURL(this, 'preview2');" multiple="multiple"
-							type="file" name="file" /> <img id="preview2"
-							class="preview-image" src="" alt="Preview 2" />
-					</div>
-					<div class="e3000_23">
-						<input onchange="readURL(this, 'preview3');" multiple="multiple"
-							type="file" name="file" /> <img id="preview3"
-							class="preview-image" src="" alt="Preview 3" />
-					</div>
-					<div class="e3000_24">
-						<input onchange="readURL(this, 'preview4');" multiple="multiple"
-							type="file" name="file" /> <img id="preview4"
-							class="preview-image" src="" alt="Preview 4" />
-					</div>
-					<div class="e3000_25">
-						<input class="insert_photo" type="submit" value="전송" />
-					</div>
-				</form>
-			</div>
+				</div>
+				<div class="e3000_26">
+				<div class="e3000_21">
+					<label for="file">
+						<div class="btn-upload">파일 업로드하기</div>
+					</label> <input onchange="readURL(this, 'preview1');" multiple="multiple"
+						id="file" type="file" name="file" /> <img id="preview1"
+						class="preview-image" src="" alt="Preview 1" />
+				</div>
+				<div class="e3000_22">
+					<label for="file2">
+						<div class="btn-upload">파일 업로드하기</div>
+					</label> <input onchange="readURL(this, 'preview2');" multiple="multiple"
+						type="file" name="file" id="file2" /> <img id="preview2"
+						class="preview-image" src="" alt="Preview 2" />
+				</div>
+				<div class="e3000_23">
+					<label for="file3">
+						<div class="btn-upload">파일 업로드하기</div>
+					</label> <input onchange="readURL(this, 'preview3');" multiple="multiple"
+						type="file" name="file" id="file3" /> <img id="preview3"
+						class="preview-image" src="" alt="Preview 3" />
+				</div>
+				<div class="e3000_24">
+					<label for="file4">
+						<div class="btn-upload">파일 업로드하기</div>
+					</label> <input onchange="readURL(this, 'preview4');" multiple="multiple"
+						type="file" name="file" id="file4" /> <img id="preview4"
+						class="preview-image" src="" alt="Preview 4" />
+				</div>
+				</div>
+			</form>
 		</div>
 	</div>
 </body>
