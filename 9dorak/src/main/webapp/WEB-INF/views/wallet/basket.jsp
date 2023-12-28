@@ -116,50 +116,37 @@
 											<div class="group-2">
 												<!-- 체크 박스 -->
 												<div class="frame-19">
-												<!-- onchange="basketList(${item.basket_pro_count},${item.pro_no},'${item.pro_name}',${item.pro_price},${status.count})"  -->
-												
-												<input class="checkbox" type="checkbox" id="checkbox-2-${status.count}" name="selection" onchange="basketList(${item.basket_pro_count},${item.pro_no},'${item.pro_name}',${item.pro_price},${status.count})">
+													<input class="checkbox" type="checkbox" id="checkbox-2-${status.count}" name="selection" onchange="basketList(${item.basket_pro_count},${item.pro_no},'${item.pro_name}',${item.pro_price},${status.count},${item.pro_sc})">
 													<div class="text-wrapper-18">${item.mem_name}</div>
 												</div>
 
 												<div class="frame-16">
 													<div class="frame-17">
-														<img class="rectangle"
-															src="${cpath}/${item.proimage_image}" />
+														<img class="rectangle" src="${cpath}/${item.proimage_image}" />
 														<div class="frame-18">
 															<div class="text-wrapper-15">${item.pro_name}</div>
-															<input class="text-wrapper-16" id="proPrice"
-																type="number" value="${item.pro_price}" readOnly />
-
+															<input class="text-wrapper-16" id="proPrice" type="number" value="${item.pro_price}" readOnly />
 															<div class="text-wrapper-3" id="total-amount">
-																총 금액 <span id="totalAmount${status.count}">
-																	${item.pro_price*item.basket_pro_count}</span>원
+																총 금액 <span id="totalAmount${status.count}">${item.pro_price*item.basket_pro_count}</span>원
 															</div>
 														</div>
 													</div>
 
 
 													<div class="buttonCount">
-														<input type='hidden' value='${item.pro_no}'
-															class='pro_no${status.count}' /> <input type='hidden'
-															value='${item.pro_name}'
-															class='pro_name${status.count}' /> <input type='hidden'
-															value='${item.pro_price}'
-															class='pro_price${status.count}' /> <input type='hidden'
-															value='${status.count}' class='index-num${status.count}' />
-														<input type='hidden' value='${item.mem_id}'
-															class='mem_id${status.count}' />
+														<input type='hidden' value='${item.pro_no}' class='pro_no${status.count}' />
+														<input type='hidden' value='${item.pro_name}' class='pro_name${status.count}' />
+														<input type='hidden' value='${item.pro_price}' class='pro_price${status.count}' />
+														<input type='hidden' value='${status.count}' class='index-num${status.count}' />
+														<input type='hidden' value='${item.mem_id}'	class='mem_id${status.count}' />
+														<input type='hidden' value='${item.pro_sc}'	class='pro_sc${status.count}' />
 
-														<div class="entypo-minus-wrapper" data-action="minus"
-															data-count="${status.count}">
-															<img class="img-3"
-																src="/myapp/resources/images/menu/minus.png">
+														<div class="entypo-minus-wrapper" data-action="minus" data-count="${status.count}">
+															<img class="img-3" src="/myapp/resources/images/menu/minus.png">
 														</div>
 														<span id="result${status.count}" class="text-wrapper-17">${item.basket_pro_count}</span>
-														<div class="entypo-plus-wrapper" data-action="plus"
-															data-count="${status.count}">
-															<img class="img-3"
-																src="/myapp/resources/images/menu/plus.png">
+														<div class="entypo-plus-wrapper" data-action="plus" data-count="${status.count}">
+															<img class="img-3" src="/myapp/resources/images/menu/plus.png">
 														</div>
 													</div>
 												</div>
@@ -348,8 +335,6 @@ function logCheckboxValue(checkbox) {
 
 
 <%--
-
-
 var isChecked = false;
 
 function checkBoxSelector() {
@@ -380,9 +365,36 @@ function unselectAll() {
 --%>
 
 	// 장바구니 수량 증가
-	$(".entypo-plus-wrapper").on("click", updateCount);	
+	$(".entypo-plus-wrapper").on("click", stockCheck);	
 	// 장바구니 수량 감소
-	$(".entypo-minus-wrapper").on("click", updateCount);
+	$(".entypo-minus-wrapper").on("click", stockCheck);
+	
+	// 체크박스
+	/* $(".checkbox").on("click", function() {
+		var count = $(this).attr("data-count");
+		var stock = Number($(".pro_sc" + count).val());
+		
+		console.log(stock);
+		
+		if(stock <= 0) {
+			alert("재고가 없습니다!");
+		} else {
+			basketList();
+		}
+	});
+	 */
+	// 재고확인
+	function stockCheck() {
+		var count = $(this).attr("data-count");
+		var stock = Number($(".pro_sc" + count).val());
+		
+		if(stock <= 0) {
+			alert("재고가 없습니다!");
+			
+		} else {
+			updateCount();
+		}
+	}
 	
 // 장바구니 수량 변경
 function updateCount() {
@@ -505,17 +517,22 @@ function updateCount() {
     	                }
     	        });
     	 }
-
+    
 // 주문 정보 목록
-function basketList(quantity, pro_no, pro_name, price, index) {
+function basketList(quantity, pro_no, pro_name, price, index, pro_sc) {
     var myName = "#checkbox-2-" + index;
     var checkOk = $(myName).prop("checked");
     var totalAmount = quantity * price;
     var search = false;
+	var stock = Number($(".pro_sc" + index).val());
     
 	// checkBox가 선택이 되어 있으면
 	if(checkOk) {
-		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
+		if(stock <= 0) {
+			alert("재고가 없습니다!");
+			$(myName).prop("checked", false);
+		} else {
+			$("#cartRow tr td:nth-child(1)").each(function(index, item) {
 			 var cartProName = $(item).find("input").val();
 			 // checkBox가 선택이 되어있고, 목록에 이미 존재하는 상품이라면, 기존 수량 업데이트하기
 			  if (pro_name==cartProName) {
@@ -537,6 +554,7 @@ function basketList(quantity, pro_no, pro_name, price, index) {
 		     $("#cartRow").html($("#cartRow").html() + str);
          }
          rowList();
+		}
          // checkBox가 선택 해제되면
 	 } else {
 		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
