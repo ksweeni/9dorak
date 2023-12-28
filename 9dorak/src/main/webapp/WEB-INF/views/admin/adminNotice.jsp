@@ -64,6 +64,7 @@
 				</div>
 
 				<button class="anno-insertbtn" id="AnnoInsert">글쓰기</button>
+					<button class="insertFaq" id="FaqInsert">글쓰기</button> 
 				<input type="text" class="annoKeyword" id="annoKeyword"
 					placeholder="검색어 입력">
 				<button id="searchBtn" class="search-button">검색</button>
@@ -189,7 +190,7 @@
 	<!-- 		<div class="insertFaq">
 				<button id="FaqInsert">글쓰기</button>
 			</div> -->
-			<button class="insertFaq" id="FaqInsert">글쓰기</button>
+		<!-- 	<button class="insertFaq" id="FaqInsert">글쓰기</button> -->
 		</div>
 	</div>
 	</div>
@@ -304,11 +305,14 @@
 
 	function toggleTable(tableType) {
 		var noticeTable = document.getElementById("noticeTable");
-		var faqTable = document.getElementById("faqTable");
+		var faqTable = document.getElementById("faqTable"); 	
 		if (tableType === 'notice') {
 			fn_paging(1);
 			noticeTable.style.display = "block";
 			faqTable.style.display = "none";
+			$("#AnnoInsert").show();
+			$(".insertFaq").hide();
+			
 		} else if (tableType === 'faq') {
 			fn_paging2(1);
 			noticeTable.style.display = "none";
@@ -316,6 +320,10 @@
 			faqTable.style.top = "230px";
 			faqTable.style.left = "50%";
 			faqTable.style.display = "block";
+			$("#AnnoInsert").hide();
+			$(".insertFaq").show();	
+	
+			
 		}
 	}
 
