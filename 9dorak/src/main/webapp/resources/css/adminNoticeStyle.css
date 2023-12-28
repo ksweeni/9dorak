@@ -1,5 +1,18 @@
 @charset "UTF-8";
-
+.insertFaq {
+	position: relative;
+	left: 467px;
+	bottom: 256px;
+}
+.insertFaq button {
+	border: 2px solid orange;
+	background-color: white;
+	border-radius: 10px;
+	font-size: 13px;
+	cursor: pointer;
+	width: 92px;
+	height: 40px;
+}
 .contents {
 	position: relative;
     top: -5.5rem;
@@ -641,19 +654,26 @@ td:hover {
 /* 자묻 */
 .numButton2 {
 	position: relative;
-	left: 620px;
-	top: 185px;
+	left: 51rem;
+	top: 17rem;
 }
 
 .numButton2 a {
 	padding: 3px 5px;
 	margin-right: 10px;
-	background: #ccc;
-	color: #000;
+	color: white;
+    border-radius: 5px;
+    background: rgba(254, 137, 30, 0.61);
 	text-decoration: none;
 }
 
-.insertFaq {
+.numButton2 a.active {
+	background: #333;
+    color: #fff;
+	
+}
+
+/*.insertFaq {
 	position: relative;
 	left: 775px;
 	top: 155px;
@@ -667,7 +687,7 @@ td:hover {
 	cursor: pointer;
 	width: 92px;
 	height: 40px;
-}
+}*/
 
 a {
 	color: #555F7E;

@@ -30,8 +30,8 @@
 			onclick="location.href='${cpath}/admin/adminNotice.do'">게시판관리</span>
 		<span class="e2099_2474">이벤트관리</span> <span class="e2099_2475">쿠폰/포인트관리</span>
 		<span class="sales">매출관리</span>
-		
-		
+
+
 		<div class="admin_login">
 			<div class="e2099_2476">
 				<hr>
@@ -45,33 +45,32 @@
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
 			<div class="e2099_2487">
-				<div class="filters">Apply Filters </div>
+				<div class="filters">Apply Filters</div>
 				<div class="dropdown">
 					<button class="dropbtn">
 						<span class="dropbtn_icon">공지사항</span>
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-							viewBox="0 0 20 21" fill="none" style="top: 0.2rem; position: relative;">
+							viewBox="0 0 20 21" fill="none"
+							style="top: 0.2rem; position: relative;">
 <path
 								d="M5.41 7.5L10 11.8302L14.59 7.5L16 8.83962L10 14.5L4 8.83962L5.41 7.5Z"
 								fill="#2B2B2B" />
 </svg>
 					</button>
 					<div class="dropdown-content">
-						<a href="#" onclick="toggleTable('notice')">공지사항</a> <a href="#" onclick="toggleTable('faq')">자주 묻는 질문</a>
+						<a href="#" onclick="toggleTable('notice')">공지사항</a> <a href="#"
+							onclick="toggleTable('faq')">자주 묻는 질문</a>
 					</div>
 				</div>
-				<!--  
-				<button class="notice-btn" onclick="toggleTable('notice')">공지사항</button>
-				<button class="faq-btn" onclick="toggleTable('faq')">자주 묻는
-					질문</button>-->
+
 				<button class="anno-insertbtn" id="AnnoInsert">글쓰기</button>
 				<input type="text" class="annoKeyword" id="annoKeyword"
-									placeholder="검색어 입력">
-									<button id="searchBtn" class="search-button">검색</button>
+					placeholder="검색어 입력">
+				<button id="searchBtn" class="search-button">검색</button>
 			</div>
 			<div id="noticeTable" class="table-container">
 				<table id="notice" border="1">
-					<!-- 공지사항 테이블 내용 -->
+
 					<caption>
 						공지사항 List
 						<form action="" id="setRows">
@@ -143,18 +142,17 @@
 
 
 		<div id="faqTable" class="table-container">
-			<table id="faq" border="1">
-				<!-- FAQ 테이블 내용 -->
+			<table id="faq" border="1" style="top: 15rem;  left: 47%;">
 				<caption>
-					자주 묻는 질문 list
+					자주 묻는 질문 List
 					<form action="" id="setRows"></form>
 
 				</caption>
 
 				<thead>
 					<tr>
-						<th>FAQ번호</th>
-						<th>FAQ제목</th>
+						<th style="border-radius: 10px 0px 0px 0px;">FAQ번호</th>
+						<th style="border-radius: 0px 10px 0px 0px;">FAQ제목</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -196,75 +194,100 @@
 	</div>
 </body>
 <script type="text/javascript">
-	$(".e2099_2468").on("click", function() {
-		$.ajax({
+	$(".e2099_2468")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMenu.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMenu.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2469").on("click", function() {
-		$.ajax({
+	$(".e2099_2469")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMember.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMember.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2470").on("click", function() {
-		$.ajax({
+	$(".e2099_2470")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminOrder.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminOrder.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2472").on("click", function() {
-		$.ajax({
+	$(".e2099_2472")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminSub.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminSub.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2474").on("click", function() {
-		$.ajax({
+	$(".e2099_2474")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminEvent.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminEvent.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
 	$(".e2099_2475").on("click", function() {
 		$.ajax({
@@ -288,50 +311,64 @@
 		} else if (tableType === 'faq') {
 			fn_paging2(1);
 			noticeTable.style.display = "none";
+			faqTable.style.position = "relative";
+			faqTable.style.top = "230px";
+			faqTable.style.left = "50%";
 			faqTable.style.display = "block";
-
 		}
 	}
 
-	$("#AnnoInsert").on("click", function() {
-		$.ajax({
+	$("#AnnoInsert")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminNoticeInsert.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminNoticeInsert.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
-	$("#FaqInsert").on("click", function() {
-		$.ajax({
+								})
+					})
+	$("#FaqInsert")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminNoticeFaqInsert.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminNoticeFaqInsert.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
 	function fn_paging(currentPage) {
-		$.ajax({
-			url : "${cpath}/admin/adminNotice.do?currentPage=" + currentPage,
-			type : "get",
-			success : function(res) {
-				/* alert("갔따오기 성공"); */
-								var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+		$
+				.ajax({
+					url : "${cpath}/admin/adminNotice.do?currentPage="
+							+ currentPage,
+					type : "get",
+					success : function(res) {
+						/* alert("갔따오기 성공"); */
+						var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+						$('link[href="' + oldCssFilePath + '"]').remove();
+						$("body").html(res);
+					}
 
-		})
+				})
 		/* location.href = "${cpath}/admin/adminNotice.do?currentPage="
 				+ currentPage; */
 	}
@@ -351,25 +388,30 @@
 		})
 	}
 
-	$("#searchBtn").on("click", function(e) {
-		//alert($("#annoKeyword").val());
-		var param = {
-			keyword : $("#annoKeyword").val()
-		}
-		$.ajax({
-			url : "${cpath}/admin/adminSearchAnno.do",
-			type : "get",
-			data : param,
-			success : function(res) {
-				//	 alert("갔따오기 성공"); 
-				var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-				$(".numButton").hide();
-			}
-		})
-	})
-	
+	$("#searchBtn")
+			.on(
+					"click",
+					function(e) {
+						//alert($("#annoKeyword").val());
+						var param = {
+							keyword : $("#annoKeyword").val()
+						}
+						$
+								.ajax({
+									url : "${cpath}/admin/adminSearchAnno.do",
+									type : "get",
+									data : param,
+									success : function(res) {
+										//	 alert("갔따오기 성공"); 
+										var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+										$(".numButton").hide();
+									}
+								})
+					})
+
 	$(".sales").on("click", function() {
 		$.ajax({
 
@@ -381,6 +423,5 @@
 
 		})
 	})
-	
 </script>
 </html>
