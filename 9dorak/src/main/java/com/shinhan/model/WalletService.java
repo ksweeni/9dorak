@@ -25,6 +25,10 @@ public class WalletService {
 		return dao.selectAllPay();
 	}
 	
+	public List<PayVO> selectPay(int order_no) {
+		return dao.selectPay(order_no);
+	}
+	
 	public List<BasketVO> getBasket(String mem_id) {
 		return dao.getBasket(mem_id);
 	}
