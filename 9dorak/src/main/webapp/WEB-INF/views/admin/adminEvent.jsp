@@ -81,6 +81,16 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			
+			<div class="graph-wrapper" style="    left: 5%;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.08);
+    top: 15rem;
+    position: relative;
+    width: 960px;
+    height: 345px;">수인이의 그래프래퍼
+			</div>
 		</div>
 	</div>
 </body>
