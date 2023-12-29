@@ -55,27 +55,27 @@
 						</p>
 					</div>
 					<div class="e3000_2">
-						메뉴번호 <br> <input type="text" value="${detailmenu.pro_no}"
+						<b>메뉴번호</b> <br> <input type="text" value="${detailmenu.pro_no}"
 							id="pro_no" readonly></input>
 					</div>
 					<div class="e3000_3">
-						메뉴명 <br> <input type="text" value="${detailmenu.pro_name}"
+						<b>메뉴명</b> <br> <input type="text" value="${detailmenu.pro_name}"
 							id="pro_name"></input>
 					</div>
 					<div class="e3000_4">
-						메뉴설명 <br> <input type="text" value="${detailmenu.pro_detail}"
+						<b>메뉴설명</b> <br> <input type="text" value="${detailmenu.pro_detail}"
 							id="pro_detail"></input>
 					</div>
 					<div class="e3000_5">
-						메뉴가격<br> <input type="text" value="${detailmenu.pro_price}"
+						<b>메뉴가격</b><br> <input type="text" value="${detailmenu.pro_price}"
 							id="pro_price"></input>
 					</div>
 					<div class="e3000_6">
-						메뉴좋아요수 <br> <input type="text" value="${detailmenu.pro_like}"
+						<b>메뉴좋아요수</b> <br> <input type="text" value="${detailmenu.pro_like}"
 							id="pro_like"></input>
 					</div>
 					<div class="e3000_7">
-						메뉴등록날짜 <br> <input type="date" value="${detailmenu.pro_rd}"
+						<b>메뉴등록날짜</b> <br> <input type="date" value="${detailmenu.pro_rd}"
 							id="pro_rd"></input>
 					</div>
 				</div>
@@ -87,35 +87,35 @@
 						</p>
 					</div>
 					<div class="e3000_9">
-						메뉴알레르기 <br> <input type="text"
+						<b>메뉴알레르기</b> <br> <input type="text"
 							value="${detailmenu.pro_aller}" id="pro_aller"></input>
 					</div>
 					<div class="e3000_10">
-						메뉴단백질 <br> <input type="text" value="${detailmenu.pro_prot}"
+						<b>메뉴단백질</b> <br> <input type="text" value="${detailmenu.pro_prot}"
 							id="pro_prot"></input>
 					</div>
 					<div class="e3000_11">
-						메뉴탄수화물 <br> <input type="text" value="${detailmenu.pro_carb}"
+						<b>메뉴탄수화물</b> <br> <input type="text" value="${detailmenu.pro_carb}"
 							id="pro_carb"></input>
 					</div>
 					<div class="e3000_12">
-						메뉴지방 <br> <input type="text" value="${detailmenu.pro_prov}"
+						<b>메뉴지방</b> <br> <input type="text" value="${detailmenu.pro_prov}"
 							id="pro_prov"></input>
 					</div>
 					<div class="e3000_13">
-						메뉴나트륨 <br> <input type="text" value="${detailmenu.pro_nat}"
+						<b>메뉴나트륨</b> <br> <input type="text" value="${detailmenu.pro_nat}"
 							id="pro_nat"></input>
 					</div>
 					<div class="e3000_14">
-						메뉴당류 <br> <input type="text" value="${detailmenu.pro_sugar}"
+						<b>메뉴당류</b> <br> <input type="text" value="${detailmenu.pro_sugar}"
 							id="pro_sugar"></input>
 					</div>
 					<div class="e3000_15">
-						메뉴칼로리 <br> <input type="text" value="${detailmenu.pro_cal}"
+						<b>메뉴칼로리</b> <br> <input type="text" value="${detailmenu.pro_cal}"
 							id="pro_cal"></input>
 					</div>
 					<div class="e3000_16">
-						메뉴중량 <br> <input type="text" value="${detailmenu.pro_weight}"
+						<b>메뉴중량</b> <br> <input type="text" value="${detailmenu.pro_weight}"
 							id="pro_weight"></input>
 					</div>
 				</div>
@@ -127,19 +127,19 @@
 						</p>
 					</div>
 					<div class="e3000_18">
-						메뉴배부르9여부 <br> <input type="text"
+						<b>메뉴배부르9여부</b> <br> <input type="text"
 							value="${detailmenu.pro_sub9}" id="pro_sub9"></input>
 					</div>
 					<div class="e3000_19">
-						메뉴배터지9여부 <br> <input type="text"
+						<b>메뉴배터지9여부</b> <br> <input type="text"
 							value="${detailmenu.pro_sub19}" id="pro_sub19"></input>
 					</div>
 					<div class="e3000_20">
-						메뉴무료체험 <br> <input type="text" value="${detailmenu.pro_free}"
+						<b>메뉴무료체험</b> <br> <input type="text" value="${detailmenu.pro_free}"
 							id="pro_free"></input>
 					</div>
 					<div class="e3000_21">
-						메뉴재고 <br> <input type="text" value="${detailmenu.pro_sc}"
+						<b>메뉴재고</b> <br> <input type="text" value="${detailmenu.pro_sc}"
 							id="pro_sc"></input>
 					</div>
 				</div>
@@ -152,7 +152,7 @@
 				<div class="e3000_100">
 					<!--  -->
 					<div class="e3000_26">
-						<div class="e3000_21">
+						<div class="e3000_30">
 							<label for="file">
 								<div class="btn-upload">파일 업로드하기</div>
 							</label> <input onchange="readURL(this, 'preview1');" multiple="multiple"

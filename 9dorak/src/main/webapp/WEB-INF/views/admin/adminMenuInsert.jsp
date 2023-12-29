@@ -45,8 +45,8 @@
 			<form action="${cpath}/admin/adminMenuInsert.do" method="post"
 				enctype="multipart/form-data">
 				<div class="e2099_3000">
-					<button type="submit" class="insert_memu" id="insert">메뉴
-						추가하기</button>
+					<button type="submit" class="insert_memu" id="insert"><b>메뉴
+						추가하기</b></button>
 				</div>
 				<div class="e2099_2487">
 					<div class="e2099_2490">
@@ -61,11 +61,11 @@
 								placeholder="메뉴명 입력"></input>
 						</div>
 						<div class="e3000_4">
-							메뉴설명 <br> <input type="text" name="pro_detail"
+							<b>메뉴설명</b> <br> <input type="text" name="pro_detail"
 								placeholder="상세설명 입력"></input>
 						</div>
 						<div class="e3000_5">
-							메뉴가격<br> <input type="text" name="pro_price"
+							<b>메뉴가격</b><br> <input type="text" name="pro_price"
 								placeholder="가격 입력"></input>
 						</div>
 					</div>
@@ -77,35 +77,35 @@
 							</p>
 						</div>
 						<div class="e3000_9">
-							메뉴알레르기 <br> <input type="text" name="pro_aller"
+							<b>메뉴알레르기</b> <br> <input type="text" name="pro_aller"
 								placeholder="알레르기 입력"></input>
 						</div>
 						<div class="e3000_10">
-							메뉴단백질 <br> <input type="text" name="pro_prot"
+							<b>메뉴단백질</b> <br> <input type="text" name="pro_prot"
 								placeholder="단백질량 입력"></input>
 						</div>
 						<div class="e3000_11">
-							메뉴탄수화물 <br> <input type="text" name="pro_carb"
+							<b>메뉴탄수화물</b> <br> <input type="text" name="pro_carb"
 								placeholder="탄수화물량 입력"></input>
 						</div>
 						<div class="e3000_12">
-							메뉴지방 <br> <input type="text" name="pro_prov"
+							<b>메뉴지방</b> <br> <input type="text" name="pro_prov"
 								placeholder="지방량 입력"></input>
 						</div>
 						<div class="e3000_13">
-							메뉴나트륨 <br> <input type="text" name="pro_nat"
+							<b>메뉴나트륨</b> <br> <input type="text" name="pro_nat"
 								placeholder="나트륨량 입력"></input>
 						</div>
 						<div class="e3000_14">
-							메뉴당류 <br> <input type="text" name="pro_sugar"
+							<b>메뉴당류</b> <br> <input type="text" name="pro_sugar"
 								placeholder="당류량 입력"></input>
 						</div>
 						<div class="e3000_15">
-							메뉴칼로리 <br> <input type="text" name="pro_cal"
+							<b>메뉴칼로리</b> <br> <input type="text" name="pro_cal"
 								placeholder="칼로리 입력"></input>
 						</div>
 						<div class="e3000_16">
-							메뉴중량 <br> <input type="text" name="pro_weight"
+							<b>메뉴중량</b> <br> <input type="text" name="pro_weight"
 								placeholder="메뉴중량 입력"></input>
 						</div>
 					</div>
@@ -117,15 +117,15 @@
 							</p>
 						</div>
 						<div class="e3000_18">
-							메뉴배부르9여부 <br> <input type="text" name="pro_sub9"
+							<b>메뉴배부르9여부</b> <br> <input type="text" name="pro_sub9"
 								placeholder="A 혹은 B 입력"></input>
 						</div>
 						<div class="e3000_19">
-							메뉴배터지9여부 <br> <input type="text" name="pro_sub19"
+							<b>메뉴배터지9여부</b> <br> <input type="text" name="pro_sub19"
 								placeholder="A 혹은 B 입력"></input>
 						</div>
 						<div class="e3000_20">
-							메뉴무료체험 <br> <input type="text" name="pro_free"
+							<b>메뉴무료체험</b> <br> <input type="text" name="pro_free"
 								placeholder="F 입력"></input>
 						</div>
 					</div>
