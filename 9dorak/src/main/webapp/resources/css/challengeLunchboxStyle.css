@@ -898,3 +898,11 @@ hr {
 	height: 1px;
 	border: 0;
 }
+.herere{
+	    display: flex;
+    align-items: center;
+}
+.inhere{
+	margin-left: 15px;
+    margin-top: 31px;
+}

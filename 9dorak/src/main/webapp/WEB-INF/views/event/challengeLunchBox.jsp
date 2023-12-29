@@ -129,9 +129,13 @@
 										<div class="label-check">
 											<div class="text-wrapper">도시락을 설명하는 사진이나 그림을 올려주세요</div>
 										</div>
+										<div class="herere">
 										<label class="fileUpload" for="singleFile" onmousedown="handleMouseDown(event)">파일 선택</label> 
 										<input type="file" name="singleFile" id="singleFile" style="display: none;" />
+										<div class="inhere">
 										<span id="selectedFileName"></span>
+										</div>
+										</div>
 									</div>
 								</div>
 								<br>
