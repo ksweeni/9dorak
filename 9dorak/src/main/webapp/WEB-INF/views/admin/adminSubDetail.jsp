@@ -44,7 +44,29 @@
 			</div>
 			<div class="e2099_2487">
 				<div class="e2099_2490">
-					<p>
+					<div class="e3001"></div>
+					<div class="e3000_1">
+						<p>
+							<b>구독</b>
+						</p>
+					</div>
+					<div class="e3000_2">
+						<b>구독번호</b> <br> <input type="number" value="${detailSub.sub_no}"
+							id="sub_no" readonly style="margin-top: 5px;"></input>
+					</div>
+					<div class="e3000_3">
+						<b>구독연장여부</b> <br> <input type="text" value="${detailSub.sub_extend}"
+							id="sub_extend" style="margin-top: 5px;"></input>
+					</div>
+					<div class="e3000_4">
+						<b>구독시작날짜</b> <br> <input type="date" value="${detailSub.sub_date}"
+							id="sub_date" style="margin-top: 5px;"></input>
+					</div>
+					<div class="e3000_5">
+						<b>구독회원ID</b><br> <input type="text" value="${detailSub.mem_id}"
+							id="mem_id" readonly style="margin-top: 5px;"></input>
+					</div>
+<%-- 					<p>
 						<b>1. 구독</b>
 					</p>
 					구독번호 <br> <input type="number" value="${detailSub.sub_no}"
@@ -54,14 +76,19 @@
 					<br> 구독시작날짜<br> <input type="date"
 						value="${detailSub.sub_date}" id="sub_date"></input> <br>
 					<br> 구독회원ID <br> <input type="text"
-						value="${detailSub.mem_id}" id="mem_id"></input>
+						value="${detailSub.mem_id}" id="mem_id"></input> --%>
 				</div>
 				<div class="e2099_2491">
-					<p>
-						<b>2. 구독 상세</b>
-					</p>
-					배부르9 <br> <br>
-					<br> 배터지9 <br> <br>
+					<div class="e3002"></div>
+					<div class="e3000_8">
+						<p>
+							<b>구독상세</b>
+						</p>
+					</div>
+					<div class="e3000_9">
+					배부르9 <br> <br> <br> 
+					배터지9 <br> <br>
+					</div>
 					<br>
 				</div>
 			</div>

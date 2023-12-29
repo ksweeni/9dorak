@@ -298,7 +298,6 @@
     left: 601px;
     width: 202px;
     top: -735px;
-    border: solid 1px rgba(244, 140, 40, 1);
     pa-left: 11px;
     padding: 5px 20px 20px 20px;
 }
@@ -331,8 +330,8 @@
 
 .e2099_3000 {
     position: relative;
-    left: 75px;
-    top: 78px;
+    left: 27px;
+    top: 105px;
 }
 
 .sales {
@@ -346,4 +345,84 @@
 	font-size: 16px;
 	letter-spacing: 2;
 	cursor: pointer;
+}
+
+.e2099_2492 {
+    position: relative;
+    left: -13px;
+    width: 202px;
+    top: -90px;
+    /* border: solid 1px rgba(244, 140, 40, 1); */
+    pa-left: 11px;
+    padding: 5px 20px 20px 20px;
+}
+
+.e3003 {
+	position: relative;
+	left: 94px;
+	height: 30px;
+	width: 30px;
+	top: 140px;
+	background-image: url(../images/admin/admin05.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* border: 1px solid black; */
+}
+
+.e3000_17 {
+	position: relative;
+	left: 130px;
+	top: 100px;
+}
+
+.e3000_18 {
+	position: relative;
+	left: 100px;
+	top: 104px;
+}
+
+.e3000_18 input {
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
+}
+
+.e3000_18 input:hover {
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+
+.e3000_18 b {
+            color: gray; /* Change the text color to gray */
+}
+
+.e3000_18 input[type="text"] {
+            margin-top: 5px; /* Add 5px top margin */
+}
+
+.e3000_19 {
+	position: relative;
+	left: 100px;
+	top: 114px;
+}
+
+.e3000_19 input {
+	padding: 10px;
+	width: 200px;
+	border-radius: 8px;
+	outline: gray;
+	border: 2px solid #b6b6b6;
+}
+
+.e3000_19 input:hover {
+	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+
+.e3000_19 b {
+            color: gray; /* Change the text color to gray */
+}
+
+.e3000_19 input[type="text"] {
+            margin-top: 5px; /* Add 5px top margin */
 }
