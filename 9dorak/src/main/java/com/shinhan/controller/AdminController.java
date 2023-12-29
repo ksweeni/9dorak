@@ -584,106 +584,35 @@ public class AdminController {
 		return "admin/adminSales";
 	}
 	
+	// 매출 상세
 	@PostMapping("adminSales.do")
 	public String adminSalesDetail(Model model, PayVO pay) {
-		List<PayVO> payDetail = wService.selectPay(pay.getOrder_no());
+		PayVO payDetail = wService.selectPay(pay.getOrder_no());
 		model.addAttribute("payDetail", payDetail);
-		return "admin/adminSubDetail";
+		return "admin/adminSalesDetail";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	@GetMapping("adminGraph.do")
-	public String adminGraph() {
-		return "admin/adminGraph";
+	// 매출 내역 수정
+	@RequestMapping(value = "adminSalesUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminSalesUpdate(Model model, PayVO pay) {
+		int result = wService.updateSales(pay);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+		}
 	}
 	
+	// 매출 내역 삭제
+	@RequestMapping(value = "adminSalesDelete.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminSalesDelete(Model model, PayVO pay) {
+		int result = wService.deleteSales(pay.getOrder_no());
+		if (result > 0) {
+			return "삭제 성공";
+		} else {
+			return "삭제 실패";
+		}
+	}
 }

@@ -36,13 +36,10 @@ public class WalletDAOMybatis {
 		return plist;
 	}
 	
-	public List<PayVO> selectPay(int order_no) {
-		List<PayVO> plist = sqlSession.selectList(NAMESPACE + "selectPay", order_no);
-		return plist;
+	public PayVO selectPay(int order_no) {
+		PayVO pay = sqlSession.selectOne(NAMESPACE + "selectPay", order_no);
+		return pay;
 	}
-	
-	
-	
 
     // mem_id의 장바구니 목록
     public List<BasketVO> getBasket(String mem_id) {
@@ -151,6 +148,18 @@ public class WalletDAOMybatis {
 	// 주문 디테일 테이블 insert
 	public int insertOrderDetail(OrderdetailVO orderDetail) {
 		return sqlSession.insert(NAMESPACE + "insertOrderDetail", orderDetail);
+	}
+	
+	// 매출 내역 업데이트
+	public int updateSales(PayVO pay) {
+		int result = sqlSession.update(NAMESPACE + "updateSales", pay);
+		return result;
+	}
+	
+	// 매출 내역 삭제
+	public int deleteSales(int order_no) {
+		int result = sqlSession.delete(NAMESPACE + "deleteSales", order_no);
+		return result;
 	}
 
 }
