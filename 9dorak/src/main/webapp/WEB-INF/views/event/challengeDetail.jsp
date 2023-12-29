@@ -170,14 +170,14 @@
 	</div>
 	<br></br>
 	<div class="board">
-		챌린지명 <br> <input type="text" value="${chall.challenge_name}"
-			id="challenge_name"></input> <br> 챌린지내용 <br> <input
+		<div class="challenge_name">챌린지명</div> <br> <input type="text" value="${chall.challenge_name}"
+			id="challenge_name"></input> <br> <div class="challenge_cont">챌린지내용</div> <br> <input
 			type="text" value="${chall.challenge_cont}" id="challenge_cont"></input>
-		<br> 챌린지 작성자 <br> <input type="text" value="${chall.mem_id}"
-			id="mem_id"></input> <br> 챌린지 등록날짜 <br> <input type="text"
+		<br> <div class="mem_id">작성자</div> <br> <input type="text" value="${chall.mem_id}"
+			id="mem_id"></input> <br> <div class="challenge_date">챌린지 등록날짜</div> <br> <input type="text"
 			value="${chall.challenge_date}" id="challenge_date"></input> <br>
-		좋아요 <br> <input type="text" value="${likeCnt}"
-			readonly="readonly" id="likeCnt"></input> <br> 첨부사진 <br> <img
+		<div class="likeCnt">좋아요</div> <br> <input type="text" value="${likeCnt}"
+			readonly="readonly" id="likeCnt"></input> <br> <div class="challenge_img">첨부사진</div> <br> <img
 			src="${cpath}/resources/upload/${chall.challenge_image}" /> <br>
 		<input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input>
 		<br>
