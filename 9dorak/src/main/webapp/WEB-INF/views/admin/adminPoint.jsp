@@ -179,20 +179,17 @@
 	</div>
 </body>
 <script type="text/javascript">
-
 $(document).ready(function () {
     var rowsPerPage = 5;
     var $products2 = $("#products2");
     var $table1 = $(".table-1");
     var $pagination = $(".pagination");
 
-    function adjustTable1Height() {
-        var products2Height = $products2.height() + 37;
-        $table1.height(products2Height);
-    }
+    // Fixed amount to increase the height (adjust this value as needed)
+    var heightIncrease = 98;
 
-    // Function to update the pagination links
-    function updatePagination() {
+    // Function to update the pagination links and adjust table-1 height
+    function updatePaginationAndAdjustHeight() {
         var totalRows = $products2.find("tbody tr").length;
         var totalPages = Math.ceil(totalRows / rowsPerPage);
 
@@ -202,10 +199,28 @@ $(document).ready(function () {
         }
 
         $pagination.html(paginationHTML);
+
+        // Initial styling for the first page
+        $pagination.find("a:first").addClass("active");
+
+        // Hide additional rows beyond the first 'rowsPerPage'
+        $products2.find("tbody tr:gt(" + (rowsPerPage - 1) + ")").hide();
+
+        // Update table-1 height
+        adjustTable1Height();
     }
 
-    // Initial pagination update
-    updatePagination();
+    // Function to adjust the height of table-1 based on the table's visible rows
+    function adjustTable1Height() {
+        var tableHeight = $products2.find("tbody tr:visible").length * $products2.find("tbody tr:first").height();
+        var paginationHeight = $pagination.height();
+        var table1Height = tableHeight + paginationHeight + heightIncrease;
+
+        $table1.height(table1Height);
+    }
+
+    // Initial pagination update and height adjustment
+    updatePaginationAndAdjustHeight();
 
     // Event handler for pagination clicks
     $pagination.on("click", "a", function (e) {
@@ -217,37 +232,20 @@ $(document).ready(function () {
         var startIndex = (currentPage - 1) * rowsPerPage;
         var endIndex = startIndex + rowsPerPage;
 
+        // Show/hide table rows based on the current page
         $products2.find("tbody tr").hide();
         $products2.find("tbody tr").slice(startIndex, endIndex).show();
 
         $(this).addClass("active");
 
+        // Adjust table-1 height after pagination click
         adjustTable1Height();
     });
 
-    // Initial styling for the first page
-    $pagination.find("a:first").addClass("active");
-
-    // Initial loading height adjustment
-    adjustTable1Height();
-
     // Window resize event for height adjustment
     $(window).on("resize", adjustTable1Height);
-
-    // Function to handle changes in the table data (example: data loaded asynchronously)
-    function handleTableDataChange() {
-        // Update pagination links
-        updatePagination();
-        // Re-adjust the height
-        adjustTable1Height();
-    }
-
-    // Example usage of the function when the table data changes (replace this with your actual data change event)
-    // handleTableDataChange();
 });
 
-
-	
 	$(".e2099_2468").on("click", function() {
 		$.ajax({
 
