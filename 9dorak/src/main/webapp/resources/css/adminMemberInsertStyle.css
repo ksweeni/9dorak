@@ -251,8 +251,8 @@
 	width: 2px;
 	height: 2px;
 	display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .e2099_2471 hr {
@@ -270,73 +270,77 @@
 	width: 205px;
 	height: 100px;
 	left: 0%;
-	margin-top:650px;
+	margin-top: 650px;
 	/* bottom: 100%; */
 	/* border: solid 1px black; */
 }
 
 .input-1 {
 	margin-bottom: 15px;
-    padding-left: 10px;
-    width: 200px;
-    height: 30px;
-    outline: none;
-    border-radius: 5px;
-    border: 2px solid #DFDFDF;
+	padding-left: 10px;
+	width: 200px;
+	height: 30px;
+	outline: none;
+	border-radius: 5px;
+	border: 2px solid #DFDFDF;
 }
 
 .div-first {
 	gap: 1rem;
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
+
 .div-1 {
 	color: #5E5E5E;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
 	gap: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
-.e2099_2490, .e2099_2491{
+
+.e2099_2490, .e2099_2491 {
 	position: relative;
 	width: fit-content;
 	padding: 5px 20px 20px 20px;
 }
+
 .b {
 	color: #1C2A53;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 30px;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 30px;
 }
 
-.title{
+.title {
 	margin-bottom: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-}
-.e3001{
-	position: relative;
-    height: 30px;
-    width: 30px;
-    background-image: url(../images/admin/admin06.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
 }
 
-.e3002{
+.e3001 {
 	position: relative;
-    height: 30px;
-    width: 30px;
-    background-image: url(../images/admin/admin05.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+	height: 30px;
+	width: 30px;
+	background-image: url(../images/admin/admin06.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.e3002 {
+	position: relative;
+	height: 30px;
+	width: 30px;
+	background-image: url(../images/admin/admin05.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .e2099_2492 {
@@ -363,6 +367,15 @@
 	width: fit-content;
 	top: 4px;
 	left: 4px;
+	transition: background 0.5s ease;
+}
+
+.insert_member:hover {
+	background: limegreen;
+}
+
+.member_check:hover {
+	background: #FEB775;
 }
 
 .member_check {
@@ -379,12 +392,13 @@
 	width: fit-content;
 	top: 4px;
 	left: 4px;
+	transition: background 0.5s ease;
 }
 
 .e2099_3000 {
 	position: relative;
 	left: 7.5rem;
-    top: 45rem;
+	top: 45rem;
 }
 
 .sales {

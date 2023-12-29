@@ -350,16 +350,25 @@ button {
 	font-weight: 700;
 	margin-right: 10px;
 	border-radius: 4px;
+	transition: background 0.5s ease;
 }
 
 #EvantDelete {
 	background: #FF0101;
 }
 
+#EvantDelete:hover {
+	background:#FF6156;
+}
+
 #EvantUpdate {
 	background: #FF9603;
 }
 
+#EvantUpdate:hover {
+	background: #FEB775;
+    color: white;
+}
 button:hover {
 	background-color: #e06b15;
 }

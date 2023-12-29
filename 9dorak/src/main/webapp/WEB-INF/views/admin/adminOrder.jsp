@@ -20,18 +20,14 @@
 	<div class=e2099_2373>
 		<div class="e2099_2463"></div>
 		<div class="e2099_2467"></div>
-		<div class="e2099_2471">
-			<hr>
-		</div>
+
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
 		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span> <span class="sales">매출관리</span>
 		<div class="admin_login">
-			<div class="e2099_2476">
-				<hr>
-			</div>
+
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
@@ -49,7 +45,8 @@
 						</p>
 					</form>
 					<div class=e815_1065>
-						<input type="text" class="e815_1067" id="annoKeyword" placeholder="주문회원ID를 입력하세요">
+						<input type="text" class="e815_1067" id="annoKeyword"
+							placeholder="주문회원ID를 입력하세요">
 						<button id="searchBtn" class="ei815_1066_6_1">검색</button>
 					</div>
 				</caption>
@@ -81,105 +78,140 @@
 	</div>
 </body>
 <script type="text/javascript">
-$("#searchBtn").on("click", function() {
-	$.ajax({
-		url : "${cpath}/admin/searchadminOrder.do",
-		type : 'GET',
-		data : {
-			mem_id : $(".e815_1067").val()
-		},
-		success : function(data) {
-			var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-			$('link[href="' + oldCssFilePath + '"]').remove();
-			$('.e2099_2486').html(data);
-		}
-	});
-})
+	$("#searchBtn")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
+									url : "${cpath}/admin/searchadminOrder.do",
+									type : 'GET',
+									data : {
+										mem_id : $(".e815_1067").val()
+									},
+									success : function(data) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$('.e2099_2486').html(data);
+									}
+								});
+					})
 
-	$(".e2099_2468").on("click", function() {
-		$.ajax({
+	$(".e2099_2468")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMenu.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMenu.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2469").on("click", function() {
-		$.ajax({
+	$(".e2099_2469")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMember.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMember.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2472").on("click", function() {
-		$.ajax({
+	$(".e2099_2472")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminSub.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminSub.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2473").on("click", function() {
-		$.ajax({
+	$(".e2099_2473")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminNotice.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminNotice.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2474").on("click", function() {
-		$.ajax({
+	$(".e2099_2474")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminEvent.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminEvent.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2475").on("click", function() {
-		$.ajax({
+	$(".e2099_2475")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminPoint.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminPoint.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
-	
+								})
+					})
+
 	$(".sales").on("click", function() {
 		$.ajax({
 
@@ -260,30 +292,32 @@ $("#searchBtn").on("click", function() {
 			});
 
 	$setRows.submit();
-	
-    $(document).ready(function () {
-        // 테이블의 각 행을 클릭했을 때 이벤트 핸들러
-        $('#products tbody').on('click', 'tr', function () {
-            // 클릭한 행의 메뉴 번호 가져오기
-            var order_no = $(this).find('td:first').text();
 
-            // Ajax 호출
-            $.ajax({
-                type: 'POST',
-                url: '${cpath}/admin/adminOrder.do',
-                data: { order_no: order_no },
-                success: function (response) {
-                    // 서버에서의 응답 처리
-                    $("body").html(response);
-                    console.log(order_no);
+	$(document).ready(function() {
+		// 테이블의 각 행을 클릭했을 때 이벤트 핸들러
+		$('#products tbody').on('click', 'tr', function() {
+			// 클릭한 행의 메뉴 번호 가져오기
+			var order_no = $(this).find('td:first').text();
 
-                    // 추가적인 동작 수행 가능
-                },
-                error: function (error) {
-                    console.error('Error:', error);
-                }
-            });
-        });
-    });
+			// Ajax 호출
+			$.ajax({
+				type : 'POST',
+				url : '${cpath}/admin/adminOrder.do',
+				data : {
+					order_no : order_no
+				},
+				success : function(response) {
+					// 서버에서의 응답 처리
+					$("body").html(response);
+					console.log(order_no);
+
+					// 추가적인 동작 수행 가능
+				},
+				error : function(error) {
+					console.error('Error:', error);
+				}
+			});
+		});
+	});
 </script>
 </html>

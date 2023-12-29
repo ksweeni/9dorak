@@ -20,18 +20,14 @@
 	<div class=e2099_2373>
 		<div class="e2099_2463"></div>
 		<div class="e2099_2467"></div>
-		<div class="e2099_2471">
-			<hr>
-		</div>
+
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
 		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span> <span class="sales">매출관리</span>
 		<div class="admin_login">
-			<div class="e2099_2476">
-				<hr>
-			</div>
+
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
@@ -83,18 +79,18 @@
 	</div>
 </body>
 <script type="text/javascript">
-$(".ei815_1066_6_1").on("click", function() {
-	$.ajax({
-		url : "${cpath}/admin/searchadminOrder.do",
-		type : 'GET',
-		data : {
-			mem_id : $(".e815_1067").val()
-		},
-		success : function(data) {
-			$('.e2099_2486').html(data);
-		}
-	});
-})
+	$(".ei815_1066_6_1").on("click", function() {
+		$.ajax({
+			url : "${cpath}/admin/searchadminOrder.do",
+			type : 'GET',
+			data : {
+				mem_id : $(".e815_1067").val()
+			},
+			success : function(data) {
+				$('.e2099_2486').html(data);
+			}
+		});
+	})
 
 	$(".e2099_2468").on("click", function() {
 		$.ajax({
@@ -167,7 +163,7 @@ $(".ei815_1066_6_1").on("click", function() {
 
 		})
 	})
-	
+
 	$(".sales").on("click", function() {
 		$.ajax({
 
@@ -179,7 +175,7 @@ $(".ei815_1066_6_1").on("click", function() {
 
 		})
 	})
-	
+
 	$(".e2099_2470").on("click", function() {
 		$.ajax({
 
@@ -260,30 +256,30 @@ $(".ei815_1066_6_1").on("click", function() {
 			});
 
 	$setRows.submit();
-	
-    /* $(document).ready(function () {
-        // 테이블의 각 행을 클릭했을 때 이벤트 핸들러
-        $('#products tbody').on('click', 'tr', function () {
-            // 클릭한 행의 메뉴 번호 가져오기
-            var order_no = $(this).find('td:first').text();
 
-            // Ajax 호출
-            $.ajax({
-                type: 'POST',
-                url: '${cpath}/admin/adminOrder.do',
-                data: { order_no: order_no },
-                success: function (response) {
-                    // 서버에서의 응답 처리
-                    $("body").html(response);
-                    console.log(order_no);
+	/* $(document).ready(function () {
+	    // 테이블의 각 행을 클릭했을 때 이벤트 핸들러
+	    $('#products tbody').on('click', 'tr', function () {
+	        // 클릭한 행의 메뉴 번호 가져오기
+	        var order_no = $(this).find('td:first').text();
 
-                    // 추가적인 동작 수행 가능
-                },
-                error: function (error) {
-                    console.error('Error:', error);
-                }
-            });
-        });
-    }); */
+	        // Ajax 호출
+	        $.ajax({
+	            type: 'POST',
+	            url: '${cpath}/admin/adminOrder.do',
+	            data: { order_no: order_no },
+	            success: function (response) {
+	                // 서버에서의 응답 처리
+	                $("body").html(response);
+	                console.log(order_no);
+
+	                // 추가적인 동작 수행 가능
+	            },
+	            error: function (error) {
+	                console.error('Error:', error);
+	            }
+	        });
+	    });
+	}); */
 </script>
 </html>

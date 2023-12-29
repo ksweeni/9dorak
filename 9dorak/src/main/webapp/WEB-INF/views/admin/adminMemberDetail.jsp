@@ -22,18 +22,14 @@
 	<div class=e2099_2373>
 		<div class="e2099_2463"></div>
 		<div class="e2099_2467"></div>
-		<div class="e2099_2471">
-			<hr>
-		</div>
+
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
 		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span> <span class="sales">매출관리</span>
 		<div class="admin_login">
-			<div class="e2099_2476">
-				<hr>
-			</div>
+
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
@@ -48,14 +44,14 @@
 			</div>
 			<div class="e2099_2487">
 				<div class="e2099_2490">
-				<div class="title">
+					<div class="title">
 
 						<div class="e3001"></div>
 						<div class="b">회원 기본 정보</div>
 
 					</div>
-					
-					
+
+
 					<div class="div-first">
 						<div class="div-1">
 							회원 이름 <br> <input class="input-1" type="text"
@@ -85,7 +81,7 @@
 				<div class="e2099_2491">
 					<div class="title">
 
-						<div class="e3002" ></div>
+						<div class="e3002"></div>
 						<div class="b">회원 구도락 정보</div>
 
 					</div>
@@ -328,7 +324,7 @@
 			}
 		})
 	})
-	
+
 	$(".sales").on("click", function() {
 		$.ajax({
 
