@@ -226,7 +226,7 @@ public class AdminController {
 	
 	@PostMapping("adminOrder.do")
 	public String adminOrderDetail(Model model, OrderdetailVO order) {
-		OrderdetailVO detailorder = orderService.selectByOrder(order.getOrder_no());
+		List<OrderVO> detailorder = orderService.selectByOrder(order.getOrder_no());
 		model.addAttribute("detailorder", detailorder);
 		System.out.println(detailorder);
 		return "admin/adminOrderDetail";

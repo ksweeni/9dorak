@@ -40,6 +40,8 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
+		
+		
  			<table id="products" border="1">
 				<caption  style="">
 					주문상세 list<br>
@@ -56,14 +58,18 @@
 						<th>주문수량</th>
 					</tr>
 				</thead>
+				<c:forEach items="${detailorder}" var="detail" varStatus="status">
 				<tbody>
 						<tr>
-							<td>${detailorder.order_no}</td>
-							<td>${detailorder.pro_no}</td>
-							<td>${detailorder.orderdetail_count}</td>
+							<td>${detail.order_no}</td>
+							<td>${detail.pro_no}</td>
+							<td>${detail.orderdetail_count}</td>
 						</tr>
 				</tbody>
+				</c:forEach>
 			</table>
+			
+			
 		</div>
 	</div>
 </body>
