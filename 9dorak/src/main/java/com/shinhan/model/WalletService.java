@@ -25,7 +25,7 @@ public class WalletService {
 		return dao.selectAllPay();
 	}
 	
-	public List<PayVO> selectPay(int order_no) {
+	public PayVO selectPay(int order_no) {
 		return dao.selectPay(order_no);
 	}
 	
@@ -91,6 +91,14 @@ public class WalletService {
 
 	public int insertOrderDetail(OrderdetailVO orderDetail) {
 		return dao.insertOrderDetail(orderDetail);
+	}
+
+	public int updateSales(PayVO pay) {
+		return dao.updateSales(pay);
+	}
+
+	public int deleteSales(int order_no) {
+		return dao.deleteSales(order_no);
 	}
 	
 	
