@@ -39,8 +39,9 @@
 			<form action="${cpath}/admin/adminMenuInsert.do" method="post"
 				enctype="multipart/form-data">
 				<div class="e2099_3000">
-					<button type="submit" class="insert_memu" id="insert"><b>메뉴
-						추가하기</b></button>
+					<button type="submit" class="insert_memu" id="insert">
+						<b>메뉴 추가하기</b>
+					</button>
 				</div>
 				<div class="e2099_2487">
 					<div class="e2099_2490">
@@ -102,6 +103,22 @@
 							<b>메뉴중량</b> <br> <input type="text" name="pro_weight"
 								placeholder="메뉴중량 입력"></input>
 						</div>
+						<!--  -->
+						<div class="e3000_17">
+							<b>카테고리</b> <br> <select name=ingre_name>
+								<option value="환경친화">환경친화</option>
+								<option value="저염">저염</option>
+								<option value="저당">저당</option>
+								<option value="소">소</option>
+								<option value="돼지">돼지</option>
+								<option value="닭">닭</option>
+								<option value="생선">생선</option>
+								<option value="샐러드">샐러드</option>
+								<option value="과일">과일</option>
+							</select>
+						</div>
+
+						<!--  -->
 					</div>
 					<div class="e2099_2492">
 						<div class="e3003"></div>
@@ -122,43 +139,44 @@
 							<b>메뉴무료체험</b> <br> <input type="text" name="pro_free"
 								placeholder="F 입력"></input>
 						</div>
+
 					</div>
 				</div>
 				<div class="e3000_99">
-				<div class="e3004"></div>
-				<p>
-					<b>메뉴 사진 정보</b>
-				</p>
+					<div class="e3004"></div>
+					<p>
+						<b>메뉴 사진 정보</b>
+					</p>
 				</div>
 				<div class="e3000_26">
-				<div class="e3000_21">
-					<label for="file">
-						<div class="btn-upload">파일 업로드하기</div>
-					</label> <input onchange="readURL(this, 'preview1');" multiple="multiple"
-						id="file" type="file" name="file" /> <img id="preview1"
-						class="preview-image" src="" alt="Preview 1" />
-				</div>
-				<div class="e3000_22">
-					<label for="file2">
-						<div class="btn-upload">파일 업로드하기</div>
-					</label> <input onchange="readURL(this, 'preview2');" multiple="multiple"
-						type="file" name="file" id="file2" /> <img id="preview2"
-						class="preview-image" src="" alt="Preview 2" />
-				</div>
-				<div class="e3000_23">
-					<label for="file3">
-						<div class="btn-upload">파일 업로드하기</div>
-					</label> <input onchange="readURL(this, 'preview3');" multiple="multiple"
-						type="file" name="file" id="file3" /> <img id="preview3"
-						class="preview-image" src="" alt="Preview 3" />
-				</div>
-				<div class="e3000_24">
-					<label for="file4">
-						<div class="btn-upload">파일 업로드하기</div>
-					</label> <input onchange="readURL(this, 'preview4');" multiple="multiple"
-						type="file" name="file" id="file4" /> <img id="preview4"
-						class="preview-image" src="" alt="Preview 4" />
-				</div>
+					<div class="e3000_21">
+						<label for="file">
+							<div class="btn-upload">파일 업로드하기</div>
+						</label> <input onchange="readURL(this, 'preview1');" multiple="multiple"
+							id="file" type="file" name="file" /> <img id="preview1"
+							class="preview-image" src="" alt="Preview 1" />
+					</div>
+					<div class="e3000_22">
+						<label for="file2">
+							<div class="btn-upload">파일 업로드하기</div>
+						</label> <input onchange="readURL(this, 'preview2');" multiple="multiple"
+							type="file" name="file" id="file2" /> <img id="preview2"
+							class="preview-image" src="" alt="Preview 2" />
+					</div>
+					<div class="e3000_23">
+						<label for="file3">
+							<div class="btn-upload">파일 업로드하기</div>
+						</label> <input onchange="readURL(this, 'preview3');" multiple="multiple"
+							type="file" name="file" id="file3" /> <img id="preview3"
+							class="preview-image" src="" alt="Preview 3" />
+					</div>
+					<div class="e3000_24">
+						<label for="file4">
+							<div class="btn-upload">파일 업로드하기</div>
+						</label> <input onchange="readURL(this, 'preview4');" multiple="multiple"
+							type="file" name="file" id="file4" /> <img id="preview4"
+							class="preview-image" src="" alt="Preview 4" />
+					</div>
 				</div>
 			</form>
 		</div>
@@ -260,7 +278,7 @@
 
 		})
 	})
-	
+
 	$(".sales").on("click", function() {
 		$.ajax({
 
@@ -272,7 +290,7 @@
 
 		})
 	})
-	
+
 	function readURL(input, previewId) {
 		if (input.files && input.files[0]) {
 			var reader = new FileReader();

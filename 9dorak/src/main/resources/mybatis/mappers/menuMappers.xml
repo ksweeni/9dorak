@@ -350,7 +350,8 @@
 
 	<select id="selectProNo" resultType="int">
 		SELECT * FROM (
-		SELECT pro_no FROM pro ORDER BY pro_rd DESC
+		SELECT pro_no
+		FROM pro ORDER BY pro_rd DESC
 		) WHERE ROWNUM = 1
 	</select>
 
@@ -365,12 +366,32 @@
 		#{proimage_image} , #{pro_no}
 		)
 	</insert>
-	
-	<select id="selectByNoImage" resultType="proimagevo" parameterType="proimagevo">
+
+	<select id="selectByNoImage" resultType="proimagevo"
+		parameterType="proimagevo">
 		select
 		*
 		from proimage
 		where pro_no = #{pro_no}
 	</select>
+
+	<!-- <select id="getproimage_no" resultType="int" parameterType="int"> SELECT 
+		proimage_no FROM proimage WHERE pro_no = #{pro_no} AND ROWNUM = 1 </select> 
+		<update id="updatePro_image" parameterType="proimagevo"> UPDATE proimage 
+		SET proimage_image = #{proimage_image} WHERE pro_no = #{pro_no} </update> -->
+
+
+	<select id="getinre_no" parameterType="ingrevo" resultType="int">
+		SELECT ingre_no from ingre where ingre_name = #{ingre_name}
+	</select>
+
+	<insert id="insertCategory" parameterType="categoryvo">
+		INSERT INTO category
+		(
+		pro_no,ingre_no
+		) VALUES (
+		#{pro_no} , #{ingre_no}
+		)
+	</insert>
 
 </mapper>

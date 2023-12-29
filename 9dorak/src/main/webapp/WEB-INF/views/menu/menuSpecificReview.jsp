@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -15,14 +15,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
+<link rel="shortcut icon"
+	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 </head>
 <body>
 
 	<div class="div-wrapper">
 		<div class="div">
-		
+
 			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
@@ -72,18 +73,19 @@
 								</c:otherwise>
 							</c:choose>
 						</div>
-					<div class="group-20" id="lightsParent">
+						<div class="group-20" id="lightsParent">
 							<div class="header-overlap-group-3" onclick="loginBasket()">
-								<img class="header-group-21" src="${cpath}/resources/images/main/header-cart.png" />
+								<img class="header-group-21"
+									src="${cpath}/resources/images/main/header-cart.png" />
 							</div>
 						</div>
 					</div>
 				</div>
 			</header>
-		
+
 			<div class="menu">
 				<div id="main-group" class="group"></div>
-				<div class="sub-image">
+				<%-- 	<div class="sub-image">
 					<div class="overlap-group-wrapper"
 						onclick="changeBackground(this, '${cpath}/resources/images/menu/proimage/${menudetail.pro_no }-1.jpg')">
 						<div class="overlap-group">
@@ -103,6 +105,26 @@
 						<div class="vector-wrapper">
 							<img class="vector"
 								src="${cpath}/resources/images/menu/proimage/${menudetail.pro_no }-3.jpg" />
+						</div>
+					</div>
+				</div> --%>
+				<div class="sub-image">
+					<div class="overlap-group-wrapper"
+						onclick="changeBackground(this, '${cpath }/resources/upload/${images[1].proimage_image}')">
+						<div class="overlap-group">
+							<img class="vector" src="${cpath }/resources/upload/${images[1].proimage_image}" />
+						</div>
+					</div>
+					<div class="overlap-group-wrapper"
+						onclick="changeBackground(this, '${cpath }/resources/upload/${images[2].proimage_image}')">
+						<div class="overlap">
+							<img class="vector" src="${cpath }/resources/upload/${images[2].proimage_image}" />
+						</div>
+					</div>
+					<div class="overlap-group-wrapper"
+						onclick="changeBackground(this, '${cpath }/resources/upload/${images[3].proimage_image}">
+						<div class="vector-wrapper">
+							<img class="vector" src="${cpath }/resources/upload/${images[3].proimage_image}" />
 						</div>
 					</div>
 				</div>
@@ -241,9 +263,11 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="menu-detail">
-				<div><h1>${menudetail.pro_detail }</h1></div>
+				<div>
+					<h1>${menudetail.pro_detail }</h1>
+				</div>
 			</div>
 
 			<div class="auto-layout">
@@ -262,10 +286,10 @@
 			</div>
 			<div class="picture-reviews">
 				<div class="pic4review">
-				
+
 					<c:choose>
 						<c:when test="${not empty phtrlist}">
-						
+
 							<c:forEach items="${phtrlist }" var="phtrlist" varStatus="loop">
 								<div class="group-5">
 									<div class="group-7">
@@ -283,7 +307,7 @@
 							<div class="nonePhtreview">아직 내역이 존재하지않습니다. 리뷰를 작성해주세요!</div>
 						</c:otherwise>
 					</c:choose>
-					
+
 				</div>
 				<!-- group-5 -->
 
@@ -306,7 +330,7 @@
 				</div>
 				<div class="reviews-texts">
 					<div class="review">
-					
+
 						<c:choose>
 							<c:when test="${not empty txtrlist}">
 
@@ -337,7 +361,7 @@
 								<div class="noneTxtreview">아직 내역이 존재하지않습니다. 리뷰를 작성해주세요!</div>
 							</c:otherwise>
 						</c:choose>
-						
+
 					</div>
 					<!-- review -->
 				</div>
@@ -352,16 +376,16 @@
 								d="M19.7576 9.2625L14.0326 15L19.7576 20.7375L17.9951 22.5L10.4951 15L17.9951 7.5L19.7576 9.2625Z"
 								fill="#C4CDD5" />
 							</svg>
-					</div><!-- 이전화살표 -->
-				
-					<c:forEach  items="${pageList}" var="items" varStatus="loop"> 
+					</div>
+					<!-- 이전화살표 -->
+
+					<c:forEach items="${pageList}" var="items" varStatus="loop">
 						<div class="num-wrapper">
 							<div class="num-2 page_btn" onclick="pageBtnClick(${items})">
-								${items}
-							</div>
+								${items}</div>
 						</div>
 					</c:forEach>
-					
+
 					<div class="carat-wrapper" id="nextPage">
 						<svg class="carat" xmlns="http://www.w3.org/2000/svg" width="31"
 							height="30" viewBox="0 0 31 30" fill="none">
@@ -369,79 +393,83 @@
 								d="M11.8577 9.2625L17.5827 15L11.8577 20.7375L13.6202 22.5L21.1202 15L13.6202 7.5L11.8577 9.2625Z"
 								fill="#C4CDD5" />
 						</svg>
-					</div><!-- 다음화살표 -->
-				</div><!-- pagination -->
+					</div>
+					<!-- 다음화살표 -->
+				</div>
+				<!-- pagination -->
 			</div>
 			<!-- text-reviews-and -->
-		</div><!-- div -->
-	</div><!-- div-wrapper -->
-	
-	
-				<footer class="footer" style="top:0rem;">
-				<div class="footer-company-loco">
-					<div class="footer-company">
-						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
-							우리는 홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
-						<img class="footer-logo"
-							src="${cpath}/resources/images/main/footer-logo.png" />
-					</div>
-					<div class="footer-social-icon">
-						<div class="footer-facebook">
-							<img class="footer-mask-group"
-								src="${cpath}/resources/images/main/footer-facebook.png" />
-						</div>
-						<div class="footer-instagram">
-							<img class="footer-img"
-								src="${cpath}/resources/images/main/footer-insta.png" />
-						</div>
-						<div class="footer-twitter">
-							<img class="footer-mask-group-2"
-								src="${cpath}/resources/images/main/footer-twitter.png" />
-						</div>
-						<div class="footer-linkind">
-							<img class="footer-mask-group-2"
-								src="${cpath}/resources/images/main/footer-linkedin.png" />
-						</div>
-					</div>
+		</div>
+		<!-- div -->
+	</div>
+	<!-- div-wrapper -->
+
+
+	<footer class="footer" style="top: 0rem;">
+		<div class="footer-company-loco">
+			<div class="footer-company">
+				<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요 우리는
+					홍대에 위치해 있아요 룰루랄라 라라라라 맛있게 드세요 구독 좋아요 알림 설정까지~</p>
+				<img class="footer-logo"
+					src="${cpath}/resources/images/main/footer-logo.png" />
+			</div>
+			<div class="footer-social-icon">
+				<div class="footer-facebook">
+					<img class="footer-mask-group"
+						src="${cpath}/resources/images/main/footer-facebook.png" />
 				</div>
-				<div class="footer-contact-us">
-					<div class="footer-text-wrapper-2">Contact Us</div>
-					<div class="footer-group">
-						<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
-						<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
-						<div class="footer-text-wrapper-3">+0123 456 7891</div>
-					</div>
-					<div class="footer-overlap-group-wrapper">
-						<div class="footer-overlap-group">
-							<div class="footer-vector-wrapper">
-								<img class="footer-vector"
-									src="${cpath}/resources/images/main/footer-email-button.png" />
-							</div>
-							<input class="footer-enter-email"
-								placeholder="Enter your email....">
-						</div>
-					</div>
+				<div class="footer-instagram">
+					<img class="footer-img"
+						src="${cpath}/resources/images/main/footer-insta.png" />
 				</div>
-				<div class="footer-user-link">
-					<div class="footer-text-wrapper-7">User Link</div>
-					<div class="footer-group-2">
-						<div class="footer-text-wrapper-3">About Us</div>
-						<div class="footer-text-wrapper-3">Contact Us</div>
-						<div class="footer-text-wrapper-3">Order Delivery</div>
-						<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
-						<div class="footer-text-wrapper-3">Terms of Services</div>
-					</div>
+				<div class="footer-twitter">
+					<img class="footer-mask-group-2"
+						src="${cpath}/resources/images/main/footer-twitter.png" />
 				</div>
-				<div class="footer-opening-restaurant">
-					<div class="footer-text-wrapper-7">Opening Restaurant</div>
-					<div class="footer-group-3">
-						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
-						<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
-						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
-					</div>
+				<div class="footer-linkind">
+					<img class="footer-mask-group-2"
+						src="${cpath}/resources/images/main/footer-linkedin.png" />
 				</div>
-			</footer>
-	
+			</div>
+		</div>
+		<div class="footer-contact-us">
+			<div class="footer-text-wrapper-2">Contact Us</div>
+			<div class="footer-group">
+				<div class="footer-text-wrapper-3">1234 Country Club Ave</div>
+				<div class="footer-text-wrapper-3">NC 123456, London, UK</div>
+				<div class="footer-text-wrapper-3">+0123 456 7891</div>
+			</div>
+			<div class="footer-overlap-group-wrapper">
+				<div class="footer-overlap-group">
+					<div class="footer-vector-wrapper">
+						<img class="footer-vector"
+							src="${cpath}/resources/images/main/footer-email-button.png" />
+					</div>
+					<input class="footer-enter-email"
+						placeholder="Enter your email....">
+				</div>
+			</div>
+		</div>
+		<div class="footer-user-link">
+			<div class="footer-text-wrapper-7">User Link</div>
+			<div class="footer-group-2">
+				<div class="footer-text-wrapper-3">About Us</div>
+				<div class="footer-text-wrapper-3">Contact Us</div>
+				<div class="footer-text-wrapper-3">Order Delivery</div>
+				<div class="footer-text-wrapper-3">Payment &amp; Tex</div>
+				<div class="footer-text-wrapper-3">Terms of Services</div>
+			</div>
+		</div>
+		<div class="footer-opening-restaurant">
+			<div class="footer-text-wrapper-7">Opening Restaurant</div>
+			<div class="footer-group-3">
+				<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
+				<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
+				<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
+			</div>
+		</div>
+	</footer>
+
 	<script>
 	$(document).ready(function() {
 		var heartImage = document.getElementById('heart');
@@ -468,7 +496,9 @@
 
     // 제품 이미지
     var cpathValue = '${cpath}';
-    var imageUrl = cpathValue + '/resources/images/menu/proimage/${menudetail.pro_no}-2.jpg';
+/*     var imageUrl = cpathValue + '/resources/images/menu/proimage/${menudetail.pro_no}-2.jpg'; */
+     var imageUrl = cpathValue + '/resources/upload/${images[0].proimage_image}'; 
+ 
     var groupDiv = document.querySelector('.div-wrapper .group');
   
     groupDiv.style.backgroundImage = 'url(' + imageUrl + ')';

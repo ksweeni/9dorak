@@ -27,6 +27,7 @@ import com.shinhan.dto.MemVO;
 import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.PagingVO;
 import com.shinhan.dto.ProVO;
+import com.shinhan.dto.ProimageVO;
 import com.shinhan.model.MenuService;
 
 
@@ -44,6 +45,7 @@ public class MenuController {
 	public String menu(Model model) {
 		List<ProVO> plist = mService.selectAll();
 		model.addAttribute("mlist", plist);
+		System.out.println(plist);
 		return "menu/menu";
 	}
 	
@@ -141,6 +143,9 @@ public class MenuController {
         Map<String, Object> inputMap = new HashMap<String, Object>();
         inputMap.put("pro_no", pro.getPro_no());
         inputMap.put("currentPage", currentPage);
+        List<ProimageVO> images = mService.selectByNoImage(pro.getPro_no());
+//        System.out.println(images);
+        model.addAttribute("images",images);
         if(memVO != null) {
             
             String memId = memVO.getMem_id();
