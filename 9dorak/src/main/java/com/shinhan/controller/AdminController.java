@@ -2,13 +2,14 @@ package com.shinhan.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.http.HttpRequest;
 //import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+
 import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.CategoryVO;
 import com.shinhan.dto.ChallengeVO;
@@ -42,7 +44,6 @@ import com.shinhan.model.CouponService;
 import com.shinhan.model.MemService;
 import com.shinhan.model.MenuService;
 import com.shinhan.model.OrderService;
-import com.shinhan.model.PayService;
 import com.shinhan.model.SubService;
 import com.shinhan.model.WalletService;
 import com.shinhan.model.YomoService;
@@ -165,9 +166,8 @@ public class AdminController {
 
 	@RequestMapping(value = "adminMenuUpdate.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
-	public String adminMenuUpdate(Model model, ProVO menu , HttpServletRequest request) {
+	public String adminMenuUpdate(Model model, ProVO menu) {
 		int result = mService.updateMenu(menu);
-
 		if (result > 0) {
 			return "수정 성공";
 		} else {
@@ -242,7 +242,7 @@ public class AdminController {
 		model.addAttribute("orderlist", orderlist);
 		return "admin/adminOrder";
 	}
-
+	
 	@PostMapping("adminOrder.do")
 	public String adminOrderDetail(Model model, OrderdetailVO order) {
 		List<OrderVO> detailorder = orderService.selectByOrder(order.getOrder_no());
@@ -265,14 +265,14 @@ public class AdminController {
 		model.addAttribute("sublist", sublist);
 		return "admin/adminSub";
 	}
-
+	
 	@PostMapping("adminSub.do")
 	public String adminSubDetail(Model model, SubVO sub) {
 		SubVO detailSub = subService.selectSubNo(sub.getSub_no());
 		model.addAttribute("detailSub", detailSub);
 		return "admin/adminSubDetail";
 	}
-
+	
 	@GetMapping("adminSubInsert.do")
 	public String adminSubInsertPage(Model model) {
 		return "admin/adminSubInsert";
@@ -282,7 +282,7 @@ public class AdminController {
 	public String adminSubInsert(Model model, SubVO sub) {
 		System.out.println(sub);
 		int result = subService.insertSub(sub);
-
+		
 		return "redirect:/admin/adminSub.do";
 	}
 
@@ -296,7 +296,7 @@ public class AdminController {
 			return "수정 실패";
 		}
 	}
-
+	
 	@RequestMapping(value = "adminSubDelete.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String adminSubDelete(Model model, SubVO sub) {
@@ -544,8 +544,52 @@ public class AdminController {
 		return "admin/adminNotice";
 	}
 
+	@PostMapping("requestupload2.do")
+	public String requestupload2(MultipartHttpServletRequest mtfRequest, HttpServletRequest request) {
+		List<MultipartFile> fileList = mtfRequest.getFiles("file");
+		System.out.println(fileList);
 
+		// 2. 저장할 경로 가져오기
+		String path = request.getSession().getServletContext().getRealPath("resources");
+		System.out.println("path : " + path);
+//		String root = path + "\\uploadFiles" ;
+		String root = path + "\\upload";
 
+		File file = new File(root);
+
+		// 만약 uploadFiles 폴더가 없으면 생성해라 라는뜻
+		if (!file.exists())
+			file.mkdirs();
+
+		for (MultipartFile mf : fileList) {
+			String originFileName = mf.getOriginalFilename(); // 원본 파일 명
+			long fileSize = mf.getSize(); // 파일 사이즈
+
+			System.out.println("originFileName : " + originFileName);
+			System.out.println("fileSize : " + fileSize);
+			String ext = "";
+			int lastIndex = originFileName.lastIndexOf(".");
+			if (lastIndex != -1) {
+				ext = originFileName.substring(lastIndex);
+			}
+			String ranFileName = UUID.randomUUID().toString() + ext;
+			File changeFile = new File(root + "\\" + ranFileName);
+			System.out.println(changeFile);
+			try {
+				System.out.println("업로드성공");
+				mf.transferTo(changeFile);
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return "redirect:/admin/adminMenu.do";
+	}
+	
 	// 매출관리
 	@GetMapping("adminSales.do")
 	public String adminSales(Model model) {
@@ -553,12 +597,41 @@ public class AdminController {
 		model.addAttribute("payList", payList);
 		return "admin/adminSales";
 	}
-
+	
+	// 매출 상세
 	@PostMapping("adminSales.do")
 	public String adminSalesDetail(Model model, PayVO pay) {
-		List<PayVO> payDetail = wService.selectPay(pay.getOrder_no());
+		PayVO payDetail = wService.selectPay(pay.getOrder_no());
 		model.addAttribute("payDetail", payDetail);
-		return "admin/adminSubDetail";
+		return "admin/adminSalesDetail";
 	}
-
+	
+	// 매출 내역 수정
+	@RequestMapping(value = "adminSalesUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminSalesUpdate(Model model, PayVO pay) {
+		int result = wService.updateSales(pay);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패"; 
+		}
+	}
+	
+	// 매출 내역 삭제
+	@RequestMapping(value = "adminSalesDelete.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminSalesDelete(Model model, PayVO pay) {
+		int result = wService.deleteSales(pay.getOrder_no());
+		if (result > 0) {
+			return "삭제 성공"; 
+		} else {
+			return "삭제 실패"; 
+		}
+	}
+	
+	@GetMapping("adminGraph.do")
+	public String adminGraph() { 
+		return "admin/adminGraph";
+	}
 }
