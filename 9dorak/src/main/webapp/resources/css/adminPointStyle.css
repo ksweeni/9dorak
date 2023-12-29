@@ -119,7 +119,6 @@
 	background: white;
 	color: orange;
 	border: 2px solid orange;
-
 }
 
 .delete-button:hover {
@@ -435,7 +434,7 @@ td {
 	color: #555F7E;
 }
 
-td:hover{
+td:hover {
 	text-shadow: -1px 1px 0px lightgray;
 }
 
@@ -452,9 +451,9 @@ td:hover{
 }
 
 .table-1 {
-	height:23rem;
+	height: 23rem;
 	position: relative;
-	top: 1.5rem;
+	top: 100px;
 }
 
 th, td {
@@ -493,19 +492,21 @@ td {
 	position: relative;
 	width: 500px;
 	text-align: center;
-	left: 30%;
+	left: 205px;
 	transform: translateX(-100%);
-	top: 100px;
+	top: 56px;
 	color: #fff;
 }
-.checkbox-style{
-	    width: 20%;
-    margin: 0 auto;
-    accent-color: orange;
+
+.checkbox-style {
+	width: 20%;
+	margin: 0 auto;
+	accent-color: orange;
 }
+
 #nav a {
 	border-radius: 5px;
-	color:white;
+	color: white;
 	position: relative;
 	display: inline-block;
 	padding: 3px 5px;
@@ -532,4 +533,29 @@ td {
 	font-size: 16px;
 	letter-spacing: 2;
 	cursor: pointer;
+}
+
+.pagination {
+	display: inline-block;
+	position: relative;
+	left: 286px;
+	top: 21px;
+}
+
+.pagination a {
+	border-radius: 5px;
+	color: white;
+	position: relative;
+	display: inline-block;
+	padding: 3px 5px;
+	margin-right: 10px;
+	background: #FEB775;
+	text-decoration: none;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.pagination a.active {
+    color: white;
+    background: black;
 }

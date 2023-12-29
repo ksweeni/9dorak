@@ -109,9 +109,6 @@
 					</div>
 
 				</div>
-
-
-
 			</div>
 
 			<div class="controll-top-2">
@@ -136,7 +133,7 @@
 				<div class="table-1">
 
 
-					<table id="products" border="1">
+					<table id="products2" border="1">
 						<caption>
 							쿠폰 List
 
@@ -172,6 +169,7 @@
 							</c:forEach>
 						</tbody>
 					</table>
+					<div class="pagination"></div>
 				</div>
 
 
@@ -181,6 +179,46 @@
 	</div>
 </body>
 <script type="text/javascript">
+$(document).ready(function () {
+    var rowsPerPage = 5;
+    var totalRows = $("#products2 tbody tr").length;
+    var totalPages = Math.ceil(totalRows / rowsPerPage);
+
+    // 페이지 번호를 생성하는 함수
+    function generatePageNumbers() {
+        var paginationHTML = "";
+        for (var i = 1; i <= totalPages; i++) {
+            paginationHTML += '<a href="#" data-page="' + i + '">' + i + '</a>';
+        }
+        $(".pagination").html(paginationHTML);
+    }
+
+    // 초기 페이지 번호 생성
+    generatePageNumbers();
+
+    // 페이지 번호를 클릭할 때 데이터를 갱신하고 스타일을 변경하는 함수
+    $(".pagination a").on("click", function (e) {
+        e.preventDefault();
+
+        // 현재 활성화된 페이지 링크에서 'active' 클래스를 제거
+        $(".pagination a.active").removeClass("active");
+
+        var currentPage = $(this).data("page");
+        var startIndex = (currentPage - 1) * rowsPerPage;
+        var endIndex = startIndex + rowsPerPage;
+
+        // 테이블의 행을 보이거나 숨기기
+        $("#products2 tbody tr").hide();
+        $("#products2 tbody tr").slice(startIndex, endIndex).show();
+
+        // 클릭된 페이지에 'active' 클래스를 추가하여 스타일 적용
+        $(this).addClass("active");
+    });
+
+    // 초기 페이지에 대한 스타일 적용 (예를 들어, 첫 번째 페이지)
+    $(".pagination a:first").addClass("active");
+});
+	
 	$(".e2099_2468").on("click", function() {
 		$.ajax({
 
