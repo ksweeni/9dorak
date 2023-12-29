@@ -272,9 +272,13 @@ li {
 /* 이미지 스타일 */
 .board img {
   max-width: 100%;
-  height: auto;
+  height: 550px;
   margin-bottom: 10px;
   border-radius: 10px;
+  width: 550px;
+    position: relative;
+    top: -500px;
+    left: 30px;
 }
 
 /* 숨겨진 필드 스타일 */
@@ -284,8 +288,8 @@ li {
 
 .button_two {
     position: relative;
-    top: 133px;
-    left: 610px;
+    top: -400px;
+    left: 650px;
 }
 .button1 {
     position: relative;
@@ -297,7 +301,7 @@ li {
     font-size: 15px;
     color: #f38820;
     border: 2px solid #f38820;
-    border-radius: 60px;
+    border-radius: 30px;
     background-color: white;
     cursor: pointer;
 }
@@ -310,7 +314,7 @@ li {
     font-size: 15px;
     color: #f38820;
     border: 2px solid #f38820;
-    border-radius: 60px;
+    border-radius: 30px;
     background-color: white;
     cursor: pointer;
 }
@@ -318,26 +322,31 @@ li {
     position: relative;
     margin: 0 300px;
     width: 122px;
-    top: 18px;
+    top: -42px;
     height: 50px;
     font-size: 15px;
     color: #f38820;
     border: 2px solid #f38820;
-    border-radius: 60px;
+    border-radius: 30px;
     background-color: white;
     cursor: pointer;
+    left: 135px;
 }
 
 #challenge_name{
 	border: none;
-	border-radius: 10px;
-	margin-bottom: 30px;
-	padding-left: 20px;
-	height: 30px;
-	font-size: 2rem;
-	font-weight: 700;
-	background-color: #f9f9f9;
-	color: #feae64;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 3rem;
+    font-weight: 700;
+    background-color: #f9f9f9;
+    color: #feae64;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 500px;
 }
 
 #challenge_cont,
@@ -375,10 +384,18 @@ li {
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.board div{
+.challenge_cont,
+.mem_id,
+.challenge_date,
+.likeCnt{
 	color: #7A7A7A;
 	font-size: 1.1rem;
     font-weight: 700;
     position: relative;
-    left: 650px;
+    left: 650px;  
+}
+
+.cont{
+	position: relative;
+	top: 75px;
 }

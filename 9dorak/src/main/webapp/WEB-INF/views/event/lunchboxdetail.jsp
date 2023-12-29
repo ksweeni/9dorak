@@ -107,18 +107,18 @@ String contextPath = request.getContextPath();
 				</div>
 				<br></br>
 				<div class="board">
-					<b>도시락명</b> <br> 
+					<br> 
 					<input type="text" value="${chall.challenge_name}" id="challenge_name"></input><br>
-					<br><b>도시락 한 줄 소개</b><br> 
+					<br><div class="cont"><div class="challenge_cont">도시락 한 줄 소개</div><br> 
 					<input type="text" value="${chall.challenge_cont}" id="challenge_cont"></input><br>
-					<br><b>도시락 레시피</b><br> 
+					<br><div class="challenge_recipe">도시락 레시피</div><br> 
 					<input type="text" value="${chall.challenge_recipe}" id="challenge_recipe"></input><br>
-					<br><b>도시락 작성자</b><br> 
+					<br><div class="mem_id">작성자</div><br> 
 					<input type="text" value="${chall.mem_id}" id="mem_id"></input><br> 
-					<br><b>도시락 등록날짜</b><br>
+					<br><div class="challenge_date">도시락 등록날짜</div><br>
 					<input type="text" value="${chall.challenge_date}" id="challenge_date"></input><br>
-					<br><b>좋아요</b><br> <input type="text" value="${likeCnt}" readonly="readonly" id="likeCnt"></input><br>
-					<br><b>첨부사진</b><br>
+					<br><div class="likeCnt">좋아요</div><br> <input type="text" value="${likeCnt}" readonly="readonly" id="likeCnt"></input></div><br>
+					<br><br>
 					<img src="${cpath}/resources/upload/${chall.challenge_image}" /> 
 					<br>
 					<input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input> 
@@ -130,7 +130,7 @@ String contextPath = request.getContextPath();
 						</c:if>
 						<c:if test="${likeCheck == 1}">
 							<button class="button3" id="like"
-								style="background-color: yellow;">좋아요</button>
+								style="background-color: #f38820; color: white;">좋아요</button>
 							<input type="hidden" value="1" id="check">
 						</c:if>
 						<c:if test="${likeCheck == 0}">

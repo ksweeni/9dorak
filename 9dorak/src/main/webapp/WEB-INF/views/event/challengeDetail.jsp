@@ -170,14 +170,14 @@
 	</div>
 	<br></br>
 	<div class="board">
-		<div class="challenge_name">챌린지명</div> <br> <input type="text" value="${chall.challenge_name}"
-			id="challenge_name"></input> <br> <div class="challenge_cont">챌린지내용</div> <br> <input
+		<br> <input type="text" value="${chall.challenge_name}"
+			id="challenge_name"></input> <br> <div class="cont"><div class="challenge_cont">챌린지내용</div> <br> <input
 			type="text" value="${chall.challenge_cont}" id="challenge_cont"></input>
 		<br> <div class="mem_id">작성자</div> <br> <input type="text" value="${chall.mem_id}"
 			id="mem_id"></input> <br> <div class="challenge_date">챌린지 등록날짜</div> <br> <input type="text"
 			value="${chall.challenge_date}" id="challenge_date"></input> <br>
-		<div class="likeCnt">좋아요</div> <br> <input type="text" value="${likeCnt}"
-			readonly="readonly" id="likeCnt"></input> <br> <br> <img
+		<div class="likeCnt">좋아요</div><br> <input type="text" value="${likeCnt}"
+			readonly="readonly" id="likeCnt"></input></div> <br> <br> <img
 			src="${cpath}/resources/upload/${chall.challenge_image}" /> <br>
 		<input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input>
 		<br>
@@ -187,7 +187,7 @@
 			<button class="button2" id="delete">삭제</button>
 		</c:if>
 		<c:if test="${likeCheck == 1}">
-			<button class="button3" id="like" style="background-color: yellow;">좋아요</button>
+			<button class="button3" id="like" style="background-color: #f38820; color: white;">좋아요</button>
 			<input type="hidden" value="1" id="check">
 		</c:if>
 		<c:if test="${likeCheck == 0}">
