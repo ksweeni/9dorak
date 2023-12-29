@@ -451,7 +451,7 @@ td:hover {
 }
 
 .table-1 {
-	height: 23rem;
+	height: 15.6rem;
 	position: relative;
 	top: 100px;
 }
@@ -536,10 +536,11 @@ td {
 }
 
 .pagination {
-	display: inline-block;
-	position: relative;
-	left: 286px;
-	top: 21px;
+    margin-top: 1em;
+    display: inline-block;
+    position: relative;
+    left: 286px;
+    top: 41px;
 }
 
 .pagination a {

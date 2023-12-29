@@ -179,45 +179,74 @@
 	</div>
 </body>
 <script type="text/javascript">
+
 $(document).ready(function () {
     var rowsPerPage = 5;
-    var totalRows = $("#products2 tbody tr").length;
-    var totalPages = Math.ceil(totalRows / rowsPerPage);
+    var $products2 = $("#products2");
+    var $table1 = $(".table-1");
+    var $pagination = $(".pagination");
 
-    // 페이지 번호를 생성하는 함수
-    function generatePageNumbers() {
+    function adjustTable1Height() {
+        var products2Height = $products2.height() + 37;
+        $table1.height(products2Height);
+    }
+
+    // Function to update the pagination links
+    function updatePagination() {
+        var totalRows = $products2.find("tbody tr").length;
+        var totalPages = Math.ceil(totalRows / rowsPerPage);
+
         var paginationHTML = "";
         for (var i = 1; i <= totalPages; i++) {
             paginationHTML += '<a href="#" data-page="' + i + '">' + i + '</a>';
         }
-        $(".pagination").html(paginationHTML);
+
+        $pagination.html(paginationHTML);
     }
 
-    // 초기 페이지 번호 생성
-    generatePageNumbers();
+    // Initial pagination update
+    updatePagination();
 
-    // 페이지 번호를 클릭할 때 데이터를 갱신하고 스타일을 변경하는 함수
-    $(".pagination a").on("click", function (e) {
+    // Event handler for pagination clicks
+    $pagination.on("click", "a", function (e) {
         e.preventDefault();
 
-        // 현재 활성화된 페이지 링크에서 'active' 클래스를 제거
-        $(".pagination a.active").removeClass("active");
+        $pagination.find("a.active").removeClass("active");
 
         var currentPage = $(this).data("page");
         var startIndex = (currentPage - 1) * rowsPerPage;
         var endIndex = startIndex + rowsPerPage;
 
-        // 테이블의 행을 보이거나 숨기기
-        $("#products2 tbody tr").hide();
-        $("#products2 tbody tr").slice(startIndex, endIndex).show();
+        $products2.find("tbody tr").hide();
+        $products2.find("tbody tr").slice(startIndex, endIndex).show();
 
-        // 클릭된 페이지에 'active' 클래스를 추가하여 스타일 적용
         $(this).addClass("active");
+
+        adjustTable1Height();
     });
 
-    // 초기 페이지에 대한 스타일 적용 (예를 들어, 첫 번째 페이지)
-    $(".pagination a:first").addClass("active");
+    // Initial styling for the first page
+    $pagination.find("a:first").addClass("active");
+
+    // Initial loading height adjustment
+    adjustTable1Height();
+
+    // Window resize event for height adjustment
+    $(window).on("resize", adjustTable1Height);
+
+    // Function to handle changes in the table data (example: data loaded asynchronously)
+    function handleTableDataChange() {
+        // Update pagination links
+        updatePagination();
+        // Re-adjust the height
+        adjustTable1Height();
+    }
+
+    // Example usage of the function when the table data changes (replace this with your actual data change event)
+    // handleTableDataChange();
 });
+
+
 	
 	$(".e2099_2468").on("click", function() {
 		$.ajax({
