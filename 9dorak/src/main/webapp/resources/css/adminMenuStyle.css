@@ -7,16 +7,16 @@
 
 .table-wrapper {
 	width: 1200px;
-	height:350px;
+	height: 350px;
 	top: 5%;
 	left: 10%;
 	position: relative;
 }
 
 caption {
-	font-weight:700;
+	font-weight: 700;
 	color: #1C2A53;
-	margin-bottom:32px;
+	margin-bottom: 32px;
 	position: relative;
 	font-size: 1.5rem;
 	font-style: normal;
@@ -36,13 +36,12 @@ caption {
 }
 
 .e2099_2463 {
-	background-color: rgba(254.2806226015091, 137.48113721609116, 29.666072130203247,
-		0.6100000143051147);
-	width: 214px;
-	height: 150%;
-	position: absolute;
-	left: -1px;
-	top: 0px;
+	background-color: rgba(254.2806226015091, 137.48113721609116, 29.666072130203247, 0.6100000143051147);
+    width: 214px;
+    height: 901px;
+    position: absolute;
+    left: -1px;
+    top: 0px;
 }
 
 .e2099_2467 {
@@ -249,21 +248,20 @@ caption {
 
 .e2099_2485 {
 	background-color: rgba(254.00000005960464, 183.00000429153442, 117.00000062584877, 1);
-	width: 150%;
-	height: 52px;
-	position: absolute;
-	left: 203px;
-	top: 0px;
+    width: 89.4%;
+    height: 54px;
+    position: absolute;
+    left: 203px;
+    top: 0px;
 }
 
 .e2099_2486 {
 	background-color: rgba(255, 255, 255, 1);
-	width: 150%;
-	height: 150%;
+	width: 93%;
+	height: 862px;
 	position: absolute;
-	left: 208px;
-	top: 43px;
-	border-radius: Symbol(figma.mixed) px;
+	left: 211px;
+	top: 40px;
 	border-radius: 20px 0 0 0;
 }
 
@@ -282,7 +280,7 @@ caption {
 	width: 205px;
 	height: 100px;
 	left: 0%;
-	margin-top: 50%;
+	margin-top: 650px;
 	/* bottom: 100%; */
 	/* border: solid 1px black; */
 }
@@ -320,7 +318,7 @@ td {
 	color: #555F7E;
 }
 
-td:hover{
+td:hover {
 	text-shadow: -1px 1px 0px lightgray;
 }
 
@@ -330,11 +328,11 @@ td:hover{
 
 #nav {
 	position: relative;
-	width: 500px;
-	text-align: center;
-	left: 424px;
-	transform: translateX(-100%);
-	top: 30px;
+    width: 500px;
+    text-align: center;
+    left: 553px;
+    transform: translateX(-100%);
+    top: 111px;
 }
 
 #nav a {
@@ -359,24 +357,24 @@ td:hover{
 
 .insert_memu {
 	border-radius: 5px;
-    border: 2px solid #FFA842;
-    background: #FFF;
-    color: #F48E28;
-    position: relative;
-    display: inline-flex;
-    padding: 12px 16px;
-    align-items: flex-start;
-    gap: 16px;
-    margin-right: 15px;
-    cursor: pointer;
-    left: 82px;
-    top: 79px;
-    width: fit-content;
-    height: 40px;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 15px;
+	border: 2px solid #FFA842;
+	background: #FFF;
+	color: #F48E28;
+	position: relative;
+	display: inline-flex;
+	padding: 12px 16px;
+	align-items: flex-start;
+	gap: 16px;
+	margin-right: 15px;
+	cursor: pointer;
+	left: 82px;
+	top: 79px;
+	width: fit-content;
+	height: 40px;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 15px;
 }
 
 .sales {
