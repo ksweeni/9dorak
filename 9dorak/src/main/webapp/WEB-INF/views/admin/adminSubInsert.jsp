@@ -40,33 +40,41 @@
 			<form action="${cpath}/admin/adminSubInsert.do" method="post"
 				enctype="multipart/form-data">
 				<div class="e2099_3000">
-					<button type="submit" class="insert_sub" id="insert">data
-						추가하기</button>
+					<button type="submit" class="insert_sub" id="insert">추가하기</button>
 				</div>
-				<div class="e2099_2487">
-
+				<div class="e2099_2492">
+						<div class="e3003"></div>
+						<div class="e3000_17">
+							<p>
+								<b>구독 추가하기</b>
+							</p>
+						</div>
+						<div class="e3000_18">
+							<b>구독연장여부</b> <br> <input type="text" name="sub_extend"
+								placeholder="YES or NO"></input>
+						</div>
+						<div class="e3000_19">
+							<b>구독회원ID</b> <br> <input type="text" name="mem_id"
+								placeholder="회원아이디"></input>
+						</div>
+				</div>
+<!-- 				<div class="e2099_2487">
 					<p>
 						<b>구독 추가하기</b>
 					</p>
-					<!-- 
 		구독번호<br> 
 		<input type="number" name="sub_no" placeholder="구독번호 seq" readonly="readonly"></input>
 		<br><br>
-		 -->
 					구독연장여부<br> <input type="text" name="sub_extend"
 						placeholder="YES or NO"></input> <br>
 					<br>
-					<!-- 
 		구독시작날짜<br> 
 		<input type="text" name="sub_date" placeholder="sysdate" readonly="readonly"></input>
 		<br><br>
-		 -->
 					구독회원ID<br> <input type="text" name="mem_id"
 						placeholder="회원아이디"></input> <br>
 					<br>
-
-
-				</div>
+				</div> -->
 			</form>
 		</div>
 
