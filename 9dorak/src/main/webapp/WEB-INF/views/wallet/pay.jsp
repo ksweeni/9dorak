@@ -6,10 +6,10 @@
 <html>
 <head>
 <meta charset="utf-8" />
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/payStyle.css"
@@ -34,6 +34,71 @@
 <body>
 	<div class="screen">
 		<div class="div">
+			<header class="header">
+				<div class="top-nav">
+					<div class="navbar">
+						<div class="text-event">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+						</div>
+						<div class="text-menu">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+						</div>
+						<div class="text-subscribe">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+						</div>
+						<div class="text-yomo">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+						</div>
+						<div class="text-doran">
+							<a class="header-a"
+								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+						</div>
+					</div>
+					<a href="${pageContext.request.contextPath}/main.do"> <img
+						class="untitled-2"
+						src="${cpath}/resources/images/main/header-logo.png" />
+					</a>
+					<div class="div-3">
+						<div class="text-wrapper-28">
+							<c:choose>
+								<c:when test="${not empty sessionScope.loginmem.mem_id}">
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/myPage.do"
+										style="font-weight: bold; left: -1rem; position: relative;">
+										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
+									</a>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/my/logout.do"
+										style="position: relative; left: -1rem">로그아웃</a>
+								</c:when>
+								<c:otherwise>
+									<a class="header-a"
+										href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+			                        <a class="header-a"
+										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+								</c:otherwise>
+							</c:choose>
+						</div>
+						<div class="group-20" id="lightsParent">
+							<div class="header-overlap-group-3" onclick="loginBasket()">
+								<img class="header-group-21"
+									src="${cpath}/resources/images/main/header-cart.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		
+		
+		
+		
+		
+		
+		
 			<div class="main-frame">
 				<div class="overlap">
 					<div class="orange">
@@ -413,64 +478,7 @@
 			<div class="account-navigation">
 				<div class="text-wrapper-17">결제하기</div>
 			</div>
-			<header class="header">
-				<div class="top-nav">
-					<div class="navbar">
-						<div class="text-event">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
-						</div>
-						<div class="text-menu">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
-						</div>
-						<div class="text-subscribe">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
-						</div>
-						<div class="text-yomo">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
-						</div>
-						<div class="text-doran">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
-						</div>
-					</div>
-					<a href="${pageContext.request.contextPath}/main.do"> <img
-						class="untitled-2"
-						src="${cpath}/resources/images/main/header-logo.png" />
-					</a>
-					<div class="div-3">
-						<div class="text-wrapper-28">
-							<c:choose>
-								<c:when test="${not empty sessionScope.loginmem.mem_id}">
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/my/myPage.do"
-										style="font-weight: bold; left: -1rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
-									</a>
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/my/logout.do"
-										style="position: relative; left: -1rem">로그아웃</a>
-								</c:when>
-								<c:otherwise>
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
-			                        <a class="header-a"
-										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
-								</c:otherwise>
-							</c:choose>
-						</div>
-						<div class="group-20" id="lightsParent">
-							<div class="header-overlap-group-3" onclick="loginBasket()">
-								<img class="header-group-21"
-									src="${cpath}/resources/images/main/header-cart.png" />
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
+			
 			<footer class="footer">
 				<div class="footer-company-loco">
 					<div class="footer-company">
@@ -573,180 +581,221 @@
 		<p>결제가 성공하였습니다.</p>
 		<button onclick="closeModal()">홈으로 이동하기</button>
 	</div>
-
-
-	<script>
-		var IMP = window.IMP;
-		IMP.init("imp40668838"); // 내 가맹점 식별 코드
-
-		var amountWithCurrency = $("#lastTotal").text();
-
-		var amount = amountWithCurrency.substring(0, amountWithCurrency.length - 1);
-
-		var coupon = 0;	
-		
-		function requestPay() {
-			if ($('#sample4_roadAddress').val().length === 0) {
-				alert("주소를 입력하세요");
-				return;
-			}
-			
-
-			param = {
-
-				order_price : $("#lastTotal").text(),
-				pro_no : $("#subType").val(),
-				orderdetail_count : $("#pro_count").text()
-			}
-			$.ajax({
-				url : "${cpath}/subOrder",
-				data : param,
-				type : "post",
-				success : function(res) {
-
-				}
-			})// 주문 테이블 / 주문 상세 인서트
-
-			var discountedAmount = amount - coupon; // Apply the coupon discount
-			IMP.request_pay({
-				pg : "inicis",
-				pay_method : "card",
-				merchant_uid : "ORD20180131-0000071", // 매번 새로워야 함
-				name : "$('#proname').text()", // 1부르9
-				amount : discountedAmount,
-				buyer_email : "${mem.mem_id}",
-				buyer_name : "${mem.mem_name}",
-				buyer_tel : "010-9668-1635",
-				buyer_addr : "동안구",
-				buyer_postcode : "01181"
-			}, function(rsp) { // callback
-				console.log(rsp);
-				$.ajax({
-					type : 'POST',
-					url : '${cpath}/verify/' + rsp.imp_uid,
-
-				}).done(function(data) {
-					console.log(data);
-
-					if (data) {
-						openModal();
-					} else {
-
-						var msg = '결제에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;
-						alert(msg);
-					}
-				});
-			});
-		}
-	</script>
-
 </body>
-<script type="text/javascript">
 
-	//초기화
-	var lastTotalText = $("#lastTotal").text().replace(/\D/g, '');
-    var lastTotal = parseFloat(lastTotalText);
-        
-	$("#couponApply").on("click", function() {
-	    var text = $(".text-wrapper-5").text();
+<script type="text/javascript">
+//로그인 여부 확인
+function loginBasket() {
+	var mem_id = "${sessionScope.loginmem.mem_id}";
 	
-	    if (text === "보유 쿠폰 확인하기" || text === "보유한 쿠폰이 없습니다.") {
-	        return;
-	    }
+	if (mem_id == "") {
+		alert("로그인이 필요한 서비스입니다 !");
+		window.location.href="${cpath}/login/loginForm.do";
+		return;
+	} else {
+		window.location.href="${pageContext.request.contextPath}/wallet/basket.do";
+	}
+}
+
+window.onload = emptyBasket;
+
+function emptyBasket() {
+	var mem_id = "${sessionScope.loginmem.mem_id}";
+
+			$.ajax({
+				type : "POST",
+				url : "${cpath}/wallet/emptyBasket.do",
+				data : {
+					mem_id : mem_id,
+				},
+				dataType : "json",
+				success : function(response) {
+					if (response.success) {
+						console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
+						lightsOn();
+					} else {
+						console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
+					}
+				},
+				error : function(xhr, status, error) {
+					console.error("콘솔 - Error during basket operation. Status: " + status);
+					console.error("콘솔 - Server response: " + xhr.responseText);
+				}
+			});
+}
+
+function lightsOn() {
+	let lights = document.createElement("div");
+	lights.setAttribute("class","ellipse-light");
+	lights.setAttribute("id","lightsOnID");
+	document.querySelector("#lightsParent").append(lights);
+	console.log("장바구니 가득 차서 불 켜짐!");
+}
+
+
+
+
+
+var IMP = window.IMP;
+IMP.init("imp40668838"); // 내 가맹점 식별 코드
+
+var amountWithCurrency = $("#lastTotal").text();
+
+var amount = amountWithCurrency.substring(0, amountWithCurrency.length - 1);
+
+var coupon = 0;	
+
+function requestPay() {
+	if ($('#sample4_roadAddress').val().length === 0) {
+		alert("주소를 입력하세요");
+		return;
+	}
 	
-	    // "원"이 포함된 경우 금액 차감
-	    if (text.includes("원")) {
-	        var matches = text.match(/\d+/);
-	        if (matches) {
-	            var deductionAmount = parseFloat(matches[0]);
-	
-	            // 숫자가 유효한 경우에만 연산 수행
-	            if (!isNaN(lastTotal)) {
-	                var newTotal = lastTotal - deductionAmount;
-	
-	                // 차감된 결과를 출력
-	                $("#lastTotal").text(Math.floor(newTotal));
-	
-	                // 할인된 금액을 ".text-wrapper-13"에 표시
-	                $(".text-wrapper-13").text("-" + Math.floor(deductionAmount) + "원");
-	            }
-	        }
-	    }
-	
-	    // "%"가 포함된 경우 할인율 적용
-	    if (text.includes("%")) {
-	        var matches = text.match(/\d+/);
-	        if (matches) {
-	            var discountPercentage = parseFloat(matches[0]);
-	
-	            // 숫자가 유효한 경우에만 연산 수행
-	            if (!isNaN(lastTotal)) {
-	                var discountAmount = (discountPercentage / 100) * lastTotal;
-	                var newTotal = lastTotal - discountAmount;
-	
-	                // 할인된 결과를 출력
-	                $("#lastTotal").text(Math.floor(newTotal));
-	
-	                // 할인된 금액을 ".text-wrapper-13"에 표시
-	                $(".text-wrapper-13").text("-" + Math.floor(discountAmount) + "원");
-	            }
-	        }
-	    }
+
+	param = {
+
+		order_price : $("#lastTotal").text(),
+		pro_no : $("#subType").val(),
+		orderdetail_count : $("#pro_count").text()
+	}
+	$.ajax({
+		url : "${cpath}/subOrder",
+		data : param,
+		type : "post",
+		success : function(res) {
+
+		}
+	})// 주문 테이블 / 주문 상세 인서트
+
+	var discountedAmount = amount - coupon; // Apply the coupon discount
+	IMP.request_pay({
+		pg : "inicis",
+		pay_method : "card",
+		merchant_uid : "ORD20180131-0000071", // 매번 새로워야 함
+		name : "$('#proname').text()", // 1부르9
+		amount : discountedAmount,
+		buyer_email : "${mem.mem_id}",
+		buyer_name : "${mem.mem_name}",
+		buyer_tel : "010-9668-1635",
+		buyer_addr : "동안구",
+		buyer_postcode : "01181"
+	}, function(rsp) { // callback
+		console.log(rsp);
+		$.ajax({
+			type : 'POST',
+			url : '${cpath}/verify/' + rsp.imp_uid,
+
+		}).done(function(data) {
+			console.log(data);
+
+			if (data) {
+				openModal();
+			} else {
+
+				var msg = '결제에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;
+				alert(msg);
+			}
+		});
 	});
-			
-</script>
-<script type="text/javascript">
+}
 
-	//var a = ${mem.mem_grade };
-	//alert(a);
-	
-	var myPoint = $("#mypoint").text().replace(/\D/g, '');
-	
-	//포인트 적용 버튼 클릭 이벤트 처리
-	$("#pointApply").on("click", function () {
-	    // 입력된 포인트 값을 가져오기
-	    var enteredPointText = $("#point").val();
-    	var enteredPoint = parseFloat(enteredPointText);
-	    
-	    var lastTotalText = $("#lastTotal").text().replace(/\D/g, '');
-        var lastTotal = parseFloat(lastTotalText);
+//초기화
+var lastTotalText = $("#lastTotal").text().replace(/\D/g, '');
+var lastTotal = parseFloat(lastTotalText);
+    
+$("#couponApply").on("click", function() {
+    var text = $(".text-wrapper-5").text();
 
-        // 숫자가 유효한 경우에만 연산 수행
-        if (!isNaN(enteredPoint) && !isNaN(lastTotal)) {
-        	
-        	if(enteredPoint <= myPoint) {
-	            // 입력된 포인트를 "#lastTotal"에서 차감
-	            var newTotal = lastTotal - parseFloat(enteredPoint);
-	
-	            // 차감된 결과를 출력
-	            $("#lastTotal").text(Math.floor(newTotal));
-	            
-	            // 할인된 금액을 ".text-wrapper-99"에 표시
-	            $(".text-wrapper-99").text("-" + Math.floor(enteredPoint) + "원");
-        	}
-        	else {
-        		alert("보유 포인트를 다시 확인해주세요!");
-        	}
+    if (text === "보유 쿠폰 확인하기" || text === "보유한 쿠폰이 없습니다.") {
+        return;
+    }
+
+    // "원"이 포함된 경우 금액 차감
+    if (text.includes("원")) {
+        var matches = text.match(/\d+/);
+        if (matches) {
+            var deductionAmount = parseFloat(matches[0]);
+
+            // 숫자가 유효한 경우에만 연산 수행
+            if (!isNaN(lastTotal)) {
+                var newTotal = lastTotal - deductionAmount;
+
+                // 차감된 결과를 출력
+                $("#lastTotal").text(Math.floor(newTotal));
+
+                // 할인된 금액을 ".text-wrapper-13"에 표시
+                $(".text-wrapper-13").text("-" + Math.floor(deductionAmount) + "원");
+            }
         }
-	
-	});
-	
-</script>
-<script type="text/javascript">
-	$(".my-del").on("click", function() {
-		$(".delmodal").show();
-	})
-	$(".close").on("click", function() {
-		$(".delmodal").hide();
-		$(".couponmodal").hide();
+    }
 
-	})
-	$("#coupon").on("click", function() {
-		$(".couponmodal").show();
-	})
-</script>
+    // "%"가 포함된 경우 할인율 적용
+    if (text.includes("%")) {
+        var matches = text.match(/\d+/);
+        if (matches) {
+            var discountPercentage = parseFloat(matches[0]);
 
-<script type="text/javascript">
+            // 숫자가 유효한 경우에만 연산 수행
+            if (!isNaN(lastTotal)) {
+                var discountAmount = (discountPercentage / 100) * lastTotal;
+                var newTotal = lastTotal - discountAmount;
+
+                // 할인된 결과를 출력
+                $("#lastTotal").text(Math.floor(newTotal));
+
+                // 할인된 금액을 ".text-wrapper-13"에 표시
+                $(".text-wrapper-13").text("-" + Math.floor(discountAmount) + "원");
+            }
+        }
+    }
+});
+
+//var a = ${mem.mem_grade };
+//alert(a);
+
+var myPoint = $("#mypoint").text().replace(/\D/g, '');
+
+//포인트 적용 버튼 클릭 이벤트 처리
+$("#pointApply").on("click", function () {
+    // 입력된 포인트 값을 가져오기
+    var enteredPointText = $("#point").val();
+	var enteredPoint = parseFloat(enteredPointText);
+    
+    var lastTotalText = $("#lastTotal").text().replace(/\D/g, '');
+    var lastTotal = parseFloat(lastTotalText);
+
+    // 숫자가 유효한 경우에만 연산 수행
+    if (!isNaN(enteredPoint) && !isNaN(lastTotal)) {
+    	
+    	if(enteredPoint <= myPoint) {
+            // 입력된 포인트를 "#lastTotal"에서 차감
+            var newTotal = lastTotal - parseFloat(enteredPoint);
+
+            // 차감된 결과를 출력
+            $("#lastTotal").text(Math.floor(newTotal));
+            
+            // 할인된 금액을 ".text-wrapper-99"에 표시
+            $(".text-wrapper-99").text("-" + Math.floor(enteredPoint) + "원");
+    	}
+    	else {
+    		alert("보유 포인트를 다시 확인해주세요!");
+    	}
+    }
+
+});
+
+$(".my-del").on("click", function() {
+	$(".delmodal").show();
+})
+$(".close").on("click", function() {
+	$(".delmodal").hide();
+	$(".couponmodal").hide();
+
+})
+$("#coupon").on("click", function() {
+	$(".couponmodal").show();
+})
+
 	$(document).ready(function() {
 		$(".selectdel-button").on("click", function() {
 
@@ -771,74 +820,68 @@
 
 		});
 	});
-</script>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-	//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
-	function sample4_execDaumPostcode() {
-		$("#regnodel").hide();
-		$("#nodel").show();
-		new daum.Postcode(
-				{
-					oncomplete : function(data) {
-						// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+function sample4_execDaumPostcode() {
+	$("#regnodel").hide();
+	$("#nodel").show();
+	new daum.Postcode(
+			{
+				oncomplete : function(data) {
+					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-						// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-						// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-						var roadAddr = data.roadAddress; // 도로명 주소 변수
-						var extraRoadAddr = ''; // 참고 항목 변수
+					// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+					// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+					var roadAddr = data.roadAddress; // 도로명 주소 변수
+					var extraRoadAddr = ''; // 참고 항목 변수
 
-						// 법정동명이 있을 경우 추가한다. (법정리는 제외)
-						// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-						if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
-							extraRoadAddr += data.bname;
-						}
-						// 건물명이 있고, 공동주택일 경우 추가한다.
-						if (data.buildingName !== '' && data.apartment === 'Y') {
-							extraRoadAddr += (extraRoadAddr !== '' ? ', '
-									+ data.buildingName : data.buildingName);
-						}
-						// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-						if (extraRoadAddr !== '') {
-							extraRoadAddr = ' (' + extraRoadAddr + ')';
-						}
-
-						// 우편번호와 주소 정보를 해당 필드에 넣는다.
-						document.getElementById('sample4_postcode').value = data.zonecode;
-						document.getElementById("sample4_roadAddress").value = roadAddr;
-						document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
-
-						// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-						if (roadAddr !== '') {
-							document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-						} else {
-							document.getElementById("sample4_extraAddress").value = '';
-						}
-
-						var guideTextBox = document.getElementById("guide");
-						// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-						if (data.autoRoadAddress) {
-							var expRoadAddr = data.autoRoadAddress
-									+ extraRoadAddr;
-							guideTextBox.innerHTML = '(예상 도로명 주소 : '
-									+ expRoadAddr + ')';
-							guideTextBox.style.display = 'block';
-
-						} else if (data.autoJibunAddress) {
-							var expJibunAddr = data.autoJibunAddress;
-							guideTextBox.innerHTML = '(예상 지번 주소 : '
-									+ expJibunAddr + ')';
-							guideTextBox.style.display = 'block';
-						} else {
-							guideTextBox.innerHTML = '';
-							guideTextBox.style.display = 'none';
-						}
+					// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+					// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+					if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+						extraRoadAddr += data.bname;
+					}
+					// 건물명이 있고, 공동주택일 경우 추가한다.
+					if (data.buildingName !== '' && data.apartment === 'Y') {
+						extraRoadAddr += (extraRoadAddr !== '' ? ', '
+								+ data.buildingName : data.buildingName);
+					}
+					// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+					if (extraRoadAddr !== '') {
+						extraRoadAddr = ' (' + extraRoadAddr + ')';
 					}
 
-				}).open();
-	}
+					// 우편번호와 주소 정보를 해당 필드에 넣는다.
+					document.getElementById('sample4_postcode').value = data.zonecode;
+					document.getElementById("sample4_roadAddress").value = roadAddr;
+					document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+
+					// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+					if (roadAddr !== '') {
+						document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+					} else {
+						document.getElementById("sample4_extraAddress").value = '';
+					}
+
+					var guideTextBox = document.getElementById("guide");
+					// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+					if (data.autoRoadAddress) {
+						var expRoadAddr = data.autoRoadAddress
+								+ extraRoadAddr;
+						guideTextBox.innerHTML = '(예상 도로명 주소 : '
+								+ expRoadAddr + ')';
+						guideTextBox.style.display = 'block';
+
+					} else if (data.autoJibunAddress) {
+						var expJibunAddr = data.autoJibunAddress;
+						guideTextBox.innerHTML = '(예상 지번 주소 : '
+								+ expJibunAddr + ')';
+						guideTextBox.style.display = 'block';
+					} else {
+						guideTextBox.innerHTML = '';
+						guideTextBox.style.display = 'none';
+					}
+				}
+
+			}).open();
+}
 </script>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </html>
