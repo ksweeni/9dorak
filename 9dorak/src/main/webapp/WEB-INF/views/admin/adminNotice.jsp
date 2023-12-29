@@ -50,10 +50,16 @@
 								fill="#2B2B2B" />
 </svg>
 					</button>
-					<div class="dropdown-content">
-						<a href="#" onclick="toggleTable('notice')">공지사항</a> <a href="#"
-							onclick="toggleTable('faq')">자주 묻는 질문</a>
+					<div class="dropdown-content" id="anno">
+						<a href="#" onclick="toggleTable('notice')" id="dropnameNotice">공지사항</a>
+						<a href="#" onclick="toggleTable('faq')" id="dropnameFAQ">자주
+							묻는 질문</a>
 					</div>
+<!-- 					<div class="dropdown-content" id="faq" style="display: none;">
+						<a href="#" onclick="toggleTable('faq')" id="dropnameFAQ">자주
+							묻는 질문</a> <a href="#" onclick="toggleTable('notice')"
+							id="dropnameNotice">공지사항</a>
+					</div> -->
 				</div>
 
 				<button class="anno-insertbtn" id="AnnoInsert"
@@ -282,13 +288,15 @@
 	function toggleTable(tableType) {
 		var noticeTable = document.getElementById("noticeTable");
 		var faqTable = document.getElementById("faqTable");
+
 		if (tableType === 'notice') {
 			fn_paging(1);
 			noticeTable.style.display = "block";
 			faqTable.style.display = "none";
 			$("#AnnoInsert").show();
 			$(".insertFaq").hide();
-
+		/* 	$("#anno").show();
+			$("#faq").hide(); */
 		} else if (tableType === 'faq') {
 			fn_paging2(1);
 			noticeTable.style.display = "none";
@@ -298,7 +306,8 @@
 			faqTable.style.display = "block";
 			$("#AnnoInsert").hide();
 			$(".insertFaq").show();
-
+			$("#anno").hide();
+			$("#faq").show();
 		}
 	}
 
@@ -349,6 +358,7 @@
 						/* alert("갔따오기 성공"); */
 						var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
 						$('link[href="' + oldCssFilePath + '"]').remove();
+						$(".dropbtn_icon").text("공지사항");
 						$("body").html(res);
 					}
 
@@ -361,10 +371,12 @@
 			success : function(res) {
 				/* alert("갔따오기 성공"); */
 				$("body").html(res);
+				$(".dropbtn_icon").text("자주 묻는 질문");
 				var noticeTable = document.getElementById("noticeTable");
 				var faqTable = document.getElementById("faqTable");
 				noticeTable.style.display = "none";
 				faqTable.style.display = "block";
+				
 			}
 
 		})
