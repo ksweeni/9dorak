@@ -544,51 +544,7 @@ public class AdminController {
 		return "admin/adminNotice";
 	}
 
-	@PostMapping("requestupload2.do")
-	public String requestupload2(MultipartHttpServletRequest mtfRequest, HttpServletRequest request) {
-		List<MultipartFile> fileList = mtfRequest.getFiles("file");
-		System.out.println(fileList);
 
-		// 2. 저장할 경로 가져오기
-		String path = request.getSession().getServletContext().getRealPath("resources");
-		System.out.println("path : " + path);
-//		String root = path + "\\uploadFiles" ;
-		String root = path + "\\upload";
-
-		File file = new File(root);
-
-		// 만약 uploadFiles 폴더가 없으면 생성해라 라는뜻
-		if (!file.exists())
-			file.mkdirs();
-
-		for (MultipartFile mf : fileList) {
-			String originFileName = mf.getOriginalFilename(); // 원본 파일 명
-			long fileSize = mf.getSize(); // 파일 사이즈
-
-			System.out.println("originFileName : " + originFileName);
-			System.out.println("fileSize : " + fileSize);
-			String ext = "";
-			int lastIndex = originFileName.lastIndexOf(".");
-			if (lastIndex != -1) {
-				ext = originFileName.substring(lastIndex);
-			}
-			String ranFileName = UUID.randomUUID().toString() + ext;
-			File changeFile = new File(root + "\\" + ranFileName);
-			System.out.println(changeFile);
-			try {
-				System.out.println("업로드성공");
-				mf.transferTo(changeFile);
-			} catch (IllegalStateException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-		return "redirect:/admin/adminMenu.do";
-	}
 
 	// 매출관리
 	@GetMapping("adminSales.do")
