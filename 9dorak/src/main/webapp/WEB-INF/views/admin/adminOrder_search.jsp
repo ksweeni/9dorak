@@ -8,8 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminOrderStyle.css?d"
-	type="text/css" />
+	href="${cpath}/resources/css/adminOrderStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -27,8 +26,9 @@
 				</p>
 			</form>
 			<div class=e815_1065>
-						<input type="text" class="e815_1067" id="annoKeyword" placeholder="주문회원ID를 입력하세요">
-						<button id="searchBtn" class="ei815_1066_6_1">검색</button>
+				<input type="text" class="e815_1067" id="annoKeyword"
+					placeholder="주문회원ID를 입력하세요">
+				<button id="searchBtn" class="ei815_1066_6_1">검색</button>
 			</div>
 		</caption>
 		<thead>
@@ -57,105 +57,140 @@
 	</table>
 </body>
 <script type="text/javascript">
-$("#searchBtn").on("click", function() {
-	$.ajax({
-		url : "${cpath}/admin/searchadminOrder.do",
-		type : 'GET',
-		data : {
-			mem_id : $(".e815_1067").val()
-		},
-		success : function(data) {
-			var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-			$('link[href="' + oldCssFilePath + '"]').remove();
-			$('.e2099_2486').html(data);
-		}
-	});
-})
+	$("#searchBtn")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
+									url : "${cpath}/admin/searchadminOrder.do",
+									type : 'GET',
+									data : {
+										mem_id : $(".e815_1067").val()
+									},
+									success : function(data) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$('.e2099_2486').html(data);
+									}
+								});
+					})
 
-	$(".e2099_2468").on("click", function() {
-		$.ajax({
+	$(".e2099_2468")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMenu.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMenu.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2469").on("click", function() {
-		$.ajax({
+	$(".e2099_2469")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMember.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMember.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2472").on("click", function() {
-		$.ajax({
+	$(".e2099_2472")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminSub.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminSub.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2473").on("click", function() {
-		$.ajax({
+	$(".e2099_2473")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminNotice.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminNotice.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2474").on("click", function() {
-		$.ajax({
+	$(".e2099_2474")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminEvent.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminEvent.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2475").on("click", function() {
-		$.ajax({
+	$(".e2099_2475")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminPoint.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminPoint.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
-	
+								})
+					})
+
 	$(".sales").on("click", function() {
 		$.ajax({
 
@@ -236,6 +271,5 @@ $("#searchBtn").on("click", function() {
 			});
 
 	$setRows.submit();
-
 </script>
 </html>

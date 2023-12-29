@@ -611,7 +611,7 @@
 			IMP.request_pay({
 				pg : "inicis",
 				pay_method : "card",
-				merchant_uid : "ORD20180131-0000071", // 매번 새로워야 함
+				merchant_uid : "ORD20180131-0000072", // 매번 새로워야 함
 				name : "$('#proname').text()", // 1부르9
 				amount : discountedAmount,
 				buyer_email : "${mem.mem_id}",

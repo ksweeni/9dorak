@@ -83,6 +83,12 @@
 	border: none;
 	font-weight: 700;
 	color: white;
+	transition: background 0.5s ease;
+}
+
+.update-button:hover {
+	background: #FEB775;
+	color: white;
 }
 
 .notice-date {

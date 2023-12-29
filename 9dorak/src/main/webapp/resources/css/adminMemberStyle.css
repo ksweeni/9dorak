@@ -406,6 +406,11 @@ td:hover {
 	font-style: normal;
 	font-weight: 700;
 	line-height: 15px;
+	transition: box-shadow 0.5s ease;
+}
+
+.insert_member:hover {
+	box-shadow: 0px 8px 32px 0px rgb(255 214 154 / 56%);
 }
 
 .sales {

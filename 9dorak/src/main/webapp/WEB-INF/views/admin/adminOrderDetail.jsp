@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminOrderDetailStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminOrderDetailStyle.css?d"
+	type="text/css" />
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -20,18 +21,14 @@
 	<div class=e2099_2373>
 		<div class="e2099_2463"></div>
 		<div class="e2099_2467"></div>
-		<div class="e2099_2471">
-			<hr>
-		</div>
+
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
 		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span> <span class="sales">매출관리</span>
 		<div class="admin_login">
-			<div class="e2099_2476">
-				<hr>
-			</div>
+
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
@@ -40,8 +37,8 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
- 			<table id="products" border="1">
-				<caption  style="">
+			<table id="products" border="1">
+				<caption style="">
 					주문상세 list<br>
 					<form action="" id="setRows">
 						<p>
@@ -57,130 +54,170 @@
 					</tr>
 				</thead>
 				<tbody>
-						<tr>
-							<td>${detailorder.order_no}</td>
-							<td>${detailorder.pro_no}</td>
-							<td>${detailorder.orderdetail_count}</td>
-						</tr>
+					<tr>
+						<td>${detailorder.order_no}</td>
+						<td>${detailorder.pro_no}</td>
+						<td>${detailorder.orderdetail_count}</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
-$(".ei815_1066_6_1").on("click", function() {
-	$.ajax({
-		url : "${cpath}/admin/searchadminOrder.do",
-		type : 'GET',
-		data : {
-			mem_id : $(".e815_1067").val()
-		},
-		success : function(data) {
-			var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
-			$('link[href="' + oldCssFilePath + '"]').remove();
-			$('.e2099_2486').html(data);
-		}
-	});
-})
+	$(".ei815_1066_6_1")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
+									url : "${cpath}/admin/searchadminOrder.do",
+									type : 'GET',
+									data : {
+										mem_id : $(".e815_1067").val()
+									},
+									success : function(data) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$('.e2099_2486').html(data);
+									}
+								});
+					})
 
-	$(".e2099_2468").on("click", function() {
-		$.ajax({
+	$(".e2099_2468")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMenu.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMenu.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2469").on("click", function() {
-		$.ajax({
+	$(".e2099_2469")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMember.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMember.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
-	
-	$(".e2099_2470").on("click", function() {
-		$.ajax({
+								})
+					})
 
-			url : "${cpath}/admin/adminOrder.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+	$(".e2099_2470")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-		})
-	})
+									url : "${cpath}/admin/adminOrder.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-	$(".e2099_2472").on("click", function() {
-		$.ajax({
+								})
+					})
 
-			url : "${cpath}/admin/adminSub.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+	$(".e2099_2472")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-		})
-	})
+									url : "${cpath}/admin/adminSub.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-	$(".e2099_2473").on("click", function() {
-		$.ajax({
+								})
+					})
 
-			url : "${cpath}/admin/adminNotice.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+	$(".e2099_2473")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-		})
-	})
+									url : "${cpath}/admin/adminNotice.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-	$(".e2099_2474").on("click", function() {
-		$.ajax({
+								})
+					})
 
-			url : "${cpath}/admin/adminEvent.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+	$(".e2099_2474")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-		})
-	})
+									url : "${cpath}/admin/adminEvent.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-	$(".e2099_2475").on("click", function() {
-		$.ajax({
+								})
+					})
 
-			url : "${cpath}/admin/adminPoint.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+	$(".e2099_2475")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-		})
-	})
-	
+									url : "${cpath}/admin/adminPoint.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminOrderDetailStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
+
+								})
+					})
+
 	$(".sales").on("click", function() {
 		$.ajax({
 

@@ -20,9 +20,7 @@
 	<div class=e2099_2373>
 		<div class="e2099_2463"></div>
 		<div class="e2099_2467"></div>
-		<div class="e2099_2471">
-			<hr>
-		</div>
+
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
@@ -30,12 +28,7 @@
 			onclick="location.href='${cpath}/admin/adminNotice.do'">게시판관리</span>
 		<span class="e2099_2474">이벤트관리</span> <span class="e2099_2475">쿠폰/포인트관리</span>
 		<span class="sales">매출관리</span>
-
-
 		<div class="admin_login">
-			<div class="e2099_2476">
-				<hr>
-			</div>
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
@@ -63,8 +56,9 @@
 					</div>
 				</div>
 
-				<button class="anno-insertbtn" id="AnnoInsert">글쓰기</button>
-					<button class="insertFaq" id="FaqInsert">글쓰기</button> 
+				<button class="anno-insertbtn" id="AnnoInsert"
+					style="margin-right: 0px;">공지사항 글쓰기</button>
+				<button class="anno-insertbtn" id="FaqInsert">자주 묻는 질문 글쓰기</button>
 				<input type="text" class="annoKeyword" id="annoKeyword"
 					placeholder="검색어 입력">
 				<button id="searchBtn" class="search-button">검색</button>
@@ -75,13 +69,8 @@
 					<caption>
 						공지사항 List
 						<form action="" id="setRows">
-							<p class="search-wrapper">
-								<!--<input type="text" class="annoKeyword" id="annoKeyword"
-									placeholder="검색어 입력">
-								<button id="searchBtn" class="search-button">검색</button>-->
-							</p>
+							<p class="search-wrapper"></p>
 						</form>
-
 					</caption>
 
 					<thead>
@@ -111,12 +100,9 @@
 
 						</c:forEach>
 
-
-
 					</tbody>
 
 				</table>
-				<!-- 게시판 테스트 -->
 
 				<div class="numButton">
 					<c:forEach var="pageNum" begin="${pagingVO.beginPage }"
@@ -136,20 +122,15 @@
 						</c:choose>
 					</c:forEach>
 				</div>
-
 			</div>
-
 		</div>
 
-
 		<div id="faqTable" class="table-container">
-			<table id="faq" border="1" style="top: 15rem;  left: 47%;">
+			<table id="faq" border="1" style="top: 15rem; left: 47%;">
 				<caption>
 					자주 묻는 질문 List
 					<form action="" id="setRows"></form>
-
 				</caption>
-
 				<thead>
 					<tr>
 						<th style="border-radius: 10px 0px 0px 0px;">FAQ번호</th>
@@ -186,14 +167,9 @@
 					</c:choose>
 				</c:forEach>
 			</div>
-			<!--  -->
-	<!-- 		<div class="insertFaq">
-				<button id="FaqInsert">글쓰기</button>
-			</div> -->
-		<!-- 	<button class="insertFaq" id="FaqInsert">글쓰기</button> -->
 		</div>
 	</div>
-	</div>
+
 </body>
 <script type="text/javascript">
 	$(".e2099_2468")
@@ -305,14 +281,14 @@
 
 	function toggleTable(tableType) {
 		var noticeTable = document.getElementById("noticeTable");
-		var faqTable = document.getElementById("faqTable"); 	
+		var faqTable = document.getElementById("faqTable");
 		if (tableType === 'notice') {
 			fn_paging(1);
 			noticeTable.style.display = "block";
 			faqTable.style.display = "none";
 			$("#AnnoInsert").show();
 			$(".insertFaq").hide();
-			
+
 		} else if (tableType === 'faq') {
 			fn_paging2(1);
 			noticeTable.style.display = "none";
@@ -321,9 +297,8 @@
 			faqTable.style.left = "50%";
 			faqTable.style.display = "block";
 			$("#AnnoInsert").hide();
-			$(".insertFaq").show();	
-	
-			
+			$(".insertFaq").show();
+
 		}
 	}
 
@@ -378,8 +353,6 @@
 					}
 
 				})
-		/* location.href = "${cpath}/admin/adminNotice.do?currentPage="
-				+ currentPage; */
 	}
 	function fn_paging2(currentPage2) {
 		$.ajax({
@@ -401,7 +374,7 @@
 			.on(
 					"click",
 					function(e) {
-						//alert($("#annoKeyword").val());
+
 						var param = {
 							keyword : $("#annoKeyword").val()
 						}
@@ -411,7 +384,7 @@
 									type : "get",
 									data : param,
 									success : function(res) {
-										//	 alert("갔따오기 성공"); 
+
 										var oldCssFilePath = "${cpath}/resources/css/adminNoticeStyle.css?e";
 										$('link[href="' + oldCssFilePath + '"]')
 												.remove();

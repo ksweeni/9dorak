@@ -296,7 +296,7 @@ table {
 	position: relative;
 	border-collapse: collapse;
 	margin-bottom: 10px;
-	left: 408px;
+	left: 50%;
 	transform: translateX(-50%);
 	cursor: pointer;
 }
@@ -330,9 +330,9 @@ td:hover {
 	position: relative;
     width: 500px;
     text-align: center;
-    left: 553px;
+    left: 50%;
     transform: translateX(-100%);
-    top: 111px;
+    top: 20%
 }
 
 #nav a {
@@ -375,8 +375,12 @@ td:hover {
 	font-style: normal;
 	font-weight: 700;
 	line-height: 15px;
+	transition: box-shadow 0.5s ease;
 }
 
+.insert_memu:hover {
+	box-shadow: 0px 8px 32px 0px rgb(255 214 154 / 56%);
+}
 .sales {
 	color: rgba(255, 255, 255, 1);
 	width: max-content;

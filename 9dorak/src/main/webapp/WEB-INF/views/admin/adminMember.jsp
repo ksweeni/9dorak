@@ -20,18 +20,14 @@
 	<div class=e2099_2373>
 		<div class="e2099_2463"></div>
 		<div class="e2099_2467"></div>
-		<div class="e2099_2471">
-			<hr>
-		</div>
+	
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
 		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span> <span class="sales">매출관리</span>
 		<div class="admin_login">
-			<div class="e2099_2476">
-				<hr>
-			</div>
+			
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
@@ -50,9 +46,9 @@
 					<caption>
 						회원 list
 						<form action="" id="setRows">
-						<!--  <p>-->
+					
 								<input type="text" name="rowPerPage" value="5" style="display:none;">
-							<!--  </p>-->
+						
 						</form>
 
 					</caption>

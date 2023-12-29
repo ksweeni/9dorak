@@ -21,170 +21,210 @@
 	<div class=e2099_2373>
 		<div class="e2099_2463"></div>
 		<div class="e2099_2467"></div>
-		<div class="e2099_2471">
-			<hr>
-		</div>
+
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
 		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span> <span class="sales">매출관리</span>
 		<div class="admin_login">
-			<div class="e2099_2476">
-				<hr>
-			</div>
+
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
-			<a href="${pageContext.request.contextPath}/my/logout.do" class="e2101_2490">로그아웃</a>
+			<a href="${pageContext.request.contextPath}/my/logout.do"
+				class="e2101_2490">로그아웃</a>
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
-		<form action="${cpath}/admin/adminSubInsert.do" method="post" enctype="multipart/form-data">
-		<div class="e2099_3000">
-		<button type="submit" class="insert_sub" id="insert">data 추가하기</button>
-		</div>
-		<div class="e2099_2487">
-		
-		<p><b>구독 추가하기</b></p>
-		<!-- 
+			<form action="${cpath}/admin/adminSubInsert.do" method="post"
+				enctype="multipart/form-data">
+				<div class="e2099_3000">
+					<button type="submit" class="insert_sub" id="insert">data
+						추가하기</button>
+				</div>
+				<div class="e2099_2487">
+
+					<p>
+						<b>구독 추가하기</b>
+					</p>
+					<!-- 
 		구독번호<br> 
 		<input type="number" name="sub_no" placeholder="구독번호 seq" readonly="readonly"></input>
 		<br><br>
 		 -->
-		구독연장여부<br> 
-		<input type="text" name="sub_extend" placeholder="YES or NO"></input>
-		<br><br>
-		<!-- 
+					구독연장여부<br> <input type="text" name="sub_extend"
+						placeholder="YES or NO"></input> <br>
+					<br>
+					<!-- 
 		구독시작날짜<br> 
 		<input type="text" name="sub_date" placeholder="sysdate" readonly="readonly"></input>
 		<br><br>
 		 -->
-		구독회원ID<br> 
-		<input type="text" name="mem_id" placeholder="회원아이디"></input>
-		<br><br>
-		
-	
+					구독회원ID<br> <input type="text" name="mem_id"
+						placeholder="회원아이디"></input> <br>
+					<br>
+
+
+				</div>
+			</form>
 		</div>
-		</form>
-		</div>
-		
+
 	</div>
 </body>
 <script type="text/javascript">
+	$(".e2099_2468")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-$(".e2099_2468").on("click", function() {
-	$.ajax({
+									url : "${cpath}/admin/adminMenu.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		url : "${cpath}/admin/adminMenu.do",
-		type : "get",
-		success : function(res) {
-			var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d"; 
-			$('link[href="' + oldCssFilePath + '"]').remove();
-			$("body").html(res);
-		}
+								})
+					})
 
-	})
-})
-	
-	$(".e2099_2469").on("click", function() {
-		$.ajax({
+	$(".e2099_2469")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMember.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d"; 
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMember.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2470").on("click", function() {
-		$.ajax({
+	$(".e2099_2470")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminOrder.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d"; 
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminOrder.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2472").on("click", function() {
-		$.ajax({
+	$(".e2099_2472")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminSub.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d"; 
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminSub.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
-	
-	$(".insert_memu").on("click", function() {
-		$.ajax({
-	
-			url : "${cpath}/admin/adminSubInsert.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d"; 
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
-	
-		})
-	})
+								})
+					})
 
-	$(".e2099_2473").on("click", function() {
-		$.ajax({
+	$(".insert_memu")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminNotice.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d"; 
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminSubInsert.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2474").on("click", function() {
-		$.ajax({
+	$(".e2099_2473")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminEvent.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d"; 
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminNotice.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2475").on("click", function() {
-		$.ajax({
+	$(".e2099_2474")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminPoint.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d"; 
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminEvent.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
-	
+								})
+					})
+
+	$(".e2099_2475")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
+
+									url : "${cpath}/admin/adminPoint.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminSubInsertStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
+
+								})
+					})
+
 	$(".sales").on("click", function() {
 		$.ajax({
 
