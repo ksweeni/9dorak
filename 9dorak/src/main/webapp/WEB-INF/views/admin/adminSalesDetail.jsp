@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminSubDetailStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminSalesDetailStyle.css?d" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script
@@ -74,26 +74,16 @@
 		
 		
 		</div>
-		<div class="e2099_2491"><p><b>2. 구독 상세</b></p>
-		배부르9 <br>
+		<div class="e2099_2491"><p><b>2. 뭐하지</b></p>
+		어떤걸 <br>
 		<br><br>
-		배터지9 <br> 
+		넣을까? <br> 
 		<br><br>
 		</div>
 		</div>
 		</div>
 	</div>
 </body>
-
-
-
-
-
-
-
-
-
-
 <script type="text/javascript">
 $(".e2099_2468").on("click", function() {
 	$.ajax({
@@ -191,43 +181,70 @@ $(".e2099_2468").on("click", function() {
 		})
 	})
 	
+	$("#update").on("click", function() {
+		var order_no = $("#order_no").val();
+		var pay_status = $("#pay_status").val();
+		var pay_date = $("#pay_date").val();
+		var pay_method = $("#pay_method").val();
+		var pay_price = $("#pay_price").val();
+		var pay_depo = $("#pay_depo").val();
+		var pay_depoprice = $("#pay_depoprice").val();
+		var pay_depobank = $("#pay_depobank").val();
+		var imp_uid = $("#imp_uid").val();
+		
+		
+	})
+	
+	
+	
+	
 	//수정
-	/* $("#update").on("click", function() {
-		var sub_no = $("#sub_no").val();
-		var sub_extend = $("#sub_extend").val();
-		var sub_date = $("#sub_date").val();
-		var mem_id = $("#mem_id").val();
+	$("#update").on("click", function() {
+		var order_no = $("#order_no").val();
+		var pay_status = $("#pay_status").val();
+		var pay_date = $("#pay_date").val();
+		var pay_method = $("#pay_method").val();
+		var pay_price = $("#pay_price").val();
+		var pay_depo = $("#pay_depo").val();
+		var pay_depoprice = $("#pay_depoprice").val();
+		var pay_depobank = $("#pay_depobank").val();
+		var imp_uid = $("#imp_uid").val();
+		
 		var param = {
-			"sub_no" : sub_no,
-			"sub_extend" : sub_extend,
-			"sub_date" : sub_date,
-			"mem_id" : mem_id,
+			"order_no" : order_no,
+			"pay_status" : pay_status,
+			"pay_date" : pay_date,
+			"pay_method" : pay_method,
+			"pay_price" : pay_price,
+			"pay_depo" : pay_depo,
+			"pay_depoprice" : pay_depoprice,
+			"pay_depobank" : pay_depobank,
+			"imp_uid" : imp_uid,
 		}
 		$.ajax({
-			url : "${cpath}/admin/adminSubUpdate.do",
+			url : "${cpath}/admin/adminSalesUpdate.do",
 			type : "post",
 			data : param,
 			success : function(res) {
-				location.href = "${cpath}/admin/adminSub.do";
+				location.href = "${cpath}/admin/adminSales.do";
 			}
 		})
-	}) */
+	})
 	
-		//삭제
- 		/* $("#delete").on("click", function() {
-
-		var sub_no = $("#sub_no").val();
-		var param = {
-			"sub_no" : sub_no
-		}
+	//삭제
+ 	$("#delete").on("click", function() {
+		var order_no = $("#order_no").val();
+		
 		$.ajax({
-			url : "${cpath}/admin/adminSubDelete.do",
+			url : "${cpath}/admin/adminSalesDelete.do",
 			type : "post",
-			data : param,
+			data : {
+				"order_no" : order_no
+			},
 			success : function(res) {
-				location.href = "${cpath}/admin/adminSub.do";
+				location.href = "${cpath}/admin/adminSales.do";
 			}
-		}) */
+		})
 	})
 </script>
 </html>

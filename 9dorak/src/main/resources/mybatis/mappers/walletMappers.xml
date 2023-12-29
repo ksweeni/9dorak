@@ -16,15 +16,16 @@
 		select * from pay where order_no=#{order_no}
 	</select>
 	
+	<update id="updateSales" parameterType="payvo">
+		update pay set pay_status=#{pay_status}, pay_date=#{pay_date}, pay_method=#{pay_method},
+		pay_price=#{pay_price}, pay_depo=#{pay_depo}, pay_depoprice=#{pay_depoprice},
+		pay_depobank=#{pay_depobank}, imp_uid=#{imp_uid}
+		where order_no=#{order_no}
+	</update>
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	<delete id="deleteSales" parameterType="payvo">
+		delete from pay where order_no=#{order_no}
+	</delete>
 
 	<!-- 장바구니 목록 -->
 	<select id="getBasket" resultType="basketvo">
