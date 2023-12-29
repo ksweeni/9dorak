@@ -16,6 +16,15 @@
 		select * from pay where order_no=#{order_no}
 	</select>
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	<!-- 장바구니 목록 -->
 	<select id="getBasket" resultType="basketvo">

@@ -92,4 +92,12 @@ public class WalletService {
 	public int insertOrderDetail(OrderdetailVO orderDetail) {
 		return dao.insertOrderDetail(orderDetail);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

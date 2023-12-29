@@ -58,6 +58,11 @@
 						<th>주문수량</th>
 					</tr>
 				</thead>
+				
+				
+				
+				
+				
 				<c:forEach items="${detailorder}" var="detail" varStatus="status">
 				<tbody>
 						<tr>
