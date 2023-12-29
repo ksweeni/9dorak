@@ -615,4 +615,9 @@ public class AdminController {
 			return "삭제 실패";
 		}
 	}
+	
+	@GetMapping("adminGraph.do")
+	public String adminGraph() {
+		return "admin/adminGraph";
+	}
 }
