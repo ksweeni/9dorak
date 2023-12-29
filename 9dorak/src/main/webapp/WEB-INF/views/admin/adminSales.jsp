@@ -80,6 +80,10 @@
 				</tbody>
 			</table>
 		</div>
+		
+		<a href="${cpath}/admin/adminGraph.do" style="position:relative; top:30rem; left:30%;">지우지 마세요 !! 그래프로 이동하기</a>
+		
+		
 	</div>
 </body>
 <script type="text/javascript">

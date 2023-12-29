@@ -81,15 +81,12 @@
 				</tbody>
 			</table>
 
-			<div class="graph-wrapper"
-				style="left: 5%; border-radius: 20px; background: #FFF; box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.08); top: 15rem; position: relative; width: 960px; height: 345px;">
-				수인이의 그래프래퍼
-				<canvas id="myChart" width="400" height="400"></canvas>
-				<a href="${cpath}/admin/adminGraph.do">그래프로 이동하기</a>
 
-			</div>
-		
+			<a href="${cpath}/admin/adminGraph.do">지우지 마세요 !! 그래프로 이동하기</a>
+
 		</div>
+
+
 	</div>
 </body>
 <script type="text/javascript">
