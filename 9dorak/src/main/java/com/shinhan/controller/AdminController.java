@@ -2,6 +2,7 @@ package com.shinhan.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.http.HttpRequest;
 //import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +24,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.shinhan.dto.AnnoVO;
+import com.shinhan.dto.CategoryVO;
 import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.CouponVO;
 import com.shinhan.dto.FaqVO;
+import com.shinhan.dto.IngreVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.OrderdetailVO;
@@ -91,11 +94,22 @@ public class AdminController {
 	}
 
 	@PostMapping("adminMenuInsert.do")
-	public String adminMenuInsert(Model model, ProVO menu , MultipartHttpServletRequest mtfRequest, HttpServletRequest request) {
+	public String adminMenuInsert(Model model, ProVO menu, MultipartHttpServletRequest mtfRequest,IngreVO ingre,
+			HttpServletRequest request) {
+//		System.out.println(ingre.getIngre_name());
+		
+		int ingre_no = mService.getinre_no(ingre.getIngre_name());
 		int result = mService.insertMenu(menu);
+		
 		System.out.println(result);
 		int pro_no = mService.selectProNo();
 		System.out.println(pro_no);
+		
+		CategoryVO category = new CategoryVO();
+		category.setIngre_no(ingre_no);
+		category.setPro_no(pro_no);
+		int result2 = mService.insertCategory(category);
+		
 		List<ProVO> mlist = mService.selectAll();
 		model.addAttribute("mlist", mlist);
 		// 파일업로드
@@ -145,15 +159,15 @@ public class AdminController {
 				e.printStackTrace();
 			}
 		}
-		
-		
+
 		return "redirect:/admin/adminMenu.do";
 	}
 
 	@RequestMapping(value = "adminMenuUpdate.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
-	public String adminMenuUpdate(Model model, ProVO menu) {
+	public String adminMenuUpdate(Model model, ProVO menu , HttpServletRequest request) {
 		int result = mService.updateMenu(menu);
+
 		if (result > 0) {
 			return "수정 성공";
 		} else {
@@ -228,7 +242,7 @@ public class AdminController {
 		model.addAttribute("orderlist", orderlist);
 		return "admin/adminOrder";
 	}
-	
+
 	@PostMapping("adminOrder.do")
 	public String adminOrderDetail(Model model, OrderdetailVO order) {
 		List<OrderVO> detailorder = orderService.selectByOrder(order.getOrder_no());
@@ -251,14 +265,14 @@ public class AdminController {
 		model.addAttribute("sublist", sublist);
 		return "admin/adminSub";
 	}
-	
+
 	@PostMapping("adminSub.do")
 	public String adminSubDetail(Model model, SubVO sub) {
 		SubVO detailSub = subService.selectSubNo(sub.getSub_no());
 		model.addAttribute("detailSub", detailSub);
 		return "admin/adminSubDetail";
 	}
-	
+
 	@GetMapping("adminSubInsert.do")
 	public String adminSubInsertPage(Model model) {
 		return "admin/adminSubInsert";
@@ -268,7 +282,7 @@ public class AdminController {
 	public String adminSubInsert(Model model, SubVO sub) {
 		System.out.println(sub);
 		int result = subService.insertSub(sub);
-		
+
 		return "redirect:/admin/adminSub.do";
 	}
 
@@ -282,7 +296,7 @@ public class AdminController {
 			return "수정 실패";
 		}
 	}
-	
+
 	@RequestMapping(value = "adminSubDelete.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String adminSubDelete(Model model, SubVO sub) {
@@ -575,7 +589,7 @@ public class AdminController {
 
 		return "redirect:/admin/adminMenu.do";
 	}
-	
+
 	// 매출관리
 	@GetMapping("adminSales.do")
 	public String adminSales(Model model) {
@@ -583,12 +597,12 @@ public class AdminController {
 		model.addAttribute("payList", payList);
 		return "admin/adminSales";
 	}
-	
+
 	@PostMapping("adminSales.do")
 	public String adminSalesDetail(Model model, PayVO pay) {
 		List<PayVO> payDetail = wService.selectPay(pay.getOrder_no());
 		model.addAttribute("payDetail", payDetail);
 		return "admin/adminSubDetail";
 	}
-	
+
 }

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.shinhan.dto.CategoryVO;
 import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.dto.ProimageVO;
@@ -122,5 +123,28 @@ public class MenuService {
 	public List<ProimageVO> selectByNoImage(int pro_no) {
 		return dao.selectByNoImage(pro_no);
 	}
+
+	public int getinre_no(String ingre_name) {
+		// TODO Auto-generated method stub
+		return dao.getinre_no(ingre_name);
+	}
+
+	public int insertCategory(CategoryVO category) {
+		// TODO Auto-generated method stub
+		return dao.insertCategory(category);
+	}
+
+
+
+//	public int getproimage_no(int pro_no) {
+//		// TODO Auto-generated method stub
+//		return dao.getproimage_no(pro_no);
+//	}
+//	
+//	public int updatePro_image(ProimageVO pro_image) {
+//		// TODO Auto-generated method stub
+//		return dao.updatePro_image(pro_image);
+//	}
+
 
 }

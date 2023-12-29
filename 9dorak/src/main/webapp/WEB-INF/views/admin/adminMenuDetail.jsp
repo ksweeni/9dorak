@@ -49,28 +49,28 @@
 						</p>
 					</div>
 					<div class="e3000_2">
-						<b>메뉴번호</b> <br> <input type="text" value="${detailmenu.pro_no}"
-							id="pro_no" readonly></input>
+						<b>메뉴번호</b> <br> <input type="text"
+							value="${detailmenu.pro_no}" id="pro_no" readonly></input>
 					</div>
 					<div class="e3000_3">
-						<b>메뉴명</b> <br> <input type="text" value="${detailmenu.pro_name}"
-							id="pro_name"></input>
+						<b>메뉴명</b> <br> <input type="text"
+							value="${detailmenu.pro_name}" id="pro_name"></input>
 					</div>
 					<div class="e3000_4">
-						<b>메뉴설명</b> <br> <input type="text" value="${detailmenu.pro_detail}"
-							id="pro_detail"></input>
+						<b>메뉴설명</b> <br> <input type="text"
+							value="${detailmenu.pro_detail}" id="pro_detail"></input>
 					</div>
 					<div class="e3000_5">
-						<b>메뉴가격</b><br> <input type="text" value="${detailmenu.pro_price}"
-							id="pro_price"></input>
+						<b>메뉴가격</b><br> <input type="text"
+							value="${detailmenu.pro_price}" id="pro_price"></input>
 					</div>
 					<div class="e3000_6">
-						<b>메뉴좋아요수</b> <br> <input type="text" value="${detailmenu.pro_like}"
-							id="pro_like"></input>
+						<b>메뉴좋아요수</b> <br> <input type="text"
+							value="${detailmenu.pro_like}" id="pro_like"></input>
 					</div>
 					<div class="e3000_7">
-						<b>메뉴등록날짜</b> <br> <input type="date" value="${detailmenu.pro_rd}"
-							id="pro_rd"></input>
+						<b>메뉴등록날짜</b> <br> <input type="date"
+							value="${detailmenu.pro_rd}" id="pro_rd"></input>
 					</div>
 				</div>
 				<div class="e2099_2491">
@@ -85,32 +85,32 @@
 							value="${detailmenu.pro_aller}" id="pro_aller"></input>
 					</div>
 					<div class="e3000_10">
-						<b>메뉴단백질</b> <br> <input type="text" value="${detailmenu.pro_prot}"
-							id="pro_prot"></input>
+						<b>메뉴단백질</b> <br> <input type="text"
+							value="${detailmenu.pro_prot}" id="pro_prot"></input>
 					</div>
 					<div class="e3000_11">
-						<b>메뉴탄수화물</b> <br> <input type="text" value="${detailmenu.pro_carb}"
-							id="pro_carb"></input>
+						<b>메뉴탄수화물</b> <br> <input type="text"
+							value="${detailmenu.pro_carb}" id="pro_carb"></input>
 					</div>
 					<div class="e3000_12">
-						<b>메뉴지방</b> <br> <input type="text" value="${detailmenu.pro_prov}"
-							id="pro_prov"></input>
+						<b>메뉴지방</b> <br> <input type="text"
+							value="${detailmenu.pro_prov}" id="pro_prov"></input>
 					</div>
 					<div class="e3000_13">
-						<b>메뉴나트륨</b> <br> <input type="text" value="${detailmenu.pro_nat}"
-							id="pro_nat"></input>
+						<b>메뉴나트륨</b> <br> <input type="text"
+							value="${detailmenu.pro_nat}" id="pro_nat"></input>
 					</div>
 					<div class="e3000_14">
-						<b>메뉴당류</b> <br> <input type="text" value="${detailmenu.pro_sugar}"
-							id="pro_sugar"></input>
+						<b>메뉴당류</b> <br> <input type="text"
+							value="${detailmenu.pro_sugar}" id="pro_sugar"></input>
 					</div>
 					<div class="e3000_15">
-						<b>메뉴칼로리</b> <br> <input type="text" value="${detailmenu.pro_cal}"
-							id="pro_cal"></input>
+						<b>메뉴칼로리</b> <br> <input type="text"
+							value="${detailmenu.pro_cal}" id="pro_cal"></input>
 					</div>
 					<div class="e3000_16">
-						<b>메뉴중량</b> <br> <input type="text" value="${detailmenu.pro_weight}"
-							id="pro_weight"></input>
+						<b>메뉴중량</b> <br> <input type="text"
+							value="${detailmenu.pro_weight}" id="pro_weight"></input>
 					</div>
 				</div>
 				<div class="e2099_2492">
@@ -129,12 +129,12 @@
 							value="${detailmenu.pro_sub19}" id="pro_sub19"></input>
 					</div>
 					<div class="e3000_20">
-						<b>메뉴무료체험</b> <br> <input type="text" value="${detailmenu.pro_free}"
-							id="pro_free"></input>
+						<b>메뉴무료체험</b> <br> <input type="text"
+							value="${detailmenu.pro_free}" id="pro_free"></input>
 					</div>
 					<div class="e3000_21">
-						<b>메뉴재고</b> <br> <input type="text" value="${detailmenu.pro_sc}"
-							id="pro_sc"></input>
+						<b>메뉴재고</b> <br> <input type="text"
+							value="${detailmenu.pro_sc}" id="pro_sc"></input>
 					</div>
 				</div>
 				<div class="e3004"></div>
@@ -148,7 +148,7 @@
 					<div class="e3000_26">
 						<div class="e3000_30">
 							<label for="file">
-								<div class="btn-upload">파일 업로드하기</div>
+						<!-- 		<div class="btn-upload"></div> -->
 							</label> <input onchange="readURL(this, 'preview1');" multiple="multiple"
 								id="file" type="file" name="file" /> <img id="preview1"
 								id="preview-image" class="e3000_101"
@@ -157,7 +157,7 @@
 						</div>
 						<div class="e3000_22">
 							<label for="file2">
-								<div class="btn-upload">파일 업로드하기</div>
+							<!-- 	<div class="btn-upload"></div> -->
 							</label> <input onchange="readURL(this, 'preview2');" multiple="multiple"
 								type="file" name="file" id="file2" /> <img id="preview2"
 								id="preview-image" class="e3000_101"
@@ -166,7 +166,7 @@
 						</div>
 						<div class="e3000_23">
 							<label for="file3">
-								<div class="btn-upload">파일 업로드하기</div>
+								<!-- <div class="btn-upload"></div> -->
 							</label> <input onchange="readURL(this, 'preview3');" multiple="multiple"
 								type="file" name="file" id="file3" /> <img id="preview3"
 								id="preview-image" class="e3000_101"
@@ -175,7 +175,7 @@
 						</div>
 						<div class="e3000_24">
 							<label for="file4">
-								<div class="btn-upload">파일 업로드하기</div>
+							<!-- 	<div class="btn-upload"></div> -->
 							</label> <input onchange="readURL(this, 'preview4');" multiple="multiple"
 								type="file" name="file" id="file4" /> <img id="preview4"
 								id="preview-image" class="e3000_101"
@@ -183,7 +183,7 @@
 								alt="Preview 4" />
 						</div>
 					</div>
-			<%-- 		<img class="e3000_101"
+					<%-- 		<img class="e3000_101"
 						src="${cpath}/resources/upload/${detailmenuimage[0].proimage_image}"></img>
 					<img class="e3000_101"
 						src="${cpath}/resources/upload/${detailmenuimage[1].proimage_image}"></img>
@@ -293,6 +293,57 @@
 		})
 	})
 
+	/* 	//수정
+	 $("#update").on("click", function() {
+	 var pro_no = $("#pro_no").val();
+	 var pro_name = $("#pro_name").val();
+	 var pro_detail = $("#pro_detail").val();
+	 var pro_price = $("#pro_price").val();
+	 var pro_rd = $("#pro_rd").val();
+	 var pro_like = $("#pro_like").val();
+	 var pro_aller = $("#pro_aller").val();
+	 var pro_prot = $("#pro_prot").val();
+	 var pro_carb = $("#pro_carb").val();
+	 var pro_prov = $("#pro_prov").val();
+	 var pro_nat = $("#pro_nat").val();
+	 var pro_sugar = $("#pro_sugar").val();
+	 var pro_cal = $("#pro_cal").val();
+	 var pro_weight = $("#pro_weight").val();
+	 var pro_sub9 = $("#pro_sub9").val();
+	 var pro_sub19 = $("#pro_sub19").val();
+	 var pro_free = $("#pro_free").val();
+	 var pro_sc = $("#pro_sc").val();
+	 var param = {
+	 "pro_no" : pro_no,
+	 "pro_name" : pro_name,
+	 "pro_detail" : pro_detail,
+	 "pro_price" : pro_price,
+	 "pro_rd" : pro_rd,
+	 "pro_like" : pro_like,
+	 "pro_aller" : pro_aller,
+	 "pro_prot" : pro_prot,
+	 "pro_carb" : pro_carb,
+	 "pro_prov" : pro_prov,
+	 "pro_nat" : pro_nat,
+	 "pro_sugar" : pro_sugar,
+	 "pro_cal" : pro_cal,
+	 "pro_weight" : pro_weight,
+	 "pro_sub9" : pro_sub9,
+	 "pro_sub19" : pro_sub19,
+	 "pro_free" : pro_free,
+	 "pro_sc" : pro_sc
+	 }
+	 $.ajax({
+	 url : "${cpath}/admin/adminMenuUpdate.do",
+	 type : "post",
+	 data : param,
+	 success : function(res) {
+	 alert(res); 
+	 location.href = "${cpath}/admin/adminMenu.do";
+	 }
+	 })
+	 })
+	 */
 	//수정
 	$("#update").on("click", function() {
 		var pro_no = $("#pro_no").val();
@@ -313,7 +364,29 @@
 		var pro_sub19 = $("#pro_sub19").val();
 		var pro_free = $("#pro_free").val();
 		var pro_sc = $("#pro_sc").val();
-		var param = {
+		var formData = new FormData();
+
+
+
+		formData.append("pro_no", pro_no);
+		formData.append("pro_name", pro_name);
+		formData.append("pro_detail", pro_detail);
+		formData.append("pro_price", pro_price);
+		formData.append("pro_rd", pro_rd);
+		formData.append("pro_like", pro_like);
+		formData.append("pro_aller", pro_aller);
+		formData.append("pro_prot", pro_prot);
+		formData.append("pro_carb", pro_carb);
+		formData.append("pro_prov", pro_prov);
+		formData.append("pro_nat", pro_nat);
+		formData.append("pro_sugar", pro_sugar);
+		formData.append("pro_cal", pro_cal);
+		formData.append("pro_weight", pro_weight);
+		formData.append("pro_sub9", pro_sub9);
+		formData.append("pro_sub19", pro_sub19);
+		formData.append("pro_free", pro_free);
+		formData.append("pro_sc", pro_sc);
+		/* var param = {
 			"pro_no" : pro_no,
 			"pro_name" : pro_name,
 			"pro_detail" : pro_detail,
@@ -332,16 +405,19 @@
 			"pro_sub19" : pro_sub19,
 			"pro_free" : pro_free,
 			"pro_sc" : pro_sc
-		}
+		} */
 		$.ajax({
 			url : "${cpath}/admin/adminMenuUpdate.do",
 			type : "post",
-			data : param,
+			data : formData,
+			processData : false, // 필수: FormData를 사용할 때 false로 설정
+			contentType : false, // 필수: FormData를 사용할 때 false로 설정
 			success : function(res) {
-				/* alert(res); */
+				// 성공 시 동작
+				alert(res);
 				location.href = "${cpath}/admin/adminMenu.do";
 			}
-		})
+		});
 	})
 
 	//삭제
