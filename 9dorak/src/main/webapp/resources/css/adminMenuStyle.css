@@ -37,11 +37,11 @@ caption {
 
 .e2099_2463 {
 	background-color: rgba(254.2806226015091, 137.48113721609116, 29.666072130203247, 0.6100000143051147);
-    width: 214px;
-    height: 901px;
-    position: absolute;
-    left: -1px;
-    top: 0px;
+	width: 214px;
+	height: 150%;
+	position: absolute;
+	left: -1px;
+	top: 0px;
 }
 
 .e2099_2467 {
@@ -258,7 +258,7 @@ caption {
 .e2099_2486 {
 	background-color: rgba(255, 255, 255, 1);
 	width: 93%;
-	height: 862px;
+	height: 150%;
 	position: absolute;
 	left: 211px;
 	top: 40px;
@@ -296,9 +296,10 @@ table {
 	position: relative;
 	border-collapse: collapse;
 	margin-bottom: 10px;
-	left: 408px;
+	left: 510px;
 	transform: translateX(-50%);
 	cursor: pointer;
+	top: 3px;
 }
 
 th, td {
@@ -328,11 +329,12 @@ td:hover {
 
 #nav {
 	position: relative;
-    width: 500px;
-    text-align: center;
-    left: 553px;
-    transform: translateX(-100%);
-    top: 111px;
+	width: 500px;
+	text-align: center;
+	left: 623px;
+	left: 30px;
+	top: 189px;translateX(-100%);
+	top: 25px;
 }
 
 #nav a {
