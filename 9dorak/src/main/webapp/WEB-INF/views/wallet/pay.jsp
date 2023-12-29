@@ -701,17 +701,18 @@
 	//alert(a);
 	
 	var myPoint = $("#mypoint").text().replace(/\D/g, '');
-
+	
 	//포인트 적용 버튼 클릭 이벤트 처리
 	$("#pointApply").on("click", function () {
 	    // 입력된 포인트 값을 가져오기
-	    var enteredPoint = $("#point").val();
+	    var enteredPointText = $("#point").val();
+    	var enteredPoint = parseFloat(enteredPointText);
 	    
 	    var lastTotalText = $("#lastTotal").text().replace(/\D/g, '');
         var lastTotal = parseFloat(lastTotalText);
 
         // 숫자가 유효한 경우에만 연산 수행
-        if (!isNaN(lastTotal)) {
+        if (!isNaN(enteredPoint) && !isNaN(lastTotal)) {
         	
         	if(enteredPoint <= myPoint) {
 	            // 입력된 포인트를 "#lastTotal"에서 차감
