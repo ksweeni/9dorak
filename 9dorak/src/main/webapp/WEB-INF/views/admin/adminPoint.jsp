@@ -20,13 +20,18 @@
 	<div class=e2099_2373>
 		<div class="e2099_2463"></div>
 		<div class="e2099_2467"></div>
-
+		<div class="e2099_2471">
+			<hr>
+		</div>
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
 		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span> <span class="sales">매출관리</span>
 		<div class="admin_login">
+			<div class="e2099_2476">
+				<hr>
+			</div>
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
@@ -75,15 +80,17 @@
 
 
 						<table id="products" border="1" style="width: 300px;">
-							<caption>회원 List</caption>
+							<caption>
+								회원 List
+							</caption>
 
 							<thead>
 								<tr>
-									<th style="border-radius: 10px 0px 0px 0px;">ID</th>
+									<th style="border-radius: 10px 0px 0px 0px;"> ID</th>
 									<th>NAME</th>
-
-
-
+								
+									
+									
 									<th style="border-radius: 0px 10px 0px 0px;">Select</th>
 								</tr>
 							</thead>
@@ -102,9 +109,6 @@
 					</div>
 
 				</div>
-
-
-
 			</div>
 
 			<div class="controll-top-2">
@@ -129,16 +133,15 @@
 				<div class="table-1">
 
 
-					<table id="products" border="1">
+					<table id="products2" border="1">
 						<caption>
 							쿠폰 List
 
-							<form action="" id="setRows">
+						<form action="" id="setRows">
 								<!--  <p>-->
-								<input type="text" name="rowPerPage" value="5"
-									style="display: none">
-								<!--  </p>-->
-							</form>
+									<input type="text" name="rowPerPage" value="5" style="display:none">
+									<!--  </p>-->
+							</form>  
 						</caption>
 
 						<thead>
@@ -166,6 +169,7 @@
 							</c:forEach>
 						</tbody>
 					</table>
+					<div class="pagination"></div>
 				</div>
 
 
@@ -175,81 +179,101 @@
 	</div>
 </body>
 <script type="text/javascript">
-	$(".e2099_2468")
-			.on(
-					"click",
-					function() {
-						$
-								.ajax({
+$(document).ready(function () {
+    var rowsPerPage = 5;
+    var totalRows = $("#products2 tbody tr").length;
+    var totalPages = Math.ceil(totalRows / rowsPerPage);
 
-									url : "${cpath}/admin/adminMenu.do",
-									type : "get",
-									success : function(res) {
-										var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
-										$('link[href="' + oldCssFilePath + '"]')
-												.remove();
-										$("body").html(res);
-									}
+    // 페이지 번호를 생성하는 함수
+    function generatePageNumbers() {
+        var paginationHTML = "";
+        for (var i = 1; i <= totalPages; i++) {
+            paginationHTML += '<a href="#" data-page="' + i + '">' + i + '</a>';
+        }
+        $(".pagination").html(paginationHTML);
+    }
 
-								})
-					})
+    // 초기 페이지 번호 생성
+    generatePageNumbers();
 
-	$(".e2099_2469")
-			.on(
-					"click",
-					function() {
-						$
-								.ajax({
+    // 페이지 번호를 클릭할 때 데이터를 갱신하고 스타일을 변경하는 함수
+    $(".pagination a").on("click", function (e) {
+        e.preventDefault();
 
-									url : "${cpath}/admin/adminMember.do",
-									type : "get",
-									success : function(res) {
-										var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
-										$('link[href="' + oldCssFilePath + '"]')
-												.remove();
-										$("body").html(res);
-									}
+        // 현재 활성화된 페이지 링크에서 'active' 클래스를 제거
+        $(".pagination a.active").removeClass("active");
 
-								})
-					})
+        var currentPage = $(this).data("page");
+        var startIndex = (currentPage - 1) * rowsPerPage;
+        var endIndex = startIndex + rowsPerPage;
 
-	$(".e2099_2470")
-			.on(
-					"click",
-					function() {
-						$
-								.ajax({
+        // 테이블의 행을 보이거나 숨기기
+        $("#products2 tbody tr").hide();
+        $("#products2 tbody tr").slice(startIndex, endIndex).show();
 
-									url : "${cpath}/admin/adminOrder.do",
-									type : "get",
-									success : function(res) {
-										var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
-										$('link[href="' + oldCssFilePath + '"]')
-												.remove();
-										$("body").html(res);
-									}
+        // 클릭된 페이지에 'active' 클래스를 추가하여 스타일 적용
+        $(this).addClass("active");
+    });
 
-								})
-					})
+    // 초기 페이지에 대한 스타일 적용 (예를 들어, 첫 번째 페이지)
+    $(".pagination a:first").addClass("active");
+});
+	
+	$(".e2099_2468").on("click", function() {
+		$.ajax({
 
-	$(".e2099_2472")
-			.on(
-					"click",
-					function() {
-						$
-								.ajax({
+			url : "${cpath}/admin/adminMenu.do",
+			type : "get",
+			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
+				$("body").html(res);
+			}
 
-									url : "${cpath}/admin/adminSub.do",
-									type : "get",
-									success : function(res) {
-										var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
-										$('link[href="' + oldCssFilePath + '"]')
-												.remove();
-										$("body").html(res);
-									}
+		})
+	})
 
-								})
-					})
+	$(".e2099_2469").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminMember.do",
+			type : "get",
+			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
+				$("body").html(res);
+			}
+
+		})
+	})
+
+	$(".e2099_2470").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminOrder.do",
+			type : "get",
+			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
+				$("body").html(res);
+			}
+
+		})
+	})
+
+	$(".e2099_2472").on("click", function() {
+		$.ajax({
+
+			url : "${cpath}/admin/adminSub.do",
+			type : "get",
+			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
+				$("body").html(res);
+			}
+
+		})
+	})
 
 	$(".e2099_2473").on("click", function() {
 		$.ajax({
@@ -263,25 +287,20 @@
 		})
 	})
 
-	$(".e2099_2474")
-			.on(
-					"click",
-					function() {
-						$
-								.ajax({
+	$(".e2099_2474").on("click", function() {
+		$.ajax({
 
-									url : "${cpath}/admin/adminEvent.do",
-									type : "get",
-									success : function(res) {
-										var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
-										$('link[href="' + oldCssFilePath + '"]')
-												.remove();
-										$("body").html(res);
-									}
+			url : "${cpath}/admin/adminEvent.do",
+			type : "get",
+			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
+				$("body").html(res);
+			}
 
-								})
-					})
-
+		})
+	})
+	
 	$(".sales").on("click", function() {
 		$.ajax({
 
@@ -301,6 +320,8 @@
 			.submit(function(e) {
 				e.preventDefault();
 				var rowPerPage = $('[name="rowPerPage"]').val() * 1;// 1 을  곱하여 문자열을 숫자형로 변환
+
+		
 
 				var zeroWarning = 'Sorry, but we cat\'t display "0" rows page. + \nPlease try again.'
 				if (!rowPerPage) {
@@ -444,16 +465,15 @@
 	});
 
 	function updateCouponList() {
-		$
-				.ajax({
-					url : "${cpath}/admin/adminPoint.do", // 실제 목록을 불러오는 URL로 변경해야 합니다.
-					type : "GET",
-					success : function(res) {
-						var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
-						$('link[href="' + oldCssFilePath + '"]').remove();
-						$("body").html(res); // 새로운 목록으로 테이블 업데이트
-					}
-				});
+		$.ajax({
+			url : "${cpath}/admin/adminPoint.do", // 실제 목록을 불러오는 URL로 변경해야 합니다.
+			type : "GET",
+			success : function(res) {
+				var oldCssFilePath = "${cpath}/resources/css/adminPointStyle.css?d";
+				$('link[href="' + oldCssFilePath + '"]').remove();
+				$("body").html(res); // 새로운 목록으로 테이블 업데이트
+			}
+		});
 	}
 </script>
 </html>

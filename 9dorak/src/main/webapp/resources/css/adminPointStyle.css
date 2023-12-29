@@ -63,7 +63,6 @@
 }
 
 .delete-button-1 {
-	width: 73px;
 	margin-left: 223px;
 	display: inline-flex;
 	padding: 12px 16px;
@@ -73,11 +72,10 @@
 	height: 2.5rem;
 	position: relative;
 	align-items: flex-start;
-	gap: 14px;
+	gap: 16px;
 	border-radius: 4px;
 	background: #FF8901;
 	position: relative;
-	transition: background 0.5s ease;
 }
 
 .coupon-input {
@@ -100,11 +98,6 @@
 	border: none;
 	color: white;
 	height: 2.5rem;
-	transition: background 0.5s ease;
-}
-
-.create-button:hover, .delete-button-1:hover {
-	background: #FEB775;
 }
 
 .controll-div-3 {
@@ -126,7 +119,6 @@
 	background: white;
 	color: orange;
 	border: 2px solid orange;
-	transition: box-shadow 0.5s ease;
 }
 
 .delete-button:hover {
@@ -461,7 +453,7 @@ td:hover {
 .table-1 {
 	height: 23rem;
 	position: relative;
-	top: 1.5rem;
+	top: 100px;
 }
 
 th, td {
@@ -500,9 +492,9 @@ td {
 	position: relative;
 	width: 500px;
 	text-align: center;
-	left: 30%;
+	left: 205px;
 	transform: translateX(-100%);
-	top: 100px;
+	top: 56px;
 	color: #fff;
 }
 
@@ -541,4 +533,29 @@ td {
 	font-size: 16px;
 	letter-spacing: 2;
 	cursor: pointer;
+}
+
+.pagination {
+	display: inline-block;
+	position: relative;
+	left: 286px;
+	top: 21px;
+}
+
+.pagination a {
+	border-radius: 5px;
+	color: white;
+	position: relative;
+	display: inline-block;
+	padding: 3px 5px;
+	margin-right: 10px;
+	background: #FEB775;
+	text-decoration: none;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.pagination a.active {
+    color: white;
+    background: black;
 }
