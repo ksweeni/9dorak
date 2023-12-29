@@ -26,7 +26,6 @@ public class WalletDAOMybatis {
 	// 장바구니 select all
 	public List<BasketVO> selectAllBasket() {
 		List<BasketVO> blist = sqlSession.selectList(NAMESPACE + "selectAllBasket");
-		System.out.println(blist);
 		logger.info("selectAllBasket :  {}", blist.size());
 		return blist;
 	}
@@ -34,10 +33,16 @@ public class WalletDAOMybatis {
 	// 결제하기 select all
 	public List<PayVO> selectAllPay() {
 		List<PayVO> plist = sqlSession.selectList(NAMESPACE + "selectAllPay");
-		System.out.println(plist);
-		logger.info("selectAllPay : {}", plist.size());
 		return plist;
 	}
+	
+	public List<PayVO> selectPay(int order_no) {
+		List<PayVO> plist = sqlSession.selectList(NAMESPACE + "selectPay", order_no);
+		return plist;
+	}
+	
+	
+	
 
     // mem_id의 장바구니 목록
     public List<BasketVO> getBasket(String mem_id) {
@@ -127,7 +132,7 @@ public class WalletDAOMybatis {
 	public int insertOrder(OrderVO order) {
 		int result = sqlSession.insert(NAMESPACE + "insertOrder", order);
 		System.out.println(order);
-		return result; // order_no 반환
+		return result;
 	}
 	
 	// 마지막 주문 번호 찾기

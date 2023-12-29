@@ -30,6 +30,7 @@ import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PagingVO;
+import com.shinhan.dto.PayVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.dto.ProimageVO;
 import com.shinhan.dto.SubVO;
@@ -38,7 +39,9 @@ import com.shinhan.model.CouponService;
 import com.shinhan.model.MemService;
 import com.shinhan.model.MenuService;
 import com.shinhan.model.OrderService;
+import com.shinhan.model.PayService;
 import com.shinhan.model.SubService;
+import com.shinhan.model.WalletService;
 import com.shinhan.model.YomoService;
 
 @Controller
@@ -59,6 +62,8 @@ public class AdminController {
 	CouponService couponService;
 	@Autowired
 	YomoService yservice;
+	@Autowired
+	WalletService wService;
 
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 
@@ -590,9 +595,16 @@ public class AdminController {
 	// 매출관리 페이지 연동 .. 수정예정
 	@GetMapping("adminSales.do")
 	public String adminSales(Model model) {
-		List<SubVO> sublist = subService.selectAll();
-		model.addAttribute("sublist", sublist);
+		List<PayVO> payList = wService.selectAllPay();
+		model.addAttribute("payList", payList);
 		return "admin/adminSales";
+	}
+	
+	@PostMapping("adminSales.do")
+	public String adminSalesDetail(Model model, PayVO pay) {
+		List<PayVO> payDetail = wService.selectPay(pay.getOrder_no());
+		model.addAttribute("payDetail", payDetail);
+		return "admin/adminSubDetail";
 	}
 	
 }

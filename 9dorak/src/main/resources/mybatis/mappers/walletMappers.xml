@@ -11,6 +11,11 @@
 	<select id="selectAllPay" resultType="payvo">
 		select * from pay
 	</select>
+	
+	<select id="selectPay" resultType="payvo">
+		select * from pay where order_no=#{order_no}
+	</select>
+	
 
 	<!-- 장바구니 목록 -->
 	<select id="getBasket" resultType="basketvo">
@@ -184,23 +189,6 @@
 		OD.ORDERDETAIL_COUNT,
 		P.PRO_NAME
 	</select>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	<insert id="insertOrder" parameterType="ordervo">
 		insert into orders values ( orders_seq.nextval, sysdate, #{order_price}, '주문 접수', '', #{mem_id})
