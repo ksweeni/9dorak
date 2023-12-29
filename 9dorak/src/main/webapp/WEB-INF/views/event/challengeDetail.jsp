@@ -177,7 +177,7 @@
 			id="mem_id"></input> <br> <div class="challenge_date">챌린지 등록날짜</div> <br> <input type="text"
 			value="${chall.challenge_date}" id="challenge_date"></input> <br>
 		<div class="likeCnt">좋아요</div> <br> <input type="text" value="${likeCnt}"
-			readonly="readonly" id="likeCnt"></input> <br> <div class="challenge_img">첨부사진</div> <br> <img
+			readonly="readonly" id="likeCnt"></input> <br> <br> <img
 			src="${cpath}/resources/upload/${chall.challenge_image}" /> <br>
 		<input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input>
 		<br>
