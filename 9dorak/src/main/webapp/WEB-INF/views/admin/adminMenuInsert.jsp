@@ -104,7 +104,7 @@
 								placeholder="메뉴중량 입력"></input>
 						</div>
 						<!--  -->
-						<div class="e3000_17">
+						<div class="e3000_99">
 							<b>카테고리</b> <br> <select name=ingre_name>
 								<option value="환경친화">환경친화</option>
 								<option value="저염">저염</option>
