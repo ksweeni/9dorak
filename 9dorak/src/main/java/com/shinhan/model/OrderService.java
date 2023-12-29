@@ -1,17 +1,9 @@
 package com.shinhan.model;
 
 import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.shinhan.dto.MemVO;
-import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.OrderVO;
-import com.shinhan.dto.OrderdetailVO;
-import com.shinhan.dto.ProVO;
-
 
 @Service
 public class OrderService {
@@ -26,8 +18,8 @@ public class OrderService {
 	public List<OrderVO> searchadminOrder(String mem_id) {
 		return dao.searchadminOrder(mem_id);
 	}
-
-	public OrderdetailVO selectByOrder(int order_no) {
+	
+	public List<OrderVO> selectByOrder(int order_no) {
 		return dao.selectByOrder(order_no);
 	}
 
