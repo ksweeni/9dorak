@@ -51,28 +51,32 @@
 				</caption>
 				<thead>
 					<tr>
-						<th>주문번호</th>
-						<th>주문날짜</th>
-						<th>주문가격</th>
-						<th>주문상태</th>
-						<th>주문환불여부</th>
-						<th>주문회원ID</th>
+						<th>주문고유번호</th>
+						<th>결제상태</th>
+						<th>결제날짜</th>
+						<th>결제방법</th>
+						<th>결제금액</th>
+						<th>입금자명</th>
+						<th>입금액</th>
+						<th>입금은행</th>
+						<th>영수증</th>
 					</tr>
 				</thead>
 				<tbody>
 
-					<!-- 
-					<c:forEach var="order" items="${orderlist}" varStatus="rowStatus">
+					<c:forEach var="pay" items="${payList}" varStatus="rowStatus">
 						<tr>
-							<td>${order.order_no}</td>
-							<td>${order.order_date}</td>
-							<td>${order.order_price}</td>
-							<td>${order.order_status}</td>
-							<td>${order.order_refund}</td>
-							<td>${order.mem_id}</td>
+							<td>${pay.order_no}</td>
+							<td>${pay.pay_status}</td>
+							<td>${pay.pay_date}</td>
+							<td>${pay.pay_method}</td>
+							<td>${pay.pay_price}</td>
+							<td>${pay.pay_depo}</td>
+							<td>${pay.pay_depoprice}</td>
+							<td>${pay.pay_depobank}</td>
+							<td>${pay.imp_uid}</td>
 						</tr>
 					</c:forEach>
-					 -->
 				</tbody>
 			</table>
 		</div>

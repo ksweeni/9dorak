@@ -576,30 +576,7 @@ public class AdminController {
 		return "redirect:/admin/adminMenu.do";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	// 매출관리 페이지 연동 .. 수정예정
+	// 매출관리
 	@GetMapping("adminSales.do")
 	public String adminSales(Model model) {
 		List<PayVO> payList = wService.selectAllPay();
