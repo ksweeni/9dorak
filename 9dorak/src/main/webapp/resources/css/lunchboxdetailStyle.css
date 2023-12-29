@@ -1574,11 +1574,14 @@ hr {
     position: relative;
     margin: 20px;
     padding: 20px;
-    border: 2px solid #f48e28;
     background-color: #f9f9f9;
-    width: 1000px;
+    width: 1200px;
     left: 50%;
     transform: translateX(-50%);
+    top: 30px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 800px;
 }
 
 /* 입력 필드 스타일 */
@@ -1588,25 +1591,16 @@ hr {
   margin-bottom: 10px;
 }
 
-.board input[type="text"]#challenge_cont {
-  width: 800px; /* 원하는 너비로 수정해주세요 */
-  height: 20px;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
-.board input[type="text"]#challenge_recipe {
-  width: 800px; /* 원하는 너비로 수정해주세요 */
-  height: 50px;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
 /* 이미지 스타일 */
 .board img {
   max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+    height: 550px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 550px;
+    position: relative;
+    top: -720px;
+    left: 30px;
 }
 
 /* 숨겨진 필드 스타일 */
@@ -1616,8 +1610,8 @@ hr {
 
 .button_two {
     position: relative;
-    top: 133px;
-    left: 610px;
+    top: -623px;
+    left: 650px;
 }
 .button1 {
     position: relative;
@@ -1629,7 +1623,7 @@ hr {
     font-size: 15px;
     color: #f38820;
     border: 2px solid #f38820;
-    border-radius: 60px;
+    border-radius: 30px;
     background-color: white;
     cursor: pointer;
 }
@@ -1642,7 +1636,7 @@ hr {
     font-size: 15px;
     color: #f38820;
     border: 2px solid #f38820;
-    border-radius: 60px;
+    border-radius: 30px;
     background-color: white;
     cursor: pointer;
 }
@@ -1650,12 +1644,90 @@ hr {
     position: relative;
     margin: 0 300px;
     width: 122px;
-    top: 18px;
+    top: -42px;
     height: 50px;
     font-size: 15px;
     color: #f38820;
     border: 2px solid #f38820;
-    border-radius: 60px;
+    border-radius: 30px;
     background-color: white;
     cursor: pointer;
+    left: 135px;
+}
+
+#challenge_name{
+	border: none;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 3rem;
+    font-weight: 700;
+    background-color: #f9f9f9;
+    color: #feae64;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 600px;
+}
+
+#challenge_cont,
+#challenge_recipe,
+#mem_id,
+#challenge_date,
+#likeCnt{
+	border: none;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    height: 30px;
+    font-size: 1.1rem;
+    width: 500px;
+    position: relative;
+    left: 650px;
+}
+
+#challenge_name:focus-visible{
+	outline: none;
+}
+#challenge_cont:focus-visible{
+	outline: none;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#mem_id:focus-visible{
+	outline: none;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#challenge_recipe:focus-visible{
+	outline: none;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#challenge_date:focus-visible{
+	outline: none;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#likeCnt:focus-visible{
+	outline: none;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.challenge_cont,
+.challenge_recipe,
+.mem_id,
+.challenge_date,
+.likeCnt{
+	color: #7A7A7A;
+    font-size: 1.1rem;
+    font-weight: 700;
+    position: relative;
+    left: 650px;
+}
+
+.board input[type="text"]#challenge_recipe {
+    height: 100px;
+}
+
+.cont{
+	position: relative;
+	top: -30px;
 }

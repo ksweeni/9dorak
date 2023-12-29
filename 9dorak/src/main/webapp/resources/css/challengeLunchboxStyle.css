@@ -906,3 +906,6 @@ hr {
 	margin-left: 15px;
     margin-top: 31px;
 }
+.container-default:focus-visible{
+	outline: none;
+}

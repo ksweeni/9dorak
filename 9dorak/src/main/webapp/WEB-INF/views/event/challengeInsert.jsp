@@ -113,13 +113,16 @@ String contextPath = request.getContextPath();
 							enctype="multipart/form-data">
 							<!-- 제목 -->
 							<div class="group">
-							<div class="text-wrapper-3">챌린지 글쓰기</div>
+								<div class="title">
+									<div class="text-wrapper-3">챌린지 글쓰기</div>
+									<div><img class="challengewrite" src="${cpath}/resources/images/event/challengewrite.png"/></div>
+								</div>
 								<div class="overlap-group-2">
 									<div class="input-wrapper">
 										<div class="input">
 											<div class="label-check-helper">
 												<div class="label-check">
-													<div class="text-wrapper">제목</div>
+													<div class="text-wrapper">챌린지</div>
 												</div>
 											</div>
 											<select class="container-default" name="challenge_name">
@@ -133,11 +136,11 @@ String contextPath = request.getContextPath();
 									<!-- 내용 -->
 									<div class="group-2">
 										<div class="input-2">
-											<div class="label-check-helper">
+											<!-- <div class="label-check-helper">
 												<div class="label-check">
 													<div class="text-wrapper">내용</div>
 												</div>
-											</div>
+											</div> -->
 											<textarea class="container-default-2" type="text"
 												name="challenge_cont" placeholder="본인이 참여한 내용을 자세히 적어주세요"></textarea>
 										</div>

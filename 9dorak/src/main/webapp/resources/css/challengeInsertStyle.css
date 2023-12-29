@@ -30,7 +30,7 @@
 	position: absolute;
 	width: 1200px;
 	height: 1038px;
-	top: 0;
+	top: 50px;
 	left: 0;
 }
 
@@ -41,11 +41,13 @@
 
 .div-wrapper .overlap-group-2 {
 	position: relative;
-	width: 1220px;
-	height: 1058px;
-	left: -5px;
-	background-image: url(./img/group-13.png);
-	background-size: 100% 100%;
+    width: 1220px;
+    height: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 5px solid #FFC670C3;
+    background: #FFF;
+    top: 20px;
+    border-radius: 20px;
 }
 
 .div-wrapper .input-wrapper {
@@ -89,8 +91,7 @@
 	position: relative;
 	flex: 1;
 	margin-top: -1.35px;
-	font-family: "Inter-Medium", Helvetica;
-	font-weight: 500;
+	font-weight: 600;
 	color: var(- -gray-3-cinza-3);
 	font-size: 21.6px;
 	letter-spacing: 0;
@@ -104,12 +105,14 @@
     display: flex;
     align-items: flex-start;
     gap: 10.8px;
-    padding: 10.8px;
+    padding: 15px;
     position: relative;
-    background-color: var(- -white-branco);
-    border-radius: 5.4px;
-    border: 2.7px solid;
-    border-color: #f38820;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    resize: none;
+    border: none;
+    height: 50px;
+    font-size: 1.1rem;
 }
 
 .div-wrapper .group-2 {
@@ -132,16 +135,18 @@
 
 .div-wrapper .container-default-2 {
 	width: 700px;
-	height: 186px;
-	display: flex;
-	align-items: flex-start;
-	gap: 10.8px;
-	padding: 10.8px;
-	position: relative;
-	background-color: var(- -white-branco);
-	border-radius: 5.4px;
-	border: 2.7px solid;
-	border-color: #f38820;
+    height: 250px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10.8px;
+    padding: 15px;
+    position: relative;
+    border-color: #f38820;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    resize: none;
+    border: none;
+    font-size: 1.1rem;
 }
 
 .div-wrapper .frame-wrapper {
@@ -193,7 +198,6 @@
 .div-wrapper .upload {
 	position: relative;
 	width: fit-content;
-	font-family: "Inter-Regular", Helvetica;
 	font-weight: 400;
 	color: #f38820;
 	font-size: 14px;
@@ -229,17 +233,18 @@
 
 .div-wrapper .container-default-3 {
 	display: flex;
-	width: 287px;
-	height: 30px;
-	align-items: flex-start;
-	gap: 10.8px;
-	padding: 10.8px 10.8px 0px;
-	position: relative;
-	background-color: var(- -white-branco);
-	border-radius: 5.4px;
-	overflow: hidden;
-	border: 2.7px solid;
-	border-color: #f38820;
+    width: 287px;
+    height: 30px;
+    align-items: flex-start;
+    gap: 10.8px;
+    padding: 10.8px 10.8px 0px;
+    position: relative;
+    overflow: hidden;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    resize: none;
+    border: none;
+    font-size: 1.1rem;
 }
 
 .div-wrapper .group-5 {
@@ -271,7 +276,6 @@
 	height: 33px;
 	top: 0;
 	left: 0;
-	font-family: "Open Sans-Regular", Helvetica;
 	font-weight: 400;
 	color: #333333;
 	font-size: 24px;
@@ -335,16 +339,15 @@
 
 .div-wrapper .text-wrapper-3 {
 	position: relative;
-	width: fit-content;
-	margin-top: -1px;
-	font-family: "Montserrat-SemiBold", Helvetica;
-	font-weight: 600;
-	color: #000000;
-	font-size: 30px;
-	letter-spacing: 0;
-	line-height: normal;
-	left: 241px;
-	top: 62px;
+    width: fit-content;
+    margin-top: -1px;
+    font-weight: 700;
+    color: #000000;
+    font-size: 3rem;
+    letter-spacing: 0;
+    line-height: normal;
+    top: 30px;
+    text-shadow: 8px 6px 5px lightgray;
 }
 
 .div-wrapper .line {
@@ -384,7 +387,6 @@
 	width: 375px;
 	top: 138px;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -485,7 +487,6 @@
 .div-wrapper .text-wrapper-4 {
 	top: 0;
 	left: 10px;
-	font-family: var(- -h4-font-family);
 	font-weight: var(- -h4-font-weight);
 	color: #000000;
 	font-size: var(- -h4-font-size);
@@ -507,7 +508,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -520,7 +520,6 @@
 	position: absolute;
 	top: 34px;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -533,7 +532,6 @@
 	position: absolute;
 	top: 68px;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -582,7 +580,6 @@
 	width: 177px;
 	top: 21px;
 	left: 21px;
-	font-family: var(- -p2-font-family);
 	font-weight: var(- -p2-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p2-font-size);
@@ -603,7 +600,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-family: var(- -h4-font-family);
 	font-weight: var(- -h4-font-weight);
 	color: #000000;
 	font-size: var(- -h4-font-size);
@@ -624,7 +620,6 @@
 	position: absolute;
 	top: 102px;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -637,7 +632,6 @@
 	position: absolute;
 	top: 136px;
 	left: 0;
-	font-family: var(- -p1-font-family);
 	font-weight: var(- -p1-font-weight);
 	color: var(- -gray);
 	font-size: var(- -p1-font-size);
@@ -685,7 +679,6 @@
 	width: fit-content;
 	margin-top: -1px;
 	text-shadow: 0px 4px 4px #00000040;
-	font-family: "Inter-Bold", Helvetica;
 	font-weight: 700;
 	color: #00a3ff;
 	font-size: 25px;
@@ -698,7 +691,6 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Inter-Bold", Helvetica;
 	font-weight: 700;
 	color: #797979;
 	font-size: 25px;
@@ -711,7 +703,6 @@
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;
-	font-family: "Inter-ExtraBold", Helvetica;
 	font-weight: 800;
 	color: #797979;
 	font-size: 25px;
@@ -748,7 +739,6 @@
 	color: #f38820;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	font-size: var(- -h5-font-size);
 	letter-spacing: var(- -h5-letter-spacing);
@@ -761,7 +751,6 @@
 	color: #000000;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	font-size: var(- -h5-font-size);
 	letter-spacing: var(- -h5-letter-spacing);
@@ -774,7 +763,6 @@
 	color: #000000;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	font-size: var(- -h5-font-size);
 	letter-spacing: var(- -h5-letter-spacing);
@@ -787,7 +775,6 @@
 	color: #000000;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	font-size: var(- -h5-font-size);
 	letter-spacing: var(- -h5-letter-spacing);
@@ -800,7 +787,6 @@
 	color: #000000;
 	position: absolute;
 	top: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	font-size: var(- -h5-font-size);
 	letter-spacing: var(- -h5-letter-spacing);
@@ -830,7 +816,6 @@
 	position: absolute;
 	top: 9px;
 	left: 0;
-	font-family: var(- -h5-font-family);
 	font-weight: var(- -h5-font-weight);
 	color: #000000;
 	font-size: var(- -h5-font-size);
@@ -877,7 +862,6 @@
 	position: absolute;
 	top: 0;
 	left: 18px;
-	font-family: var(- -p2-font-family);
 	font-weight: var(- -p2-font-weight);
 	color: var(- -white);
 	font-size: var(- -p2-font-size);
@@ -894,23 +878,30 @@
 
 .right-aligned-button {
 	position: relative;
-	margin: 0 500px;
-	width: 100px;
-	height: 50px;
-	font-size: 15px;
-	color: #f38820;
-	border: 2px solid #f38820;
-	border-radius: 50px;
-	background-color: white;
-	left: 124px;
+    margin: 0 500px;
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    color: #f38820;
+    border: 2px solid #f38820;
+    border-radius: 50px;
+    background-color: white;
+    top: -34px;
+    left: 130px;
 }
 
 .fileUpload {
-	padding: 6px 25px;
-	background-color: #f38820;
-	border-radius: 4px;
-	color: white;
-	cursor: pointer;
+	padding: 15px 25px;
+    cursor: pointer;
+    position: relative;
+    margin: 0 500px;
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    color: #f38820;
+    border: 2px solid #f38820;
+    border-radius: 50px;
+    background-color: white;
 }
 
 #event_menu {
@@ -957,4 +948,22 @@ hr {
     margin: 0 auto;
     height: 1px;
     border: 0;
+}
+
+.container-default,
+.container-default-2,
+.container-default-3{
+	    outline: none;
+}
+
+.challengewrite{
+	width: 100px;
+    height: 100px;
+    position: relative;
+    left: 15px;
+}
+
+.title{
+	position: relative;
+    display: flex;
 }
