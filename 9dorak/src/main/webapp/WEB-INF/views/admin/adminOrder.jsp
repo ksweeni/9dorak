@@ -62,6 +62,13 @@
 				</thead>
 				<tbody>
 
+
+
+
+
+
+
+
 					<c:forEach var="order" items="${orderlist}" varStatus="rowStatus">
 						<tr>
 							<td>${order.order_no}</td>
