@@ -16,7 +16,7 @@
 	background-color: rgba(254.2806226015091, 137.48113721609116, 29.666072130203247,
 		0.6100000143051147);
 	width: 214px;
-	height: 150%;
+	height: 300%;
 	position: absolute;
 	left: -1px;
 	top: 0px;
@@ -236,7 +236,7 @@
 .e2099_2486 {
 	background-color: rgba(255, 255, 255, 1);
 	width: 150%;
-	height: 150%;
+	height: 300%;
 	position: absolute;
 	left: 208px;
 	top: 43px;
@@ -327,9 +327,9 @@
 }
 
 .e2099_3000 {
-	position: relative;
-	left: 884px;
-	top: 86px;
+    position: relative;
+    left: 891px;
+    top: 782px;
 }
 
 .e3001 {
@@ -384,6 +384,10 @@
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
 
+.e3000_2 b {
+            color: gray; /* Change the text color to gray */
+}
+
 .e3003 {
 	position: relative;
 	left: -8px;
@@ -414,6 +418,10 @@
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
 
+.e3000_3 b {
+            color: gray; /* Change the text color to gray */
+}
+
 .e3000_4 {
 	position: relative;
 	left: 247px;
@@ -430,6 +438,10 @@
 
 .e3000_4 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+
+.e3000_4 b {
+            color: gray; /* Change the text color to gray */
 }
 
 .e3000_5 {
@@ -449,7 +461,9 @@
 .e3000_5 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-
+.e3000_5 b {
+            color: gray; /* Change the text color to gray */
+}
 .e3000_6 {
 	position: relative;
 	left: 496px;
@@ -466,6 +480,9 @@
 
 .e3000_6 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+.e3000_6 b {
+            color: gray; /* Change the text color to gray */
 }
 
 .e3000_7 {
@@ -484,6 +501,9 @@
 
 .e3000_7 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+.e3000_7 b {
+            color: gray; /* Change the text color to gray */
 }
 
 .e3000_8 {
@@ -509,6 +529,9 @@
 .e3000_9 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
+.e3000_9 b {
+            color: gray; /* Change the text color to gray */
+}
 
 .e3000_10 {
 	position: relative;
@@ -526,6 +549,9 @@
 
 .e3000_10 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+.e3000_10 b {
+            color: gray; /* Change the text color to gray */
 }
 
 .e3000_11 {
@@ -545,11 +571,14 @@
 .e3000_11 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
+.e3000_11 b {
+            color: gray; /* Change the text color to gray */
+}
 
 .e3000_12 {
-	position: relative;
-	left: 742px;
-	top: -227.7px;
+    position: relative;
+    left: 742px;
+    top: -228.7px;
 }
 
 .e3000_12 input {
@@ -562,6 +591,9 @@
 
 .e3000_12 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+.e3000_12 b {
+            color: gray; /* Change the text color to gray */
 }
 
 .e3000_13 {
@@ -581,6 +613,9 @@
 .e3000_13 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
+.e3000_13 b {
+            color: gray; /* Change the text color to gray */
+}
 
 .e3000_14 {
 	position: relative;
@@ -598,6 +633,9 @@
 
 .e3000_14 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+.e3000_14 b {
+            color: gray; /* Change the text color to gray */
 }
 
 .e3000_15 {
@@ -617,6 +655,9 @@
 .e3000_15 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
+.e3000_15 b {
+            color: gray; /* Change the text color to gray */
+}
 
 .e3000_16 {
 	position: relative;
@@ -634,6 +675,9 @@
 
 .e3000_16 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+.e3000_16 b {
+            color: gray; /* Change the text color to gray */
 }
 
 .e3000_17 {
@@ -659,6 +703,9 @@
 .e3000_18 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
+.e3000_18 b {
+            color: gray; /* Change the text color to gray */
+}
 
 .e3000_19 {
 	position: relative;
@@ -677,7 +724,9 @@
 .e3000_19 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
 }
-
+.e3000_19 b {
+            color: gray; /* Change the text color to gray */
+}
 .e3000_20 {
 	position: relative;
 	left: 496px;
@@ -694,6 +743,9 @@
 
 .e3000_20 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+.e3000_20 b {
+            color: gray; /* Change the text color to gray */
 }
 
 .e3000_21 {
@@ -712,6 +764,9 @@
 
 .e3000_21 input:hover {
 	border-color: orange; /* 마우스 호버 시 테두리 색상 변경 */
+}
+.e3000_21 b {
+            color: gray; /* Change the text color to gray */
 }
 
 .sales {
@@ -734,14 +789,20 @@
 	background-image: url(../images/admin/admin08.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	left: -11px;
-	top: -703px;
+	left: 1018px;
+	top: -1475px;
+}
+
+.e3000_30 {
+	position: relative;
+	left: 100px;
+	top: 748px;
 }
 
 .e3000_99 {
 	position: relative;
-	left: 28px;
-	top: -744px;
+	left: 1056px;
+	top: -1516px;
 	width: max-content;
 }
 
@@ -885,3 +946,63 @@ b#pro_sc {
 input#pro_sc {
 	margin-top: 5px;
 }
+.e3000_26 {
+    position: relative;
+    left: 934px;
+    top: -1516px;
+    width: 100px;
+    height: 1px;
+}
+.e3000_22 {
+	position: relative;
+	left: 100px;
+	top: 757px;
+}
+
+.e3000_23 {
+	position: relative;
+	left: 100px;
+	top: 778px;
+}
+
+.e3000_24 {
+	position: relative;
+	left: 100px;
+	top: 794px;
+}
+
+.e3000_25 {
+	position: relative;
+	left: 948px;
+	top: 478px;
+}
+
+.btn-upload {
+  width: 150px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid rgb(77,77,77);
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background: #ff9900;
+    color: #fff;
+  }
+}
+
+ .e3000_30 input[type="file"] {
+        display: none;
+    }
+ .e3000_22 input[type="file"] {
+        display: none;
+    }
+ .e3000_23 input[type="file"] {
+        display: none;
+    }
+ .e3000_24 input[type="file"] {
+        display: none;
+    }
