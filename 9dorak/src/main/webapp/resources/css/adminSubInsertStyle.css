@@ -249,7 +249,7 @@
     position: relative;
     left: 103px;
     top: 43px;
-    width: 2px;
+    width: 100px;
     height: 2px;
 }
 
@@ -268,7 +268,7 @@
 	width: 205px;
 	height: 100px;
 	left: 0%;
-	margin-top: 50%;
+	margin-top: 650px;
 	/* bottom: 100%; */
 	/* border: solid 1px black; */
 }
@@ -324,7 +324,7 @@
 	margin-right: 15px;
 	cursor: pointer;
 	left: 82px;
-	top: 79px;
+	top: 200px;
 	width: fit-content;
 	height: 40px;
 }
@@ -346,4 +346,4 @@
 	font-size: 16px;
 	letter-spacing: 2;
 	cursor: pointer;
-}s
+}
