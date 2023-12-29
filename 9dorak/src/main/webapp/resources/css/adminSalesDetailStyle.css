@@ -1,0 +1,360 @@
+@charset "UTF-8";
+
+.2099_2373 {
+	overflow: hidden;
+}
+
+.e2099_2373 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.e2099_2463 {
+	background-color: rgba(254.2806226015091, 137.48113721609116, 29.666072130203247,
+		0.6100000143051147);
+	width: 214px;
+	height: 150%;
+	position: absolute;
+	left: -1px;
+	top: 0px;
+}
+
+.e2099_2467 {
+	width: 114px;
+	height: 34px;
+	position: absolute;
+	left: 50px;
+	top: 31px;
+	background-image: url(../images/admin/admin01.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.e2099_2469 {
+	color: rgba(255, 255, 255, 1);
+	width: max-content;
+	height: 16px;
+	position: absolute;
+	left: 80px;
+	top: 200px;
+	/* font-family: Poppins; */
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2;
+	cursor: pointer;
+}
+
+.e2101_2491 {
+	transform: rotate(89.9999998114392deg);
+	width: 16px;
+	height: 1px;
+	left: 112px;
+	top: -14px;
+	background-image: url(../images/admin/admin03.png);
+	position: relative;
+}
+
+.2101_2491 {
+	border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.e2099_2477 {
+	position: relative;
+	color: rgba(255, 255, 255, 1);
+	width: 51px;
+	height: 16px;
+	left: 73px;
+	top: -4px;
+	/* font-family: Poppins; */
+	text-align: center;
+	font-size: 15px;
+	letter-spacing: 2;
+	cursor: pointer;
+}
+
+.e2099_2478 {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	left: 25px;
+	top: 25px;
+	/* border: solid 1px black; */
+	background-image: url(../images/admin/admin02.png);
+}
+
+.e2099_2470 {
+	color: rgba(255, 255, 255, 1);
+	width: max-content;
+	height: 16px;
+	position: absolute;
+	left: 80px;
+	top: 266px;
+	/* font-family: Poppins; */
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2;
+	cursor: pointer;
+}
+
+.e2099_2472 {
+	color: rgba(255, 255, 255, 1);
+	width: max-content;
+	height: 16px;
+	position: absolute;
+	left: 80px;
+	top: 331px;
+	/* font-family: Poppins; */
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2;
+	cursor: pointer;
+}
+
+.e2099_2473 {
+	color: rgba(255, 255, 255, 1);
+	width: max-content;
+	height: 16px;
+	position: absolute;
+	left: 74px;
+	top: 396px;
+	/* font-family: Poppins; */
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2;
+	cursor: pointer;
+}
+
+.e2099_2474 {
+	color: rgba(255, 255, 255, 1);
+	width: max-content;
+	height: 16px;
+	position: absolute;
+	left: 74px;
+	top: 461px;
+	/* font-family: Poppins; */
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2;
+	cursor: pointer;
+}
+
+.e2099_2475 {
+	color: rgba(255, 255, 255, 1);
+	width: 124px;
+	height: 16px;
+	position: absolute;
+	left: 45px;
+	top: 526px;
+	/* font-family: Poppins; */
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2;
+	cursor: pointer;
+}
+
+.e2101_2490 {
+	color: rgba(255, 255, 255, 1);
+	width: 62px;
+	height: 16px;
+	left: 129px;
+	top: -24px;
+	/* font-family: Poppins; */
+	text-align: center;
+	font-size: 15px;
+	letter-spacing: 2;
+	cursor: pointer;
+	position: relative;
+	text-decoration: none;
+}
+
+.e2099_2471 {
+	transform: rotate(0deg);
+	width: 142.0093536376953px;
+	height: 0px;
+	position: absolute;
+	left: 0px;
+	top: 84px;
+}
+
+.2099_2471 {
+	border: 1px solid
+		rgba(213.90561550855637, 212.12307035923004, 212.12307035923004, 1);
+}
+
+.2099_2476 {
+	border: 1px solid
+		rgba(213.90561550855637, 212.12307035923004, 212.12307035923004, 1);
+}
+
+.e2099_2476 {
+	width: 214.00001525878906px;
+	height: 0px;
+	/* position: absolute; */
+	left: -1px;
+	top: 854px;
+}
+
+.e2099_2483 {
+    background-color: rgba(254.9889501929283, 133.50080519914627, 65.16375213861465, 1);
+    width: 142px;
+    height: 36px;
+    position: absolute;
+    left: 35px;
+    top: 580px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.e2099_2468 {
+	color: rgba(255, 255, 255, 1);
+	width: max-content;
+	height: 16px;
+	position: absolute;
+	left: 80px;
+	top: 136px;
+	/* font-family: Poppins; */
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2;
+	cursor: pointer;
+}
+
+.e2099_2485 {
+	background-color: rgba(254.00000005960464, 183.00000429153442, 117.00000062584877, 1);
+	width: 150%;
+	height: 52px;
+	position: absolute;
+	left: 203px;
+	top: 0px;
+}
+
+.e2099_2486 {
+	background-color: rgba(255, 255, 255, 1);
+	width: 150%;
+	height: 150%;
+	position: absolute;
+	left: 208px;
+	top: 43px;
+	border-radius: Symbol(figma.mixed) px;
+	border-radius: 20px 0 0 0;
+}
+
+.e2099_2487 {
+    position: relative;
+    left: 103px;
+    top: 43px;
+    width: 2px;
+    height: 2px;
+}
+
+.e2099_2471 hr {
+	border-color: white; /* 회색 색상 */
+	width: 240px; /* 원하는 너비 */
+}
+
+.e2099_2476 hr {
+	border-color: white; /* 회색 색상 */
+	width: 240px; /* 원하는 너비 */
+}
+
+.admin_login {
+	position: absolute;
+	width: 205px;
+	height: 100px;
+	left: 0%;
+	margin-top: 650px;
+	/* bottom: 100%; */
+	/* border: solid 1px black; */
+}
+
+.e2099_2490 {
+    position: relative;
+    left: -23px;
+    width: 202px;
+    top: 69px;
+    border: solid 1px rgba(244, 140, 40, 1);
+    pa-left: 11px;
+    padding: 5px 20px 20px 20px;
+}
+
+.e2099_2491 {
+    position: relative;
+    left: 289px;
+    width: 202px;
+    top: -530px;
+    border: solid 1px rgba(244, 140, 40, 1);
+    pa-left: 11px;
+    padding: 5px 20px 20px 20px;
+}
+
+.e2099_2492 {
+    position: relative;
+    left: 601px;
+    width: 202px;
+    top: -873px;
+    border: solid 1px rgba(244, 140, 40, 1);
+    pa-left: 11px;
+    padding: 5px 20px 20px 20px;
+}
+
+.update_mem, .delete_mem {
+	border: 2px solid orange;
+	background-color: white;
+	border-radius: 10px;
+	font-size: 16px;
+    margin-right: 15px;
+	cursor: pointer;
+    width: 80px;
+    height: 40px;
+}
+.e2099_3000 {
+    position: relative;
+    left: 75px;
+    top: 78px;
+}
+
+.sales {
+	color: rgba(255, 255, 255, 1);
+	width: max-content;
+	height: 16px;
+	position: absolute;
+	left: 80px;
+	top: 590px;
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2;
+	cursor: pointer;
+}
+.e2099_3000{
+	position: relative;
+    left: 460px;
+    top: 490px;
+}
+.update_sub {
+	border: 2px solid rgba(255, 255, 255, 1);
+    background-color: #f48e28;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    margin-right: 15px;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+}
+
+.delete_sub {
+	border: 2px solid rgb(255, 255, 255);
+    background-color: #cc0000;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    margin-right: 15px;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+}

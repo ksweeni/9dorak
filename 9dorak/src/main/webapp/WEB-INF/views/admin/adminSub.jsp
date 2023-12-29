@@ -322,13 +322,9 @@
 	$setRows.submit();
 
 	$(document).ready(function() {
-		// 테이블의 각 행을 클릭했을 때 이벤트 핸들러
 		$('#products tbody').on('click', 'tr', function() {
-			// 클릭한 행의 메뉴 번호 가져오기
 			var sub_no = $(this).find('td:first').text();
-			console.log(sub_no);
 
-			// Ajax 호출
 			$.ajax({
 				type : 'POST',
 				url : '${cpath}/admin/adminSub.do',
@@ -336,7 +332,6 @@
 					sub_no : sub_no
 				},
 				success : function(response) {
-					// 서버에서의 응답 처리
 					$("body").html(response);
 					console.log(sub_no, "넘어오기 성공!");
 				},

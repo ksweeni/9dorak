@@ -271,7 +271,7 @@
 	            data: { order_no: order_no },
 	            success: function (response) {
 	                $("body").html(response);
-	                console.log(order_no);
+	                console.log(order_no, "넘어오기 성공");
 	            },
 	            error: function (error) {
 	                console.error('Error:', error);
