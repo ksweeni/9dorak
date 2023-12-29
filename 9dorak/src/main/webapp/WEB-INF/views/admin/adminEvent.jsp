@@ -21,7 +21,7 @@
 	<div class=e2099_2373>
 		<div class="e2099_2463"></div>
 		<div class="e2099_2467"></div>
-	
+
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
@@ -67,8 +67,7 @@
 								href="${cpath}/admin/adminEventDetail.do?challenge_no=${chall.challenge_no}">${chall.challenge_name}</a></td>
 							<td>${chall.challenge_cont}</td>
 							<td>${chall.challenge_date}</td>
-							<td>
-								${fn:substring(chall.challenge_recipe, 0, 20)} <c:if
+							<td>${fn:substring(chall.challenge_recipe, 0, 20)}<c:if
 									test="${fn:length(chall.challenge_recipe) > 20}">
 									<a
 										href="${cpath}/admin/adminEventDetail.do?challenge_no=${chall.challenge_no}">더
@@ -81,104 +80,133 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			
-			<div class="graph-wrapper" style="    left: 5%;
-    border-radius: 20px;
-    background: #FFF;
-    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.08);
-    top: 15rem;
-    position: relative;
-    width: 960px;
-    height: 345px;">수인이의 그래프래퍼
+
+			<div class="graph-wrapper"
+				style="left: 5%; border-radius: 20px; background: #FFF; box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.08); top: 15rem; position: relative; width: 960px; height: 345px;">
+				수인이의 그래프래퍼
+				<canvas id="myChart" width="400" height="400"></canvas>
+				<a href="${cpath}/admin/adminGraph.do">그래프로 이동하기</a>
+
 			</div>
+		
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
-	$(".e2099_2468").on("click", function() {
-		$.ajax({
+	$(".e2099_2468")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMenu.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMenu.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2469").on("click", function() {
-		$.ajax({
+	$(".e2099_2469")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminMember.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminMember.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2470").on("click", function() {
-		$.ajax({
+	$(".e2099_2470")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminOrder.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminOrder.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2472").on("click", function() {
-		$.ajax({
+	$(".e2099_2472")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminSub.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminSub.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2473").on("click", function() {
-		$.ajax({
+	$(".e2099_2473")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminNotice.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminNotice.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
+								})
+					})
 
-	$(".e2099_2475").on("click", function() {
-		$.ajax({
+	$(".e2099_2475")
+			.on(
+					"click",
+					function() {
+						$
+								.ajax({
 
-			url : "${cpath}/admin/adminPoint.do",
-			type : "get",
-			success : function(res) {
-				var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
-				$('link[href="' + oldCssFilePath + '"]').remove();
-				$("body").html(res);
-			}
+									url : "${cpath}/admin/adminPoint.do",
+									type : "get",
+									success : function(res) {
+										var oldCssFilePath = "${cpath}/resources/css/adminEventStyle.css?d";
+										$('link[href="' + oldCssFilePath + '"]')
+												.remove();
+										$("body").html(res);
+									}
 
-		})
-	})
-	
+								})
+					})
+
 	$(".sales").on("click", function() {
 		$.ajax({
 
