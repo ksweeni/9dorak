@@ -336,15 +336,19 @@
 											<div id="proname"
 												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배터지9A</div>
 										</c:when>
-										<c:otherwise>
+										<c:when test="${not empty sub19bllist}">
 											<div id="proname"
 												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배터지9B</div>
+										</c:when>
+										<!-- 장바구니에서 선택 안하고 주문 눌렀을 때 -->
+										<c:otherwise>
+											<div id="proname"
+												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">나는뭘까?</div>
 										</c:otherwise>
 									</c:choose>
 
 									<table style="bottom: 40px; position: relative; left: 14px;">
 										<tr>
-
 											<th>상품명</th>
 											<th>상품수량</th>
 										</tr>
@@ -545,8 +549,7 @@
 			</footer>
 		</div>
 	</div>
-
-
+	<!-- modal -->
 	<div id="myModal-" class="delmodal">
 		<div class="modal-content">
 			<span class="close">&times;</span> <br />
@@ -576,15 +579,12 @@
 			</c:forEach>
 		</div>
 	</div>
-
 	<div id="successModal" class="modal">
 		<p>결제가 성공하였습니다.</p>
 		<button onclick="closeModal()">홈으로 이동하기</button>
 	</div>
 </body>
-
 <script type="text/javascript">
-//로그인 여부 확인
 function loginBasket() {
 	var mem_id = "${sessionScope.loginmem.mem_id}";
 	
@@ -631,10 +631,6 @@ function lightsOn() {
 	document.querySelector("#lightsParent").append(lights);
 	console.log("장바구니 가득 차서 불 켜짐!");
 }
-
-
-
-
 
 var IMP = window.IMP;
 IMP.init("imp40668838"); // 내 가맹점 식별 코드
