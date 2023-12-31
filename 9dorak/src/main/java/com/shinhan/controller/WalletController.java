@@ -42,14 +42,13 @@ public class WalletController {
 
 	@Autowired
 	MyPageService mService;
-	
+
 	@Autowired
 	SubService subService;
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
-	
-	
-	// 주문하기 수정 필요
+
+	// 결제
 	@GetMapping("pay.do")
 	public String pay(Model model, HttpSession session) {
 		List<PayVO> plist = wService.selectAllPay();
@@ -62,7 +61,7 @@ public class WalletController {
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
 		int order_no = wService.selectOrderNum();
 		List<OrderVO> olist = wService.getOrderList(order_no);
-		
+
 		System.out.println(olist);
 		int total = 0;
 		for (OrderVO or : olist) {
@@ -79,84 +78,59 @@ public class WalletController {
 		return "wallet/pay";
 	}
 
-	
-	
 	// 주문, 주문 디테일 테이블 data insert
-		@PostMapping("insertOrder.do")
-		@ResponseBody
-		public Map<String, Object> insertOrder(@RequestBody OrderVO order, HttpServletRequest request) {
-			Map<String, Object> response = new HashMap<>();
-			int resultOrder = wService.insertOrder(order);
-			int order_no = wService.selectOrderNum();   
-			
-			if (resultOrder > 0) {
-					response.put("success", true);
-					response.put("message", "Order added successfully.");
-					response.put("order_no", order_no);
-				} else {
-					response.put("success", false);
-					response.put("message", "Failed to add order.");
-				}
-				return response;
-		}
-	
-		@PostMapping("insertOrderDetail.do")
-		@ResponseBody
-		public Map<String, Object> insertOrderDetail(@RequestBody OrderdetailVO orderDetail, HttpServletRequest request) {
-			Map<String, Object> response = new HashMap<>();
-			
-			int resultOrderDetail = wService.insertOrderDetail(orderDetail);
-			    
-			    if (resultOrderDetail > 0) {
-					response.put("success", true);
-					response.put("message", "OrderDetail added successfully.");
-				} else {
-					response.put("success", false);
-					response.put("message", "Failed to add orderDetail.");
-				}
-				return response;
-		}
-		
+	@PostMapping("insertOrder.do")
+	@ResponseBody
+	public Map<String, Object> insertOrder(@RequestBody OrderVO order, HttpServletRequest request) {
+		Map<String, Object> response = new HashMap<>();
+		int resultOrder = wService.insertOrder(order);
+		int order_no = wService.selectOrderNum();
 
-		
-		
-
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		// 장바구니 삭제
-		@PostMapping("deleteBasket.do")
-		@ResponseBody
-		public Map<String, Object> deleteBasket(@RequestBody BasketVO basket) {
-		    Map<String, Object> response = new HashMap<>();
-		    
-		    System.out.println(basket);
-		    int result = wService.deleteBasket(basket);
-		    System.out.println(basket);
-		    
-		    if (result > 0) {
-		        response.put("success", true);
-		    } else {
-		        response.put("success", false);
-		    }
-		    return response;
+		if (resultOrder > 0) {
+			response.put("success", true);
+			response.put("message", "Order added successfully.");
+			response.put("order_no", order_no);
+		} else {
+			response.put("success", false);
+			response.put("message", "Failed to add order.");
 		}
+		return response;
+	}
+
+	@PostMapping("insertOrderDetail.do")
+	@ResponseBody
+	public Map<String, Object> insertOrderDetail(@RequestBody OrderdetailVO orderDetail, HttpServletRequest request) {
+		Map<String, Object> response = new HashMap<>();
+
+		int resultOrderDetail = wService.insertOrderDetail(orderDetail);
+
+		if (resultOrderDetail > 0) {
+			response.put("success", true);
+			response.put("message", "OrderDetail added successfully.");
+		} else {
+			response.put("success", false);
+			response.put("message", "Failed to add orderDetail.");
+		}
+		return response;
+	}
+
+	// 장바구니 삭제
+	@PostMapping("deleteBasket.do")
+	@ResponseBody
+	public Map<String, Object> deleteBasket(@RequestBody BasketVO basket) {
+		Map<String, Object> response = new HashMap<>();
+
+		System.out.println(basket);
+		int result = wService.deleteBasket(basket);
+		System.out.println(basket);
+
+		if (result > 0) {
+			response.put("success", true);
+		} else {
+			response.put("success", false);
+		}
+		return response;
+	}
 
 	// 장바구니 수량 변경
 	@PostMapping("updateBasket.do")
@@ -181,9 +155,9 @@ public class WalletController {
 		MemVO member = wService.checkMember(loginmem.getMem_id());
 		List<BasketVO> blist = wService.emptyBasket(loginmem.getMem_id());
 		List<PeopleVO> people = wService.peopleCheck(loginmem.getMem_id());
-		
+
 		List<Map<String, Object>> basket;
-		
+
 		if (people == null || people.isEmpty()) {
 			basket = wService.noPeopleBasket(loginmem.getMem_id());
 			System.out.println(basket);
@@ -243,79 +217,79 @@ public class WalletController {
 		}
 		return response;
 	}
-	
+
 	@GetMapping("free.do")
 	public String freelunchbox(Model model) {
 		List<ProVO> freelist = eService.selectFreeAll();
 		model.addAttribute("freelist", freelist);
 		return "wallet/pay";
 	}
-	
+
 	@GetMapping("sub9a.do")
-	public String sub9a(Model model , HttpSession session) {
+	public String sub9a(Model model, HttpSession session) {
 		List<ProVO> sub9allist = subService.selectAllSub9A();
-		if((MemVO)session.getAttribute("loginmem") ==null ) {
+		if ((MemVO) session.getAttribute("loginmem") == null) {
 			return "redirect:/login/loginForm.do";
 		}
-		MemVO mem = (MemVO)session.getAttribute("loginmem");
+		MemVO mem = (MemVO) session.getAttribute("loginmem");
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
 		model.addAttribute("sub9allist", sub9allist);
-		model.addAttribute("total",59000);
-		model.addAttribute("mem",mem);
-		model.addAttribute("clist",clist);
-		model.addAttribute("dlist",dlist);
+		model.addAttribute("total", 59000);
+		model.addAttribute("mem", mem);
+		model.addAttribute("clist", clist);
+		model.addAttribute("dlist", dlist);
 		return "wallet/pay";
 	}
-	
+
 	@GetMapping("sub9b.do")
-	public String sub9b(Model model , HttpSession session) {
+	public String sub9b(Model model, HttpSession session) {
 		List<ProVO> sub9bllist = subService.selectAllSub9B();
-		if((MemVO)session.getAttribute("loginmem") ==null ) {
+		if ((MemVO) session.getAttribute("loginmem") == null) {
 			return "redirect:/login/loginForm.do";
 		}
-		MemVO mem = (MemVO)session.getAttribute("loginmem");
+		MemVO mem = (MemVO) session.getAttribute("loginmem");
 		model.addAttribute("sub9bllist", sub9bllist);
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
-		model.addAttribute("total",59000);
-		model.addAttribute("mem",mem);
-		model.addAttribute("clist",clist);
-		model.addAttribute("dlist",dlist);
+		model.addAttribute("total", 59000);
+		model.addAttribute("mem", mem);
+		model.addAttribute("clist", clist);
+		model.addAttribute("dlist", dlist);
 		return "wallet/pay";
 	}
-	
+
 	@GetMapping("sub19a.do")
-	public String sub19a(Model model,HttpSession session) {
-		if((MemVO)session.getAttribute("loginmem") ==null ) {
+	public String sub19a(Model model, HttpSession session) {
+		if ((MemVO) session.getAttribute("loginmem") == null) {
 			return "redirect:/login/loginForm.do";
 		}
-		MemVO mem = (MemVO)session.getAttribute("loginmem");
+		MemVO mem = (MemVO) session.getAttribute("loginmem");
 		List<ProVO> sub19allist = subService.selectAllSub19A();
 		model.addAttribute("sub19allist", sub19allist);
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
-		model.addAttribute("total",99999);
-		model.addAttribute("mem",mem);
-		model.addAttribute("clist",clist);
-		model.addAttribute("dlist",dlist);
+		model.addAttribute("total", 99000);
+		model.addAttribute("mem", mem);
+		model.addAttribute("clist", clist);
+		model.addAttribute("dlist", dlist);
 		return "wallet/pay";
 	}
-	
+
 	@GetMapping("sub19b.do")
-	public String sub19b(Model model,HttpSession session) {
-		if((MemVO)session.getAttribute("loginmem") ==null ) {
+	public String sub19b(Model model, HttpSession session) {
+		if ((MemVO) session.getAttribute("loginmem") == null) {
 			return "redirect:/login/loginForm.do";
 		}
-		MemVO mem = (MemVO)session.getAttribute("loginmem");
+		MemVO mem = (MemVO) session.getAttribute("loginmem");
 		List<ProVO> sub19bllist = subService.selectAllSub19B();
 		model.addAttribute("sub19bllist", sub19bllist);
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
-		model.addAttribute("total",99999);
-		model.addAttribute("mem",mem);
-		model.addAttribute("clist",clist);
-		model.addAttribute("dlist",dlist);
+		model.addAttribute("total", 99000);
+		model.addAttribute("mem", mem);
+		model.addAttribute("clist", clist);
+		model.addAttribute("dlist", dlist);
 		return "wallet/pay";
 	}
 }

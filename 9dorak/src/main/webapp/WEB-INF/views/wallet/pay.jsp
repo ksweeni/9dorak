@@ -111,7 +111,7 @@
 											<div class="div-wrapper">
 												<div class="frame-3">
 													<c:choose>
-														<c:when test="${empty dlist }">
+														<c:when test="${empty dlist}">
 															<span id="regnodel">등록된 배송지가 없습니다.</span>
 
 
@@ -137,10 +137,10 @@
 
 
 														</c:when>
-														<c:when test="${not empty dlist }">
+														<c:when test="${not empty dlist}">
 															배송지명 : <input type="text" id="mem_delname" class="changi"
 																readonly="readonly" placeholder="배송지명"
-																value="${dlist[0].mem_delname }">
+																value="${dlist[0].mem_delname}">
 															<br> 우편번호 : <input type="text" id="sample4_postcode"
 																class="changi" placeholder="우편번호"
 																value="${dlist[0].mem_zipcode}" readonly="readonly" />
@@ -172,7 +172,7 @@
 												</div>
 											</div>
 											<c:choose>
-												<c:when test="${not empty dlist }">
+												<c:when test="${not empty dlist}">
 													<div class="my-del-button">
 														<button class="my-del">나의 배송지 확인</button>
 													</div>
@@ -197,10 +197,10 @@
 							<div class="overlap-group-wrapper">
 								<div class="overlap-group">
 									<c:choose>
-										<c:when test="${clist.size() !=0 }">
+										<c:when test="${clist.size()!=0}">
 											<div class="text-wrapper-5" id="coupon">보유 쿠폰 확인하기</div>
 										</c:when>
-										<c:when test="${clist.size() ==0 }">
+										<c:when test="${clist.size()==0}">
 											<div class="text-wrapper-5">보유한 쿠폰이 없습니다.</div>
 										</c:when>
 									</c:choose>
@@ -212,7 +212,7 @@
 					<div class="points">
 						<p class="p">
 							<span class="span">보유 포인트 </span>
-							<span class="text-wrapper-3" id="mypoint">${mem.mem_point }
+							<span class="text-wrapper-3" id="mypoint">${mem.mem_point}
 								P</span>
 						</p>
 						<div class="group-2">
@@ -243,10 +243,10 @@
 									<c:when test="${not empty olist}">
 										<span id="">${olist.size()}</span>
 									</c:when>
-									<c:when test="${not empty sub9allist }">
+									<c:when test="${not empty sub9allist}">
 										<span id="pro_count">9</span>
 									</c:when>
-									<c:when test="${not empty sub9bllist }">
+									<c:when test="${not empty sub9bllist}">
 										<span id="pro_count">9</span>
 									</c:when>
 									<c:otherwise>
@@ -283,7 +283,7 @@
 								<div class="text-wrapper-11"
 									style="position: relative; bottom: 39px; left: 60px;">주문
 									금액</div>
-								<div class="text-wrapper-11" style="right: 15px; bottom: 17px">${total }
+								<div class="text-wrapper-11" style="right: 15px; bottom: 17px">${total}
 									원</div>
 							</div>
 							<div class="group-3">
@@ -303,7 +303,7 @@
 							<div class="group-4">
 								<div class="frame-10">
 									<div class="text-wrapper-15">총 결제금액</div>
-									<div class="text-wrapper-15" id="lastTotal">${total }원</div>
+									<div class="text-wrapper-15" id="lastTotal">${total}원</div>
 								</div>
 								<div class="group-5">
 									<p class="element-p">
@@ -315,7 +315,7 @@
 								</div>
 							</div>
 							<img class="line"
-								src="${cpath }/resources/images/wallet/Line9.png" />
+								src="${cpath}/resources/images/wallet/Line9.png" />
 						</c:when>
 						<c:otherwise>
 							<!-- 주문 목록이 없는 경우 -->
@@ -324,15 +324,15 @@
 								<div class="text-wrapper-11">
 
 									<c:choose>
-										<c:when test="${not empty sub9allist }">
+										<c:when test="${not empty sub9allist}">
 											<div id="proname"
 												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배부르9A</div>
 										</c:when>
-										<c:when test="${not empty sub9bllist }">
+										<c:when test="${not empty sub9bllist}">
 											<div id="proname"
 												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배부르9B</div>
 										</c:when>
-										<c:when test="${not empty sub19allist }">
+										<c:when test="${not empty sub19allist}">
 											<div id="proname"
 												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배터지9A</div>
 										</c:when>
@@ -368,19 +368,19 @@
 												<input type="hidden" id="subType" value="109" />
 											</c:when>
 											<c:when test="${not empty sub19allist}">
-												<c:forEach items="${sub19allist}" var="sub">
+												<c:forEach items="${sub19allist}" var="sub" varStatus="status">
 													<tr style="text-align: center;">
 														<td>${sub.pro_name}</td>
-														<td>x3</td>
+														<td>${status.index==0?'x4':'x3'}</td>
 													</tr>
 												</c:forEach>
 												<input type="hidden" id="subType" value="119" />
 											</c:when>
 											<c:otherwise>
-												<c:forEach items="${sub19bllist}" var="sub">
+												<c:forEach items="${sub19bllist}" var="sub" varStatus="status">
 													<tr style="text-align: center;">
 														<td>${sub.pro_name}</td>
-														<td>x3</td>
+														<td>${status.index==0?'x4':'x3'}</td>
 													</tr>
 												</c:forEach>
 												<input type="hidden" id="subType" value="119" />
@@ -397,7 +397,7 @@
 										<!-- 배부르구 결제부분 -->
 										<div style="top: 20px; position: relative; left: 80px;">주문
 											금액</div>
-										<div style="top: 1px; position: relative; left: 303px;">${total }원</div>
+										<div style="top: 1px; position: relative; left: 303px;">${total}원</div>
 										<div class="frame-10">
 											<div class="text-wrapper-11"></div>
 											<div class="text-wrapper-12" style="position: absolute;">쿠폰</div>
@@ -410,11 +410,11 @@
 									</div>
 									<button class="frame-12" onclick="requestPay()">결제하기</button>
 									<img class="line"
-										src="${cpath }/resources/images/wallet/Line9.png" />
+										src="${cpath}/resources/images/wallet/Line9.png" />
 									<div class="group-4">
 										<div class="frame-10">
 											<div class="text-wrapper-15">총 결제금액</div>
-											<div class="text-wrapper-15" id="lastTotal">${total }원</div>
+											<div class="text-wrapper-15" id="lastTotal">${total}원</div>
 										</div>
 										<div class="group-5">
 											<p class="element-p">
@@ -422,11 +422,11 @@
 													class="text-wrapper-3">P</span>
 											</p>
 											<img class="white-question-mark"
-												src="${cpath }/resources/images/wallet/White question mark.png" />
+												src="${cpath}/resources/images/wallet/White question mark.png" />
 										</div>
 									</div>
 									<img class="img"
-										src="${cpath }/resources/images/wallet/Line9.png" />
+										src="${cpath}/resources/images/wallet/Line9.png" />
 								</c:when>
 								<c:otherwise>
 									<div class="group-3">
@@ -434,7 +434,7 @@
 										<!-- 배터지구 결제부분 -->
 										<div style="top: 72px; position: relative; left: 80px;">주문
 											금액</div>
-										<div style="top: 52px; position: relative; left: 303px;">${total }원</div>
+										<div style="top: 52px; position: relative; left: 303px;">${total}원</div>
 										<div class="frame-10">
 											<div class="text-wrapper-11"></div>
 											<div class="text-wrapper-12" style="position: absolute; top: 115px">쿠폰</div>
@@ -448,11 +448,11 @@
 									</div>
 									<button class="frame-12" onclick="requestPay()">결제하기</button>
 									<img class="line"
-										src="${cpath }/resources/images/wallet/Line9.png" style="top: 332px" />
+										src="${cpath}/resources/images/wallet/Line9.png" style="top: 332px" />
 									<div class="group-4">
 										<div class="frame-10">
 											<div class="text-wrapper-15">총 결제금액</div>
-											<div class="text-wrapper-15" id="lastTotal">${total }</div>
+											<div class="text-wrapper-15" id="lastTotal">${total}</div>
 											<div class="text-wrapper-15">원</div>
 										</div>
 										<div class="group-5">
@@ -463,7 +463,7 @@
 										</div>
 									</div>
 									<img class="img"
-										src="${cpath }/resources/images/wallet/Line9.png" style="position: 
+										src="${cpath}/resources/images/wallet/Line9.png" style="position: 
 										relative; top: 260px;
 										"/>
 								</c:otherwise>
