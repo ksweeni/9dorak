@@ -39,7 +39,7 @@
 				<div class="total-info">
 					<div class="total-title">Revenue</div>
 					<div class="total-size">
-						90000원
+						${orderTotal}원
 						<svg xmlns="http://www.w3.org/2000/svg" width="85" height="41"
 							viewBox="0 0 85 41" fill="none">
 						<g filter="url(#filter0_d_2287_3144)">
@@ -73,7 +73,7 @@
 				<div class="total-info">
 					<div class="total-title">Orders</div>
 					<div class="total-size">
-						9000건
+						${orderCnt }건
 						<svg xmlns="http://www.w3.org/2000/svg" width="85" height="41"
 							viewBox="0 0 85 41" fill="none">
 						<g filter="url(#filter0_d_2287_3132)">
@@ -105,7 +105,7 @@
 				<div class="total-info">
 					<div class="total-title">Member</div>
 					<div class="total-size">
-						900명
+						${memCnt }명
 						<svg xmlns="http://www.w3.org/2000/svg" width="85" height="41"
 							viewBox="0 0 85 41" fill="none">
 						<g filter="url(#filter0_d_2287_3132)">

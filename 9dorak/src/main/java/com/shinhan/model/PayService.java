@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PayVO;
@@ -172,6 +173,16 @@ public class PayService {
 	public int subOrderDetailInsert(OrderdetailVO orderdetail) {
 		// TODO Auto-generated method stub
 		return dao.subOrderDetailInsert(orderdetail);
+	}
+
+	public int updateOrder_no(MemVO mem) {
+		// TODO Auto-generated method stub
+		return dao.updateOrder_no(mem);
+	}
+
+	public int updateOrder(int order_no) {
+		return dao.updateOrder(order_no);
+		
 	}
 
 }

@@ -678,6 +678,14 @@ function requestPay() {
 				})// 주문 테이블 / 주문 상세 인서트
 	  } else {
 	    // 기본 동작
+		alert("asd");
+	    $.ajax({
+	    	url : "${cpath}/proOrder",
+	    	type : "post",
+			success : function(res) {
+				alert(res);
+			}
+	    })
 
 	  }
 	
@@ -711,7 +719,7 @@ function requestPay() {
 	IMP.request_pay({
 		pg : "inicis",
 		pay_method : "card",
-		merchant_uid : "ORD20180131-0000072", // 매번 새로워야 함
+		merchant_uid : "ORD20180131-0000073", // 매번 새로워야 함
 		name : "$('#proname').text()", // 1부르9
 		amount : discountedAmount,
 		buyer_email : "${mem.mem_id}",

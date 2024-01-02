@@ -18,13 +18,18 @@ public class OrderService {
 	public List<OrderVO> searchadminOrder(String mem_id) {
 		return dao.searchadminOrder(mem_id);
 	}
-	
+
 	public List<OrderVO> selectByOrder(int order_no) {
 		return dao.selectByOrder(order_no);
 	}
 
 	public int deleteOrder(int order_no) {
 		return dao.deleteOrder(order_no);
+	}
+
+	public List<OrderVO> selectMostList() {
+		// TODO Auto-generated method stub
+		return dao.selectMostList();
 	}
 
 }
