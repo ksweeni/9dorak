@@ -1,7 +1,10 @@
 package com.shinhan.controller;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
@@ -50,12 +53,28 @@ public class WalletController {
 
 	// 주문하기 수정 필요
 	@GetMapping("pay.do")
-	public String pay(Model model, HttpSession session) {
+	public String pay(Model model, HttpSession session, 
+			@RequestParam(value = "memList[]", required = false) String[] memList,
+			@RequestParam(value = "proList[]", required = false) String[] proList) {
+		System.out.println(Arrays.deepToString(memList));
+		System.out.println(Arrays.deepToString(proList));
 		List<PayVO> plist = wService.selectAllPay();
 		model.addAttribute("plist", plist);
 		if (session.getAttribute("loginmem") == null) {
 			return "redirect:/login/loginForm.do";
 		}
+		List<String> memberList = new ArrayList<>(Arrays.asList(memList));
+		List<String> productList = new ArrayList<>(Arrays.asList(proList));
+		
+ 
+//		for ( int i= 0 ; i < memberList.size() ; i++) {
+//			BasketVO bas = new BasketVO();
+//			bas.setMem_id(memberList.get(i));
+//			bas.setPro_no(Integer.parseInt(productList.get(i)) );
+//			wService.deleteBasket(bas);
+//		}
+		
+		
 		MemVO mem = (MemVO) session.getAttribute("loginmem");
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
@@ -79,7 +98,7 @@ public class WalletController {
 		model.addAttribute("dlist", dlist);
 		model.addAttribute("olist", olist);
 		model.addAttribute("order_no", order_no);
-
+		
 		return "wallet/pay";
 	}
 

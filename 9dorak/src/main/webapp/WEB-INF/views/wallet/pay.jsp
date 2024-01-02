@@ -751,6 +751,13 @@ function requestPay() {
 			console.log(data);
 
 			if (data) {
+				$.ajax({
+					  url: "${cpath}/delBasket",
+					  type: "post",
+					  success: function(res) {
+
+					  }
+					});
 				openModal();
 			} else {
 
