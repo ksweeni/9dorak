@@ -2,7 +2,7 @@
 
 caption {
 	left: 0%;
-	margin-bottom: 32px;
+	margin-bottom: -11px;
 	color: #1C2A53;
 	position: relative;
 	font-size: 1.5rem;
@@ -25,8 +25,8 @@ caption {
 	position: relative;
 	border-collapse: collapse;
 	margin-bottom: 10px;
-	left: 396px;
-	top: 96px;
+	left: 300px;
+	top: 108px;
 	transform: translateX(-50%);
 }
 
@@ -337,9 +337,9 @@ td:hover{
     position: relative;
     width: 500px;
     text-align: center;
-    left: 415px;
+    left: 314px;
     transform: translateX(-100%);
-    top: 114px;
+    top: 122px;
 }
 
 #nav a {
@@ -402,4 +402,33 @@ td:hover{
 	font-size: 16px;
 	letter-spacing: 2;
 	cursor: pointer;
+}
+
+.e2099_3000 {
+    position: relative;
+    left: 75px;
+    top: 78px;
+}
+.update_order {
+	border: 2px solid rgba(255, 255, 255, 1);
+    background-color: #f48e28;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    margin-right: 15px;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+}
+
+.delete_order {
+	border: 2px solid rgb(255, 255, 255);
+    background-color: #cc0000;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    margin-right: 15px;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
 }

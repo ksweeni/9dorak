@@ -31,4 +31,9 @@ public class OrderDAOMybatis {
 		return oList;
 	}
 
+	public int deleteOrder(int order_no) {
+		int result = sqlSession.delete(NAMESPACE + "deleteOrder", order_no);
+		return result;
+	}
+
 }
