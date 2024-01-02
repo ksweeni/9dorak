@@ -3,23 +3,24 @@ package com.shinhan.controller;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.Ordered;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PayVO;
+import com.shinhan.model.OrderService;
 import com.shinhan.model.PayService;
 import com.shinhan.model.WalletService;
 import com.siot.IamportRestClient.IamportClient;
@@ -33,6 +34,9 @@ public class PaymentController {
 	WalletService wService;
 	@Autowired
 	PayService pService;
+	@Autowired
+	OrderService oService;
+	
 	private final IamportClient iamportClient;
 
 	public PaymentController() {
@@ -57,7 +61,7 @@ public class PaymentController {
 
 	@ResponseBody
 	@RequestMapping("verify/{imp_uid}")
-	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, @RequestParam("order_no") String order_no, Model model) {
+	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, @RequestParam("order_no") int order_no, Model model) {
 		try {
 			IamportResponse<Payment> iamportResponse = iamportClient.paymentByImpUid(imp_uid);
 			if ("paid".equals(iamportResponse.getResponse().getStatus())) {
@@ -70,8 +74,6 @@ public class PaymentController {
 	
 					e.printStackTrace();
 				}
-								
-				
 				
 				Payment payment = iamportResponse.getResponse();
 				String productName = payment.getName(); // 상품명
@@ -89,7 +91,7 @@ public class PaymentController {
 				paymethod = CurrentPayMethod(paymentMethod);
 		
 				PayVO pay = new PayVO();
-				 pay.setOrder_no(Integer.parseInt(order_no));
+				pay.setOrder_no(order_no);
 				pay.setPay_date(null);
 				pay.setPay_status("결제 완료");
 				pay.setPay_depo(buyerName);
@@ -102,6 +104,7 @@ public class PaymentController {
 				pay.setPay_price(roundedAmount);
 				System.out.println(pay);
 				pService.insertPay(pay);
+				deleteBasketAfterPay(order_no);
 			} else {
 				model.addAttribute("resultMessage", "Payment verification failed");
 			}
@@ -134,9 +137,6 @@ public class PaymentController {
 		}
 	}
 	
-	
-	
-	
 	@ResponseBody
 	@PostMapping("/subOrder")
 	public String subOrder(OrderdetailVO orderdetail , OrderVO order, HttpSession session){
@@ -150,16 +150,34 @@ public class PaymentController {
 		int result2 = pService.subOrderDetailInsert(orderdetail);
 		return "";
 	}
-	@ResponseBody
-	@PostMapping("/proOrder")
-	public String proOrder( HttpSession session){
-		
-		MemVO mem = (MemVO)session.getAttribute("loginmem");
-		int order_no = pService.updateOrder_no(mem);
-
-		int result = pService.updateOrder(order_no);
 	
-		return "";
+	
+	
+	
+	
+	
+	
+	
+	@PostMapping("deleteBasketAfterOrder.do")
+	@ResponseBody
+	public Map<String, Object> deleteBasketAfterPay(@RequestBody int order_no) {
+		Map<String, Object> response = new HashMap<>();
+		OrderVO order = oService.orderIDCheck(order_no);
+		List<OrderdetailVO> pList = oService.orderProNoCheck(order_no);
+		
+		for (OrderdetailVO orderdetailVO : pList) {
+			try {
+			    wService.deleteBasketPay(order.getMem_id(), orderdetailVO.getPro_no());
+			    System.out.println("Basket deleted successfully.");
+			} catch (Exception e) {
+			    System.out.println("Error deleting basket: " + e.getMessage());
+			    e.printStackTrace();
+			}
+			
+	    }
+		
+		response.put("success", true);
+		return response;
 	}
 
 }

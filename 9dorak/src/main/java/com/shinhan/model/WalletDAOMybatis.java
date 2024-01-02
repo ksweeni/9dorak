@@ -162,4 +162,9 @@ public class WalletDAOMybatis {
 		return result;
 	}
 
+	public int deleteBasketPay(String mem_id, int pro_no) {
+	    int result = sqlSession.delete(NAMESPACE + "deleteBasketPay", new BasketVO(mem_id, pro_no)); // BasketVO 객체 생성 및 전달
+	    return result;
+	}
+
 }

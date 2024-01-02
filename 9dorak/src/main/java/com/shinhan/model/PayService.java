@@ -174,6 +174,10 @@ public class PayService {
 		// TODO Auto-generated method stub
 		return dao.subOrderDetailInsert(orderdetail);
 	}
+	
+	public PayVO statusCheck(int order_no) {
+		return dao.statusCheck(order_no);
+	}
 
 	public int updateOrder_no(MemVO mem) {
 		// TODO Auto-generated method stub

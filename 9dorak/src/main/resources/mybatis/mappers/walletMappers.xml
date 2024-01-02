@@ -32,6 +32,12 @@
 		delete from pay where
 		order_no=#{order_no}
 	</delete>
+	
+	<!-- 결제 완료 뒤, 장바구니 삭제 -->
+	<delete id="deleteBasketAfterPay" parameterType="basketvo">
+		delete from basket where
+		order_no=#{order_no}
+	</delete>
 
 	<!-- 장바구니 목록 -->
 	<select id="getBasket" resultType="basketvo">
@@ -48,6 +54,11 @@
 
 	<!-- 장바구니 삭제 -->
 	<delete id="deleteBasket" parameterType="basketvo">
+		delete from basket where
+		mem_id=#{mem_id} and pro_no=#{pro_no}
+	</delete>
+	
+	<delete id="deleteBasketPay" parameterType="basketvo">
 		delete from basket where
 		mem_id=#{mem_id} and pro_no=#{pro_no}
 	</delete>

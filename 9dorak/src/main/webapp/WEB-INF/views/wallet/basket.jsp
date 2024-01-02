@@ -139,6 +139,7 @@
 														<input type='hidden' value='${status.count}' class='index-num${status.count}' />
 														<input type='hidden' value='${item.mem_id}'	class='mem_id${status.count}' />
 														<input type='hidden' value='${item.pro_sc}'	class='pro_sc${status.count}' />
+														<input type='hidden' name="memList[]" value="${item.mem_id}" />
 
 														<div class="entypo-minus-wrapper" data-action="minus" data-count="${status.count}">
 															<img class="img-3" src="/myapp/resources/images/menu/minus.png">
@@ -633,6 +634,7 @@ function insertOrderDetails(order_no) {
         success: function(response) {
             if (response.success) {
                 console.log("콘솔 insertOrderDetail 성공");
+                //deleteBasketAfterOrder("${sessionScope.loginmem.mem_id}", pro_no);
             } else {
                 console.log("콘솔 insertOrderDetail 실패:", response.message);
             }
@@ -640,6 +642,28 @@ function insertOrderDetails(order_no) {
     });
   });
 }
+
+/* function deleteBasketAfterOrder(mem_id, pro_no) {
+	const requestData = {
+			mem_id: mem_id,
+			pro_no: pro_no
+    };
+	console.log(mem_id, pro_no);
+	
+	$.ajax({
+        type: "POST",
+        url: "${cpath}/wallet/deleteBasketAfterOrder.do",
+        contentType: "application/json",
+        data: JSON.stringify(requestData),
+        success: function(response) {
+            if (response.success) {
+                console.log("콘솔 deleteBasketAfterOrder 성공");
+            } else {
+            	console.log("콘솔 deleteBasketAfterOrder 실패");
+            }
+        }
+    });
+} */
 
 </script>
 </html>
