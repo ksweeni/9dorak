@@ -351,41 +351,53 @@ function unselectAll() {
 }
 --%>
 
+	var minusClicked = false;
+
 	// 장바구니 수량 증가
-	$(".entypo-plus-wrapper").on("click", stockCheck);	
+	$(".entypo-plus-wrapper").on("click", function() {
+	    stockCheck("plus", $(this).attr("data-count"));
+	});
+
 	// 장바구니 수량 감소
-	$(".entypo-minus-wrapper").on("click", stockCheck);
+	$(".entypo-minus-wrapper").on("click", function() {
+	    stockCheck("minus", $(this).attr("data-count"));
+	});
 	
-	// 재고확인
-	function stockCheck() {
-		var count = $(this).attr("data-count");
-		var stock = Number($(".pro_sc" + count).val());
-		
-		if(stock <= 0) {
-			alert("재고가 없습니다!");
-			
-		} else {
-			updateCount();
-		}
+	function stockCheck(action, count) {
+	    var stock = Number($(".pro_sc" + count).val());
+
+	    if (stock <= 0) {
+	        alert("재고가 없습니다!");
+	    } else {
+	        updateCount(action, count);
+	    }
 	}
 	
 // 장바구니 수량 변경
-function updateCount() {
-		var myaction = $(this).attr("data-action");
-	    var count = $(this).attr("data-count");
+function updateCount(myaction, count) {
 	    var price = Number($(".pro_price" + count).val());
 	    var index = $(".index-num" + count).val();
 	    var pro_no = $(".pro_no" + count).val();
 	    var pro_name = $(".pro_name" + count).val();
 	    var mem_id = $(".mem_id" + count).val();
 	    var quantity = Number($("#result" + index).html());
-	    
+	    var stock = Number($(".pro_sc" + count).val());
 	    var changedNumb = count;
-	    if(myaction=="minus") {
-	    		quantity -= 1;
-	    	} else {
-	    		quantity += 1;
-	    	}
+	    
+	    if (myaction == "plus") {
+	        if (quantity >= stock) {
+	            alert("이미 최대 주문 가능 수량에 도달했습니다");
+	            quantity = stock;
+	        } else {
+	            quantity = Math.min(stock, quantity + 1);
+	        }
+	    } else if (myaction == "minus") {
+	        if (quantity == 1) {
+	            alert("최소 주문 수량은 1개 입니다!");
+	        } else {
+	            quantity = Math.max(1, quantity - 1);
+	        }
+	    }
 	    
 	    $('#result' + index).html(quantity);
 	    updateTotalAmount(quantity,price,index);
