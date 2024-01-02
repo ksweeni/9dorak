@@ -6,23 +6,30 @@
 
 	<!-- 메뉴 전체보기 -->
 	<select id="selectAll" resultType="provo">
-		select TA.*,
-			(select proimage_image
-			from proimage TB
-				where TB.pro_no = TA.pro_no
-				and rownum=1)
-                proimage_image
-        from pro TA
-		order by TA.pro_no asc
+		select t1.*,
+			(
+			select proimage_image
+			from proimage t2
+			where t2.pro_no = t1.pro_no
+			and rownum=1
+			)
+            as proimage_image
+        from pro t1
+		order by t1.pro_no asc
 	</select>
 
 	<!-- 카테고리 + 검색 -->
-	<select id="selectSearchPro" resultType="provo"
-		parameterType="provo">
-		select *
-		from pro t1,
-		category t2
-		where t1.pro_no=t2.pro_no
+	<select id="selectSearchPro" resultType="provo" parameterType="provo">
+		SELECT t1.*, 
+	       (
+	       SELECT t3.proimage_image
+	       FROM proimage t3
+	       WHERE t3.pro_no = t1.pro_no AND ROWNUM = 1
+	       )
+	       AS proimage_image
+		FROM pro t1
+		JOIN category t2 ON t1.pro_no = t2.pro_no
+		WHERE t2.ingre_no = 1
 		<if test="ingre_no != null and ingre_no != ''">
 			and t2.ingre_no =
 			#{ingre_no}
@@ -35,26 +42,48 @@
 
 	<!-- 신상품순 정렬 -->
 	<select id="selectOrderbyNew" resultType="provo">
-		select * from pro order
-		by pro_rd desc
+		SELECT t1.*, 
+	       (
+	       SELECT t2.proimage_image
+	       FROM proimage t2
+	       WHERE t2.pro_no = t1.pro_no
+	       AND ROWNUM = 1
+	       ) 
+	       AS proimage_image
+		FROM pro t1
+		ORDER BY t1.pro_rd DESC
 	</select>
 
 	<!-- 인기순 정렬 -->
 	<select id="selectOrderbyLike" resultType="provo">
-		select * from pro
-		order by pro_like desc
+		select t1.*, 
+	       (
+	       SELECT t2.proimage_image
+	       FROM proimage t2
+	       WHERE t2.pro_no = t1.pro_no
+	       AND ROWNUM = 1
+	       ) 
+	       AS proimage_image
+	    from pro t1
+		order by t1.pro_like desc
 	</select>
 
 	<!-- 알러지 + 검색 -->
 	<select id="searchAllergyCheck" resultType="provo"
 		parameterType="provo">
-		select *
-		from pro
-		where (pro_aller not in #{pro_aller}
-		or pro_aller is
-		null)
+		select t1.*, 
+	       (
+	       SELECT t2.proimage_image
+	       FROM proimage t2
+	       WHERE t2.pro_no = t1.pro_no
+	       AND ROWNUM = 1
+	       ) 
+	       AS proimage_image
+	    from pro t1
+		where (t1.pro_aller not in #{pro_aller}
+		or t1.pro_aller is null)
 		<if test="pro_name != null and pro_name != ''">
-			and pro_name like
+			and t1.pro_name like
 			'%'||#{pro_name}||'%'
 		</if>
 	</select>
@@ -66,23 +95,36 @@
 	<!-- 알러지 + 정렬 -->
 	<select id="selectAllOrder" resultType="provo"
 		parameterType="provo">
-		select *
-		from pro
-		where pro_aller not in #{pro_aller} or pro_aller is
+		select t1.*, 
+	       (
+	       SELECT t2.proimage_image
+	       FROM proimage t2
+	       WHERE t2.pro_no = t1.pro_no
+	       AND ROWNUM = 1
+	       ) 
+	       AS proimage_image
+	    from pro t1
+		where t1.pro_aller not in #{pro_aller} or t1.pro_aller is
 		null
 		<if test="order_type eq '인기순'">
-			order by pro_like desc
+			order by t1.pro_like desc
 		</if>
 		<if test="order_type eq '신상품 순'">
-			order by pro_rd desc
+			order by t1.pro_rd desc
 		</if>
 	</select>
 
 	<!-- 카테고리 + 정렬 -->
-	<select id="selectCtgrOrder" resultType="provo"
-		parameterType="provo">
-		select *
-		from pro t1,
+	<select id="selectCtgrOrder" resultType="provo" parameterType="provo">
+		select t1.*, 
+	       (
+	       SELECT t2.proimage_image
+	       FROM proimage t2
+	       WHERE t2.pro_no = t1.pro_no
+	       AND ROWNUM = 1
+	       ) 
+	       AS proimage_image
+	    from pro t1,
 		category t2
 		where t1.pro_no = t2.pro_no
 		and ingre_no
@@ -95,14 +137,14 @@
 		</if>
 	</select>
 
-	<!-- 카테고리 -->
+	<!-- 카테고리
 	<select id="searchCategoryCheck" resultType="provo"
 		parameterType="String">
 		SELECT pro.*, category.ingre_no
 		FROM pro
 		LEFT JOIN
 		category ON pro.pro_no = category.pro_no where ingre_no = #{ingre_no}
-	</select>
+	</select> -->
 
 	<!-- 상품상세보기 -->
 	<select id="selectByNo" resultType="provo" parameterType="provo">

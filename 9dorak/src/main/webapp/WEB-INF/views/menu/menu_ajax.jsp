@@ -27,7 +27,7 @@
 					<button class="view-details-btn">자세히 볼게요</button>
 				</a>
 				<div class="mask-group-wrapper">
-					<img class="mask-group" src="${cpath}/resources/images/menu/proimage/${search.pro_no}-2.jpg" />
+					<img class="mask-group" src="${cpath }/resources/upload/${search.proimage_image}" />
 				</div>
 				
 				<div class="like-text">${search.pro_like }</div>
