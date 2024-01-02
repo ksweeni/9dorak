@@ -40,7 +40,6 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
-
 			<div class="controll-top">
 				<div class="controll-div">
 					<div class="title">
@@ -50,8 +49,6 @@
 </svg>
 						<h3>쿠폰 생성 및 삭제</h3>
 					</div>
-
-
 					<div class="create-div">
 						<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
 							viewBox="0 0 15 15" fill="none">
@@ -71,14 +68,11 @@
 								fill="#FF8901" stroke="white" stroke-width="3" />
 </svg>
 						<div class="create-text">DELETE</div>
-
 						<button class="delete-button-1" onclick="deleteCoupon()">Delete</button>
 					</div>
 
 
 					<div class="table-2">
-
-
 						<table id="products" border="1" style="width: 300px;">
 							<caption>
 								회원 List
@@ -88,9 +82,6 @@
 								<tr>
 									<th style="border-radius: 10px 0px 0px 0px;"> ID</th>
 									<th>NAME</th>
-								
-									
-									
 									<th style="border-radius: 0px 10px 0px 0px;">Select</th>
 								</tr>
 							</thead>

@@ -52,12 +52,12 @@
 				</caption>
 				<thead>
 					<tr>
-						<th>주문번호</th>
+						<th style="border-radius: 10px 0px 0px 0px;">주문번호</th>
 						<th>주문날짜</th>
 						<th>주문가격</th>
 						<th>주문상태</th>
 						<th>주문환불여부</th>
-						<th>주문회원ID</th>
+						<th style="border-radius: 0px 10px 0px 0px;">주문회원ID</th>
 					</tr>
 				</thead>
 				<tbody>
