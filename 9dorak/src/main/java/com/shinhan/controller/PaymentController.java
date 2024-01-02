@@ -3,23 +3,24 @@ package com.shinhan.controller;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.Ordered;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.OrderdetailVO;
 import com.shinhan.dto.PayVO;
+import com.shinhan.model.OrderService;
 import com.shinhan.model.PayService;
 import com.shinhan.model.WalletService;
 import com.siot.IamportRestClient.IamportClient;
@@ -33,6 +34,9 @@ public class PaymentController {
 	WalletService wService;
 	@Autowired
 	PayService pService;
+	@Autowired
+	OrderService oService;
+	
 	private final IamportClient iamportClient;
 
 	public PaymentController() {
@@ -70,8 +74,6 @@ public class PaymentController {
 	
 					e.printStackTrace();
 				}
-								
-				
 				
 				Payment payment = iamportResponse.getResponse();
 				String productName = payment.getName(); // 상품명
@@ -104,6 +106,7 @@ public class PaymentController {
 				pay.setPay_price(roundedAmount);
 				System.out.println(pay);
 				pService.insertPay(pay);
+				deleteBasketAfterPay(pay.getOrder_no());
 			} else {
 				model.addAttribute("resultMessage", "Payment verification failed");
 			}
@@ -136,9 +139,6 @@ public class PaymentController {
 		}
 	}
 	
-	
-	
-	
 	@ResponseBody
 	@PostMapping("/subOrder")
 	public String subOrder(OrderdetailVO orderdetail , OrderVO order, HttpSession session){
@@ -151,6 +151,27 @@ public class PaymentController {
 		orderdetail.setOrder_no(order_no);
 		int result2 = pService.subOrderDetailInsert(orderdetail);
 		return "";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	@PostMapping("deleteBasketAfterOrder.do")
+	@ResponseBody
+	public Map<String, Object> deleteBasketAfterPay(@RequestBody int order_no) {
+		Map<String, Object> response = new HashMap<>();
+		OrderVO order = oService.orderIDCheck(order_no);
+		List<OrderdetailVO> pList = oService.orderProNoCheck(order_no);
+		
+		for (OrderdetailVO orderdetailVO : pList) {
+	        wService.deleteBasket(order.getMem_id(), orderdetailVO.getPro_no());
+	    }
+		response.put("success", true);
+		return response;
 	}
 
 }
