@@ -194,6 +194,7 @@
 	<select id="getOrderList" resultType="ordervo"
 		parameterType="int">
 		SELECT
+		O.order_no,
 		OD.orderdetail_count,
 		P.pro_no,
 		P.pro_name,

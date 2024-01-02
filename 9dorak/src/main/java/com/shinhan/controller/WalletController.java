@@ -61,12 +61,12 @@ public class WalletController {
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
 		int order_no = wService.selectOrderNum();
+		System.out.println(order_no);
 		List<OrderVO> olist = wService.getOrderList(order_no);
-		
-		System.out.println(olist);
+
 		int total = 0;
 		for (OrderVO or : olist) {
-			total += or.getOrder_price();
+			total += or.getPro_price();
 		}
 		DecimalFormat decimalFormat = new DecimalFormat("#,###");
 		String formattedTotal = decimalFormat.format(total);

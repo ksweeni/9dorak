@@ -24,4 +24,5 @@ public class OrderVO {
 	private int pro_no; // 상품 번호
 	private int orderdetail_count; // 상품 수량
 	private String pro_name; // 상품명 
+	private int pro_price;
 }

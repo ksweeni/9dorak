@@ -272,7 +272,7 @@
 										<c:forEach items="${olist}" var="ol">
 											<tr style="text-align: center;">
 												<td>${ol.pro_name}</td>
-												<td>${ol.order_price}</td>
+												<td>${ol.pro_price}</td>
 												<td>${ol.orderdetail_count}</td>
 											</tr>
 										</c:forEach>
