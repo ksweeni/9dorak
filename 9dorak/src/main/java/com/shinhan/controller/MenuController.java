@@ -45,7 +45,7 @@ public class MenuController {
 	public String menu(Model model) {
 		List<ProVO> plist = mService.selectAll();
 		model.addAttribute("mlist", plist);
-		System.out.println(plist);
+		//System.out.println(plist);
 		return "menu/menu";
 	}
 	
