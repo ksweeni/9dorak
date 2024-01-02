@@ -633,7 +633,7 @@ function insertOrderDetails(order_no) {
         success: function(response) {
             if (response.success) {
                 console.log("콘솔 insertOrderDetail 성공");
-                deleteBasketAfterOrder(response.pro_no);
+                //deleteBasketAfterOrder("${sessionScope.loginmem.mem_id}", pro_no);
             } else {
                 console.log("콘솔 insertOrderDetail 실패:", response.message);
             }
@@ -642,11 +642,13 @@ function insertOrderDetails(order_no) {
   });
 }
 
-function deleteBasketAfterOrder(pro_no, mem_id) {
+/* function deleteBasketAfterOrder(mem_id, pro_no) {
 	const requestData = {
-			pro_no: pro_no,
-			mem_id: mem_id
+			mem_id: mem_id,
+			pro_no: pro_no
     };
+	console.log(mem_id, pro_no);
+	
 	$.ajax({
         type: "POST",
         url: "${cpath}/wallet/deleteBasketAfterOrder.do",
@@ -660,7 +662,7 @@ function deleteBasketAfterOrder(pro_no, mem_id) {
             }
         }
     });
-}
+} */
 
 </script>
 </html>

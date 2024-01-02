@@ -100,4 +100,8 @@ public class WalletService {
 	public int deleteSales(int order_no) {
 		return dao.deleteSales(order_no);
 	}
+
+	public int deleteBasket(String mem_id, int pro_no) {
+		return dao.deleteBasket(mem_id, pro_no);
+	}
 }

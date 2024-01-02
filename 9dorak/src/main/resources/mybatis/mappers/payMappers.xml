@@ -37,4 +37,8 @@
 		VALUES
 		( #{order_no} , #{pro_no} , #{orderdetail_count} )
 	</insert>
+	
+	<select id="statusCheck" parameterType="payvo">
+		select pay_status from pay where order_no=#{order_no}
+	</select>
 </mapper>

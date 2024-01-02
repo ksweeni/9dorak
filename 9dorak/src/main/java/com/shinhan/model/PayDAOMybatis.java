@@ -50,4 +50,8 @@ public class PayDAOMybatis {
 		return sqlSession.insert(NAMESPACE + "subOrderDetailInsert", orderdetail);
 	}
 
+	public PayVO statusCheck(int order_no) {
+		return sqlSession.selectOne(NAMESPACE + "statusCheck", order_no);
+	}
+
 }

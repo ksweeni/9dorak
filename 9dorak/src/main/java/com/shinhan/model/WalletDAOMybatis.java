@@ -161,4 +161,9 @@ public class WalletDAOMybatis {
 		int result = sqlSession.delete(NAMESPACE + "deleteSales", order_no);
 		return result;
 	}
+
+	public int deleteBasket(String mem_id, int pro_no) {
+		int result = sqlSession.delete(NAMESPACE + "deleteBasket");
+		return result;
+	}
 }

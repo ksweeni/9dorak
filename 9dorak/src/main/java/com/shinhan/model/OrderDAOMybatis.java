@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.shinhan.dto.OrderVO;
+import com.shinhan.dto.OrderdetailVO;
 
 @Repository 
 public class OrderDAOMybatis {
@@ -34,6 +35,16 @@ public class OrderDAOMybatis {
 	public int deleteOrder(int order_no) {
 		int result = sqlSession.delete(NAMESPACE + "deleteOrder", order_no);
 		return result;
+	}
+	
+	public OrderVO orderIDCheck(int order_no) {
+		OrderVO order = sqlSession.selectOne(NAMESPACE + "orderIDCheck", order_no);
+		return order;
+	}
+
+	public List<OrderdetailVO> orderProNoCheck(int order_no) {
+		List<OrderdetailVO> orderdetail = sqlSession.selectList(NAMESPACE + "orderProNoCheck", order_no);
+		return orderdetail;
 	}
 
 }
