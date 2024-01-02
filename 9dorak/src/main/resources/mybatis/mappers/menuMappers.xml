@@ -6,8 +6,14 @@
 
 	<!-- 메뉴 전체보기 -->
 	<select id="selectAll" resultType="provo">
-		select * from pro order by
-		pro_no asc
+		select TA.*,
+			(select proimage_image
+			from proimage TB
+				where TB.pro_no = TA.pro_no
+				and rownum=1)
+                proimage_image
+        from pro TA
+		order by TA.pro_no asc
 	</select>
 
 	<!-- 카테고리 + 검색 -->
