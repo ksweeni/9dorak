@@ -699,7 +699,7 @@ function requestPay() {
 	});
 }
 
-//초기화
+//쿠폰할인
 var lastTotalText = $("#lastTotal").text().replace(/\D/g, '');
 var lastTotal = parseFloat(lastTotalText);
     
@@ -750,9 +750,8 @@ $("#couponApply").on("click", function() {
     }
 });
 
-//var a = ${mem.mem_grade };
-//alert(a);
 
+//포인트할인
 var myPoint = $("#mypoint").text().replace(/\D/g, '');
 
 //포인트 적용 버튼 클릭 이벤트 처리
@@ -760,9 +759,9 @@ $("#pointApply").on("click", function () {
     // 입력된 포인트 값을 가져오기
     var enteredPointText = $("#point").val();
 	var enteredPoint = parseFloat(enteredPointText);
-    
-    var lastTotalText = $("#lastTotal").text().replace(/\D/g, '');
-    var lastTotal = parseFloat(lastTotalText);
+	
+	var lastTotalText = $("#lastTotal").text().replace(/\D/g, '');
+	var lastTotal = parseFloat(lastTotalText);
 
     // 숫자가 유효한 경우에만 연산 수행
     if (!isNaN(enteredPoint) && !isNaN(lastTotal)) {
