@@ -26,13 +26,23 @@ public class OrderDAOMybatis {
 		return olist;
 	}
 
-	public List<OrderVO> selectByOrder(int order_no) {
-		List<OrderVO> oList = sqlSession.selectList(NAMESPACE + "selectByOrder", order_no);
+	public List<OrderVO> selectByOrderDetail(int order_no) {
+		List<OrderVO> oList = sqlSession.selectList(NAMESPACE + "selectByOrderDetail", order_no);
 		return oList;
 	}
 
 	public int deleteOrder(int order_no) {
 		int result = sqlSession.delete(NAMESPACE + "deleteOrder", order_no);
+		return result;
+	}
+
+	public List<OrderVO> selectByOrder(int order_no) {
+		List<OrderVO> oList = sqlSession.selectList(NAMESPACE + "selectByOrderDetail", order_no);
+		return oList;
+	}
+
+	public int updateOrder(OrderVO order) {
+		int result = sqlSession.update(NAMESPACE + "updateOrder", order);
 		return result;
 	}
 

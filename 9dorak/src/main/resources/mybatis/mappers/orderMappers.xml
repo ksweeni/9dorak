@@ -12,14 +12,25 @@
 		SELECT * FROM orders WHERE mem_id LIKE '%'||#{mem_id}||'%' 
 	</select>
 
-	<select id="selectByOrder" resultType="orderdetailvo" parameterType="orderdetailvo">
-		select *
-		from orderdetail
-		where order_no = #{order_no}
+	<select id="selectByOrderDetail" resultType="orderdetailvo" parameterType="orderdetailvo">
+		SELECT orderdetail.*, orders.order_status
+		FROM orderdetail
+		JOIN orders ON orderdetail.order_no = orders.order_no
+		WHERE orderdetail.order_no = #{order_no}
 	</select>
 	
 	<delete id="deleteOrder" parameterType="int">
 		delete from orders where order_no=#{order_no}
 	</delete>
+
+	<select id="selectByOrder" resultType="ordervo" parameterType="ordervo">
+		select *
+		from orders
+		where order_no = #{order_no}
+	</select>
+	
+	<update id="updateOrder" parameterType="ordervo">
+		update orders set order_status='주문 취소' where order_no=#{order_no}
+	</update>
 	
 </mapper>

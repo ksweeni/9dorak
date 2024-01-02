@@ -19,12 +19,20 @@ public class OrderService {
 		return dao.searchadminOrder(mem_id);
 	}
 	
-	public List<OrderVO> selectByOrder(int order_no) {
-		return dao.selectByOrder(order_no);
+	public List<OrderVO> selectByOrderDetail(int order_no) {
+		return dao.selectByOrderDetail(order_no);
 	}
 
 	public int deleteOrder(int order_no) {
 		return dao.deleteOrder(order_no);
+	}
+
+	public List<OrderVO> selectByOrder(int order_no) {
+		return dao.selectByOrder(order_no);
+	}
+
+	public int updateOrder(OrderVO order) {
+		return dao.updateOrder(order);
 	}
 
 }
