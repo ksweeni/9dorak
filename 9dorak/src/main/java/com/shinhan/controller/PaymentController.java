@@ -150,5 +150,16 @@ public class PaymentController {
 		int result2 = pService.subOrderDetailInsert(orderdetail);
 		return "";
 	}
+	@ResponseBody
+	@PostMapping("/proOrder")
+	public String proOrder( HttpSession session){
+		
+		MemVO mem = (MemVO)session.getAttribute("loginmem");
+		int order_no = pService.updateOrder_no(mem);
+
+		int result = pService.updateOrder(order_no);
+	
+		return "";
+	}
 
 }

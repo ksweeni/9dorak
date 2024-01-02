@@ -95,22 +95,22 @@ public class AdminController {
 	}
 
 	@PostMapping("adminMenuInsert.do")
-	public String adminMenuInsert(Model model, ProVO menu, MultipartHttpServletRequest mtfRequest,IngreVO ingre,
+	public String adminMenuInsert(Model model, ProVO menu, MultipartHttpServletRequest mtfRequest, IngreVO ingre,
 			HttpServletRequest request) {
 //		System.out.println(ingre.getIngre_name());
-		
+
 		int ingre_no = mService.getinre_no(ingre.getIngre_name());
 		int result = mService.insertMenu(menu);
-		
+
 		System.out.println(result);
 		int pro_no = mService.selectProNo();
 		System.out.println(pro_no);
-		
+
 		CategoryVO category = new CategoryVO();
 		category.setIngre_no(ingre_no);
 		category.setPro_no(pro_no);
 		int result2 = mService.insertCategory(category);
-		
+
 		List<ProVO> mlist = mService.selectAll();
 		model.addAttribute("mlist", mlist);
 		// 파일업로드
@@ -242,13 +242,12 @@ public class AdminController {
 		model.addAttribute("orderlist", orderlist);
 		return "admin/adminOrder";
 	}
-	
+
 	@PostMapping("adminOrder.do")
-	public String adminOrderDetail(Model model, OrderdetailVO orderdetail, OrderVO order) {
-		List<OrderVO> detailorder = orderService.selectByOrderDetail(orderdetail.getOrder_no());
-		List<OrderVO> totalorder = orderService.selectByOrder(order.getOrder_no());
+	public String adminOrderDetail(Model model, OrderdetailVO order) {
+		List<OrderVO> detailorder = orderService.selectByOrder(order.getOrder_no());
 		model.addAttribute("detailorder", detailorder);
-		model.addAttribute("totalorder", totalorder);
+		System.out.println(detailorder);
 		return "admin/adminOrderDetail";
 	}
 
@@ -259,18 +258,7 @@ public class AdminController {
 		model.addAttribute("olist", olist);
 		return "admin/adminOrder_search";
 	}
-	
-	@RequestMapping(value = "adminOrderUpdate.do", produces = "text/plain;charset=utf-8")
-	@ResponseBody
-	public String adminOrderUpdate(Model model, OrderVO order) {
-		int result = orderService.updateOrder(order);
-		if (result > 0) {
-			return "수정 성공";
-		} else {
-			return "수정 실패";
-		}
-	}
-	
+
 	@RequestMapping(value = "adminOrderDelete.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String adminOrderDelete(Model model, OrderVO order) {
@@ -288,14 +276,14 @@ public class AdminController {
 		model.addAttribute("sublist", sublist);
 		return "admin/adminSub";
 	}
-	
+
 	@PostMapping("adminSub.do")
 	public String adminSubDetail(Model model, SubVO sub) {
 		SubVO detailSub = subService.selectSubNo(sub.getSub_no());
 		model.addAttribute("detailSub", detailSub);
 		return "admin/adminSubDetail";
 	}
-	
+
 	@GetMapping("adminSubInsert.do")
 	public String adminSubInsertPage(Model model) {
 		return "admin/adminSubInsert";
@@ -305,7 +293,7 @@ public class AdminController {
 	public String adminSubInsert(Model model, SubVO sub) {
 		System.out.println(sub);
 		int result = subService.insertSub(sub);
-		
+
 		return "redirect:/admin/adminSub.do";
 	}
 
@@ -319,7 +307,7 @@ public class AdminController {
 			return "수정 실패";
 		}
 	}
-	
+
 	@RequestMapping(value = "adminSubDelete.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String adminSubDelete(Model model, SubVO sub) {
@@ -612,15 +600,43 @@ public class AdminController {
 
 		return "redirect:/admin/adminMenu.do";
 	}
-	
+
 	// 매출관리
 	@GetMapping("adminSales.do")
 	public String adminSales(Model model) {
 		List<PayVO> payList = wService.selectAllPay();
 		model.addAttribute("payList", payList);
+		List<MemVO> memList = memService.selectAll();
+		// 총회원수
+		model.addAttribute("memCnt", memList.size());
+
+		List<OrderVO> orderList = orderService.selectAll();
+		// 총 주문수
+		int orderCnt = 0;
+		for (OrderVO order : orderList) {
+			if (order.getOrder_status().equals("주문 완료")) {
+				orderCnt++;
+			}
+		}
+		model.addAttribute("orderCnt", orderCnt);
+
+		// 총 주문금액
+		int orderTotal = 0;
+		for (OrderVO order : orderList) {
+
+			if (order.getOrder_status().equals("주문 완료")) {
+				orderTotal += order.getOrder_price();
+			}
+		}
+		model.addAttribute("orderTotal", orderTotal);
+
+		// 가장 많이 팔린 상품
+		List<OrderVO> mostList = orderService.selectMostList();
+		System.out.println(mostList);
 		return "admin/adminSales";
+
 	}
-	
+
 	// 매출 상세
 	@PostMapping("adminSales.do")
 	public String adminSalesDetail(Model model, PayVO pay) {
@@ -628,7 +644,7 @@ public class AdminController {
 		model.addAttribute("payDetail", payDetail);
 		return "admin/adminSalesDetail";
 	}
-	
+
 	// 매출 내역 수정
 	@RequestMapping(value = "adminSalesUpdate.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
@@ -637,24 +653,24 @@ public class AdminController {
 		if (result > 0) {
 			return "수정 성공";
 		} else {
-			return "수정 실패"; 
+			return "수정 실패";
 		}
 	}
-	
+
 	// 매출 내역 삭제
 	@RequestMapping(value = "adminSalesDelete.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String adminSalesDelete(Model model, PayVO pay) {
 		int result = wService.deleteSales(pay.getOrder_no());
 		if (result > 0) {
-			return "삭제 성공"; 
+			return "삭제 성공";
 		} else {
-			return "삭제 실패"; 
+			return "삭제 실패";
 		}
 	}
-	
+
 	@GetMapping("adminGraph.do")
-	public String adminGraph() { 
+	public String adminGraph() {
 		return "admin/adminGraph";
 	}
 }
