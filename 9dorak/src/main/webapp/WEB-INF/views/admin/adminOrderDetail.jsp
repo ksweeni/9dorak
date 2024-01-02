@@ -70,8 +70,8 @@
 				<tbody>
 						<tr>
 							<td id="order_no">${detail.order_no}</td>
-							<td>${detail.pro_no}</td>
-							<td>${detail.orderdetail_count}</td>
+							<td id="order_no">${detail.pro_no}</td>
+							<td id="order_no">${detail.orderdetail_count}</td>
 						</tr>
 				</tbody>
 				</c:forEach>
