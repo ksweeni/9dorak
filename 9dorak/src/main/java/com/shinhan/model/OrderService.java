@@ -23,4 +23,8 @@ public class OrderService {
 		return dao.selectByOrder(order_no);
 	}
 
+	public int deleteOrder(int order_no) {
+		return dao.deleteOrder(order_no);
+	}
+
 }

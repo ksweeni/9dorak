@@ -18,4 +18,8 @@
 		where order_no = #{order_no}
 	</select>
 	
+	<delete id="deleteOrder" parameterType="int">
+		delete from orders where order_no=#{order_no}
+	</delete>
+	
 </mapper>

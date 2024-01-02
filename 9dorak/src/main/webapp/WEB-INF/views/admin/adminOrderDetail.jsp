@@ -40,7 +40,10 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
-		
+			<div class="e2099_3000">
+				<button class="update_order" id="update">수정하기</button>
+				<button class="delete_order" id="delete">삭제하기</button>
+			</div>
 		
  			<table id="products" border="1">
 				<caption  style="">
@@ -66,7 +69,7 @@
 				<c:forEach items="${detailorder}" var="detail" varStatus="status">
 				<tbody>
 						<tr>
-							<td>${detail.order_no}</td>
+							<td id="order_no">${detail.order_no}</td>
 							<td>${detail.pro_no}</td>
 							<td>${detail.orderdetail_count}</td>
 						</tr>
@@ -272,5 +275,22 @@ $(".ei815_1066_6_1").on("click", function() {
 			});
 
 	$setRows.submit();
+	
+	//삭제
+	$("#delete").on("click", function() {
+    	var order_no = $("#order_no").text();
+    	var param = {
+        	"order_no": parseInt(order_no)
+    	};
+		$.ajax({
+			url : "${cpath}/admin/adminOrderDelete.do",
+			type : "post",
+			data : param,
+			success : function(res) {
+				location.href = "${cpath}/admin/adminOrder.do";
+			}
+		})
+	});
+
 </script>
 </html>
