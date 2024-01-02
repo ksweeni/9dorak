@@ -239,7 +239,7 @@ body {
 	width: 950px;
 	height: 799px;
 	position: absolute;
-	left: 27px;
+	left: 100px;
 	top: -53px;
 }
 
@@ -1160,7 +1160,7 @@ svg {
 					</div>
 					<div class=e178_722>
 						<div class=e178_723>
-							<span class="e178_724" onclick="registerPeople('지인')">지인
+							<span class="e178_724" onclick="registerPeople('친구')">친구
 								코드 등록</span>
 						</div>
 						<input type="text" class="e178_725" id="people_code2" />

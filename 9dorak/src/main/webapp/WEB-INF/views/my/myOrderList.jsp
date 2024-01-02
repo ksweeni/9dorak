@@ -41,7 +41,7 @@
 					<div class="text-wrapper-14">${order.PRO_NAME }</div>
 					</a>
 					<div class="text-wrapper-15">${fn:substring(order.ORDER_DATE, 0, 16)}</div>
-					<img class="rectangle" src="${cpath}/${order.PROIMAGE_IMAGE}" />
+					<img class="rectangle" src="${cpath }/resources/upload/${order.PROIMAGE_IMAGE}" />
 				</div>
 
 			</c:forEach>

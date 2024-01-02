@@ -1570,6 +1570,7 @@ th:nth-child(2) {
     border: 2px solid #f38820;
     border-radius: 60px;
     background-color: white;
+    cursor: pointer;
 }
 @charset "UTF-8";
 
@@ -1681,6 +1682,9 @@ th:nth-child(2) {
 	border: 2.7px solid;
 	border-color: #f38820;
 }
+.div-wrapper .container-default:focus-visible {
+	outline: none;
+}
 
 .div-wrapper .group-2 {
 	position: absolute;
@@ -1708,10 +1712,13 @@ th:nth-child(2) {
 	gap: 10.8px;
 	padding: 10.8px;
 	position: relative;
-	background-color: var(- -white-branco);
+	background-color: #ffffff;
 	border-radius: 5.4px;
 	border: 2.7px solid;
 	border-color: #f38820;
+}
+.div-wrapper .container-default-2:focus-visible {
+	outline: none;
 }
 
 .div-wrapper .frame-wrapper {
@@ -2475,8 +2482,11 @@ th:nth-child(2) {
 .fileUpload {
 	padding: 6px 25px;
 	background-color: #f38820;
-	border-radius: 4px;
 	color: white;
+	border: 2px solid #f38820;
+    border-radius: 50px;
+    background-color: white;
+    color: #f38820;
 	cursor: pointer;
 }
 .profile_photo {
