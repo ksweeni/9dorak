@@ -22,14 +22,15 @@
 	<select id="selectSearchPro" resultType="provo" parameterType="provo">
 		SELECT t1.*, 
 	       (
-	       SELECT t3.proimage_image
-	       FROM proimage t3
-	       WHERE t3.pro_no = t1.pro_no AND ROWNUM = 1
-	       )
+	       SELECT t2.proimage_image
+	       FROM proimage t2
+	       WHERE t2.pro_no = t1.pro_no
+	       AND ROWNUM = 1
+	       ) 
 	       AS proimage_image
-		FROM pro t1
-		JOIN category t2 ON t1.pro_no = t2.pro_no
-		WHERE t2.ingre_no = 1
+		FROM pro t1,
+		category t2
+		where t1.pro_no=t2.pro_no
 		<if test="ingre_no != null and ingre_no != ''">
 			and t2.ingre_no =
 			#{ingre_no}
