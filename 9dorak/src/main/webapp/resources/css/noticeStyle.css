@@ -754,6 +754,7 @@
 	letter-spacing: 0;
 	border: none;
 	background-color: white;
+	cursor: pointer;
 }
 
 .e831_687 {
@@ -821,6 +822,7 @@
 	letter-spacing: 0;
 	border: none;
 	background-color: white;
+	cursor: pointer;
 }
 
 .e844_864 {
@@ -927,6 +929,7 @@
 	font-size: 32px;
 	letter-spacing: 0;
 	line-height: px;
+	font-weight: 800;
 }
 
 .e1081_4455 {

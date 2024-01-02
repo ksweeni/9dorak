@@ -208,11 +208,11 @@ function deleteSelect() {
     var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
 
     if (!checkedOne) {
-        alert('삭제할 지인을 선택해주세요.');
+        alert('삭제할 친구를 선택해주세요.');
         return false;
     }
 
-    if (confirm('선택한 지인을 정말 삭제하시겠습니까?')) {
+    if (confirm('선택한 친구를 정말 삭제하시겠습니까?')) {
     	var arr = [];
     	$(".rowCheckbox").each(function(index, item){
     		if($(this).prop("checked")){
