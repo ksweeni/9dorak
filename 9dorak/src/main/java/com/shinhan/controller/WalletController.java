@@ -333,4 +333,27 @@ public class WalletController {
 			}
 			return response;
 		}
+		
+		// 장바구니 삭제
+				@PostMapping("deleteBasketAfterOrder.do")
+				@ResponseBody
+				public Map<String, Object> deleteBasketAfterOrder(@RequestBody BasketVO basket) {
+				    Map<String, Object> response = new HashMap<>();
+				    
+				    int result = wService.deleteBasket(basket);
+				    System.out.println(basket);
+				    
+				    if (result > 0) {
+				        response.put("success", true);
+				    } else {
+				        response.put("success", false);
+				    }
+				    return response;
+				}
+		
+		
+		
+		
+
+
 }

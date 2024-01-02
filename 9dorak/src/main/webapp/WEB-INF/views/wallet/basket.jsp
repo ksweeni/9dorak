@@ -633,12 +633,33 @@ function insertOrderDetails(order_no) {
         success: function(response) {
             if (response.success) {
                 console.log("콘솔 insertOrderDetail 성공");
+                deleteBasketAfterOrder(response.pro_no);
             } else {
                 console.log("콘솔 insertOrderDetail 실패:", response.message);
             }
         }
     });
   });
+}
+
+function deleteBasketAfterOrder(pro_no, mem_id) {
+	const requestData = {
+			pro_no: pro_no,
+			mem_id: mem_id
+    };
+	$.ajax({
+        type: "POST",
+        url: "${cpath}/wallet/deleteBasketAfterOrder.do",
+        contentType: "application/json",
+        data: JSON.stringify(requestData),
+        success: function(response) {
+            if (response.success) {
+                console.log("콘솔 deleteBasketAfterOrder 성공");
+            } else {
+            	console.log("콘솔 deleteBasketAfterOrder 실패");
+            }
+        }
+    });
 }
 
 </script>

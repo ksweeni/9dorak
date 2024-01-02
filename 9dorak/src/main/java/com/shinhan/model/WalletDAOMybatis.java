@@ -161,5 +161,4 @@ public class WalletDAOMybatis {
 		int result = sqlSession.delete(NAMESPACE + "deleteSales", order_no);
 		return result;
 	}
-
 }
