@@ -162,7 +162,6 @@
 							<button class="button-medium-text" id="shop" onclick="payment()">
 								<div class="overlap-group-2">
 									<div class="label" id="shop-label">&nbsp;&nbsp;결제하기</div>
-
 								</div>
 							</button>
 							<button class="button-medium-text" onclick="checkBasket()">
@@ -560,7 +559,6 @@
         }
     });
 
-    
     document.querySelectorAll('.num-2').forEach((numElement, index) => {
         numElement.addEventListener('click', () => {
             currentPage = index + 1;
@@ -674,12 +672,7 @@
 	            } else {
 	                addBasket(mem_id, pro_no);
 	            }
-	        },
-	        error: function (xhr, status, error) {
-	            console.error("콘솔 - Error during basket operation. Status: " + status);
-	            console.error("콘솔 - Server response: " + xhr.responseText);
 	        }
-
 	    });
 	}
     
@@ -716,10 +709,6 @@
 						} else {
 							console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
 						}
-					},
-					error : function(xhr, status, error) {
-						console.error("콘솔 - Error during basket operation. Status: " + status);
-						console.error("콘솔 - Server response: " + xhr.responseText);
 					}
 				});
 	}
@@ -729,8 +718,6 @@
 		lights.setAttribute("class","ellipse-light");
 		lights.setAttribute("id","lightsOnID");
 		document.querySelector("#lightsParent").append(lights);
-
-		console.log("장바구니 가득 차서 불 켜짐!");
 	}
    
     // 상품이 장바구니에 없다면 .. 상품을 장바구니에 담기
@@ -764,10 +751,6 @@
                 alert("장바구니에 담기지 않았습니다");
             }
         },
-
-        error: function (error) {
-            alert("An error occurred during the addBasket operation!");
-        }
     });
 	}
     
@@ -780,7 +763,6 @@
 	        url: "${cpath}/menu/reviewPageBtnClick.do?pro_no="+pro_no+"&currentPage="+pramPage,
 	        success: function (data) {
 	        	$('.review').html(data);
-	           
 	        },
 	        error: function () {
 	        	alert("에러");	         
@@ -802,25 +784,71 @@
 	        viewLink.style.display = 'none';
 	        
 	      }
-	    
 	  });
 	
+	// 결제하기
 	function payment() {
-		var mem_id = "${sessionScope.loginmem.mem_id}";
-
 		// 로그인 여부 확인
+		var mem_id = "${sessionScope.loginmem.mem_id}";
+		var totalAmount = document.getElementById('total-amount-value').innerText;
+		
 		if (mem_id == "") {
 			alert("로그인이 필요한 서비스입니다 !");
 			window.location.href="${cpath}/login/loginForm.do";
 			return;
 		} else {
-			// 재고확인 먼저..!!
-			var stock = ${menudetail.pro_sc}
+			// 재고확인
+			var stock = ${menudetail.pro_sc};
 			if(stock <= 0) {
-			alert("재고가 없습니다!");
-			return;
+				alert("재고가 없습니다!");
+				return;
+			} else {
+				
+				$.ajax({
+					type: "POST",
+					url: "${cpath}/wallet/singlePro.do",
+					contentType: "application/json",
+					data: JSON.stringify({
+						mem_id: mem_id,
+						order_price: totalAmount
+					}),
+					success: function(response) {
+			            if (response.success && response.order_no) {
+			                console.log("콘솔 singlePro 성공");
+			                singleProDetail(response.order_no);
+			                window.location.href = "${cpath}/wallet/pay.do";
+			            } else {
+			            	console.log("콘솔 singlePro 실패:", response.message || "Unexpected error");
+			                console.log(response.order_no);
+			            }
+			        }
+					
+				});
 			}
 		}
+	}
+	
+	function singleProDetail(order_no) {
+		var pro_no = ${menudetail.pro_no};
+		var orderdetail_count = document.getElementById('count-product').innerText;
+
+	    $.ajax({
+	        type: "POST",
+	        url: "${cpath}/wallet/singleProDetail.do",
+	        contentType: "application/json",
+	        data: JSON.stringify({
+	        	order_no: order_no,
+	            pro_no: pro_no,
+	            orderdetail_count: orderdetail_count
+	        }),
+	        success: function(response) {
+	            if (response.success) {
+	                console.log("콘솔 singleProDetail 성공");
+	            } else {
+	                console.log("콘솔 singleProDetail 실패:", response.message);
+	            }
+	        }
+	    });
 	}
 	
 </script>

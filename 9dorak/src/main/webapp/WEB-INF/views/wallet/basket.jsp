@@ -132,8 +132,6 @@
 															</div>
 														</div>
 													</div>
-
-
 													<div class="buttonCount">
 														<input type='hidden' value='${item.pro_no}' class='pro_no${status.count}' />
 														<input type='hidden' value='${item.pro_name}' class='pro_name${status.count}' />
@@ -175,13 +173,10 @@
 						<div class="frame-2">
 							<div class="frame-3">
 								<div class="text-wrapper-2">주문정보</div>
-
 								<div class="text-wrapper-3" id="total-items">
 									총 <span id="total_count">${totalItems}</span> Items
 								</div>
-
 							</div>
-
 							<form action="pay.do">
 								<div class="frame-4">
 									<table id="cartRow">
@@ -200,7 +195,6 @@
 										style="display: none;">
 								</div>
 							</form>
-
 						</div>
 					</div>
 
@@ -272,9 +266,7 @@
 				</div>
 			</div>
 		</footer>
-		<!-- div -->
 	</div>
-	<!-- screen -->
 </body>
 
 <script>
@@ -310,10 +302,6 @@ function emptyBasket() {
 					} else {
 						console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
 					}
-				},
-				error : function(xhr, status, error) {
-					console.error("콘솔 - Error during basket operation. Status: " + status);
-					console.error("콘솔 - Server response: " + xhr.responseText);
 				}
 			});
 }
@@ -332,8 +320,6 @@ function logCheckboxValue(checkbox) {
 	displayDiv.textContent = checkbox.value;
 	document.body.appendChild(displayDiv);
 }
-
-
 
 <%--
 var isChecked = false;
@@ -490,7 +476,6 @@ function updateCount() {
     	                pro_no: pro_no
     	            }),
     	            success: function(response) {
-    	            	console.log("console:", response);
     	                if (response.success) {
     	                    console.log("콘솔 - 삭제 성공!!");
     	                    location.reload(); 
@@ -498,10 +483,7 @@ function updateCount() {
     	                	console.error("콘솔 - 장바구니 삭제 실패", response.message);
     	                	alert("장바구니 삭제 실패 ㅜㅜㅜ!!");
     	                } 
-    	            },
-    	            error: function(error) {
-    	                    console.error("AJAX Error:", error);
-    	                }
+    	            }
     	        });
     	 }
     
@@ -611,9 +593,6 @@ function submitOrder() {
             	console.log("콘솔 insertOrder 실패:", response.message || "Unexpected error");
                 console.log(response.order_no);
             }
-        },
-        error: function(error) {
-            console.log("콘솔 insertOrder 오류:", error);
         }
     });
     
@@ -645,15 +624,10 @@ function insertOrderDetails(order_no) {
             } else {
                 console.log("콘솔 insertOrderDetail 실패:", response.message);
             }
-        },
-        error: function(error) {
-            console.log("콘솔 insertOrderDetail 오류:", error.statusText);
         }
     });
   });
 }
 
 </script>
-
-
 </html>
