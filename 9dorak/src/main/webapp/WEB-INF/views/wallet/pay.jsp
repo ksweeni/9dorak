@@ -14,23 +14,13 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/payStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/payStyle.css?d"
 	type="text/css" />
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 <style>
-.modal {
-	display: none;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 20px;
-	background-color: #fff;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	z-index: 1000;
-}
+
 </style>
 </head>
 <body>
@@ -587,11 +577,23 @@
 		</div>
 	</div>
 	<div id="successModal" class="modal">
-		<p>결제가 성공하였습니다.</p>
-		<button onclick="closeModal()">홈으로 이동하기</button>
+		<p style="font-size: 1.5rem;">결제가 성공하였습니다</p>
+		<button class="goto-home" onclick="closeModal()">홈으로 이동하기</button>
 	</div>
 </body>
 <script type="text/javascript">
+function openModal() {
+	  var successModal = document.getElementById("successModal");
+	  successModal.style.display = "block";
+	}
+
+
+	function closeModal() {
+	  var successModal = document.getElementById("successModal");
+	  successModal.style.display = "none";
+	  window.location.href="${cpath}/main.do";
+	}
+	
 function loginBasket() {
 	var mem_id = "${sessionScope.loginmem.mem_id}";
 	
@@ -648,12 +650,11 @@ var coupon = 0;
 
 function generateMerchantUid() {
     var timestamp = new Date().getTime();
-    var random = Math.floor(Math.random() * 100000000)+${olist[0].order_no};
+    var random = Math.floor(Math.random() * 100000000)+'${olist[0].order_no}';
     var merchantUid = 'ORD' + timestamp + '-' + random;
     return merchantUid;
 }
 
-console.log(generateMerchantUid());
 
 function requestPay() {
  	if ($('#sample4_postcode').val().length === 0) {
@@ -713,19 +714,21 @@ function requestPay() {
 	}
 
 	alert(buyer_addr);
-	alert($('#proname').text());
 	var proName;
-	if($('#proname').text() == ""){
-		proName = "구도락 단일 상품 주문";
-		
+
+	if ($('#proname').text() === "") {
+	    proName = "구도락 단일 상품 주문";
+	    
 	} else {
-		proName = $('#proname').text();
+	    proName = $('#proname').text();
 	}
+	
+	var merchantUid = generateMerchantUid();
 
 	IMP.request_pay({
 		pg : "inicis",
 		pay_method : "card",
-		merchant_uid : "generateMerchantUid()" , // 매번 새로워야 함
+		merchant_uid : merchantUid , 
 		name : proName,
 		amount : discountedAmount,
 		buyer_email : "${mem.mem_id}",
@@ -739,8 +742,6 @@ function requestPay() {
 			type : 'POST',
 			url : '${cpath}/verify/' + rsp.imp_uid + '?order_no=${olist[0].order_no}',
 		}).done(function(data) {
-			console.log(data);
-
 			if (data) {
 				openModal();
 			} else {
