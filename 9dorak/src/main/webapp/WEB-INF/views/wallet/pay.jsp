@@ -6,10 +6,12 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/payStyle.css"
@@ -92,7 +94,7 @@
 					</div>
 				</div>
 			</header>
-		
+
 			<div class="main-frame">
 				<div class="overlap">
 					<div class="orange">
@@ -203,16 +205,16 @@
 					</div>
 					<div class="points">
 						<p class="p">
-							<span class="span">보유 포인트 </span>
-							<span class="text-wrapper-3" id="mypoint">${mem.mem_point}
-								P</span>
+							<span class="span">보유 포인트 </span> <span class="text-wrapper-3"
+								id="mypoint">${mem.mem_point} P</span>
 						</p>
 						<div class="group-2">
 							<div class="frame-4" id="pointApply">
 								<div class="text-wrapper-7">포인트 적용</div>
 							</div>
 							<div class="overlap-group-wrapper">
-								<input id="point" class="overlap-group" placeholder="포인트를 입력해주세요">
+								<input id="point" class="overlap-group"
+									placeholder="포인트를 입력해주세요">
 							</div>
 							<div class="text-wrapper-6">포인트</div>
 						</div>
@@ -229,7 +231,7 @@
 								total
 								<c:choose>
 									<c:when test="${not empty olist}">
-										<span id="">${item}</span>
+										<span id="pro_count">${item}</span>
 									</c:when>
 									<c:when test="${not empty sub9allist}">
 										<span id="pro_count">9</span>
@@ -244,7 +246,7 @@
 										<span id="pro_count">19</span>
 									</c:when>
 									<c:otherwise>
-										<span id="pro_count">나는누구</span>
+										<span id="pro_count">${item} </span>
 									</c:otherwise>
 								</c:choose>
 								<!-- else 에는 19개 B 매뉴 사이즈 넣자  -->
@@ -334,7 +336,8 @@
 										</c:when>
 										<c:otherwise>
 											<div id="proname"
-												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">단일 상품 주문</div>
+												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">단일
+												상품 주문</div>
 										</c:otherwise>
 									</c:choose>
 
@@ -363,7 +366,8 @@
 												<input type="hidden" id="subType" value="109" />
 											</c:when>
 											<c:when test="${not empty sub19allist}">
-												<c:forEach items="${sub19allist}" var="sub" varStatus="status">
+												<c:forEach items="${sub19allist}" var="sub"
+													varStatus="status">
 													<tr style="text-align: center;">
 														<td>${sub.pro_name}</td>
 														<td>${status.index==0?'x4':'x3'}</td>
@@ -372,7 +376,8 @@
 												<input type="hidden" id="subType" value="119" />
 											</c:when>
 											<c:when test="${not empty sub19bllist}">
-												<c:forEach items="${sub19bllist}" var="sub" varStatus="status">
+												<c:forEach items="${sub19bllist}" var="sub"
+													varStatus="status">
 													<tr style="text-align: center;">
 														<td>${sub.pro_name}</td>
 														<td>${status.index==0?'x4':'x3'}</td>
@@ -381,7 +386,8 @@
 												<input type="hidden" id="subType" value="119" />
 											</c:when>
 											<c:otherwise>
-												<c:forEach items="${sub19bllist}" var="sub" varStatus="status">
+												<c:forEach items="${sub19bllist}" var="sub"
+													varStatus="status">
 													<tr style="text-align: center;">
 														<td>${sub.pro_name}</td>
 														<td>${status.index==0?'x4':'x3'}</td>
@@ -441,18 +447,21 @@
 										<div style="top: 52px; position: relative; left: 303px;">${total}원</div>
 										<div class="frame-10">
 											<div class="text-wrapper-11"></div>
-											<div class="text-wrapper-12" style="position: absolute; top: 115px">쿠폰</div>
+											<div class="text-wrapper-12"
+												style="position: absolute; top: 115px">쿠폰</div>
 											<div class="text-wrapper-13" style="top: 115px">- 0원</div>
 										</div>
 										<div class="frame-11">
 											<div class="text-wrapper-11"></div>
-											<div class="text-wrapper-98" style="position: absolute; top: 110px">포인트</div>
+											<div class="text-wrapper-98"
+												style="position: absolute; top: 110px">포인트</div>
 											<div class="text-wrapper-99" style="top: 110px">- 0원</div>
 										</div>
 									</div>
 									<button class="frame-12" onclick="requestPay()">결제하기</button>
 									<img class="line"
-										src="${cpath}/resources/images/wallet/Line9.png" style="top: 332px" />
+										src="${cpath}/resources/images/wallet/Line9.png"
+										style="top: 332px" />
 									<div class="group-4">
 										<div class="frame-10">
 											<div class="text-wrapper-15">총 결제금액</div>
@@ -461,15 +470,14 @@
 										</div>
 										<div class="group-5">
 											<p class="element-p">
-												<span class="text-wrapper-16">적립 예정 포인트 </span>
-												<span class="text-wrapper-3">P</span>
+												<span class="text-wrapper-16">적립 예정 포인트 </span> <span
+													class="text-wrapper-3">P</span>
 											</p>
 										</div>
 									</div>
 									<img class="img"
-										src="${cpath}/resources/images/wallet/Line9.png" style="position: 
-										relative; top: 260px;
-										"/>
+										src="${cpath}/resources/images/wallet/Line9.png"
+										style="position: relative; top: 260px;" />
 								</c:otherwise>
 							</c:choose>
 						</c:otherwise>
@@ -482,7 +490,7 @@
 			<div class="account-navigation">
 				<div class="text-wrapper-17">결제하기</div>
 			</div>
-			
+
 			<footer class="footer">
 				<div class="footer-company-loco">
 					<div class="footer-company">
@@ -642,38 +650,74 @@ var amount = amountWithCurrency.substring(0, amountWithCurrency.length - 1);
 var coupon = 0;	
 
 function requestPay() {
-	if ($('#sample4_roadAddress').val().length === 0) {
+ 	if ($('#sample4_postcode').val().length === 0) {
 		alert("주소를 입력하세요");
 		return;
+	} 
+ 	
+ 	var sub9allist = ${not empty sub9allist};
+ 	  var sub9bllist = ${not empty sub9bllist};
+ 	  var sub19allist = ${not empty sub19allist};
+ 	  var sub19bllist = ${not empty sub19bllist};
+ 	  
+	 var proCountElement = document.getElementById('pro_count');
+	  
+	  if (sub9allist ||sub9bllist || sub19allist || sub19bllist) {
+		  param = {
+					order_price : $("#lastTotal").text(),
+					pro_no : $("#subType").val(),
+					orderdetail_count : $("#pro_count").text()
+				}
+				$.ajax({
+					url : "${cpath}/subOrder",
+					data : param,
+					type : "post",
+					success : function(res) {
+
+					}
+				})// 주문 테이블 / 주문 상세 인서트
+	  } else {
+	    // 기본 동작
+
+	  }
+	
+	  
+	  var discountedAmount = 0;
+	  
+	if (!isNaN(amount)) {
+	    // amount가 숫자일 때
+	    var numericAmount = parseFloat(amount.replace(/,/g, ''));
+	    discountedAmount = numericAmount - coupon; 
+	} else {
+	    // amount가 숫자가 아닐 때
+	    var numericAmount = parseFloat(amount.replace(/,/g, ''));
+	    if (!isNaN(numericAmount)) {
+	        // `,`로 구분된 숫자인 경우
+	   	discountedAmount = numericAmount - coupon; 
+	    }
 	}
 	
+	var buyer_addr;
 
-	param = {
-
-		order_price : $("#lastTotal").text(),
-		pro_no : $("#subType").val(),
-		orderdetail_count : $("#pro_count").text()
+	if($("#sample4_jibunAddress").val() == "" ){
+		
+		buyer_addr = $("#guide").text().substring(10) + " "+ $("#sample4_detailAddress").val();
+	}else{
+		buyer_addr = $("#sample4_jibunAddress").val() + " "+ $("#sample4_detailAddress").val()
 	}
-	$.ajax({
-		url : "${cpath}/subOrder",
-		data : param,
-		type : "post",
-		success : function(res) {
 
-		}
-	})// 주문 테이블 / 주문 상세 인서트
-
-	var discountedAmount = amount - coupon; // Apply the coupon discount
+	alert(buyer_addr);
+	//var discountedAmount = amount - coupon; // Apply the coupon discount
 	IMP.request_pay({
 		pg : "inicis",
 		pay_method : "card",
-		merchant_uid : "ORD20180131-0000071", // 매번 새로워야 함
+		merchant_uid : "ORD20180131-0000072", // 매번 새로워야 함
 		name : "$('#proname').text()", // 1부르9
 		amount : discountedAmount,
 		buyer_email : "${mem.mem_id}",
 		buyer_name : "${mem.mem_name}",
-		buyer_tel : "010-9668-1635",
-		buyer_addr : "동안구",
+		buyer_tel : "${mem.mem_phone}",
+		buyer_addr : buyer_addr,
 		buyer_postcode : "01181"
 	}, function(rsp) { // callback
 		console.log(rsp);
@@ -868,8 +912,8 @@ function sample4_execDaumPostcode() {
 
 					} else if (data.autoJibunAddress) {
 						var expJibunAddr = data.autoJibunAddress;
-						guideTextBox.innerHTML = '(예상 지번 주소 : '
-								+ expJibunAddr + ')';
+						guideTextBox.innerHTML = '예상 지번 주소 : '
+								+ expJibunAddr + '';
 						guideTextBox.style.display = 'block';
 					} else {
 						guideTextBox.innerHTML = '';
