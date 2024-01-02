@@ -174,13 +174,16 @@ String contextPath = request.getContextPath();
 <!-- 파일 선택 부분 js로 수정함 -->
 <div class="bottom">
 <label class="fileUpload" for="singleFile" onmousedown="handleMouseDown(event)">파일 선택</label>
+
 <input type="file" name="singleFile" id="singleFile" style="display: none;"/>
 
-<span id="selectedFileName"></span>
+
 
 										<!-- 글쓰기 버튼 -->
 										<button type="submit" class="right-aligned-button">글쓰기</button>
+										
 									</div>
+									<span id="selectedFileName"></span>
 								</div>
 							</div>
 						</form>
