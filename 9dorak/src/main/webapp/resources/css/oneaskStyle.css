@@ -192,11 +192,11 @@
 }
 .e815_1065 {
 	background-color: #fff;
-	width:341px;
+	width:310px;
 	height:46px;
 	position:absolute;
 	left: 535px;
-	top: 291px;
+	top: 289px;
 	border-top-left-radius:14px;
 	border-top-right-radius:14px;
 	border-bottom-left-radius:14px;
@@ -207,8 +207,9 @@
 	width:17px;
 	height:17px;
 	position:absolute;
-	left:12px;
+	left:273px;
 	top:15px;
+	cursor: pointer;
 }
 .ei815_1066_6_1 {
     background-image: url(../images/anno/anno01.png);
@@ -221,7 +222,7 @@
 }
 .e815_1067 {
     color: #000000;
-    width: 250px;
+    width: 230px;
     height: 30px;
     position: absolute;
     left: 36px;
@@ -1585,7 +1586,7 @@ th:nth-child(2) {
     cursor: pointer;
     position: relative;
     top: -226px;
-    left: -467px;
+    left: -481px;
 }
 
 .right-aligned-button:hover {
