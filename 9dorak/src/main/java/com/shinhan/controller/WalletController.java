@@ -318,4 +318,40 @@ public class WalletController {
 		model.addAttribute("dlist",dlist);
 		return "wallet/pay";
 	}
+	
+	// 메뉴 상세 페이지에서 단일 상품 주문
+		@PostMapping("singlePro.do")
+		@ResponseBody
+		public Map<String, Object> singlePro(@RequestBody OrderVO order, HttpServletRequest request) {
+			Map<String, Object> response = new HashMap<>();
+			int resultOrder = wService.insertOrder(order);
+			int order_no = wService.selectOrderNum();
+
+			if (resultOrder > 0) {
+				response.put("success", true);
+				response.put("message", "Order added successfully.");
+				response.put("order_no", order_no);
+			} else {
+				response.put("success", false);
+				response.put("message", "Failed to add order.");
+			}
+			return response;
+		}
+
+		@PostMapping("singleProDetail.do")
+		@ResponseBody
+		public Map<String, Object> singleProDetail(@RequestBody OrderdetailVO orderDetail, HttpServletRequest request) {
+			Map<String, Object> response = new HashMap<>();
+
+			int resultOrderDetail = wService.insertOrderDetail(orderDetail);
+
+			if (resultOrderDetail > 0) {
+				response.put("success", true);
+				response.put("message", "OrderDetail added successfully.");
+			} else {
+				response.put("success", false);
+				response.put("message", "Failed to add orderDetail.");
+			}
+			return response;
+		}
 }
