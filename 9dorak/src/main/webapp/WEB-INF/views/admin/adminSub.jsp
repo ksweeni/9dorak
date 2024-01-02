@@ -66,10 +66,10 @@
 
 				<thead>
 					<tr>
-						<th>구독번호</th>
+						<th style="border-radius: 10px 0px 0px 0px;">구독번호</th>
 						<th>구독연장여부</th>
 						<th>구독시작날짜</th>
-						<th>구독회원ID</th>
+						<th style="border-radius: 0px 10px 0px 0px;">구독회원ID</th>
 					</tr>
 				</thead>
 				<tbody>

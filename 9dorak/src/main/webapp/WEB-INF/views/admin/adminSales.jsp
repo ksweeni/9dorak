@@ -51,7 +51,7 @@
 				</caption>
 				<thead>
 					<tr>
-						<th>주문고유번호</th>
+						<th style="border-radius: 10px 0px 0px 0px;">주문고유번호</th>
 						<th>결제상태</th>
 						<th>결제날짜</th>
 						<th>결제방법</th>
@@ -59,7 +59,7 @@
 						<th>입금자명</th>
 						<th>입금액</th>
 						<th>입금은행</th>
-						<th>영수증</th>
+						<th style="border-radius: 0px 10px 0px 0px;">영수증</th>
 					</tr>
 				</thead>
 				<tbody>

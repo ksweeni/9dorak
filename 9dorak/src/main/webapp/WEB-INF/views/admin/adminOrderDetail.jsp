@@ -53,9 +53,9 @@
 				</caption>
 				<thead>
 					<tr>
-						<th>주문번호</th>
+						<th style="border-radius: 10px 0px 0px 0px;">주문번호</th>
 						<th>메뉴번호</th>
-						<th>주문수량</th>
+						<th style="border-radius: 0px 10px 0px 0px;">주문수량</th>
 					</tr>
 				</thead>
 				
