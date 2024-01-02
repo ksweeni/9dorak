@@ -80,10 +80,6 @@
 					</c:forEach>
 				</tbody>
 			</table>
-
-
-			<a href="${cpath}/admin/adminGraph.do">지우지 마세요 !! 그래프로 이동하기</a>
-
 		</div>
 
 

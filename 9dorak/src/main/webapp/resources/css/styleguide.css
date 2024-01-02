@@ -8,11 +8,23 @@
 	font-family: "Wanted Sans Variable";
 }
 
+.annoKeyword {
+	padding-left: 10px;
+	margin-right: 10px;
+	border-radius: 5px;
+	border: 2px dashed #DFDFDF;
+	background: #FFF;
+	width: 267px;
+	height: 35px;
+	flex-shrink: 0;
+	outline: #CDD1DE;
+}
+
 table {
 	cursor: pointer;
 }
 
-.header a:hover{
+.header a:hover {
 	color: #F48E28 !important;
 }
 
@@ -352,7 +364,7 @@ table {
 
 .div-3 .text-wrapper-28 {
 	width: fit-content !important;
-    left: -15px !important;
+	left: -15px !important;
 	position: relative !important;
 }
 
@@ -361,7 +373,7 @@ table {
 	width: 30px !important;
 	height: 30px !important;
 	top: -1.9rem !important;
-	left: 10.2rem!important;
+	left: 10.2rem !important;
 	cursor: pointer;
 }
 

@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/adminSalesStyle.css?d" type="text/css" />
+	href="${cpath}/resources/css/adminSalesStyle.css?e" type="text/css" />
 <meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="shortcut icon"
@@ -20,14 +21,12 @@
 	<div class=e2099_2373>
 		<div class="e2099_2463"></div>
 		<div class="e2099_2467"></div>
-
 		<div class="e2099_2483"></div>
 		<span class="e2099_2468">메뉴관리</span> <span class="e2099_2469">회원관리</span>
 		<span class="e2099_2470">주문관리</span> <span class="e2099_2472">구독관리</span>
 		<span class="e2099_2473">게시판관리</span> <span class="e2099_2474">이벤트관리</span>
 		<span class="e2099_2475">쿠폰/포인트관리</span> <span class="sales">매출관리</span>
 		<div class="admin_login">
-
 			<div class="e2099_2478"></div>
 			<span class="e2099_2477">관리자</span>
 			<div class="e2101_2491"></div>
@@ -36,6 +35,213 @@
 		</div>
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
+			<div class="top-div">
+				<div class="total-info">
+					<div class="total-title">Revenue</div>
+					<div class="total-size">
+						90000원
+						<svg xmlns="http://www.w3.org/2000/svg" width="85" height="41"
+							viewBox="0 0 85 41" fill="none">
+						<g filter="url(#filter0_d_2287_3144)">
+						<path
+								d="M5 24.3152C7.01238 25.1501 12.3839 25.0894 17.7709 18.1671C24.5046 9.51427 30.774 11.7913 38.2043 21.5827C45.6347 31.3741 50.743 36.156 58.4056 22.7213C66.0681 9.2866 66.9969 4.73248 80 2"
+								stroke="#FF8901" stroke-width="3" />
+						</g>
+						<defs>
+						<filter id="filter0_d_2287_3144" x="0.425781" y="0.531982"
+								width="83.8828" height="39.9685" filterUnits="userSpaceOnUse"
+								color-interpolation-filters="sRGB">
+						<feFlood flood-opacity="0" result="BackgroundImageFix" />
+						<feColorMatrix in="SourceAlpha" type="matrix"
+								values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+								result="hardAlpha" />
+						<feOffset dy="4" />
+						<feGaussianBlur stdDeviation="2" />
+						<feColorMatrix type="matrix"
+								values="0 0 0 0 0.141176 0 0 0 0 0.278431 0 0 0 0 0.941176 0 0 0 0.16 0" />
+						<feBlend mode="normal" in2="BackgroundImageFix"
+								result="effect1_dropShadow_2287_3144" />
+						<feBlend mode="normal" in="SourceGraphic"
+								in2="effect1_dropShadow_2287_3144" result="shape" />
+						</filter>
+						</defs>
+					</svg>
+					</div>
+
+				</div>
+
+				<div class="total-info">
+					<div class="total-title">Orders</div>
+					<div class="total-size">
+						9000건
+						<svg xmlns="http://www.w3.org/2000/svg" width="85" height="41"
+							viewBox="0 0 85 41" fill="none">
+						<g filter="url(#filter0_d_2287_3132)">
+						<path
+								d="M5 24.3152C7.01238 25.1501 12.3839 25.0894 17.7709 18.1671C24.5046 9.51427 30.774 11.7913 38.2043 21.5827C45.6347 31.3741 50.743 36.156 58.4056 22.7213C66.0681 9.2866 66.9969 4.73248 80 2"
+								stroke="#FF392B" stroke-width="3" />
+						</g>
+						<defs>
+						<filter id="filter0_d_2287_3132" x="0.425781" y="0.531982"
+								width="83.8828" height="39.9685" filterUnits="userSpaceOnUse"
+								color-interpolation-filters="sRGB">
+						<feFlood flood-opacity="0" result="BackgroundImageFix" />
+						<feColorMatrix in="SourceAlpha" type="matrix"
+								values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+								result="hardAlpha" />
+						<feOffset dy="4" />
+						<feGaussianBlur stdDeviation="2" />
+						<feColorMatrix type="matrix"
+								values="0 0 0 0 0.129412 0 0 0 0 0.588235 0 0 0 0 0.32549 0 0 0 0.16 0" />
+						<feBlend mode="normal" in2="BackgroundImageFix"
+								result="effect1_dropShadow_2287_3132" />
+						<feBlend mode="normal" in="SourceGraphic"
+								in2="effect1_dropShadow_2287_3132" result="shape" />
+						</filter>
+						</defs>
+					</svg>
+					</div>
+				</div>
+				<div class="total-info">
+					<div class="total-title">Member</div>
+					<div class="total-size">
+						900명
+						<svg xmlns="http://www.w3.org/2000/svg" width="85" height="41"
+							viewBox="0 0 85 41" fill="none">
+						<g filter="url(#filter0_d_2287_3132)">
+						<path
+								d="M5 24.3152C7.01238 25.1501 12.3839 25.0894 17.7709 18.1671C24.5046 9.51427 30.774 11.7913 38.2043 21.5827C45.6347 31.3741 50.743 36.156 58.4056 22.7213C66.0681 9.2866 66.9969 4.73248 80 2"
+								stroke="#279F51" stroke-width="3" />
+						</g>
+						<defs>
+						<filter id="filter0_d_2287_3132" x="0.425781" y="0.531982"
+								width="83.8828" height="39.9685" filterUnits="userSpaceOnUse"
+								color-interpolation-filters="sRGB">
+						<feFlood flood-opacity="0" result="BackgroundImageFix" />
+						<feColorMatrix in="SourceAlpha" type="matrix"
+								values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+								result="hardAlpha" />
+						<feOffset dy="4" />
+						<feGaussianBlur stdDeviation="2" />
+						<feColorMatrix type="matrix"
+								values="0 0 0 0 0.129412 0 0 0 0 0.588235 0 0 0 0 0.32549 0 0 0 0.16 0" />
+						<feBlend mode="normal" in2="BackgroundImageFix"
+								result="effect1_dropShadow_2287_3132" />
+						<feBlend mode="normal" in="SourceGraphic"
+								in2="effect1_dropShadow_2287_3132" result="shape" />
+						</filter>
+						</defs>
+					</svg>
+					</div>
+				</div>
+			</div>
+
+			<div class="weekly-wrapper">
+				<div class="chart-wrapper">
+					<div class="sold-text">Weekly Revenue</div>
+					<canvas class="my-chart" id="myChart" width="700" height="400"></canvas>
+				</div>
+			</div>
+			<div class="pie-and-member">
+				<div class="pie-wrapper">
+					<div class="sold-text" style="margin-top: -1.5rem;">가장 많이 팔린
+						상품</div>
+					<div style="margin-top: 1rem;">
+						<canvas class="pie-chart" id="pie-chart" width="200" height="200"></canvas>
+					</div>
+					<div class="under-wrapper">
+						<div class="under-div">
+							<div class="under-left">
+								<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
+									viewBox="0 0 8 8" fill="none">
+<circle cx="4" cy="4" r="4" fill="#FFBADF" />
+</svg>
+								<p class="name">김수인</p>
+								<p class="price">5000원</p>
+								<p class="name">5%</p>
+							</div>
+							<div class="under-left">
+								<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
+									viewBox="0 0 8 8" fill="none">
+<circle cx="4" cy="4" r="4" fill="#FF766C" />
+</svg>
+								<p class="name">김수인</p>
+								<p class="price">5000원</p>
+								<p class="name">25%</p>
+							</div>
+						</div>
+
+						<div class="under-div">
+							<div class="under-left">
+								<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
+									viewBox="0 0 8 8" fill="none">
+<circle cx="4" cy="4" r="4" fill="#2F80ED" />
+</svg>
+								<p class="name">김수인</p>
+								<p class="price">5000원</p>
+								<p class="name">25%</p>
+							</div>
+							<div class="under-left">
+								<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
+									viewBox="0 0 8 8" fill="none">
+<circle cx="4" cy="4" r="4" fill="#6FACFF" />
+</svg>
+								<p class="name">김수인</p>
+								<p class="price">5000원</p>
+								<p class="name">25%</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pie-wrapper">
+					<div class="sold-text" style="margin-top: 1rem;">가장 많이 구매한
+						회원</div>
+					<div class="member-wrapper">
+						<div class="member">
+							<div class="member-image"></div>
+							<div class="member-name-and-id">
+								<div class="member-name">김수인</div>
+								<div class="member-id">ksween</div>
+							</div>
+							<div class="member-payed">90,0000</div>
+						</div>
+						<div class="member">
+							<div class="member-image"></div>
+							<div class="member-name-and-id">
+								<div class="member-name">김수인</div>
+								<div class="member-id">ksween</div>
+							</div>
+							<div class="member-payed">90,0000</div>
+						</div>
+						<div class="member">
+							<div class="member-image"></div>
+							<div class="member-name-and-id">
+								<div class="member-name">김수인</div>
+								<div class="member-id">ksween</div>
+							</div>
+							<div class="member-payed">90,0000</div>
+						</div>
+						<div class="member">
+							<div class="member-image"></div>
+							<div class="member-name-and-id">
+								<div class="member-name">김수인</div>
+								<div class="member-id">ksween</div>
+							</div>
+							<div class="member-payed">90,0000</div>
+						</div>
+						<div class="member">
+							<div class="member-image"></div>
+							<div class="member-name-and-id">
+								<div class="member-name">김수인</div>
+								<div class="member-id">ksween</div>
+							</div>
+							<div class="member-payed">90,0000</div>
+						</div>
+					</div>
+				</div>
+			</div>
+<div class="weekly-wrapper" style="margin-top:2rem; flex-direction: column;">
+
 			<table id="products" border="1">
 				<caption>
 					매출 관리<br>
@@ -45,8 +251,8 @@
 						</p>
 					</form>
 					<div class="e815_1065">
-						<div class="ei815_1066_6_1"></div>
-						<input type="text" class="e815_1067" placeholder="주문회원ID를 입력하세요">
+						<button class="ei815_1066_6_1">검색</button>
+						<input type="text" class="annoKeyword " placeholder="주문회원ID를 입력하세요">
 					</div>
 				</caption>
 				<thead>
@@ -79,14 +285,164 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			</div>
 		</div>
-		
-		<a href="${cpath}/admin/adminGraph.do" style="position:relative; top:30rem; left:30%;">지우지 마세요 !! 그래프로 이동하기</a>
-		
-		
 	</div>
 </body>
 <script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+						$
+								.getScript(
+										"https://cdn.jsdelivr.net/npm/chart.js")
+								.done(
+										function() {
+											Chart.defaults.font.family = 'Wanted Sans Variable';
+											const ctx = document
+													.getElementById('myChart');
+											const myChart = new Chart(
+													ctx,
+													{
+														type : 'bar',
+														data : {
+															labels : [ "Mon",
+																	"Tue",
+																	"Wed",
+																	"Thu",
+																	"Fri",
+																	"Sat",
+																	"Sun" ],
+															datasets : [ {
+																label : "주별 매출 금액",
+																data : [ 2478,
+																		5267,
+																		734,
+																		784,
+																		433,
+																		433,
+																		433 ],
+																backgroundColor : function(
+																		context) {
+																	var chart = context.chart;
+																	var ctx = context.chart.ctx;
+																	var gradient = ctx
+																			.createLinearGradient(
+																					0,
+																					0,
+																					0,
+																					chart.height);
+																	gradient
+																			.addColorStop(
+																					1,
+																					'#775FFC');
+																	gradient
+																			.addColorStop(
+																					0.5,
+																					'#84D9FD');
+																	gradient
+																			.addColorStop(
+																					0,
+																					'#E6EDF9');
+																	return gradient;
+																},
+																borderRadius : 90,
+															} ]
+														},
+														options : {
+															maintainAspectRatio : false,
+															scales : {
+																x : {
+																	barPercentage : 0.9,
+																	categoryPercentage : 0.8,
+																},
+																y : {
+																	beginAtZero : true,
+																},
+															},
+															legend : {
+																display : false,
+															},
+															title : {
+																display : true,
+																text : '매출 금액 (millions) in 2050',
+																font : {
+																	family : "Wanted Sans Variable",
+																},
+															},
+															plugins : {
+																legend : {
+																	labels : {
+																		fontFamily : "Wanted Sans Variable",
+																	},
+																},
+															},
+														},
+													});
+
+										})
+								.fail(
+										function(jqxhr, settings, exception) {
+											console
+													.error(
+															"Failed to load Chart.js library:",
+															exception);
+										});
+					});
+
+	$(document)
+			.ready(
+					function() {
+						$
+								.getScript(
+										"https://cdn.jsdelivr.net/npm/chart.js")
+								.done(
+										function() {
+											Chart.defaults.font.family = 'Wanted Sans Variable';
+											const pie = document
+													.getElementById('pie-chart');
+											const pieChart = new Chart(
+													pie,
+													{
+														type : 'pie',
+														data : {
+															labels : [ "차은우",
+																	"신민규",
+																	"한소희",
+																	"강동원" ],
+															datasets : [ {
+																label : "주문 건수 (millions)",
+																backgroundColor : [
+																		"#FFBADF",
+																		"#FF766C",
+																		"#6FACFF",
+																		"#74E1FF" ],
+																data : [ 6900,
+																		5267,
+																		784,
+																		433 ]
+															} ]
+														},
+														options : {
+															title : {
+																display : true,
+																text : '가장 많이 팔린 상품',
+																font : {
+																	family : "Wanted Sans Variable",
+																},
+															}
+														}
+													});
+										})
+								.fail(
+										function(jqxhr, settings, exception) {
+											console
+													.error(
+															"Failed to load Chart.js library:",
+															exception);
+										});
+					});
+
 	$(".ei815_1066_6_1").on("click", function() {
 		$.ajax({
 			url : "${cpath}/admin/searchadminOrder.do",
@@ -265,23 +621,25 @@
 
 	$setRows.submit();
 
-	 $(document).ready(function () {
-	    $('#products tbody').on('click', 'tr', function () {
-	        var order_no = $(this).find('td:first').text();
+	$(document).ready(function() {
+		$('#products tbody').on('click', 'tr', function() {
+			var order_no = $(this).find('td:first').text();
 
-	        $.ajax({
-	            type: 'POST',
-	            url: '${cpath}/admin/adminSales.do',
-	            data: { order_no: order_no },
-	            success: function (response) {
-	                $("body").html(response);
-	                console.log(order_no, "넘어오기 성공");
-	            },
-	            error: function (error) {
-	                console.error('Error:', error);
-	            }
-	        });
-	    });
+			$.ajax({
+				type : 'POST',
+				url : '${cpath}/admin/adminSales.do',
+				data : {
+					order_no : order_no
+				},
+				success : function(response) {
+					$("body").html(response);
+					console.log(order_no, "넘어오기 성공");
+				},
+				error : function(error) {
+					console.error('Error:', error);
+				}
+			});
+		});
 	});
 </script>
 </html>
