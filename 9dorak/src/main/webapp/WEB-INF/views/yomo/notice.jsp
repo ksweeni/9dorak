@@ -69,10 +69,10 @@
 						</c:choose>
 					</div>
 					<div class="group-20" id="lightsParent">
-							<div class="header-overlap-group-3" onclick="loginBasket()">
-								<img class="header-group-21"
-									src="${cpath}/resources/images/main/header-cart.png" />
-							</div>
+						<div class="header-overlap-group-3" onclick="loginBasket()">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -80,7 +80,12 @@
 		<div class="e844_606"></div>
 		<div class=e815_1065>
 			<div class=e815_1066>
-				<div class="ei815_1066_6_1"></div>
+				<svg class="search" xmlns="http://www.w3.org/2000/svg" width="15"
+					height="15" viewBox="0 0 15 15" fill="none">
+								<path
+						d="M10.581 9.26619L14.4699 13.1551C14.833 13.5182 14.833 14.1068 14.4699 14.4699C14.1068 14.833 13.5182 14.833 13.1551 14.4699L9.26619 10.581C8.30427 11.2771 7.12193 11.6875 5.84375 11.6875C2.61634 11.6875 0 9.07116 0 5.84375C0 2.61634 2.61634 0 5.84375 0C9.07116 0 11.6875 2.61634 11.6875 5.84375C11.6875 7.12193 11.2771 8.30427 10.581 9.26619ZM5.84375 9.82812C8.04426 9.82812 9.82812 8.04426 9.82812 5.84375C9.82812 3.64324 8.04426 1.85938 5.84375 1.85938C3.64324 1.85938 1.85938 3.64324 1.85938 5.84375C1.85938 8.04426 3.64324 9.82812 5.84375 9.82812Z"
+						fill="#F48E28" />
+								</svg>
 			</div>
 			<input type="text" class="e815_1067" placeholder="검색어를 입력하세요">
 		</div>
@@ -160,8 +165,8 @@
 			<!--  -->
 			<c:choose>
 				<c:when test="${empty sessionScope.loginmem.mem_image}">
-						<span class="e1081_4458"></span><span
-				class="e1081_4459"></span>
+					<span class="e1081_4458"></span>
+					<span class="e1081_4459"></span>
 				</c:when>
 				<c:otherwise>
 					<span class="e1081_4458">${sessionScope.loginmem.mem_name}</span>
@@ -169,7 +174,7 @@
 				</c:otherwise>
 			</c:choose>
 			<!--  -->
-	
+
 		</div>
 		<div class=e1081_4460>
 			<div class=e1081_4461>
@@ -248,10 +253,10 @@
 				<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
 			</div>
 		</div>
-	</footer>
+	</footer> 
 	<script type="text/javascript">
 		//검색어 정렬 e815_1067
-		$(".ei815_1066_6_1").on("click", function() {
+		$(".search").on("click", function() {
 			$.ajax({
 				url : "${cpath}/yomo/searchYomo.do",
 				type : 'GET',
@@ -263,7 +268,7 @@
 				}
 			});
 		})
-
+		
 		//정렬
 		$(".e854_1005 button").on("click", function() {
 
@@ -278,19 +283,19 @@
 				}
 			});
 		})
-		
+
 		// 장바구니 
 		function loginBasket() {
-				var mem_id = "${sessionScope.loginmem.mem_id}";
+			var mem_id = "${sessionScope.loginmem.mem_id}";
 
-				// 로그인 여부 확인
-				if (mem_id == "") {
-					alert("로그인이 필요한 서비스입니다 !");
-					window.location.href="${cpath}/login/loginForm.do";
-					return;
-				} else {
-					window.location.href="${pageContext.request.contextPath}/wallet/basket.do";
-				}
+			// 로그인 여부 확인
+			if (mem_id == "") {
+				alert("로그인이 필요한 서비스입니다 !");
+				window.location.href = "${cpath}/login/loginForm.do";
+				return;
+			} else {
+				window.location.href = "${pageContext.request.contextPath}/wallet/basket.do";
+			}
 		}
 
 		window.onload = emptyBasket;
@@ -298,29 +303,29 @@
 		function emptyBasket() {
 			var mem_id = "${sessionScope.loginmem.mem_id}";
 
-					$.ajax({
-						type : "POST",
-						url : "${cpath}/wallet/emptyBasket.do",
-						data : {
-							mem_id : mem_id,
-						},
-						dataType : "json",
-						success : function(response) {
-							if (response.success) {
-								console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
-								lightsOn();
-							} else {
-								console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
-							}
-						}
-				});
+			$.ajax({
+				type : "POST",
+				url : "${cpath}/wallet/emptyBasket.do",
+				data : {
+					mem_id : mem_id,
+				},
+				dataType : "json",
+				success : function(response) {
+					if (response.success) {
+						console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
+						lightsOn();
+					} else {
+						console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
+					}
+				}
+			});
 		}
 
 		// 장바구니 불켜기
 		function lightsOn() {
 			let lights = document.createElement("div");
-			lights.setAttribute("class","ellipse-light");
-			lights.setAttribute("id","lightsOnID");
+			lights.setAttribute("class", "ellipse-light");
+			lights.setAttribute("id", "lightsOnID");
 			document.querySelector("#lightsParent").append(lights);
 
 			console.log("장바구니 가득 차서 불 켜짐!");
