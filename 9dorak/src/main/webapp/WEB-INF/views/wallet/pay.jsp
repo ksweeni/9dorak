@@ -685,6 +685,13 @@ function requestPay() {
 				})// 주문 테이블 / 주문 상세 인서트
 	  } else {
 	    // 기본 동작
+		    $.ajax({
+		    	url : "${cpath}/proOrder",
+		    	type : "post",
+				success : function(res) {
+					alert(res);
+				}
+		    })
 
 	  }
 	
