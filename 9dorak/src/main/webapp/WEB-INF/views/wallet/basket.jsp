@@ -139,6 +139,7 @@
 														<input type='hidden' value='${status.count}' class='index-num${status.count}' />
 														<input type='hidden' value='${item.mem_id}'	class='mem_id${status.count}' />
 														<input type='hidden' value='${item.pro_sc}'	class='pro_sc${status.count}' />
+														<input type='hidden' name="memList[]" value="${item.mem_id}" />
 
 														<div class="entypo-minus-wrapper" data-action="minus" data-count="${status.count}">
 															<img class="img-3" src="/myapp/resources/images/menu/minus.png">

@@ -256,6 +256,7 @@
 
 					<c:choose>
 						<c:when test="${not empty olist}">
+						<input type="hidden" value="${order_no}" />
 							<div class="frame-9">
 								<div class="text-wrapper-11">
 
@@ -648,7 +649,7 @@ var coupon = 0;
 
 function generateMerchantUid() {
     var timestamp = new Date().getTime();
-    var random = Math.floor(Math.random() * 100000000)+${olist[0].order_no};
+    var random = Math.floor(Math.random() * 100000000)+'${olist[0].order_no}';
     var merchantUid = 'ORD' + timestamp + '-' + random;
     return merchantUid;
 }
@@ -722,10 +723,11 @@ function requestPay() {
 		proName = $('#proname').text();
 	}
 
+	var merchant_uid = generateMerchantUid();
 	IMP.request_pay({
 		pg : "inicis",
 		pay_method : "card",
-		merchant_uid : "generateMerchantUid()" , // 매번 새로워야 함
+		merchant_uid : merchant_uid, // 매번 새로워야 함
 		name : proName,
 		amount : discountedAmount,
 		buyer_email : "${mem.mem_id}",
@@ -737,7 +739,7 @@ function requestPay() {
 	
 		$.ajax({
 			type : 'POST',
-			url : '${cpath}/verify/' + rsp.imp_uid + '?order_no=${olist[0].order_no}',
+			url : '${cpath}/verify/' + rsp.imp_uid + '?order_no=${order_no}',
 		}).done(function(data) {
 			console.log(data);
 

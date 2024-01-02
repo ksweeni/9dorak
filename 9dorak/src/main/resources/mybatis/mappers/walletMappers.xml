@@ -57,6 +57,11 @@
 		delete from basket where
 		mem_id=#{mem_id} and pro_no=#{pro_no}
 	</delete>
+	
+	<delete id="deleteBasketPay" parameterType="basketvo">
+		delete from basket where
+		mem_id=#{mem_id} and pro_no=#{pro_no}
+	</delete>
 
 	<!-- 장바구니 수량 수정 -->
 	<update id="updateBasket" parameterType="basketvo">

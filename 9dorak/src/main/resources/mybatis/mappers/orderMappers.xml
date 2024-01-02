@@ -22,12 +22,12 @@
 		delete from orders where order_no=#{order_no}
 	</delete>
 	
-	<select id="orderIDCheck" parameterType="ordervo">
+	<select id="orderIDCheck" resultType="ordervo">
 		select mem_id from orders where order_no=#{order_no}
 	</select>
 	
 	<select id="orderProNoCheck" resultType="orderdetailvo">
-		select pro_no from orderdetail where order_no=#{order_no};
+		select pro_no from orderdetail where order_no=#{order_no}
 	</select>
 	
 </mapper>

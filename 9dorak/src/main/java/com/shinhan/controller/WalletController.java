@@ -78,6 +78,7 @@ public class WalletController {
 		model.addAttribute("mem", mem);
 		model.addAttribute("dlist", dlist);
 		model.addAttribute("olist", olist);
+		model.addAttribute("order_no", order_no);
 
 		return "wallet/pay";
 	}

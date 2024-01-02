@@ -61,7 +61,7 @@ public class PaymentController {
 
 	@ResponseBody
 	@RequestMapping("verify/{imp_uid}")
-	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, @RequestParam("order_no") String order_no, Model model) {
+	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, @RequestParam("order_no") int order_no, Model model) {
 		try {
 			IamportResponse<Payment> iamportResponse = iamportClient.paymentByImpUid(imp_uid);
 			if ("paid".equals(iamportResponse.getResponse().getStatus())) {
@@ -91,7 +91,7 @@ public class PaymentController {
 				paymethod = CurrentPayMethod(paymentMethod);
 		
 				PayVO pay = new PayVO();
-				 pay.setOrder_no(Integer.parseInt(order_no));
+				pay.setOrder_no(order_no);
 				pay.setPay_date(null);
 				pay.setPay_status("결제 완료");
 				pay.setPay_depo(buyerName);
@@ -104,7 +104,7 @@ public class PaymentController {
 				pay.setPay_price(roundedAmount);
 				System.out.println(pay);
 				pService.insertPay(pay);
-				deleteBasketAfterPay(pay.getOrder_no());
+				deleteBasketAfterPay(order_no);
 			} else {
 				model.addAttribute("resultMessage", "Payment verification failed");
 			}
@@ -166,8 +166,16 @@ public class PaymentController {
 		List<OrderdetailVO> pList = oService.orderProNoCheck(order_no);
 		
 		for (OrderdetailVO orderdetailVO : pList) {
-	        wService.deleteBasket(order.getMem_id(), orderdetailVO.getPro_no());
+			try {
+			    wService.deleteBasketPay(order.getMem_id(), orderdetailVO.getPro_no());
+			    System.out.println("Basket deleted successfully.");
+			} catch (Exception e) {
+			    System.out.println("Error deleting basket: " + e.getMessage());
+			    e.printStackTrace();
+			}
+			
 	    }
+		
 		response.put("success", true);
 		return response;
 	}
