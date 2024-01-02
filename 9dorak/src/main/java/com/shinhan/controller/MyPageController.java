@@ -32,6 +32,8 @@ import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.PeopleVO;
 import com.shinhan.dto.ProVO;
+import com.shinhan.dto.ProimageVO;
+import com.shinhan.model.MenuService;
 import com.shinhan.model.MyPageService;
 
 /**
@@ -100,7 +102,7 @@ public class MyPageController {
 	}
 
 	@GetMapping("orderList.do")
-	public String orderList(Model model, HttpSession session) {
+	public String orderList(Model model, HttpSession session, ProVO pro) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<Map<String, Object>> orderList = mService.orderList(loginmem.getMem_id());
 		model.addAttribute("orderList", orderList);

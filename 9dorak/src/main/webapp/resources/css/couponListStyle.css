@@ -12,7 +12,7 @@
 	gap: 6px;
 	position: relative;
 	width: 100px;
-	left: 290px;
+	left: 240px;
 	border-radius: 30px;
 	top: 20px;
 }
@@ -24,14 +24,14 @@
 }
 
 .coupon-code {
-	display: none; padding-left : 20px;
-	border-radius: 16px;
-	border: 1px solid #D7D7E0;
+	display: none; 
+	padding-left : 20px;
+	border-radius: 30px;
+	border: 2px solid #D7D7E0;
 	background: #FFF;
-	width: 680px;
+	width: 580px;
 	height: 57px;
 	top: 0px;
-	left: 0.15234375px;
 	position: relative;
 	padding-left: 20px;
 }
@@ -267,11 +267,11 @@
 }
 
 .e156_637 {
-	border-radius: 16px;
-	border: 1px solid #D7D7E0;
+	border-radius: 30px;
+	border: 2px solid #D7D7E0;
 	background: #FFF;
-	width: 700px;
-	height: 57px;
+	width: 600px;
+	height: 60px;
 	position: relative;
 	top: 0px;
 	left: 0.15234375px;
@@ -313,7 +313,7 @@
 
 .ei156_637_4461_77643 {
 	color: rgba(60.00000022351742, 60.00000022351742, 67.00000360608101, 1);
-	width: 165px;
+	width: 300px;
 	height: 19px;
 	position: absolute;
 	left: 0px;
@@ -322,6 +322,7 @@
 	text-align: left;
 	font-size: 16px;
 	letter-spacing: 0;
+	font-weight: 500;
 }
 
 .ei156_637_4461_77644 {
@@ -367,9 +368,9 @@
 	width: fit-content;
 	height: 22px;
 	position: absolute;
-	left: 580.15234375px;
+	left: 520px;
 	top: 15px;
-	font-size: 18px;
+	font-size: 15px;
 	letter-spacing: 0;
 }
 
@@ -377,13 +378,11 @@
 	width: 41px;
 	height: 39.5px;
 	position: relative;
-	left: 328.15234375px;
 	top: 40px;
 	background-image: url(../images/my/image_33.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	left: 328.15234375px;
-	left: 328.15234375px;
+	left: 280px;
 }
 
 .e154_591 {

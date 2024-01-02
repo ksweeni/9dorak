@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -26,6 +27,9 @@ import com.shinhan.dto.MemVO;
 import com.shinhan.dto.MemreviewVO;
 import com.shinhan.dto.OrderVO;
 import com.shinhan.dto.OrderdetailVO;
+import com.shinhan.dto.ProVO;
+import com.shinhan.dto.ProimageVO;
+import com.shinhan.model.MenuService;
 import com.shinhan.model.MyPageService;
 import com.shinhan.model.ReviewService;
 
@@ -36,12 +40,15 @@ public class ReviewController {
 
 	@Autowired
 	ReviewService rService;
+	
+	@Autowired
+	MenuService mService;
 
 	private static final Logger logger = LoggerFactory.getLogger(ReviewController.class);
 
 	//리뷰
 	@PostMapping("review.do")
-	public String review(Model model, HttpSession session, @RequestParam Map<String, Object> map) {
+	public String review(Model model, HttpSession session, @RequestParam Map<String, Object> map, ProVO pro) {
 		
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		Map<String, Object> inputMap = new HashMap<String, Object>();
@@ -50,6 +57,9 @@ public class ReviewController {
         inputMap.put("pro_no", (String)map.get("pro_no"));
         //System.out.println(inputMap);
         
+        List<ProimageVO> images = mService.selectByNoImage(pro.getPro_no());
+        model.addAttribute("images",images);
+      
 		model.addAttribute("orderdetail", rService.selectByOrderdetail(inputMap));
 
 		model.addAttribute("checkedreview", rService.selectCheckedReview(inputMap));

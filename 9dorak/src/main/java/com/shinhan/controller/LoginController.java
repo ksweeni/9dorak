@@ -44,7 +44,8 @@ public class LoginController {
 	}
 
 	@PostMapping("login.do")
-	public String login(@RequestParam String mem_id, @RequestParam String mem_pw, HttpSession session, Model model) {
+	public String login(@RequestParam String mem_id, @RequestParam String mem_pw, 
+			HttpSession session, Model model) {
 
 		MemVO loginmem = lservice.login(mem_id, mem_pw);
 
@@ -53,7 +54,7 @@ public class LoginController {
 			if(loginmem.getMem_id().equals("admin")) {
 				return "redirect:/admin/adminMenu.do";
 			} else {
-								return "redirect:/"; // 로그인 성공 시 메인 페이지로 리다이렉트
+			return "redirect:/"; // 로그인 성공 시 메인 페이지로 리다이렉트
 			}
 		} else {
 			// 로그인 실패 시 처리
@@ -68,8 +69,8 @@ public class LoginController {
 	}
 
 	@PostMapping("findId.do")
-	public String findId(@RequestParam String mem_name, @RequestParam String mem_phone, @RequestParam String mem_bd,
-			Model model) {
+	public String findId(@RequestParam String mem_name, @RequestParam String mem_phone,
+			@RequestParam String mem_bd, Model model) {
 
 		MemVO foundid = lservice.findId(mem_name, mem_phone, mem_bd);
 
