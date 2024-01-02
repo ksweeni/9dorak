@@ -61,7 +61,7 @@ public class PaymentController {
 
 	@ResponseBody
 	@RequestMapping("verify/{imp_uid}")
-	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, Model model) {
+	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, @RequestParam("order_no") String order_no, Model model) {
 		try {
 			IamportResponse<Payment> iamportResponse = iamportClient.paymentByImpUid(imp_uid);
 			if ("paid".equals(iamportResponse.getResponse().getStatus())) {
@@ -90,10 +90,8 @@ public class PaymentController {
 			  int roundedAmount = paidAmount.setScale(0, RoundingMode.HALF_UP).intValue();
 				paymethod = CurrentPayMethod(paymentMethod);
 		
-				int index = pService.selectPayCount();
-
 				PayVO pay = new PayVO();
-				pay.setOrder_no(index + 1);
+				 pay.setOrder_no(Integer.parseInt(order_no));
 				pay.setPay_date(null);
 				pay.setPay_status("결제 완료");
 				pay.setPay_depo(buyerName);

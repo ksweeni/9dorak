@@ -334,11 +334,12 @@
 											<div id="proname"
 												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배터지9B</div>
 										</c:when>
-										<c:otherwise>
+										<c:when test="${not empty olist}">
 											<div id="proname"
-												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">단일
-												상품 주문</div>
-										</c:otherwise>
+												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">단일 상품 주문</div>
+										</c:when>
+										
+									
 									</c:choose>
 
 									<table style="bottom: 40px; position: relative; left: 14px;">
@@ -411,7 +412,7 @@
 										<div class="frame-10">
 											<div class="text-wrapper-11"></div>
 											<div class="text-wrapper-12" style="position: absolute;">쿠폰</div>
-											<div class="text-wrapper-13">- 0원</div>
+											<div class="text-wrapper-13">- 0원</div>s
 										</div>
 										<div class="frame-11">
 											<div class="text-wrapper-98" style="position: absolute;">포인트</div>
@@ -484,8 +485,6 @@
 					</c:choose>
 				</div>
 
-
-				<!--  -->
 			</div>
 			<div class="account-navigation">
 				<div class="text-wrapper-17">결제하기</div>
@@ -644,10 +643,17 @@ var IMP = window.IMP;
 IMP.init("imp40668838"); // 내 가맹점 식별 코드
 
 var amountWithCurrency = $("#lastTotal").text();
-
 var amount = amountWithCurrency.substring(0, amountWithCurrency.length - 1);
-
 var coupon = 0;	
+
+function generateMerchantUid() {
+    var timestamp = new Date().getTime();
+    var random = Math.floor(Math.random() * 100000000)+${olist[0].order_no};
+    var merchantUid = 'ORD' + timestamp + '-' + random;
+    return merchantUid;
+}
+
+console.log(generateMerchantUid());
 
 function requestPay() {
  	if ($('#sample4_postcode').val().length === 0) {
@@ -707,12 +713,20 @@ function requestPay() {
 	}
 
 	alert(buyer_addr);
-	//var discountedAmount = amount - coupon; // Apply the coupon discount
+	alert($('#proname').text());
+	var proName;
+	if($('#proname').text() == ""){
+		proName = "구도락 단일 상품 주문";
+		
+	} else {
+		proName = $('#proname').text();
+	}
+
 	IMP.request_pay({
 		pg : "inicis",
 		pay_method : "card",
-		merchant_uid : "ORD20180131-0000072", // 매번 새로워야 함
-		name : "$('#proname').text()", // 1부르9
+		merchant_uid : "generateMerchantUid()" , // 매번 새로워야 함
+		name : proName,
 		amount : discountedAmount,
 		buyer_email : "${mem.mem_id}",
 		buyer_name : "${mem.mem_name}",
@@ -720,11 +734,10 @@ function requestPay() {
 		buyer_addr : buyer_addr,
 		buyer_postcode : "01181"
 	}, function(rsp) { // callback
-		console.log(rsp);
+	
 		$.ajax({
 			type : 'POST',
-			url : '${cpath}/verify/' + rsp.imp_uid,
-
+			url : '${cpath}/verify/' + rsp.imp_uid + '?order_no=${olist[0].order_no}',
 		}).done(function(data) {
 			console.log(data);
 
