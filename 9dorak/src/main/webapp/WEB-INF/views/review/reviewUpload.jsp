@@ -116,7 +116,7 @@
 							</div>
 						</div>
 						<div class="menu"
-							style="background-image: url('${cpath}/resources/images/menu/proimage/${orderdetail.pro_no }-2.jpg');"></div>
+							style="background-image: url('${cpath }/resources/upload/${images[1].proimage_image}');"></div>
 						<div class="text-wrapper-2">${orderdetail.pro_name }, 어떠셨나요?</div>
 						<p class="p">이 상품에 대해 어느 정도 만족하셨나요?</p>
 					</div><!-- overlap -->

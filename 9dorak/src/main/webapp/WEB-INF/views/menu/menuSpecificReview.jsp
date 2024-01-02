@@ -110,21 +110,21 @@
 				</div> --%>
 				<div class="sub-image">
 					<div class="overlap-group-wrapper"
-						onclick="changeBackground(this, '${cpath }/resources/upload/${images[1].proimage_image}')">
-						<div class="overlap-group">
-							<img class="vector" src="${cpath }/resources/upload/${images[1].proimage_image}" />
-						</div>
-					</div>
-					<div class="overlap-group-wrapper"
 						onclick="changeBackground(this, '${cpath }/resources/upload/${images[2].proimage_image}')">
-						<div class="overlap">
+						<div class="overlap-group">
 							<img class="vector" src="${cpath }/resources/upload/${images[2].proimage_image}" />
 						</div>
 					</div>
 					<div class="overlap-group-wrapper"
-						onclick="changeBackground(this, '${cpath }/resources/upload/${images[3].proimage_image}">
+						onclick="changeBackground(this, '${cpath }/resources/upload/${images[1].proimage_image}')">
+						<div class="overlap">
+							<img class="vector" src="${cpath }/resources/upload/${images[1].proimage_image}" />
+						</div>
+					</div>
+					<div class="overlap-group-wrapper"
+						onclick="changeBackground(this, '${cpath }/resources/upload/${images[0].proimage_image}')">
 						<div class="vector-wrapper">
-							<img class="vector" src="${cpath }/resources/upload/${images[3].proimage_image}" />
+							<img class="vector" src="${cpath }/resources/upload/${images[0].proimage_image}" />
 						</div>
 					</div>
 				</div>
@@ -495,8 +495,8 @@
 
     // 제품 이미지
     var cpathValue = '${cpath}';
-/*     var imageUrl = cpathValue + '/resources/images/menu/proimage/${menudetail.pro_no}-2.jpg'; */
-     var imageUrl = cpathValue + '/resources/upload/${images[0].proimage_image}'; 
+/*  var imageUrl = cpathValue + '/resources/images/menu/proimage/${menudetail.pro_no}-2.jpg'; */
+    var imageUrl = cpathValue + '/resources/upload/${images[1].proimage_image}'; 
  
     var groupDiv = document.querySelector('.div-wrapper .group');
   
