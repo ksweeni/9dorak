@@ -7,6 +7,7 @@ import java.math.RoundingMode;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.Ordered;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -141,6 +142,8 @@ public class PaymentController {
 	@ResponseBody
 	@PostMapping("/subOrder")
 	public String subOrder(OrderdetailVO orderdetail , OrderVO order, HttpSession session){
+		System.out.println("Asd:"+order);
+		System.out.println(orderdetail);
 		MemVO mem = (MemVO)session.getAttribute("loginmem");
 		order.setMem_id(mem.getMem_id());
 		int result = pService.subOrderInsert(order);
