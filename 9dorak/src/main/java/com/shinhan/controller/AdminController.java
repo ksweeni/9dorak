@@ -244,10 +244,11 @@ public class AdminController {
 	}
 	
 	@PostMapping("adminOrder.do")
-	public String adminOrderDetail(Model model, OrderdetailVO order) {
-		List<OrderVO> detailorder = orderService.selectByOrder(order.getOrder_no());
+	public String adminOrderDetail(Model model, OrderdetailVO orderdetail, OrderVO order) {
+		List<OrderVO> detailorder = orderService.selectByOrderDetail(orderdetail.getOrder_no());
+		List<OrderVO> totalorder = orderService.selectByOrder(order.getOrder_no());
 		model.addAttribute("detailorder", detailorder);
-		System.out.println(detailorder);
+		model.addAttribute("totalorder", totalorder);
 		return "admin/adminOrderDetail";
 	}
 
@@ -257,6 +258,17 @@ public class AdminController {
 		/* System.out.println("searchAllergyCheck.do"); */
 		model.addAttribute("olist", olist);
 		return "admin/adminOrder_search";
+	}
+	
+	@RequestMapping(value = "adminOrderUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminOrderUpdate(Model model, OrderVO order) {
+		int result = orderService.updateOrder(order);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+		}
 	}
 	
 	@RequestMapping(value = "adminOrderDelete.do", produces = "text/plain;charset=utf-8")

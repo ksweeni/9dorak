@@ -41,7 +41,7 @@
 		<div class="e2099_2485"></div>
 		<div class="e2099_2486">
 			<div class="e2099_3000">
-				<button class="update_order" id="update">수정하기</button>
+				<button class="update_order" id="update">주문취소</button>
 				<button class="delete_order" id="delete">삭제하기</button>
 			</div>
 		
@@ -59,25 +59,20 @@
 						<th style="border-radius: 10px 0px 0px 0px;">주문번호</th>
 						<th>메뉴번호</th>
 						<th style="border-radius: 0px 10px 0px 0px;">주문수량</th>
+						<th>주문상태</th>
 					</tr>
 				</thead>
-				
-				
-				
-				
-				
 				<c:forEach items="${detailorder}" var="detail" varStatus="status">
 				<tbody>
 						<tr>
 							<td id="order_no">${detail.order_no}</td>
 							<td id="order_no">${detail.pro_no}</td>
 							<td id="order_no">${detail.orderdetail_count}</td>
+							<td id="order_status">${detail.order_status}</td>
 						</tr>
 				</tbody>
 				</c:forEach>
 			</table>
-			
-			
 		</div>
 	</div>
 </body>
@@ -275,6 +270,27 @@ $(".ei815_1066_6_1").on("click", function() {
 			});
 
 	$setRows.submit();
+	
+	//주문취소
+   $("#update").on("click", function() {
+    var order_no = parseInt($("#order_no").text());
+    var order_status = $("#order_status").text();
+    alert(order_status);
+    var param = {
+        "order_no": order_no,
+        "order_status": order_status,
+    };
+    $.ajax({
+        url: "${cpath}/admin/adminOrderUpdate.do",
+        type: "post",
+        data: param,
+        success: function(res) {
+            location.href = "${cpath}/admin/adminOrder.do";
+        }
+    });
+});
+
+
 	
 	//삭제
 	$("#delete").on("click", function() {
