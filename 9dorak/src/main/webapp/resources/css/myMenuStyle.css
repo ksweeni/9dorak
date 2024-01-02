@@ -9,6 +9,8 @@
 	width: 1440px;
 	height: 1788px;
 	position: absolute;
+	transform: translateX(-50%) !important;
+    left: 50%;
 }
 
 .e81_146 {
