@@ -258,7 +258,16 @@ public class AdminController {
 		model.addAttribute("olist", olist);
 		return "admin/adminOrder_search";
 	}
-
+	@RequestMapping(value = "adminOrderUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String adminOrderUpdate(Model model, OrderVO order) {
+		int result = orderService.updateOrder(order);
+		if (result > 0) {
+			return "수정 성공";
+		} else {
+			return "수정 실패";
+		}
+	}
 	@RequestMapping(value = "adminOrderDelete.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String adminOrderDelete(Model model, OrderVO order) {
