@@ -46,4 +46,9 @@ public class OrderDAOMybatis {
 		return result;
 	}
 
+
+	public List<OrderVO> selectMostList() {
+		List<OrderVO> olist =  sqlSession.selectList(NAMESPACE + "selectMostList");
+		return olist;
+	}
 }

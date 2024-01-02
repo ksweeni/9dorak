@@ -34,5 +34,11 @@ public class OrderService {
 	public int updateOrder(OrderVO order) {
 		return dao.updateOrder(order);
 	}
+	
+	public List<OrderVO> selectMostList() {
+		// TODO Auto-generated method stub
+		return dao.selectMostList();
+	}
+
 
 }

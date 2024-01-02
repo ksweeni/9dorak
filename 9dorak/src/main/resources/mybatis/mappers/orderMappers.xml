@@ -32,5 +32,31 @@
 	<update id="updateOrder" parameterType="ordervo">
 		update orders set order_status='주문 취소' where order_no=#{order_no}
 	</update>
-	
+		<select id="selectMostList" resultType="ordervo">
+		SELECT *
+		FROM (
+		SELECT
+		OD.PRO_NO,
+		P.PRO_NAME,
+		SUM(OD.ORDERDETAIL_COUNT) AS
+		TOTAL_ORDER_COUNT
+		FROM
+		ORDERS O
+		JOIN
+		ORDERDETAIL OD ON O.ORDER_NO =
+		OD.ORDER_NO
+		JOIN
+		PRO P ON OD.PRO_NO = P.PRO_NO
+		GROUP BY
+		OD.PRO_NO,
+		P.PRO_NAME
+		ORDER BY
+		TOTAL_ORDER_COUNT DESC
+		)
+
+		<![CDATA[ WHERE ROWNUM <= 4]]>
+
+
+
+	</select>
 </mapper>
