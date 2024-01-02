@@ -93,12 +93,6 @@
 				</div>
 			</header>
 		
-		
-		
-		
-		
-		
-		
 			<div class="main-frame">
 				<div class="overlap">
 					<div class="orange">
@@ -113,7 +107,6 @@
 													<c:choose>
 														<c:when test="${empty dlist}">
 															<span id="regnodel">등록된 배송지가 없습니다.</span>
-
 
 															<!--  -->
 															<div id="nodel" style="display: none">
@@ -134,7 +127,6 @@
 																	readonly="readonly" placeholder="참고항목" /> <br />
 															</div>
 															<!--  -->
-
 
 														</c:when>
 														<c:when test="${not empty dlist}">
@@ -225,12 +217,8 @@
 							<div class="text-wrapper-6">포인트</div>
 						</div>
 					</div>
-
-
 				</div>
 				<!--  -->
-
-
 
 				<div class="info">
 					<div class="frame-7">
@@ -249,8 +237,14 @@
 									<c:when test="${not empty sub9bllist}">
 										<span id="pro_count">9</span>
 									</c:when>
-									<c:otherwise>
+									<c:when test="${not empty sub19allist}">
 										<span id="pro_count">19</span>
+									</c:when>
+									<c:when test="${not empty sub19bllist}">
+										<span id="pro_count">19</span>
+									</c:when>
+									<c:otherwise>
+										<span id="pro_count">나는누구</span>
 									</c:otherwise>
 								</c:choose>
 								<!-- else 에는 19개 B 매뉴 사이즈 넣자  -->
@@ -277,8 +271,6 @@
 											</tr>
 										</c:forEach>
 									</table>
-
-
 								</div>
 								<div class="text-wrapper-11"
 									style="position: relative; bottom: 39px; left: 60px;">주문
@@ -340,10 +332,9 @@
 											<div id="proname"
 												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">배터지9B</div>
 										</c:when>
-										<!-- 장바구니에서 선택 안하고 주문 눌렀을 때 -->
 										<c:otherwise>
 											<div id="proname"
-												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">나는뭘까?</div>
+												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">단일 상품 주문</div>
 										</c:otherwise>
 									</c:choose>
 
@@ -373,6 +364,15 @@
 											</c:when>
 											<c:when test="${not empty sub19allist}">
 												<c:forEach items="${sub19allist}" var="sub" varStatus="status">
+													<tr style="text-align: center;">
+														<td>${sub.pro_name}</td>
+														<td>${status.index==0?'x4':'x3'}</td>
+													</tr>
+												</c:forEach>
+												<input type="hidden" id="subType" value="119" />
+											</c:when>
+											<c:when test="${not empty sub19bllist}">
+												<c:forEach items="${sub19bllist}" var="sub" varStatus="status">
 													<tr style="text-align: center;">
 														<td>${sub.pro_name}</td>
 														<td>${status.index==0?'x4':'x3'}</td>

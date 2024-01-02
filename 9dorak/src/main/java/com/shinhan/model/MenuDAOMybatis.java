@@ -180,4 +180,5 @@ public class MenuDAOMybatis {
 //		int result = sqlSession.update(NAMESPACE + "updatePro_image", pro_image);
 //		return result;
 //	}
+	
 }
