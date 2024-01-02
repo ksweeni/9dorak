@@ -888,6 +888,7 @@
     background-color: white;
     top: -34px;
     left: 130px;
+    cursor: pointer;
 }
 
 .fileUpload {
@@ -966,4 +967,9 @@ hr {
 .title{
 	position: relative;
     display: flex;
+}
+#selectedFileName{
+	position: relative;
+    top: 610px;
+    left: 680px;
 }

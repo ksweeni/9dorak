@@ -86,11 +86,11 @@
 										<div class="input">
 											<div class="label-check-helper">
 												<div class="label-check">
-													<div class="text-wrapper">도시락 이름은 무엇인가요?</div>
+													<!-- <div class="text-wrapper">도시락 이름은 무엇인가요?</div> -->
 												</div>
 											</div>
 											<input class="container-default" type="text"
-												name="challenge_name" placeholder="귀여운 도시락 이름은 ??" />
+												name="challenge_name" placeholder="귀여운 나만의 도시락 이름을 지어주세요!" />
 										</div>
 									</div>
 									
@@ -98,11 +98,11 @@
 										<div class="input">
 											<div class="label-check-helper">
 												<div class="label-check">
-													<div class="text-wrapper">도시락 레시피를 알려주세요</div>
+													<!-- <div class="text-wrapper">도시락 레시피를 알려주세요</div> -->
 												</div>
 											</div>
-											<input class="container-default" type="text"
-												name="challenge_recipe" placeholder="나만의 도시락 레시피를 자세히 적어주세요!" />
+											<textarea class="container-default" type="text" id="recipe"
+												name="challenge_recipe" placeholder="나만의 도시락 레시피를 자세히 적어주세요!" ></textarea>
 										</div>
 									</div>
 									
@@ -110,13 +110,13 @@
 										<div class="input">
 											<div class="label-check-helper">
 												<div class="label-check">
-													<div class="text-wrapper">간단한 한 줄 소개 부탁드려요</div>
+													<!-- <div class="text-wrapper">간단한 한 줄 소개 부탁드려요</div> -->
 												</div>
 											</div>
 
 											<input class="container-default" type="text"
 												name="challenge_cont"
-												placeholder="나만의 도시락을 가장 잘 나타낼 수 있게 한 줄로 작성 해 주세요!" />
+												placeholder="나만의 도시락을 가장 잘 나타낼 수 있게 한 줄로 소개해주세요!!" />
 										</div>
 									</div>
 									
@@ -127,7 +127,7 @@
 									<div class="bottom">
 										<!-- 파일 선택 -->
 										<div class="label-check">
-											<div class="text-wrapper">도시락을 설명하는 사진이나 그림을 올려주세요</div>
+											<!-- <div class="text-wrapper">도시락을 설명하는 사진이나 그림을 올려주세요</div> -->
 										</div>
 										<div class="herere">
 										<label class="fileUpload" for="singleFile" onmousedown="handleMouseDown(event)">파일 선택</label> 
@@ -154,7 +154,7 @@
 						<div class="frame-3">
 							<div class="frame-4">
 								<div class="text-wrapper-2">나만의 도시락</div>
-								<img class="line" src="img/line-5.svg" />
+								<img class="makedosirak" src="${cpath }/resources/images/event/makedosirak.png" />
 							</div>
 						</div>
 					</div>

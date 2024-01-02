@@ -32,6 +32,7 @@
 	position: relative;
 	width: 1200px;
 	height: 1063px;
+	top: 50px;
 }
 
 .element .overlap {
@@ -52,11 +53,13 @@
 
 .element .overlap-group {
 	position: relative;
-	width: 1220px;
-	height: 1020px;
-	left: -5px;
-	background-image: url(./img/group-13.png);
-	background-size: 100% 100%;
+    width: 1220px;
+    height: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 5px solid #FFC670C3;
+    background: #FFF;
+    top: 100px;
+    border-radius: 20px;
 }
 
 .element .input-wrapper {
@@ -70,7 +73,6 @@
 .element .input {
 	display: flex;
 	flex-direction: column;
-	width: 604px;
 	align-items: flex-start;
 	gap: 5.4px;
 	position: relative;
@@ -109,25 +111,27 @@
 }
 
 .element .container-default {
-	display: flex;
 	width: 700px;
-	align-items: flex-start;
-	gap: 10.8px;
-	padding: 10.8px;
-	position: relative;
-	flex: 0 0 auto;
-	margin-right: -96.3px;
-	background-color: var(- -white-branco);
-	border-radius: 5.4px;
-	border: 2.7px solid;
-	border-color: #f38820;
+    flex: 0 0 auto;
+    margin-right: -91.3px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10.8px;
+    padding: 15px;
+    position: relative;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    resize: none;
+    border: none;
+    font-size: 1.1rem;
+    left: -50px;
 }
 
 .element .div-wrapper {
 	position: absolute;
 	width: 604px;
 	height: 93px;
-	top: 434px;
+	top: 540px;
 	left: 303px;
 }
 
@@ -141,10 +145,8 @@
 
 .element .frame-wrapper {
 	position: absolute;
-	width: 1200px;
-	height: 80px;
-	top: 550px;
-	left: 0;
+    top: 640px;
+    left: -50px;
 }
 
 .element .button-group-wrapper {
@@ -223,44 +225,26 @@
 	line-height: normal;
 }
 
-.element .frame-2 {
-    display: flex;
-    width: 200px;
-    align-items: flex-start;
-    gap: 580px;
-    position: absolute;
-    top: 79px;
-    left: 296px;
-    /* box-shadow: 5px 4px 10px #00000040; */
-}
-
-.element .frame-3 {
-	display: inline-flex;
-	align-items: flex-start;
-	gap: 45px;
-	position: relative;
-	flex: 0 0 auto;
-}
-
 .element .frame-4 {
 	display: inline-flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 10px;
-	position: relative;
-	flex: 0 0 auto;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    top: 40px;
 }
 
 .element .text-wrapper-2 {
 	position: relative;
-	width: fit-content;
-	margin-top: -1px;
-	font-family: "Montserrat-SemiBold", Helvetica;
-	font-weight: 600;
-	color: #000000;
-	font-size: 30px;
-	letter-spacing: 0;
-	line-height: normal;
+    width: fit-content;
+    margin-top: -1px;
+    font-weight: 700;
+    color: #000000;
+    font-size: 3rem;
+    letter-spacing: 0;
+    line-height: normal;
+    top: 30px;
+    text-shadow: 8px 6px 5px lightgray;
 }
 
 .element .line {
@@ -843,14 +827,16 @@
 }
 
 .fileUpload {
-	position: relative;
-	padding: 6px 25px;
-	background-color: #f38820;
-	border-radius: 4px;
-	color: white;
-	cursor: pointer;
-	left: -2px;
-	top: 17px;
+    padding: 14px 20px;
+    cursor: pointer;
+    position: relative;
+    font-size: 15px;
+    color: #f38820;
+    border: 2px solid #f38820;
+    border-radius: 50px;
+    background-color: white;
+    top: 90px;
+    left: 415px;
 }
 
 #event_menu {
@@ -908,4 +894,21 @@ hr {
 }
 .container-default:focus-visible{
 	outline: none;
+}
+.makedosirak{
+	width: 100px;
+    height: 100px;
+    position: relative;
+    left: 10px;
+}
+#recipe{
+	position: relative;
+    height: 220px;
+    top: -50px;
+}
+
+#selectedFileName{
+	position: relative;
+    top: 75px;
+    left: 210px;
 }
