@@ -82,8 +82,6 @@ public class WalletController {
 
 		return "wallet/pay";
 	}
-
-	
 	
 	// 주문, 주문 디테일 테이블 data insert
 		@PostMapping("insertOrder.do")
@@ -120,29 +118,6 @@ public class WalletController {
 				}
 				return response;
 		}
-		
-
-		
-		
-
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		// 장바구니 삭제
 		@PostMapping("deleteBasket.do")
@@ -299,7 +274,7 @@ public class WalletController {
 		model.addAttribute("sub19allist", sub19allist);
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
-		model.addAttribute("total",99999);
+		model.addAttribute("total",99000);
 		model.addAttribute("mem",mem);
 		model.addAttribute("clist",clist);
 		model.addAttribute("dlist",dlist);
@@ -316,7 +291,7 @@ public class WalletController {
 		model.addAttribute("sub19bllist", sub19bllist);
 		List<CouponVO> clist = mService.getCoupon(mem.getMem_id());
 		List<MemDeliveryVO> dlist = mService.getDelivery(mem.getMem_id());
-		model.addAttribute("total",99999);
+		model.addAttribute("total",99000);
 		model.addAttribute("mem",mem);
 		model.addAttribute("clist",clist);
 		model.addAttribute("dlist",dlist);
