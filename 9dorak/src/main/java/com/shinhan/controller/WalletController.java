@@ -65,12 +65,16 @@ public class WalletController {
 		List<OrderVO> olist = wService.getOrderList(order_no);
 
 		int total = 0;
+		int item = 0 ;
 		for (OrderVO or : olist) {
-			total += or.getPro_price();
+			total += or.getPro_price() * or.getOrderdetail_count();
+			item += or.getOrderdetail_count();
 		}
+		System.out.println(item);
 		DecimalFormat decimalFormat = new DecimalFormat("#,###");
 		String formattedTotal = decimalFormat.format(total);
 		model.addAttribute("total", formattedTotal);
+		model.addAttribute("item",item);
 		model.addAttribute("clist", clist);
 		model.addAttribute("mem", mem);
 		model.addAttribute("dlist", dlist);

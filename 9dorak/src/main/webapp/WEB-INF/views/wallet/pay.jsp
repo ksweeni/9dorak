@@ -229,7 +229,7 @@
 								total
 								<c:choose>
 									<c:when test="${not empty olist}">
-										<span id="">${olist.size()}</span>
+										<span id="">${item}</span>
 									</c:when>
 									<c:when test="${not empty sub9allist}">
 										<span id="pro_count">9</span>
