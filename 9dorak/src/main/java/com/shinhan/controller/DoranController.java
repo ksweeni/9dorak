@@ -149,8 +149,8 @@ public class DoranController {
 		EarnpointVO earn  = new EarnpointVO();
 		earn.setMem_id(memVO.getMem_id());
 		earn.setPoint_name("도란도란 글쓰기 이벤트");
-		earn.setPoint(50);
-		memVO.setMem_point(50);
+		earn.setPoint(10);
+		memVO.setMem_point(10);
 		int EarnPoint = rService.insertEarn(earn);
 		int updateResult = rService.pointUpdate(memVO);
 		memVO  = mService.getMember(memVO.getMem_id());
