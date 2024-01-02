@@ -33,12 +33,34 @@
 	</insert>
 
 	<insert id="subOrderDetailInsert" parameterType="orderdetailvo">
-		INSERT INTO orderdetail
+		INSERT INTO
+		orderdetail
 		VALUES
 		( #{order_no} , #{pro_no} , #{orderdetail_count} )
 	</insert>
-	
+	<select id="updateOrder_no" resultType="int"
+		parameterType="memvo">
+		SELECT order_no
+		FROM (
+		SELECT *
+		FROM orders
+		WHERE mem_id =
+		#{mem_id}
+		ORDER BY order_date desc
+		)
+		WHERE ROWNUM = 1
+	</select>
+
+
+	<update id="updateOrder" parameterType="int">
+		UPDATE orders
+		SET
+		order_status = '주문 완료'
+		where
+		order_no = #{order_no}
+	</update>
 	<select id="statusCheck" parameterType="payvo">
-		select pay_status from pay where order_no=#{order_no}
+		select pay_status from
+		pay where order_no=#{order_no}
 	</select>
 </mapper>

@@ -50,6 +50,14 @@ public class PayDAOMybatis {
 		return sqlSession.insert(NAMESPACE + "subOrderDetailInsert", orderdetail);
 	}
 
+	public int updateOrder_no(MemVO mem) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(NAMESPACE + "updateOrder_no",mem);
+	}
+
+	public int updateOrder(int order_no) {
+		return sqlSession.update(NAMESPACE + "updateOrder", order_no);
+	}
 	public PayVO statusCheck(int order_no) {
 		return sqlSession.selectOne(NAMESPACE + "statusCheck", order_no);
 	}

@@ -7,27 +7,73 @@
 	<select id="selectAll" resultType="ordervo">
 		select * from orders
 	</select>
-	
-	<select id="searchadminOrder" resultType="ordervo" parameterType="String">
-		SELECT * FROM orders WHERE mem_id LIKE '%'||#{mem_id}||'%' 
+
+	<select id="searchadminOrder" resultType="ordervo"
+		parameterType="String">
+		SELECT * FROM orders WHERE mem_id LIKE
+		'%'||#{mem_id}||'%'
 	</select>
 
-	<select id="selectByOrder" resultType="orderdetailvo" parameterType="orderdetailvo">
+	<select id="selectByOrderDetail" resultType="orderdetailvo"
+		parameterType="orderdetailvo">
+		SELECT orderdetail.*, orders.order_status
+		FROM
+		orderdetail
+		JOIN orders ON orderdetail.order_no = orders.order_no
+		WHERE
+		orderdetail.order_no = #{order_no}
+	</select>
+	<select id="selectByOrder" resultType="orderdetailvo"
+		parameterType="orderdetailvo">
 		select *
 		from orderdetail
 		where order_no = #{order_no}
 	</select>
-	
+
 	<delete id="deleteOrder" parameterType="int">
-		delete from orders where order_no=#{order_no}
+		delete from orders where
+		order_no=#{order_no}
 	</delete>
-	
+
 	<select id="orderIDCheck" resultType="ordervo">
-		select mem_id from orders where order_no=#{order_no}
+		select mem_id from orders
+		where order_no=#{order_no}
 	</select>
-	
+
 	<select id="orderProNoCheck" resultType="orderdetailvo">
-		select pro_no from orderdetail where order_no=#{order_no}
+		select pro_no from
+		orderdetail where order_no=#{order_no}
 	</select>
-	
+
+	<update id="updateOrder" parameterType="ordervo">
+		update orders set
+		order_status='주문 취소' where order_no=#{order_no}
+	</update>
+	<select id="selectMostList" resultType="ordervo">
+		SELECT *
+		FROM (
+		SELECT
+		OD.PRO_NO,
+		P.PRO_NAME,
+		SUM(OD.ORDERDETAIL_COUNT) AS
+		TOTAL_ORDER_COUNT
+		FROM
+		ORDERS O
+		JOIN
+		ORDERDETAIL OD ON O.ORDER_NO =
+		OD.ORDER_NO
+		JOIN
+		PRO P ON OD.PRO_NO = P.PRO_NO
+		GROUP BY
+		OD.PRO_NO,
+		P.PRO_NAME
+		ORDER BY
+		TOTAL_ORDER_COUNT DESC
+		)
+
+		<![CDATA[ WHERE ROWNUM <= 4]]>
+
+
+
+	</select>
 </mapper>
