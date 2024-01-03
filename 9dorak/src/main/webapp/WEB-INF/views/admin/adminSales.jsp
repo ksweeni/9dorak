@@ -306,13 +306,15 @@
 													{
 														type : 'bar',
 														data : {
-															labels : [ "Mon",
+															labels : [ 
+																	"Sun",
+																	"Mon",
 																	"Tue",
 																	"Wed",
 																	"Thu",
 																	"Fri",
-																	"Sat",
-																	"Sun" ],
+																	"Sat"
+																	 ],
 															datasets : [ {
 																label : "주별 매출 금액",
 																data : [ 2478,

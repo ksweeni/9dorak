@@ -9,7 +9,7 @@
 	</select>
 
 	<select id="selectAllPay" resultType="payvo">
-		select * from pay
+		select * from pay order by order_no
 	</select>
 
 	<select id="selectPay" resultType="payvo">
