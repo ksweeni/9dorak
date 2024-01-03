@@ -366,8 +366,7 @@
 				type : 'GET',
 				data : {
 					pro_name : $('#searchTxt').val(), //검색내용
-					ingre_no : chkCtgr
-				//카테고리선택
+					ingre_no : chkCtgr //카테고리선택
 				},
 				success : function(data) {
 					//alert("완료!");
