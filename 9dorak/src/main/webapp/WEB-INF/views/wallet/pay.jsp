@@ -667,7 +667,8 @@ function requestPay() {
  	  var sub19bllist = ${not empty sub19bllist};
  	  
 	 var proCountElement = document.getElementById('pro_count');
-	  
+	 alert($("#lastTotal").text().substring(0, $("#lastTotal").text().length - 1));
+
 	  if (sub9allist ||sub9bllist || sub19allist || sub19bllist) {
 		  param = {
 					order_price : $("#lastTotal").text(),
@@ -695,8 +696,8 @@ function requestPay() {
 	  }
 	
 	  
-	  var discountedAmount = 0;
-	  
+/* 	  var discountedAmount = 0;
+	 
 	if (!isNaN(amount)) {
 	    // amount가 숫자일 때
 	    var numericAmount = parseFloat(amount.replace(/,/g, ''));
@@ -708,7 +709,7 @@ function requestPay() {
 	        // `,`로 구분된 숫자인 경우
 	   	discountedAmount = numericAmount - coupon; 
 	    }
-	}
+	} */
 	
 	var buyer_addr;
 
@@ -719,7 +720,7 @@ function requestPay() {
 		buyer_addr = $("#sample4_jibunAddress").val() + " "+ $("#sample4_detailAddress").val()
 	}
 
-	alert(buyer_addr);
+
 	alert($('#proname').text());
 	var proName;
 	if($('#proname').text() == ""){
@@ -728,7 +729,7 @@ function requestPay() {
 	} else {
 		proName = $('#proname').text();
 	}
-
+ 	discountedAmount = $("#lastTotal").text().substring(0, $("#lastTotal").text().length - 1);
 	var merchant_uid = generateMerchantUid();
 	IMP.request_pay({
 		pg : "inicis",

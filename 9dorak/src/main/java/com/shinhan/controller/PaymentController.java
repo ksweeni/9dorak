@@ -156,9 +156,11 @@ public class PaymentController {
 		MemVO mem = (MemVO) session.getAttribute("loginmem");
 		order.setMem_id(mem.getMem_id());
 		int result = pService.subOrderInsert(order);
+		System.out.println(result);
 		int order_no = wService.selectOrderNum();
 		orderdetail.setOrder_no(order_no);
 		int result2 = pService.subOrderDetailInsert(orderdetail);
+		System.out.println(result2);
 		return "";
 	}
 
