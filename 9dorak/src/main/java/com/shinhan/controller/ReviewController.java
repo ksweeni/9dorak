@@ -63,7 +63,7 @@ public class ReviewController {
 		model.addAttribute("orderdetail", rService.selectByOrderdetail(inputMap));
 
 		model.addAttribute("checkedreview", rService.selectCheckedReview(inputMap));
-		System.out.println(model.getAttribute("checkedreview"));
+		//System.out.println(model.getAttribute("checkedreview"));
 		
 		return "review/reviewUpload";
 	}
@@ -75,7 +75,7 @@ public class ReviewController {
 		
 		String path = request.getSession().getServletContext().getRealPath("resources");
 		System.out.println("path : " + path);
-//		String root = path + "\\uploadFiles" ;
+		//String root = path + "\\uploadFiles" ;
 		String root = path + "\\upload";
 
 		File file = new File(root);

@@ -138,14 +138,14 @@
 		</if>
 	</select>
 
-	<!-- 카테고리
+	<!-- 카테고리 -->
 	<select id="searchCategoryCheck" resultType="provo"
 		parameterType="String">
 		SELECT pro.*, category.ingre_no
 		FROM pro
 		LEFT JOIN
 		category ON pro.pro_no = category.pro_no where ingre_no = #{ingre_no}
-	</select> -->
+	</select>
 
 	<!-- 상품상세보기 -->
 	<select id="selectByNo" resultType="provo" parameterType="provo">
