@@ -50,21 +50,18 @@ public class WalletController {
 	SubService subService;
 
 	private static final Logger logger = LoggerFactory.getLogger(WalletController.class);
-
+//	@RequestParam(value = "memList[]", required = false) String[] memList,
+//	@RequestParam(value = "proList[]", required = false) String[] proList
 	// 주문하기 수정 필요
 	@GetMapping("pay.do")
-	public String pay(Model model, HttpSession session, 
-			@RequestParam(value = "memList[]", required = false) String[] memList,
-			@RequestParam(value = "proList[]", required = false) String[] proList) {
-		System.out.println(Arrays.deepToString(memList));
-		System.out.println(Arrays.deepToString(proList));
+	public String pay(Model model, HttpSession session) {
 		List<PayVO> plist = wService.selectAllPay();
 		model.addAttribute("plist", plist);
 		if (session.getAttribute("loginmem") == null) {
 			return "redirect:/login/loginForm.do";
 		}
-		List<String> memberList = new ArrayList<>(Arrays.asList(memList));
-		List<String> productList = new ArrayList<>(Arrays.asList(proList));
+//		List<String> memberList = new ArrayList<>(Arrays.asList(memList));
+//		List<String> productList = new ArrayList<>(Arrays.asList(proList));
 		
  
 //		for ( int i= 0 ; i < memberList.size() ; i++) {
