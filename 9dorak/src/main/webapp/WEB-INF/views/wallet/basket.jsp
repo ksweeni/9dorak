@@ -95,6 +95,7 @@
 								</div>
 							</c:if>
 						</div>
+						<c:if test="${not empty basket}">
 						<div class="frame-13">
 							<div class="view-3">
 								<input type="checkbox" class="checkbox" name="selection"
@@ -102,8 +103,8 @@
 								<div class="text-wrapper-12">선택해제</div>
 								<div class="text-wrapper-13">선택삭제</div>
 							</div>
-
 						</div>
+						</c:if>
 						<c:forEach items="${basket}" var="item" varStatus="status">
 							<div class="cart-menus-wrapper">
 								<div class="cart-menus">
@@ -145,7 +146,7 @@
 															value='${status.count}' class='index-num${status.count}' />
 														<input type='hidden' value='${item.mem_id}'
 															class='mem_id${status.count}' /> <input type='hidden'
-															value='${item.pro_sc}' class='pro_sc${status.count}' />
+														value='${item.pro_sc}' class='pro_sc${status.count}' />
 
 
 														<div class="entypo-minus-wrapper" data-action="minus"
@@ -526,7 +527,7 @@ function basketList(quantity, pro_no, pro_name, price, index, pro_sc, mem_id) {
     
 	// checkBox가 선택이 되어 있으면
 
-var str = "<tr>";
+//var str = "<tr>";
 
 if (checkOk) {
     if (stock <= 0) {
@@ -541,18 +542,19 @@ if (checkOk) {
                 var a = Number($(this).parent().find(":nth-child(2)").find("input").val());
                 $(this).parent().find(":nth-child(2)").find("input").val(a + quantity);
                 search = true;
-                str += `
+                // 가격도 수정하기
+/*                 str += `
                     <td><input type="text" type='hidden' name="memList[]" value="\${mem_id}" style="display: none;"></td>
                     <td><input type="text" type='hidden' name="proList[]" value="\${pro_no}" style="display: none;"></td>
 
-                `;
+                `; */
              
             }
         });
 
         // checkBox가 선택이 되어있고, 목록에 이미 존재하는 상품이 아니면 새로운 행으로 데이터 추가하기
         if (search == false) {
-            str += `
+/*             str += `
                     <td><input type="text" name="pro_name" value="\${pro_name}"></td>
                     <td><input type="number" name="orderdetail_count" value="\${quantity}"></td>
                     <td><input type="number" name="total_amount" value="\${price * quantity}"></td>
@@ -560,7 +562,7 @@ if (checkOk) {
                     <td><input type="hidden" name="memList[]" value="\${mem_id}"></td>
                     <td><input type="hidden" name="proList[]" value="\${pro_no}"></td>
 
-            `;
+            `; */
         
             
         }
