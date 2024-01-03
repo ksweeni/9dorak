@@ -8,7 +8,7 @@ body {
 .deleteButton {
 	position: relative;
 	top: 38px;
-	left: 435px;
+	left: 385px;
 	margin: -100px 450px;
     width: 111px;
     height: 45px;
@@ -28,7 +28,7 @@ body {
 .familyList {
 	margin: -169px;
 	width: 53%;
-	margin-left: 480px;
+	margin-left: 550px;
 }
 
 .empty-message {
@@ -39,7 +39,7 @@ body {
 }
 
 table {
-	width: 100%;
+	width: 945px;
 	border-collapse: collapse;
 	margin-top: 10px;
 	border-radius: 10px;
@@ -91,19 +91,19 @@ th {
 
 .menu {
 	align-items: flex-start;
-	background-color: var(- -white);
-	border: 2px solid;
-	border-color: #e7e7e7;
-	border-radius: 16px;
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-	height: 230px;
-	left: 34px;
-	padding: 26px;
-	position: absolute;
-	top: 28px;
-	width: 253px;
+    background-color: var(- -white);
+    border: 2px solid;
+    border-color: #e7e7e7;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    height: 230px;
+    left: 175px;
+    padding: 26px;
+    position: absolute;
+    top: -10px;
+    width: 253px;
 }
 
 .links {
@@ -778,13 +778,12 @@ th {
 
 .account-navigation {
 	align-items: flex-start;
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	margin-top: 70px;
-	min-height: 68px;
-	width: 700px;
-	margin-left: 475px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 40px;
+    width: 700px;
+    margin-left: 570px;
 }
 
 .account-navigation, element.style {
@@ -800,6 +799,7 @@ th {
 	line-height: 36px;
 	white-space: nowrap;
 	margin-top: 52px;
+	color: #484848;
 }
 
 .frame-481485 {
