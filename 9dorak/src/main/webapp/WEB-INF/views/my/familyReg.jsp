@@ -20,6 +20,28 @@ String contextPath = request.getContextPath();
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 </head>
+<style>
+.e178_741 {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	left: 333px;
+	top: 15px;
+	background-image: url(${cpath}/resources/images/my/myimage.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.e178_738 {
+	width: 77.26097869873047px;
+	height: 50.37036895751953px;
+	position: absolute;
+	left: 70.26953125px;
+	top: 367px;
+	background-image: url(${cpath}/resources/images/my/image_6.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+</style>
 <body>
 	<div class=e178_596>
 
