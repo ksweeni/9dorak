@@ -87,11 +87,14 @@
 					<div class="group-3">
 						<div class="overlap-group-2"
 							style="${doran.doran_image==null ? 'height: 300px;' : ''}">
-							<button class="detailfeed_deleteBtn"
-								onclick="deleteDoran(${doran.doran_no})">
-								<img class="detailfeed_deleteBtnImg"
-									src="${cpath}/resources/images/doran/detailfeed_deleteBtn.png" />
-							</button>
+							<c:choose>
+                    <c:when test="${doran.mem_id eq sessionScope.loginmem.mem_id}">
+                        <button class="detailfeed_deleteBtn" onclick="deleteDoran(${doran.doran_no})">
+                            <img class="detailfeed_deleteBtnImg" src="${cpath}/resources/images/doran/detailfeed_deleteBtn.png" />
+                        </button>
+                    </c:when>
+                </c:choose>
+							
 
 
 							<img class="unsplash"
@@ -280,7 +283,7 @@
 									</div>
 									<div class="progress-div">
 										<progress id="progress" class="overlap-group-3" id="progress"
-											value="${sessionScope.loginmem.mem_point}" min="0" max="324"></progress>
+											value="${sessionScope.loginmem.mem_point}" min="0" max="10000"></progress>
 									</div>
 								</div>
 								<button class="doran-button-frofile-setting">
