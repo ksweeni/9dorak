@@ -151,6 +151,7 @@ public class PaymentController {
 	@ResponseBody
 	@PostMapping("/subOrder")
 	public String subOrder(OrderdetailVO orderdetail, OrderVO order, HttpSession session) {
+	
 		System.out.println("Asd:" + order);
 		System.out.println(orderdetail);
 		MemVO mem = (MemVO) session.getAttribute("loginmem");
