@@ -1,11 +1,13 @@
 @charset "UTF-8";
+
 body {
 	margin: 0;
 }
+
 .case {
-    width: 1440px;
-    margin: 0 auto;
-    padding-top: 200px;
+	width: 1440px;
+	margin: 0 auto;
+	padding-top: 200px;
 }
 
 .case .view {
@@ -59,7 +61,7 @@ body {
 
 .case .frame-3 {
 	display: flex;
-	width: 365px;
+	width: 330px;
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
@@ -256,11 +258,12 @@ body {
 }
 
 .case .text-wrapper-10 {
+	color: #fc8019;
 	font-weight: 500;
-	color: #000000;
+	margin-bottom: 1rem;
 	font-size: 24px;
 	position: relative;
-	margin-top: -1px;
+	margin-top: 1rem;
 	line-height: normal;
 }
 
@@ -272,7 +275,7 @@ body {
 	padding: 15px 25px;
 	position: relative;
 	align-self: stretch;
-	width: 86%;
+	width: 18rem;
 	flex: 0 0 auto;
 	background-color: #fc8019;
 	border-radius: 10px;
@@ -292,10 +295,10 @@ body {
 
 .case .empty {
 	position: relative;
-    width: 700px;
-    height: 100px;
-    left: 0px;
-    border-radius: 10px;
+	width: 700px;
+	height: 100px;
+	left: 0px;
+	border-radius: 10px;
 }
 
 .case .view-3 {
@@ -356,12 +359,12 @@ body {
 
 .case .text-wrapper-14 {
 	height: 49px;
-    margin-top: -1px;
-    font-weight: 600;
-    color: #f38820;
-    font-size: 30px;
-    line-height: normal;
-    padding: 30px 20px 5px;
+	margin-top: -1px;
+	font-weight: 600;
+	color: #f38820;
+	font-size: 30px;
+	line-height: normal;
+	padding: 30px 20px 5px;
 }
 
 .case .group-2 {
@@ -391,8 +394,9 @@ body {
 	position: absolute;
 	bottom: 20px;
 	right: 20px;
-    align-items: center;
+	align-items: center;
 }
+
 .case .rectangle {
 	flex-shrink: 0;
 	width: 150px;
@@ -457,7 +461,7 @@ body {
 
 .case .entypo-plus-wrapper {
 	display: flex;
-	justify-content:center;
+	justify-content: center;
 	align-items: center;
 	width: 51px;
 	height: 40px;
@@ -473,7 +477,7 @@ body {
 
 .case .entypo-minus-wrapper {
 	display: flex;
-	justify-content:center;
+	justify-content: center;
 	align-items: center;
 	width: 51px;
 	height: 40px;
@@ -499,6 +503,7 @@ body {
 }
 
 .case .checkbox {
+	accent-color: orange;
 	position: relative;
 	width: 30px;
 	height: 30px;
@@ -552,9 +557,9 @@ body {
 }
 
 .smallMenu .text-wrapper-21 {
-    font-weight: 700;
-    font-size: 2rem;
-    text-align: center;
+	font-weight: 700;
+	font-size: 2rem;
+	text-align: center;
 }
 
 .case .cart-wrapper {
@@ -562,19 +567,20 @@ body {
 	gap: 15%;
 	margin-top: 80px;
 }
+
 .case .group-wrapper {
-	background-color: rgba(255 192 133 / 26%);
+	background-color: rgba(255 192 133/ 26%);
 	padding: 30px;
 }
 
-.smallMenu .text-wrapper-20{
-    font-weight: 600;
-    font-size: 1.2rem;
-    width: 219px;
-    height: 41px;
-    position: relative;
-    text-align: left;
-    letter-spacing: 0;
+.smallMenu .text-wrapper-20 {
+	font-weight: 600;
+	font-size: 1.2rem;
+	width: 219px;
+	height: 41px;
+	position: relative;
+	text-align: left;
+	letter-spacing: 0;
 }
 
 .case .text-wrapper-23 {
@@ -908,10 +914,18 @@ body {
 	font-style: var(- -p1-font-style);
 }
 
+.text-wrapper-price {
+	color: #fc8019; font-size : 1.5rem;
+	text-align: end;
+	font-weight: 500;
+	font-size: 1.5rem;
+}
+
 input {
 	border: none;
 	text-align: justify;
-	width: 100px;
+	font-weight: 600;
+	width: 130px;
 }
 
 #emptyComment {
@@ -931,40 +945,40 @@ input {
 
 /* Modal Styling */
 .modal {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
 }
 
 .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	width: 300px;
 }
 
 .btn {
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+	padding: 10px 20px;
+	margin: 10px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
 }
 
 .btn-cancel {
-    background-color: #ccc;
+	background-color: #ccc;
 }
 
 .btn-delete {
-    background-color: #fc8019;
-    color: #fff;
+	background-color: #fc8019;
+	color: #fff;
 }

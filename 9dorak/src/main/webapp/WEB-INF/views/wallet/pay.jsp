@@ -276,7 +276,7 @@
 									</table>
 								</div>
 								<div class="text-wrapper-11"
-									style="position: relative; bottom: 39px; left: 60px;">주문
+									style="position: relative; bottom: 39px; left: 60px; font-weight: 700;">주문
 									금액</div>
 								<div class="text-wrapper-11" style="right: 15px; bottom: 17px">${total}
 									원</div>

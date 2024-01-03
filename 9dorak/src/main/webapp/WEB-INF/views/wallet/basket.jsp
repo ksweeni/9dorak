@@ -197,7 +197,7 @@
 
 								<div class="frame-11">
 									<div class="text-wrapper-10">
-										총 결제 예상 금액 <input class="text-wrapper-10" type="number"
+										총 결제 예상 금액 <input class="text-wrapper-price" type="number"
 											name="order_price" value="${totalAmount}">${totalAmount}
 										원
 									</div>
