@@ -402,20 +402,15 @@
 
 							<c:choose>
 								<c:when test="${not empty sub9allist || not empty sub9bllist }">
+
 									<div class="group-3">
-										<!-- 특별한 내용 없음 -->
-										<!-- 배부르구 결제부분 -->
-										<div style="top: 20px; position: relative; left: 80px;">주문
-											금액</div>
-										<div style="top: 1px; position: relative; left: 303px;">${total}원</div>
 										<div class="frame-10">
-											<div class="text-wrapper-11"></div>
-											<div class="text-wrapper-12" style="position: absolute;">쿠폰</div>
+											<!-- 									<div class="text-wrapper-11">사용</div> -->
+											<div class="text-wrapper-12">쿠폰</div>
 											<div class="text-wrapper-13">- 0원</div>
-											s
 										</div>
 										<div class="frame-11">
-											<div class="text-wrapper-98" style="position: absolute;">포인트</div>
+											<div class="text-wrapper-12">포인트</div>
 											<div class="text-wrapper-99">- 0원</div>
 										</div>
 									</div>
@@ -671,7 +666,7 @@ function requestPay() {
 
 	  if (sub9allist ||sub9bllist || sub19allist || sub19bllist) {
 		  param = {
-					order_price : $("#lastTotal").text(),
+					order_price : $("#lastTotal").text().substring(0, $("#lastTotal").text().length - 1),
 					pro_no : $("#subType").val(),
 					orderdetail_count : $("#pro_count").text()
 				}
@@ -758,7 +753,7 @@ function requestPay() {
 
 					  }
 					});
-				openModal();
+				openModal();	
 			} else {
 
 				var msg = '결제에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;
@@ -781,17 +776,18 @@ $("#couponApply").on("click", function() {
 
     // "원"이 포함된 경우 금액 차감
     if (text.includes("원")) {
+    	//alert("asdasdasd");
         var matches = text.match(/\d+/);
         if (matches) {
             var deductionAmount = parseFloat(matches[0]);
-
+	
             // 숫자가 유효한 경우에만 연산 수행
             if (!isNaN(lastTotal)) {
                 var newTotal = lastTotal - deductionAmount;
 
                 // 차감된 결과를 출력
-                $("#lastTotal").text(Math.floor(newTotal));
-
+                $("#lastTotal").text(Math.floor(newTotal)+"원") ;
+				
                 // 할인된 금액을 ".text-wrapper-13"에 표시
                 $(".text-wrapper-13").text("-" + Math.floor(deductionAmount) + "원");
             }
@@ -803,17 +799,18 @@ $("#couponApply").on("click", function() {
         var matches = text.match(/\d+/);
         if (matches) {
             var discountPercentage = parseFloat(matches[0]);
-
+		
             // 숫자가 유효한 경우에만 연산 수행
             if (!isNaN(lastTotal)) {
                 var discountAmount = (discountPercentage / 100) * lastTotal;
                 var newTotal = lastTotal - discountAmount;
-
+				
                 // 할인된 결과를 출력
-                $("#lastTotal").text(Math.floor(newTotal));
+                $("#lastTotal").text(Math.floor(newTotal) +"원");
 
-                // 할인된 금액을 ".text-wrapper-13"에 표시
+                // 할인된 금액을 ".`"에 표시
                 $(".text-wrapper-13").text("-" + Math.floor(discountAmount) + "원");
+   
             }
         }
     }
