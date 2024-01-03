@@ -14,7 +14,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/payStyle.css"
+<link rel="stylesheet" href="${cpath}/resources/css/payStyle.css?d"
 	type="text/css" />
 <link rel="shortcut icon"
 	href="${cpath}/resources/images/favicon/favicon.ico">
@@ -111,18 +111,18 @@
 															<span id="regnodel">등록된 배송지가 없습니다.</span>
 
 															<!--  -->
-															<div id="nodel" style="display: none">
-																우편번호 : <input type="text" id="sample4_postcode"
+															<div id="nodel" style="display: none;">
+																우편번호<input type="text" id="sample4_postcode"
 																	class="changi" placeholder="우편번호"
 																	value="${dlist[0].mem_zipcode}" readonly="readonly" />
 																<br> <input type="hidden" id="sample4_roadAddress"
 																	class="changi" placeholder="도로명주소" readonly="readonly" />
-																주소 : <input type="text" id="sample4_jibunAddress"
+																주소 <input type="text" id="sample4_jibunAddress"
 																	placeholder="지번주소" class="changi" readonly="readonly"
 																	value="${dlist[0].mem_addr} ${dlist[0].mem_detail}" />
 																<span class="changi" id="guide"
 																	style="color: #999; display: none"></span> <br /> 상세주소
-																: <input type="text" id="sample4_detailAddress"
+																<input type="text" id="sample4_detailAddress"
 																	class="changi" placeholder="상세주소"
 																	value="${dlist[0].mem_detail}"> <input
 																	type="hidden" id="sample4_extraAddress" class="changi"
@@ -256,7 +256,7 @@
 
 					<c:choose>
 						<c:when test="${not empty olist}">
-						<input type="hidden" value="${order_no}" />
+							<input type="hidden" value="${order_no}" />
 							<div class="frame-9">
 								<div class="text-wrapper-11">
 
@@ -301,7 +301,7 @@
 									<div class="text-wrapper-15" id="lastTotal">${total}원</div>
 								</div>
 								<div class="group-5">
-									
+
 									<img class="white-question-mark"
 										src="img/white-question-mark.svg" />
 								</div>
@@ -334,10 +334,11 @@
 										</c:when>
 										<c:when test="${not empty olist}">
 											<div id="proname"
-												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">단일 상품 주문</div>
+												style="position: relative; bottom: 44px; left: 79px; font-size: 20px;">단일
+												상품 주문</div>
 										</c:when>
-										
-									
+
+
 									</c:choose>
 
 									<table style="bottom: 40px; position: relative; left: 14px;">
@@ -410,7 +411,8 @@
 										<div class="frame-10">
 											<div class="text-wrapper-11"></div>
 											<div class="text-wrapper-12" style="position: absolute;">쿠폰</div>
-											<div class="text-wrapper-13">- 0원</div>s
+											<div class="text-wrapper-13">- 0원</div>
+											s
 										</div>
 										<div class="frame-11">
 											<div class="text-wrapper-98" style="position: absolute;">포인트</div>
@@ -888,7 +890,11 @@ $("#coupon").on("click", function() {
 //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 function sample4_execDaumPostcode() {
 	$("#regnodel").hide();
-	$("#nodel").show();
+	$("#nodel").show().css({
+        'display': 'flex',
+        'flex-direction': 'column',
+        'margin-top': '-1.2rem'
+    });
 	new daum.Postcode(
 			{
 				oncomplete : function(data) {
