@@ -118,36 +118,47 @@
 											<div class="group-2">
 												<!-- 체크 박스 -->
 												<div class="frame-19">
-													<input class="checkbox" type="checkbox" id="checkbox-2-${status.count}" name="selection" onchange="basketList(${item.basket_pro_count},${item.pro_no},'${item.pro_name}',${item.pro_price},${status.count},${item.pro_sc})">
+													<input class="checkbox" type="checkbox"
+														id="checkbox-2-${status.count}" name="selection"
+														onchange="basketList(${item.basket_pro_count},${item.pro_no},'${item.pro_name}',${item.pro_price},${status.count},${item.pro_sc}, '${item.mem_id }')">
 													<div class="text-wrapper-18">${item.mem_name}</div>
 												</div>
 
 												<div class="frame-16">
 													<div class="frame-17">
-														<img class="rectangle" src="${cpath}/${item.proimage_image}" />
+														<img class="rectangle"
+															src="${cpath}/${item.proimage_image}" />
 														<div class="frame-18">
 															<div class="text-wrapper-15">${item.pro_name}</div>
-															<input class="text-wrapper-16" id="proPrice" type="number" value="${item.pro_price}" readOnly />
+															<input class="text-wrapper-16" id="proPrice"
+																type="number" value="${item.pro_price}" readOnly />
 															<div class="text-wrapper-3" id="total-amount">
 																총 금액 <span id="totalAmount${status.count}">${item.pro_price*item.basket_pro_count}</span>원
 															</div>
 														</div>
 													</div>
 													<div class="buttonCount">
-														<input type='hidden' value='${item.pro_no}' class='pro_no${status.count}' />
-														<input type='hidden' value='${item.pro_name}' class='pro_name${status.count}' />
-														<input type='hidden' value='${item.pro_price}' class='pro_price${status.count}' />
-														<input type='hidden' value='${status.count}' class='index-num${status.count}' />
-														<input type='hidden' value='${item.mem_id}'	class='mem_id${status.count}' />
-														<input type='hidden' value='${item.pro_sc}'	class='pro_sc${status.count}' />
-														<input type='hidden' name="memList[]" value="${item.mem_id}" />
+														<input type='hidden' value='${item.pro_no}'
+															class='pro_no${status.count}' /> <input type='hidden'
+															value='${item.pro_name}' class='pro_name${status.count}' />
+														<input type='hidden' value='${item.pro_price}'
+															class='pro_price${status.count}' /> <input type='hidden'
+															value='${status.count}' class='index-num${status.count}' />
+														<input type='hidden' value='${item.mem_id}'
+															class='mem_id${status.count}' /> <input type='hidden'
+														value='${item.pro_sc}' class='pro_sc${status.count}' />
 
-														<div class="entypo-minus-wrapper" data-action="minus" data-count="${status.count}">
-															<img class="img-3" src="/myapp/resources/images/menu/minus.png">
+
+														<div class="entypo-minus-wrapper" data-action="minus"
+															data-count="${status.count}">
+															<img class="img-3"
+																src="/myapp/resources/images/menu/minus.png">
 														</div>
 														<span id="result${status.count}" class="text-wrapper-17">${item.basket_pro_count}</span>
-														<div class="entypo-plus-wrapper" data-action="plus" data-count="${status.count}">
-															<img class="img-3" src="/myapp/resources/images/menu/plus.png">
+														<div class="entypo-plus-wrapper" data-action="plus"
+															data-count="${status.count}">
+															<img class="img-3"
+																src="/myapp/resources/images/menu/plus.png">
 														</div>
 													</div>
 												</div>
@@ -186,16 +197,21 @@
 								</div>
 
 								<div class="frame-11">
-									<div class="text-wrapper-10">총 결제 예상 금액
-									<input class="text-wrapper-10" type="number" name="order_price"
-										value="${totalAmount}">${totalAmount} 원</div>
+									<div class="text-wrapper-10">
+										총 결제 예상 금액 <input class="text-wrapper-10" type="number"
+											name="order_price" value="${totalAmount}">${totalAmount}
+										원
+									</div>
 								</div>
-								
+
 								<div class="orderButton">
 									<label class="submitButton">주문하기</label> <input
 										class="text-wrapper-11" type="submit" value="주문하기"
 										style="display: none;">
 								</div>
+								<%-- 		<c:forEach items="${basket}" var="item" varStatus="status">
+									<input type='hidden' name="memList[]" value="${item.mem_id}" />
+								</c:forEach> --%>
 							</form>
 						</div>
 					</div>
@@ -426,11 +442,8 @@ function updateCount(myaction, count) {
 	    	  var myName = "#checkbox-2-" + (index+1);
 	    	  var checkOk = $(myName).prop("checked");
 	    	  var cartProName = $(item).find("input").val();
-			  
-	    	  if(checkOk && pro_name==cartProName){
+			  if(checkOk && pro_name==cartProName){
 				 var basket_pro_count = Number($(this).parent().find(":nth-child(2)").find("input").val());
-				 
-				 // 여기 수정
 				 if(myaction=="minus") {
 				      $(this).parent().find(":nth-child(2)").find("input").val(basket_pro_count-1);
 				 } else { 
@@ -505,7 +518,7 @@ function updateCount(myaction, count) {
     	 }
     
 // 주문 정보 목록
-function basketList(quantity, pro_no, pro_name, price, index, pro_sc) {
+function basketList(quantity, pro_no, pro_name, price, index, pro_sc, mem_id) {
     var myName = "#checkbox-2-" + index;
     var checkOk = $(myName).prop("checked");
     var totalAmount = quantity * price;
@@ -513,36 +526,51 @@ function basketList(quantity, pro_no, pro_name, price, index, pro_sc) {
 	var stock = Number($(".pro_sc" + index).val());
     
 	// checkBox가 선택이 되어 있으면
-	if(checkOk) {
-		if(stock <= 0) {
-			alert("재고가 없습니다!");
-			$(myName).prop("checked", false);
-		} else {
-			$("#cartRow tr td:nth-child(1)").each(function(index, item) {
-			 var cartProName = $(item).find("input").val();
-			 // checkBox가 선택이 되어있고, 목록에 이미 존재하는 상품이라면, 기존 수량 업데이트하기
-			  	if (pro_name==cartProName) {
-				 var a =  Number($(this).parent().find(":nth-child(2)").find("input").val());
-				 $(this).parent().find(":nth-child(2)").find("input").val(a+quantity);
-				 search=true;
-				 
-				 // 가격도 수정하기
-			  	} 
-		 	  });
-		 // checkBox가 선택이 되어있고, 목록에 이미 존재하는 상품이 아니면 새로운 행으로 데이터 추가하기
-         if (search==false) {
-        	 var str = `
-		    		<tr>
-	        	 	    <td><input type="text" name="pro_name" value="\${pro_name}"></td>
-			    		<td><input type="number" name="orderdetail_count" value="\${quantity}"></td>
-			    		<td><input type="number" name="total_amount" value="\${price*quantity}"></td>
-			    		<td><input type="number" type='hidden' name="pro_no" value="\${pro_no}" style="display: none;"></td>
-		    		</tr>
-		    	`;
-		     $("#cartRow").html($("#cartRow").html() + str);
-         }
-         rowList();
-		}
+
+//var str = "<tr>";
+
+if (checkOk) {
+    if (stock <= 0) {
+        alert("재고가 없습니다!");
+        $(myName).prop("checked", false);
+    } else {
+   
+        $("#cartRow tr td:nth-child(1)").each(function (index, item) {
+            var cartProName = $(item).find("input").val();
+            // checkBox가 선택이 되어있고, 목록에 이미 존재하는 상품이라면, 기존 수량 업데이트하기
+            if (pro_name == cartProName) {
+                var a = Number($(this).parent().find(":nth-child(2)").find("input").val());
+                $(this).parent().find(":nth-child(2)").find("input").val(a + quantity);
+                search = true;
+                // 가격도 수정하기
+/*                 str += `
+                    <td><input type="text" type='hidden' name="memList[]" value="\${mem_id}" style="display: none;"></td>
+                    <td><input type="text" type='hidden' name="proList[]" value="\${pro_no}" style="display: none;"></td>
+
+                `; */
+             
+            }
+        });
+
+        // checkBox가 선택이 되어있고, 목록에 이미 존재하는 상품이 아니면 새로운 행으로 데이터 추가하기
+        if (search == false) {
+/*             str += `
+                    <td><input type="text" name="pro_name" value="\${pro_name}"></td>
+                    <td><input type="number" name="orderdetail_count" value="\${quantity}"></td>
+                    <td><input type="number" name="total_amount" value="\${price * quantity}"></td>
+                    <td><input type="hidden" name="pro_no" value="\${pro_no}"></td>
+                    <td><input type="hidden" name="memList[]" value="\${mem_id}"></td>
+                    <td><input type="hidden" name="proList[]" value="\${pro_no}"></td>
+
+            `; */
+        
+            
+        }
+        rowList();
+    }
+        $("#cartRow").html($("#cartRow").html() + str + "</tr>"); 
+    
+
          // checkBox가 선택 해제되면
 	 } else {
 		 $("#cartRow tr td:nth-child(1)").each(function(index, item) {
@@ -576,27 +604,14 @@ function rowList() {
     
     // 주문으로 들어가는 총 가격
     let totalAmount = 0;
-    $("#cartRow tr td:nth-child(3)").each(function(index, item) {
+    $("#cartRow tr td:nth-child(3").each(function(index, item) {
         const eachPrices = parseFloat($(item).find("input").val());
         if (!isNaN(eachPrices)) {
         	totalAmount += eachPrices;
         }
     });
     $(".text-wrapper-10 input[name='order_price']").val(totalAmount);
-    
-    return {
-    	totalItems: totalItems,
-    	totalAmount: totalAmount
-    };
 };
-
-
-
-
-
-
-
-
 
 $(".orderButton").on("click", function() {
     submitOrder();
