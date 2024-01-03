@@ -301,10 +301,7 @@
 									<div class="text-wrapper-15" id="lastTotal">${total}원</div>
 								</div>
 								<div class="group-5">
-									<p class="element-p">
-										<span class="text-wrapper-16">적립 예정 포인트 </span> <span
-											class="text-wrapper-3">P</span>
-									</p>
+									
 									<img class="white-question-mark"
 										src="img/white-question-mark.svg" />
 								</div>
@@ -467,7 +464,7 @@
 									<div class="group-4">
 										<div class="frame-10">
 											<div class="text-wrapper-15">총 결제금액</div>
-											<div class="text-wrapper-15" id="lastTotal">${total}</div>
+											<div class="text-wrapper-15" id="lastTotal">${total}원</div>
 											<div class="text-wrapper-15">원</div>
 										</div>
 										<div class="group-5">

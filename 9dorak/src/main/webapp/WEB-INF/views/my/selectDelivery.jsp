@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -15,13 +15,26 @@ String contextPath = request.getContextPath();
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+@import
+	url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/complete/WantedSansVariable.min.css")
+	;
+
+* {
+	font-family: "Wanted Sans Variable";
+}
+
 input {
+	outline: none;
 	width: 290px;
 	height: 30px;
 	border-radius: 10px;
 	margin: 10px;
-	border: outset;
+	border: 2px solid lightgray;
 	padding-left: 20px;
+}
+
+input:focus-visible {
+	box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.12);
 }
 
 .modal_close_btn {
@@ -36,30 +49,32 @@ input {
 	text-decoration: none;
 	cursor: pointer;
 }
+
 #success {
 	position: relative;
-    left: 255px;
-    top: 24px;
-    border: none;
-    border-radius: 7px;
-    background-color: #ffae64;
-    width: 20%;
-    height: 34px;
-    cursor: pointer;
-    color: white;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-weight: 600;
+	left: 255px;
+	top: 24px;
+	border: none;
+	border-radius: 7px;
+	background-color: #ffae64;
+	width: 20%;
+	height: 34px;
+	cursor: pointer;
+	color: white;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-weight: 600;
 }
 
 .findpost {
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-weight: 700;
+	color: white;
 	border: none;
-    border-radius: 10px;
-    width: 94%;
-    background-color: #FFE5CB;
-    cursor: pointer;
-    border: groove;
+	border-radius: 10px;
+	width: 315px;
+	background-color: #ffae64;
+	cursor: pointer;
 }
-
 </style>
 </head>
 <body>
@@ -67,8 +82,8 @@ input {
 		value="${memDel.mem_delname }">
 	<br>
 	<input type="text" id="sample4_postcode" placeholder="우편번호" />
-	<input class="findpost" type="button" onclick="sample4_execDaumPostcode()"
-		value="우편번호 찾기">
+	<input class="findpost" type="button"
+		onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
 	<br>
 	<input type="text" id="sample4_roadAddress" placeholder="도로명주소" />
 	<input type="text" id="sample4_jibunAddress" placeholder="지번주소" />
@@ -149,14 +164,10 @@ input {
 	</script>
 </body>
 <script>
-
 	$("#success").on(
 			"click",
 			function() {
-				
-				
-				
-				
+
 				if ($("#mem_delname").val() == "") {
 					alert("배송지명을 입력해주세요 ( 필수 )");
 					return;
