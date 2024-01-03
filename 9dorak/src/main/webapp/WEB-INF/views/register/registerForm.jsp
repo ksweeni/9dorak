@@ -260,7 +260,7 @@ String contextPath = request.getContextPath();
 			}
 		}); // end ajax
 
-	});// 이메일 인증 나중에 하자
+	});
 	$('.mail-check-input').blur(
 			function() {
 				const inputCode = $(this).val();
