@@ -223,7 +223,7 @@
 									</div>
 									<div class="progress-div">
 										<progress id="progress" class="overlap-group-3" id="progress"
-											value="${sessionScope.loginmem.mem_point}" min="0" max="324"></progress>
+											value="${sessionScope.loginmem.mem_point}" min="0" max="10000"></progress>
 									</div>
 								</div>
 								<button class="doran-button-frofile-setting">
