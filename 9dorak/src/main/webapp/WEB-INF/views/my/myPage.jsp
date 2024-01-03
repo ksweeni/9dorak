@@ -163,27 +163,27 @@ String contextPath = request.getContextPath();
 				<div class="e72_330"></div>
 			</a>
 			
-			<div class=e69_201>
+<!-- 			<div class=e69_201>
 				<div class=e69_202>
 					<span class="e69_176">배송 내역/조회</span><span class="e69_204">Check
 						and view your delivery history</span>
 				</div>
 				<div class="e72_322"></div>
-			</div>
-			<div class=e69_208>
+			</div> -->
+<!-- 			<div class=e69_208>
 				<div class=e69_209>
 					<span class="e69_176">구독변경 및 구독멈추기</span><span class="e69_211">Modify
 						or pause your subscription</span>
 				</div>
 				<div class="e72_326"></div>
-			</div>
-			<div class=e69_214>
+			</div> -->
+			<!-- <div class=e69_214>
 				<div class=e69_215>
 					<span class="e69_176">나의 구독 내역</span><span class="e69_217">Experience
 						the joy of subscribing to Dosirak from Gudalok and enjoy</span>
 				</div>
 				<div class="e72_328"></div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 
