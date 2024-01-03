@@ -113,6 +113,7 @@ public class ReviewController {
 		review.setOrder_no(request.getParameter("order_no"));
 		review.setPro_no(request.getParameter("pro_no"));
 		
+		int pro_no = Integer.parseInt(request.getParameter("pro_no"));
 		// 이미지를 업로드한 경우에만 파일 이름 설정
 		if (singleFile != null && !singleFile.isEmpty()) {
 		    review.setMemreview_image(ranFileName);
@@ -125,8 +126,8 @@ public class ReviewController {
 		//System.out.println(review.getPro_no());
 		
 		int result = rService.insertReview(review);
-		
-		return "redirect:/my/orderDetails.do";
+
+		return "redirect:/menu/menuSpecificReview.do?pro_no=" + pro_no;
 	}
 	
 	
