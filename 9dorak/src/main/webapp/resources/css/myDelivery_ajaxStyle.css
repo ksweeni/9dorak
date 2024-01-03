@@ -9,6 +9,8 @@
 	width: 1440px;
 	height: 1788px;
 	position: absolute;
+	left: 50%;
+    transform: translateX(-50%);
 }
 
 .e128_187 {
