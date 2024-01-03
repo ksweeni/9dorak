@@ -132,27 +132,28 @@
 
 														</c:when>
 														<c:when test="${not empty dlist}">
-															배송지명 : <input type="text" id="mem_delname" class="changi"
+															배송지명 &nbsp; <input type="text" id="mem_delname" class="changi"
 																readonly="readonly" placeholder="배송지명"
 																value="${dlist[0].mem_delname}">
-															<br> 우편번호 : <input type="text" id="sample4_postcode"
+															<br> 우편번호 &nbsp; <input type="text" id="sample4_postcode"
 																class="changi" placeholder="우편번호"
 																value="${dlist[0].mem_zipcode}" readonly="readonly" />
 															<br>
 															<input type="hidden" id="sample4_roadAddress"
-																class="changi" placeholder="도로명주소" readonly="readonly" /> 주소 : <input
+																class="changi" placeholder="도로명주소" readonly="readonly" /> 
+																주소 &nbsp; <input
 																type="text" id="sample4_jibunAddress" placeholder="지번주소"
 																class="changi" readonly="readonly"
 																value="${dlist[0].mem_addr} ${dlist[0].mem_detail}" />
 															<span class="changi" id="guide"
 																style="color: #999; display: none"></span>
-															<br /> 상세주소 :
-													<input type="text" id="sample4_detailAddress"
+															<br> 상세주소 &nbsp;
+															<input type="text" id="sample4_detailAddress"
 																class="changi" placeholder="상세주소"
 																value="${dlist[0].mem_detail}">
 															<input type="hidden" id="sample4_extraAddress"
 																readonly="readonly" class="changi" placeholder="참고항목" />
-															<br />
+															<br>
 														</c:when>
 													</c:choose>
 
