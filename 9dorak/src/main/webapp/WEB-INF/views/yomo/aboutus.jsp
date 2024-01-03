@@ -139,6 +139,7 @@
 					<span class="e75_213">도시락이 궁금해요</span><span class="e75_214">아이
 						건강, 나이, 신체 상태에 따른 메뉴가 추천됩니다! 고른 영양소와 엄선한 재료들로 만들어진 도시락을 무려 9일 연속으로
 						받아볼 수 있어요.</span>
+						<div class="chicken"></div>
 				</div>
 				<div class=e75_216>
 					<div class=e75_217>

@@ -156,17 +156,17 @@
 									viewBox="0 0 8 8" fill="none">
 <circle cx="4" cy="4" r="4" fill="#FFBADF" />
 </svg>
-								<p class="name">김수인</p>
-								<p class="price">5000원</p>
-								<p class="name">5%</p>
+								<p class="name">우삼겹 묵은지김치찌개</p>
+							<!--  <p class="price">5000원</p> -->
+								<p class="name">49%</p>
 							</div>
 							<div class="under-left">
 								<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
 									viewBox="0 0 8 8" fill="none">
 <circle cx="4" cy="4" r="4" fill="#FF766C" />
 </svg>
-								<p class="name">김수인</p>
-								<p class="price">5000원</p>
+								<p class="name">제주모자반 미역국</p>
+								<!--  <p class="price">5000원</p> -->
 								<p class="name">25%</p>
 							</div>
 						</div>
@@ -177,18 +177,18 @@
 									viewBox="0 0 8 8" fill="none">
 <circle cx="4" cy="4" r="4" fill="#2F80ED" />
 </svg>
-								<p class="name">김수인</p>
-								<p class="price">5000원</p>
-								<p class="name">25%</p>
+								<p class="name">꽃게애호박 된장찌개</p>
+								
+								<p class="name">16%</p>
 							</div>
 							<div class="under-left">
 								<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
 									viewBox="0 0 8 8" fill="none">
 <circle cx="4" cy="4" r="4" fill="#6FACFF" />
 </svg>
-								<p class="name">김수인</p>
-								<p class="price">5000원</p>
-								<p class="name">25%</p>
+								<p class="name">특선 LA갈비구이</p>
+								<!--  <p class="price">5000원</p> -->
+								<p class="name">10%</p>
 							</div>
 						</div>
 					</div>
@@ -206,36 +206,36 @@
 							<div class="member-payed">90,0000</div>
 						</div>
 						<div class="member">
-							<div class="member-image"></div>
+							<div class="member-image" style="background-image:url('${cpath}/resources/images/register/baby.png'); "></div>
 							<div class="member-name-and-id">
-								<div class="member-name">김수인</div>
-								<div class="member-id">ksween</div>
+								<div class="member-name">한종범</div>
+								<div class="member-id">jongbumee</div>
 							</div>
-							<div class="member-payed">90,0000</div>
+							<div class="member-payed">75,0000</div>
 						</div>
 						<div class="member">
-							<div class="member-image"></div>
+							<div class="member-image" style="background-image:url('${cpath}/resources/images/image.png'); "></div>
 							<div class="member-name-and-id">
-								<div class="member-name">김수인</div>
-								<div class="member-id">ksween</div>
+								<div class="member-name">홍찬기</div>
+								<div class="member-id">hongHong</div>
 							</div>
-							<div class="member-payed">90,0000</div>
+							<div class="member-payed">50,0000</div>
 						</div>
 						<div class="member">
-							<div class="member-image"></div>
+							<div class="member-image" style="background-image:url('${cpath}/resources/images/my/baseProfile.png'); "></div>
 							<div class="member-name-and-id">
-								<div class="member-name">김수인</div>
-								<div class="member-id">ksween</div>
+								<div class="member-name">한마음</div>
+								<div class="member-id">oneHeart</div>
 							</div>
-							<div class="member-payed">90,0000</div>
+							<div class="member-payed">29,0000</div>
 						</div>
 						<div class="member">
-							<div class="member-image"></div>
+							<div class="member-image" style="background-image:url('${cpath}/resources/images/register/parent.png'); "></div>
 							<div class="member-name-and-id">
-								<div class="member-name">김수인</div>
-								<div class="member-id">ksween</div>
+								<div class="member-name">동지현</div>
+								<div class="member-id">zizi</div>
 							</div>
-							<div class="member-payed">90,0000</div>
+							<div class="member-payed">17,0000</div>
 						</div>
 					</div>
 				</div>
@@ -315,13 +315,13 @@
 																	"Sun" ],
 															datasets : [ {
 																label : "주별 매출 금액",
-																data : [ 2478,
-																		5267,
-																		734,
-																		784,
-																		433,
-																		433,
-																		433 ],
+																data : [ 1000000,
+																	19050000,
+																	10006500,
+																	3000000,
+																	5060000,
+																	800900,
+																	9000000 ],
 																backgroundColor : function(
 																		context) {
 																	var chart = context.chart;
@@ -365,7 +365,7 @@
 															},
 															title : {
 																display : true,
-																text : '매출 금액 (millions) in 2050',
+																text : '매출 금액 in 2024',
 																font : {
 																	family : "Wanted Sans Variable",
 																},
@@ -406,21 +406,21 @@
 													{
 														type : 'pie',
 														data : {
-															labels : [ "차은우",
-																	"신민규",
-																	"한소희",
-																	"강동원" ],
+															labels : [ "우삼겹 묵은지김치찌개",
+																	"제주모자반 미역국",
+																	"꽃게애호박 된장찌개",
+																	"특선 LA갈비구이" ],
 															datasets : [ {
-																label : "주문 건수 (millions)",
+																label : "주문 건수",
 																backgroundColor : [
 																		"#FFBADF",
 																		"#FF766C",
 																		"#6FACFF",
 																		"#74E1FF" ],
-																data : [ 6900,
-																		5267,
-																		784,
-																		433 ]
+																data : [ 250,
+																		95,
+																		75,
+																		60 ]
 															} ]
 														},
 														options : {

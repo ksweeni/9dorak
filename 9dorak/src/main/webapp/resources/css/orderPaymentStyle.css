@@ -201,7 +201,7 @@
 
 .div-wrapper .text-wrapper-6 {
 	position: absolute;
-	width: 170px;
+	width: fit-content;
 	height: 32px;
 	top: 63px;
 	left: 194px;
@@ -331,6 +331,7 @@
 .div-wrapper .frame-8:hover {
 	background-color: #ffae64;
 }
+
 .div-wrapper .frame-7:hover {
 	background-color: #ffae64;
 }
@@ -384,7 +385,7 @@
 	top: 0;
 	left: 0;
 	border-radius: 20px;
-/* 	background-image: url(./img/medium.png); */
+	/* 	background-image: url(./img/medium.png); */
 	background-size: cover;
 	background-position: 50% 50%;
 }
@@ -498,10 +499,9 @@
 	white-space: nowrap;
 }
 
-.orderlist,
-.cancellist{
+.orderlist, .cancellist {
 	text-decoration: none;
 	font-size: 14px;
-    font-weight: 700;
-    color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
+	font-weight: 700;
+	color: rgba(60.00000022351742, 60.00000022351742, 60.00000022351742, 1);
 }

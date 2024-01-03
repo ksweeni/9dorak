@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+a {
+	transition: background 0.5s ease;
+	font-weight:700;
+}
+
+a:hover {
+	background: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+}
+
+a:hover span {
+	color: white;
+}
+
 .babul {
 	background-image: url(../images/babul.png);
 	background-repeat: no-repeat;
@@ -834,8 +847,8 @@
 
 .e1547_3780 {
 	text-shadow: 7px 7px 4px lightgray;
-    font-size: 2rem;
-    width: fit-content;
+	font-size: 2rem;
+	width: fit-content;
 	color: darkorange;
 	font-weight: 500;
 	height: 35px;
@@ -906,18 +919,18 @@
 }
 
 .e1547_3755 {
-    width: 401px;
-    height: 263.630859px;
-    position: absolute;
-    left: -0.500031px;
-    top: -2px;
-    border-radius: 30px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    background-image: url(../images/main/sandwich_lunchbox01.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
+	width: 401px;
+	height: 263.630859px;
+	position: absolute;
+	left: -0.500031px;
+	top: -2px;
+	border-radius: 30px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-image: url(../images/main/sandwich_lunchbox01.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
 }
 
 .e1547_3756 {
@@ -1013,18 +1026,18 @@
 }
 
 .e1547_3764 {
-    width: 401px;
-    height: 263.630859px;
-    position: absolute;
-    left: -0.500031px;
-    top: -2px;
-    border-radius: 30px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    background-image: url(../images/main/sandwich_lunchbox01.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
+	width: 401px;
+	height: 263.630859px;
+	position: absolute;
+	left: -0.500031px;
+	top: -2px;
+	border-radius: 30px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-image: url(../images/main/sandwich_lunchbox01.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
 }
 
 .e1547_3765 {
@@ -1120,18 +1133,18 @@
 }
 
 .e1547_3773 {
-    width: 401px;
-    height: 263.630859px;
-    position: absolute;
-    left: -0.500031px;
-    top: -2px;
-    border-radius: 30px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    background-image: url(../images/main/sandwich_lunchbox01.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
+	width: 401px;
+	height: 263.630859px;
+	position: absolute;
+	left: -0.500031px;
+	top: -2px;
+	border-radius: 30px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-image: url(../images/main/sandwich_lunchbox01.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
 }
 
 .e1547_3774 {
@@ -1230,17 +1243,14 @@
 .e1547_3719 {
 	text-shadow: 7px 7px 4px lightgray;
 	width: fit-content;
-    font-size: 2rem;
-    
+	font-size: 2rem;
 	color: orange;
 	font-weight: 500;
-	
 	height: 35px;
 	position: absolute;
 	left: 21px;
 	top: 18px;
 	text-align: left;
-	
 	letter-spacing: 0;
 }
 
@@ -1296,17 +1306,17 @@
 }
 
 .e1547_3727 {
-    width: 401px;
-    height: 263.630859px;
-    position: absolute;
-    left: -0.500031px;
-    top: -2px;
-    border-radius: 30px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
+	width: 401px;
+	height: 263.630859px;
+	position: absolute;
+	left: -0.500031px;
+	top: -2px;
+	border-radius: 30px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
 }
 
 .e1547_3728 {
@@ -1453,18 +1463,18 @@
 }
 
 .e1547_3790 {
-    font-weight: 700;
-    color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: auto;
-    max-width: 100%;
-    height: 29px;
-    position: absolute;
-    left: 27px;
-    top: 5px;
-    /* font-family: Montserrat; */
-    text-align: left;
-    font-size: 20px;
-    letter-spacing: 0;
+	font-weight: 700;
+	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
+	width: auto;
+	max-width: 100%;
+	height: 29px;
+	position: absolute;
+	left: 27px;
+	top: 5px;
+	/* font-family: Montserrat; */
+	text-align: left;
+	font-size: 20px;
+	letter-spacing: 0;
 }
 
 .e1547_3739 {
