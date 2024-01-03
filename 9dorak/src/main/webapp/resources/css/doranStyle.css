@@ -1261,7 +1261,7 @@ progress {
 
 .body {
     position: relative;
-    left: 49%;
+    left: 50%;
     transform: translateX(-39%);
     top: -49px;
 }
