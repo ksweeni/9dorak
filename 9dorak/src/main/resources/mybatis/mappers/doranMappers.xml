@@ -105,9 +105,11 @@
 		mem_id , doran_profile
 		)
 		VALUES (
-		#{doran_no}, #{doran_title}, #{doran_cont},
+		#{doran_no}, #{doran_title},
+		#{doran_cont},
 		sysdate,
-		#{doran_image}, #{doran_view}, #{mem_id} , #{doran_profile}
+		#{doran_image}, #{doran_view}, #{mem_id} ,
+		#{doran_profile}
 		)
 	</insert>
 
@@ -253,8 +255,8 @@
 
 	<!-- 댓글 추가 -->
 	<insert id="insertComment" parameterType="commentvo">
-	insert into comments
-	values (#{comment_no}, #{comment_cont}, sysdate ,#{mem_id} ,#{doran_no} )
+		insert into comments
+		values (#{comment_no}, #{comment_cont}, sysdate ,#{mem_id} ,#{doran_no} )
 	</insert>
 
 	<!-- 조회수 증가 -->
@@ -266,7 +268,16 @@
 	</update>
 
 	<delete id="deleteDoran" parameterType="int">
-		delete from doran where doran_no = #{doranNo}
+		delete from doran where
+		doran_no = #{doranNo}
 	</delete>
-	
+
+
+	<select id="selectlike" parameterType="String"
+		resultType="doranlikevo">
+		SELECT *
+		FROM doranlike where mem_id = #{mem_id}
+
+
+	</select>
 </mapper>

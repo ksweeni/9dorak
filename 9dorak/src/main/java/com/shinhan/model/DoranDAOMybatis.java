@@ -116,6 +116,11 @@ public class DoranDAOMybatis {
 		return sqlSession.delete(NAMESPACE + "deleteDoran", doran_no);
 	}
 
+	public List<DoranlikeVO> selectlike(String mem_id) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList(NAMESPACE + "selectlike", mem_id);
+	}
+
 
 
 //	public BoardVO selectById(int bno) {

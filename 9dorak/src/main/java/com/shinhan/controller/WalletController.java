@@ -53,7 +53,7 @@ public class WalletController {
 //	@RequestParam(value = "memList[]", required = false) String[] memList,
 //	@RequestParam(value = "proList[]", required = false) String[] proList
 	// 주문하기 수정 필요
-	@GetMapping("pay.do")
+	@PostMapping("pay.do")
 	public String pay(Model model, HttpSession session) {
 		List<PayVO> plist = wService.selectAllPay();
 		model.addAttribute("plist", plist);

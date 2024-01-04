@@ -177,7 +177,7 @@
 									총 <span id="total_count">${totalItems}</span> Items
 								</div>
 							</div>
-							<form action="pay.do">
+							<form action="pay.do" method="post">
 								<div class="frame-4">
 									<table id="cartRow">
 									</table>

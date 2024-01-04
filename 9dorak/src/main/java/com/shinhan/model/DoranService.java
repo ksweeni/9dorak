@@ -93,6 +93,11 @@ public class DoranService {
 		return dao.deleteDoran(doran_no);
 	}
 
+	public List<DoranlikeVO> selectlike(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.selectlike(mem_id);
+	}
+
 //
 //	@Transactional // ��� �����ϰų� ��� �����ϰų�
 //	public MemVO updateTransViewCount(int bno) {

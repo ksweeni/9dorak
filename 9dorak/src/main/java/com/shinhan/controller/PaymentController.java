@@ -119,7 +119,7 @@ public class PaymentController {
 				pay.setPay_price(roundedAmount);
 				System.out.println(pay);
 				pService.insertPay(pay);
-//				deleteBasketAfterPay(order_no);
+				deleteBasketAfterPay(order_no);
 			} else {
 				model.addAttribute("resultMessage", "Payment verification failed");
 			}
