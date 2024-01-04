@@ -132,18 +132,17 @@
 
 														</c:when>
 														<c:when test="${not empty dlist}">
-															배송지명 &nbsp; <input type="text" id="mem_delname" class="changi"
-																readonly="readonly" placeholder="배송지명"
+															배송지명 &nbsp; <input type="text" id="mem_delname"
+																class="changi" readonly="readonly" placeholder="배송지명"
 																value="${dlist[0].mem_delname}">
-															<br> 우편번호 &nbsp; <input type="text" id="sample4_postcode"
-																class="changi" placeholder="우편번호"
+															<br> 우편번호 &nbsp; <input type="text"
+																id="sample4_postcode" class="changi" placeholder="우편번호"
 																value="${dlist[0].mem_zipcode}" readonly="readonly" />
 															<br>
 															<input type="hidden" id="sample4_roadAddress"
 																class="changi" placeholder="도로명주소" readonly="readonly" /> 
-																주소 &nbsp; <input
-																type="text" id="sample4_jibunAddress" placeholder="지번주소"
-																class="changi" readonly="readonly"
+																주소 &nbsp; <input type="text" id="sample4_jibunAddress"
+																placeholder="지번주소" class="changi" readonly="readonly"
 																value="${dlist[0].mem_addr} ${dlist[0].mem_detail}" />
 															<span class="changi" id="guide"
 																style="color: #999; display: none"></span>
@@ -303,7 +302,7 @@
 								</div>
 								<div class="group-5">
 
-							<!-- 		<img class="white-question-mark"
+									<!-- 		<img class="white-question-mark"
 										src="img/white-question-mark.svg" /> -->
 								</div>
 							</div>
@@ -424,11 +423,11 @@
 											<div class="text-wrapper-15" id="lastTotal">${total}원</div>
 										</div>
 										<div class="group-5">
-										<!-- 	<p class="element-p">
+											<!-- 	<p class="element-p">
 												<span class="text-wrapper-16">적립 예정 포인트 </span> <span
 													class="text-wrapper-3">P</span>
 											</p> -->
-								<%-- 			<img class="white-question-mark"
+											<%-- 			<img class="white-question-mark"
 												src="${cpath}/resources/images/wallet/White question mark.png" /> --%>
 										</div>
 									</div>
@@ -465,7 +464,7 @@
 											<div class="text-wrapper-15" id="lastTotal">${total}원</div>
 										</div>
 										<div class="group-5">
-	<!-- 										<p class="element-p">
+											<!-- 										<p class="element-p">
 												<span class="text-wrapper-16">적립 예정 포인트 </span> <span
 													class="text-wrapper-3">P</span>
 											</p> -->
@@ -583,10 +582,21 @@
 	</div>
 	<div id="successModal" class="modal">
 		<p>결제가 성공하였습니다.</p>
-		<button onclick="closeModal()">홈으로 이동하기</button>
+		<button onclick="closeModal()" class = "closemodal">홈으로 이동하기</button>
 	</div>
 </body>
 <script type="text/javascript">
+function openModal() {
+	  var successModal = document.getElementById("successModal");
+	  successModal.style.display = "block";
+	}
+
+
+	function closeModal() {
+	  var successModal = document.getElementById("successModal");
+	  successModal.style.display = "none";
+	  window.location.href="${cpath}/main.do";
+	}
 function loginBasket() {
 	var mem_id = "${sessionScope.loginmem.mem_id}";
 	
@@ -718,12 +728,14 @@ function requestPay() {
 
 	/* alert($('#proname').text()); */
 	var proName;
+	
 	if($('#proname').text() == ""){
 		proName = "구도락 단일 상품 주문";
 		
 	} else {
 		proName = $('#proname').text();
 	}
+/* 	alert(proName); */
  	discountedAmount = $("#lastTotal").text().substring(0, $("#lastTotal").text().length - 1);
 	var merchant_uid = generateMerchantUid();
 	IMP.request_pay({
@@ -741,7 +753,8 @@ function requestPay() {
 	
 		$.ajax({
 			type : 'POST',
-			url : '${cpath}/verify/' + rsp.imp_uid + '?order_no=${order_no}',
+/* 			url : '${cpath}/verify/' + rsp.imp_uid + '?order_no=${order_no}', */
+			url : '${cpath}/verify/' + rsp.imp_uid ,
 		}).done(function(data) {
 			console.log(data);
 
@@ -941,9 +954,11 @@ function sample4_execDaumPostcode() {
 
 					} else if (data.autoJibunAddress) {
 						var expJibunAddr = data.autoJibunAddress;
-						guideTextBox.innerHTML = '예상 지번 주소 : '
+		/* 				guideTextBox.innerHTML = '예상 지번 주소 : '
 								+ expJibunAddr + '';
-						guideTextBox.style.display = 'block';
+						guideTextBox.style.display = 'block'; */
+						document.getElementById("sample4_jibunAddress").value = expJibunAddr;
+						
 					} else {
 						guideTextBox.innerHTML = '';
 						guideTextBox.style.display = 'none';

@@ -117,10 +117,10 @@
 			alert("결제를 취소하겠습니다. 환불 사유: " + refundReason);
 			cancelPay(imp_uid,refundReason);
 			closeRefundModal();
-			window.location.reload();
 		} else {
 			alert("환불 사유를 입력해주세요.");
 		}
+
 	}
 	
 	
@@ -137,6 +137,7 @@
 
 			if (data) {
 				alert('결제가  성공적으로 취소되었습니다 ! ');
+				window.location.reload();
 			} else {
 				var msg = '결제 취소에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;
 				alert(msg);
