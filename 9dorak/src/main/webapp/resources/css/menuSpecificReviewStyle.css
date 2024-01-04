@@ -305,6 +305,18 @@ div-wrapper {
 	white-space: nowrap;
 }
 
+.div-wrapper .labelPay {
+	position: relative;
+	height: 20px;
+	top: 15px;
+	left: 2rem;
+	font-weight: 600;
+	font-size: 0.9rem;
+	letter-spacing: 0;
+	line-height: 20px;
+	white-space: nowrap;
+}
+
 .div-wrapper .icon-cart {
 	position: absolute;
 	width: 20px;
