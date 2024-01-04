@@ -92,64 +92,64 @@
 <title>9도락</title>
 </head>
 <body>
-			<header class="header">
-				<div class="top-nav">
-					<div class="navbar">
-						<div class="text-event">
+	<header class="header">
+		<div class="top-nav">
+			<div class="navbar">
+				<div class="text-event">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
+				</div>
+				<div class="text-menu">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
+				</div>
+				<div class="text-subscribe">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
+				</div>
+				<div class="text-yomo">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
+				</div>
+				<div class="text-doran">
+					<a class="header-a"
+						href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
+				</div>
+			</div>
+			<a href="${pageContext.request.contextPath}/main.do"> <img
+				class="untitled-2"
+				src="${cpath}/resources/images/main/header-logo.png" />
+			</a>
+			<div class="div-3">
+				<div class="text-wrapper-28">
+					<c:choose>
+						<c:when test="${not empty sessionScope.loginmem.mem_id}">
 							<a class="header-a"
-								href="${pageContext.request.contextPath}/event/challenge.do">이벤트</a>
-						</div>
-						<div class="text-menu">
+								href="${pageContext.request.contextPath}/my/myPage.do"
+								style="font-weight: bold; left: -1rem; position: relative;">
+								<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
+							</a>
 							<a class="header-a"
-								href="${pageContext.request.contextPath}/menu/menu.do">메뉴보기</a>
-						</div>
-						<div class="text-subscribe">
+								href="${pageContext.request.contextPath}/my/logout.do"
+								style="position: relative; left: -1rem">로그아웃</a>
+						</c:when>
+						<c:otherwise>
 							<a class="header-a"
-								href="${pageContext.request.contextPath}/sub/sub.do">구독하기</a>
-						</div>
-						<div class="text-yomo">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/yomo/notice.do">요모조모</a>
-						</div>
-						<div class="text-doran">
-							<a class="header-a"
-								href="${pageContext.request.contextPath}/doran/doran.do">도란도란</a>
-						</div>
-					</div>
-					<a href="${pageContext.request.contextPath}/main.do"> <img
-						class="untitled-2"
-						src="${cpath}/resources/images/main/header-logo.png" />
-					</a>
-					<div class="div-3">
-						<div class="text-wrapper-28">
-							<c:choose>
-								<c:when test="${not empty sessionScope.loginmem.mem_id}">
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/my/myPage.do"
-										style="font-weight: bold; left: -1rem; position: relative;">
-										<c:out value="${sessionScope.loginmem.mem_name}" /> 님 |
-									</a>
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/my/logout.do"
-										style="position: relative; left: -1rem">로그아웃</a>
-								</c:when>
-								<c:otherwise>
-									<a class="header-a"
-										href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
+								href="${pageContext.request.contextPath}/login/loginForm.do">로그인</a> |
 			                        <a class="header-a"
-										href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
-								</c:otherwise>
-							</c:choose>
-						</div>
-						<div class="group-20" id="lightsParent">
-							<div class="header-overlap-group-3" onclick="loginBasket()">
-								<img class="header-group-21"
-									src="${cpath}/resources/images/main/header-cart.png" />
-							</div>
-						</div>
+								href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<div class="group-20" id="lightsParent">
+					<div class="header-overlap-group-3" onclick="loginBasket()">
+						<img class="header-group-21"
+							src="${cpath}/resources/images/main/header-cart.png" />
 					</div>
 				</div>
-			</header>
+			</div>
+		</div>
+	</header>
 	<div class="screen"></div>
 	<div id="event_menu">
 		<ul>
@@ -171,32 +171,55 @@
 	<br></br>
 	<div class="board">
 		<br> <input type="text" value="${chall.challenge_name}"
-			id="challenge_name"></input> <br> <div class="cont"><div class="challenge_cont">챌린지내용</div> <br> <input
-			type="text" value="${chall.challenge_cont}" id="challenge_cont"></input>
-		<br> <div class="mem_id">작성자</div> <br> <input type="text" value="${chall.mem_id}"
-			id="mem_id"></input> <br> <div class="challenge_date">챌린지 등록날짜</div> <br> <input type="text"
-			value="${chall.challenge_date}" id="challenge_date"></input> <br>
-		<div class="likeCnt">좋아요</div><br> <input type="text" value="${likeCnt}"
-			readonly="readonly" id="likeCnt"></input></div> <br> <br> <img
+			id="challenge_name"></input> <br>
+		<div class="cont">
+			<div class="challenge_cont">챌린지내용</div>
+			<br> <div class="cont-wrapper"><input type="text" value="${chall.challenge_cont}"
+				id="challenge_cont"></input> </div><br>
+			<div class="mem_id">작성자</div>
+			<br> <input type="text" value="${chall.mem_id}" id="mem_id"></input>
+			<br>
+			<div class="challenge_date">챌린지 등록날짜</div>
+			<br> <input type="text" value="${chall.challenge_date}"
+				id="challenge_date"></input> <br>
+			<div class="likeCnt">좋아요</div>
+			<br> <input type="text" value="${likeCnt}" readonly="readonly"
+				id="likeCnt"></input>
+		</div>
+		<br> <br> <img
 			src="${cpath}/resources/upload/${chall.challenge_image}" /> <br>
 		<input type="hidden" value="${chall.challenge_no}" id="challenge_no"></input>
 		<br>
 		<div class="button_two">
-		<c:if test="${loginmem.mem_id eq chall.mem_id}">
-			<button class="button1" id="update">수정</button>
-			<button class="button2" id="delete">삭제</button>
-		</c:if>
-		<c:if test="${likeCheck == 1}">
-			<button class="button3" id="like" style="background-color: #f38820; color: white;">좋아요</button>
-			<input type="hidden" value="1" id="check">
-		</c:if>
-		<c:if test="${likeCheck == 0}">
-			<button class="button3" id="like">좋아요</button>
-			<input type="hidden" value="0" id="check">
-		</c:if>
+			<c:if test="${loginmem.mem_id eq chall.mem_id}">
+				<button class="button1" id="update">수정</button>
+				<button class="button2" id="delete">삭제</button>
+
+				<c:if test="${likeCheck == 1}">
+					<button class="button3" id="like"
+						style="background-color: #f38820; color: white;">좋아요</button>
+					<input type="hidden" value="1" id="check">
+				</c:if>
+				<c:if test="${likeCheck == 0}">
+					<button class="button3" id="like">좋아요</button>
+					<input type="hidden" value="0" id="check">
+				</c:if>
+				
+			</c:if>
+			<c:if test="${loginmem.mem_id ne chall.mem_id}">
+				<c:if test="${likeCheck == 1}">
+					<button class="button4" id="like"
+						style="background-color: #f38820; color: white;">좋아요</button>
+					<input type="hidden" value="1" id="check">
+				</c:if>
+				<c:if test="${likeCheck == 0}">
+					<button class="button4" id="like">좋아요</button>
+					<input type="hidden" value="0" id="check">
+				</c:if>
+			</c:if>
 		</div>
 	</div>
-	<footer class="footer" style="top:30rem;">
+	<footer class="footer" style="top: 30rem;">
 		<div class="footer-company-loco">
 			<div class="footer-company">
 				<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요 우리는
@@ -302,52 +325,51 @@
 			}
 		})
 	}) // delete
-	
+
 	$("#like").on("click", function() {
 		/*  alert($("#challenge_no").val());*/
-/* 		alert($("#check").val()) */
-		
- 		var challenge_no = $("#challenge_no").val();
+		/* 		alert($("#check").val()) */
+
+		var challenge_no = $("#challenge_no").val();
 		var param = {
-				"challenge_no" : challenge_no,
-				"check" : $("#check").val()
-			}
+			"challenge_no" : challenge_no,
+			"check" : $("#check").val()
+		}
 		$.ajax({
 			url : "${cpath}/event/challengelikeUpdate.do",
 			type : "post",
 			data : param,
 			success : function(res) {
-				if(res=="좋아요 성공"){
-				      var likeCntInput = $("#likeCnt");
-				      var currentLikeCnt = parseInt(likeCntInput.val());
-				      var newLikeCnt = currentLikeCnt + 1;
-				      likeCntInput.val(newLikeCnt);
-				      location.reload();
-				}
-				else if(res=="좋아요 취소"){
-				      var likeCntInput = $("#likeCnt");
-				      var currentLikeCnt = parseInt(likeCntInput.val());
-				      var newLikeCnt = currentLikeCnt - 1;
-				      likeCntInput.val(newLikeCnt);		
-				      location.reload();
+				if (res == "좋아요 성공") {
+					var likeCntInput = $("#likeCnt");
+					var currentLikeCnt = parseInt(likeCntInput.val());
+					var newLikeCnt = currentLikeCnt + 1;
+					likeCntInput.val(newLikeCnt);
+					location.reload();
+				} else if (res == "좋아요 취소") {
+					var likeCntInput = $("#likeCnt");
+					var currentLikeCnt = parseInt(likeCntInput.val());
+					var newLikeCnt = currentLikeCnt - 1;
+					likeCntInput.val(newLikeCnt);
+					location.reload();
 				}
 				/* location.href = "${cpath}/event/challenge.do"; */
 			}
 		})
 	});
-	
+
 	// 장바구니 
 	function loginBasket() {
-			var mem_id = "${sessionScope.loginmem.mem_id}";
+		var mem_id = "${sessionScope.loginmem.mem_id}";
 
-			// 로그인 여부 확인
-			if (mem_id == "") {
-				alert("로그인이 필요한 서비스입니다 !");
-				window.location.href="${cpath}/login/loginForm.do";
-				return;
-			} else {
-				window.location.href="${pageContext.request.contextPath}/wallet/basket.do";
-			}
+		// 로그인 여부 확인
+		if (mem_id == "") {
+			alert("로그인이 필요한 서비스입니다 !");
+			window.location.href = "${cpath}/login/loginForm.do";
+			return;
+		} else {
+			window.location.href = "${pageContext.request.contextPath}/wallet/basket.do";
+		}
 	}
 
 	window.onload = emptyBasket;
@@ -355,29 +377,29 @@
 	function emptyBasket() {
 		var mem_id = "${sessionScope.loginmem.mem_id}";
 
-				$.ajax({
-					type : "POST",
-					url : "${cpath}/wallet/emptyBasket.do",
-					data : {
-						mem_id : mem_id,
-					},
-					dataType : "json",
-					success : function(response) {
-						if (response.success) {
-							console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
-							lightsOn();
-						} else {
-							console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
-						}
-					}
-			});
+		$.ajax({
+			type : "POST",
+			url : "${cpath}/wallet/emptyBasket.do",
+			data : {
+				mem_id : mem_id,
+			},
+			dataType : "json",
+			success : function(response) {
+				if (response.success) {
+					console.log("콘솔 - 상품이 이미 장바구니에 존재합니다! - 불키자");
+					lightsOn();
+				} else {
+					console.log("콘솔 - 상품이 장바구니에 없음 - 불꺼");
+				}
+			}
+		});
 	}
 
 	// 장바구니 불켜기
 	function lightsOn() {
 		let lights = document.createElement("div");
-		lights.setAttribute("class","ellipse-light");
-		lights.setAttribute("id","lightsOnID");
+		lights.setAttribute("class", "ellipse-light");
+		lights.setAttribute("id", "lightsOnID");
 		document.querySelector("#lightsParent").append(lights);
 
 		console.log("장바구니 가득 차서 불 켜짐!");
