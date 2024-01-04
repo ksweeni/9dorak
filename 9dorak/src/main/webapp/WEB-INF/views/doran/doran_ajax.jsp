@@ -56,13 +56,14 @@
 				<div class="doran-review">
 					<div class="doran-review-like"
 						onclick="toggleLike(${doran.doran_no})">
-						<c:choose>
+						<%-- <c:choose>
 							<c:when test="${doran.doran } ">
-													<img class="doran-review-likeicon"
+							</c:when>						
+							</c:choose>
+							 --%>
+						<img class="doran-review-likeicon"
 							id="like-icon-${doran.doran_no}"
 							src="${cpath }/resources/images/doran/icon_doran-like-unfill.png" />
-							</c:when>						
-						</c:choose>
 
 						<input type="hidden" value="${doran.dlike}" id="dlike">
 						<div class="doran-review-like${doran.doran_no}"
