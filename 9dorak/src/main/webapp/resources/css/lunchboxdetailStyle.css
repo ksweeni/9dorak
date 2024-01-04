@@ -1655,6 +1655,21 @@ hr {
     left: 135px;
 }
 
+.button4{
+	position: relative;
+    margin: 0 300px;
+    width: 122px;
+    top: 50px;
+    height: 50px;
+    font-size: 15px;
+    color: #f38820;
+    border: 2px solid #f38820;
+    border-radius: 30px;
+    background-color: white;
+    cursor: pointer;
+    left: 135px;
+}
+
 #challenge_name{
 	border: none;
     border-radius: 10px;

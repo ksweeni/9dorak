@@ -127,15 +127,28 @@ String contextPath = request.getContextPath();
 						<c:if test="${loginmem.mem_id eq chall.mem_id}">
 							<button class="button1" id="update">수정</button>
 							<button class="button2" id="delete">삭제</button>
+
+							<c:if test="${likeCheck == 1}">
+								<button class="button3" id="like"
+									style="background-color: #f38820; color: white;">좋아요</button>
+								<input type="hidden" value="1" id="check">
+							</c:if>
+							<c:if test="${likeCheck == 0}">
+								<button class="button3" id="like">좋아요</button>
+								<input type="hidden" value="0" id="check">
+							</c:if>
+
 						</c:if>
-						<c:if test="${likeCheck == 1}">
-							<button class="button3" id="like"
-								style="background-color: #f38820; color: white;">좋아요</button>
-							<input type="hidden" value="1" id="check">
-						</c:if>
-						<c:if test="${likeCheck == 0}">
-							<button class="button3" id="like">좋아요</button>
-							<input type="hidden" value="0" id="check">
+						<c:if test="${loginmem.mem_id ne chall.mem_id}">
+							<c:if test="${likeCheck == 1}">
+								<button class="button4" id="like"
+									style="background-color: #f38820; color: white;">좋아요</button>
+								<input type="hidden" value="1" id="check">
+							</c:if>
+							<c:if test="${likeCheck == 0}">
+								<button class="button4" id="like">좋아요</button>
+								<input type="hidden" value="0" id="check">
+							</c:if>
 						</c:if>
 					</div>
 				</div>
