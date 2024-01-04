@@ -790,11 +790,11 @@ function requestPay() {
 					  url: "${cpath}/delBasket",
 					  type: "post",
 					  success: function(res) {
-
+						
 					  }
 					});
+				   
 				openModal();
-				   modal.style.display = "block";
 				
 			} else {
 
