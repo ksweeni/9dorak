@@ -54,7 +54,7 @@
 			</div>
 			<div class="doran-underInfo">
 				<div class="doran-review">
-					<div class="doran-review-like"
+				<div class="doran-review-like"
 						onclick="toggleLike(${doran.doran_no})">
 						<%-- <c:choose>
 							<c:when test="${doran.doran } ">
@@ -68,7 +68,7 @@
 						<input type="hidden" value="${doran.dlike}" id="dlike">
 						<div class="doran-review-like${doran.doran_no}"
 							id="doran-review-like2">${doran.dlike}</div>
-					</div>
+					</div> 
 					<div class="doran-review-reviewCnt">
 						<img class="doran-review-reviewCnticon"
 							src="${cpath }/resources/images/doran/icon_doranviewcnt.png" />
@@ -84,50 +84,82 @@
 			</div>
 		</div>
 		<script>
-  
+		
     var doranImage = '${doran.doran_image}'; 
     var doranFeed = document.getElementById("doran-feed-${loop.index}");
 
     if (doranFeed && !doranImage.trim()) {
         doranFeed.classList.add('doran-feed-no-image');
     }
+	var doranLikes = '${dllist}';
+	var dorans = '${dlist}';
+	
+	function extractDoranNoValues(inputString) {
+	    var matches = inputString.match(/doran_no=(\d+)/g);
 
+	    if (matches) {
+	        return matches.map(match => parseInt(match.split('=')[1]));
+	    } else {
+	        return [];
+	    }
+	}
+
+
+	var doranLikesDoranNoValues = extractDoranNoValues(doranLikes); // 좋아요 리스트
+	console.log('doranLikes Doran No Values:', doranLikesDoranNoValues);
+
+
+	var doransDoranNoValues = extractDoranNoValues(dorans); // 도란 넘버 리스트 
+	console.log('dorans Doran No Values:', doransDoranNoValues);
+	
+
+	var likeIcons = document.querySelectorAll('.doran-review-likeicon');
+
+	likeIcons.forEach(function(likeIcon) {
+	    var index = parseInt(likeIcon.id.split('-')[2]);
+	    var isInDoranLikes = doranLikesDoranNoValues.includes(index);
+	    likeIcon.src = isInDoranLikes ?
+	        '${cpath}/resources/images/doran/icon_doran-like-fill.png' :
+	        '${cpath}/resources/images/doran/icon_doran-like-unfill.png';
+	});
+    
     function toggleLike(index) {
-    	var memId = "${sessionScope.loginmem.mem_id}";
-   
-    	if (!memId || memId.trim() === "") {
-			alert("로그인이 필요한 서비스입니다 !");
-			window.location.href = "${cpath}/login/loginForm.do";
-			return;
-		}
-    	
-   	
-         var likeIcon = document.getElementById("like-icon-" + index);
-      
+        var memId = "${sessionScope.loginmem.mem_id}";
 
-         if (likeIcon) {
-     
-            likeIcon.src = likeIcon.src.endsWith("-unfill.png") ?
-                '${cpath}/resources/images/doran/icon_doran-like-fill.png' : 
+        if (!memId || memId.trim() === "") {
+            alert("로그인이 필요한 서비스입니다 !");
+            window.location.href = "${cpath}/login/loginForm.do";
+            return;
+        }
+
+        var likeIcon = document.getElementById("like-icon-" + index);
+
+        var isInDoranLikes = doranLikesDoranNoValues.includes(index);
+        var isInDorans = doransDoranNoValues.includes(index);
+
+        console.log("isInDoranLikes", isInDoranLikes);
+        console.log("isInDorans", isInDorans);
+
+        if (likeIcon) {
+            
+            var newLikeStatus = !isInDorans;
+            likeIcon.src = newLikeStatus ?
+                '${cpath}/resources/images/doran/icon_doran-like-fill.png' :
                 '${cpath}/resources/images/doran/icon_doran-like-unfill.png';
 
-         }
-            
-             var memId = '${sessionScope.loginmem.mem_id}'; 
-
-             $.ajax({
-                url: '${cpath}/doran/doranLikeUpdate.do', // Use single quotes here
+          
+            $.ajax({
+                url: '${cpath}/doran/doranLikeUpdate.do',
                 data: {
                     "doran_no": index,
                     "mem_id": memId
                 },
                 success: function (responseData) {
-                    //alert(  responseData);
-                  
-                
+                    //alert(responseData);
+                	window.location.reload();
                 }
-            }); 
-     
+            });
+        }
     }
     
     function toFeedDetail(doranNum) {

@@ -63,7 +63,6 @@ public class DoranController {
 		} 
 		model.addAttribute("loginmem", memId);
 		List<DoranlikeVO> dllist = dService.selectlike(memId.getMem_id());
-//		System.out.println("도라라라라라라라" + dllist);
 		model.addAttribute("dllist", dllist);
 		System.out.println(dlist);
 		return "doran/doran";
@@ -85,7 +84,7 @@ public class DoranController {
 		
 		model.addAttribute("dlist", dlist);
 		List<DoranlikeVO> dllist = dService.selectlike(memId.getMem_id());
-		System.out.println("도라라라라라라라" + dllist);
+	
 		model.addAttribute("dllist", dllist);
 		model.addAttribute("loginmem", memId);
 		return "doran/doran_ajax";
@@ -104,7 +103,7 @@ public class DoranController {
 			dlist = dService.selectAll();
 		}
 		if (dlist.size() == 0) {
-			System.out.println("해당하는 데이터가 없습니다 ~ 글을 써 이 사람아");
+			System.out.println("해당하는 데이터가 없습니다. 글을 써 주세요 !");
 		}
 		List<DoranlikeVO> dllist = dService.selectlike(memId.getMem_id());
 		System.out.println("도라라라라라라라" + dllist);
@@ -134,7 +133,7 @@ public class DoranController {
 			dlist = dService.selectAllByDlikeForMe(memId);
 		}
 		List<DoranlikeVO> dllist = dService.selectlike(memVO.getMem_id());
-		System.out.println("도라라라라라라라" + dllist);
+		
 		model.addAttribute("dllist", dllist);
 		model.addAttribute("dlist", dlist);
 		return "doran/doran_ajax";
@@ -278,12 +277,13 @@ public class DoranController {
 	@RequestMapping(value = "doranLikeUpdate.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String doranLikeUpdate(@RequestParam int doran_no, String mem_id) {
-		System.out.println("doranLikeUpdate");
+		System.out.println("doranLikeUpdate 좋아요 업데이트");
 		System.out.println(doran_no + " " + mem_id);
 		DoranlikeVO dlike = new DoranlikeVO();
 		dlike.setDoran_no(doran_no);
 		dlike.setMem_id(mem_id);
 		System.out.println(dlike);
+		System.out.println(dService.selectDoranLikeBy(dlike));
 		// 이미 좋아요 된 것이면 취소하고 없으면 insert 한다
 		if (dService.selectDoranLikeBy(dlike) > 0) {
 			System.out.println("좋아요 삭제 ~");

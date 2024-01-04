@@ -89,11 +89,11 @@ public class DoranDAOMybatis {
 
 	public int selectDoranLikeBy(DoranlikeVO dlike) {
 		System.out.println("좋아요 체킹 "+dlike);
-		return sqlSession.insert(NAMESPACE + "selectDoranLikeBy", dlike);
+		return sqlSession.selectOne(NAMESPACE + "selectDoranLikeBy", dlike);
 	}
 
 	public int deleteDoranLike(DoranlikeVO dlike) {
-		return sqlSession.insert(NAMESPACE + "deleteDoranLike", dlike);
+		return sqlSession.delete(NAMESPACE + "deleteDoranLike", dlike);
 
 	}
 	// 검색
