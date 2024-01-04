@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+.explain-cart {
+	width: 899px;
+	height: 425px;
+	position: absolute;
+	left: 409px;
+	top: 1750px;
+
+	background-image: url(../images/yomo/explain_cart.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .chicken {
 	background-image: url(../images/yomo/chicken.png);
 	background-repeat: no-repeat;
@@ -18,7 +30,7 @@
 .e815_534 {
 	background-color: rgba(255, 255, 255, 1);
 	width: 100%;
-	/*     height: 2500px; */
+	height: 2800px;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
@@ -1742,7 +1754,8 @@
 	height: 425px;
 	position: absolute;
 	left: 409px;
-	top: 1204px;
+	
+	top:441px;
 }
 
 .e75_192 {
@@ -1788,7 +1801,7 @@
 	border-radius: 35px;
 	border: 1px solid rgba(182, 182, 182, 0.00);
 	background: var(- -White, #FFF);
-	box-shadow: 0px 20px 80px 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.15);
 }
 
 .75_195 {
@@ -1874,7 +1887,7 @@
 	border-radius: 35px;
 	border: 1px solid rgba(182, 182, 182, 0.00);
 	background: var(- -White, #FFF);
-	box-shadow: 0px 20px 80px 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.15);
 }
 
 .75_197 {
@@ -1907,7 +1920,8 @@
 	position: absolute;
 	left: 29.189697265625px;
 	top: 243px;
-	font-weight: 700; text-align : left;
+	font-weight: 700;
+	text-align: left;
 	font-size: 16px;
 	letter-spacing: 0;
 	text-align: left;
@@ -1960,7 +1974,7 @@
 	border-radius: 35px;
 	border: 1px solid rgba(182, 182, 182, 0.00);
 	background: var(- -White, #FFF);
-	box-shadow: 0px 20px 80px 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.15);
 }
 
 .75_200 {
@@ -1993,7 +2007,7 @@
 	position: absolute;
 	left: 82.5px;
 	top: 243px;
-	font-weight:700;
+	font-weight: 700;
 	text-align: left;
 	font-size: 16px;
 	letter-spacing: 0;
@@ -2034,7 +2048,7 @@
 	height: 411px;
 	position: absolute;
 	left: 406px;
-	top: 441px;
+	top: 1000px;
 }
 
 .e75_203 {
@@ -2293,7 +2307,7 @@
 	height: 49px;
 	position: absolute;
 	left: 0px;
-	top: 0px;
+	top: 38rem;
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
 	border-bottom-left-radius: 15px;
@@ -2306,7 +2320,7 @@
 	height: 21px;
 	position: absolute;
 	left: 42.64925765991211px;
-	top: 14px;
+	top: 39rem;
 	/* font-family:Montserrat; */
 	text-align: left;
 	font-size: 18px;
@@ -2319,7 +2333,7 @@
 	height: 74px;
 	position: absolute;
 	left: 0px;
-	top: 5rem;
+	top: 42rem;
 	border-top-left-radius: 37px;
 	border-top-right-radius: 37px;
 	border-bottom-left-radius: 37px;
@@ -2396,7 +2410,7 @@
 	height: 123px;
 	position: absolute;
 	left: 439px;
-	top: 600px;
+	top: 85rem;
 	/* background-image:url(images/image_1.png); */
 	background-image: url(../images/yomo/aboutus04.png);
 	background-repeat: no-repeat;
@@ -2409,7 +2423,7 @@
 	height: 171px;
 	position: absolute;
 	left: 1012px;
-	top: 569px;
+	top: 84rem;
 	/* background-image:url(images/blank_package_transparent_png_1.png); */
 	background-image: url(../images/yomo/aboutus05.png);
 	background-repeat: no-repeat;

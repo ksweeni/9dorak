@@ -272,6 +272,12 @@ String contextPath = request.getContextPath();
 							</a>
 						</div>
 						<div class="carousel-item">
+							<a href="${cpath}/yomo/aboutus.do"> <img
+								src="${cpath}/resources/images/main/aboutUsBanner.png"
+								class="d-block w-100" alt="...">
+							</a>
+						</div>
+						<div class="carousel-item">
 							<a href="${cpath}/event/challenge.do"> <img
 								src="${cpath}/resources/images/main/main_event.png"
 								class="d-block w-100" alt="...">
