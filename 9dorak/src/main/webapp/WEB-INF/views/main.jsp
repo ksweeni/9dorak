@@ -301,7 +301,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2691>
 						<div class="e1433_2692"></div>
 						<img class="e1433_2694"
-						src="${cpath}/resources/images/menu/proimage/${likelist[0].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${likelist[0].proimage_image}"></img>
 					</div>
 					<div class=e1433_2695>
 						<span class="e1433_2696">${likelist[0].pro_price}원</span> <span
@@ -315,7 +315,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2701>
 						<div class="e1433_2702"></div>
 						<img class="e1433_2704"
-						src="${cpath}/resources/images/menu/proimage/${likelist[1].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${likelist[1].proimage_image}"></img>
 					</div>
 					<div class=e1433_2705>
 						<span class="e1433_2706">${likelist[1].pro_price}원</span> <span
@@ -329,7 +329,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2711>
 						<div class="e1433_2712"></div>
 						<img class="e1433_2714"
-						src="${cpath}/resources/images/menu/proimage/${likelist[2].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${likelist[2].proimage_image}"></img>
 					</div>
 					<div class=e1433_2715>
 						<span class="e1433_2716">${likelist[2].pro_price}원</span> <span
@@ -345,7 +345,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2722>
 						<div class="e1433_2723"></div>
 						<img class="e1433_2725"
-						src="${cpath}/resources/images/menu/proimage/${likelist[3].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${likelist[3].proimage_image}"></img>
 					</div>
 					<div class=e1433_2726>
 						<span class="e1433_2727">${likelist[3].pro_price}원</span> <span
@@ -359,7 +359,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2732>
 						<div class="e1433_2733"></div>
 						<img class="e1433_2735"
-						src="${cpath}/resources/images/menu/proimage/${likelist[4].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${likelist[4].proimage_image}"></img>
 					</div>
 					<div class=e1433_2736>
 						<span class="e1433_2737">${likelist[4].pro_price}원</span> <span
@@ -373,7 +373,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2742>
 						<div class="e1433_2743"></div>
 						<img class="e1433_2745"
-						src="${cpath}/resources/images/menu/proimage/${likelist[5].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${likelist[5].proimage_image}"></img>
 					</div>
 					<div class=e1433_2746>
 						<span class="e1433_2747">${likelist[5].pro_price}원</span> <span
@@ -391,7 +391,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2753>
 						<div class="e1433_2754"></div>
 						<img class="e1433_2756"
-						src="${cpath}/resources/images/menu/proimage/${prolist[0].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${prolist[0].proimage_image}"></img>
 					</div>
 					<div class=e1433_2757>
 						<span class="e1433_2758">${prolist[0].pro_price}원</span> <span
@@ -405,7 +405,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2763>
 						<div class="e1433_2764"></div>
 						<img class="e1433_2766"
-						src="${cpath}/resources/images/menu/proimage/${prolist[1].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${prolist[1].proimage_image}"></img>
 					</div>
 					<div class=e1433_2767>
 						<span class="e1433_2768">${prolist[1].pro_price}원</span> <span
@@ -419,7 +419,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2773>
 						<div class="e1433_2774"></div>
 						<img class="e1433_2776"
-						src="${cpath}/resources/images/menu/proimage/${prolist[2].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${prolist[2].proimage_image}"></img>
 					</div>
 					<div class=e1433_2777>
 						<span class="e1433_2778">${prolist[2].pro_price}원</span> <span
@@ -437,7 +437,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2784>
 						<div class="e1433_2785"></div>
 						<img class="e1433_2787"
-						src="${cpath}/resources/images/menu/proimage/${prolist[0].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${prolist[0].proimage_image}"></img>
 					</div>
 					<div class=e1433_2788>
 						<span class="e1433_2789">${prolist[0].pro_price}원</span> <span
@@ -451,7 +451,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2794>
 						<div class="e1433_2795"></div>
 						<img class="e1433_2797"
-						src="${cpath}/resources/images/menu/proimage/${prolist[1].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${prolist[1].proimage_image}"></img>
 					</div>
 					<div class=e1433_2798>
 						<span class="e1433_2799">${prolist[1].pro_price}원</span> <span
@@ -465,7 +465,7 @@ String contextPath = request.getContextPath();
 					<div class=e1433_2804>
 						<div class="e1433_2805"></div>
 						<img class="e1433_2807"
-						src="${cpath}/resources/images/menu/proimage/${prolist[2].pro_no}-2.jpg"></img>
+						src="${cpath}/resources/upload/${prolist[2].proimage_image}"></img>
 					</div>
 					<div class=e1433_2808>
 						<span class="e1433_2809">${prolist[2].pro_price}원</span> <span
