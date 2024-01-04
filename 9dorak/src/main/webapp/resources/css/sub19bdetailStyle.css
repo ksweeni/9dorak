@@ -867,17 +867,18 @@
 }
 .e1543_3360 {
 	font-weight: 700;
-    color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: auto;
-    max-width: 100%;
-    height: 29px;
-    position: absolute;
-    left: 58px;
-    top: -4px;
-    /* font-family: Montserrat; */
-    text-align: left;
-    font-size: 20px;
-    letter-spacing: 0;
+	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
+	width: auto;
+	max-width: 100%;
+	height: 29px;
+	position: absolute;
+	left: 44px;
+	top: -1px;
+	top: -18px;*
+	font-family: Montserrat; */
+	text-align: left;
+	font-size: 20px;
+	letter-spacing: 0;
 }
 .e1543_3361 { 
 	border: 2px solid rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
@@ -969,7 +970,7 @@
     height: 29px;
     position: absolute;
     left: 68px;
-    top: -3px;
+    top: -18px;
     /* font-family: Montserrat; */
     text-align: left;
     font-size: 20px;
@@ -1065,7 +1066,7 @@
     height: 29px;
     position: absolute;
     left: 81px;
-    top: -9px;
+    top: -18px;
     /* font-family: Montserrat; */
     text-align: left;
     font-size: 20px;
@@ -1162,17 +1163,17 @@
 }
 .e1543_3391 {
 	font-weight: 700;
-    color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: auto;
-    max-width: 100%;
-    height: 29px;
-    position: absolute;
-    left: 57px;
-    top: 6px;
-    /* font-family: Montserrat; */
-    text-align: left;
-    font-size: 20px;
-    letter-spacing: 0;
+	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
+	width: auto;
+	max-width: 100%;
+	height: 29px;
+	position: absolute;
+	left: 57px;
+	top: -15px;
+	/* font-family: Montserrat; */
+	text-align: left;
+	font-size: 20px;
+	letter-spacing: 0;
 }
 .e1543_3392 { 
 	border: 2px solid rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
@@ -1257,14 +1258,14 @@
 	top:306.76904296875px;
 }
 .e1543_3401 {
-	font-weight: 700;
+    font-weight: 700;
     color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
     width: auto;
     max-width: 100%;
     height: 29px;
     position: absolute;
     left: 43px;
-    top: 7px;
+    top: -14px;
     /* font-family: Montserrat; */
     text-align: left;
     font-size: 20px;
@@ -1354,17 +1355,17 @@
 }
 .e1543_3411 {
 	font-weight: 700;
-    color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
-    width: auto;
-    max-width: 100%;
-    height: 29px;
-    position: absolute;
-    left: 43px;
-    top: 11px;
-    /* font-family: Montserrat; */
-    text-align: left;
-    font-size: 20px;
-    letter-spacing: 0;
+	color: rgba(22.496058270335197, 22.496058270335197, 22.496058270335197, 1);
+	width: auto;
+	max-width: 100%;
+	height: 29px;
+	position: absolute;
+	left: 43px;
+	top: -14px;
+	/* font-family: Montserrat; */
+	text-align: left;
+	font-size: 20px;
+	letter-spacing: 0;
 }
 .e1543_3412 { 
 	border: 2px solid rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
