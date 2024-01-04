@@ -20,7 +20,23 @@
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 <style>
+
+
+@
+keyframes zoomIn {from { transform:scale(0);
+	
+}
+
+to {
+	transform: scale(1);
+}
+
+}
 .modal {
+	background-color: #fefefe;
+	border: 1px solid #888;
+	z-index: 2; /* Place the modal above the overlay */
+	animation: zoomIn 0.3s ease-out; /* Add a simple zoom-in animation */
 	display: none;
 	position: fixed;
 	top: 50%;
@@ -580,20 +596,31 @@
 			</c:forEach>
 		</div>
 	</div>
-	<div id="successModal" class="modal">
-		<p>결제가 성공하였습니다.</p>
-		<button onclick="closeModal()" class = "closemodal">홈으로 이동하기</button>
+	<div id="overlay" class="overlay">
+		<div id="successModal" class="modal">
+			<div class="modal-content">
+				<p>결제가 성공하였습니다.</p>
+				<button onclick="closeModal()" class="closemodal">홈으로 이동하기</button>
+			</div>
+		</div>
 	</div>
+
+
 </body>
 <script type="text/javascript">
 function openModal() {
+	 var overlay = document.getElementById("overlay");
 	  var successModal = document.getElementById("successModal");
+	  overlay.style.display = "block";
 	  successModal.style.display = "block";
+	  
 	}
 
 
 	function closeModal() {
-	  var successModal = document.getElementById("successModal");
+		 var overlay = document.getElementById("overlay");
+		  var successModal = document.getElementById("successModal");
+	  overlay.style.display = "none";
 	  successModal.style.display = "none";
 	  window.location.href="${cpath}/main.do";
 	}
