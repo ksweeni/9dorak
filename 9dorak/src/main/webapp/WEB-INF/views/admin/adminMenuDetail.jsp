@@ -173,7 +173,7 @@
 								src="${cpath}/resources/upload/${detailmenuimage[2].proimage_image}"
 								alt="Preview 3" />
 						</div>
-						<div class="e3000_24">
+<%-- 						<div class="e3000_24">
 							<label for="file4">
 							<!-- 	<div class="btn-upload"></div> -->
 							</label> <input onchange="readURL(this, 'preview4');" multiple="multiple"
@@ -181,7 +181,7 @@
 								id="preview-image" class="e3000_101"
 								src="${cpath}/resources/upload/${detailmenuimage[3].proimage_image}"
 								alt="Preview 4" />
-						</div>
+						</div> --%>
 					</div>
 					<%-- 		<img class="e3000_101"
 						src="${cpath}/resources/upload/${detailmenuimage[0].proimage_image}"></img>
