@@ -92,7 +92,7 @@
 			</div>
 			<div class=e1543_3358>
 				<span class="e1543_3360">${sub19allist[0].pro_name} X 4</span>
-				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[0].pro_no}" class=e1543_3361>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[0].pro_no}" class="detail-a">
 					<span class="e1543_3362">자세히보기</span>
 				</a>
 			</div>
@@ -105,7 +105,7 @@
 			</div>
 			<div class=e1543_3368>
 				<span class="e1543_3370">${sub19allist[1].pro_name} X 3</span>
-				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[1].pro_no}" class=e1543_3371>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[1].pro_no}" class="detail-a">
 					<span class="e1543_3372">자세히보기</span>
 				</a>
 			</div>
@@ -118,7 +118,7 @@
 			</div>
 			<div class=e1543_3378>
 				<span class="e1543_3380">${sub19allist[2].pro_name} X 3</span>
-				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[2].pro_no}" class=e1543_3381>
+				<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[2].pro_no}" class="detail-a">
 					<span class="e1543_3382">자세히보기</span>
 				</a>
 			</div>
@@ -132,7 +132,7 @@
 				</div>
 				<div class=e1543_3389>
 					<span class="e1543_3391">${sub19allist[3].pro_name} X 3</span>
-					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[3].pro_no}" class=e1543_3392>
+					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[3].pro_no}" class="detail-a">
 						<span class="e1543_3393">자세히보기</span>
 					</a>
 				</div>
@@ -145,7 +145,7 @@
 				</div>
 				<div class=e1543_3399>
 					<span class="e1543_3401">${sub19allist[4].pro_name} X 3</span>
-					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[4].pro_no}" class=e1543_3402>
+					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[4].pro_no}" class="detail-a">
 						<span class="e1543_3403">자세히보기</span>
 					</a>
 				</div>
@@ -158,7 +158,7 @@
 				</div>
 				<div class=e1543_3409>
 					<span class="e1543_3411">${sub19allist[5].pro_name} X 3</span>
-					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[5].pro_no}" class=e1543_3412>
+					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${sub19allist[5].pro_no}" class="detail-a">
 						<span class="e1543_3413">자세히보기</span>
 					</a>
 				</div>

@@ -1,17 +1,5 @@
 @charset "UTF-8";
 
-a {
-	transition: background 0.5s ease;
-	font-weight:700;
-}
-
-a:hover {
-	background: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
-}
-
-a:hover span {
-	color: white;
-}
 
 .babul {
 	background-image: url(../images/babul.png);
