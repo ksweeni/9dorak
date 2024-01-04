@@ -952,7 +952,6 @@ function sample4_execDaumPostcode() {
 
 			}).open();
 	
-	$("#guide").hide();
 }
 </script>
 </html>
