@@ -123,6 +123,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="explain-cart" ></div>
 		<div class=e75_202>
 			<div class=e75_203>
 				<div class=e75_204>
@@ -229,7 +230,7 @@
 		</div>
 	</div>
 	<div class="e1558_2333"></div>
-	<footer class="footer">
+	<footer class="footer" style="top:150rem;">
 		<div class="footer-company-loco">
 			<div class="footer-company">
 				<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요 우리는
