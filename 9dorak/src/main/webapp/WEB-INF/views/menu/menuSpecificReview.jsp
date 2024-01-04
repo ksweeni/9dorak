@@ -141,7 +141,7 @@
 					
 					
 					
-					<form action="pay.do">
+					
 					
 					<div class="price-and-button">
 						<div class="frame-wrapper">
@@ -175,14 +175,14 @@
 								</div>
 							</button>
 							 -->
-							
-							<div class="button-medium-text" id="shop">
+							<form action="pay.do" method="post">
+							<div class="button-medium-textPay" id="shop">
 							<div class="overlap-group-2">
 									<label class="labelPay">&nbsp;&nbsp;결제하기</label>
 									<input class="text-wrapper-11" type="submit" value="주문하기" style="display: none;">
 								</div>
 							</div>
-							
+							</form>
 							<button class="button-medium-text" onclick="checkBasket()">
 								<div class="overlap-group-2">
 									<div class="label">&nbsp;&nbsp; 구도락 담기</div>
@@ -192,7 +192,7 @@
 							</button>
 						</div>
 					</div>
-					</form>
+					
 					
 					
 					
@@ -711,7 +711,7 @@
 
 		// 로그인 여부 확인
 		if (mem_id == "") {
-			alert("로그인이 필요한 서비스입니다 !");
+			alert("로그인이 필요한 서비스입니다 !11111");
 			window.location.href="${cpath}/login/loginForm.do";
 			return;
 		} else {
@@ -816,11 +816,7 @@
 	      }
 	  });
 	
-	
-	
-	
-	
-	$(".button-medium-text").on("click", function() {
+	$(".button-medium-textPay").on("click", function() {
 	    var mem_id = "${sessionScope.loginmem.mem_id}";
 	    var order_price = document.getElementById('total-amount-value').innerText;
 	    var stock = ${menudetail.pro_sc};
@@ -828,13 +824,13 @@
 	    var orderdetail_count = document.getElementById('count-product').innerText;
 	    
 	    if (mem_id == "") {
-	        alert("This service requires login!");
+	        alert("로그인이 필요한 서비스 입니다!");
 	        window.location.href = "${cpath}/login/loginForm.do";
 	        return;
 	    }
 
 	    if (stock <= 0) {
-	        alert("Out of stock!");
+	        alert("재고가 없습니다!");
 	        return;
 	    }
 
@@ -850,13 +846,16 @@
 	            if (response.success && response.order_no) {
 	                console.log("Console singlePro success");
 	                singleProDetail(response.order_no, pro_no, orderdetail_count);
-	                window.location.href = "${cpath}/wallet/pay.do";
+	                //window.location.href = "${cpath}/wallet/pay.do";
 	            } else {
 	                console.log("Console singlePro failed:", response.message || "Unexpected error");
 	                console.log(response.order_no);
 	            }
 	        }
 	    });
+	 // form 내용 submit
+	    $("form").attr("action", "${cpath}/wallet/pay.do");
+	    $("form").submit();
 	});
 
 	function singleProDetail(order_no, pro_no, orderdetail_count) {
@@ -878,116 +877,6 @@
 	        }
 	    });
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/* 
-	$(".button-medium-text").on("click", function() {
-	    submitOrder();
-	});
-
-	// 주문하기 버튼 submit
-	function submitOrder() {
-	    var mem_id = "${sessionScope.loginmem.mem_id}";
-	    var totalAmount = document.getElementById('total-amount-value').innerText;
-	    //const order_price = $('.text-wrapper-10').find("input").val();
-	    
-	    if (mem_id == "") {
-			alert("로그인이 필요한 서비스입니다 !");
-			window.location.href="${cpath}/login/loginForm.do";
-			return;
-		} else {
-			// 재고확인
-			var stock = ${menudetail.pro_sc};
-			if(stock <= 0) {
-				alert("재고가 없습니다!");
-				return;
-			} else {
-				
-				$.ajax({
-					type: "POST",
-					url: "${cpath}/wallet/singlePro.do",
-					contentType: "application/json",
-					data: JSON.stringify({
-						mem_id: mem_id,
-						order_price: totalAmount
-					}),
-					success: function(response) {
-			            if (response.success && response.order_no) {
-			                console.log("콘솔 singlePro 성공");
-			                singleProDetail(response.order_no);
-			                window.location.href = "${cpath}/wallet/pay.do";
-			            } else {
-			            	console.log("콘솔 singlePro 실패:", response.message || "Unexpected error");
-			                console.log(response.order_no);
-			            }
-			        }
-					
-				});
-			}
-		}
-	    
-	    
-	    
-	    
-	    const requestData = {
-	            mem_id: mem_id,
-	            order_price: totalAmount
-	    };
-	    
-	    // order 테이블 insert
-	    $.ajax({
-	        type: "POST",
-	        url: "${cpath}/wallet/singlePro.do",
-	        contentType: "application/json",
-	        data: JSON.stringify(requestData),
-	        success: function(response) {
-	            if (response.success && response.order_no) {
-	                console.log("콘솔 insertOrder 성공");
-	                insertOrderDetails(response.order_no); // 반환된 order_no 전달
-	            } else {
-	            	console.log("콘솔 insertOrder 실패:", response.message || "Unexpected error");
-	                console.log(response.order_no);
-	            }
-	        }
-	    });
-	    
-	    // form 내용 submit
-	    $("form").attr("action", "${cpath}/wallet/pay.do");
-	    $("form").submit();
-	}
-	
-	function singleProDetail(order_no) {
-		var pro_no = ${menudetail.pro_no};
-		var orderdetail_count = document.getElementById('count-product').innerText;
-
-	    $.ajax({
-	        type: "POST",
-	        url: "${cpath}/wallet/singleProDetail.do",
-	        contentType: "application/json",
-	        data: JSON.stringify({
-	        	order_no: order_no,
-	            pro_no: pro_no,
-	            orderdetail_count: orderdetail_count
-	        }),
-	        success: function(response) {
-	            if (response.success) {
-	                console.log("콘솔 singleProDetail 성공");
-	            } else {
-	                console.log("콘솔 singleProDetail 실패:", response.message);
-	            }
-	        }
-	    });
-	} */
-	
 </script>
 
 </body>

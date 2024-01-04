@@ -274,7 +274,19 @@ div-wrapper {
 	background: white;
 	cursor: pointer;
 	position: relative;
-	width: 100%;
+	width: 280px;
+	height: 50px;
+	border-radius: 2rem;
+	border: 1px solid;
+	border-color: #d9dadb;
+	transition: background-color 0.3s ease;
+}
+
+.div-wrapper .button-medium-textPay {
+	background: white;
+	cursor: pointer;
+	position: relative;
+	width: 280px;
 	height: 50px;
 	border-radius: 2rem;
 	border: 1px solid;
@@ -309,7 +321,7 @@ div-wrapper {
 	position: relative;
 	height: 20px;
 	top: 15px;
-	left: 2rem;
+	left: 3rem;
 	font-weight: 600;
 	font-size: 0.9rem;
 	letter-spacing: 0;
