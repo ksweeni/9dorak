@@ -275,6 +275,7 @@ public class MyPageController {
 		// 나중에는 로그인한 사람 아이디로 바꾸자
 		model.addAttribute("loginmem", loginmem);
 		model.addAttribute("likeList", likeList);
+		System.out.println("Asd");
 		return "my/pointAndCoupon";
 	}
 

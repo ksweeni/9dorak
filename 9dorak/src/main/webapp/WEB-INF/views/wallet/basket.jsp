@@ -123,7 +123,7 @@
 
 												<div class="frame-16">
 													<div class="frame-17">
-														<img class="rectangle" src="${cpath}/${item.proimage_image}" />
+														<img class="rectangle" src="${cpath}/resources/upload/${item.proimage_image}" />
 														<div class="frame-18">
 															<div class="text-wrapper-15">${item.pro_name}</div>
 															<input class="text-wrapper-16" id="proPrice" type="number" value="${item.pro_price}" readOnly />

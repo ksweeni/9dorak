@@ -103,7 +103,9 @@ String contextPath = request.getContextPath();
 								
 									<div class="e145_1566">
 										<div class="e145_1567">
-											<div class="e145_1569"></div>
+											<div class="e145_1569" style="
+													url(${cpath}/resources/upload/);
+											"></div>
 										</div>
 									</div>
 									<div class="e145_1570">

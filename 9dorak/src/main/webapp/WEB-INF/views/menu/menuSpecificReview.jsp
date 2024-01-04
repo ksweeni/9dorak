@@ -136,6 +136,13 @@
 							onclick="toggleHeart()" />
 					</div>
 					<div class="text-wrapper">${menudetail.pro_price}원</div>
+					
+					
+					
+					
+					
+					
+					
 					<div class="price-and-button">
 						<div class="frame-wrapper">
 							<div class="frame">
@@ -153,17 +160,29 @@
 								</div>
 
 								<div class="text-wrapper-3" id="total-amount">
-									총 금액 <span id="total-amount-value">${menudetail.pro_price}</span>
+									총 금액 <span id="total-amount-value" name="order_price" type="number" value="${menudetail.pro_price}">${menudetail.pro_price}</span>
 									원
 								</div>
+								
 							</div>
 						</div>
 						<div class="overlap-3">
-							<button class="button-medium-text" id="shop" onclick="payment()">
+						<!-- onclick="payment()" -->
+						<!-- 
+							<button class="button-medium-text" id="shop">
 								<div class="overlap-group-2">
 									<div class="label" id="shop-label">&nbsp;&nbsp;결제하기</div>
 								</div>
 							</button>
+							 -->
+							<form action="pay.do" method="post">
+							<div class="button-medium-textPay" id="shop">
+							<div class="overlap-group-2">
+									<label class="labelPay">&nbsp;&nbsp;결제하기</label>
+									<input class="text-wrapper-11" type="submit" value="주문하기" style="display: none;">
+								</div>
+							</div>
+							</form>
 							<button class="button-medium-text" onclick="checkBasket()">
 								<div class="overlap-group-2">
 									<div class="label">&nbsp;&nbsp; 구도락 담기</div>
@@ -173,6 +192,10 @@
 							</button>
 						</div>
 					</div>
+					
+					
+					
+					
 					<div class="frame-3">
 						<div class="view">
 							<div class="frame-4">
@@ -260,12 +283,19 @@
 							</div>
 						</div>
 					</div>
+					
+					
+					
+					
+					
+					
+					
 				</div>
 			</div>
 
 			<div class="menu-detail">
 				<div>
-					<h1>${menudetail.pro_detail }</h1>
+					<h1>${menudetail.pro_detail}</h1>
 				</div>
 			</div>
 
@@ -681,7 +711,7 @@
 
 		// 로그인 여부 확인
 		if (mem_id == "") {
-			alert("로그인이 필요한 서비스입니다 !");
+			alert("로그인이 필요한 서비스입니다 !11111");
 			window.location.href="${cpath}/login/loginForm.do";
 			return;
 		} else {
@@ -786,71 +816,67 @@
 	      }
 	  });
 	
-	// 결제하기
-	function payment() {
-		// 로그인 여부 확인
-		var mem_id = "${sessionScope.loginmem.mem_id}";
-		var totalAmount = document.getElementById('total-amount-value').innerText;
-		
-		if (mem_id == "") {
-			alert("로그인이 필요한 서비스입니다 !");
-			window.location.href="${cpath}/login/loginForm.do";
-			return;
-		} else {
-			// 재고확인
-			var stock = ${menudetail.pro_sc};
-			if(stock <= 0) {
-				alert("재고가 없습니다!");
-				return;
-			} else {
-				
-				$.ajax({
-					type: "POST",
-					url: "${cpath}/wallet/singlePro.do",
-					contentType: "application/json",
-					data: JSON.stringify({
-						mem_id: mem_id,
-						order_price: totalAmount
-					}),
-					success: function(response) {
-			            if (response.success && response.order_no) {
-			                console.log("콘솔 singlePro 성공");
-			                singleProDetail(response.order_no);
-			                window.location.href = "${cpath}/wallet/pay.do";
-			            } else {
-			            	console.log("콘솔 singlePro 실패:", response.message || "Unexpected error");
-			                console.log(response.order_no);
-			            }
-			        }
-					
-				});
-			}
-		}
-	}
-	
-	function singleProDetail(order_no) {
-		var pro_no = ${menudetail.pro_no};
-		var orderdetail_count = document.getElementById('count-product').innerText;
+	$(".button-medium-textPay").on("click", function() {
+	    var mem_id = "${sessionScope.loginmem.mem_id}";
+	    var order_price = document.getElementById('total-amount-value').innerText;
+	    var stock = ${menudetail.pro_sc};
+	    var pro_no = ${menudetail.pro_no};
+	    var orderdetail_count = document.getElementById('count-product').innerText;
+	    
+	    if (mem_id == "") {
+	        alert("로그인이 필요한 서비스 입니다!");
+	        window.location.href = "${cpath}/login/loginForm.do";
+	        return;
+	    }
 
+	    if (stock <= 0) {
+	        alert("재고가 없습니다!");
+	        return;
+	    }
+
+	    $.ajax({
+	        type: "POST",
+	        url: "${cpath}/wallet/singlePro.do",
+	        contentType: "application/json",
+	        data: JSON.stringify({
+	            mem_id: mem_id,
+	            order_price: order_price
+	        }),
+	        success: function(response) {
+	            if (response.success && response.order_no) {
+	                console.log("Console singlePro success");
+	                singleProDetail(response.order_no, pro_no, orderdetail_count);
+	                //window.location.href = "${cpath}/wallet/pay.do";
+	            } else {
+	                console.log("Console singlePro failed:", response.message || "Unexpected error");
+	                console.log(response.order_no);
+	            }
+	        }
+	    });
+	 // form 내용 submit
+	    $("form").attr("action", "${cpath}/wallet/pay.do");
+	    $("form").submit();
+	});
+
+	function singleProDetail(order_no, pro_no, orderdetail_count) {
 	    $.ajax({
 	        type: "POST",
 	        url: "${cpath}/wallet/singleProDetail.do",
 	        contentType: "application/json",
 	        data: JSON.stringify({
-	        	order_no: order_no,
+	            order_no: order_no,
 	            pro_no: pro_no,
 	            orderdetail_count: orderdetail_count
 	        }),
 	        success: function(response) {
 	            if (response.success) {
-	                console.log("콘솔 singleProDetail 성공");
+	                console.log("Console singleProDetail success");
 	            } else {
-	                console.log("콘솔 singleProDetail 실패:", response.message);
+	                console.log("Console singleProDetail failed:", response.message);
 	            }
 	        }
 	    });
 	}
-	
 </script>
 
 </body>
