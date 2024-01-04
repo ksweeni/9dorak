@@ -149,10 +149,11 @@
 
 .e145_1494 {
 	width: 300px;
-	height: 69.015625px;
-	position: absolute;
-	left: 307px;
-	top: 0px;
+    height: 69.015625px;
+    position: absolute;
+    left: 470px;
+    top: px;
+    top: -25px;
 }
 
 .e145_1495 {
@@ -210,16 +211,15 @@ left: 155px;
 	width: 950.1522827148438px;
 	height: 742px;
 	position: absolute;
-	left: 386.84765625px;
-	top: 164px;
+	left: 500px;
+    top: 100px;
 }
 
 .e145_1500 {
-	width: 950.1522827148438px;
-	height: 742px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
+	font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
 }
 
 .e145_1565 {
@@ -308,12 +308,12 @@ left: 155px;
 	width: 250px;
 	height: 270px;
 	position: absolute;
-	left: 0px;
-	top: 146px;
 	background-color: #ffffff;
 	border-radius: 16px;
 	border: 2px solid;
 	border-color: #e7e7e7;
+	left: 165px;
+    top: 80px;
 }
 
 .145_1514 {

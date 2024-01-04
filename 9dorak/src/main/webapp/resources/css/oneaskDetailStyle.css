@@ -629,9 +629,14 @@
     top: 262px;
     border-radius: 8px;
 }
+.e844_616 b {
+	color: rgb(240 140 48);
+	font-weight: 700;
+}
+
 .e844_616 p:first-of-type {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .e844_616 p:last-of-type {
@@ -863,6 +868,7 @@
 	font-size:32px;
 	letter-spacing:0;
 	line-height:px;
+	font-weight: 800;
 }
 .e1081_4455 {
 	background-color:rgba(255, 255, 255, 1);

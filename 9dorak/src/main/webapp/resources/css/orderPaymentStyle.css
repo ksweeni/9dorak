@@ -20,7 +20,7 @@
 	width: 700px;
 	height: 68px;
 	top: 165px;
-	left: 415px;
+	left: 531px;
 }
 
 .div-wrapper .ol {
@@ -104,7 +104,7 @@
 	width: 706px;
 	height: 263px;
 	top: 58px;
-	left: 0;
+	left: 150px;
 }
 
 .div-wrapper .overlap-group {
@@ -358,17 +358,18 @@
 
 .div-wrapper .menuu {
 	display: flex;
-	flex-direction: column;
-	width: 200px;
-	height: 235px;
-	align-items: flex-start;
-	gap: 25px;
-	padding: 26px;
-	position: relative;
-	background-color: #ffffff;
-	border-radius: 16px;
-	border: 2px solid;
-	border-color: #e7e7e7;
+    flex-direction: column;
+    width: 200px;
+    height: 235px;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 26px;
+    position: relative;
+    left: 165px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 2px solid;
+    border-color: #e7e7e7;
 }
 
 .div-wrapper .username {
