@@ -71,7 +71,9 @@ public class PaymentController {
 
 	@ResponseBody
 	@RequestMapping("verify/{imp_uid}")
-	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, @RequestParam("order_no") int order_no,
+//	public String paymentVerification(@PathVariable("imp_uid") String imp_uid, @RequestParam("order_no") int order_no,
+//			Model model) {
+	public String paymentVerification(@PathVariable("imp_uid") String imp_uid,
 			Model model) {
 		try {
 			IamportResponse<Payment> iamportResponse = iamportClient.paymentByImpUid(imp_uid);
@@ -85,7 +87,8 @@ public class PaymentController {
 
 					e.printStackTrace();
 				}
-
+				int order_no  =wService.selectOrderNum();
+				System.out.println(order_no);
 				Payment payment = iamportResponse.getResponse();
 				String productName = payment.getName(); // 상품명
 				BigDecimal paidAmount = payment.getAmount(); // 가격

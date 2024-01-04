@@ -2,16 +2,16 @@
 
 .goto-home {
 	position: relative;
-    display: flex;
-    margin: 0 auto;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    background: orange;
-    font-size: 1rem;
-    font-weight: 700;
-    color: white;
-    align-items: center;
+	display: flex;
+	margin: 0 auto;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	background: orange;
+	font-size: 1rem;
+	font-weight: 700;
+	color: white;
+	align-items: center;
 }
 
 .modal {
@@ -25,7 +25,22 @@
 	background-color: #fff;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	z-index: 1000;
+	display: block;
+	border: 1px solid gray;
+	border-radius: 30px;
 }
+
+.closemodal {
+	background: orange;
+	left: 15%;
+	position: relative;
+	color: white;
+	font-weight: 600;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+}
+
 .my-del-button {
 	margin-top: 3%;
 	position: relative;
@@ -541,6 +556,7 @@ input {
 	left: 214px;
 	top: 70px;
 }
+
 .screen .text-wrapper-98 {
 	/* 	position: relative;
 	width: 61px;
@@ -577,6 +593,7 @@ input {
 	line-height: normal;
 	top: 70px;
 }
+
 .screen .text-wrapper-99 {
 	position: relative;
 	width: fit-content;
@@ -601,22 +618,22 @@ input {
 }
 
 .screen .frame-12 {
-	    width: 365px;
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px 25px;
-    position: absolute;
-    top: 430px;
-    left: 25px;
-    background-color: #fc8019;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    font-weight: 500;
-    font-size: 22px;
+	width: 365px;
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 15px 25px;
+	position: absolute;
+	top: 430px;
+	left: 25px;
+	background-color: #fc8019;
+	border-radius: 10px;
+	border: none;
+	color: white;
+	font-weight: 500;
+	font-size: 22px;
 }
 
 .screen .text-wrapper-14 {
@@ -660,7 +677,6 @@ input {
 	line-height: normal;
 	top: 85px;
 }
-
 
 .screen .group-5 {
 	position: absolute;
@@ -1169,7 +1185,7 @@ input {
 	margin-bottom: 2px;
 }
 
-.changi:focus-visible{
+.changi:focus-visible {
 	outline: none;
 }
 
@@ -1230,29 +1246,29 @@ input {
 	font-size: 14px;
 }
 
-#point{
+#point {
 	border: none;
-    padding-left: 30px;
-    width: 470px;
-    font-weight: 500;
-    color: #7a7a7a;
-    font-size: 20px;
-
+	padding-left: 30px;
+	width: 470px;
+	font-weight: 500;
+	color: #7a7a7a;
+	font-size: 20px;
 }
 
 #point:focus-visible {
-	 outline: none;
+	outline: none;
 }
 
-#lastTotal{
+#lastTotal {
 	position: relative;
-    
 }
-#coupon{
+
+#coupon {
 	cursor: pointer;
 }
-#regnodel{
+
+#regnodel {
 	font-weight: 500;
-    color: #7a7a7a;
-    font-size: 20px;
+	color: #7a7a7a;
+	font-size: 20px;
 }
