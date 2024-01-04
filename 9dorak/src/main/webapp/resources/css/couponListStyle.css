@@ -1,5 +1,40 @@
 @charset "UTF-8";
 
+.inner-coupon-wrapper {
+	cursor: pointer; color : gray;
+	height: fit-content;
+	width: 600px;
+	font-weight: 500;
+	color: gray;
+}
+
+.inner-coupon {
+	margin-top: 10px;
+	margin-bottom: 5px;
+	gap: 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.coupon-ready {
+	border-radius: 30px;
+	width: fit-content;
+	background: #D8F0ED;
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	color: #3C3C43;
+	padding: 4px 8px;
+	align-items: flex-start;
+	gap: 10px;
+	transition: box-shadow 0.5s ease;
+}
+
+.coupon-ready:hover {
+	box-shadow: 0px 0px 18px 0px #D8F0ED;
+}
+
 .register-coupon {
 	display: none;
 	cursor: pointer;
@@ -15,17 +50,16 @@
 	left: 240px;
 	border-radius: 30px;
 	top: 20px;
+	transition: box-shadow 0.5s ease;
 }
 
 .register-coupon:hover {
-	background: white;
-	color: #FF8000;
-	border: 1px solid #FF8000;
+	box-shadow: 0px 0px 13px orange;
 }
 
 .coupon-code {
-	display: none; 
-	padding-left : 20px;
+	display: none;
+	padding-left: 20px;
 	border-radius: 30px;
 	border: 2px solid #D7D7E0;
 	background: #FFF;
@@ -184,7 +218,7 @@
 	height: 906px;
 	position: absolute;
 	left: 245px;
-    top: 170px;
+	top: 170px;
 }
 
 .e154_577 {
@@ -391,7 +425,7 @@
 	height: 270px;
 	position: absolute;
 	left: 0px;
-	top: 146px;
+	top: 141px;
 	background-color: #ffffff;
 	border-radius: 16px;
 	border: 2px solid;
@@ -441,23 +475,22 @@
 }
 
 .e154_595 {
-/* 	background-image: url(../images/my/profile.png); */
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 0;
-    left: 0;
-    border-radius: 20px;
-    background-size: cover;
-    background-position: 50% 50%;
+	/* 	background-image: url(../images/my/profile.png); */
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 0;
+	left: 0;
+	border-radius: 20px;
+	background-size: cover;
+	background-position: 50% 50%;
 }
 
 .e154_596 {
-
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 20px;
 	width: 198px;
 	height: 206px;
 	position: absolute;

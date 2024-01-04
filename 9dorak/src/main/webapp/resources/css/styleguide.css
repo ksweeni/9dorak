@@ -8,6 +8,30 @@
 	font-family: "Wanted Sans Variable";
 }
 
+.detail-a {
+	border: 2px solid
+		rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+	width: 100px;
+	height: 37px;
+	position: absolute;
+	left: 77.70361328125px;
+	top: 30px;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
+	border-bottom-left-radius: 35px;
+	border-bottom-right-radius: 35px;
+	transition: background 0.5s ease;
+	font-weight: 700;
+}
+
+.detail-a:hover {
+	background: rgba(244.0000006556511, 142.00000673532486, 40.00000141561031, 1);
+}
+
+.detail-a:hover span {
+	color: white;
+}
+
 .annoKeyword {
 	padding-left: 10px;
 	margin-right: 10px;

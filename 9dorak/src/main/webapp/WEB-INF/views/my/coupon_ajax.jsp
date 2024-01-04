@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 String contextPath = request.getContextPath();
 %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
@@ -93,13 +93,15 @@ String contextPath = request.getContextPath();
 					<c:if test="${empty clist}">
 						<p>등록된 쿠폰이 없습니다.</p>
 					</c:if>
-					<div>
-						<c:forEach var="item" items="${clist2}">
-							<div>
-								${item.coupon_code }
-								${item.coupon_name }
-							</div>
-						</c:forEach>
+					<div class="inner-coupon-wrapper">
+						등록 대기중인 쿠폰
+						<div class="inner-coupon">
+							<c:forEach var="item" items="${clist2}">
+								<div class="coupon-ready">
+									<span>COUPON CODE : ${item.coupon_code }</span> <!--  <span>${item.coupon_name }</span>-->
+								</div>
+							</c:forEach>
+						</div>
 
 					</div>
 					<c:forEach var="item" items="${clist}">
@@ -111,7 +113,7 @@ String contextPath = request.getContextPath();
 
 								</div>
 							</div>
-							<div class="ei156_637_4576_82564"></div>
+							
 							<span class="e156_689">${item.coupon_check}</span>
 						</div>
 					</c:forEach>
@@ -151,9 +153,6 @@ String contextPath = request.getContextPath();
 					<div class=e154_601>
 						<span class="e154_602">나의 포인트</span>
 					</div>
-					<!-- 			<div class=e154_603>
-						<span class="e154_604">적립 및 사용 목록</span>
-					</div> -->
 				</div>
 			</div>
 		</div>

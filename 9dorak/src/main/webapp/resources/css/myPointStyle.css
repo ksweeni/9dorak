@@ -162,8 +162,8 @@
 	width: 335.1780090332031px;
 	height: 60.015625px;
 	position: absolute;
-	left: 385px;
-	top: 200px;
+	left: 552px;
+	top:178px;
 }
 
 .e169_634 {
@@ -227,7 +227,7 @@
 	width: 1326px;
 	height: 745px;
 	position: absolute;
-	left: 78px;
+	left:246px;
 	top: 343px;
 }
 
@@ -243,7 +243,7 @@
 	width: 1022px;
 	height: 742px;
 	position: absolute;
-	left: 0px;
+	
 	top: 3px;
 }
 
@@ -449,7 +449,7 @@
 	height: 270px;
 	position: absolute;
 	left: 0px;
-	top: 0px;
+	top: -2rem;
 	background-color: #ffffff;
 	border-radius: 16px;
 	border: 2px solid;
