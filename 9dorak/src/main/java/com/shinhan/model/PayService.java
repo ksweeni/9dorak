@@ -189,4 +189,8 @@ public class PayService {
 		
 	}
 
+	public int updateOrderStatus() {
+		return dao.updateOrderStatus();
+	}
+
 }

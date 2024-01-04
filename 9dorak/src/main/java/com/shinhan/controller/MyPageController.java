@@ -105,6 +105,7 @@ public class MyPageController {
 	public String orderList(Model model, HttpSession session, ProVO pro) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<Map<String, Object>> orderList = mService.orderList(loginmem.getMem_id());
+		
 		model.addAttribute("orderList", orderList);
 		//System.out.println(orderList);
 		return "my/myOrderList";

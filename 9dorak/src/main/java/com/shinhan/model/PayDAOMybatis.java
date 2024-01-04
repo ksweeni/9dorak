@@ -62,4 +62,9 @@ public class PayDAOMybatis {
 		return sqlSession.selectOne(NAMESPACE + "statusCheck", order_no);
 	}
 
+	public int updateOrderStatus() {
+		
+		return sqlSession.update(NAMESPACE + "updateOrderStatus");
+	}
+
 }

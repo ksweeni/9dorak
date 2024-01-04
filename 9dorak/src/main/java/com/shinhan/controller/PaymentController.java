@@ -62,6 +62,7 @@ public class PaymentController {
 			int amount = pService.paymentInfo(imp_uid, token);
 			pService.paymentCancel(token, imp_uid, amount, refundReason);
 			pService.updatePayStatus(imp_uid);
+			pService.updateOrderStatus();
 			return "Payment canceled successfully!";
 		} catch (IOException e) {
 			e.printStackTrace();

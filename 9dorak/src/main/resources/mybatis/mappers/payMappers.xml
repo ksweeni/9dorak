@@ -50,6 +50,12 @@
 		)
 		WHERE ROWNUM = 1
 	</select>
+	
+	<update id="updateOrderStatus">
+		UPDATE orders
+		SET order_status = '주문 취소'
+		WHERE order_no IN (SELECT order_no FROM pay WHERE pay_status = '결제 취소')
+	</update>
 
 
 	<update id="updateOrder" parameterType="int">
