@@ -159,4 +159,9 @@ public class MyPageDAOMybatis {
 		return result;
 	}
 
+	public List<CouponVO> getCoupon2(String mem_id) {
+		List<CouponVO> cList = sqlSession.selectList(NAMESPACE + "getCoupon2", mem_id);
+		return cList;
+	}
+
 }

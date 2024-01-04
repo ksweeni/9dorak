@@ -283,9 +283,10 @@ public class MyPageController {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		String mem_id = loginmem.getMem_id();
 		List<CouponVO> clist = mService.getCoupon(mem_id);
+		List<CouponVO> clist2 = mService.getCoupon2(mem_id);
 		model.addAttribute("loginmem", loginmem);
 		model.addAttribute("clist", clist);
-		
+		model.addAttribute("clist2", clist2);
 		
 		return "my/coupon_ajax";
 	}

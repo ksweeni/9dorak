@@ -140,4 +140,9 @@ public class MyPageService {
 		return dao.updateDoranProfile(memVO);
 	}
 
+	public List<CouponVO> getCoupon2(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.getCoupon2(mem_id);
+	}
+
 }
