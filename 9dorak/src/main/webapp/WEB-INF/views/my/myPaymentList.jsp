@@ -158,7 +158,7 @@
 					<div class="text-wrapper-4">${payment.PAY_DEPOPRICE }</div>
 					<div class="text-wrapper-5">${payment.PRO_NAME }</div>
 					<div class="text-wrapper-6">${payment.PAY_DATE }</div>
-					<img class="rectangle" src="${cpath }/resources/upload/${order.PROIMAGE_IMAGE}" />
+					<img class="rectangle" src="${cpath }/resources/upload/${payment.PROIMAGE_IMAGE}" />
 					<div class="coupons">
 						<div class="frame-3">
 							<div class="frame-4">
