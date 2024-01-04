@@ -72,6 +72,12 @@
 		FROM coupon where mem_id = #{mem_id} and
 		coupon_reg = '등록'
 	</select>
+		<select id="getCoupon2" resultType="couponvo"
+		parameterType="String">
+		SELECT *
+		FROM coupon where mem_id = #{mem_id} and
+		coupon_reg = '미등록'
+	</select>
 	<select id="couponCheck" resultType="int"
 		parameterType="couponvo">
 		SELECT COUNT(*) FROM coupon where coupon_reg = '미등록' and
