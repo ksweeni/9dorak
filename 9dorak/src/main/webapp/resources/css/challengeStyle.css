@@ -288,13 +288,19 @@ h5 {
 }
 
 .table td:first-child {
-  padding-left: 20px;
-  padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 175px;
+}
+
+.table-bordered th:nth-child(2),
+.table-bordered td:nth-child(2) {
+  width: 60px; /* 원하는 너비로 수정해주세요 */
 }
 
 .table-bordered th:nth-child(3),
 .table-bordered td:nth-child(3) {
-  width: 30px; /* 원하는 너비로 수정해주세요 */
+  width: 175px; /* 원하는 너비로 수정해주세요 */
 }
 
 .table-bordered th:nth-child(4),
@@ -334,7 +340,7 @@ h5 {
     position: relative;
     margin: 0 300px;
     width: 100px;
-    left: 460px;
+    left: 395px;
     height: 50px;
     font-size: 15px;
     color: #feae64;
@@ -894,6 +900,6 @@ h5 {
 }
 .table_number {
     position: relative;
-    left: 490px;
+    left: 415px;
     top: 29px;
 }

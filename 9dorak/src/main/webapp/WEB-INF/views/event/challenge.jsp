@@ -179,7 +179,7 @@ function redirectToChallenge(challenge_no) {
 			<table class="table table-bordered table-hover">
 				<thead>
 					<tr>
-						<th>번호</th>
+						<!-- <th>번호</th> -->
 						<th>제목</th>
 						<th>작성자</th>
 						<th>작성일</th>
@@ -189,7 +189,7 @@ function redirectToChallenge(challenge_no) {
 
 					<c:forEach var="ch" items="${chlist}" varStatus="rowStatus">
 						<tr onclick="redirectToChallenge(${ch.challenge_no})">
-							<td>${ch.challenge_no}</td>
+					<%-- 		<td>${ch.challenge_no}</td> --%>
 							<td>${ch.challenge_name}</td>
 							<td>${ch.mem_id}</td>
 							<td>${ch.challenge_date}</td>

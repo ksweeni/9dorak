@@ -793,7 +793,9 @@ function requestPay() {
 
 					  }
 					});
-				openModal();	
+				openModal();
+				   modal.style.display = "block";
+				
 			} else {
 
 				var msg = '결제에 실패하였습니다.\n' + '에러내용: ' + data.error_msg;

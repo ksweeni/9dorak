@@ -62,6 +62,9 @@ public class DoranController {
 			model.addAttribute("memPoint", "로그인하고 포인트를 얻으세요");
 		} 
 		model.addAttribute("loginmem", memId);
+		List<DoranlikeVO> dllist = dService.selectlike(memId.getMem_id());
+//		System.out.println("도라라라라라라라" + dllist);
+		model.addAttribute("dllist", dllist);
 		System.out.println(dlist);
 		return "doran/doran";
 	}
@@ -76,10 +79,14 @@ public class DoranController {
 		} else {
 			dlist = dService.selectAllByDlike();
 		}
-		model.addAttribute("dlist", dlist);
 		
-
 		MemVO memId = (MemVO) session.getAttribute("loginmem");
+		
+		
+		model.addAttribute("dlist", dlist);
+		List<DoranlikeVO> dllist = dService.selectlike(memId.getMem_id());
+		System.out.println("도라라라라라라라" + dllist);
+		model.addAttribute("dllist", dllist);
 		model.addAttribute("loginmem", memId);
 		return "doran/doran_ajax";
 	}
@@ -90,8 +97,8 @@ public class DoranController {
 			HttpSession session, RedirectAttributes redirectAttributes) {
 		List<DoranVO> dlist;
 		System.out.println("DateFor:" + dataFor);
+		MemVO memId = (MemVO) session.getAttribute("loginmem");
 		if (dataFor.equals("myDoran")) {
-			MemVO memId = (MemVO) session.getAttribute("loginmem");
 			dlist = dService.selectAllForMe(memId.getMem_id());
 		} else {
 			dlist = dService.selectAll();
@@ -99,7 +106,9 @@ public class DoranController {
 		if (dlist.size() == 0) {
 			System.out.println("해당하는 데이터가 없습니다 ~ 글을 써 이 사람아");
 		}
-
+		List<DoranlikeVO> dllist = dService.selectlike(memId.getMem_id());
+		System.out.println("도라라라라라라라" + dllist);
+		model.addAttribute("dllist", dllist);
 		model.addAttribute("dlist", dlist);
 		return "doran/doran_ajax";
 	}
@@ -124,6 +133,9 @@ public class DoranController {
 		} else {
 			dlist = dService.selectAllByDlikeForMe(memId);
 		}
+		List<DoranlikeVO> dllist = dService.selectlike(memVO.getMem_id());
+		System.out.println("도라라라라라라라" + dllist);
+		model.addAttribute("dllist", dllist);
 		model.addAttribute("dlist", dlist);
 		return "doran/doran_ajax";
 	}
