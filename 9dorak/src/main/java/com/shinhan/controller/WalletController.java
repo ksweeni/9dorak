@@ -86,9 +86,9 @@ public class WalletController {
 			item += or.getOrderdetail_count();
 		}
 		System.out.println(item);
-		DecimalFormat decimalFormat = new DecimalFormat("#,###");
-		String formattedTotal = decimalFormat.format(total);
-		model.addAttribute("total", formattedTotal);
+//		DecimalFormat decimalFormat = new DecimalFormat("#,###");
+//		String formattedTotal = decimalFormat.format(total);
+		model.addAttribute("total", total);
 		model.addAttribute("item", item);
 		model.addAttribute("clist", clist);
 		model.addAttribute("mem", mem);
