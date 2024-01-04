@@ -156,26 +156,26 @@
 							id="file" type="file" name="file" /> <img id="preview1"
 							class="preview-image" src="" alt="Preview 1" />
 					</div>
-					<div class="e3000_22">
+<!-- 					<div class="e3000_22">
 						<label for="file2">
 							<div class="btn-upload">파일 업로드하기</div>
 						</label> <input onchange="readURL(this, 'preview2');" multiple="multiple"
 							type="file" name="file" id="file2" /> <img id="preview2"
 							class="preview-image" src="" alt="Preview 2" />
-					</div>
+					</div> -->
 					<div class="e3000_23">
 						<label for="file3">
 							<div class="btn-upload">파일 업로드하기</div>
 						</label> <input onchange="readURL(this, 'preview3');" multiple="multiple"
 							type="file" name="file" id="file3" /> <img id="preview3"
-							class="preview-image" src="" alt="Preview 3" />
+							class="preview-image" src="" alt="Preview 2" />
 					</div>
 					<div class="e3000_24">
 						<label for="file4">
 							<div class="btn-upload">파일 업로드하기</div>
 						</label> <input onchange="readURL(this, 'preview4');" multiple="multiple"
 							type="file" name="file" id="file4" /> <img id="preview4"
-							class="preview-image" src="" alt="Preview 4" />
+							class="preview-image" src="" alt="Preview 3" />
 					</div>
 				</div>
 			</form>
