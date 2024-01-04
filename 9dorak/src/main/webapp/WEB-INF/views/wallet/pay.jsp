@@ -303,8 +303,8 @@
 								</div>
 								<div class="group-5">
 
-									<img class="white-question-mark"
-										src="img/white-question-mark.svg" />
+							<!-- 		<img class="white-question-mark"
+										src="img/white-question-mark.svg" /> -->
 								</div>
 							</div>
 							<img class="line"
@@ -424,12 +424,12 @@
 											<div class="text-wrapper-15" id="lastTotal">${total}원</div>
 										</div>
 										<div class="group-5">
-											<p class="element-p">
+										<!-- 	<p class="element-p">
 												<span class="text-wrapper-16">적립 예정 포인트 </span> <span
 													class="text-wrapper-3">P</span>
-											</p>
-											<img class="white-question-mark"
-												src="${cpath}/resources/images/wallet/White question mark.png" />
+											</p> -->
+								<%-- 			<img class="white-question-mark"
+												src="${cpath}/resources/images/wallet/White question mark.png" /> --%>
 										</div>
 									</div>
 									<img class="img"
@@ -465,10 +465,10 @@
 											<div class="text-wrapper-15" id="lastTotal">${total}원</div>
 										</div>
 										<div class="group-5">
-											<p class="element-p">
+	<!-- 										<p class="element-p">
 												<span class="text-wrapper-16">적립 예정 포인트 </span> <span
 													class="text-wrapper-3">P</span>
-											</p>
+											</p> -->
 										</div>
 									</div>
 									<img class="img"
@@ -662,7 +662,7 @@ function requestPay() {
  	  var sub19bllist = ${not empty sub19bllist};
  	  
 	 var proCountElement = document.getElementById('pro_count');
-	 alert($("#lastTotal").text().substring(0, $("#lastTotal").text().length - 1));
+/* 	 alert($("#lastTotal").text().substring(0, $("#lastTotal").text().length - 1)); */
 
 	  if (sub9allist ||sub9bllist || sub19allist || sub19bllist) {
 		  param = {
@@ -684,7 +684,7 @@ function requestPay() {
 		    	url : "${cpath}/proOrder",
 		    	type : "post",
 				success : function(res) {
-					alert(res);
+				
 				}
 		    })
 
@@ -716,7 +716,7 @@ function requestPay() {
 	}
 
 
-	alert($('#proname').text());
+	/* alert($('#proname').text()); */
 	var proName;
 	if($('#proname').text() == ""){
 		proName = "구도락 단일 상품 주문";
@@ -951,6 +951,7 @@ function sample4_execDaumPostcode() {
 				}
 
 			}).open();
+	
 }
 </script>
 </html>
