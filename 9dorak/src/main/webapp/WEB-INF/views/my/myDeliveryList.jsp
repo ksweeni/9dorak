@@ -15,7 +15,7 @@ String contextPath = request.getContextPath();
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/myDeliveryListStyle.css" type="text/css" />
+	href="${cpath}/resources/css/myDeliveryListStyle.css?s" type="text/css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
