@@ -92,7 +92,7 @@
 					alert("결제를 취소하겠습니다. 환불 사유: " + refundReason);
 
 				} else {
-					alert("취소가 취소되었습니다.");
+					alert("결제취소가 취소되었습니다.");
 				}
 			}
 		} else {
