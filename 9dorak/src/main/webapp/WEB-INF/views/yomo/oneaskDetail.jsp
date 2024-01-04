@@ -83,16 +83,16 @@
 		<p>
 			<b>${oneask.oneask_title}</b>
 		</p>
-		<hr>
+		 <hr>
 		<p>날짜 : ${oneask.oneask_date}</p>
 		<p>작성자 : ${oneask.mem_id}</p>
 		<p>문의상태 : ${oneask.oneask_status}</p>
 		<hr>
 		<div class="e844_999">
 			<p>${oneask.oneask_cont}</p>
-			<p>답변 : ${oneask.oneask_answer}</p>
+			<p style="margin: 0 auto;">답변 : ${oneask.oneask_answer}</p>
 		</div>
-		<hr>
+		 <hr>
 		<c:if test="${loginmem.mem_id eq 'admin'}">
 			<form action="${pageContext.request.contextPath}/yomo/oneask.do"
 				method="GET">
