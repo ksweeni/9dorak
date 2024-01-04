@@ -285,6 +285,8 @@ public class MyPageController {
 		List<CouponVO> clist = mService.getCoupon(mem_id);
 		model.addAttribute("loginmem", loginmem);
 		model.addAttribute("clist", clist);
+		
+		
 		return "my/coupon_ajax";
 	}
 
