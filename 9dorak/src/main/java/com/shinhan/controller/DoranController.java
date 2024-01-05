@@ -60,10 +60,13 @@ public class DoranController {
 
 		if (memId == null) {
 			model.addAttribute("memPoint", "로그인하고 포인트를 얻으세요");
-		} 
+		} else { 
+			
+			List<DoranlikeVO> dllist = dService.selectlike(memId.getMem_id());
+			model.addAttribute("dllist", dllist);
+		}
 		model.addAttribute("loginmem", memId);
-		List<DoranlikeVO> dllist = dService.selectlike(memId.getMem_id());
-		model.addAttribute("dllist", dllist);
+		
 		System.out.println(dlist);
 		return "doran/doran";
 	}
@@ -105,9 +108,12 @@ public class DoranController {
 		if (dlist.size() == 0) {
 			System.out.println("해당하는 데이터가 없습니다. 글을 써 주세요 !");
 		}
-		List<DoranlikeVO> dllist = dService.selectlike(memId.getMem_id());
-		System.out.println("도라라라라라라라" + dllist);
-		model.addAttribute("dllist", dllist);
+		if( memId != null) {
+			
+			List<DoranlikeVO> dllist = dService.selectlike(memId.getMem_id());
+			model.addAttribute("dllist", dllist);
+		}
+//		System.out.println("도라라라라라라라" + dllist);
 		model.addAttribute("dlist", dlist);
 		return "doran/doran_ajax";
 	}

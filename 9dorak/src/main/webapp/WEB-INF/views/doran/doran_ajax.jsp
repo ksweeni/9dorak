@@ -128,7 +128,7 @@
 
         if (!memId || memId.trim() === "") {
             alert("로그인이 필요한 서비스입니다 !");
-            window.location.href = "${cpath}/login/loginForm.do";
+            location.href = "${cpath}/login/loginForm.do";
             return;
         }
 

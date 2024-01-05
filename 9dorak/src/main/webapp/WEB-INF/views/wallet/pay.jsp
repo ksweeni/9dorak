@@ -20,8 +20,6 @@
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 <style>
-
-
 @
 keyframes zoomIn {from { transform:scale(0);
 	
@@ -49,6 +47,15 @@ to {
 }
 </style>
 </head>
+
+<script type="text/javascript">
+if (self.name != 'reload') {
+    self.name = 'reload';
+    self.location.reload(true);
+}
+else self.name = ''; 
+
+</script>
 <body>
 	<div class="screen">
 		<div class="div">
@@ -608,6 +615,12 @@ to {
 
 </body>
 <script type="text/javascript">
+
+
+
+</script>
+<script type="text/javascript">
+
 function openModal() {
 	 var overlay = document.getElementById("overlay");
 	  var successModal = document.getElementById("successModal");
